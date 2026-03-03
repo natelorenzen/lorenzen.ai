@@ -1,34 +1,55 @@
 # Writing and Publications — Nate Lorenzen
 
+Last updated: March 2026
+
+This page lists published articles and notable writing by Nate Lorenzen.
+
 ## WARC
 
-- **Beyond Optimization: How Structured Novelty Search Unlocks Breakthrough Creative at Scale**  
-  WARC  
-  Explores a creative testing framework focused on structured exploration and novelty discovery rather than early optimization.
+- **Beyond Optimization: How Structured Novelty Search Unlocks Breakthrough Creative at Scale** (Sep 30, 2025)  
+  WARC Exclusive  
+  https://www.warc.com/content/article/warc-exclusive/beyond-optimization-how-structured-novelty-search-unlocks-breakthrough-creative-at-scale/en-gb/161752
 
 ## Forbes Agency Council
 
-- **The Algebra of Advertising on Meta’s Platform**  
+- **The Algebra Of Advertising On Meta’s Platform** (May 22, 2023)  
   Forbes Agency Council  
-  Examines performance advertising on Meta through systems thinking and mathematical constraints.
+  https://www.forbes.com/councils/forbesagencycouncil/2023/05/22/the-algebra-of-advertising-on-metas-platform/
 
-- **How Generative AI Will Unleash E-Commerce’s Next Big Bang**  
+- **How Generative AI Will Unleash E-Commerce’s Next Big Bang** (Jun 14, 2023)  
   Forbes Agency Council  
-  Discusses the impact of generative AI on entrepreneurship, commerce, and advertising systems.
+  https://www.forbes.com/councils/forbesagencycouncil/2023/06/14/how-generative-ai-will-unleash-e-commerces-next-big-bang/
 
-- **Subtle Shifts, Major Impact: A More Effective Approach to Innovation**  
+- **Subtle Shifts, Major Impact: A More Effective Approach To Innovation** (Feb 26, 2024)  
   Forbes Agency Council  
-  Argues for incremental, system-level innovation over isolated tactical changes.
+  https://www.forbes.com/councils/forbesagencycouncil/2024/02/26/subtle-shifts-major-impact-a-more-effective-approach-to-innovation/
 
-## Trade and Industry Publications
+## Performance Marketing World
 
-- **How to Run a Synthetic Focus Group**  
+- **How to run a synthetic focus group** (Dec 8, 2025)  
   Performance Marketing World  
-  Describes the use of AI-driven synthetic research for creative and messaging insights.
+  https://www.performancemarketingworld.com/article/1942406/run-synthetic-focus-group
 
-- **What’s Going Wrong With Market Research?**  
+- **What’s going wrong with market research?** (Nov 12, 2025)  
   Performance Marketing World  
-  Commentary on limitations of traditional market research methods in modern advertising environments.
+  https://www.performancemarketingworld.com/article/1939450/whats-going-wrong-market-research
+
+## Articles on X
+ - **The Cambrian Explosion of Entrepreneurship**  
+ [LINK](https://x.com/anatelorenzen/status/2026449791438512597)
+- **A Billion Little Businesses**
+  [Link](https://x.com/anatelorenzen/status/2022442990397206531)
+- **Thinking in Bets - Using the Kelly Criterion For Channel Expansion**
+  [Link](https://x.com/anatelorenzen/status/2017366895310324041)
+- **Law of Small Numbers**
+  [Link](https://x.com/anatelorenzen/status/2014372077420359707)
+- **Your Brain is Too Fried to Read. Read This**
+  [Link](https://x.com/anatelorenzen/status/2012567949786361948)
+
+## Author pages
+
+- Forbes Agency Council author page  
+  [Link](https://www.forbes.com/councils/forbesagencycouncil/people/natelorenzen/)
 
 ## Themes
 
