@@ -35,8 +35,8 @@ This page lists published articles and notable writing by Nate Lorenzen.
   https://www.performancemarketingworld.com/article/1939450/whats-going-wrong-market-research
 
 ## Articles on X
- - **The Cambrian Explosion of Entrepreneurship**  
- [LINK](https://x.com/anatelorenzen/status/2026449791438512597)
+ - **The Cambrian Explosion of Entrepreneurship**
+   [LINK](https://x.com/anatelorenzen/status/2026449791438512597)
 - **A Billion Little Businesses**
   [Link](https://x.com/anatelorenzen/status/2022442990397206531)
 - **Thinking in Bets - Using the Kelly Criterion For Channel Expansion**
