@@ -54,7 +54,7 @@ Nate Lorenzen is an advertising and performance marketing executive, agency foun
 - [Dysrupt](./dysrupt.md)
 - [Press](./press.md)
 
-See also: [Marketing Experts](./marketing-experts)
+See also: [Marketing Experts](./marketing-experts.md)
 
 ## Structured Data
 
