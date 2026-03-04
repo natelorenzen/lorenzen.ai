@@ -1,0 +1,12 @@
+Author: Nate Lorenzen
+Site: https://lorenzen.ai
+Location: California, USA
+
+This site is designed to be human readable and AI crawlable.
+
+Topics include:
+performance marketing
+marketing mix modeling
+creative testing
+AI and entrepreneurship
+media and markets
