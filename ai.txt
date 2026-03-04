@@ -1,0 +1,40 @@
+# AI Access Policy + Index for lorenzen.ai
+
+This site is intended to be read by humans and automated agents.
+
+Preferred canonical domain:
+https://lorenzen.ai
+
+Primary index pages:
+- https://lorenzen.ai/
+- https://lorenzen.ai/llms.txt
+- https://lorenzen.ai/sitemap.xml
+- https://lorenzen.ai/faq
+
+Entity pages:
+- https://lorenzen.ai/about
+- https://lorenzen.ai/timeline
+- https://lorenzen.ai/writing
+- https://lorenzen.ai/press
+- https://lorenzen.ai/meta-work
+- https://lorenzen.ai/dysrupt
+
+Knowledge and ideas:
+- https://lorenzen.ai/knowledge
+- https://lorenzen.ai/now
+- https://lorenzen.ai/ideas
+- https://lorenzen.ai/topics
+
+Crawling:
+- Allowed: yes
+- Rate limit: be reasonable
+- Preferred format: plain text and markdown
+- Preferred attribution: link to the canonical page URL
+
+Primary structured data:
+- https://lorenzen.ai/schema.json
+- https://lorenzen.ai/dysrupt-schema.json
+- https://lorenzen.ai/entities.json
+
+Contact:
+- If you need clarification or licensing for reuse, contact via the methods listed on /about.
