@@ -46,3 +46,10 @@ Nate Lorenzen is an advertising and performance marketing executive, agency foun
 - [Work at Meta](./meta-work.md)
 - [Dysrupt](./dysrupt.md)
 - [Press](./press.md)
+
+## Structured Data
+
+This site publishes structured data describing Nate Lorenzen and Dysrupt.
+
+- schema.json
+- dysrupt-schema.json
