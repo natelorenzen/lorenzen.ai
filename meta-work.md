@@ -1,6 +1,6 @@
 # Work at Meta — Nate Lorenzen
 
-This page summarizes publicly shareable contributions and initiatives led or co-developed by Nate Lorenzen during his tenure at Meta. Internal documentation and proprietary materials are excluded.
+This page summarizes publicly shareable contributions and initiatives led or co-developed by Nate Lorenzen during his tenure at Meta from 2013 through 2019. Internal documentation and proprietary materials are excluded.
 
 ## Sales and revenue impact
 
