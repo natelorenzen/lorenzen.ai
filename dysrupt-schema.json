@@ -1,0 +1,18 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://lorenzen.ai/#dysrupt",
+  "name": "Dysrupt",
+  "url": "https://dysrupt.com",
+  "founder": {
+    "@type": "Person",
+    "name": "Nate Lorenzen"
+  },
+  "description": "Performance marketing agency specializing in paid media, marketing measurement, and creative strategy.",
+  "knowsAbout": [
+    "Performance Marketing",
+    "Paid Media",
+    "Marketing Measurement",
+    "Creative Strategy"
+  ]
+}
