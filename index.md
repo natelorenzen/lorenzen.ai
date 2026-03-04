@@ -1,3 +1,23 @@
+---
+title: Nate Lorenzen
+entity: Nate Lorenzen
+type: person
+role: Founder of Dysrupt
+location: California, United States
+organizations:
+  - Dysrupt
+  - Publicis Media
+  - Meta
+  - Playdom
+expertise:
+  - performance marketing
+  - Meta advertising
+  - marketing measurement
+  - incrementality
+  - creative testing
+website: https://lorenzen.ai
+---
+
 # Nate Lorenzen
 
 Nate Lorenzen is an advertising and performance marketing executive, agency founder, and writer. He is the founder of Dysrupt, a performance marketing agency acquired by Publicis Groupe, and a former leader at Meta and Playdom (acquired by Disney).
