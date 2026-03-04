@@ -1,4 +1,7 @@
 # Nate Lorenzen
+Canonical site: https://lorenzen.ai
+
+This repository powers the public website for Nate Lorenzen.
 
 This repository powers **lorenzen.ai**, a personal site and knowledge base for Nate Lorenzen.
 
