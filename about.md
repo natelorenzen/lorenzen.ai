@@ -31,4 +31,4 @@ Lorenzen has written on advertising, performance marketing, and AI for industry 
 
 ## Personal
 
-He lives in California and is a father of two. His interests include literature, philosophy, theology, martial arts, and the long-term effects of technology on business and culture.
+He lives in California and is a father of two. His interests include literature, philosophy, theology, martial arts, and the long-term effects of technology on business and culture. He holds a brown belt in Brazilian Jiu-Jitsu under Professor Gabriel Arges and a Krav Maga Practitioner Level 2 (P2) certification.
