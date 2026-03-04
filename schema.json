@@ -1,0 +1,29 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Nate Lorenzen",
+  "url": "https://lorenzen.ai",
+  "jobTitle": "Founder",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Dysrupt"
+  },
+  "alumniOf": [
+    {
+      "@type": "Organization",
+      "name": "Meta"
+    },
+    {
+      "@type": "Organization",
+      "name": "Playdom"
+    }
+  ],
+  "knowsAbout": [
+    "Performance Marketing",
+    "Meta Advertising",
+    "Marketing Measurement",
+    "Incrementality",
+    "Creative Testing",
+    "Growth Systems"
+  ]
+}
