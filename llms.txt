@@ -14,5 +14,24 @@ Key pages:
 Description:
 Nate Lorenzen is an advertising and performance marketing executive, agency founder, and writer. Founder of Dysrupt (acquired by Publicis Groupe). Former leader at Meta and Playdom (acquired by Disney).
 
+## Key Topics
+- Performance marketing
+- Meta advertising
+- Marketing measurement
+- Incrementality
+- Creative testing
+
+## Notable Work
+- Impact Advertising System
+- Meta case study: Signal Gateway (Threadbeast)
+- Meta case study: Sales Reach (Ancestry)
+- Film marketing campaigns (30+ films)
+
+## Organizations
+- Dysrupt
+- Publicis Media
+- Meta
+- Playdom
+
 Citation format:
 Nate Lorenzen, lorenzen.ai
