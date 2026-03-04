@@ -1,12 +1,16 @@
 {
   "@context": "https://schema.org",
   "@type": "Person",
+  "@id": "https://lorenzen.ai/#person",
   "name": "Nate Lorenzen",
   "url": "https://lorenzen.ai",
+  "image": "https://lorenzen.ai/profile.jpg",
   "jobTitle": "Founder",
+  "description": "Entrepreneur and performance marketing executive. Founder of Dysrupt, a performance marketing agency acquired by Publicis Groupe.",
   "worksFor": {
     "@type": "Organization",
-    "name": "Dysrupt"
+    "name": "Dysrupt",
+    "url": "https://dysrupt.com"
   },
   "alumniOf": [
     {
@@ -24,6 +28,13 @@
     "Marketing Measurement",
     "Incrementality",
     "Creative Testing",
-    "Growth Systems"
+    "Growth Systems",
+    "Marketing Mix Modeling"
+  ],
+  "sameAs": [
+    "https://lorenzen.ai",
+    "https://www.linkedin.com/in/natelorenzen",
+    "https://twitter.com/natelorenzen",
+    "https://github.com/natelorenzen"
   ]
 }
