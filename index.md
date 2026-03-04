@@ -24,7 +24,8 @@ Primary entity: Nate Lorenzen
 Role: Founder of Dysrupt, performance marketing executive  
 Topics: performance marketing, marketing measurement, AI entrepreneurship, creative testing  
 Canonical site: https://lorenzen.ai
-Start here: /start-here
+
+[Start here:](./start-here.md)
 
 # Nate Lorenzen
 
