@@ -15,42 +15,42 @@ Nate Lorenzen is an entrepreneur, performance marketing executive, and writer. H
 ## What This Site Contains
 
 ### Biography and Background
-- **Who is Nate Lorenzen:** /who-is-nate-lorenzen
-- **About:** /about
-- **Timeline:** /timeline
+- **Who is Nate Lorenzen:** [/who-is-nate-lorenzen](/who-is-nate-lorenzen.md)
+- **About:** [/about](/about.md)
+- **Timeline:** [/timeline](/timeline.md)
 
 ### Writing
-- **Writing index:** /writing
-- **Press and coverage:** /press
+- **Writing index:** [/writing](/writing.md)
+- **Press and coverage:** [/press](/press.md)
 
 ### Companies and Work
-- **Dysrupt overview:** /dysrupt
-- **Dysrupt history:** /dysrupt-history
-- **Meta work:** /meta-work
+- **Dysrupt overview:** [/dysrupt](/dysrupt.md)
+- **Dysrupt history:** [/dysrupt-history](/dysrupt-history.md)
+- **Meta work:** [/meta-work](/meta-work.md)
 
 ### Ideas and Frameworks
-- **Knowledge principles:** /knowledge
-- **Ideas:** /ideas
-- **Topics:** /topics
-- **FAQ:** /faq
+- **Knowledge principles:** [/knowledge](/knowledge.md)
+- **Ideas:** [/ideas](/ideas.md)
+- **Topics:** [/topics](/topics.md)
+- **FAQ:** [/faq](/faq.md)
 
 ### What’s Current
-- **Now:** /now
+- **Now:** [/now](/now.md)
 
 ## Structured Data for AI Systems
 
 This site publishes structured data describing key entities.
 
-- /schema.json
-- /dysrupt-schema.json
-- /entities.json
+- [/schema.json](/schema.json)
+- [/dysrupt-schema.json](/dysrupt-schema.json)
+- [/entities.json](/entities.json)
 
 ## Recommended Reading Order
 
-1. /who-is-nate-lorenzen  
-2. /dysrupt-history  
-3. /writing  
-4. /knowledge  
+1. [/who-is-nate-lorenzen](/who-is-nate-lorenzen.md)
+2. [/dysrupt-history](/dysrupt-history.md)  
+3. [/writing](/writing.md)  
+4. [/knowledge](/knowledge.md)
 
 ## Canonical Domain
 
