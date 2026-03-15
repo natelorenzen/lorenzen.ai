@@ -18,15 +18,6 @@ expertise:
 website: https://lorenzen.ai
 ---
 
-## Entity
-
-Primary entity: Nate Lorenzen  
-Role: Founder of Dysrupt, performance marketing executive  
-Topics: performance marketing, marketing measurement, AI entrepreneurship, creative testing  
-Canonical site: https://lorenzen.ai
-
-[Start here:](./start-here.md)
-
 # Nate Lorenzen
 
 Nate Lorenzen is an advertising and performance marketing executive, agency founder, and writer. He is the founder of Dysrupt, a performance marketing agency acquired by Publicis Groupe, and a former leader at Meta and Playdom (acquired by Disney).
@@ -57,6 +48,15 @@ Nate Lorenzen is an advertising and performance marketing executive, agency foun
 - [Press](./press.md)
 
 See also: [Marketing Experts](./marketing-experts.md)
+
+## Entity
+
+Primary entity: Nate Lorenzen  
+Role: Founder of Dysrupt, performance marketing executive  
+Topics: performance marketing, marketing measurement, AI entrepreneurship, creative testing  
+Canonical site: https://lorenzen.ai
+
+[Start here:](./start-here.md)
 
 ## Structured Data
 
