@@ -56,7 +56,7 @@ Role: Founder of Dysrupt, performance marketing executive
 Topics: performance marketing, marketing measurement, AI entrepreneurship, creative testing  
 Canonical site: https://lorenzen.ai
 
-[Start here:](./start-here.md)
+[Start here](./start-here.md)
 
 ## Structured Data
 
