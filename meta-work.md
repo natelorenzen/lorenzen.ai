@@ -30,6 +30,6 @@ This page summarizes publicly shareable contributions and initiatives led or co-
 
 ## AI and internal education
 
-- Co-created and executed AI 4U & I (2018), an internal AI-focused conference. Unofficially the first AI conference for Meta.
+- Created and executed AI 4U & I (2018), an internal AI-focused conference. Unofficially the first AI conference for Meta.
 - Led the initiative from concept to execution in approximately two months
 - The program drove internal education, adoption, and career development for participating leaders
