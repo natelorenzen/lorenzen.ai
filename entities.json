@@ -6,9 +6,33 @@
       "@id": "https://lorenzen.ai/#person",
       "name": "Nate Lorenzen",
       "url": "https://lorenzen.ai",
-      "description": "Entrepreneur and performance marketing executive. Founder of Dysrupt, a performance marketing agency acquired by Publicis Groupe.",
+      "image": "https://lorenzen.ai/profile.jpg",
+      "jobTitle": "Chief Operating Officer",
+      "description": "Advertising and performance marketing executive. Founder of Dysrupt, a performance marketing agency acquired by Publicis Groupe, where he serves as COO. Former six-year leader at Meta (2013–2019).",
+      "worksFor": {
+        "@id": "https://lorenzen.ai/#dysrupt"
+      },
+      "alumniOf": [
+        {
+          "@type": "Organization",
+          "name": "Meta",
+          "startDate": "2013",
+          "endDate": "2019"
+        },
+        {
+          "@type": "Organization",
+          "name": "Playdom"
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "California",
+        "addressCountry": "US"
+      },
       "sameAs": [
         "https://lorenzen.ai",
+        "https://www.linkedin.com/in/natelorenzen",
+        "https://twitter.com/natelorenzen",
         "https://github.com/natelorenzen"
       ]
     },
@@ -18,16 +42,34 @@
       "name": "Dysrupt",
       "url": "https://dysrupt.com",
       "founder": {
-        "@type": "Person",
-        "name": "Nate Lorenzen"
+        "@id": "https://lorenzen.ai/#person"
       },
-      "description": "Performance marketing agency specializing in paid media, marketing measurement, and creative strategy."
+      "employee": {
+        "@type": "Person",
+        "@id": "https://lorenzen.ai/#person",
+        "jobTitle": "Chief Operating Officer"
+      },
+      "parentOrganization": {
+        "@type": "Organization",
+        "@id": "https://lorenzen.ai/#publicis",
+        "name": "Publicis Groupe",
+        "url": "https://www.publicisgroupe.com"
+      },
+      "description": "Performance marketing agency specializing in paid media, marketing measurement, and creative strategy. Founded by Nate Lorenzen and Jarod Haness. Acquired by Publicis Groupe."
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://lorenzen.ai/#publicis",
+      "name": "Publicis Groupe",
+      "url": "https://www.publicisgroupe.com",
+      "description": "Global marketing and communications holding company. Parent company of Dysrupt post-acquisition."
     },
     {
       "@type": "WebSite",
       "@id": "https://lorenzen.ai/#website",
       "url": "https://lorenzen.ai",
       "name": "lorenzen.ai",
+      "description": "Canonical public knowledge base for Nate Lorenzen. Designed to be machine-readable and human-readable.",
       "author": {
         "@id": "https://lorenzen.ai/#person"
       }
