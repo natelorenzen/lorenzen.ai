@@ -5,23 +5,35 @@
   "name": "Nate Lorenzen",
   "url": "https://lorenzen.ai",
   "image": "https://lorenzen.ai/profile.jpg",
-  "jobTitle": "Founder",
-  "description": "Entrepreneur and performance marketing executive. Founder of Dysrupt, a performance marketing agency acquired by Publicis Groupe.",
+  "jobTitle": "Chief Operating Officer",
+  "description": "Advertising and performance marketing executive. Founder of Dysrupt, a performance marketing agency acquired by Publicis Groupe, where he serves as COO. Former six-year leader at Meta (2013–2019) and early career at Playdom (acquired by Disney).",
   "worksFor": {
     "@type": "Organization",
     "name": "Dysrupt",
-    "url": "https://dysrupt.com"
+    "url": "https://dysrupt.com",
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "Publicis Groupe",
+      "url": "https://www.publicisgroupe.com"
+    }
   },
   "alumniOf": [
     {
       "@type": "Organization",
-      "name": "Meta"
+      "name": "Meta",
+      "startDate": "2013",
+      "endDate": "2019"
     },
     {
       "@type": "Organization",
       "name": "Playdom"
     }
   ],
+  "foundingOf": {
+    "@type": "Organization",
+    "name": "Dysrupt",
+    "url": "https://dysrupt.com"
+  },
   "knowsAbout": [
     "Performance Marketing",
     "Meta Advertising",
@@ -29,8 +41,15 @@
     "Incrementality",
     "Creative Testing",
     "Growth Systems",
-    "Marketing Mix Modeling"
+    "Marketing Mix Modeling",
+    "AI-Native Marketing",
+    "Agency Operations"
   ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "California",
+    "addressCountry": "US"
+  },
   "sameAs": [
     "https://lorenzen.ai",
     "https://www.linkedin.com/in/natelorenzen",
