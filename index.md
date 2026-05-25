@@ -29,7 +29,7 @@ website: https://lorenzen.ai
 
 <h1 style="margin-bottom:10px;">Nate Lorenzen</h1>
 
-<p style="font-size:24px; line-height:1.5; margin-top:0;">
+<p style="font-size:12px; line-height:1.5; margin-top:0;">
 Bootstrapped founder focused on marketing, measurement, creative, and AI systems. <br>
 Nate Lorenzen founded Dysrupt, a performance marketing agency acquired by Publicis Groupe, and was an early member of Meta’s US eCommerce team. Previously, he worked at Playdom, which was acquired by Disney.
 </p>
