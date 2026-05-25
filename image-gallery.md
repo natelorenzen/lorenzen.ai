@@ -8,9 +8,7 @@ These pieces explore advertising, technology, cognition, internet culture, media
 
 # Brain vs AI
 
-<p align="center">
-  <img src="images/gallery/brain%20vs%20ai.png" width="900">
-</p>
+![Brain vs AI](images/gallery/brain-vs-ai.png)
 
 A comparison between biological intelligence and machine computation.
 
@@ -18,19 +16,15 @@ A comparison between biological intelligence and machine computation.
 
 # Gumption
 
-<p align="center">
-  <img src="images/gallery/Gumption.png" width="900">
-</p>
+![Gumption](images/gallery/gumption.png)
 
-A visual interpretation of Robert Pirsig’s concept of “gumption” from *Zen and the Art of Motorcycle Maintenance*.
+A visual interpretation of Robert Pirsig’s concept of “gumption.”
 
 ---
 
 # Clipping Economy
 
-<p align="center">
-  <img src="images/gallery/clipping%20economy.png" width="900">
-</p>
+![Clipping Economy](images/gallery/clipping-economy.png)
 
 A diagram about the emerging clipping economy.
 
@@ -38,9 +32,7 @@ A diagram about the emerging clipping economy.
 
 # DTC Exit
 
-<p align="center">
-  <img src="images/gallery/dtc%20exit.png" width="900">
-</p>
+![DTC Exit](images/gallery/dtc-exit.png)
 
 A commentary on modern direct-to-consumer business cycles.
 
@@ -48,9 +40,7 @@ A commentary on modern direct-to-consumer business cycles.
 
 # Mindset
 
-<p align="center">
-  <img src="images/gallery/mindset.png" width="900">
-</p>
+![Mindset](images/gallery/mindset.png)
 
 A stripped-down philosophical graphic about self-narrative.
 
@@ -58,31 +48,25 @@ A stripped-down philosophical graphic about self-narrative.
 
 # Moral Panic
 
-<p align="center">
-  <img src="images/gallery/moral%20panic.png" width="900">
-</p>
+![Moral Panic](images/gallery/moral-panic.png)
 
-A visual essay about recurring cycles of technological and cultural panic.
+A visual essay about recurring cycles of technological panic.
 
 ---
 
 # Two Realities
 
-<p align="center">
-  <img src="images/gallery/two%20realities.png" width="900">
-</p>
+![Two Realities](images/gallery/two-realities.png)
 
-A cultural framework mapping the divide between online and offline mediated realities.
+A framework mapping the divide between online and offline realities.
 
 ---
 
 # Waveform
 
-<p align="center">
-  <img src="images/gallery/waveform.png" width="900">
-</p>
+![Waveform](images/gallery/waveform.png)
 
-An abstract visual about signal propagation, information systems, and cyclical motion.
+An abstract visual about signal propagation and information systems.
 
 ---
 
@@ -90,4 +74,4 @@ An abstract visual about signal propagation, information systems, and cyclical m
 
 [View PDF](images/gallery/Clipping%20Deck.pdf)
 
-A presentation deck exploring clipping, amplification, and content propagation systems in modern media environments.
+A presentation deck exploring clipping and amplification systems.
