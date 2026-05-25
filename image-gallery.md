@@ -24,7 +24,7 @@ A visual interpretation of Robert Pirsig’s concept of “gumption.”
 
 # Clipping Economy
 
-![Clipping Economy](images/gallery/clipping-economy.png)
+![Clipping Economy](images/gallery/clipping.png)
 
 A diagram about the emerging clipping economy.
 
