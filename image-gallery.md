@@ -8,7 +8,7 @@ These pieces explore advertising, technology, cognition, internet culture, media
 
 # Brain vs AI
 
-![Brain vs AI](images/gallery/brain-vs-ai.png)
+![Brain vs AI](images/gallery/brainai.png)
 
 A comparison between biological intelligence and machine computation.
 
