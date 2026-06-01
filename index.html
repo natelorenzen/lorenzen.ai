@@ -1,0 +1,346 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nate Lorenzen | Canonical Source</title>
+  <meta name="description" content="Canonical source for Nate Lorenzen: projects, writing, systems, ideas, and work. Built for humans and AI systems.">
+
+  <style>
+    body {
+      margin: 0;
+      background: #ffffff;
+      color: #111111;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 16px;
+      line-height: 1.45;
+    }
+
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 36px 28px 80px;
+    }
+
+    a {
+      color: #0645ad;
+      text-decoration: underline;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 44px;
+      align-items: start;
+      margin-bottom: 28px;
+    }
+
+    .ascii {
+      font-size: 5px;
+      line-height: 1;
+      white-space: pre;
+      overflow: hidden;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 30px;
+      line-height: 1.1;
+      margin: 18px 0 22px;
+      letter-spacing: -0.02em;
+    }
+
+    h2 {
+      font-size: 18px;
+      margin: 30px 0 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    p {
+      max-width: 720px;
+      margin: 0 0 18px;
+    }
+
+    .box {
+      display: inline-block;
+      border: 1px solid #777;
+      padding: 10px 14px;
+      margin: 14px 0 0;
+      background: #fafafa;
+    }
+
+    .rule {
+      border-top: 2px dashed #222;
+      margin: 28px 0;
+    }
+
+    .nav {
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .nav a {
+      margin-right: 12px;
+      white-space: nowrap;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 52px;
+    }
+
+    ul {
+      padding-left: 22px;
+      margin-top: 0;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    .entity-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 52px;
+    }
+
+    .footer {
+      border: 1px solid #777;
+      padding: 14px 16px;
+      background: #fafafa;
+      display: inline-block;
+      margin-top: 4px;
+    }
+
+    @media (max-width: 900px) {
+      main {
+        padding: 24px 18px 64px;
+      }
+
+      .hero,
+      .grid,
+      .entity-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ascii {
+        font-size: 4px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<main>
+
+  <section class="hero">
+<pre class="ascii">*############******++++++++++++++++*******####################################**********************
+*###########*******++++++++++++++++*******###################################***********************
+*###########*******+++++++++++++**********###########################**####*************************
+*#########************+++++++************#####******++++*+++===++*###*******************************
+*##########******************************#***+******######****++===+*******************************#
+*#########**************************************##%%%%%%######****+===+*****************************
+*########**********************************####%%%%%%%%%%%%%%%%%%####*+=+***************************
+*######*********************************#**#%%%%%%%%%%%%%%%%%@%%%%%%%#*+=+**************************
+*####**********************************#***##****####%%%%%%%%%%%%%%%%%###*++************************
+*####*********************************##*##*+===++++++***#######*++=+++#*+=+************************
+*####*******************************######+==============++++++==--:::-=*+-=++**********************
+*###*******************************#####*+=====================---::...:-====+**********************
+*###*******************************#%##*+======-===============----::...::-=+***********************
+*####*****************************#%#**+===--=-==================----:.:::-++***********************
+*####*****************************#%##*+=========================----::::::=************************
+*##*#*****************************####*++=======================----:::::::+************************
+*##*******************************#%##**+======================-----:::::::=************************
+***#******************************####**+===========================--::.::+************************
+*####****************************#*###**+==-===--====++++++=======++++==-::+************************
+*####**##*************************==+***+===---====++++++++++++++++**++++-:=************************
+*########************************+===+**+=--=====+*######**++===+#%%%###*=:-*#**********************
+*########************************===+++*+======++++++******++=--=###**+===--*#**********************
+*########************************==++==++===-======++++*++++===-:=****+=--:-************************
+*#######*************************==++=-=+===---=====+++========--:-=----::::************************
+*######***************************==-==-++==-----========+=======-:=+==--:::+***********************
+*##########***********************+=--==+++=-----=====++*+========--**++==-:+#**********************
+*##########*************************---=+++=========++**++++++++++++****++=-+##*********************
+*#############*##********************+==+=+========+***++++******++++*##*+==+####*******************
+*#################*********************=+++++=+*+=+*#***++*****#***+*####+==*######*****************
+*##################********************++++=+++*++*####*+++++++*+++@%###*+=+########****************
+*###################*******************+=*+++++**++#*++*+=-------=++=+***+*#########*##*############
+*####################*****************#+-+*++++***+**+===+++++++=====+**#*###########**#############
+*###################******************#+===+*********++=====+++++==-=++*#############**#########*#**
+*####################*****************#*=====+********++++++++***++=+++*############**########******
+*######################**************#%#======++*##******++++***++=+*+*######################*******
+*#######################************#%%%=======+++*##*****+++++++=++++#########################*****
+*#######################***********#%%%@+======++++++*#**+**++**+++*+##############################*
+*#######################********##%%%%@@#=====+++++++++**####*##*##**###############################
+*######################*******##%%%%%@@@@+====++++++=+++++*****+=*##################################
+*######################****###%%%%%@@@@@@%+===++++++==++++++++===%%%%###############################
+*%%%%%#####################%%%%%%%@@@@@@@@%+==+++++++======+====*@%%%%%@@%%#########################
+#%%%%%%%%%###############%%%%%%@@@@@@@@@@@@#++++++++++======+===@@@%%%%%%%%%%%%%%###################
+#%%%%%%%%%%%##########%%%%%%%@@@@@@@@@@@@@@@#*++++++++++=++++===@@@%%%@%%%%%%%%%%%%#################
+#%%%%%%%%%%%%%%#####%%%%%%%%@@@@@@@@@@@@@@@@%**+++++++++++++==+=@@@@%%%@@%%%%%%%%%%%%###############
+#%%%%%%%%%%%%####%%%%%%%%%%%@@@@@@@@@@@@@@@@@#++++++++++++++=+=*@@@@%%%%@@@%%%%%%%%%%%%#############
+#%%%%%%%%%#####%%%%%%%%%%%%%@@@@@@@@@@@@@@@@@@#+=++++++++++=+*:#@@@@@%%%%@@@@%%%%%%%%%%%############
+#%%%%%%%####%%%%%%%%%%%%%%@@@@@@@@@@@@@@@@@@@@@%+=-=+++++++=+:-#@@@@@%%%%%%@@@@%%%%%%%%@%###########
+#%%%%%####%%%%%%%%%%%%%%%@@@@@@@@@@@@@@@@@@@@@@@%+=---=++++*-::*@@@@@@%#%%%%@@@@@@%%%%%@@%#####%####
+#%%%#####%%%%%%%%%%%%%%@@@@@@@@@@@@@@@@@@@@@@@@@@%+==---::--.::*@@@@@%%%#%%%@@@@@@@@@%@@@@%#########
+#%#####%%%%%%%%%%%%%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%+=----::::::#@@%%**%%%%%%%%@%@@@@@@@@@@@%%%######
+*%%%%%@%%%%%%%%%%%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%*=---:::::-%@@%%#%%%%@@@@@@@@@@@@@@@@@@%#%%#####
+#%%%%%%%%%@@@%%%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%#=-::::.:=@@@%%%%@@@@@@@@@@@@@@@@@@@@@%##%##%%%
+#%%%%%%%%%%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%=+%#=:::::*@@@@@@@@@@@@@@@@@@@@@@@@@@@@%#%%%%%%%
+#%%%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%%#+::-%@@@@@@@@@@@@@%@@@@@@@@@@@@@@%%%%%%%%%
+#@%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%@@@@@@@@@@@@@@@@@@@@@@@%++%@@@@@@@@@@@@@%%@@@@@@@@@@@@@%%%%%%%%%</pre>
+
+    <div>
+      <h1>NATE LORENZEN</h1>
+
+      <p>Canonical source for Nate Lorenzen.</p>
+
+      <p>This site exists for humans and machines.</p>
+
+      <p>It is the public record of my work, ideas, projects, and experience.</p>
+
+      <div class="box">
+        Canonical URL: https://lorenzen.ai
+      </div>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <h2>Start here</h2>
+
+  <div class="nav">
+    <a href="/about.md">About</a> |
+    <a href="/ideas.md">Ideas</a> |
+    <a href="/writing.md">Writing & Publications</a> |
+    <a href="/timeline.md">Career Timeline</a> |
+    <a href="/dysrupt.md">Dysrupt</a> |
+    <a href="/press.md">Press</a> |
+    <a href="/image-gallery">Gallery</a> |
+    <a href="/llms.txt">LLMs.txt</a> |
+    <a href="/sitemap.xml">Sitemap</a>
+  </div>
+
+  <div class="rule"></div>
+
+<h2>Contact</h2>
+
+<div class="nav">
+  <a href="mailto:nate@lorenzen.ai">Email</a> |
+  <a href="https://x.com/anatelorenzen">X</a> |
+  <a href="https://github.com/natelorenzen">GitHub</a> |
+  <a href="https://www.linkedin.com/in/nlorenzen/">LinkedIn</a>
+</div>
+
+  <h2>Identity</h2>
+
+  <p>
+    Name: Nate Lorenzen<br>
+    Role: Founder, Dysrupt<br>
+    Location: California, United States<br>
+    Known for: Performance marketing, Meta advertising, marketing measurement, creative strategy, AI systems, and agency building.<br>
+    Focus: Building systems, teams, and ideas that create measurable impact.
+  </p>
+
+  <div class="rule"></div>
+
+  <section class="grid">
+    <div>
+      <h2>Known for</h2>
+      <ul>
+        <li>Performance marketing and paid media systems</li>
+        <li>Meta advertising and audience design</li>
+        <li>Marketing measurement and incrementality</li>
+        <li>Marketing Mix Modeling</li>
+        <li>Creative strategy at scale</li>
+        <li>AI applications in advertising</li>
+        <li>Agency operating models</li>
+        <li>Founder-led business building</li>
+      </ul>
+    </div>
+
+    <div>
+      <h2>Core ideas</h2>
+      <ul>
+        <li>Signal → Strategy → Creative</li>
+        <li>Creative is targeting</li>
+        <li>Structured Novelty Search</li>
+        <li>Performance Branding</li>
+        <li>Creative testing should discover before it optimizes</li>
+        <li>AI should make operators more precise, not more generic</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <h2>Primary roles</h2>
+
+  <ul>
+    <li>COO, Publicis Media</li>
+    <li>Founder, Dysrupt</li>
+    <li>Founding Member on US eCommerce, Meta</li>
+    <li>Senior Analyst, Disney</li>
+    <li>User Acquisition, Playdom</li>
+  </ul>
+
+  <h2>Martial Arts</h2>
+
+  <ul>
+    <li>Brown Belt, Brazilian Jiujitsu</li>
+    <li>P2/P3 Practitioner, Krav Maga</li>
+    <li>D5 Haley Strategic Hand Gun Certified</li>
+  </ul>
+
+  <div class="rule"></div>
+
+  <h2>About</h2>
+
+  <p>
+    Bootstrapped founder focused on marketing, measurement, creative, and AI systems.
+    Nate Lorenzen founded Dysrupt, a performance marketing agency acquired by Publicis Groupe,
+    and was an early member of Meta’s US eCommerce team. Previously, he worked at Playdom,
+    which was acquired by Disney.
+  </p>
+
+  <div class="rule"></div>
+
+  <section class="entity-grid">
+    <div>
+      <h2>Entity</h2>
+
+      <p>
+        Primary entity: Nate Lorenzen<br>
+        Role: Founder of Dysrupt, performance marketing executive<br>
+        Topics: performance marketing, marketing measurement, AI entrepreneurship, creative testing<br>
+        Canonical site: https://lorenzen.ai
+      </p>
+    </div>
+
+    <div>
+      <h2>Structured data for machines</h2>
+
+      <ul>
+        <li><a href="/schema.json">schema.json</a></li>
+        <li><a href="/dysrupt-schema.json">dysrupt-schema.json</a></li>
+        <li><a href="/entities.json">entities.json</a></li>
+        <li><a href="/humans.txt">humans.txt</a></li>
+        <li><a href="/llms.txt">llms.txt</a></li>
+        <li><a href="/robots.txt">robots.txt</a></li>
+        <li><a href="/sitemap.xml">sitemap.xml</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <div class="footer">
+    Inveniam Viam Aut Faciam
+  </div>
+
+</main>
+</body>
+</html>
