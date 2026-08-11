@@ -28,6 +28,10 @@ This page lists published articles and notable writing by Nate Lorenzen.
 - [**What’s going wrong with market research?** (Nov 12, 2025)  
   Performance Marketing World](https://www.performancemarketingworld.com/article/1939450/whats-going-wrong-market-research)
 
+## Mastering Facebook Advertising
+- [**Mastering Facebook Advertising** (July 2014)](/images/gallery/MasteringFacebookAdvertising.pdf)  
+  This book is out of date but contains interesting core foundations.
+
 ## Articles on X
  - **The Cambrian Explosion of Entrepreneurship**
    [LINK](https://x.com/anatelorenzen/status/2026449791438512597)
