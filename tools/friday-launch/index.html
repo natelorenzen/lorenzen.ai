@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Should you launch on a Friday? The international consensus is clear.">
+  <meta name="theme-color" content="#f4efe6">
+  <meta property="og:title" content="Should I launch on a Friday?">
+  <meta property="og:description" content="An international consensus.">
+  <title>Should I Launch on a Friday?</title>
+  <style>
+    :root{--paper:#f4efe6;--ink:#171411;--muted:#756d63;--red:#a12b22;--line:rgba(23,20,17,.16)}
+    *{box-sizing:border-box}html,body{height:100%}body{margin:0;background:radial-gradient(circle at 50% 45%,#fffdf8 0,var(--paper) 68%);color:var(--ink);font-family:"Iowan Old Style",Baskerville,"Times New Roman",serif;overflow:hidden}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.19;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.12'/%3E%3C/svg%3E")}
+    .top{position:fixed;z-index:3;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:22px clamp(18px,4vw,52px)}.mark{font:700 11px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}.all-tools{font:700 12px/1 ui-sans-serif,system-ui,sans-serif;color:var(--ink);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:10px 14px;background:rgba(255,253,248,.58);backdrop-filter:blur(8px)}.all-tools:hover{background:#fffdf8}
+    main{position:relative;z-index:1;height:100%;display:grid;place-items:center;padding:90px 24px 80px;text-align:center}.content{width:min(1050px,100%)}.language{font:700 11px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:clamp(22px,4vh,42px)}
+    .question{min-height:2.25em;display:flex;align-items:center;justify-content:center;font-size:clamp(42px,7vw,96px);font-weight:400;line-height:1.04;letter-spacing:-.045em;text-wrap:balance;margin:0}.answer{font-size:clamp(90px,19vw,250px);font-style:italic;font-weight:500;line-height:.8;letter-spacing:-.07em;color:var(--red);margin:clamp(28px,5vh,60px) 0 0}.consensus{font:650 11px/1.3 ui-sans-serif,system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:clamp(30px,6vh,64px)}
+    .changing{opacity:0;transform:translateY(7px);filter:blur(3px)}.language,.question,.answer{transition:opacity .34s ease,transform .34s ease,filter .34s ease}.answer{transition-delay:.045s}
+    .bottom{position:fixed;z-index:2;bottom:20px;left:0;right:0;text-align:center;font:500 11px/1.3 ui-sans-serif,system-ui,sans-serif;color:var(--muted)}button{appearance:none;border:0;background:transparent;color:inherit;font:inherit;cursor:pointer;padding:5px 8px}button:hover{color:var(--ink)}
+    [dir="rtl"] .question,[dir="rtl"] .answer{letter-spacing:0}.script-arabic{font-family:"Geeza Pro","Noto Naskh Arabic","Traditional Arabic",serif}.script-hebrew{font-family:"New Peninim MT","Noto Serif Hebrew",serif}.script-cjk{font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif CJK JP",serif;letter-spacing:-.025em}.script-devanagari{font-family:"Kohinoor Devanagari","Noto Serif Devanagari",serif;letter-spacing:-.02em}.script-thai{font-family:"Thonburi","Noto Serif Thai",serif;letter-spacing:0}
+    @media(max-width:600px){.top{padding:17px}.question{font-size:clamp(35px,11vw,56px)}.answer{font-size:clamp(92px,30vw,150px)}.mark{max-width:130px;line-height:1.25}.bottom{bottom:12px}}
+    @media(prefers-reduced-motion:reduce){.language,.question,.answer{transition:none}.changing{transform:none;filter:none}}
+  </style>
+</head>
+<body>
+  <header class="top"><div class="mark">Lorenzen Tools</div><a class="all-tools" href="/tools/">← All tools</a></header>
+  <main id="stage" tabindex="0" aria-label="Click to show another translation">
+    <div class="content">
+      <div id="language" class="language">English</div>
+      <h1 id="question" class="question">Should I launch on a Friday?</h1>
+      <div id="answer" class="answer">No.</div>
+      <div class="consensus">An international consensus</div>
+    </div>
+  </main>
+  <div class="bottom"><button id="next" type="button" aria-label="Show another language">Click anywhere for another language</button></div>
+  <script>
+  (()=>{
+    'use strict';
+    const translations=[
+      {language:'English',question:'Should I launch on a Friday?',answer:'No.'},
+      {language:'Español',question:'¿Debería lanzar un viernes?',answer:'No.'},
+      {language:'Français',question:'Devrais-je lancer un vendredi ?',answer:'Non.'},
+      {language:'Deutsch',question:'Sollte ich an einem Freitag starten?',answer:'Nein.'},
+      {language:'Italiano',question:'Dovrei lanciare di venerdì?',answer:'No.'},
+      {language:'Português',question:'Devo lançar numa sexta-feira?',answer:'Não.'},
+      {language:'Nederlands',question:'Moet ik op vrijdag lanceren?',answer:'Nee.'},
+      {language:'Svenska',question:'Borde jag lansera på en fredag?',answer:'Nej.'},
+      {language:'Dansk',question:'Skal jeg lancere på en fredag?',answer:'Nej.'},
+      {language:'Norsk',question:'Bør jeg lansere på en fredag?',answer:'Nei.'},
+      {language:'Suomi',question:'Pitäisikö minun julkaista perjantaina?',answer:'Ei.'},
+      {language:'Polski',question:'Czy powinienem uruchomić to w piątek?',answer:'Nie.'},
+      {language:'Čeština',question:'Mám to spustit v pátek?',answer:'Ne.'},
+      {language:'Türkçe',question:'Cuma günü yayına almalı mıyım?',answer:'Hayır.'},
+      {language:'Русский',question:'Стоит ли запускать это в пятницу?',answer:'Нет.'},
+      {language:'Ελληνικά',question:'Πρέπει να το λανσάρω Παρασκευή;',answer:'Όχι.'},
+      {language:'العربية',question:'هل ينبغي أن أطلقه يوم الجمعة؟',answer:'لا.',dir:'rtl',font:'script-arabic'},
+      {language:'עברית',question:'האם כדאי לי להשיק ביום שישי?',answer:'לא.',dir:'rtl',font:'script-hebrew'},
+      {language:'हिन्दी',question:'क्या मुझे शुक्रवार को लॉन्च करना चाहिए?',answer:'नहीं।',font:'script-devanagari'},
+      {language:'日本語',question:'金曜日にローンチすべきですか？',answer:'いいえ。',font:'script-cjk'},
+      {language:'한국어',question:'금요일에 출시해야 할까요?',answer:'아니요.',font:'script-cjk'},
+      {language:'简体中文',question:'我应该在周五发布吗？',answer:'不。',font:'script-cjk'},
+      {language:'Bahasa Indonesia',question:'Haruskah saya meluncurkannya pada hari Jumat?',answer:'Tidak.'},
+      {language:'Tiếng Việt',question:'Tôi có nên ra mắt vào thứ Sáu không?',answer:'Không.'},
+      {language:'ไทย',question:'ฉันควรเปิดตัวในวันศุกร์ไหม?',answer:'ไม่',font:'script-thai'},
+      {language:'Latine',question:'Num die Veneris rem emittere debeo?',answer:'Minime.'}
+    ];
+    const language=document.getElementById('language'),question=document.getElementById('question'),answer=document.getElementById('answer'),stage=document.getElementById('stage');let index=0,timer,locked=false;
+    function show(nextIndex){if(locked)return;locked=true;[language,question,answer].forEach(el=>el.classList.add('changing'));setTimeout(()=>{index=(nextIndex+translations.length)%translations.length;const t=translations[index];language.textContent=t.language;question.textContent=t.question;answer.textContent=t.answer;question.dir=t.dir||'ltr';answer.dir=t.dir||'ltr';question.className='question '+(t.font||'')+' changing';answer.className='answer '+(t.font||'')+' changing';requestAnimationFrame(()=>requestAnimationFrame(()=>{[language,question,answer].forEach(el=>el.classList.remove('changing'));locked=false}))},350)}
+    function advance(){clearInterval(timer);show(index+1);start()}
+    function start(){timer=setInterval(()=>show(index+1),2800)}
+    stage.addEventListener('click',advance);document.getElementById('next').addEventListener('click',advance);document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();advance()}});document.addEventListener('visibilitychange',()=>{clearInterval(timer);if(!document.hidden)start()});start();
+  })();
+  </script>
+</body>
+</html>
