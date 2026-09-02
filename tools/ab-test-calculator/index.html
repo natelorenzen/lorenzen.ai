@@ -1,1 +1,125 @@
 
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A fast, private A/B test calculator for advertising metrics.">
+  <meta name="theme-color" content="#101828">
+  <title>Ad Test Calculator | Nate Lorenzen</title>
+  <style>
+    :root{--bg:#f6f7fb;--card:#fff;--ink:#101828;--muted:#667085;--line:#e4e7ec;--blue:#2563eb;--blue2:#dbeafe;--green:#087a55;--green2:#d9fbe8;--amber:#a15c00;--amber2:#fff1cc;--red:#b42318;--red2:#fee4e2;--shadow:0 12px 35px rgba(16,24,40,.07)}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    button,input,select{font:inherit} button{cursor:pointer}.wrap{width:min(1160px,calc(100% - 32px));margin:auto}
+    header{padding:38px 0 22px}.brand{display:flex;justify-content:space-between;align-items:center;gap:20px}.eyebrow{color:var(--blue);font-size:12px;font-weight:800;letter-spacing:.11em;text-transform:uppercase}
+    h1{font-size:clamp(30px,4vw,48px);line-height:1.05;letter-spacing:-.04em;margin:7px 0 10px}.intro{max-width:680px;color:var(--muted);font-size:17px;margin:0}
+    .privacy{color:var(--muted);font-size:13px}.grid{display:grid;grid-template-columns:minmax(320px,.83fr) minmax(420px,1.17fr);gap:20px;align-items:start;padding-bottom:50px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}.pad{padding:22px}.card h2{font-size:18px;margin:0 0 17px;letter-spacing:-.02em}
+    label{display:block;color:#344054;font-size:13px;font-weight:700;margin-bottom:6px}.field{margin-bottom:15px}input,select{width:100%;height:44px;border:1px solid #d0d5dd;border-radius:10px;background:#fff;color:var(--ink);padding:0 12px;outline:none}
+    input:focus,select:focus{border-color:#84adff;box-shadow:0 0 0 3px #eff4ff}.variants{display:grid;grid-template-columns:1fr 1fr;gap:12px}.variant{border:1px solid var(--line);border-radius:14px;padding:15px}.variant h3{font-size:14px;margin:0 0 14px}.variant small{color:var(--muted)}
+    .actions{display:flex;gap:10px;margin-top:8px}.btn{border:0;border-radius:10px;padding:11px 14px;font-weight:750}.primary{background:var(--blue);color:#fff;flex:1}.secondary{background:#f2f4f7;color:#344054}.helper{font-size:12px;color:var(--muted);margin:-7px 0 15px}
+    .error{display:none;color:var(--red);background:var(--red2);border-radius:10px;padding:10px 12px;margin:10px 0}.result{overflow:hidden}.hero{padding:23px;border-bottom:1px solid var(--line);background:linear-gradient(135deg,#fff,#f4f7ff)}
+    .status{display:inline-flex;align-items:center;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:800}.strong{color:var(--green);background:var(--green2)}.promising{color:var(--blue);background:var(--blue2)}.inconclusive{color:var(--amber);background:var(--amber2)}.worse{color:var(--red);background:var(--red2)}
+    .headline{font-size:clamp(25px,3vw,38px);line-height:1.12;letter-spacing:-.035em;margin:14px 0 7px}.subhead{color:var(--muted);margin:0}.stats{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line)}.stat{padding:17px;border-right:1px solid var(--line)}.stat:last-child{border:0}.stat span{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.06em;font-weight:700}.stat strong{display:block;margin-top:4px;font-size:18px}
+    .charts{padding:20px}.chartbox{border:1px solid var(--line);border-radius:14px;padding:15px;margin-bottom:13px}.charthead{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:10px}.charthead h3{font-size:14px;margin:0}.charthead small{color:var(--muted)}svg{display:block;width:100%;height:auto;overflow:visible}.axis{stroke:#d0d5dd;stroke-width:1}.zero{stroke:#98a2b3;stroke-dasharray:4 4}.a-line{stroke:#667085;fill:none;stroke-width:2.4}.b-line{stroke:var(--blue);fill:none;stroke-width:2.4}.ci{stroke:var(--blue);stroke-width:8;stroke-linecap:round}.estimate{fill:var(--blue)}
+    .decision{border-radius:12px;background:#f8fafc;padding:14px 15px;margin-top:6px}.decision strong{display:block;margin-bottom:3px}.warnings{padding:0 20px 20px}.warning{display:flex;gap:9px;color:#7a2e0e;background:#fffaeb;border:1px solid #fedf89;border-radius:11px;padding:10px 12px;margin-top:8px;font-size:13px}
+    details{border-top:1px solid var(--line);padding:16px 22px}summary{cursor:pointer;font-weight:750}details p,details li{color:var(--muted);font-size:13px}.empty{padding:70px 30px;text-align:center;color:var(--muted)}footer{padding:5px 0 35px;color:var(--muted);font-size:12px;text-align:center}
+    @media(max-width:850px){.grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+    @media(max-width:520px){.wrap{width:min(100% - 20px,1160px)}header{padding-top:24px}.variants{grid-template-columns:1fr}.privacy{display:none}.pad,.hero{padding:18px}.stats{grid-template-columns:1fr 1fr}.stat strong{font-size:16px}.actions{flex-wrap:wrap}.secondary{flex:1}}
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <div class="brand"><div><div class="eyebrow">Lorenzen Tools</div><h1>Ad Test Calculator</h1><p class="intro">Estimate whether an advertising test produced a real, meaningful difference and what to do next.</p></div><div class="privacy">Runs privately in your browser</div></div>
+  </header>
+  <main class="wrap grid">
+    <section class="card pad" aria-labelledby="inputs-title">
+      <h2 id="inputs-title">Experiment inputs</h2>
+      <div class="field"><label for="metric">Metric</label><select id="metric">
+        <option value="ctr">Click-through rate (CTR)</option><option value="cvr">Conversion rate (CVR)</option><option value="rate">Custom success rate</option>
+        <option value="cpa">Cost per acquisition (CPA)</option><option value="cpc">Cost per click (CPC)</option><option value="cpm">Cost per 1,000 impressions (CPM)</option>
+        <option value="roas">Return on ad spend (ROAS)</option><option value="aov">Average order value (AOV)</option><option value="rpv">Revenue per visitor</option><option value="continuous">Custom average</option>
+      </select></div>
+      <p id="metric-help" class="helper"></p>
+      <div id="dynamic-inputs" class="variants"></div>
+      <div class="field" style="margin-top:15px"><label for="threshold">Minimum worthwhile improvement (%)</label><input id="threshold" type="number" min="0" step="0.1" value="5"></div>
+      <div id="error" class="error" role="alert"></div>
+      <div class="actions"><button id="calculate" class="btn primary">Calculate result</button><button id="share" class="btn secondary">Copy link</button><button id="reset" class="btn secondary">Reset</button></div>
+    </section>
+    <section id="results" class="card result" aria-live="polite"><div class="empty"><strong>Enter your test results</strong><br>Results and charts will appear here.</div></section>
+  </main>
+  <footer class="wrap">Statistical estimates support decisions. They do not correct flawed randomization, attribution, or experiment design.</footer>
+<script>
+(() => {
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const metric = $('metric'), inputs = $('dynamic-inputs'), results = $('results'), error = $('error');
+  const configs = {
+    ctr:{type:'binary',unit:'clicks',base:'impressions',label:'CTR',help:'Enter impressions and clicks for each variant. Higher is better.'},
+    cvr:{type:'binary',unit:'conversions',base:'visitors or clicks',label:'CVR',help:'Use the randomized population as the denominator. Higher is better.'},
+    rate:{type:'binary',unit:'successes',base:'observations',label:'success rate',help:'Enter observations and successful outcomes. Higher is better.'},
+    cpa:{type:'count',unit:'acquisitions',base:'spend',label:'CPA',help:'Compares acquisitions per dollar with spend treated as fixed. Lower CPA is better.',scale:1,prefix:'$'},
+    cpc:{type:'count',unit:'clicks',base:'spend',label:'CPC',help:'Compares clicks per dollar with spend treated as fixed. Lower CPC is better.',scale:1,prefix:'$'},
+    cpm:{type:'count',unit:'impressions',base:'spend',label:'CPM',help:'Compares impressions per dollar with spend treated as fixed. Lower CPM is better.',scale:1000,prefix:'$'},
+    roas:{type:'continuous',label:'ROAS',help:'Enter observation-level mean and standard deviation of revenue, plus average ad cost per observation. Higher is better.',roas:true},
+    aov:{type:'continuous',label:'AOV',help:'Enter order count, average order value, and its standard deviation. Higher is better.',prefix:'$'},
+    rpv:{type:'continuous',label:'revenue per visitor',help:'Enter visitor count, average revenue per visitor, and its standard deviation. Higher is better.',prefix:'$'},
+    continuous:{type:'continuous',label:'average',help:'Enter sample size, mean, and standard deviation. Higher is better.'}
+  };
+  const defaults={ctr:[100000,1800,100000,1980],cvr:[20000,800,20000,872],rate:[5000,500,5000,550],cpa:[10000,100,10000,112],cpc:[5000,2500,5000,2700],cpm:[5000,1000000,5000,1080000],roas:[10000,2.5,8,1,10000,2.75,8,1],aov:[500,82,40,500,87,42],rpv:[10000,4.1,22,10000,4.5,23],continuous:[1000,12,4,1000,12.6,4.2]};
+  function field(id,label,value,step='1'){return `<div class="field"><label for="${id}">${label}</label><input id="${id}" type="number" min="0" step="${step}" value="${value}"></div>`}
+  function renderInputs(){const c=configs[metric.value],d=defaults[metric.value];$('metric-help').textContent=c.help;let a='',b='';
+    if(c.type==='binary'){a=field('a_n',capitalize(c.base),d[0])+field('a_x',capitalize(c.unit),d[1]);b=field('b_n',capitalize(c.base),d[2])+field('b_x',capitalize(c.unit),d[3]);}
+    if(c.type==='count'){a=field('a_spend','Spend',d[0],'.01')+field('a_x',capitalize(c.unit),d[1]);b=field('b_spend','Spend',d[2],'.01')+field('b_x',capitalize(c.unit),d[3]);}
+    if(c.type==='continuous'){a=field('a_n',c.roas?'Observations':'Sample size',d[0])+field('a_mean',c.roas?'Mean revenue':'Mean',d[1],'.01')+field('a_sd',c.roas?'Revenue standard deviation':'Standard deviation',d[2],'.01')+(c.roas?field('a_cost','Mean ad cost',d[3],'.01'):'');b=field('b_n',c.roas?'Observations':'Sample size',d[4])+field('b_mean',c.roas?'Mean revenue':'Mean',d[5],'.01')+field('b_sd',c.roas?'Revenue standard deviation':'Standard deviation',d[6],'.01')+(c.roas?field('b_cost','Mean ad cost',d[7],'.01'):'');}
+    inputs.innerHTML=`<div class="variant"><h3>Control A</h3>${a}</div><div class="variant"><h3>Challenger B</h3>${b}</div>`;loadQuery();calculate();}
+  const val=id=>Number($(id)?.value); const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
+  function erf(x){const s=x<0?-1:1;x=Math.abs(x);const t=1/(1+.3275911*x);const y=1-(((((1.061405429*t-1.453152027)*t+1.421413741)*t-.284496736)*t+.254829592)*t)*Math.exp(-x*x);return s*y}
+  const normCDF=x=>.5*(1+erf(x/Math.SQRT2));
+  function invNorm(p){if(p<=0||p>=1)return p===0?-Infinity:p===1?Infinity:NaN;const a=[-39.6968302866538,220.946098424521,-275.928510446969,138.357751867269,-30.6647980661472,2.50662827745924],b=[-54.4760987982241,161.585836858041,-155.698979859887,66.8013118877197,-13.2806815528857],c=[-.00778489400243029,-.322396458041136,-2.40075827716184,-2.54973253934373,4.37466414146497,2.93816398269878],d=[.00778469570904146,.32246712907004,2.44513413714299,3.75440866190742];let q,r;if(p<.02425){q=Math.sqrt(-2*Math.log(p));return (((((c[0]*q+c[1])*q+c[2])*q+c[3])*q+c[4])*q+c[5])/((((d[0]*q+d[1])*q+d[2])*q+d[3])*q+1)}if(p>.97575){q=Math.sqrt(-2*Math.log(1-p));return -(((((c[0]*q+c[1])*q+c[2])*q+c[3])*q+c[4])*q+c[5])/((((d[0]*q+d[1])*q+d[2])*q+d[3])*q+1)}q=p-.5;r=q*q;return (((((a[0]*r+a[1])*r+a[2])*r+a[3])*r+a[4])*r+a[5])*q/(((((b[0]*r+b[1])*r+b[2])*r+b[3])*r+b[4])*r+1)}
+  function analyze(){const c=configs[metric.value];let A,B,seDiff,z,p,prob,ciLo,ciHi,lift,seLift,df=null,approx=false;
+    if(c.type==='binary'){
+      const an=val('a_n'),ax=val('a_x'),bn=val('b_n'),bx=val('b_x'); if(!an||!bn||ax<0||bx<0||ax>an||bx>bn)throw Error('Successes must be between zero and the sample size.');
+      A=ax/an;B=bx/bn;seDiff=Math.sqrt(A*(1-A)/an+B*(1-B)/bn);z=(B-A)/(seDiff||1e-12);p=2*(1-normCDF(Math.abs(z)));
+      const am=(ax+1)/(an+2),bm=(bx+1)/(bn+2),av=(ax+1)*(an-ax+1)/((an+2)**2*(an+3)),bv=(bx+1)*(bn-bx+1)/((bn+2)**2*(bn+3));prob=normCDF((bm-am)/Math.sqrt(av+bv));ciLo=(B-A)-1.96*seDiff;ciHi=(B-A)+1.96*seDiff;lift=(B/A)-1;seLift=seDiff/A;
+      return {c,A,B,seA:Math.sqrt(A*(1-A)/an),seB:Math.sqrt(B*(1-B)/bn),diff:B-A,seDiff,z,p,prob,ciLo,ciHi,lift,seLift,nA:an,nB:bn,xA:ax,xB:bx,approx};
+    }
+    if(c.type==='count'){
+      const as=val('a_spend'),ax=val('a_x'),bs=val('b_spend'),bx=val('b_x');if(!as||!bs||ax<=0||bx<=0)throw Error('Spend and result counts must be greater than zero.');
+      A=c.scale*as/ax;B=c.scale*bs/bx;const logLift=Math.log(A/B),seLog=Math.sqrt(1/ax+1/bx);z=logLift/seLog;p=2*(1-normCDF(Math.abs(z)));prob=normCDF(z);lift=A/B-1;ciLo=Math.exp(logLift-1.96*seLog)-1;ciHi=Math.exp(logLift+1.96*seLog)-1;approx=true;
+      return {c,A,B,seA:A/Math.sqrt(ax),seB:B/Math.sqrt(bx),diff:lift,seDiff:seLog,z,p,prob,ciLo,ciHi,lift,seLift:seLog,nA:ax,nB:bx,xA:ax,xB:bx,ratioCI:true,approx};
+    }
+    const an=val('a_n'),am=val('a_mean'),asd=val('a_sd'),bn=val('b_n'),bm=val('b_mean'),bsd=val('b_sd');if(an<2||bn<2||asd<0||bsd<0)throw Error('Each sample needs at least two observations and a nonnegative standard deviation.');
+    A=c.roas?am/val('a_cost'):am;B=c.roas?bm/val('b_cost'):bm;if(c.roas&&(!val('a_cost')||!val('b_cost')))throw Error('Mean ad cost must be greater than zero.');
+    const ase=(c.roas?asd/val('a_cost'):asd)/Math.sqrt(an),bse=(c.roas?bsd/val('b_cost'):bsd)/Math.sqrt(bn);seDiff=Math.sqrt(ase*ase+bse*bse);z=(B-A)/(seDiff||1e-12);p=2*(1-normCDF(Math.abs(z)));prob=normCDF(z);ciLo=B-A-1.96*seDiff;ciHi=B-A+1.96*seDiff;lift=B/A-1;seLift=seDiff/Math.abs(A);df=(ase*ase+bse*bse)**2/((ase**4)/(an-1)+(bse**4)/(bn-1));approx=c.roas;
+    return {c,A,B,seA:ase,seB:bse,diff:B-A,seDiff,z,p,prob,ciLo,ciHi,lift,seLift,nA:an,nB:bn,df,approx};
+  }
+  function calculate(){error.style.display='none';try{const r=analyze();render(r);updateQuery()}catch(e){error.textContent=e.message;error.style.display='block'}}
+  function fmtValue(x,c){if(!Number.isFinite(x))return '—';if(c.type==='binary')return pct(x,2);if(c.prefix)return '$'+number(x);return number(x)}
+  function number(x){const a=Math.abs(x);return x.toLocaleString(undefined,{maximumFractionDigits:a<10?3:a<100?2:1})} function pct(x,d=1){return (100*x).toFixed(d)+'%'}
+  function statusFor(prob){if(prob>=.95)return['Strong evidence','strong'];if(prob>=.8)return['Promising','promising'];if(prob<=.05)return['Likely worse','worse'];return['Inconclusive','inconclusive']}
+  function render(r){const [status,cls]=statusFor(r.prob),winner=r.prob>=.5?'B':'A',winProb=Math.max(r.prob,1-r.prob),better=r.B>=r.A?'higher':'lower';const threshold=val('threshold')/100;
+    const probThreshold=normCDF((r.lift-threshold)/(r.seLift||1e-12));let next='Keep testing until the result clears your evidence and business thresholds.';if(r.prob>=.95&&r.lift>=threshold)next='B clears both the evidence threshold and your minimum worthwhile improvement.';else if(r.prob<=.05)next='Stop or revise B. The evidence indicates that it underperforms A.';else if(r.prob>=.95)next='The difference is credible, but the estimated lift is below your business threshold.';
+    let warnings=[];if(Math.min(r.nA,r.nB)<100)warnings.push('Small samples can produce unstable estimates.');if(r.c.type==='binary'&&(r.xA<20||r.xB<20))warnings.push('One variant has fewer than 20 outcomes. Treat the approximation cautiously.');if(Math.max(r.nA,r.nB)/Math.min(r.nA,r.nB)>1.2)warnings.push('Traffic or outcome exposure differs by more than 20%. Check allocation and sample-ratio mismatch.');if(r.approx)warnings.push('This analysis uses an aggregate-data approximation. Observation-level data would support a stronger estimate.');
+    results.innerHTML=`<div class="hero"><span class="status ${cls}">${status}</span><div class="headline">${winner} has a ${pct(winProb,1)} probability of winning</div><p class="subhead">Challenger B is ${pct(Math.abs(r.lift),1)} ${r.lift>=0?'better':'worse'} than A on ${r.c.label}.</p></div>
+      <div class="stats"><div class="stat"><span>Control A</span><strong>${fmtValue(r.A,r.c)}</strong></div><div class="stat"><span>Challenger B</span><strong>${fmtValue(r.B,r.c)}</strong></div><div class="stat"><span>Relative lift</span><strong>${r.lift>=0?'+':''}${pct(r.lift,1)}</strong></div><div class="stat"><span>Two-sided p-value</span><strong>${r.p<.001?'&lt;0.001':r.p.toFixed(3)}</strong></div></div>
+      <div class="charts"><div class="chartbox"><div class="charthead"><h3>Estimated outcomes</h3><small>A in gray, B in blue</small></div>${distributionSVG(r)}</div>
+      <div class="chartbox"><div class="charthead"><h3>Difference and 95% interval</h3><small>Zero means no difference</small></div>${intervalSVG(r)}</div>
+      <div class="chartbox"><div class="charthead"><h3>Business threshold</h3><small>Minimum worthwhile lift: ${pct(threshold,1)}</small></div><div style="font-size:28px;font-weight:800">${pct(probThreshold,1)}</div><div style="color:var(--muted);font-size:13px">probability B exceeds your threshold</div></div>
+      <div class="decision"><strong>Recommended interpretation</strong>${next}</div></div>
+      ${warnings.length?`<div class="warnings">${warnings.map(w=>`<div class="warning"><b>!</b><span>${w}</span></div>`).join('')}</div>`:''}
+      <details><summary>Method and limitations</summary><p>Rate metrics use a beta-binomial posterior with a normal approximation for the displayed win probability and a two-proportion test for the p-value. Continuous metrics use a Welch-style comparison. Cost metrics use a Poisson rate approximation with spend treated as fixed.</p><ul><li>A 95% probability is a decision threshold, not proof.</li><li>Results assume independent, randomized observations and consistent attribution.</li><li>Do not stop a test solely because significance appears during repeated checking.</li><li>Run tests across a complete business cycle when day-of-week effects matter.</li></ul></details>`;
+  }
+  function distributionSVG(r){const w=560,h=150,pad=25,min=Math.min(r.A-3*r.seA,r.B-3*r.seB),max=Math.max(r.A+3*r.seA,r.B+3*r.seB),span=max-min||1,x=v=>pad+(v-min)/span*(w-2*pad);let maxY=0,ap=[],bp=[];for(let i=0;i<=90;i++){const v=min+span*i/90,ay=Math.exp(-.5*((v-r.A)/(r.seA||1e-9))**2)/(r.seA||1e-9),by=Math.exp(-.5*((v-r.B)/(r.seB||1e-9))**2)/(r.seB||1e-9);maxY=Math.max(maxY,ay,by);ap.push([x(v),ay]);bp.push([x(v),by])}const path=a=>a.map((q,i)=>`${i?'L':'M'}${q[0].toFixed(1)},${(h-25-q[1]/maxY*(h-45)).toFixed(1)}`).join(' ');return `<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="Outcome distributions"><line class="axis" x1="${pad}" y1="${h-25}" x2="${w-pad}" y2="${h-25}"/><path class="a-line" d="${path(ap)}"/><path class="b-line" d="${path(bp)}"/><text x="${x(r.A)}" y="${h-7}" text-anchor="middle" font-size="11" fill="#667085">A ${escapeXML(fmtValue(r.A,r.c))}</text><text x="${x(r.B)}" y="14" text-anchor="middle" font-size="11" fill="#2563eb">B ${escapeXML(fmtValue(r.B,r.c))}</text></svg>`}
+  function intervalSVG(r){const ciLo=r.c.type==='binary'?r.ciLo:r.ratioCI?r.ciLo:r.ciLo/Math.abs(r.A),ciHi=r.c.type==='binary'?r.ciHi:r.ratioCI?r.ciHi:r.ciHi/Math.abs(r.A),est=r.c.type==='binary'?r.diff:r.lift,w=560,h=92,pad=35,min=Math.min(ciLo,0)*1.2,max=Math.max(ciHi,0)*1.2;if(min===max){min=-.01;max=.01}const x=v=>pad+(v-min)/(max-min)*(w-2*pad);return `<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="95 percent uncertainty interval"><line class="axis" x1="${pad}" y1="46" x2="${w-pad}" y2="46"/><line class="zero" x1="${x(0)}" y1="15" x2="${x(0)}" y2="69"/><line class="ci" x1="${x(ciLo)}" y1="46" x2="${x(ciHi)}" y2="46"/><circle class="estimate" cx="${x(est)}" cy="46" r="7"/><text x="${x(ciLo)}" y="82" text-anchor="middle" font-size="11" fill="#667085">${pct(ciLo,1)}</text><text x="${x(ciHi)}" y="82" text-anchor="middle" font-size="11" fill="#667085">${pct(ciHi,1)}</text><text x="${x(0)}" y="11" text-anchor="middle" font-size="10" fill="#667085">0%</text></svg>`}
+  function updateQuery(){const p=new URLSearchParams();p.set('metric',metric.value);document.querySelectorAll('#dynamic-inputs input').forEach(el=>p.set(el.id,el.value));p.set('threshold',$('threshold').value);history.replaceState(null,'',location.pathname+'?'+p.toString())}
+  function loadQuery(){const p=new URLSearchParams(location.search);if(p.get('metric')===metric.value)document.querySelectorAll('#dynamic-inputs input').forEach(el=>{if(p.has(el.id))el.value=p.get(el.id)});if(p.has('threshold'))$('threshold').value=p.get('threshold')}
+  function initQuery(){const p=new URLSearchParams(location.search);if(configs[p.get('metric')])metric.value=p.get('metric')}
+  async function share(){updateQuery();try{await navigator.clipboard.writeText(location.href);$('share').textContent='Link copied';setTimeout(()=>$('share').textContent='Copy link',1600)}catch{$('share').textContent='Copy failed'}}
+  function reset(){history.replaceState(null,'',location.pathname);$('threshold').value=5;renderInputs()}
+  function capitalize(s){return s.charAt(0).toUpperCase()+s.slice(1)}function escapeXML(s){return String(s).replace(/[<>&'\"]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;',"'":'&apos;','"':'&quot;'}[c]))}
+  metric.addEventListener('change',renderInputs);$('calculate').addEventListener('click',calculate);$('share').addEventListener('click',share);$('reset').addEventListener('click',reset);$('threshold').addEventListener('input',calculate);inputs.addEventListener('input',calculate);initQuery();renderInputs();
+})();
+</script>
+</body>
+</html>
