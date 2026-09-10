@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Calculate referral K-factor, acquisition multiplier, and effective CAC from invites per user and referral conversion rate.">
+  <meta name="description" content="Calculate K-factor, acquisition multiplier, and effective CAC from pass-alongs per customer, conversion rate, and referral program cost.">
   <meta name="theme-color" content="#163b36">
   <link rel="canonical" href="https://lorenzen.ai/tools/k-factor/">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Lorenzen Tools">
   <meta property="og:title" content="The K-Factor">
-  <meta property="og:description" content="How viral is your acquisition?">
+  <meta property="og:description" content="Model DTC referral virality, sample economics, and effective CAC.">
   <meta property="og:url" content="https://lorenzen.ai/tools/k-factor/">
   <!-- Add after creating the preview asset:
   <meta property="og:image" content="https://lorenzen.ai/images/previews/k-factor-preview.png">
@@ -104,7 +104,7 @@
     <div>
       <div class="eyebrow">Lorenzen Tools</div>
       <h1>The K-Factor</h1>
-      <p class="lede">How viral is your acquisition? Measure how many new users each acquired user creates, then translate that virality into effective CAC.</p>
+      <p class="lede">How viral is your acquisition? Measure how many new customers each acquired customer creates, then translate that virality into effective CAC.</p>
     </div>
     <a class="all-tools" href="/tools/">← All tools</a>
   </header>
@@ -112,7 +112,7 @@
   <main class="wrap layout">
     <aside class="card controls">
       <div class="head"><h2>K-factor inputs</h2><button id="reset" class="btn secondary" type="button">Reset</button></div>
-      <p class="sub">Enter the referral behavior of an average acquired user.</p>
+      <p class="sub">Model how customers pass your product or referral mechanism to the next customer.</p>
       <div id="controls"></div>
 
       <details class="advanced" id="advanced">
@@ -134,7 +134,7 @@
       <section id="kpis" class="card kpis"></section>
 
       <section class="card panel">
-        <div class="head"><div><h2>What your K-factor means</h2><p class="sub">First-generation referral growth from 100 acquired users.</p></div></div>
+        <div class="head"><div><h2>What your K-factor means</h2><p class="sub">First-generation referral growth from 100 acquired customers.</p></div></div>
         <div id="flow" class="flow"></div>
         <div id="costShift" class="cost-shift"></div>
         <p id="interpret" class="interpret"></p>
@@ -155,7 +155,7 @@
 
         <section class="card panel method">
           <h2>Reading K-factor</h2>
-          <p>K measures the next generation of users created by each existing user through referrals or invites.</p>
+          <p>K measures the next generation of customers created by each acquired customer through pass-alongs such as samples, referral cards, codes, gifts, or direct invites.</p>
           <div class="thresholds">
             <div class="threshold"><strong>K &lt; 0.5</strong><span>Helpful referral lift. Paid acquisition still drives most growth.</span></div>
             <div class="threshold"><strong>K = 0.5–1.0</strong><span>Strong virality. Referral growth materially improves acquisition economics.</span></div>
@@ -174,14 +174,15 @@
   const $=id=>document.getElementById(id);
 
   const specs={
-    invites:{label:'Invites per acquired user',min:0,max:20,step:.1,value:4,kind:'decimal',group:'basic'},
-    conversion:{label:'Invite conversion rate',min:0,max:100,step:.5,value:10,kind:'percent',group:'basic'},
-    paidCAC:{label:'Paid acquisition cost',min:.1,max:500,step:.1,value:50,kind:'money',group:'basic'},
-    users:{label:'Paid users acquired',min:1,max:250000,step:100,value:10000,kind:'number',group:'advanced'},
-    target:{label:'Target blended CAC',min:.1,max:500,step:.1,value:5,kind:'money',group:'advanced'}
+    invites:{label:'Pass-alongs per acquired customer',min:0,max:20,step:.1,value:4,kind:'decimal',group:'basic'},
+    conversion:{label:'Pass-along conversion rate',min:0,max:100,step:.5,value:10,kind:'percent',group:'basic'},
+    paidCAC:{label:'Paid acquisition cost',min:.1,max:500,step:.1,value:125,kind:'money',group:'basic'},
+    users:{label:'Paid customers acquired',min:1,max:250000,step:100,value:10000,kind:'number',group:'advanced'},
+    unitCost:{label:'Cost per pass-along',min:0,max:100,step:.1,value:0,kind:'money',group:'advanced'},
+    target:{label:'Target blended CAC',min:.1,max:500,step:.1,value:100,kind:'money',group:'advanced'}
   };
 
-  const defaults={invites:4,conversion:10,paidCAC:5,users:10000,target:5,recursive:false};
+  const defaults={invites:4,conversion:10,paidCAC:125,users:10000,unitCost:0,target:100,recursive:false};
 
   const money=n=>Number.isFinite(n)?n.toLocaleString(undefined,{style:'currency',currency:'USD',maximumFractionDigits:n<10?2:0}):'—';
   const num=n=>Number.isFinite(n)?Math.round(n).toLocaleString():'—';
@@ -200,7 +201,8 @@
   function renderControls(){
     $('controls').innerHTML=Object.entries(specs).filter(([,s])=>s.group==='basic').map(([k,s])=>fieldHTML(k,s)).join('');
     $('advancedControls').innerHTML=Object.entries(specs).filter(([,s])=>s.group==='advanced').map(([k,s])=>fieldHTML(k,s)).join('')+
-      `<div class="field"><label class="check" for="recursive"><input id="recursive" type="checkbox"><span><strong>Model recursive referrals</strong><br>Assume referred users repeat the same referral behavior. This geometric model only converges when K &lt; 1.</span></label></div>`;
+      `<div class="field helper-field"><div class="sub" style="margin:0">For DTC, cost per pass-along can represent the landed cost of a free sample, insert, referral card, gift, or other unit supplied to create the referral opportunity. Leave at $0 for digital invites or zero-marginal-cost referrals.</div></div>`+
+      `<div class="field"><label class="check" for="recursive"><input id="recursive" type="checkbox"><span><strong>Model recursive referrals</strong><br>Assume referred customers repeat the same pass-along behavior. This geometric model only converges when K &lt; 1.</span></label></div>`;
     document.querySelectorAll('[data-key]').forEach(el=>el.addEventListener('input',syncField));
     $('recursive').addEventListener('change',update);
   }
@@ -220,19 +222,28 @@
 
   function calc(v){
     const k=v.invites*(v.conversion/100);
+    const passAlongCostPerCustomer=v.invites*v.unitCost;
+
     const firstGenMultiplier=1+k;
     const firstGenReferred=v.users*k;
     const firstGenTotal=v.users*firstGenMultiplier;
-    const firstGenEffective=v.paidCAC/firstGenMultiplier;
-    let recursiveMultiplier=null,recursiveEffective=null,recursiveReferred=null,recursiveTotal=null,recursiveValid=true;
+    const firstGenProgramCost=v.users*passAlongCostPerCustomer;
+    const firstGenEffective=(v.paidCAC+passAlongCostPerCustomer)/firstGenMultiplier;
+    const firstGenAllowablePaidCAC=(v.target*firstGenMultiplier)-passAlongCostPerCustomer;
+
+    let recursiveMultiplier=null,recursiveEffective=null,recursiveReferred=null,recursiveTotal=null;
+    let recursiveProgramCost=null,recursiveAllowablePaidCAC=null,recursiveValid=true;
 
     if(v.recursive){
-      if(k>=1){recursiveValid=false}
-      else{
+      if(k>=1){
+        recursiveValid=false;
+      }else{
         recursiveMultiplier=1/(1-k);
-        recursiveEffective=v.paidCAC/recursiveMultiplier;
         recursiveTotal=v.users*recursiveMultiplier;
         recursiveReferred=recursiveTotal-v.users;
+        recursiveProgramCost=recursiveTotal*passAlongCostPerCustomer;
+        recursiveEffective=(v.paidCAC/recursiveMultiplier)+passAlongCostPerCustomer;
+        recursiveAllowablePaidCAC=(v.target-passAlongCostPerCustomer)*recursiveMultiplier;
       }
     }
 
@@ -240,9 +251,15 @@
     const activeEffective=v.recursive&&recursiveValid?recursiveEffective:firstGenEffective;
     const activeReferred=v.recursive&&recursiveValid?recursiveReferred:firstGenReferred;
     const activeTotal=v.recursive&&recursiveValid?recursiveTotal:firstGenTotal;
-    const allowablePaidCAC=v.target*activeMultiplier;
+    const activeProgramCost=v.recursive&&recursiveValid?recursiveProgramCost:firstGenProgramCost;
+    const allowablePaidCAC=v.recursive&&recursiveValid?recursiveAllowablePaidCAC:firstGenAllowablePaidCAC;
 
-    return {...v,k,firstGenMultiplier,firstGenReferred,firstGenTotal,firstGenEffective,recursiveMultiplier,recursiveEffective,recursiveReferred,recursiveTotal,recursiveValid,activeMultiplier,activeEffective,activeReferred,activeTotal,allowablePaidCAC};
+    return {
+      ...v,k,passAlongCostPerCustomer,
+      firstGenMultiplier,firstGenReferred,firstGenTotal,firstGenProgramCost,firstGenEffective,firstGenAllowablePaidCAC,
+      recursiveMultiplier,recursiveEffective,recursiveReferred,recursiveTotal,recursiveProgramCost,recursiveAllowablePaidCAC,recursiveValid,
+      activeMultiplier,activeEffective,activeReferred,activeTotal,activeProgramCost,allowablePaidCAC
+    };
   }
 
   function card(label,value,note=''){return `<div class="kpi"><div class="kpi-label">${label}</div><div class="kpi-value">${value}</div><div class="kpi-note">${note}</div></div>`}
@@ -254,61 +271,70 @@
     $('heroValue').textContent=r.k.toFixed(2);
 
     if(v.recursive&&!r.recursiveValid){
-      $('heroCopy').innerHTML=`Each acquired user creates <strong>${r.k.toFixed(2)} users in the next generation</strong>. Because K is at least 1.00, the recursive model does not converge.`;
+      $('heroCopy').innerHTML=`Each acquired customer creates <strong>${r.k.toFixed(2)} customers in the next generation</strong>. Because K is at least 1.00, the recursive model does not converge.`;
     }else{
-      $('heroCopy').innerHTML=`Every 100 acquired users create about <strong>${Math.round(r.k*100).toLocaleString()} additional users</strong> in the next referral generation.`;
+      $('heroCopy').innerHTML=`Every 100 acquired customers create about <strong>${Math.round(r.k*100).toLocaleString()} additional customers</strong> in the next referral generation.`;
     }
 
+    const reduction=(v.paidCAC-r.activeEffective)/v.paidCAC*100;
+    const allowableText=Number.isFinite(r.allowablePaidCAC)&&r.allowablePaidCAC>=0?money(r.allowablePaidCAC):'$0.00';
+
     $('kpis').innerHTML=
-      card('K-factor',r.k.toFixed(2),'invites × conversion')+
+      card('K-factor',r.k.toFixed(2),'pass-alongs × conversion')+
       card('1st-gen multiplier',mult(r.firstGenMultiplier),'100 paid → '+num(100*r.firstGenMultiplier)+' total')+
-      card('Paid CAC',money(v.paidCAC),'direct acquisition cost')+
-      card('1st-gen effective CAC',money(r.firstGenEffective),'after direct referrals')+
-      card('Referred users',num(r.activeReferred),v.recursive?'modeled all generations':'first generation')+
-      card('Modeled total users',num(r.activeTotal),v.recursive?'recursive scenario':'after first generation')+
-      card('CAC reduction',pct((v.paidCAC-r.activeEffective)/v.paidCAC*100),v.recursive?'recursive scenario':'first generation')+
-      card('Allowable paid CAC',money(r.allowablePaidCAC),money(v.target)+' blended target');
+      card('Paid CAC',money(v.paidCAC),'media acquisition cost')+
+      card('1st-gen effective CAC',money(r.firstGenEffective),'includes pass-along cost')+
+      card('Pass-along cost / seed',money(r.passAlongCostPerCustomer),v.invites.toFixed(1)+' units × '+money(v.unitCost))+
+      card('Referred customers',num(r.activeReferred),v.recursive?'modeled all generations':'first generation')+
+      card('CAC change',pct(reduction),reduction>=0?'improvement vs. paid CAC':'higher than paid CAC')+
+      card('Allowable paid CAC',allowableText,money(v.target)+' blended target');
 
     $('flow').innerHTML=
-      step('Paid users','100','acquired directly')+
+      step('Paid customers','100','acquired directly')+
       `<div class="operator">→</div>`+
-      step('Referred users',num(100*r.k),`${v.invites.toFixed(1)} invites × ${pct(v.conversion)}`,'referred')+
+      step('Referred customers',num(100*r.k),`${v.invites.toFixed(1)} pass-alongs × ${pct(v.conversion)}`,'referred')+
       `<div class="operator">→</div>`+
-      step('1st-gen total',num(100*r.firstGenMultiplier),'users after one referral generation','total');
+      step('1st-gen total',num(100*r.firstGenMultiplier),'customers after one referral generation','total');
 
     $('costShift').innerHTML=
       costBox('Paid CAC',money(v.paidCAC))+
+      `<div class="arrow">+</div>`+
+      costBox('Pass-along cost / seed',money(r.passAlongCostPerCustomer))+
       `<div class="arrow">→</div>`+
       costBox(v.recursive?'Modeled effective CAC':'1st-gen effective CAC',money(r.activeEffective),'after');
 
     if(v.recursive&&!r.recursiveValid){
       $('interpret').innerHTML=`<strong>K ≥ 1.00 creates an unbounded recursive geometric model.</strong> Use first-generation economics for a practical operating view.`;
-      $('warning').innerHTML=`<div class="warning red">Recursive virality assumes every referred user repeats the same invite behavior and conversion rate. Real systems encounter saturation, declining conversion, finite networks, and eligibility limits.</div>`;
+      $('warning').innerHTML=`<div class="warning red">Recursive virality assumes every referred customer repeats the same pass-along behavior and conversion rate. Real systems encounter saturation, declining conversion, finite networks, and eligibility limits.</div>`;
     }else if(v.recursive){
-      $('interpret').innerHTML=`<strong>Recursive multiplier: ${mult(r.recursiveMultiplier)}.</strong> Under constant referral behavior, ${num(v.users)} paid users model to ${num(r.recursiveTotal)} total users and ${money(v.paidCAC)} CAC falls to ${money(r.recursiveEffective)}.`;
-      $('warning').innerHTML=`<div class="warning">Recursive virality is theoretical. Use first-generation K as the conservative operating metric and the recursive model as a scenario.</div>`;
+      $('interpret').innerHTML=`<strong>Recursive multiplier: ${mult(r.recursiveMultiplier)}.</strong> Under constant referral behavior, ${num(v.users)} paid customers model to ${num(r.recursiveTotal)} total customers. ${money(v.paidCAC)} paid CAC plus ${money(r.passAlongCostPerCustomer)} of pass-along cost per referring customer produces a modeled effective CAC of ${money(r.recursiveEffective)}.`;
+      $('warning').innerHTML=`<div class="warning">Recursive virality is theoretical. It assumes every generation incurs the same pass-along cost and repeats the same conversion behavior. Use first-generation K as the conservative operating metric.</div>`;
     }else{
-      $('interpret').innerHTML=`<strong>Your ${money(v.paidCAC)} paid CAC becomes ${money(r.firstGenEffective)} after one referral generation.</strong> At a ${money(v.target)} blended target, this K-factor supports up to ${money(v.target*r.firstGenMultiplier)} directly attributed CAC.`;
-      $('warning').innerHTML='';
+      $('interpret').innerHTML=`<strong>Your ${money(v.paidCAC)} paid CAC plus ${money(r.passAlongCostPerCustomer)} in pass-along cost becomes ${money(r.firstGenEffective)} after one referral generation.</strong> At a ${money(v.target)} blended target, this K-factor supports up to ${allowableText} of directly attributed paid CAC.`;
+      $('warning').innerHTML=r.firstGenAllowablePaidCAC<0
+        ? `<div class="warning red">The pass-along cost alone is too high to achieve the selected blended CAC target at this K-factor.</div>`
+        : '';
     }
 
     $('chartTitle').textContent=v.recursive?'Recursive CAC sensitivity to K-factor':'Effective CAC sensitivity to K-factor';
-    $('chartSub').textContent=v.recursive?'Theoretical recursive economics as K approaches 1.00.':'How first-generation referral virality changes acquisition economics.';
-    $('chart').innerHTML=renderChart(v.paidCAC,r.k,v.recursive);
+    $('chartSub').textContent=v.unitCost>0
+      ? `Includes ${money(v.unitCost)} cost per pass-along.`
+      : 'How first-generation referral virality changes acquisition economics.';
+    $('chart').innerHTML=renderChart(v.paidCAC,r.k,v.recursive,r.passAlongCostPerCustomer);
 
-    $('methodBody').innerHTML=`<p>K-factor measures the number of new users generated by each acquired user through direct referrals or invites.</p>
-      <div class="formula">K = Invites per user × Invite conversion rate<br>First-generation multiplier = 1 + K<br>First-generation effective CAC = Paid CAC ÷ (1 + K)<br>${v.recursive?'Recursive multiplier = 1 ÷ (1 − K), when K < 1<br>Recursive effective CAC = Paid CAC × (1 − K)':'Recursive multiplier = 1 ÷ (1 − K), when K < 1'}</div>
-      <p>Example: 4 invites per user × 10% conversion = K 0.40. Every 100 acquired users create about 40 referred users in the next generation.</p>`;
+    $('methodBody').innerHTML=`<p>K-factor measures the number of new customers generated by each acquired customer through a trackable pass-along mechanism.</p>
+      <div class="formula">K = Pass-alongs per customer × Conversion rate<br>Pass-along cost per seed = Pass-alongs × Cost per unit<br>First-generation multiplier = 1 + K<br>First-generation effective CAC = (Paid CAC + Pass-along cost per seed) ÷ (1 + K)<br>${v.recursive?'Recursive multiplier = 1 ÷ (1 − K), when K < 1<br>Recursive effective CAC = Paid CAC × (1 − K) + Pass-along cost per customer':'Recursive multiplier = 1 ÷ (1 − K), when K < 1'}</div>
+      <p>For DTC, a pass-along can be a free sample, referral card, code, gift, or direct invite. Example: 4 samples per customer × 10% conversion = K 0.40. Every 100 acquired customers create about 40 additional customers in the next generation.</p>`;
 
     updateURL();
   }
 
-  function renderChart(paidCAC,currentK,recursive){
+  function renderChart(paidCAC,currentK,recursive,passAlongCostPerCustomer){
     if(!Number.isFinite(paidCAC)||paidCAC<=0)return '<p class="sub">Enter a valid paid CAC.</p>';
     const W=1100,H=560,m={l:90,r:40,t:24,b:78};
     const xMin=0,xMax=recursive?.95:2,yMax=paidCAC*1.08,yMin=recursive?paidCAC*.03:paidCAC/3.2;
     const x=k=>m.l+(k-xMin)/(xMax-xMin)*(W-m.l-m.r);
-    const calcCAC=k=>recursive?paidCAC*(1-k):paidCAC/(1+k);
+    const calcCAC=k=>recursive?(paidCAC*(1-k)+passAlongCostPerCustomer):(paidCAC+passAlongCostPerCustomer)/(1+k);
     const y=c=>m.t+(yMax-c)/(yMax-yMin)*(H-m.t-m.b);
 
     const pts=[];
