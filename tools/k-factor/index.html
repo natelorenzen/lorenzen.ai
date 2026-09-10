@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Calculate referral K-factor, acquisition multiplier, and effective CAC from invites per user and referral conversion rate.">
+  <meta name="theme-color" content="#163b36">
+  <link rel="canonical" href="https://lorenzen.ai/tools/k-factor/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Lorenzen Tools">
+  <meta property="og:title" content="The K-Factor">
+  <meta property="og:description" content="How viral is your acquisition?">
+  <meta property="og:url" content="https://lorenzen.ai/tools/k-factor/">
+ 
+  <meta property="og:image" content="https://lorenzen.ai/images/previews/k-factor-preview.png">
+  <meta property="og:image:secure_url" content="https://lorenzen.ai/images/previews/k-factor-preview.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The K-Factor — referral virality calculator">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The K-Factor">
+  <meta name="twitter:description" content="How viral is your acquisition?">
+  <meta name="twitter:image" content="https://lorenzen.ai/images/previews/k-factor-preview.png">
+  <meta name="twitter:image:alt" content="The K-Factor — referral virality calculator">
+  
+
+  <title>K-Factor Calculator | Lorenzen Tools</title>
+
+  <style>
+    :root{
+      --bg:#f5f6f2;--card:#fff;--ink:#14201e;--muted:#66736f;--line:#dfe5e2;
+      --green:#163b36;--green2:#e4f0ec;--green3:#2c675c;--good:#087a55;--good2:#dcfae6;
+      --amber:#a15c00;--amber2:#fff4dd;--red:#b42318;--red2:#fbe8e5;
+      --shadow:0 12px 36px rgba(22,59,54,.07);--radius:18px
+    }
+    *{box-sizing:border-box}html{scroll-behavior:smooth}
+    body{margin:0;color:var(--ink);background:radial-gradient(circle at 86% -4%,#dfeee8 0,transparent 31rem),var(--bg);font:15px/1.45 ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-variant-numeric:tabular-nums}
+    button,input{font:inherit}.wrap{width:min(1160px,calc(100% - 32px));margin:auto}
+    header{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;padding:40px 0 27px}
+    .eyebrow{color:var(--green3);font-size:11px;font-weight:850;letter-spacing:.13em;text-transform:uppercase}
+    h1{font:500 clamp(44px,6vw,74px)/.97 Georgia,serif;letter-spacing:-.055em;margin:9px 0 12px}
+    .lede{max-width:760px;color:var(--muted);font-size:18px;margin:0}
+    .all-tools{white-space:nowrap;color:var(--green);text-decoration:none;border:1px solid var(--line);background:#fff;border-radius:10px;padding:9px 12px;font-size:13px;font-weight:800;box-shadow:0 2px 8px rgba(22,59,54,.04)}
+    .layout{display:grid;grid-template-columns:390px minmax(0,1fr);gap:20px;align-items:start;padding-bottom:46px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .controls{padding:21px;position:sticky;top:15px}
+    .head{display:flex;align-items:center;justify-content:space-between;gap:10px}
+    h2{font-size:18px;letter-spacing:-.02em;margin:0}.sub{color:var(--muted);font-size:12px;margin:5px 0 16px}
+    .field{padding:13px 0 7px;border-top:1px solid var(--line)}
+    .field-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px}
+    .field label{font-size:13px;font-weight:760}
+    .number{display:flex;align-items:center;min-width:126px;border:1px solid #cbd4d0;border-radius:9px;padding:0 8px;background:#fff}
+    .number span{font-size:12px;color:var(--muted)}.number input{width:88px;border:0;outline:0;padding:7px 3px;text-align:right;background:transparent}
+    .field input[type=range]{width:100%;accent-color:var(--green)}
+    .limits{display:flex;justify-content:space-between;color:#98a29e;font-size:10px}
+    .check{display:flex;gap:9px;align-items:flex-start;color:var(--muted);font-size:12px}.check input{margin-top:3px;accent-color:var(--green)}
+    .advanced{border-top:1px solid var(--line);margin-top:11px;padding-top:13px}summary{cursor:pointer;font-weight:800}.advanced .field:first-of-type{margin-top:11px}
+    .actions{display:flex;gap:8px;margin-top:16px}.btn{border:0;border-radius:10px;padding:11px 13px;font-weight:800;cursor:pointer}
+    .primary{flex:1;background:var(--green);color:#fff}.secondary{background:#f0f2f1;color:#34423e}
+    .status{font-size:11px;color:var(--good);margin-top:7px;text-align:right;min-height:16px}
+    .results{display:grid;gap:20px}
+    .hero{padding:25px;background:linear-gradient(135deg,#163b36,#2a6258);color:#fff;overflow:hidden;position:relative}
+    .hero:after{content:"K";position:absolute;right:22px;top:-28px;font:500 150px/1 Georgia,serif;color:rgba(255,255,255,.055);pointer-events:none}
+    .hero-label{color:#bed7cf;font-size:11px;font-weight:850;letter-spacing:.1em;text-transform:uppercase}
+    .hero-value{font:500 clamp(54px,8vw,88px)/1 Georgia,serif;letter-spacing:-.055em;margin:10px 0 8px}
+    .hero-copy{color:#d8e8e3;margin:0;font-size:16px;max-width:750px}.hero-copy strong{color:#fff}
+    .kpis{display:grid;grid-template-columns:repeat(4,1fr);overflow:hidden}
+    .kpi{padding:17px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);min-height:105px}
+    .kpi:nth-child(4n){border-right:0}.kpi:nth-last-child(-n+4){border-bottom:0}
+    .kpi-label{color:var(--muted);font-size:10px;font-weight:850;letter-spacing:.07em;text-transform:uppercase}
+    .kpi-value{font-size:23px;font-weight:850;letter-spacing:-.035em;margin-top:7px}.kpi-note{font-size:11px;color:var(--muted);margin-top:3px}
+    .panel{padding:22px}.lower{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(290px,.75fr);gap:20px;align-items:start}
+    .flow{display:grid;grid-template-columns:minmax(0,1fr) 34px minmax(0,1fr) 34px minmax(0,1fr);align-items:center;gap:7px;margin-top:18px}
+    .step{border:1px solid var(--line);border-radius:14px;padding:15px;background:#fbfcfb;min-height:118px}.step.referred{background:var(--green2);border-color:#c8ddd5}.step.total{background:#f4f8f6}
+    .step-label{color:var(--muted);font-size:10px;font-weight:850;letter-spacing:.07em;text-transform:uppercase}
+    .step-value{font:500 31px/1 Georgia,serif;letter-spacing:-.04em;margin:10px 0 6px}.step-note{color:var(--muted);font-size:11px}
+    .operator{color:#82918c;font-size:25px;text-align:center;font-weight:500}
+    .cost-shift{margin-top:17px;padding-top:16px;border-top:1px solid var(--line);display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+    .cost-box{flex:1;min-width:150px;border-radius:12px;padding:12px 14px;background:#f6f8f7}.cost-box.after{background:var(--good2)}
+    .cost-label{font-size:10px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);font-weight:850}.cost-value{font-size:25px;font-weight:850;letter-spacing:-.035em;margin-top:4px}
+    .arrow{font-size:22px;color:#81908a}
+    .interpret{margin:17px 0 0;padding-top:15px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}.interpret strong{color:var(--ink)}
+    .chart-panel{min-height:540px}
+    .chart-wrap{width:100%;height:430px;min-height:430px;margin-top:10px}
+    svg{display:block;width:100%;height:430px}
+    .axis{stroke:#dfe5e2;stroke-width:1}.grid{stroke:#edf1ef;stroke-width:1}.curve{fill:none;stroke:var(--green);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+    .area{fill:url(#areaGrad)}.marker-line{stroke:#83918c;stroke-width:1.5;stroke-dasharray:4 4}.marker-dot{fill:var(--green)}
+    .chart-label{fill:#71807b;font:12px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    .chart-current{fill:var(--ink);font:700 12px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    .method p,.method li{color:var(--muted);font-size:13px}.method ul{padding-left:19px}
+    .formula{background:#f7f9f8;border:1px solid var(--line);border-radius:11px;padding:12px;color:#34423e;font:12px/1.65 ui-monospace,SFMono-Regular,Menlo,monospace;margin:12px 0}
+    .warning{border-radius:12px;padding:12px 14px;background:var(--amber2);color:#7a4a07;font-size:12px;margin-top:12px}.warning.red{background:var(--red2);color:#8d2017}
+    .thresholds{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}.threshold{border:1px solid var(--line);border-radius:12px;padding:12px;background:#fbfcfb}
+    .threshold strong{display:block;font-size:13px;margin-bottom:3px}.threshold span{color:var(--muted);font-size:11px}
+    footer{padding:0 0 35px;text-align:center;color:var(--muted);font-size:12px}
+    @media(max-width:1120px){.layout{grid-template-columns:1fr}.controls{position:static}.kpis{grid-template-columns:repeat(2,1fr)}.kpi:nth-child(2n){border-right:0}.kpi:nth-last-child(-n+4){border-bottom:1px solid var(--line)}.kpi:nth-last-child(-n+2){border-bottom:0}.flow{grid-template-columns:1fr}.operator{transform:rotate(90deg)}.lower{grid-template-columns:1fr}.chart-panel{min-height:auto}.chart-wrap{height:380px;min-height:380px}svg{height:380px}}
+    @media(max-width:680px){.wrap{width:calc(100% - 20px)}header{padding-top:25px}.lede{font-size:16px}.controls,.panel,.hero{padding:18px}.thresholds{grid-template-columns:1fr}.all-tools{padding:8px 10px}}
+  </style>
+</head>
+
+<body>
+  <header class="wrap">
+    <div>
+      <div class="eyebrow">Lorenzen Tools</div>
+      <h1>The K-Factor</h1>
+      <p class="lede">How viral is your acquisition? Measure how many new users each acquired user creates, then translate that virality into effective CAC.</p>
+    </div>
+    <a class="all-tools" href="/tools/">← All tools</a>
+  </header>
+
+  <main class="wrap layout">
+    <aside class="card controls">
+      <div class="head"><h2>K-factor inputs</h2><button id="reset" class="btn secondary" type="button">Reset</button></div>
+      <p class="sub">Enter the referral behavior of an average acquired user.</p>
+      <div id="controls"></div>
+
+      <details class="advanced" id="advanced">
+        <summary>Advanced economics</summary>
+        <div id="advancedControls"></div>
+      </details>
+
+      <div class="actions"><button id="share" class="btn primary" type="button">Copy scenario link</button></div>
+      <div id="status" class="status" aria-live="polite"></div>
+    </aside>
+
+    <section class="results">
+      <section class="card hero">
+        <div class="hero-label">K-factor</div>
+        <div id="heroValue" class="hero-value">0.40</div>
+        <p id="heroCopy" class="hero-copy"></p>
+      </section>
+
+      <section id="kpis" class="card kpis"></section>
+
+      <section class="card panel">
+        <div class="head"><div><h2>What your K-factor means</h2><p class="sub">First-generation referral growth from 100 acquired users.</p></div></div>
+        <div id="flow" class="flow"></div>
+        <div id="costShift" class="cost-shift"></div>
+        <p id="interpret" class="interpret"></p>
+        <div id="warning"></div>
+      </section>
+
+      <div class="lower">
+        <section class="card panel chart-panel">
+          <h2 id="chartTitle">Effective CAC sensitivity to K-factor</h2>
+          <p id="chartSub" class="sub">How acquisition economics improve as referral virality rises.</p>
+          <div id="chart" class="chart-wrap"></div>
+        </section>
+
+        <section class="card panel method">
+          <h2>How the math works</h2>
+          <div id="methodBody"></div>
+        </section>
+      </div>
+
+      <section class="card panel method">
+        <h2>Reading K-factor</h2>
+        <p>K measures the next generation of users created by each existing user through referrals or invites.</p>
+        <div class="thresholds">
+          <div class="threshold"><strong>K &lt; 0.5</strong><span>Helpful referral lift. Paid acquisition still drives most growth.</span></div>
+          <div class="threshold"><strong>K = 0.5–1.0</strong><span>Strong virality. Referral growth materially improves acquisition economics.</span></div>
+          <div class="threshold"><strong>K ≥ 1.0</strong><span>Each generation can replace or exceed itself under idealized assumptions.</span></div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="wrap">All calculations run privately in your browser. Recursive virality is a theoretical model and should be treated as a scenario, not a forecast.</footer>
+
+<script>
+(()=>{
+  'use strict';
+  const $=id=>document.getElementById(id);
+
+  const specs={
+    invites:{label:'Invites per acquired user',min:0,max:20,step:.1,value:4,kind:'decimal',group:'basic'},
+    conversion:{label:'Invite conversion rate',min:0,max:100,step:.5,value:10,kind:'percent',group:'basic'},
+    paidCAC:{label:'Paid acquisition cost',min:.1,max:500,step:.1,value:5,kind:'money',group:'basic'},
+    users:{label:'Paid users acquired',min:1,max:250000,step:100,value:10000,kind:'number',group:'advanced'},
+    target:{label:'Target blended CAC',min:.1,max:500,step:.1,value:5,kind:'money',group:'advanced'}
+  };
+
+  const defaults={invites:4,conversion:10,paidCAC:5,users:10000,target:5,recursive:false};
+
+  const money=n=>Number.isFinite(n)?n.toLocaleString(undefined,{style:'currency',currency:'USD',maximumFractionDigits:n<10?2:0}):'—';
+  const num=n=>Number.isFinite(n)?Math.round(n).toLocaleString():'—';
+  const pct=n=>Number.isFinite(n)?n.toFixed(1)+'%':'—';
+  const mult=n=>Number.isFinite(n)?n.toFixed(2)+'×':'—';
+
+  function cap(v,min,max){if(!Number.isFinite(v))return min;return Math.max(min,Math.min(max,v))}
+  function short(n,kind){if(kind==='money')return '$'+n.toLocaleString();if(kind==='percent')return n+'%';return n.toLocaleString()}
+
+  function fieldHTML(key,spec){
+    const prefix=spec.kind==='money'?'<span>$</span>':'';
+    const suffix=spec.kind==='percent'?'<span>%</span>':'';
+    return `<div class="field"><div class="field-head"><label for="${key}-range">${spec.label}</label><div class="number">${prefix}<input id="${key}-number" data-key="${key}" type="number" min="${spec.min}" max="${spec.max}" step="${spec.step}" value="${spec.value}">${suffix}</div></div><input id="${key}-range" data-key="${key}" type="range" min="${spec.min}" max="${spec.max}" step="${spec.step}" value="${spec.value}"><div class="limits"><span>${short(spec.min,spec.kind)}</span><span>${short(spec.max,spec.kind)}</span></div></div>`;
+  }
+
+  function renderControls(){
+    $('controls').innerHTML=Object.entries(specs).filter(([,s])=>s.group==='basic').map(([k,s])=>fieldHTML(k,s)).join('');
+    $('advancedControls').innerHTML=Object.entries(specs).filter(([,s])=>s.group==='advanced').map(([k,s])=>fieldHTML(k,s)).join('')+
+      `<div class="field"><label class="check" for="recursive"><input id="recursive" type="checkbox"><span><strong>Model recursive referrals</strong><br>Assume referred users repeat the same referral behavior. This geometric model only converges when K &lt; 1.</span></label></div>`;
+    document.querySelectorAll('[data-key]').forEach(el=>el.addEventListener('input',syncField));
+    $('recursive').addEventListener('change',update);
+  }
+
+  function syncField(e){
+    const key=e.target.dataset.key;if(!key)return;
+    const spec=specs[key],value=cap(Number(e.target.value),spec.min,spec.max);
+    const other=$(key+(e.target.type==='range'?'-number':'-range'));if(other)other.value=value;update();
+  }
+
+  function values(){
+    const out={};
+    for(const [key,s] of Object.entries(specs))out[key]=cap(Number($(key+'-number').value),s.min,s.max);
+    out.recursive=Boolean($('recursive').checked);
+    return out;
+  }
+
+  function calc(v){
+    const k=v.invites*(v.conversion/100);
+    const firstGenMultiplier=1+k;
+    const firstGenReferred=v.users*k;
+    const firstGenTotal=v.users*firstGenMultiplier;
+    const firstGenEffective=v.paidCAC/firstGenMultiplier;
+    let recursiveMultiplier=null,recursiveEffective=null,recursiveReferred=null,recursiveTotal=null,recursiveValid=true;
+
+    if(v.recursive){
+      if(k>=1){recursiveValid=false}
+      else{
+        recursiveMultiplier=1/(1-k);
+        recursiveEffective=v.paidCAC/recursiveMultiplier;
+        recursiveTotal=v.users*recursiveMultiplier;
+        recursiveReferred=recursiveTotal-v.users;
+      }
+    }
+
+    const activeMultiplier=v.recursive&&recursiveValid?recursiveMultiplier:firstGenMultiplier;
+    const activeEffective=v.recursive&&recursiveValid?recursiveEffective:firstGenEffective;
+    const activeReferred=v.recursive&&recursiveValid?recursiveReferred:firstGenReferred;
+    const activeTotal=v.recursive&&recursiveValid?recursiveTotal:firstGenTotal;
+    const allowablePaidCAC=v.target*activeMultiplier;
+
+    return {...v,k,firstGenMultiplier,firstGenReferred,firstGenTotal,firstGenEffective,recursiveMultiplier,recursiveEffective,recursiveReferred,recursiveTotal,recursiveValid,activeMultiplier,activeEffective,activeReferred,activeTotal,allowablePaidCAC};
+  }
+
+  function card(label,value,note=''){return `<div class="kpi"><div class="kpi-label">${label}</div><div class="kpi-value">${value}</div><div class="kpi-note">${note}</div></div>`}
+  function step(label,value,note,cls=''){return `<div class="step ${cls}"><div class="step-label">${label}</div><div class="step-value">${value}</div><div class="step-note">${note}</div></div>`}
+  function costBox(label,value,cls=''){return `<div class="cost-box ${cls}"><div class="cost-label">${label}</div><div class="cost-value">${value}</div></div>`}
+
+  function update(){
+    const v=values(),r=calc(v);
+    $('heroValue').textContent=r.k.toFixed(2);
+
+    if(v.recursive&&!r.recursiveValid){
+      $('heroCopy').innerHTML=`Each acquired user creates <strong>${r.k.toFixed(2)} users in the next generation</strong>. Because K is at least 1.00, the recursive model does not converge.`;
+    }else{
+      $('heroCopy').innerHTML=`Every 100 acquired users create about <strong>${Math.round(r.k*100).toLocaleString()} additional users</strong> in the next referral generation.`;
+    }
+
+    $('kpis').innerHTML=
+      card('K-factor',r.k.toFixed(2),'invites × conversion')+
+      card('1st-gen multiplier',mult(r.firstGenMultiplier),'100 paid → '+num(100*r.firstGenMultiplier)+' total')+
+      card('Paid CAC',money(v.paidCAC),'direct acquisition cost')+
+      card('1st-gen effective CAC',money(r.firstGenEffective),'after direct referrals')+
+      card('Referred users',num(r.activeReferred),v.recursive?'modeled all generations':'first generation')+
+      card('Modeled total users',num(r.activeTotal),v.recursive?'recursive scenario':'after first generation')+
+      card('CAC reduction',pct((v.paidCAC-r.activeEffective)/v.paidCAC*100),v.recursive?'recursive scenario':'first generation')+
+      card('Allowable paid CAC',money(r.allowablePaidCAC),money(v.target)+' blended target');
+
+    $('flow').innerHTML=
+      step('Paid users','100','acquired directly')+
+      `<div class="operator">→</div>`+
+      step('Referred users',num(100*r.k),`${v.invites.toFixed(1)} invites × ${pct(v.conversion)}`,'referred')+
+      `<div class="operator">→</div>`+
+      step('1st-gen total',num(100*r.firstGenMultiplier),'users after one referral generation','total');
+
+    $('costShift').innerHTML=
+      costBox('Paid CAC',money(v.paidCAC))+
+      `<div class="arrow">→</div>`+
+      costBox(v.recursive?'Modeled effective CAC':'1st-gen effective CAC',money(r.activeEffective),'after');
+
+    if(v.recursive&&!r.recursiveValid){
+      $('interpret').innerHTML=`<strong>K ≥ 1.00 creates an unbounded recursive geometric model.</strong> Use first-generation economics for a practical operating view.`;
+      $('warning').innerHTML=`<div class="warning red">Recursive virality assumes every referred user repeats the same invite behavior and conversion rate. Real systems encounter saturation, declining conversion, finite networks, and eligibility limits.</div>`;
+    }else if(v.recursive){
+      $('interpret').innerHTML=`<strong>Recursive multiplier: ${mult(r.recursiveMultiplier)}.</strong> Under constant referral behavior, ${num(v.users)} paid users model to ${num(r.recursiveTotal)} total users and ${money(v.paidCAC)} CAC falls to ${money(r.recursiveEffective)}.`;
+      $('warning').innerHTML=`<div class="warning">Recursive virality is theoretical. Use first-generation K as the conservative operating metric and the recursive model as a scenario.</div>`;
+    }else{
+      $('interpret').innerHTML=`<strong>Your ${money(v.paidCAC)} paid CAC becomes ${money(r.firstGenEffective)} after one referral generation.</strong> At a ${money(v.target)} blended target, this K-factor supports up to ${money(v.target*r.firstGenMultiplier)} directly attributed CAC.`;
+      $('warning').innerHTML='';
+    }
+
+    $('chartTitle').textContent=v.recursive?'Recursive CAC sensitivity to K-factor':'Effective CAC sensitivity to K-factor';
+    $('chartSub').textContent=v.recursive?'Theoretical recursive economics as K approaches 1.00.':'How first-generation referral virality changes acquisition economics.';
+    $('chart').innerHTML=renderChart(v.paidCAC,r.k,v.recursive);
+
+    $('methodBody').innerHTML=`<p>K-factor measures the number of new users generated by each acquired user through direct referrals or invites.</p>
+      <div class="formula">K = Invites per user × Invite conversion rate<br>First-generation multiplier = 1 + K<br>First-generation effective CAC = Paid CAC ÷ (1 + K)<br>${v.recursive?'Recursive multiplier = 1 ÷ (1 − K), when K < 1<br>Recursive effective CAC = Paid CAC × (1 − K)':'Recursive multiplier = 1 ÷ (1 − K), when K < 1'}</div>
+      <p>Example: 4 invites per user × 10% conversion = K 0.40. Every 100 acquired users create about 40 referred users in the next generation.</p>`;
+
+    updateURL();
+  }
+
+  function renderChart(paidCAC,currentK,recursive){
+    if(!Number.isFinite(paidCAC)||paidCAC<=0)return '<p class="sub">Enter a valid paid CAC.</p>';
+    const W=980,H=500,m={l:84,r:36,t:22,b:72};
+    const xMin=0,xMax=recursive?.95:2,yMax=paidCAC*1.08,yMin=recursive?paidCAC*.03:paidCAC/3.2;
+    const x=k=>m.l+(k-xMin)/(xMax-xMin)*(W-m.l-m.r);
+    const calcCAC=k=>recursive?paidCAC*(1-k):paidCAC/(1+k);
+    const y=c=>m.t+(yMax-c)/(yMax-yMin)*(H-m.t-m.b);
+
+    const pts=[];
+    for(let i=0;i<=140;i++){
+      const k=xMin+(xMax-xMin)*i/140;
+      const cac=calcCAC(k);
+      pts.push([x(k),y(Math.max(yMin,Math.min(yMax,cac)))]);
+    }
+
+    const path=pts.map((p,i)=>(i?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1)).join(' ');
+    const area=path+` L ${pts[pts.length-1][0].toFixed(1)} ${y(yMin).toFixed(1)} L ${pts[0][0].toFixed(1)} ${y(yMin).toFixed(1)} Z`;
+
+    const xticks=recursive?[0,.25,.5,.75,.95]:[0,.4,.8,1.2,1.6,2.0];
+    const yticks=[paidCAC*.25,paidCAC*.5,paidCAC*.75,paidCAC].filter(v=>v>=yMin&&v<=yMax);
+
+    const markerK=Math.max(xMin,Math.min(xMax,currentK));
+    const currentCAC=calcCAC(markerK);
+    const cx=x(markerK),cy=y(Math.max(yMin,Math.min(yMax,currentCAC)));
+
+    return `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet" role="img" aria-label="K-factor effective CAC sensitivity chart">
+      <defs>
+        <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#d9ebe4" stop-opacity=".95"/>
+          <stop offset="100%" stop-color="#d9ebe4" stop-opacity=".10"/>
+        </linearGradient>
+      </defs>
+
+      ${yticks.map(v=>`<line class="grid" x1="${m.l}" x2="${W-m.r}" y1="${y(v)}" y2="${y(v)}"/>`).join('')}
+      ${xticks.map(v=>`<line class="grid" x1="${x(v)}" x2="${x(v)}" y1="${m.t}" y2="${H-m.b}"/>`).join('')}
+      <line class="axis" x1="${m.l}" x2="${W-m.r}" y1="${H-m.b}" y2="${H-m.b}"/>
+      <line class="axis" x1="${m.l}" x2="${m.l}" y1="${m.t}" y2="${H-m.b}"/>
+
+      <path class="area" d="${area}"/>
+      <path class="curve" d="${path}"/>
+
+      ${yticks.map(v=>`<text class="chart-label" x="${m.l-12}" y="${y(v)+4}" text-anchor="end">${money(v)}</text>`).join('')}
+      ${xticks.map(v=>`<text class="chart-label" x="${x(v)}" y="${H-32}" text-anchor="middle">${v.toFixed(v===.95?2:1)}</text>`).join('')}
+
+      <text class="chart-label" x="${(m.l+W-m.r)/2}" y="${H-8}" text-anchor="middle">K-factor</text>
+      <text class="chart-label" x="24" y="${(m.t+H-m.b)/2}" transform="rotate(-90 24 ${(m.t+H-m.b)/2})" text-anchor="middle">Effective CAC</text>
+
+      <line class="marker-line" x1="${cx}" x2="${cx}" y1="${m.t}" y2="${H-m.b}"/>
+      <line class="marker-line" x1="${m.l}" x2="${cx}" y1="${cy}" y2="${cy}"/>
+      <circle class="marker-dot" cx="${cx}" cy="${cy}" r="6"/>
+      <text class="chart-current" x="${Math.min(W-m.r-12,cx+14)}" y="${Math.max(m.t+18,cy-14)}">Current K ${currentK.toFixed(2)} • ${money(currentCAC)}</text>
+    </svg>`;
+  }
+
+  function updateURL(){
+    const p=new URLSearchParams();
+    for(const [k,v] of Object.entries(values()))p.set(k,String(v));
+    history.replaceState(null,'',location.pathname+'?'+p.toString());
+  }
+
+  function loadURL(){
+    const p=new URLSearchParams(location.search);
+    for(const [k,s] of Object.entries(specs)){
+      if(!p.has(k))continue;
+      const v=cap(Number(p.get(k)),s.min,s.max);
+      $(k+'-number').value=v;$(k+'-range').value=v;
+    }
+    if(p.has('recursive'))$('recursive').checked=p.get('recursive')==='true';
+  }
+
+  function reset(){
+    for(const [k,s] of Object.entries(specs)){const v=defaults[k]??s.value;$(k+'-number').value=v;$(k+'-range').value=v}
+    $('recursive').checked=defaults.recursive;
+    history.replaceState(null,'',location.pathname);
+    update();
+  }
+
+  async function share(){
+    updateURL();
+    try{await navigator.clipboard.writeText(location.href);$('status').textContent='Scenario link copied';setTimeout(()=>$('status').textContent='',1600)}
+    catch{$('status').textContent='Copy failed'}
+  }
+
+  renderControls();loadURL();
+  $('reset').addEventListener('click',reset);$('share').addEventListener('click',share);
+  update();
+})();
+</script>
+</body>
+</html>
