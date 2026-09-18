@@ -27,10 +27,22 @@ const WIN_LINES=[
   "The meeting has successfully productized its own semantic infrastructure.",
   "The jargon portfolio has reached a defensible state of endogenous convergence."
 ];
-let words=[...SOURCE],hits=new Set([12]),won=false;const board=document.getElementById("board"),score=document.getElementById("score"),success=document.getElementById("success"),successCopy=success.querySelector("p");
+const FULL_BOARD_LINES=[
+  "The board is full. Every available term has been deployed, and yet the meeting continues.",
+  "Maximum strategic alignment achieved. Actual decisions remain outside the current scope.",
+  "The organization has reached peak vocabulary utilization with no detectable loss of ambiguity.",
+  "All twenty-five concepts are now operational. Responsibility has been successfully distributed beyond recognition.",
+  "Enterprise transformation is complete. Nothing has changed, but it now has executive sponsorship.",
+  "The semantic stack is fully saturated. Additional clarity would create unacceptable implementation risk.",
+  "You have achieved total stakeholder alignment, the stage immediately preceding universal private disagreement.",
+  "The meeting has generated sufficient language to support several quarters of strategic inaction.",
+  "Full-spectrum jargon coverage confirmed. The underlying problem has been safely abstracted away.",
+  "This is what success looks like when every measurable output is a synonym for progress."
+];
+let words=[...SOURCE],hits=new Set([12]),won=false,fullWon=false;const board=document.getElementById("board"),score=document.getElementById("score"),success=document.getElementById("success"),successLabel=success.querySelector(".label"),successTitle=success.querySelector("h2"),successCopy=success.querySelector("p");
 function render(){board.innerHTML="";words.forEach((w,i)=>{let b=document.createElement("button");b.className="cell"+(i===12?" free":"");b.textContent=w;b.setAttribute("aria-pressed",hits.has(i));b.onclick=()=>{if(i===12)return;hits.has(i)?hits.delete(i):hits.add(i);render();check()};board.appendChild(b)});score.textContent=String(hits.size).padStart(2,"0")}
-function check(){let l=[];for(let r=0;r<5;r++)l.push([0,1,2,3,4].map(c=>r*5+c));for(let c=0;c<5;c++)l.push([0,1,2,3,4].map(r=>r*5+c));l.push([0,6,12,18,24],[4,8,12,16,20]);if(!won&&l.some(x=>x.every(i=>hits.has(i)))){won=true;successCopy.textContent=WIN_LINES[Math.floor(Math.random()*WIN_LINES.length)];success.classList.add("show");rain()}}
-function fresh(){hits=new Set([12]);won=false;success.classList.remove("show");render()}
+function check(){let l=[];for(let r=0;r<5;r++)l.push([0,1,2,3,4].map(c=>r*5+c));for(let c=0;c<5;c++)l.push([0,1,2,3,4].map(r=>r*5+c));l.push([0,6,12,18,24],[4,8,12,16,20]);if(hits.size===25&&!fullWon){fullWon=true;won=true;successLabel.textContent="Organizational apotheosis confirmed";successTitle.textContent="Enterprise success.";successCopy.textContent=FULL_BOARD_LINES[Math.floor(Math.random()*FULL_BOARD_LINES.length)];success.classList.add("show");rain();return}if(!won&&l.some(x=>x.every(i=>hits.has(i)))){won=true;successLabel.textContent="Strategic alignment achieved";successTitle.textContent="Meeting successful.";successCopy.textContent=WIN_LINES[Math.floor(Math.random()*WIN_LINES.length)];success.classList.add("show");rain()}}
+function fresh(){hits=new Set([12]);won=false;fullWon=false;successLabel.textContent="Strategic alignment achieved";successTitle.textContent="Meeting successful.";success.classList.remove("show");render()}
 document.getElementById("reset").onclick=fresh;document.getElementById("shuffle").onclick=()=>{let p=SOURCE.filter(x=>x!=="FREE");for(let i=p.length-1;i;i--){let j=Math.floor(Math.random()*(i+1));[p[i],p[j]]=[p[j],p[i]]}words=[...p.slice(0,12),"FREE",...p.slice(12)];fresh()};document.getElementById("continue").onclick=()=>success.classList.remove("show");
 function rain(){const c=document.getElementById("confetti"),x=c.getContext("2d"),d=devicePixelRatio;c.width=innerWidth*d;c.height=innerHeight*d;x.scale(d,d);let p=Array.from({length:150},()=>({x:Math.random()*innerWidth,y:-Math.random()*innerHeight*.5,vx:(Math.random()-.5)*5,vy:2+Math.random()*5,r:Math.random()*6.3,s:4+Math.random()*8,c:["#111","#d9f46a","#fff","#7890a5"][Math.floor(Math.random()*4)]})),f=0;(function go(){x.clearRect(0,0,innerWidth,innerHeight);p.forEach(a=>{a.x+=a.vx;a.y+=a.vy;a.vy+=.04;a.r+=.12;x.save();x.translate(a.x,a.y);x.rotate(a.r);x.fillStyle=a.c;x.fillRect(-a.s/2,-a.s/3,a.s,a.s*.7);x.restore()});if(f++<190)requestAnimationFrame(go);else x.clearRect(0,0,innerWidth,innerHeight)})()}render();
 </script></body></html>
