@@ -3,37 +3,42 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Calculators, interactive tools, and independent experiments by Nate Lorenzen.">
-  <meta name="theme-color" content="#101828">
+  <meta name="description" content="Calculators, interactive tools, games, and independent experiments by Nate Lorenzen.">
+  <meta name="theme-color" content="#f5f6f2">
+  <link rel="canonical" href="https://lorenzen.ai/tools/">
   <title>Tools | Nate Lorenzen</title>
 
   <style>
     :root{
-      --bg:#f6f7fb;
+      --bg:#f5f6f2;
       --card:#fff;
-      --ink:#101828;
-      --muted:#667085;
-      --line:#e4e7ec;
-      --blue:#2563eb;
-      --shadow:0 5px 16px rgba(16,24,40,.045);
+      --ink:#151a18;
+      --muted:#68736e;
+      --line:#dfe5e2;
+      --green:#173d32;
+      --green2:#e2eee9;
+      --green3:#2c675c;
+      --shadow:0 8px 24px rgba(23,61,50,.055);
     }
 
     *{box-sizing:border-box}
 
     body{
       margin:0;
-      background:var(--bg);
+      background:
+        radial-gradient(circle at 87% -5%,#e2eee9 0,transparent 30rem),
+        var(--bg);
       color:var(--ink);
       font:14px/1.45 ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
     }
 
     .wrap{
-      width:min(1060px,calc(100% - 32px));
+      width:min(1080px,calc(100% - 32px));
       margin:auto;
     }
 
     header{
-      padding:30px 0 18px;
+      padding:34px 0 20px;
     }
 
     .top{
@@ -44,73 +49,77 @@
     }
 
     .home{
-      color:#344054;
+      color:var(--green);
       text-decoration:none;
       font-size:11px;
-      font-weight:750;
+      font-weight:800;
       border:1px solid var(--line);
       background:#fff;
-      border-radius:8px;
-      padding:6px 9px;
+      border-radius:9px;
+      padding:7px 10px;
+      box-shadow:0 2px 8px rgba(23,61,50,.035);
     }
 
-    .home:hover{
-      border-color:#98a2b3;
-    }
+    .home:hover{border-color:#9eb5ac}
 
     .eyebrow{
-      color:var(--blue);
+      color:var(--green3);
       font-size:10px;
-      font-weight:800;
-      letter-spacing:.11em;
+      font-weight:850;
+      letter-spacing:.12em;
       text-transform:uppercase;
     }
 
     h1{
-      font-size:clamp(32px,4vw,44px);
-      line-height:1;
-      letter-spacing:-.05em;
-      margin:8px 0;
+      font:500 clamp(40px,5vw,58px)/.96 Georgia,serif;
+      letter-spacing:-.055em;
+      margin:10px 0 9px;
     }
 
     .intro{
-      max-width:660px;
+      max-width:700px;
       color:var(--muted);
       font-size:14px;
       margin:0;
     }
 
+    .section-label{
+      margin:13px 0 8px;
+      color:var(--green);
+      font-size:10px;
+      font-weight:900;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+
     .tools{
       display:grid;
       grid-template-columns:repeat(3,minmax(0,1fr));
-      gap:8px;
-      padding:6px 0 28px;
+      gap:9px;
+      padding:0 0 14px;
     }
 
     .tool{
       display:grid;
-      grid-template-columns:30px 1fr;
+      grid-template-columns:32px 1fr;
       grid-template-rows:auto auto;
       column-gap:10px;
       row-gap:2px;
-      min-height:108px;
-      padding:12px;
+      min-height:112px;
+      padding:13px;
       background:var(--card);
       border:1px solid var(--line);
-      border-radius:10px;
+      border-radius:12px;
       box-shadow:var(--shadow);
       color:inherit;
       text-decoration:none;
-      transition:
-        transform .16s ease,
-        border-color .16s ease,
-        box-shadow .16s ease;
+      transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease;
     }
 
     .tool:hover{
       transform:translateY(-1px);
-      border-color:#b2c5ff;
-      box-shadow:0 8px 20px rgba(16,24,40,.065);
+      border-color:#a8bdb5;
+      box-shadow:0 10px 26px rgba(23,61,50,.08);
     }
 
     .icon{
@@ -118,13 +127,14 @@
       grid-row:1 / span 2;
       display:grid;
       place-items:center;
-      width:30px;
-      height:30px;
+      width:32px;
+      height:32px;
       border-radius:8px;
-      background:#eff4ff;
-      color:var(--blue);
-      font-size:11px;
-      font-weight:850;
+      background:var(--green2);
+      color:var(--green);
+      font-size:10px;
+      font-weight:900;
+      letter-spacing:-.02em;
     }
 
     .tool-content{
@@ -134,8 +144,8 @@
 
     .tool h2{
       font-size:14px;
-      line-height:1.2;
-      letter-spacing:-.015em;
+      line-height:1.18;
+      letter-spacing:-.018em;
       margin:0 0 4px;
     }
 
@@ -149,53 +159,48 @@
     .open{
       grid-column:2;
       align-self:end;
-      padding-top:7px;
-      color:var(--blue);
+      padding-top:8px;
+      color:var(--green3);
       font-size:11px;
-      font-weight:800;
+      font-weight:850;
     }
 
+    .external .icon{
+      background:#f0efe8;
+      color:#5b5d57;
+    }
+
+    .external .open{color:#5b5d57}
+
     .note{
-      padding:14px 0 26px;
+      margin-top:5px;
+      padding:15px 0 26px;
       border-top:1px solid var(--line);
       color:var(--muted);
       font-size:11px;
     }
 
     footer{
-      padding-bottom:22px;
+      padding-bottom:24px;
       color:var(--muted);
       font-size:11px;
     }
 
     @media(max-width:820px){
-      .tools{
-        grid-template-columns:repeat(2,minmax(0,1fr));
-      }
+      .tools{grid-template-columns:repeat(2,minmax(0,1fr))}
     }
 
     @media(max-width:540px){
-      header{
-        padding-top:24px;
-      }
-
-      .tools{
-        grid-template-columns:1fr;
-      }
-
-      .tool{
-        min-height:96px;
-      }
-
-      .top{
-        align-items:flex-start;
-      }
+      .wrap{width:calc(100% - 20px)}
+      header{padding-top:24px}
+      .tools{grid-template-columns:1fr}
+      .tool{min-height:98px}
+      .top{align-items:flex-start}
     }
   </style>
 </head>
 
 <body>
-
   <header class="wrap">
     <div class="top">
       <div class="eyebrow">Nate Lorenzen</div>
@@ -205,13 +210,15 @@
     <h1>Tools</h1>
 
     <p class="intro">
-      Simple calculators, interactive tools, and independent experiments for making better decisions with data.
+      Simple calculators, interactive tools, games, and independent experiments.
     </p>
   </header>
 
   <main class="wrap">
 
-    <section class="tools" aria-label="Available tools">
+    <div class="section-label">Lorenzen Tools</div>
+
+    <section class="tools" aria-label="Lorenzen tools">
 
       <a class="tool" href="/tools/ab-test-calculator/">
         <div class="icon" aria-hidden="true">A/B</div>
@@ -226,7 +233,7 @@
         <div class="icon" aria-hidden="true">W</div>
         <div class="tool-content">
           <h2>Wealthspan</h2>
-          <p>Compare your net worth with age-based wealth benchmarks and estimate your financial age.</p>
+          <p>Compare net worth with age-based wealth benchmarks and estimate financial age.</p>
         </div>
         <span class="open">Open Wealthspan →</span>
       </a>
@@ -253,7 +260,7 @@
         <div class="icon" aria-hidden="true">$</div>
         <div class="tool-content">
           <h2>Break-Even Media</h2>
-          <p>Calculate break-even CPA and see how far performance sits above or below it.</p>
+          <p>Calculate break-even CPA, CPC, CPM, and ROAS from real business economics.</p>
         </div>
         <span class="open">Calculate CPA →</span>
       </a>
@@ -262,7 +269,7 @@
         <div class="icon" aria-hidden="true">K</div>
         <div class="tool-content">
           <h2>The K-Factor</h2>
-          <p>Measure referral virality and see how K-factor changes your effective acquisition cost.</p>
+          <p>Measure referral virality and see how it changes effective acquisition cost.</p>
         </div>
         <span class="open">Calculate K-factor →</span>
       </a>
@@ -280,7 +287,7 @@
         <div class="icon" aria-hidden="true">500</div>
         <div class="tool-content">
           <h2>S&amp;P 500 Bubble Basket</h2>
-          <p>A live $100K paper portfolio testing whether likely S&amp;P 500 additions can be predicted early.</p>
+          <p>A live $100K paper portfolio testing whether index additions can be predicted early.</p>
         </div>
         <span class="open">Follow the experiment →</span>
       </a>
@@ -298,7 +305,7 @@
         <div class="icon" aria-hidden="true">❄</div>
         <div class="tool-content">
           <h2>Snow Day</h2>
-          <p>Current status for OpenAI, Anthropic, Perplexity, Google Ads, Meta Ads, and TikTok Ads.</p>
+          <p>Current status for major AI and advertising platforms.</p>
         </div>
         <span class="open">Check conditions →</span>
       </a>
@@ -312,8 +319,37 @@
         <span class="open">Start the meeting →</span>
       </a>
 
+      <a class="tool" href="/tools/social-graph/">
+        <div class="icon" aria-hidden="true">3D</div>
+        <div class="tool-content">
+          <h2>The Social Graph</h2>
+          <p>Map social products across audience, memory, and human-to-AI origin.</p>
+        </div>
+        <span class="open">Explore the graph →</span>
+      </a>
+
+    </section>
+
+    <div class="section-label">Independent experiments</div>
+
+    <section class="tools" aria-label="Independent experiments">
+
       <a
-        class="tool"
+        class="tool external"
+        href="https://spyorlie.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <div class="icon" aria-hidden="true">S/L</div>
+        <div class="tool-content">
+          <h2>Spy or Lie</h2>
+          <p>A bluffing and territory-capture strategy game built around spies, moles, and counterintelligence.</p>
+        </div>
+        <span class="open">Play the game ↗</span>
+      </a>
+
+      <a
+        class="tool external"
         href="https://www.artificialturfwar.com/"
         target="_blank"
         rel="noopener noreferrer"
@@ -321,7 +357,7 @@
         <div class="icon" aria-hidden="true">AI</div>
         <div class="tool-content">
           <h2>Artificial Turf War</h2>
-          <p>An independent experiment testing how AI models reason through fantasy football decisions.</p>
+          <p>Eight AI models independently manage fantasy football teams through a real season.</p>
         </div>
         <span class="open">Visit experiment ↗</span>
       </a>
@@ -329,15 +365,12 @@
     </section>
 
     <p class="note">
-      The tools require no accounts or server uploads. Inputs remain on your device.
-      Artificial Turf War is a separate external project.
+      Lorenzen Tools require no accounts unless a tool explicitly says otherwise.
+      Spy or Lie and Artificial Turf War are separate external projects.
     </p>
 
   </main>
 
-  <footer class="wrap">
-    © Nate Lorenzen
-  </footer>
-
+  <footer class="wrap">© Nate Lorenzen</footer>
 </body>
 </html>
