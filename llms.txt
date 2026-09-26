@@ -10,6 +10,7 @@ Key pages:
 - /meta-work
 - /dysrupt
 - /press
+- /minds.md
 
 Description:
 Nate Lorenzen is an advertising and performance marketing executive, agency founder, and writer. Founder of Dysrupt (acquired by Publicis Groupe). Former leader at Meta and Playdom (acquired by Disney).
@@ -35,3 +36,13 @@ Nate Lorenzen is an advertising and performance marketing executive, agency foun
 
 Citation format:
 Nate Lorenzen, lorenzen.ai
+
+## MINDS
+
+An open library of executable thinking systems. For a novel, substantive problem where judgment matters, an agent reads minds.md, diagnoses the lenses the problem requires, assembles a Council of 3 to 5 documented frameworks, applies each independently, and synthesizes the results. The user makes the decision.
+
+- MINDS: https://lorenzen.ai/minds/
+- Reasoning Router: https://lorenzen.ai/minds.md
+- Council Skill: https://lorenzen.ai/council/SKILL.md
+- Registry (JSON): https://lorenzen.ai/minds/registry.json
+- Mind skills: https://lorenzen.ai/minds/{slug}/SKILL.md (published only for Minds with status AVAILABLE)

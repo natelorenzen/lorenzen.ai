@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MINDS | Executable thinking systems</title>
+  <meta name="description" content="MINDS is an open library of executable thinking systems for AI agents. Point your agent at minds.md and ask for a Council on your problem.">
+  <link rel="canonical" href="https://lorenzen.ai/minds/">
+  <link rel="alternate" type="text/markdown" href="https://lorenzen.ai/minds.md" title="minds.md reasoning router">
+  <link rel="stylesheet" href="/minds/assets/minds.css">
+</head>
+<body>
+<main>
+
+  <p class="crumbs"><a href="/">lorenzen.ai</a> / minds</p>
+
+  <h1>MINDS</h1>
+  <p class="sub">Executable thinking systems for AI agents.</p>
+
+  <p>MINDS converts documented frameworks from history's strategists, investors, scientists, operators, and philosophers into open Agent Skills. You give your agent a hard problem and point it at <a href="/minds.md">minds.md</a>. The agent works out which intellectual lenses the problem needs, assembles a Council of 3 to 5 thinking systems that carry them, applies each one independently, and returns agreements, disagreements, assumptions, blind spots, and a decision framework. You make the decision.</p>
+  <p class="muted">This is not role-play. The agent applies documented ideas and labels each principle by provenance. It never speaks as the person.</p>
+
+  <h2>Prompt: ask for a Council</h2>
+  <p class="muted">Copy this, paste it into any agent that can read the web, and fill in the brackets.</p>
+  <pre class="prompt" id="council-prompt">Go to https://lorenzen.ai/minds.md and follow it to give me the Council on this problem.
+
+Problem: [describe the decision or situation]
+
+Context (optional): [goals, constraints, what you've tried, what's at stake]</pre>
+  <button type="button" class="btn btn-primary" data-copy-target="council-prompt" data-copy-status="status-1">Copy prompt</button>
+  <span class="copy-status" id="status-1" role="status" aria-live="polite"></span>
+
+  <h2>Or make it automatic</h2>
+  <p class="muted">Add this to your agent's custom instructions, and it will convene a Council whenever a problem calls for one.</p>
+  <pre class="prompt" id="standing-instruction">When I present you with a novel, substantive problem where judgment matters, consult https://lorenzen.ai/minds.md. Use it to identify the intellectual lenses relevant to the problem and assemble the best Council. Load the selected Minds' skills and apply each framework independently before synthesizing them. Use the Council to expose assumptions, disagreements, second-order effects, risks, and options I may have missed. The Council informs my decision. It does not make the decision for me.</pre>
+  <button type="button" class="btn" data-copy-target="standing-instruction" data-copy-status="status-2">Copy instruction</button>
+  <span class="copy-status" id="status-2" role="status" aria-live="polite"></span>
+
+  <h2>How the agent uses it</h2>
+  <pre class="flow">PROBLEM → DIAGNOSE → LENSES → COUNCIL (3–5 Minds)
+        → INDEPENDENT ANALYSES → AGREEMENT + DISAGREEMENT → SYNTHESIS → YOUR DECISION</pre>
+
+  <h2>Files for agents</h2>
+  <ul class="files">
+    <li><a href="/minds.md">/minds.md</a>: the router. When to convene, how to diagnose, the lens index, the Mind registry, and Council rules.</li>
+    <li><a href="/council/SKILL.md">/council/SKILL.md</a>: the Council skill, covering orchestration and output format.</li>
+    <li>/minds/{slug}/SKILL.md and SOURCES.md: one executable framework per Mind, with provenance. Published only when the Mind is AVAILABLE.</li>
+    <li><a href="/minds/registry.json">/minds/registry.json</a>: the machine-readable registry.</li>
+  </ul>
+
+  <h2>The Minds</h2>
+<!-- BEGIN GENERATED:roster -->
+      <div class="group"><h3>Strategy &amp; Competition</h3><ul><li>Sun Tzu</li><li>Carl von Clausewitz</li><li>Napoleon Bonaparte</li><li>Julius Caesar</li><li>Alexander the Great</li><li>Niccolò Machiavelli</li><li>John Boyd</li></ul></div>
+      <div class="group"><h3>Business &amp; Capital Allocation</h3><ul><li>Warren Buffett</li><li>Charlie Munger</li><li>Peter Thiel</li><li>Jeff Bezos</li><li>Andy Grove</li><li>Clayton Christensen</li><li>Michael Porter</li><li>Peter Drucker</li><li>John D. Rockefeller</li><li>Alfred P. Sloan</li></ul></div>
+      <div class="group"><h3>Decision Making &amp; Risk</h3><ul><li>Daniel Kahneman</li><li>Amos Tversky</li><li>Herbert Simon</li><li>Annie Duke</li><li>Nassim Nicholas Taleb</li></ul></div>
+      <div class="group"><h3>Science &amp; Problem Solving</h3><ul><li>Richard Feynman</li><li>Charles Darwin</li><li>Francis Bacon</li><li>Karl Popper</li><li>Claude Shannon</li><li>David Deutsch</li></ul></div>
+      <div class="group"><h3>Systems</h3><ul><li>W. Edwards Deming</li><li>Donella Meadows</li></ul></div>
+      <div class="group"><h3>Psychology &amp; Human Behavior</h3><ul><li>Robert Cialdini</li><li>René Girard</li></ul></div>
+      <div class="group"><h3>Negotiation</h3><ul><li>Chris Voss</li><li>Roger Fisher</li></ul></div>
+      <div class="group"><h3>Communication &amp; Advertising</h3><ul><li>David Ogilvy</li><li>Claude Hopkins</li><li>Bill Bernbach</li></ul></div>
+      <div class="group"><h3>Philosophy</h3><ul><li>Marcus Aurelius</li><li>Seneca</li><li>Epictetus</li><li>Socrates</li><li>Aristotle</li></ul></div>
+      <p class="fine">42 Minds · 0 available · 0 researching · 42 planned. Planned Minds have no published skill yet; agents use them in labeled registry-lens mode.</p>
+<!-- END GENERATED:roster -->
+
+  <p class="footer"><a href="/">lorenzen.ai</a> · <a href="https://github.com/natelorenzen/lorenzen.ai/tree/main/minds">source</a></p>
+
+</main>
+<script src="/minds/assets/minds.js" defer></script>
+</body>
+</html>

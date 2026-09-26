@@ -35,6 +35,33 @@ The site is designed to be:
 - `/ideas` – short concepts and frameworks
 - `/projects` – tools and experiments
 - `/about` – biography and background
+- `/minds` – MINDS, an open library of executable thinking systems (see below)
+
+## MINDS
+
+An open library of executable thinking systems for AI agents.
+
+| Piece | Role |
+|---|---|
+| MINDS | the library |
+| [`minds.md`](minds.md) | the reasoning router (for agents) |
+| Mind | a documented thinking system |
+| `minds/{slug}/SKILL.md` | an executable framework |
+| [`council/SKILL.md`](council/SKILL.md) | orchestration and synthesis |
+| `minds/{slug}/SOURCES.md` | provenance |
+
+```
+USER PROBLEM → minds.md → PROBLEM TYPE → NEEDED LENSES → COUNCIL
+  → INDIVIDUAL SKILLS → INDEPENDENT ANALYSES → SYNTHESIS → USER DECISION
+```
+
+`minds/registry.json` is the source of truth. After editing it, run:
+
+```bash
+python3 minds/_build/build.py
+```
+
+Full documentation, including how to add a Mind: [`minds/README.md`](minds/README.md).
 
 ## License
 
