@@ -44,7 +44,7 @@ An open library of executable thinking systems for AI agents.
 | Piece | Role |
 |---|---|
 | MINDS | the library |
-| [`minds.md`](minds.md) | the reasoning router (for agents) |
+| [`minds/router.md`](minds/router.md) | the reasoning router, served at `/minds.md` (for agents) |
 | Mind | a documented thinking system |
 | `minds/{slug}/SKILL.md` | an executable framework |
 | [`council/SKILL.md`](council/SKILL.md) | orchestration and synthesis |

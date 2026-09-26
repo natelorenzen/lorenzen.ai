@@ -1,0 +1,10 @@
+---
+# GitHub Pages passthrough. Do not edit; the router source is minds/router.md.
+# Serves minds/router.md byte-for-byte at /minds.md. Keeping the source out of
+# the repo root stops Jekyll from generating /minds.html, which GitHub Pages
+# would serve at /minds instead of redirecting to the /minds/ page.
+layout: null
+sitemap: false
+permalink: /minds.md
+---
+{% include_relative minds/router.md %}

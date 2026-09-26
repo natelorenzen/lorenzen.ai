@@ -20,14 +20,10 @@ MINDS is **not** a personality simulator. It never role-plays or speaks for anyo
 
 ## Usage
 
-Paste this into any agent that can read the web:
+Add one sentence to your agent's custom instructions:
 
 ```
-Go to https://lorenzen.ai/minds.md and follow it to give me the Council on this problem.
-
-Problem: [describe the decision or situation]
-
-Context (optional): [goals, constraints, what you've tried, what's at stake]
+When I bring you a hard problem or decision, read https://lorenzen.ai/minds.md and use it to convene a Council before you answer. The decision stays mine.
 ```
 
 ## Flow
@@ -57,12 +53,13 @@ Lenses always come before people. Minds are selected for the lens they carry, ne
 ## Files
 
 ```
-/minds.md                      Reasoning router (hand-written prose + generated tables)
+/minds.raw                     Passthrough that publishes minds/router.md at /minds.md
 /llms.txt                      Site index for LLMs (MINDS section added)
 /council/
   SKILL.md                     Council skill: orchestration + synthesis format
   SKILL.raw                    GitHub Pages passthrough (generated; see below)
 /minds/
+  router.md                    THE ROUTER (served at /minds.md): hand-written prose + generated tables
   index.html                   The one human page: what MINDS is + copy-paste prompts
   registry.json                SOURCE OF TRUTH: Minds, lenses, problem patterns
   README.md                    This file
@@ -90,7 +87,7 @@ python3 minds/_build/build.py --check  # validate; exit 1 if anything is stale
 
 It regenerates:
 
-- the problem-pattern table, lens index, and registry table in `minds.md`
+- the problem-pattern table, lens index, and registry table in `minds/router.md`
 - the roster of Minds on `minds/index.html`
 - a `SKILL.raw` passthrough for every directory that has a `SKILL.md`
 
@@ -99,7 +96,7 @@ It validates:
 - slugs, lenses, filters, groups, statuses, and wildcards are consistent
 - every lens is carried by at least one Mind
 - **AVAILABLE ⇔ SKILL.md and SOURCES.md exist**, and SKILL.md frontmatter `name` and `status` match the registry
-- no Markdown under `/minds` or `/council` (or `minds.md`) contains Liquid syntax, which would break the Pages build
+- no Markdown under `/minds` or `/council` contains Liquid syntax, which would break the Pages build
 
 Run it before every commit that touches MINDS.
 
@@ -107,7 +104,11 @@ Run it before every commit that touches MINDS.
 
 GitHub Pages runs Jekyll. Jekyll converts any `.md` file that **has YAML frontmatter** into HTML and **does not publish the original**, so `/council/SKILL.md` would 404. Agent Skills require frontmatter, so each `SKILL.raw` is a tiny Jekyll page with `permalink: /…/SKILL.md` and `layout: null` whose body is `include_relative SKILL.md`. It republishes the file byte for byte at the expected URL, served as `text/markdown`. `SKILL.md` stays the single source. The build script creates and removes these files automatically.
 
-Markdown files **without** frontmatter (`minds.md`, `SOURCES.md`) are served raw by Pages as they are, and are also rendered to `.html`.
+Markdown files **without** frontmatter (such as `SOURCES.md`) are served raw by Pages as they are, and are also rendered to `.html`.
+
+### Why the router lives at `minds/router.md`
+
+If the router were `minds.md` at the repo root, Jekyll would also render it as `/minds.html`. GitHub Pages serves that file for `lorenzen.ai/minds` (no trailing slash) instead of redirecting to `/minds/`, so visitors would land on a GitHub-themed copy of the router. So the source lives at `minds/router.md`, and the root `minds.raw` republishes it byte for byte at `/minds.md`. Never add a `minds.md` at the root; the build fails if one exists.
 
 ## Adding a Mind
 

@@ -10,7 +10,7 @@ The route is always: **PROBLEM → LENSES → MINDS → COUNCIL → INDEPENDENT 
 
 ## Start here: a user sent you with a problem
 
-If a user pointed you to this file with a problem, for example "Go to minds.md and give me the Council on this", **convene the Council now**:
+If a user pointed you to this file with a problem, for example "Go to minds.md and give me the Council on this", **convene the Council now**. This also applies if a standing instruction sent you here, such as "When I bring you a hard problem or decision, read minds.md…", and the problem qualifies under §1. Then:
 
 - **Skip the gate.** The user has already decided a Council is warranted. Do not ask whether to run one.
 - **Do not stall on questions.** If context is missing, state your assumptions at the top and continue. List the questions whose answers would most change the analysis under "What Would Change the Analysis".

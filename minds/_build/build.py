@@ -5,7 +5,7 @@ MINDS build script.
 Single source of truth: minds/registry.json
 
 Generates (between <!-- BEGIN GENERATED:x --> / <!-- END GENERATED:x --> markers):
-  - minds.md                  problem patterns, lens index, mind registry
+  - minds/router.md           problem patterns, lens index, mind registry (served at /minds.md)
   - minds/index.html          plain roster of Minds on the one human page
 
 Generates (whole files):
@@ -33,7 +33,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 MINDS_DIR = ROOT / "minds"
 REGISTRY = MINDS_DIR / "registry.json"
-ROUTER = ROOT / "minds.md"
+ROUTER = MINDS_DIR / "router.md"          # served at /minds.md via /minds.raw
 PAGE = MINDS_DIR / "index.html"
 SKILL_DIRS_EXTRA = [ROOT / "council"]
 
@@ -152,7 +152,7 @@ def check_liquid():
         rel = path.relative_to(ROOT)
         if rel.parts[0].startswith((".", "_")) or any(p.startswith("_") for p in rel.parts[:-1]):
             continue
-        if not (rel.parts[0] in ("minds", "council") or rel.name == "minds.md"):
+        if rel.parts[0] not in ("minds", "council"):
             continue
         text = path.read_text(encoding="utf-8")
         if "{{" in text or "{%" in text:
@@ -316,6 +316,10 @@ def main():
     data, by_slug = load()
     check_skill_files(data)
     check_liquid()
+    if not (ROOT / "minds.raw").exists():
+        fail("minds.raw (the /minds.md passthrough) is missing")
+    if (ROOT / "minds.md").exists():
+        fail("minds.md must not exist at the repo root; edit minds/router.md (see minds/README.md)")
     if not (ROOT / "council" / "SKILL.md").exists():
         fail("council/SKILL.md is missing")
     if errors:
