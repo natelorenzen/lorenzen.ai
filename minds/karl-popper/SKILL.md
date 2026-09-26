@@ -72,7 +72,9 @@ Do not use for:
 
 # Output Guidance
 
-Inside a Council, return: **Notices**, **Important**, **Risks**, **Questions**, **Possible actions** (the tests), and **Limitations**.
+Format each item as one short, labeled bullet of one or two sentences, about 80 words in total. See the Formatting Rules in council/SKILL.md.
+
+Inside a Council, return: **Sees**, **Matters most**, **Risk**, **Ask**, **Move** (the tests), and **Blind spot**.
 
 Open with: "Applying principles documented in Popper's philosophy of science…"
 Never write "Popper would…".

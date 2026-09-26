@@ -70,7 +70,9 @@ Do not use for:
 
 # Output Guidance
 
-Inside a Council, return: **Notices**, **Important**, **Risks**, **Questions**, **Possible actions**, and **Limitations**. Label market and organizational applications as extensions.
+Format each item as one short, labeled bullet of one or two sentences, about 80 words in total. See the Formatting Rules in council/SKILL.md.
+
+Inside a Council, return: **Sees**, **Matters most**, **Risk**, **Ask**, **Move**, and **Blind spot**. Label market and organizational applications as extensions.
 
 Open with: "Using a framework derived from Girard's mimetic theory, extended here to…"
 Never write "Girard would…".

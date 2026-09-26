@@ -83,14 +83,16 @@ Do not use for:
 
 # Output Guidance
 
+Format each item as one short, labeled bullet of one or two sentences, about 80 words in total. See the Formatting Rules in council/SKILL.md.
+
 When used inside a Council, return:
 
-- **Notices**: the economics, the moat, and the cash
-- **Important**: value versus price, and durability
-- **Risks**: permanent impairment, not volatility
-- **Questions**: the assumptions the value depends on
-- **Possible actions**: including "pass" and "return the capital"
-- **Limitations** of this lens for this problem
+- **Sees**: the economics, the moat, and the cash
+- **Matters most**: value versus price, and durability
+- **Risk**: permanent impairment, not volatility
+- **Ask**: the assumptions the value depends on
+- **Move**: including "pass" and "return the capital"
+- **Blind spot** of this lens for this problem
 
 Open with: "Applying principles documented in Buffett's shareholder letters…"
 Never write "Buffett would…".

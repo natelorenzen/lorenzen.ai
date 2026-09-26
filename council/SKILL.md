@@ -93,52 +93,71 @@ Integrate the strongest insights. Do not average the analyses and do not force c
 
 ## Output Format
 
-Use these sections, in this order.
+The reader should get the answer in five seconds and the reasoning in two minutes. Put the conclusion first, then the detail. Use these sections, in this order.
 
-```
-## Problem
-<Neutral restatement in 1 to 3 sentences.>
-<If context was missing: "Assuming: ..." in one line.>
-<Diagnosis: problem type, and the lenses selected with one line each on why.>
+````
+## Bottom Line
+<One sentence: what the Council concludes, or the single hinge the decision turns on.>
 
-## Council
-- <Mind> (<lens>, <role>): <one sentence on why it was selected>. [skill | registry-lens mode]
-- ...
+## Summary
+<One paragraph, at most five sentences: where the frameworks converge, the most important disagreement, and the recommended next step or decision hinge.>
 
-## Individual Analyses
-### Through <Mind>'s framework
-<Concise independent analysis: notices, important, risks, questions, actions, limitations.>
-...
+## Problem and Council
+**Problem:** <one-line neutral restatement>
+**Assuming:** <one line, only if context was missing>
+**Lenses:** `lens-one` · `lens-two` · `lens-three`
+
+| Mind | Lens | Role | Why selected |
+|---|---|---|---|
+| <Mind> | <lens> | <role> | <one short clause> |
+
+## By Thinker
+### <Mind> · <lens>
+- **Sees:** <one or two sentences>
+- **Matters most:** <one sentence>
+- **Risk:** <one sentence>
+- **Ask:** <one question>
+- **Move:** <one concrete action>
+- **Blind spot:** <one sentence>
+
+(Repeat for each Mind.)
 
 ## Agreement
-<Where frameworks independently converge, and how independent those frameworks are.>
+- <bullet: point of convergence, and which Minds reached it>
 
 ## Disagreement
-<Where frameworks imply different interpretations or actions, and the source of each disagreement.>
+- **<Issue>:** <Mind A> holds …, while <Mind B> holds … The difference comes from <values, facts, or time horizon>.
 
 ## Unique Insights
-<Important observations raised by only one framework.>
+- **<Mind>:** <point only this framework raised>
 
-## Assumptions
-<What the analyses depend on being true. Mark any the user can verify.>
+## Assumptions · Blind Spots · Second-Order Effects
+- **Assumes:** …
+- **Blind spot:** … (covered by `lens`)
+- **Second-order:** …
 
-## Blind Spots
-<Relevant dimensions this Council covered poorly, and which lens would cover them.>
-
-## Second-Order Effects
-<Consequences beyond the immediate decision: competitor responses, feedback loops, precedents, incentives created.>
-
-## What Would Change the Analysis
-<Specific information or evidence that would materially alter the conclusions.>
-
-## Synthesis
-<Integrate the strongest insights without forcing consensus.>
+## What Would Change This
+- <evidence> → <how the conclusion would shift>
 
 ## Decision Framework
-<A clear structure for the user's decision: the real options, the criteria that matter, the key uncertainties, what each option bets on, cheap tests or reversible first steps, and the signals that would trigger a change of course.>
-```
+| Option | Bets on | Key risk | Cheap first test | Change course if |
+|---|---|---|---|---|
+| … | … | … | … | … |
+````
 
-For a lighter request, compress each section but keep all of them. Omit "Individual Analyses" detail only if the user asks for the synthesis alone.
+## Formatting Rules
+
+Legibility is part of the output. Long unbroken paragraphs defeat the purpose.
+
+- **No wall of text.** Apart from the Summary, no paragraph runs longer than three sentences. Prefer labeled bullets.
+- **One idea per bullet.** Each bullet takes one or two sentences and starts with a bold label.
+- **Short thinker breakdowns.** Keep each "By Thinker" block to about 80 words. Put extra detail in later sections or leave it out.
+- **Compact provenance.** Put labels at the end of a bullet in brackets, for example `[DOCUMENTED · Competitive Strategy, 1980]`. Label only substantive principles, not every sentence.
+- **Quote sparingly.** Use at most one short verified quote per thinker, and only when it adds something a paraphrase can't.
+- **Tables for comparisons.** Use a table for the Council roster and the Decision Framework.
+- **Plain words.** Use lens ids in backticks only where they help the reader navigate.
+
+For a lighter request, keep the Bottom Line, Summary, By Thinker, and Decision Framework, and fold the rest into a few bullets. If the user asks for the synthesis alone, give only the Bottom Line, Summary, and Decision Framework.
 
 ## Language and Provenance Rules
 
@@ -161,6 +180,8 @@ Before you respond, verify:
 - [ ] Real disagreements are preserved, not smoothed over.
 - [ ] Blind spots are named honestly.
 - [ ] The Decision Framework leaves the decision with the user.
+- [ ] The response opens with a one-sentence Bottom Line and a one-paragraph Summary.
+- [ ] There are no paragraphs longer than three sentences outside the Summary, and each thinker block is short and labeled.
 
 ## Failure Modes to Avoid
 

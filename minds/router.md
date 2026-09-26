@@ -17,7 +17,7 @@ If a user pointed you to this file with a problem, whether through `#mindme` or 
 - **Skip the gate.** The user has already decided a Council is warranted. Do not ask whether to run one.
 - **Do not stall on questions.** If context is missing, state your assumptions at the top and continue. List the questions whose answers would most change the analysis under "What Would Change the Analysis".
 - **Run the whole protocol** (§0, steps 2 to 7) and return the full Council output in the format of §8.
-- **Show your routing.** Open with a short diagnosis and the lenses you selected, then the Council members and why each was selected, so the user can see that lenses came before people.
+- **Answer first, then show your routing.** Open with a one-sentence Bottom Line and a one-paragraph Summary. Then list the lenses and the Council (who, and why), so the user can see that lenses came before people. Keep everything else short and in labeled bullets (§8).
 - **Fetch only what you need:** this file, https://lorenzen.ai/council/SKILL.md, and the SKILL.md of any selected Mind marked AVAILABLE. If you cannot fetch the Council skill, §8 contains everything you need.
 
 If the user names specific Minds ("give me Buffett, Boyd and Meadows on this"), use them. Then add one sentence noting any important lens that set leaves uncovered.
@@ -308,7 +308,7 @@ For each Mind:
 7. What possible actions does it suggest?
 8. What are the limitations of this lens for this problem? (See "May underweight" in the registry.)
 
-Keep each analysis concise: roughly 100 to 250 words.
+Keep each analysis short: six labeled bullets (Sees, Matters most, Risk, Ask, Move, Blind spot), about 80 words in total.
 
 ---
 
@@ -316,18 +316,16 @@ Keep each analysis concise: roughly 100 to 250 words.
 
 Load and follow **https://lorenzen.ai/council/SKILL.md**. If you cannot fetch it, produce these sections in order:
 
-1. **Problem**: neutral restatement, any assumptions made, and the diagnosis with the lenses selected
-2. **Council**: each Mind, with one sentence on why it was selected and whether it ran from a skill or in registry-lens mode
-3. **Individual Analyses**: a concise summary of each independent analysis
-4. **Agreement**: where frameworks independently converge
-5. **Disagreement**: where they imply different interpretations or actions, and why
-6. **Unique Insights**: important points raised by only one framework
-7. **Assumptions**: what the analyses rely on being true
-8. **Blind Spots**: relevant dimensions this Council covers poorly
-9. **Second-Order Effects**: consequences beyond the immediate decision
-10. **What Would Change the Analysis**: evidence that would materially alter the conclusions
-11. **Synthesis**: integrate the strongest insights without forcing consensus
-12. **Decision Framework**: a clear structure the user can use to decide
+1. **Bottom Line**: one sentence
+2. **Summary**: one paragraph, at most five sentences
+3. **Problem and Council**: a one-line problem statement, the lenses, and a table of the Minds with lens, role, and why each was selected
+4. **By Thinker**: for each Mind, six labeled one-line bullets: Sees, Matters most, Risk, Ask, Move, Blind spot
+5. **Agreement**, **Disagreement**, **Unique Insights**: bullets
+6. **Assumptions, Blind Spots, Second-Order Effects**: bullets
+7. **What Would Change This**: bullets in the form "evidence → shift"
+8. **Decision Framework**: a table of Option, Bets on, Key risk, Cheap first test, and Change course if
+
+**Legibility:** apart from the Summary, no paragraph runs longer than three sentences. Use one idea per bullet with a bold label, and keep provenance labels compact at the end of a bullet, such as `[DOCUMENTED · source]`.
 
 Do not pretend the Council has objectively solved the problem.
 

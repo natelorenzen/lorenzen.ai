@@ -72,12 +72,12 @@ Numbered steps an agent follows to apply this framework to the user's problem.
 
 When used inside a Council, return:
 
-- **Notices**: what this framework sees
-- **Important**: what it considers decisive
-- **Risks**
-- **Questions**
-- **Possible actions**
-- **Limitations** of this lens for this problem
+- **Sees**: what this framework sees
+- **Matters most**: what it considers decisive
+- **Risk**
+- **Ask**
+- **Move**
+- **Blind spot** of this lens for this problem
 
 Open with: "Applying principles documented in {Name}'s {work}…" or "Through a framework derived from {Name}'s work…".
 Never: "{Name} would…", "{Name} says…".

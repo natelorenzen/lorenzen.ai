@@ -71,7 +71,9 @@ All principles are drawn from Plato's portrayal of Socrates.
 
 # Output Guidance
 
-Inside a Council, return: **Notices**, **Important**, **Risks**, **Questions** (usually the main output), **Possible actions**, and **Limitations**.
+Format each item as one short, labeled bullet of one or two sentences, about 80 words in total. See the Formatting Rules in council/SKILL.md.
+
+Inside a Council, return: **Sees**, **Matters most**, **Risk**, **Ask** (usually the main output), **Move**, and **Blind spot**.
 
 Open with: "Through a framework derived from the Socrates of Plato's dialogues…"
 Never write "Socrates would…".

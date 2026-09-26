@@ -73,7 +73,9 @@ Do not use for:
 
 # Output Guidance
 
-Inside a Council, return: **Notices**, **Important**, **Risks**, **Questions**, **Possible actions**, and **Limitations**. Label organizational applications as analogies.
+Format each item as one short, labeled bullet of one or two sentences, about 80 words in total. See the Formatting Rules in council/SKILL.md.
+
+Inside a Council, return: **Sees**, **Matters most**, **Risk**, **Ask**, **Move**, and **Blind spot**. Label organizational applications as analogies.
 
 Open with: "Using a framework derived from Shannon's information theory, applied here by analogy…"
 Never write "Shannon would…".

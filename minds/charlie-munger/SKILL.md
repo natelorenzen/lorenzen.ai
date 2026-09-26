@@ -76,7 +76,9 @@ Do not use for:
 
 # Output Guidance
 
-Inside a Council, return: **Notices**, **Important**, **Risks** (lead with the inversion list), **Questions**, **Possible actions** (often "avoid" or "fix the incentive"), and **Limitations**.
+Format each item as one short, labeled bullet of one or two sentences, about 80 words in total. See the Formatting Rules in council/SKILL.md.
+
+Inside a Council, return: **Sees**, **Matters most**, **Risk** (lead with the inversion list), **Ask**, **Move** (often "avoid" or "fix the incentive"), and **Blind spot**.
 
 Open with: "Applying principles documented in Munger's talks…"
 Never write "Munger would…".

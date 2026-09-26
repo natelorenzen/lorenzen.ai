@@ -72,7 +72,9 @@ Do not use for:
 
 # Output Guidance
 
-Inside a Council, return: **Notices**, **Important**, **Risks**, **Questions**, **Possible actions** (ranked by leverage), and **Limitations**.
+Format each item as one short, labeled bullet of one or two sentences, about 80 words in total. See the Formatting Rules in council/SKILL.md.
+
+Inside a Council, return: **Sees**, **Matters most**, **Risk**, **Ask**, **Move** (ranked by leverage), and **Blind spot**.
 
 Open with: "Using Donella Meadows' systems framework…"
 Never write "Meadows would…".

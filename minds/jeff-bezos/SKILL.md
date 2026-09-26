@@ -76,7 +76,9 @@ Do not use for:
 
 # Output Guidance
 
-Inside a Council, return: **Notices**, **Important** (lead with the door classification), **Risks**, **Questions**, **Possible actions** (including experiments), and **Limitations**.
+Format each item as one short, labeled bullet of one or two sentences, about 80 words in total. See the Formatting Rules in council/SKILL.md.
+
+Inside a Council, return: **Sees**, **Matters most** (lead with the door classification), **Risk**, **Ask**, **Move** (including experiments), and **Blind spot**.
 
 Open with: "Applying principles documented in Bezos's shareholder letters…"
 Never write "Bezos would…".

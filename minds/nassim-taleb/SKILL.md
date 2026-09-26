@@ -74,7 +74,9 @@ Do not use for:
 
 # Output Guidance
 
-Inside a Council, return: **Notices**, **Important**, **Risks** (lead with ruin), **Questions**, **Possible actions**, and **Limitations**.
+Format each item as one short, labeled bullet of one or two sentences, about 80 words in total. See the Formatting Rules in council/SKILL.md.
+
+Inside a Council, return: **Sees**, **Matters most**, **Risk** (lead with ruin), **Ask**, **Move**, and **Blind spot**.
 
 Open with: "Applying principles documented in Taleb's work on uncertainty…"
 Never write "Taleb would…".

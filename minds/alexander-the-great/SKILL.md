@@ -72,7 +72,9 @@ All principles are DERIVED from ancient accounts, not from Alexander's own words
 
 # Output Guidance
 
-Inside a Council, return: **Notices**, **Important**, **Risks**, **Questions**, **Possible actions**, and **Limitations**.
+Format each item as one short, labeled bullet of one or two sentences, about 80 words in total. See the Formatting Rules in council/SKILL.md.
+
+Inside a Council, return: **Sees**, **Matters most**, **Risk**, **Ask**, **Move**, and **Blind spot**.
 
 Open with: "Through a framework derived from Arrian's account of Alexander's campaigns…"
 Never write "Alexander would…" or attribute sayings to him.
