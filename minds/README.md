@@ -23,8 +23,10 @@ MINDS is **not** a personality simulator. It never role-plays or speaks for anyo
 Add one sentence to your agent's custom instructions:
 
 ```
-When I bring you a hard problem or decision, read https://lorenzen.ai/minds.md and use it to convene a Council before you answer. The decision stays mine.
+Whenever a message from me includes #mindme, read https://lorenzen.ai/minds.md and use it to convene a Council on that problem before you answer. The decision stays mine.
 ```
+
+Then talk to the agent normally, and add `#mindme` to any message you want a Council on.
 
 ## Flow
 

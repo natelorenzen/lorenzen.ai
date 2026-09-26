@@ -10,7 +10,9 @@ The route is always: **PROBLEM → LENSES → MINDS → COUNCIL → INDEPENDENT 
 
 ## Start here: a user sent you with a problem
 
-If a user pointed you to this file with a problem, for example "Go to minds.md and give me the Council on this", **convene the Council now**. This also applies if a standing instruction sent you here, such as "When I bring you a hard problem or decision, read minds.md…", and the problem qualifies under §1. Then:
+**`#mindme` is the trigger.** If the user's message contains `#mindme`, the problem in that message is the one to put before a Council, and the user has asked for it explicitly.
+
+If a user pointed you to this file with a problem, whether through `#mindme` or a direct request such as "Go to minds.md and give me the Council on this", **convene the Council now**. This also applies if a standing instruction sent you here and the problem qualifies under §1. Then:
 
 - **Skip the gate.** The user has already decided a Council is warranted. Do not ask whether to run one.
 - **Do not stall on questions.** If context is missing, state your assumptions at the top and continue. List the questions whose answers would most change the analysis under "What Would Change the Analysis".
@@ -140,7 +142,7 @@ The lenses were chosen first, and the people followed from them.
 
 ## 4. Lens index
 
-Every lens in the library, the question it asks, and the Minds that carry it. Lens ids are stable. Minds marked **AVAILABLE** have a published skill. All others are PLANNED or RESEARCHING (see §6).
+Every lens in the library, the question it asks, and the Minds that carry it. Lens ids are stable. Every Mind listed has a published skill unless it is marked (PLANNED) or (RESEARCHING); see §6.
 
 <!-- BEGIN GENERATED:lens-index -->
 | Lens | The question it asks | Minds carrying it |
@@ -161,13 +163,13 @@ Every lens in the library, the question it asks, and the Minds that carry it. Le
 | `strategic-inflection` | Are the fundamentals of the business changing? | `andy-grove` |
 | `intrinsic-value` | What is this worth, based on the cash it will produce? | `warren-buffett` |
 | `margin-of-safety` | How wrong can we be and still be fine? | `warren-buffett` |
-| `durable-advantage` | What protects these economics from competition over time? | `warren-buffett`, `charlie-munger`, `michael-porter` |
+| `durable-advantage` | What protects these economics from competition over time? | `warren-buffett`, `charlie-munger`, `michael-porter`, `nomad` |
 | `capital-allocation` | Where does the next dollar earn the most, including returning it? | `warren-buffett`, `jeff-bezos`, `alfred-sloan` |
 | `incentives` | What behavior do the incentives actually reward? | `machiavelli`, `charlie-munger` |
 | `inversion` | What would guarantee failure, and how do we avoid it? | `charlie-munger` |
 | `multidisciplinary-models` | Which models from other disciplines explain what is happening? | `charlie-munger` |
 | `customer-obsession` | What does the customer need that no one is yet providing? | `jeff-bezos` |
-| `long-term-orientation` | What looks different on a ten-year horizon? | `warren-buffett`, `peter-thiel`, `jeff-bezos` |
+| `long-term-orientation` | What looks different on a ten-year horizon? | `warren-buffett`, `peter-thiel`, `jeff-bezos`, `nomad` |
 | `decision-reversibility` | Is this decision a one-way door or a two-way door? | `jeff-bezos` |
 | `business-definition` | What is our business, who is the customer, and what does the customer value? | `peter-drucker` |
 | `management-effectiveness` | Are we doing the right things, not only doing things right? | `andy-grove`, `peter-drucker` |
@@ -175,6 +177,8 @@ Every lens in the library, the question it asks, and the Minds that carry it. Le
 | `organization-design` | How should authority, coordination, and control be structured? | `peter-drucker`, `alfred-sloan`, `herbert-simon` |
 | `scale-and-cost` | Who has the lowest cost at scale, and why? | `john-rockefeller` |
 | `integration-and-consolidation` | Which parts of the value chain should be owned or combined? | `john-rockefeller` |
+| `scale-economies-shared` | Are scale savings returned to customers so the advantage compounds? | `nomad` |
+| `destination-analysis` | Where will this be in ten or twenty years, and does today's behavior lead there? | `nomad` |
 | `cognitive-bias` | Which systematic errors could distort this judgment? | `charlie-munger`, `daniel-kahneman`, `francis-bacon` |
 | `base-rates` | What usually happens in cases like this? | `daniel-kahneman`, `amos-tversky` |
 | `framing-effects` | Would the choice change if the same facts were framed differently? | `daniel-kahneman`, `amos-tversky` |
@@ -280,7 +284,9 @@ What you do depends on the Mind's **status** in the registry (§9):
   - Heed any "Provenance caution" in the registry entry.
 - **Fetch fails.** Treat the Mind as registry-lens mode and say so.
 
-Early in the library's life most Minds are PLANNED. Registry-lens mode keeps Councils usable while skills are researched. It is weaker and must be labeled.
+New Minds may be added as PLANNED before their skills are researched. Registry-lens mode keeps them usable, but it is weaker and must be labeled.
+
+**Review status.** Current skills were source-checked by Claude (AI), with a human spot-check pending. Each SOURCES.md states, principle by principle, whether it was checked against the text or cited at the level of the whole work. Where it matters, cite provenance at that level of confidence.
 
 ---
 
@@ -334,52 +340,53 @@ One row per Mind: status, lenses (ids from §4), core question, best used for, a
 Core questions are MINDS' one-line summaries of each lens. **They are not quotations.** Do not present them as things the person said.
 
 <!-- BEGIN GENERATED:registry -->
-42 Minds. AVAILABLE: 0 · RESEARCHING: 0 · PLANNED: 42. Skill path for every Mind: `https://lorenzen.ai/minds/{slug}/SKILL.md` (it exists only when the status is AVAILABLE). Further questions and source seeds for each Mind: https://lorenzen.ai/minds/registry.json
+43 Minds. AVAILABLE: 43 · RESEARCHING: 0 · PLANNED: 0. Skill path for every Mind: `https://lorenzen.ai/minds/{slug}/SKILL.md` (it exists only when the status is AVAILABLE). Further questions and source seeds for each Mind: https://lorenzen.ai/minds/registry.json
 
 | Mind | Status | Lenses | Core question | Best used for | May underweight |
 |---|---|---|---|---|---|
-| Sun Tzu `sun-tzu` ⚠ | PLANNED | `strategic-advantage`, `intelligence-and-deception` | Where is advantage located? | competitive positioning; choosing where to compete; conflict avoidance; information asymmetry | cooperative and positive-sum dynamics; institutional and legal constraints; the text is aphoristic, so application requires interpretation |
-| Carl von Clausewitz `clausewitz` ⚠ | PLANNED | `friction-and-uncertainty`, `center-of-gravity`, `power-and-legitimacy` | What will friction do to this plan? | plans that must survive contact with reality; aligning means with ends; high-uncertainty execution | non-adversarial problems; commercial dynamics without a clear opponent |
-| Napoleon Bonaparte `napoleon` ⚠ | PLANNED | `concentration-and-speed`, `center-of-gravity`, `command-and-morale` | Where is the decisive point, and can we get there first? | resource concentration; speed of execution; operational planning | overextension and strategic overreach; sustainability of gains; ethics of means |
-| Julius Caesar `julius-caesar` ⚠ | PLANNED | `power-and-legitimacy`, `command-and-morale`, `tempo-and-adaptation` | How do speed and political legitimacy reinforce each other? | leadership under pressure; combining operational and political strategy; narrative control | institutional stability; the costs of concentrating power |
-| Alexander the Great `alexander-the-great` ⚠ | PLANNED | `concentration-and-speed`, `command-and-morale` | Where does bold, concentrated action break the opponent's structure? | bold offensive moves; leading from the front; integrating what has been acquired | succession and durability; limits of expansion |
-| Niccolò Machiavelli `machiavelli` | PLANNED | `power-and-legitimacy`, `incentives` | How will people actually behave, not how should they? | organizational politics; power transitions; realistic assessment of actors | trust and long-run cooperation; ethical constraints |
-| John Boyd `john-boyd` ⚠ | PLANNED | `tempo-and-adaptation`, `information-and-signal` | Who is adapting faster? | fast-moving competition; organizational agility; responding to a rival's move | long-horizon capital decisions; situations where speed is not the constraint |
-| Warren Buffett `warren-buffett` | PLANNED | `intrinsic-value`, `capital-allocation`, `margin-of-safety`, `durable-advantage`, `long-term-orientation` | What is this worth, and how certain can we be? | investments; acquisitions; capital allocation; business quality; long-term economics | early-stage and venture-style bets; technology change outside the circle of competence |
-| Charlie Munger `charlie-munger` | PLANNED | `inversion`, `incentives`, `multidisciplinary-models`, `cognitive-bias`, `durable-advantage` | What are we missing? | checking a thesis for blind spots; incentive analysis; avoiding standard stupidity | fast iteration and experimentation; situations where action beats analysis |
-| Peter Thiel `peter-thiel` | PLANNED | `monopoly-and-differentiation`, `mimetic-desire`, `long-term-orientation` | Are we escaping competition or trapped inside it? | new ventures; differentiation; contrarian theses | incremental improvement; competitive markets where differentiation is not available |
-| Jeff Bezos `jeff-bezos` | PLANNED | `customer-obsession`, `long-term-orientation`, `decision-reversibility`, `capital-allocation` | Is this a one-way door or a two-way door? | decision speed; long-term investment trade-offs; customer-centered strategy | near-term profitability constraints; organizations without patient capital |
-| Andy Grove `andy-grove` | PLANNED | `strategic-inflection`, `managerial-leverage`, `management-effectiveness` | Are the fundamentals of the business changing? | strategic inflection points; management systems; responding to structural change | non-technology businesses; slow-moving environments |
-| Clayton Christensen `clayton-christensen` | PLANNED | `disruption`, `jobs-to-be-done` | What changes when the basis of competition changes? | disruption threats; new market entry; innovation strategy | cases that do not fit the disruption pattern; network effects and platform dynamics |
-| Michael Porter `michael-porter` | PLANNED | `competitive-structure`, `positioning-and-tradeoffs`, `durable-advantage` | What determines the structure of competition? | industry analysis; positioning; competitive response | fast technological change; ecosystem and platform competition |
-| Peter Drucker `peter-drucker` | PLANNED | `business-definition`, `management-effectiveness`, `organization-design` | What is our business, and what does the customer value? | organizational purpose; management priorities; executive effectiveness | competitive tactics; quantitative valuation |
-| John D. Rockefeller `john-rockefeller` ⚠ | PLANNED | `scale-and-cost`, `integration-and-consolidation` | Who will be the lowest-cost producer at scale? | cost structure; industry consolidation; operational discipline | regulatory and antitrust risk; public legitimacy |
-| Alfred P. Sloan `alfred-sloan` | PLANNED | `organization-design`, `capital-allocation` | How do we decentralize operations while coordinating control? | multi-unit organizations; structure and governance; portfolio management | startup environments; bureaucratic rigidity over time |
-| Daniel Kahneman `daniel-kahneman` | PLANNED | `cognitive-bias`, `base-rates`, `noise`, `framing-effects` | Which biases could distort this judgment? | forecasts; high-stakes judgments; planning estimates; decision hygiene | expert intuition in high-validity environments; strategic interaction |
-| Amos Tversky `amos-tversky` ⚠ | PLANNED | `framing-effects`, `probabilistic-thinking`, `base-rates` | How is the framing shaping the choice? | choice architecture; risk perception; probability estimates | organizational and political dynamics |
-| Herbert Simon `herbert-simon` | PLANNED | `bounded-rationality`, `organization-design`, `abstraction` | What can the decision-makers realistically know and process? | organizational decisions; information overload; process design | competitive strategy; emotional and social motives |
-| Annie Duke `annie-duke` | PLANNED | `decision-quality`, `probabilistic-thinking` | Is this a good decision regardless of how it turns out? | decisions under uncertainty; post-mortems; setting kill criteria | domains where probabilities cannot be estimated meaningfully |
-| Nassim Nicholas Taleb `nassim-taleb` | PLANNED | `fragility-and-tail-risk`, `optionality`, `skin-in-the-game` | What happens in the tail? | risk management; exposure to rare events; incentive asymmetries | ordinary operating decisions; situations with reliable distributions |
-| Richard Feynman `richard-feynman` | PLANNED | `first-principles`, `intellectual-honesty` | Do we actually understand what is happening? | root-cause analysis; checking understanding; technical claims | social and political constraints; decisions that cannot wait for understanding |
-| Charles Darwin `charles-darwin` ⚠ | PLANNED | `selection-and-adaptation`, `systematic-observation` | What is the environment selecting for? | competitive adaptation; market evolution; patient evidence gathering | deliberate strategy; short time horizons |
-| Francis Bacon `francis-bacon` | PLANNED | `systematic-observation`, `cognitive-bias` | Which errors of mind are shaping what we see? | research design; challenging received wisdom; evidence gathering | the role of theory in guiding observation; time-pressured decisions |
-| Karl Popper `karl-popper` | PLANNED | `falsification` | What evidence would prove us wrong? | testing assumptions; evaluating theses; avoiding confirmation-seeking | decisions that require action before tests are possible |
-| Claude Shannon `claude-shannon` ⚠ | PLANNED | `information-and-signal`, `abstraction` | What is signal, and what is noise? | information flow; measurement; problem reformulation | meaning and interpretation; human motives |
-| David Deutsch `david-deutsch` ⚠ | PLANNED | `good-explanations`, `error-correction`, `falsification` | What is the best explanation, and is it hard to vary? | choosing between competing explanations; strategies that rest on a theory of why; long-horizon progress and innovation; institutions that must correct their own mistakes | probabilistic and Bayesian framings, which this framework is skeptical of; short-term operational constraints |
-| W. Edwards Deming `edwards-deming` | PLANNED | `system-vs-individual`, `variation` | Is the person failing, or is the system producing the failure? | recurring failures; quality problems; performance management | competitive strategy; one-off decisions |
-| Donella Meadows `donella-meadows` | PLANNED | `feedback-loops`, `leverage-points` | What system is producing this behavior? | recurring patterns; second-order effects; policy design | individual agency; one-time competitive moves |
-| Robert Cialdini `robert-cialdini` | PLANNED | `persuasion` | What principles of influence are shaping these choices? | buyer behavior; pricing perception; persuasion design | structural economics; long-run trust effects of heavy-handed tactics |
-| René Girard `rene-girard` ⚠ | PLANNED | `mimetic-desire`, `rivalry-and-scapegoating` | Whose desire is being imitated? | rivalry dynamics; herd behavior; organizational conflict | material and economic explanations |
-| Chris Voss `chris-voss` | PLANNED | `tactical-empathy` | What does the other side need to hear to feel understood? | high-stakes conversations; adversarial negotiation; information discovery | structural leverage and alternatives; long-term relationship design |
-| Roger Fisher `roger-fisher` ⚠ | PLANNED | `interests-over-positions`, `alternatives-to-agreement` | What interests sit underneath the positions? | deal structuring; partnership negotiations; disputes | bad-faith counterparts; power asymmetries |
-| David Ogilvy `david-ogilvy` | PLANNED | `brand-and-research`, `measurable-advertising` | What does the customer need to know to choose us? | positioning messages; brand strategy; advertising reviews | digital and algorithmic distribution; channels his era did not have |
-| Claude Hopkins `claude-hopkins` | PLANNED | `measurable-advertising` | What does the test say? | advertising experiments; offer testing; demand validation | brand effects that resist short-term measurement |
-| Bill Bernbach `bill-bernbach` ⚠ | PLANNED | `creative-distinctiveness` | Will anyone notice, and will anyone remember? | creative strategy; differentiated messaging; brand voice | measurement and direct attribution |
-| Marcus Aurelius `marcus-aurelius` ⚠ | PLANNED | `perspective`, `dichotomy-of-control` | What does duty require here, seen from a wider view? | leadership under pressure; emotional steadiness; ethical clarity | competitive and commercial analysis |
-| Seneca `seneca` | PLANNED | `adversity-rehearsal`, `perspective` | Have we rehearsed the bad outcome? | preparing for adverse outcomes; decision anxiety; priorities | quantitative risk; strategy |
-| Epictetus `epictetus` ⚠ | PLANNED | `dichotomy-of-control` | What is within our control, and what is not? | separating actionable from unactionable; composure; focus | collective and systemic action |
-| Socrates `socrates` ⚠ | PLANNED | `socratic-questioning` | Do we actually know what we think we know? | clarifying definitions; exposing hidden assumptions; testing arguments | reaching a decision; empirical data |
-| Aristotle `aristotle` ⚠ | PLANNED | `practical-wisdom`, `rhetoric` | What is the right action, for these people, in this situation? | ethical judgment; persuasive argument; defining purpose | modern quantitative methods |
+| Sun Tzu `sun-tzu` ⚠ | AVAILABLE | `strategic-advantage`, `intelligence-and-deception` | Where is advantage located? | competitive positioning; choosing where to compete; conflict avoidance; information asymmetry | cooperative and positive-sum dynamics; institutional and legal constraints; the text is aphoristic, so application requires interpretation |
+| Carl von Clausewitz `clausewitz` ⚠ | AVAILABLE | `friction-and-uncertainty`, `center-of-gravity`, `power-and-legitimacy` | What will friction do to this plan? | plans that must survive contact with reality; aligning means with ends; high-uncertainty execution | non-adversarial problems; commercial dynamics without a clear opponent |
+| Napoleon Bonaparte `napoleon` ⚠ | AVAILABLE | `concentration-and-speed`, `center-of-gravity`, `command-and-morale` | Where is the decisive point, and can we get there first? | resource concentration; speed of execution; operational planning | overextension and strategic overreach; sustainability of gains; ethics of means |
+| Julius Caesar `julius-caesar` ⚠ | AVAILABLE | `power-and-legitimacy`, `command-and-morale`, `tempo-and-adaptation` | How do speed and political legitimacy reinforce each other? | leadership under pressure; combining operational and political strategy; narrative control | institutional stability; the costs of concentrating power |
+| Alexander the Great `alexander-the-great` ⚠ | AVAILABLE | `concentration-and-speed`, `command-and-morale` | Where does bold, concentrated action break the opponent's structure? | bold offensive moves; leading from the front; integrating what has been acquired | succession and durability; limits of expansion |
+| Niccolò Machiavelli `machiavelli` | AVAILABLE | `power-and-legitimacy`, `incentives` | How will people actually behave, not how should they? | organizational politics; power transitions; realistic assessment of actors | trust and long-run cooperation; ethical constraints |
+| John Boyd `john-boyd` ⚠ | AVAILABLE | `tempo-and-adaptation`, `information-and-signal` | Who is adapting faster? | fast-moving competition; organizational agility; responding to a rival's move | long-horizon capital decisions; situations where speed is not the constraint |
+| Warren Buffett `warren-buffett` | AVAILABLE | `intrinsic-value`, `capital-allocation`, `margin-of-safety`, `durable-advantage`, `long-term-orientation` | What is this worth, and how certain can we be? | investments; acquisitions; capital allocation; business quality; long-term economics | early-stage and venture-style bets; technology change outside the circle of competence |
+| Charlie Munger `charlie-munger` | AVAILABLE | `inversion`, `incentives`, `multidisciplinary-models`, `cognitive-bias`, `durable-advantage` | What are we missing? | checking a thesis for blind spots; incentive analysis; avoiding standard stupidity | fast iteration and experimentation; situations where action beats analysis |
+| Peter Thiel `peter-thiel` | AVAILABLE | `monopoly-and-differentiation`, `mimetic-desire`, `long-term-orientation` | Are we escaping competition or trapped inside it? | new ventures; differentiation; contrarian theses | incremental improvement; competitive markets where differentiation is not available |
+| Jeff Bezos `jeff-bezos` | AVAILABLE | `customer-obsession`, `long-term-orientation`, `decision-reversibility`, `capital-allocation` | Is this a one-way door or a two-way door? | decision speed; long-term investment trade-offs; customer-centered strategy | near-term profitability constraints; organizations without patient capital |
+| Andy Grove `andy-grove` | AVAILABLE | `strategic-inflection`, `managerial-leverage`, `management-effectiveness` | Are the fundamentals of the business changing? | strategic inflection points; management systems; responding to structural change | non-technology businesses; slow-moving environments |
+| Clayton Christensen `clayton-christensen` | AVAILABLE | `disruption`, `jobs-to-be-done` | What changes when the basis of competition changes? | disruption threats; new market entry; innovation strategy | cases that do not fit the disruption pattern; network effects and platform dynamics |
+| Michael Porter `michael-porter` | AVAILABLE | `competitive-structure`, `positioning-and-tradeoffs`, `durable-advantage` | What determines the structure of competition? | industry analysis; positioning; competitive response | fast technological change; ecosystem and platform competition |
+| Peter Drucker `peter-drucker` | AVAILABLE | `business-definition`, `management-effectiveness`, `organization-design` | What is our business, and what does the customer value? | organizational purpose; management priorities; executive effectiveness | competitive tactics; quantitative valuation |
+| John D. Rockefeller `john-rockefeller` ⚠ | AVAILABLE | `scale-and-cost`, `integration-and-consolidation` | Who will be the lowest-cost producer at scale? | cost structure; industry consolidation; operational discipline | regulatory and antitrust risk; public legitimacy |
+| Alfred P. Sloan `alfred-sloan` | AVAILABLE | `organization-design`, `capital-allocation` | How do we decentralize operations while coordinating control? | multi-unit organizations; structure and governance; portfolio management | startup environments; bureaucratic rigidity over time |
+| Nomad Investment Partnership (Nick Sleep & Qais Zakaria) `nomad` ⚠ | AVAILABLE | `scale-economies-shared`, `destination-analysis`, `long-term-orientation`, `durable-advantage` | Is the business growing its advantage by giving more back to customers? | pricing and reinvestment strategy; judging long-term business models; evaluating long-duration investments; resisting short-termism | businesses whose proposition is not based on price; near-term liquidity and cyclical risk |
+| Daniel Kahneman `daniel-kahneman` | AVAILABLE | `cognitive-bias`, `base-rates`, `noise`, `framing-effects` | Which biases could distort this judgment? | forecasts; high-stakes judgments; planning estimates; decision hygiene | expert intuition in high-validity environments; strategic interaction |
+| Amos Tversky `amos-tversky` ⚠ | AVAILABLE | `framing-effects`, `probabilistic-thinking`, `base-rates` | How is the framing shaping the choice? | choice architecture; risk perception; probability estimates | organizational and political dynamics |
+| Herbert Simon `herbert-simon` | AVAILABLE | `bounded-rationality`, `organization-design`, `abstraction` | What can the decision-makers realistically know and process? | organizational decisions; information overload; process design | competitive strategy; emotional and social motives |
+| Annie Duke `annie-duke` | AVAILABLE | `decision-quality`, `probabilistic-thinking` | Is this a good decision regardless of how it turns out? | decisions under uncertainty; post-mortems; setting kill criteria | domains where probabilities cannot be estimated meaningfully |
+| Nassim Nicholas Taleb `nassim-taleb` | AVAILABLE | `fragility-and-tail-risk`, `optionality`, `skin-in-the-game` | What happens in the tail? | risk management; exposure to rare events; incentive asymmetries | ordinary operating decisions; situations with reliable distributions |
+| Richard Feynman `richard-feynman` | AVAILABLE | `first-principles`, `intellectual-honesty` | Do we actually understand what is happening? | root-cause analysis; checking understanding; technical claims | social and political constraints; decisions that cannot wait for understanding |
+| Charles Darwin `charles-darwin` ⚠ | AVAILABLE | `selection-and-adaptation`, `systematic-observation` | What is the environment selecting for? | competitive adaptation; market evolution; patient evidence gathering | deliberate strategy; short time horizons |
+| Francis Bacon `francis-bacon` | AVAILABLE | `systematic-observation`, `cognitive-bias` | Which errors of mind are shaping what we see? | research design; challenging received wisdom; evidence gathering | the role of theory in guiding observation; time-pressured decisions |
+| Karl Popper `karl-popper` | AVAILABLE | `falsification` | What evidence would prove us wrong? | testing assumptions; evaluating theses; avoiding confirmation-seeking | decisions that require action before tests are possible |
+| Claude Shannon `claude-shannon` ⚠ | AVAILABLE | `information-and-signal`, `abstraction` | What is signal, and what is noise? | information flow; measurement; problem reformulation | meaning and interpretation; human motives |
+| David Deutsch `david-deutsch` ⚠ | AVAILABLE | `good-explanations`, `error-correction`, `falsification` | What is the best explanation, and is it hard to vary? | choosing between competing explanations; strategies that rest on a theory of why; long-horizon progress and innovation; institutions that must correct their own mistakes | probabilistic and Bayesian framings, which this framework is skeptical of; short-term operational constraints |
+| W. Edwards Deming `edwards-deming` | AVAILABLE | `system-vs-individual`, `variation` | Is the person failing, or is the system producing the failure? | recurring failures; quality problems; performance management | competitive strategy; one-off decisions |
+| Donella Meadows `donella-meadows` | AVAILABLE | `feedback-loops`, `leverage-points` | What system is producing this behavior? | recurring patterns; second-order effects; policy design | individual agency; one-time competitive moves |
+| Robert Cialdini `robert-cialdini` | AVAILABLE | `persuasion` | What principles of influence are shaping these choices? | buyer behavior; pricing perception; persuasion design | structural economics; long-run trust effects of heavy-handed tactics |
+| René Girard `rene-girard` ⚠ | AVAILABLE | `mimetic-desire`, `rivalry-and-scapegoating` | Whose desire is being imitated? | rivalry dynamics; herd behavior; organizational conflict | material and economic explanations |
+| Chris Voss `chris-voss` | AVAILABLE | `tactical-empathy` | What does the other side need to hear to feel understood? | high-stakes conversations; adversarial negotiation; information discovery | structural leverage and alternatives; long-term relationship design |
+| Roger Fisher `roger-fisher` ⚠ | AVAILABLE | `interests-over-positions`, `alternatives-to-agreement` | What interests sit underneath the positions? | deal structuring; partnership negotiations; disputes | bad-faith counterparts; power asymmetries |
+| David Ogilvy `david-ogilvy` | AVAILABLE | `brand-and-research`, `measurable-advertising` | What does the customer need to know to choose us? | positioning messages; brand strategy; advertising reviews | digital and algorithmic distribution; channels his era did not have |
+| Claude Hopkins `claude-hopkins` | AVAILABLE | `measurable-advertising` | What does the test say? | advertising experiments; offer testing; demand validation | brand effects that resist short-term measurement |
+| Bill Bernbach `bill-bernbach` ⚠ | AVAILABLE | `creative-distinctiveness` | Will anyone notice, and will anyone remember? | creative strategy; differentiated messaging; brand voice | measurement and direct attribution |
+| Marcus Aurelius `marcus-aurelius` ⚠ | AVAILABLE | `perspective`, `dichotomy-of-control` | What does duty require here, seen from a wider view? | leadership under pressure; emotional steadiness; ethical clarity | competitive and commercial analysis |
+| Seneca `seneca` | AVAILABLE | `adversity-rehearsal`, `perspective` | Have we rehearsed the bad outcome? | preparing for adverse outcomes; decision anxiety; priorities | quantitative risk; strategy |
+| Epictetus `epictetus` ⚠ | AVAILABLE | `dichotomy-of-control` | What is within our control, and what is not? | separating actionable from unactionable; composure; focus | collective and systemic action |
+| Socrates `socrates` ⚠ | AVAILABLE | `socratic-questioning` | Do we actually know what we think we know? | clarifying definitions; exposing hidden assumptions; testing arguments | reaching a decision; empirical data |
+| Aristotle `aristotle` ⚠ | AVAILABLE | `practical-wisdom`, `rhetoric` | What is the right action, for these people, in this situation? | ethical judgment; persuasive argument; defining purpose | modern quantitative methods |
 
 **⚠ Provenance cautions.** Heed these, especially in registry-lens mode:
 
@@ -390,6 +397,7 @@ Core questions are MINDS' one-line summaries of each lens. **They are not quotat
 - `alexander-the-great`: No writings by Alexander survive. Everything is known through later accounts, chiefly Arrian and Plutarch, written centuries afterward. Any framework will be DERIVED from reported decisions, never DOCUMENTED in his own words.
 - `john-boyd`: Boyd published little in conventional form; his ideas are recorded mainly in briefing slides.
 - `john-rockefeller`: Much of the record is secondary. Business tactics must be separated from later reputation and myth.
+- `nomad`: The letters are co-authored by Nick Sleep and Qais Zakaria. Attribute ideas to the partnership's letters, not to one author.
 - `amos-tversky`: Much of Tversky's work is co-authored with Daniel Kahneman. The skill must attribute joint work accurately.
 - `charles-darwin`: Applying evolutionary ideas to business is an analogy. The skill must mark all such transfers as OPERATIONALIZED, not as Darwin's claims.
 - `claude-shannon`: Shannon's information theory deliberately excludes meaning. Applying it to organizations is an analogy and must be labeled OPERATIONALIZED.

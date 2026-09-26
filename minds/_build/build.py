@@ -214,7 +214,7 @@ def md_lens_index(data):
     rows = ["| Lens | The question it asks | Minds carrying it |", "|---|---|---|"]
     for key, lens in data["lenses"].items():
         names = ", ".join(
-            f"`{m['slug']}`" + (" **AVAILABLE**" if m["status"] == "available" else "")
+            f"`{m['slug']}`" + ("" if m["status"] == "available" else f" ({m['status'].upper()})")
             for m in idx[key])
         rows.append(f"| `{key}` | {lens['question']} | {names} |")
     return "\n".join(rows) + "\n"
@@ -266,13 +266,13 @@ def html_roster(data):
             continue
         items = "".join(
             f'<li>{esc(m["name"])}'
-            + ("" if m["status"] == "planned" else f' <span class="status">{esc(m["status"].upper())}</span>')
+            + ("" if m["status"] == "available" else f' <span class="status">{esc(m["status"].upper())}</span>')
             + "</li>" for m in members)
         out.append(f'      <div class="group"><h3>{esc(group)}</h3><ul>{items}</ul></div>')
     c = {s: sum(1 for m in data["minds"] if m["status"] == s) for s in STATUSES}
     out.append(f'      <p class="fine">{len(data["minds"])} Minds · {c["available"]} available · '
-               f'{c["researching"]} researching · {c["planned"]} planned. Planned Minds have no published '
-               f'skill yet; agents use them in labeled registry-lens mode.</p>')
+               f'{c["researching"]} researching · {c["planned"]} planned. Each Mind has a SKILL.md and a SOURCES.md '
+               f'recording how every principle was verified.</p>')
     return "\n".join(out) + "\n"
 
 

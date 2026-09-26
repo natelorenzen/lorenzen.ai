@@ -7,7 +7,7 @@
   "council_skill_url": "https://lorenzen.ai/council/SKILL.md",
 
   "statuses": {
-    "available": "Research completed, sourced, operationalized, and reviewed. SKILL.md and SOURCES.md are published.",
+    "available": "Research completed, sourced, operationalized, and reviewed. SKILL.md and SOURCES.md are published. Each SOURCES.md states how its principles were verified.",
     "researching": "Sources and framework currently being assembled. No executable skill yet.",
     "planned": "Included in the registry but not yet executable. No skill or sources published."
   },
@@ -73,6 +73,8 @@
     "organization-design":        { "label": "Organization design",           "question": "How should authority, coordination, and control be structured?" },
     "scale-and-cost":             { "label": "Scale and cost",                "question": "Who has the lowest cost at scale, and why?" },
     "integration-and-consolidation": { "label": "Integration and consolidation", "question": "Which parts of the value chain should be owned or combined?" },
+    "scale-economies-shared":     { "label": "Scale economies shared",        "question": "Are scale savings returned to customers so the advantage compounds?" },
+    "destination-analysis":       { "label": "Destination analysis",          "question": "Where will this be in ten or twenty years, and does today's behavior lead there?" },
 
     "cognitive-bias":             { "label": "Cognitive bias",                "question": "Which systematic errors could distort this judgment?" },
     "base-rates":                 { "label": "Base rates",                    "question": "What usually happens in cases like this?" },
@@ -226,7 +228,7 @@
       "questions": ["Can we win without direct confrontation?", "What do we know about ourselves and our opponent?", "Which terrain favors us?"],
       "best_used_for": ["competitive positioning", "choosing where to compete", "conflict avoidance", "information asymmetry"],
       "may_underweight": ["cooperative and positive-sum dynamics", "institutional and legal constraints", "the text is aphoristic, so application requires interpretation"],
-      "status": "planned",
+      "status": "available",
       "provenance_note": "Authorship and dating of The Art of War are debated; the text is traditionally attributed to Sun Tzu and was likely compiled over time.",
       "research_seeds": ["The Art of War (Sunzi bingfa), multiple translations"]
     },
@@ -242,7 +244,7 @@
       "questions": ["What is the political purpose the effort serves?", "Where is the opponent's center of gravity?", "What is unknowable at the moment of decision?"],
       "best_used_for": ["plans that must survive contact with reality", "aligning means with ends", "high-uncertainty execution"],
       "may_underweight": ["non-adversarial problems", "commercial dynamics without a clear opponent"],
-      "status": "planned",
+      "status": "available",
       "provenance_note": "On War was unfinished at his death and published posthumously; interpretations vary widely.",
       "research_seeds": ["On War (Vom Kriege), 1832"]
     },
@@ -258,7 +260,7 @@
       "questions": ["Are our resources concentrated or dispersed?", "What does speed make possible that size cannot?", "What happens if the decisive blow fails?"],
       "best_used_for": ["resource concentration", "speed of execution", "operational planning"],
       "may_underweight": ["overextension and strategic overreach", "sustainability of gains", "ethics of means"],
-      "status": "planned",
+      "status": "available",
       "provenance_note": "Collections of 'Napoleon's maxims' were compiled by others after his death and are of mixed reliability. Frameworks must be derived from correspondence and documented campaigns, and labeled DERIVED.",
       "research_seeds": ["Correspondance de Napoléon Ier (published under Napoleon III)", "David G. Chandler, The Campaigns of Napoleon (1966), secondary"]
     },
@@ -274,7 +276,7 @@
       "questions": ["Who needs to believe in this effort, and why would they?", "Where can decisive speed change the situation?", "How is this being narrated to those whose support matters?"],
       "best_used_for": ["leadership under pressure", "combining operational and political strategy", "narrative control"],
       "may_underweight": ["institutional stability", "the costs of concentrating power"],
-      "status": "planned",
+      "status": "available",
       "provenance_note": "Caesar's Commentaries are his own accounts and were written partly to persuade Roman audiences; they are primary sources but not neutral.",
       "research_seeds": ["Commentarii de Bello Gallico", "Commentarii de Bello Civili"]
     },
@@ -290,7 +292,7 @@
       "questions": ["What does the leader's own example signal?", "Where is the opponent structurally weak?", "What happens after the conquest?"],
       "best_used_for": ["bold offensive moves", "leading from the front", "integrating what has been acquired"],
       "may_underweight": ["succession and durability", "limits of expansion"],
-      "status": "planned",
+      "status": "available",
       "provenance_note": "No writings by Alexander survive. Everything is known through later accounts, chiefly Arrian and Plutarch, written centuries afterward. Any framework will be DERIVED from reported decisions, never DOCUMENTED in his own words.",
       "research_seeds": ["Arrian, Anabasis of Alexander, secondary (2nd century CE)", "Plutarch, Life of Alexander, secondary"]
     },
@@ -306,7 +308,7 @@
       "questions": ["Who gains and who loses power from this?", "What does fortune control, and what does preparation control?", "Is this position held through fear, loyalty, or institutions?"],
       "best_used_for": ["organizational politics", "power transitions", "realistic assessment of actors"],
       "may_underweight": ["trust and long-run cooperation", "ethical constraints"],
-      "status": "planned",
+      "status": "available",
       "provenance_note": "",
       "research_seeds": ["The Prince (written 1513, published 1532)", "Discourses on Livy"]
     },
@@ -322,7 +324,7 @@
       "questions": ["How current is our orientation to reality?", "Where is our decision cycle slow?", "What would disorient the opponent?"],
       "best_used_for": ["fast-moving competition", "organizational agility", "responding to a rival's move"],
       "may_underweight": ["long-horizon capital decisions", "situations where speed is not the constraint"],
-      "status": "planned",
+      "status": "available",
       "provenance_note": "Boyd published little in conventional form; his ideas are recorded mainly in briefing slides.",
       "research_seeds": ["Destruction and Creation (1976)", "Patterns of Conflict (briefing)", "Frans Osinga, Science, Strategy and War (2007), secondary"]
     },
@@ -339,7 +341,7 @@
       "questions": ["How predictable are the economics?", "What could permanently impair value?", "Is the advantage durable?", "Is management allocating capital rationally?"],
       "best_used_for": ["investments", "acquisitions", "capital allocation", "business quality", "long-term economics"],
       "may_underweight": ["early-stage and venture-style bets", "technology change outside the circle of competence"],
-      "status": "planned",
+      "status": "available",
       "provenance_note": "",
       "research_seeds": ["Berkshire Hathaway shareholder letters (1965 onward)"]
     },
@@ -355,7 +357,7 @@
       "questions": ["What would guarantee failure here?", "How do the incentives drive behavior?", "Which models from other fields apply?"],
       "best_used_for": ["checking a thesis for blind spots", "incentive analysis", "avoiding standard stupidity"],
       "may_underweight": ["fast iteration and experimentation", "situations where action beats analysis"],
-      "status": "planned",
+      "status": "available",
       "provenance_note": "",
       "research_seeds": ["Poor Charlie's Almanack (ed. Peter D. Kaufman)", "The Psychology of Human Misjudgment (talk, 1995)"]
     },
@@ -371,7 +373,7 @@
       "questions": ["What important truth do few people agree with?", "Can this become a monopoly in a small market first?", "Is this a definite plan or an indefinite hope?"],
       "best_used_for": ["new ventures", "differentiation", "contrarian theses"],
       "may_underweight": ["incremental improvement", "competitive markets where differentiation is not available"],
-      "status": "planned",
+      "status": "available",
       "provenance_note": "",
       "research_seeds": ["Zero to One (2014, with Blake Masters)"]
     },
@@ -387,7 +389,7 @@
       "questions": ["What does the customer want that will not change in ten years?", "Are we optimizing for long-term cash flow or short-term appearance?", "Should this decision be fast or slow?"],
       "best_used_for": ["decision speed", "long-term investment trade-offs", "customer-centered strategy"],
       "may_underweight": ["near-term profitability constraints", "organizations without patient capital"],
-      "status": "planned",
+      "status": "available",
       "provenance_note": "",
       "research_seeds": ["Amazon.com shareholder letters (1997–2020)"]
     },
@@ -403,7 +405,7 @@
       "questions": ["Is this signal or noise?", "What would a new management team do?", "Which managerial activities have the highest leverage?"],
       "best_used_for": ["strategic inflection points", "management systems", "responding to structural change"],
       "may_underweight": ["non-technology businesses", "slow-moving environments"],
-      "status": "planned",
+      "status": "available",
       "provenance_note": "",
       "research_seeds": ["High Output Management (1983)", "Only the Paranoid Survive (1996)"]
     },
@@ -419,7 +421,7 @@
       "questions": ["Are we overserving our best customers?", "Who is entering from below with a simpler, cheaper offer?", "What job is the customer hiring this for?"],
       "best_used_for": ["disruption threats", "new market entry", "innovation strategy"],
       "may_underweight": ["cases that do not fit the disruption pattern", "network effects and platform dynamics"],
-      "status": "planned",
+      "status": "available",
       "provenance_note": "",
       "research_seeds": ["The Innovator's Dilemma (1997)", "The Innovator's Solution (2003, with Michael Raynor)", "Competing Against Luck (2016, with Taddy Hall, Karen Dillon, and David S. Duncan)"]
     },
@@ -435,7 +437,7 @@
       "questions": ["Where is the profit pool, and who captures it?", "What trade-offs make our position hard to copy?", "Which activities fit together into a system?"],
       "best_used_for": ["industry analysis", "positioning", "competitive response"],
       "may_underweight": ["fast technological change", "ecosystem and platform competition"],
-      "status": "planned",
+      "status": "available",
       "provenance_note": "",
       "research_seeds": ["Competitive Strategy (1980)", "Competitive Advantage (1985)", "What Is Strategy? (Harvard Business Review, 1996)"]
     },
@@ -451,7 +453,7 @@
       "questions": ["What should we stop doing?", "What results are we accountable for?", "Where are the opportunities for innovation?"],
       "best_used_for": ["organizational purpose", "management priorities", "executive effectiveness"],
       "may_underweight": ["competitive tactics", "quantitative valuation"],
-      "status": "planned",
+      "status": "available",
       "provenance_note": "",
       "research_seeds": ["The Practice of Management (1954)", "The Effective Executive (1967)", "Innovation and Entrepreneurship (1985)"]
     },
@@ -467,7 +469,7 @@
       "questions": ["Where does cost discipline create advantage?", "Which parts of the chain should be controlled?", "What does consolidation make possible?"],
       "best_used_for": ["cost structure", "industry consolidation", "operational discipline"],
       "may_underweight": ["regulatory and antitrust risk", "public legitimacy"],
-      "status": "planned",
+      "status": "available",
       "provenance_note": "Much of the record is secondary. Business tactics must be separated from later reputation and myth.",
       "research_seeds": ["Random Reminiscences of Men and Events (1909)", "Ron Chernow, Titan (1998), secondary"]
     },
@@ -483,9 +485,25 @@
       "questions": ["Which decisions belong at the center, and which in the divisions?", "How is performance measured across units?", "Does the product line cover the market deliberately?"],
       "best_used_for": ["multi-unit organizations", "structure and governance", "portfolio management"],
       "may_underweight": ["startup environments", "bureaucratic rigidity over time"],
-      "status": "planned",
+      "status": "available",
       "provenance_note": "",
       "research_seeds": ["My Years with General Motors (1964)"]
+    },
+    {
+      "slug": "nomad",
+      "name": "Nomad Investment Partnership (Nick Sleep & Qais Zakaria)",
+      "dates": "letters 2001–2014",
+      "group": "Business & Capital Allocation",
+      "filters": ["Investing", "Business", "Competition"],
+      "domains": ["long-term investing", "business models", "capital allocation"],
+      "lenses": ["scale-economies-shared", "destination-analysis", "long-term-orientation", "durable-advantage"],
+      "core_question": "Is the business growing its advantage by giving more back to customers?",
+      "questions": ["What would management do with windfall profits?", "How much does the customer save compared with what shareholders earn?", "What is this business's destination, and is it on the road there?"],
+      "best_used_for": ["pricing and reinvestment strategy", "judging long-term business models", "evaluating long-duration investments", "resisting short-termism"],
+      "may_underweight": ["businesses whose proposition is not based on price", "near-term liquidity and cyclical risk"],
+      "status": "available",
+      "provenance_note": "The letters are co-authored by Nick Sleep and Qais Zakaria. Attribute ideas to the partnership's letters, not to one author.",
+      "research_seeds": ["Nomad Investment Partnership Letters to Partners, 2001–2014 (full collection)"]
     },
 
     {
@@ -500,7 +518,7 @@
       "questions": ["What is the outside view?", "Are we answering an easier question than the one asked?", "How much would independent judges disagree?"],
       "best_used_for": ["forecasts", "high-stakes judgments", "planning estimates", "decision hygiene"],
       "may_underweight": ["expert intuition in high-validity environments", "strategic interaction"],
-      "status": "planned",
+      "status": "available",
       "provenance_note": "",
       "research_seeds": ["Thinking, Fast and Slow (2011)", "Noise (2021, with Olivier Sibony and Cass R. Sunstein)", "Judgment under Uncertainty: Heuristics and Biases (Science, 1974, with Amos Tversky)"]
     },
@@ -516,7 +534,7 @@
       "questions": ["Would the preference reverse under a different description?", "Are losses being weighed more heavily than equal gains?", "What heuristic is producing this estimate?"],
       "best_used_for": ["choice architecture", "risk perception", "probability estimates"],
       "may_underweight": ["organizational and political dynamics"],
-      "status": "planned",
+      "status": "available",
       "provenance_note": "Much of Tversky's work is co-authored with Daniel Kahneman. The skill must attribute joint work accurately.",
       "research_seeds": ["Prospect Theory (Econometrica, 1979, with Daniel Kahneman)", "The Framing of Decisions and the Psychology of Choice (Science, 1981, with Daniel Kahneman)"]
     },
@@ -532,7 +550,7 @@
       "questions": ["Where is attention the scarce resource?", "Is 'good enough' the right standard here?", "How does the organization's structure shape its decisions?"],
       "best_used_for": ["organizational decisions", "information overload", "process design"],
       "may_underweight": ["competitive strategy", "emotional and social motives"],
-      "status": "planned",
+      "status": "available",
       "provenance_note": "",
       "research_seeds": ["Administrative Behavior (1947)", "The Sciences of the Artificial (1969)"]
     },
@@ -548,7 +566,7 @@
       "questions": ["How confident are we, in percentages?", "Are we judging past decisions by their outcomes?", "What would make us quit, decided in advance?"],
       "best_used_for": ["decisions under uncertainty", "post-mortems", "setting kill criteria"],
       "may_underweight": ["domains where probabilities cannot be estimated meaningfully"],
-      "status": "planned",
+      "status": "available",
       "provenance_note": "",
       "research_seeds": ["Thinking in Bets (2018)", "How to Decide (2020)", "Quit (2022)"]
     },
@@ -564,7 +582,7 @@
       "questions": ["Is this fragile, robust, or antifragile?", "Where is the downside capped and the upside open?", "Who bears the cost of being wrong?"],
       "best_used_for": ["risk management", "exposure to rare events", "incentive asymmetries"],
       "may_underweight": ["ordinary operating decisions", "situations with reliable distributions"],
-      "status": "planned",
+      "status": "available",
       "provenance_note": "",
       "research_seeds": ["Fooled by Randomness (2001)", "The Black Swan (2007)", "Antifragile (2012)", "Skin in the Game (2018)"]
     },
@@ -581,7 +599,7 @@
       "questions": ["Could we explain this simply?", "Are we fooling ourselves?", "What does the data say, independent of what we want?"],
       "best_used_for": ["root-cause analysis", "checking understanding", "technical claims"],
       "may_underweight": ["social and political constraints", "decisions that cannot wait for understanding"],
-      "status": "planned",
+      "status": "available",
       "provenance_note": "",
       "research_seeds": ["Cargo Cult Science (Caltech commencement address, 1974)", "The Character of Physical Law (1965)", "Appendix F to the Rogers Commission Report (1986)"]
     },
@@ -597,7 +615,7 @@
       "questions": ["Which variations survive, and why?", "What changed in the environment?", "Which facts do not fit our theory?"],
       "best_used_for": ["competitive adaptation", "market evolution", "patient evidence gathering"],
       "may_underweight": ["deliberate strategy", "short time horizons"],
-      "status": "planned",
+      "status": "available",
       "provenance_note": "Applying evolutionary ideas to business is an analogy. The skill must mark all such transfers as OPERATIONALIZED, not as Darwin's claims.",
       "research_seeds": ["On the Origin of Species (1859)", "Autobiography (written 1876, published 1887)"]
     },
@@ -613,7 +631,7 @@
       "questions": ["What would careful, organized observation show?", "Are we generalizing too quickly?", "Which inherited assumptions are we treating as facts?"],
       "best_used_for": ["research design", "challenging received wisdom", "evidence gathering"],
       "may_underweight": ["the role of theory in guiding observation", "time-pressured decisions"],
-      "status": "planned",
+      "status": "available",
       "provenance_note": "",
       "research_seeds": ["Novum Organum (1620)", "The Advancement of Learning (1605)"]
     },
@@ -629,7 +647,7 @@
       "questions": ["Is this claim falsifiable?", "Have we tried to refute it, or only to confirm it?", "What bold conjecture would explain more?"],
       "best_used_for": ["testing assumptions", "evaluating theses", "avoiding confirmation-seeking"],
       "may_underweight": ["decisions that require action before tests are possible"],
-      "status": "planned",
+      "status": "available",
       "provenance_note": "",
       "research_seeds": ["The Logic of Scientific Discovery (1934; English 1959)", "Conjectures and Refutations (1963)"]
     },
@@ -645,7 +663,7 @@
       "questions": ["What is the simplest abstract form of this problem?", "Where is information being lost?", "What is the capacity of this channel?"],
       "best_used_for": ["information flow", "measurement", "problem reformulation"],
       "may_underweight": ["meaning and interpretation", "human motives"],
-      "status": "planned",
+      "status": "available",
       "provenance_note": "Shannon's information theory deliberately excludes meaning. Applying it to organizations is an analogy and must be labeled OPERATIONALIZED.",
       "research_seeds": ["A Mathematical Theory of Communication (Bell System Technical Journal, 1948)"]
     },
@@ -661,7 +679,7 @@
       "questions": ["Would this explanation survive if its details were changed arbitrarily?", "Is this problem treated as soluble, or as a fixed limit?", "What mechanism lets us find and fix our errors?"],
       "best_used_for": ["choosing between competing explanations", "strategies that rest on a theory of why", "long-horizon progress and innovation", "institutions that must correct their own mistakes"],
       "may_underweight": ["probabilistic and Bayesian framings, which this framework is skeptical of", "short-term operational constraints"],
-      "status": "planned",
+      "status": "available",
       "provenance_note": "Deutsch builds explicitly on Karl Popper. The skill must distinguish Deutsch's own extensions from Popper's original ideas.",
       "research_seeds": ["The Fabric of Reality (1997)", "The Beginning of Infinity (2011)"]
     },
@@ -678,7 +696,7 @@
       "questions": ["Is this common-cause or special-cause variation?", "What does the process reliably produce?", "Are we blaming people for outcomes the system produces?"],
       "best_used_for": ["recurring failures", "quality problems", "performance management"],
       "may_underweight": ["competitive strategy", "one-off decisions"],
-      "status": "planned",
+      "status": "available",
       "provenance_note": "",
       "research_seeds": ["Out of the Crisis (1982)", "The New Economics (1993)"]
     },
@@ -694,7 +712,7 @@
       "questions": ["Which feedback loops dominate?", "Where are the delays?", "Where is the highest-leverage intervention?"],
       "best_used_for": ["recurring patterns", "second-order effects", "policy design"],
       "may_underweight": ["individual agency", "one-time competitive moves"],
-      "status": "planned",
+      "status": "available",
       "provenance_note": "",
       "research_seeds": ["Thinking in Systems (2008, ed. Diana Wright)", "Leverage Points: Places to Intervene in a System (1999)"]
     },
@@ -711,7 +729,7 @@
       "questions": ["What social proof are buyers seeing?", "What commitments have already been made?", "What happens in the moment before the message?"],
       "best_used_for": ["buyer behavior", "pricing perception", "persuasion design"],
       "may_underweight": ["structural economics", "long-run trust effects of heavy-handed tactics"],
-      "status": "planned",
+      "status": "available",
       "provenance_note": "",
       "research_seeds": ["Influence (1984)", "Pre-Suasion (2016)"]
     },
@@ -727,7 +745,7 @@
       "questions": ["Are rivals converging because they watch each other?", "Is conflict escalating through imitation?", "Who is being made the scapegoat?"],
       "best_used_for": ["rivalry dynamics", "herd behavior", "organizational conflict"],
       "may_underweight": ["material and economic explanations"],
-      "status": "planned",
+      "status": "available",
       "provenance_note": "Girard wrote about literature, religion, and anthropology. Applying mimetic theory to markets is an extension and must be labeled OPERATIONALIZED.",
       "research_seeds": ["Deceit, Desire and the Novel (1961)", "Violence and the Sacred (1972)", "Things Hidden Since the Foundation of the World (1978)"]
     },
@@ -744,7 +762,7 @@
       "questions": ["What are they afraid of?", "Which calibrated question would reveal more?", "What is unsaid?"],
       "best_used_for": ["high-stakes conversations", "adversarial negotiation", "information discovery"],
       "may_underweight": ["structural leverage and alternatives", "long-term relationship design"],
-      "status": "planned",
+      "status": "available",
       "provenance_note": "",
       "research_seeds": ["Never Split the Difference (2016, with Tahl Raz)"]
     },
@@ -760,7 +778,7 @@
       "questions": ["What is each side's best alternative to a negotiated agreement?", "Which options create value for both sides?", "What objective criteria could settle this?"],
       "best_used_for": ["deal structuring", "partnership negotiations", "disputes"],
       "may_underweight": ["bad-faith counterparts", "power asymmetries"],
-      "status": "planned",
+      "status": "available",
       "provenance_note": "Getting to Yes is co-authored with William Ury (and Bruce Patton in later editions); attribute accordingly.",
       "research_seeds": ["Getting to Yes (1981, with William Ury)"]
     },
@@ -777,7 +795,7 @@
       "questions": ["What does research say about the buyer?", "Is the promise specific and believable?", "Is this building the brand over time?"],
       "best_used_for": ["positioning messages", "brand strategy", "advertising reviews"],
       "may_underweight": ["digital and algorithmic distribution", "channels his era did not have"],
-      "status": "planned",
+      "status": "available",
       "provenance_note": "",
       "research_seeds": ["Confessions of an Advertising Man (1963)", "Ogilvy on Advertising (1983)"]
     },
@@ -793,7 +811,7 @@
       "questions": ["Can this be measured before it is scaled?", "What is the cost per result?", "What specific claim drives response?"],
       "best_used_for": ["advertising experiments", "offer testing", "demand validation"],
       "may_underweight": ["brand effects that resist short-term measurement"],
-      "status": "planned",
+      "status": "available",
       "provenance_note": "",
       "research_seeds": ["Scientific Advertising (1923)", "My Life in Advertising (1927)"]
     },
@@ -809,7 +827,7 @@
       "questions": ["Is this honest and distinctive?", "Does the idea respect the audience?", "Does it look like everything else?"],
       "best_used_for": ["creative strategy", "differentiated messaging", "brand voice"],
       "may_underweight": ["measurement and direct attribution"],
-      "status": "planned",
+      "status": "available",
       "provenance_note": "Bernbach wrote little at length. Many quotations attributed to him are unverified, so sources must be checked with care.",
       "research_seeds": ["Bob Levenson, Bill Bernbach's Book (1987), secondary"]
     },
@@ -826,7 +844,7 @@
       "questions": ["What is within my power to do well?", "How small is this, measured against the whole?", "What is the obstacle teaching?"],
       "best_used_for": ["leadership under pressure", "emotional steadiness", "ethical clarity"],
       "may_underweight": ["competitive and commercial analysis"],
-      "status": "planned",
+      "status": "available",
       "provenance_note": "Meditations was written as private notes, not for publication.",
       "research_seeds": ["Meditations"]
     },
@@ -842,7 +860,7 @@
       "questions": ["What would we do if the worst happened?", "Are we spending time on what matters?", "Is fear larger than the actual risk?"],
       "best_used_for": ["preparing for adverse outcomes", "decision anxiety", "priorities"],
       "may_underweight": ["quantitative risk", "strategy"],
-      "status": "planned",
+      "status": "available",
       "provenance_note": "",
       "research_seeds": ["Letters to Lucilius (Epistulae Morales ad Lucilium)", "On the Shortness of Life"]
     },
@@ -858,7 +876,7 @@
       "questions": ["Are we distressed by events or by our judgments about them?", "Where should effort go?", "What are we treating as ours that is not?"],
       "best_used_for": ["separating actionable from unactionable", "composure", "focus"],
       "may_underweight": ["collective and systemic action"],
-      "status": "planned",
+      "status": "available",
       "provenance_note": "Epictetus wrote nothing himself. His teachings were recorded by his student Arrian.",
       "research_seeds": ["Discourses (recorded by Arrian)", "Enchiridion (recorded by Arrian)"]
     },
@@ -874,7 +892,7 @@
       "questions": ["What do we mean by this term?", "What follows if this is true?", "Where does our reasoning contradict itself?"],
       "best_used_for": ["clarifying definitions", "exposing hidden assumptions", "testing arguments"],
       "may_underweight": ["reaching a decision", "empirical data"],
-      "status": "planned",
+      "status": "available",
       "provenance_note": "Socrates wrote nothing. He is known through Plato, Xenophon, and Aristophanes, and separating Socrates from Plato is a long-standing scholarly problem.",
       "research_seeds": ["Plato, Apology, secondary", "Plato, Meno, secondary", "Xenophon, Memorabilia, secondary"]
     },
@@ -890,7 +908,7 @@
       "questions": ["What is the end this serves?", "Where is the mean between excess and deficiency?", "Are credibility, emotion, and argument aligned?"],
       "best_used_for": ["ethical judgment", "persuasive argument", "defining purpose"],
       "may_underweight": ["modern quantitative methods"],
-      "status": "planned",
+      "status": "available",
       "provenance_note": "The surviving works are largely lecture notes, compiled and edited after his death.",
       "research_seeds": ["Nicomachean Ethics", "Rhetoric", "Politics"]
     }
