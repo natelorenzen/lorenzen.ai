@@ -1,0 +1,15 @@
+# Musecade API worker. See musecade/README.md, "Deploying the backend".
+name = "musecade-api"
+main = "src/index.js"
+compatibility_date = "2025-09-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "musecade"
+# Created with: npx wrangler d1 create musecade
+database_id = "7771f882-4f6d-4a3f-ab80-55b4be7a3c1b"
+
+[vars]
+PUBLIC_SITE = "https://lorenzen.ai/musecade"
+
+# Secret (not in this file): npx wrangler secret put IP_SALT

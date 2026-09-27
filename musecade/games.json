@@ -1,0 +1,22 @@
+[
+  {
+    "id": "001",
+    "title": "The Black Road",
+    "slug": "theblackroad",
+    "command": "#theblackroad",
+    "genre": "Dark Fantasy",
+    "duration": "45–75 min",
+    "status": "live",
+    "version": "1.0",
+    "players": 1,
+    "endings": "10+",
+    "difficulty": "???",
+    "tagline": "Carry the black box to Orun before the new moon.",
+    "manifest": "https://lorenzen.ai/musecade/theblackroad/adventure.md",
+    "page": "https://lorenzen.ai/musecade/theblackroad/",
+    "events": "https://lorenzen.ai/musecade/theblackroad/events.json"
+  },
+  { "id": "002", "title": null, "slug": null, "command": null, "genre": "Mystery", "status": "coming_soon" },
+  { "id": "003", "title": null, "slug": null, "command": null, "genre": "Science Fiction", "status": "coming_soon" },
+  { "id": "004", "title": null, "slug": null, "command": null, "genre": "Survival", "status": "coming_soon" }
+]

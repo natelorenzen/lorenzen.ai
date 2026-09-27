@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "game": "theblackroad",
+  "title": "The Black Road",
+  "version": "1.0",
+  "note": "CANONICAL SCORE TABLE. The Musecade backend imports this file and is the only thing that turns event IDs into points. Agents report event IDs; they never report points or totals. Edit here, run python3 musecade/_build/build.py, then redeploy the worker.",
+
+  "rules": {
+    "survival_bonus": 400,
+    "max_events_per_run": 80,
+    "min_seconds_for_ranking": 300,
+    "run_ttl_days": 30,
+    "acts": 5
+  },
+
+  "paths": ["WARDEN", "SCHOLAR", "WAYFARER", "ENVOY"],
+
+  "categories": {
+    "progress": "Reaching a new act",
+    "discovery": "Secrets and hidden truths (counted as SECRETS on the game-over screen)",
+    "puzzle": "The three substantial puzzles",
+    "encounter": "Combat and danger, survived or outwitted",
+    "social": "Social encounters resolved through reasoning",
+    "companion": "Companion recruitment, loyalty and survival",
+    "achievement": "Arcade achievements"
+  },
+
+  "events": {
+    "REACH_WILDERNESS": { "category": "progress", "points": 100, "title": "The Wilderness", "sets_act": 2, "min_act": 1 },
+    "REACH_VEYR":       { "category": "progress", "points": 200, "title": "The Dead Kingdom", "sets_act": 3, "min_act": 2, "requires": ["REACH_WILDERNESS"] },
+    "REACH_ORUN":       { "category": "progress", "points": 300, "title": "The Descent", "sets_act": 4, "min_act": 3, "requires": ["REACH_VEYR"] },
+    "REACH_THRONE":     { "category": "progress", "points": 400, "title": "The Crown", "sets_act": 5, "min_act": 4, "requires": ["REACH_ORUN"] },
+
+    "DISCOVER_MILESTONE_VERSE": { "category": "discovery", "secret": true, "points": 150, "title": "The Weeping Milestone", "min_act": 1 },
+    "DISCOVER_HEDDA_CELLAR":    { "category": "discovery", "secret": true, "points": 200, "title": "What Hedda Keeps", "min_act": 1 },
+    "DISCOVER_CALEN_ORDERS":    { "category": "discovery", "secret": true, "points": 250, "title": "Sealed Orders", "min_act": 1 },
+    "DISCOVER_LONG_WAY":        { "category": "discovery", "secret": true, "points": 300, "title": "The Miners' Road", "min_act": 1 },
+    "DISCOVER_WREN_HUSHING":    { "category": "discovery", "secret": true, "points": 250, "title": "Cold Heart", "min_act": 2 },
+    "DISCOVER_OSWIN_PURPOSE":   { "category": "discovery", "secret": true, "points": 250, "title": "The Lantern's Errand", "min_act": 2 },
+    "DISCOVER_MINERS_TALLY":    { "category": "discovery", "secret": true, "points": 250, "title": "The Miners' Tally", "min_act": 2 },
+    "DISCOVER_CRYPT":           { "category": "discovery", "secret": true, "points": 300, "title": "The Royal Crypt", "min_act": 3 },
+    "DISCOVER_BURNING_TRUTH":   { "category": "discovery", "secret": true, "points": 400, "title": "The Truth of the Burning", "min_act": 3 },
+    "DISCOVER_STILLHEART":      { "category": "discovery", "secret": true, "points": 500, "title": "The Stolen Heart", "min_act": 3 },
+    "DISCOVER_RELIQUARY_TRUTH": { "category": "discovery", "secret": true, "points": 400, "title": "What the Box Is For", "min_act": 2 },
+
+    "PUZZLE_LIAR_SOLVED":    { "category": "puzzle", "points": 400, "title": "The Listener Unmasked", "min_act": 2 },
+    "PUZZLE_LIAR_NO_HINT":   { "category": "puzzle", "points": 200, "title": "Unmasked Without Help", "min_act": 2, "requires": ["PUZZLE_LIAR_SOLVED"] },
+    "PUZZLE_GATE_SOLVED":    { "category": "puzzle", "points": 400, "title": "The Ash Gate", "min_act": 3 },
+    "PUZZLE_GATE_NO_HINT":   { "category": "puzzle", "points": 200, "title": "The Ash Gate, Unaided", "min_act": 3, "requires": ["PUZZLE_GATE_SOLVED"] },
+    "PUZZLE_LITANY_SOLVED":  { "category": "puzzle", "points": 500, "title": "The Litany of Veyr", "min_act": 4 },
+    "PUZZLE_LITANY_NO_HINT": { "category": "puzzle", "points": 250, "title": "The Litany, Remembered", "min_act": 4, "requires": ["PUZZLE_LITANY_SOLVED"] },
+
+    "ENC_ROAD_SURVIVED":    { "category": "encounter", "points": 100, "title": "Night at the Last Lamp", "min_act": 1 },
+    "ENC_ROAD_CLEVER":      { "category": "encounter", "points": 150, "title": "Night at the Last Lamp, Outwitted", "min_act": 1 },
+    "ENC_BRIDGE_SURVIVED":  { "category": "encounter", "points": 150, "title": "The Sorrow Bridge", "min_act": 2, "excludes": ["ENC_DROWNED_SURVIVED", "ENC_DROWNED_CLEVER"] },
+    "ENC_BRIDGE_CLEVER":    { "category": "encounter", "points": 200, "title": "The Sorrow Bridge, Outwitted", "min_act": 2, "excludes": ["ENC_DROWNED_SURVIVED", "ENC_DROWNED_CLEVER"] },
+    "ENC_DROWNED_SURVIVED": { "category": "encounter", "points": 150, "title": "The Drowned Bell", "min_act": 2, "excludes": ["ENC_BRIDGE_SURVIVED", "ENC_BRIDGE_CLEVER"] },
+    "ENC_DROWNED_CLEVER":   { "category": "encounter", "points": 200, "title": "The Drowned Bell, Outwitted", "min_act": 2, "excludes": ["ENC_BRIDGE_SURVIVED", "ENC_BRIDGE_CLEVER"] },
+    "ENC_CINDER_SURVIVED":  { "category": "encounter", "points": 150, "title": "The Cinder Guard", "min_act": 3 },
+    "ENC_CINDER_CLEVER":    { "category": "encounter", "points": 200, "title": "The Cinder Guard, Outwitted", "min_act": 3 },
+    "ENC_ORUN_SURVIVED":    { "category": "encounter", "points": 200, "title": "The Siege of Orun", "min_act": 4 },
+    "ENC_ORUN_CLEVER":      { "category": "encounter", "points": 300, "title": "The Siege of Orun, Outwitted", "min_act": 4 },
+    "ENC_THRONE_SURVIVED":  { "category": "encounter", "points": 250, "title": "Before the Ember Throne", "min_act": 5 },
+    "ENC_THRONE_CLEVER":    { "category": "encounter", "points": 350, "title": "Before the Ember Throne, Outwitted", "min_act": 5 },
+
+    "SOCIAL_HEDDA_MERCY":  { "category": "social", "points": 200, "title": "Mercy at the Last Lamp", "min_act": 1 },
+    "SOCIAL_FENN_BARGAIN": { "category": "social", "points": 100, "title": "The Smuggler's Price", "min_act": 2 },
+    "SOCIAL_TAM_TURNED":   { "category": "social", "points": 250, "title": "The Listener Turned", "min_act": 2, "requires": ["PUZZLE_LIAR_SOLVED"] },
+    "SOCIAL_DASK_PARLEY":  { "category": "social", "points": 300, "title": "Terms with the Inquisitor", "min_act": 2 },
+    "SOCIAL_SERITH_DOUBT": { "category": "social", "points": 350, "title": "A Crack in the Choir", "min_act": 3 },
+    "QUEEN_SPOKEN":        { "category": "social", "points": 300, "title": "Audience with the Ember Queen", "min_act": 5 },
+
+    "RECRUIT_CALEN": { "category": "companion", "points": 100, "title": "Calen Marr Joins", "min_act": 1 },
+    "RECRUIT_WREN":  { "category": "companion", "points": 100, "title": "Wren Joins", "min_act": 2 },
+    "RECRUIT_OSWIN": { "category": "companion", "points": 100, "title": "Brother Oswin Joins", "min_act": 2 },
+    "CALEN_STAYS_LOYAL": { "category": "companion", "points": 250, "title": "Calen Tears Up His Orders", "min_act": 4, "requires": ["RECRUIT_CALEN"] },
+    "WREN_KEPT_WARM":    { "category": "companion", "points": 250, "title": "Wren Refuses the Song", "min_act": 4, "requires": ["RECRUIT_WREN"] },
+    "OSWIN_CHOOSES_YOU": { "category": "companion", "points": 200, "title": "Oswin Breaks with the Order", "min_act": 4, "requires": ["RECRUIT_OSWIN"] },
+    "LISS_SAVED":        { "category": "companion", "points": 250, "title": "Liss Comes Home", "min_act": 4, "requires": ["RECRUIT_CALEN"] },
+    "COMPANION_SURVIVES_CALEN": { "category": "companion", "points": 100, "title": "Calen Survives", "min_act": 3, "requires": ["RECRUIT_CALEN"] },
+    "COMPANION_SURVIVES_WREN":  { "category": "companion", "points": 100, "title": "Wren Survives", "min_act": 3, "requires": ["RECRUIT_WREN"] },
+    "COMPANION_SURVIVES_OSWIN": { "category": "companion", "points": 100, "title": "Oswin Survives", "min_act": 3, "requires": ["RECRUIT_OSWIN"] },
+
+    "ACH_NO_SWORD_DRAWN":   { "category": "achievement", "points": 700, "title": "NO SWORD DRAWN", "description": "Complete the adventure without intentionally killing anyone.", "min_act": 4 },
+    "ACH_OLD_BLOOD":        { "category": "achievement", "points": 800, "title": "OLD BLOOD", "description": "Discover the complete history of Veyr.", "min_act": 5, "requires": ["DISCOVER_MILESTONE_VERSE", "DISCOVER_CRYPT", "DISCOVER_BURNING_TRUTH", "DISCOVER_STILLHEART", "DISCOVER_MINERS_TALLY", "QUEEN_SPOKEN"] },
+    "ACH_EVERYBODY_LIVES":  { "category": "achievement", "points": 500, "title": "EVERYBODY LIVES", "description": "Finish with every recruited companion alive.", "min_act": 4, "requires_any": ["RECRUIT_CALEN", "RECRUIT_WREN", "RECRUIT_OSWIN"] },
+    "ACH_WHATS_IN_THE_BOX": { "category": "achievement", "points": 250, "title": "WHAT'S IN THE BOX?", "description": "Open the reliquary unusually early.", "min_act": 1, "max_act": 2 },
+    "ACH_THE_LONG_WAY":     { "category": "achievement", "points": 400, "title": "THE LONG WAY", "description": "Discover and travel the hidden route to Orun.", "min_act": 2, "requires": ["DISCOVER_LONG_WAY"] },
+    "ACH_BEFORE_THE_MOON":  { "category": "achievement", "hidden": true, "points": 300, "title": "BEFORE THE MOON", "description": "Reach Orun with two or more nights to spare.", "min_act": 4, "requires": ["REACH_ORUN"] },
+    "ACH_UNSCARRED":        { "category": "achievement", "hidden": true, "points": 500, "title": "UNSCARRED", "description": "Finish without ever being wounded.", "min_act": 4 },
+    "ACH_SILVER_TONGUE":    { "category": "achievement", "hidden": true, "points": 400, "title": "SILVER TONGUE", "description": "End three would-be fights with words alone.", "min_act": 3 },
+    "ACH_LONE_ROAD":        { "category": "achievement", "hidden": true, "points": 600, "title": "THE LONE ROAD", "description": "Reach the Ember Throne without recruiting a single companion.", "min_act": 5, "requires": ["REACH_THRONE"], "excludes": ["RECRUIT_CALEN", "RECRUIT_WREN", "RECRUIT_OSWIN"] },
+    "ACH_THREE_INSTRUCTIONS": { "category": "achievement", "hidden": true, "points": 400, "title": "THREE INSTRUCTIONS", "description": "Reach the throne having never opened, never surrendered, and never been late.", "min_act": 5, "requires": ["REACH_THRONE"], "excludes": ["ACH_WHATS_IN_THE_BOX", "ACH_OATHBREAKER"] },
+    "ACH_OATHBREAKER":      { "category": "achievement", "hidden": true, "points": 250, "title": "OATHBREAKER", "description": "Break all three instructions.", "min_act": 2, "excludes": ["ACH_THREE_INSTRUCTIONS"] },
+    "ACH_UNSEEN":           { "category": "achievement", "hidden": true, "points": 400, "title": "UNSEEN", "description": "Pass through the Siege of Orun without being seen.", "min_act": 4 },
+    "ACH_QUEENS_TONGUE":    { "category": "achievement", "hidden": true, "points": 300, "title": "THE QUEEN'S TONGUE", "description": "Address the Ember Queen in Old Veyric.", "min_act": 5, "requires": ["QUEEN_SPOKEN"] }
+  },
+
+  "endings": {
+    "ENDING_LAST_FLAME":          { "title": "THE LAST FLAME", "points": 1200, "fate": "sacrificed", "min_act": 5, "requires": ["REACH_THRONE"] },
+    "ENDING_BORROWED_FIRE":       { "title": "THE BORROWED FIRE", "points": 1400, "fate": "lives", "min_act": 5, "requires": ["REACH_THRONE"], "requires_any": ["RECRUIT_CALEN", "RECRUIT_WREN", "RECRUIT_OSWIN"] },
+    "ENDING_STOLEN_FIRE":         { "title": "THE STOLEN FIRE", "points": 1000, "fate": "lives", "min_act": 5, "requires": ["REACH_THRONE"] },
+    "ENDING_LONG_QUIET":          { "title": "THE LONG QUIET", "points": 2500, "fate": "either", "min_act": 5, "requires": ["REACH_THRONE", "DISCOVER_STILLHEART"], "requires_any": ["PUZZLE_LITANY_SOLVED", "QUEEN_SPOKEN"] },
+    "ENDING_SECOND_BURNING":      { "title": "THE SECOND BURNING", "points": 1200, "fate": "dies", "min_act": 5, "requires": ["REACH_THRONE"] },
+    "ENDING_LONG_LIVE_THE_QUEEN": { "title": "LONG LIVE THE QUEEN", "points": 1800, "fate": "lives", "min_act": 5, "requires": ["REACH_THRONE", "QUEEN_SPOKEN"] },
+    "ENDING_WHITE_SILENCE":       { "title": "WHITE SILENCE", "points": 500, "fate": "either", "min_act": 4 },
+    "ENDING_CROWN_OF_CHAINS":     { "title": "THE CROWN OF CHAINS", "points": 700, "fate": "lives", "min_act": 2 },
+    "ENDING_WHITE_CHOIR":         { "title": "THE WHITE CHOIR", "points": 700, "fate": "sacrificed", "min_act": 2 },
+    "ENDING_ROAD_SOUTH":          { "title": "THE ROAD SOUTH", "points": 300, "fate": "lives", "min_act": 1 },
+    "ENDING_NAME_IN_THE_SNOW":    { "title": "A NAME IN THE SNOW", "points": 0, "fate": "dies", "min_act": 1 }
+  }
+}

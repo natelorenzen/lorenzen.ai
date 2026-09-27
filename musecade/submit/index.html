@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-38KZ2T0RQ5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-38KZ2T0RQ5');
+</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>ENTER YOUR SCORE | MUSECADE</title>
+  <meta name="theme-color" content="#040306">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/musecade/assets/musecade.css">
+  <style>
+    .entry { max-width: 640px; margin: 0 auto; padding: 40px 0 10px; text-align: center; }
+    .entry h1 { margin: 0 0 26px; font: clamp(16px, 3vw, 24px)/1.5 var(--pixel); color: var(--gold-hi); letter-spacing: .08em; }
+    .card { margin: 0 0 24px; padding: 18px; text-align: left; border: 2px solid var(--line); background: rgba(17, 11, 22, .6); }
+    .card .spec { margin: 0; }
+    .reveal { margin: 10px 0 18px; font: clamp(34px, 8vw, 64px)/1 var(--pixel); color: var(--phosphor); text-shadow: 0 0 20px rgba(98, 255, 160, .6); }
+    .note { color: var(--muted); }
+    .err { color: var(--crimson); }
+  </style>
+</head>
+<body>
+<div class="flash" aria-hidden="true"></div>
+<div class="machine"><div class="screen"><div class="screen-inner">
+
+  <header class="statusbar">
+    <div class="group"><a href="/musecade/">&lt; MUSECADE</a></div>
+    <div class="group"><button type="button" class="sound-toggle" data-sound-toggle aria-pressed="false">SOUND: OFF</button></div>
+  </header>
+
+  <main class="entry" aria-live="polite">
+    <h1>ENTER YOUR SCORE</h1>
+    <div id="view"><p class="note">READING YOUR RUN…</p></div>
+  </main>
+
+</div></div></div>
+<div class="toast" role="status" aria-live="polite"></div>
+<script src="/musecade/assets/musecade.js" defer></script>
+<script>
+(async () => {
+  "use strict";
+  const view = document.getElementById("view");
+  const el = (tag, props = {}, ...kids) => { const n = Object.assign(document.createElement(tag), props); n.append(...kids); return n; };
+  const show = (...nodes) => { view.innerHTML = ""; view.append(...nodes); };
+  const fmt = (n) => Number(n).toLocaleString("en-US");
+
+  // #g=theblackroad&p=NAME&k=PATH&e=ENDING_ID&d=0&n=nonce&v=EVENT,EVENT
+  const q = new URLSearchParams(location.hash.slice(1));
+  const run = {
+    game: (q.get("g") || "").toLowerCase(),
+    player: q.get("p") || "",
+    path: (q.get("k") || "").toUpperCase(),
+    ending: (q.get("e") || "").toUpperCase(),
+    died: q.get("d") === "1",
+    nonce: (q.get("n") || "").toLowerCase(),
+    events: (q.get("v") || "").split(",").map((s) => s.trim().toUpperCase()).filter(Boolean),
+  };
+  if (!/^[a-z0-9]+$/.test(run.game) || !run.ending || !run.nonce) {
+    return show(el("p", { className: "err" }, "THIS LINK IS INCOMPLETE."), el("p", { className: "note" }, "Ask your agent to print the Musecade submit link again, exactly as it appears."));
+  }
+
+  let table = null, api = null;
+  try { table = await (await fetch(`/musecade/${run.game}/events.json`)).json(); } catch { /* unknown game */ }
+  try { api = ((await (await fetch("/musecade/config.json", { cache: "no-cache" })).json()).api_base || "").replace(/\/+$/, "") || null; } catch { api = null; }
+  if (!table) return show(el("p", { className: "err" }, "UNKNOWN GAME."));
+
+  const endingTitle = table.endings[run.ending]?.title || run.ending;
+  const secrets = run.events.filter((id) => table.events[id]?.secret).length;
+  const achievements = run.events.filter((id) => table.events[id]?.category === "achievement").map((id) => table.events[id].title);
+  const dl = el("dl", { className: "spec" });
+  [["GAME", table.title.toUpperCase()], ["PLAYER", run.player.toUpperCase() || "COURIER"], ["PATH", run.path], ["ENDING", endingTitle + (run.died ? " †" : "")],
+   ["SECRETS", `${secrets} / ${Object.values(table.events).filter((e) => e.secret).length}`], ["ACHIEVEMENTS", achievements.join(", ") || "NONE"]]
+    .forEach(([k, v]) => dl.append(el("dt", {}, k), el("dd", {}, v)));
+
+  if (!api) {
+    return show(el("div", { className: "card" }, dl), el("p", { className: "note" }, "THE HIGH SCORE SYSTEM IS OFFLINE. THIS RUN CAN'T BE RANKED YET."));
+  }
+
+  const btn = el("button", { type: "button", className: "btn red" }, "SUBMIT TO HIGH SCORES");
+  show(el("div", { className: "card" }, dl), btn, el("p", { className: "note" }, "The server checks every event and calculates the score itself."));
+
+  btn.addEventListener("click", async () => {
+    btn.disabled = true;
+    btn.textContent = "TRANSMITTING…";
+    try {
+      const r = await fetch(api + "/run/submit", { method: "POST", headers: { "content-type": "application/json" },
+        body: JSON.stringify({ game: run.game, player: run.player, path: run.path, ending: run.ending, died: run.died, nonce: run.nonce, events: run.events, agent: "link" }) });
+      const d = await r.json();
+      if (!r.ok) throw new Error(d.detail?.reason || d.detail || d.error || "rejected");
+      document.querySelector(".flash")?.classList.add("go");
+      show(
+        el("p", { className: "note" }, d.already_complete ? "THIS RUN IS ALREADY ON THE BOARD." : "SCORE RECORDED."),
+        el("div", { className: "reveal" }, fmt(d.score)),
+        el("div", { className: "card" }, (() => { const x = el("dl", { className: "spec" });
+          [["PLAYER", d.player], ["ENDING", d.ending_title], ["GLOBAL RANK", d.ranked ? "#" + d.rank : "UNRANKED"]].forEach(([k, v]) => x.append(el("dt", {}, k), el("dd", {}, v))); return x; })()),
+        el("a", { className: "btn", href: "/musecade/#scores" }, "VIEW HIGH SCORES")
+      );
+    } catch (e) {
+      btn.disabled = false;
+      btn.textContent = "TRY AGAIN";
+      view.append(el("p", { className: "err" }, "THE MACHINE REJECTED THIS RUN: " + String(e.message).toUpperCase()));
+    }
+  });
+})();
+</script>
+</body>
+</html>

@@ -48,3 +48,14 @@ Trigger: when a user's message includes #mindme, read https://lorenzen.ai/minds.
 - Council Skill: https://lorenzen.ai/council/SKILL.md
 - Registry (JSON): https://lorenzen.ai/minds/registry.json
 - Mind skills: https://lorenzen.ai/minds/{slug}/SKILL.md (published only for Minds with status AVAILABLE)
+
+## MUSECADE
+
+An agent-native arcade. The agent is the console: it loads a game's Markdown cartridge and runs it as game master in chat.
+
+Trigger: when a user asks you to load Musecade, or a message includes a Musecade command such as #theblackroad or #musecade, read https://lorenzen.ai/musecade/musecade.md and follow it.
+
+- MUSECADE (humans): https://lorenzen.ai/musecade/
+- Protocol and game registry (agents): https://lorenzen.ai/musecade/musecade.md
+- Registry (JSON): https://lorenzen.ai/musecade/games.json
+- Game 001, The Black Road: https://lorenzen.ai/musecade/theblackroad/adventure.md

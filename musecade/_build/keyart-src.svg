@@ -1,0 +1,176 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="t d">
+  <title id="t">The Black Road</title>
+  <desc id="d">A lone cloaked courier stands on a black stone road that winds toward a cliff monastery, beneath a black new-moon eclipse crowned with fire. Pale blue ghostly figures wait in the fog.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#040208"/>
+      <stop offset=".18" stop-color="#12081b"/>
+      <stop offset=".33" stop-color="#3d0c24"/>
+      <stop offset=".42" stop-color="#8e1a24"/>
+      <stop offset=".49" stop-color="#d8501a"/>
+      <stop offset=".54" stop-color="#ffae45"/>
+      <stop offset=".6" stop-color="#ffd98a"/></linearGradient>
+    <radialGradient id="corona" cx="400" cy="190" r="190" gradientUnits="userSpaceOnUse">
+      <stop offset=".36" stop-color="#fff1c4" stop-opacity="1"/>
+      <stop offset=".42" stop-color="#ffb347" stop-opacity=".95"/>
+      <stop offset=".55" stop-color="#e0561a" stop-opacity=".55"/>
+      <stop offset=".75" stop-color="#9b1f23" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#9b1f23" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="boxglow" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#fff0b8" stop-opacity=".95"/>
+      <stop offset=".25" stop-color="#ffb347" stop-opacity=".7"/>
+      <stop offset=".6" stop-color="#e0561a" stop-opacity=".25"/>
+      <stop offset="1" stop-color="#e0561a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="windowglow" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#ffd27a" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#ffd27a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="hushglow" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#bff2ff" stop-opacity=".75"/>
+      <stop offset=".4" stop-color="#34c6ff" stop-opacity=".3"/>
+      <stop offset="1" stop-color="#34c6ff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="rimL" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffb347"/>
+      <stop offset=".5" stop-color="#e0561a" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#e0561a" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="roadwet" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff9a3c" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#9b1f23" stop-opacity=".08"/>
+    </linearGradient>
+    <radialGradient id="vignette" cx="400" cy="300" r="520" gradientUnits="userSpaceOnUse">
+      <stop offset=".55" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity=".85"/>
+    </radialGradient>
+    <filter id="blur6" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6"/></filter>
+    <filter id="blur14" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="14"/></filter>
+    <filter id="blur2" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2"/></filter>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="7" result="n"/>
+      <feColorMatrix in="n" type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="table" tableValues="0 .22"/></feComponentTransfer>
+    </filter>
+    <pattern id="rain" width="40" height="40" patternUnits="userSpaceOnUse" patternTransform="rotate(14)">
+      <line x1="6" y1="0" x2="6" y2="14" stroke="#ffe6c2" stroke-opacity=".16" stroke-width="1"/>
+      <line x1="26" y1="18" x2="26" y2="28" stroke="#ffe6c2" stroke-opacity=".1" stroke-width="1"/>
+      <line x1="16" y1="30" x2="16" y2="40" stroke="#bfe9ff" stroke-opacity=".09" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- sky -->
+  <rect width="800" height="600" fill="url(#sky)"/>
+  <g fill="#fff4dc">
+    <circle cx="62" cy="48" r="1.2" opacity=".8"/><circle cx="140" cy="92" r=".9" opacity=".6"/>
+    <circle cx="228" cy="36" r="1.1" opacity=".7"/><circle cx="604" cy="54" r="1.3" opacity=".8"/>
+    <circle cx="690" cy="118" r=".9" opacity=".6"/><circle cx="742" cy="30" r="1" opacity=".7"/>
+    <circle cx="520" cy="22" r=".8" opacity=".5"/><circle cx="300" cy="80" r=".7" opacity=".5"/>
+    <circle cx="34" cy="150" r=".8" opacity=".4"/><circle cx="770" cy="170" r=".8" opacity=".4"/>
+  </g>
+
+  <!-- the black new moon, crowned with fire -->
+  <circle cx="400" cy="190" r="190" fill="url(#corona)"/>
+  <g filter="url(#blur6)" opacity=".85">
+    <path d="M316 146 C322 120 336 108 332 84 C348 100 352 116 352 128 C358 104 372 86 370 58 C390 80 398 100 400 118 C402 100 410 80 430 58 C428 86 442 104 448 128 C448 116 452 100 468 84 C464 108 478 120 484 146 Z" fill="#ff8a2a"/>
+  </g>
+  <path d="M326 142 C330 124 338 114 336 98 C346 112 350 124 352 134 C360 114 370 98 372 78 C386 96 394 110 400 124 C406 110 414 96 428 78 C430 98 440 114 448 134 C450 124 454 112 464 98 C462 114 470 124 474 142 Z" fill="#ffd27a" opacity=".45"/>
+  <circle cx="400" cy="190" r="76" fill="#040205"/>
+  <circle cx="400" cy="190" r="76" fill="none" stroke="#fff0c0" stroke-width="2.5" opacity=".9"/>
+  <circle cx="400" cy="190" r="79" fill="none" stroke="#ffb347" stroke-width="5" opacity=".5" filter="url(#blur2)"/>
+
+  <!-- storm bands lit crimson from below -->
+  <g opacity=".7" filter="url(#blur6)">
+    <path d="M-20 250 C120 232 230 262 360 246 C470 232 560 258 820 236 L820 262 C600 280 470 262 360 272 C220 286 110 262 -20 276 Z" fill="#1a0914"/>
+    <path d="M-20 262 C150 250 260 270 380 262 C520 252 640 268 820 254" stroke="#e0561a" stroke-opacity=".45" stroke-width="2" fill="none"/>
+    <path d="M60 206 C170 194 240 214 300 208 L300 218 C230 226 160 212 60 220 Z" fill="#12060f" opacity=".8"/>
+    <path d="M520 214 C600 202 690 220 780 208 L780 220 C690 232 610 216 520 226 Z" fill="#12060f" opacity=".8"/>
+  </g>
+
+  <!-- far range with Orun on the peak -->
+  <path d="M0 352 L22 330 L34 336 L58 296 L72 308 L96 270 L112 292 L128 284 L150 318 L176 280 L190 290 L214 250 L232 282 L250 272 L276 312 L300 296 L322 318 L346 300 L372 322 L398 306 L426 326 L452 300 L476 312 L500 272 L518 280 L542 240 L556 250 L566 236 L584 262 L604 256 L630 290 L652 270 L676 300 L700 262 L716 276 L744 246 L768 280 L800 262 L800 600 L0 600 Z" fill="#170a1c"/>
+  <path d="M0 352 L22 330 L34 336 L58 296 L72 308 L96 270 L112 292 L128 284 L150 318 L176 280 L190 290 L214 250 L232 282 L250 272 L276 312 L300 296 L322 318 L346 300 L372 322 L398 306 L426 326 L452 300 L476 312 L500 272 L518 280 L542 240 L556 250 L566 236 L584 262 L604 256 L630 290 L652 270 L676 300 L700 262 L716 276 L744 246 L768 280 L800 262" fill="none" stroke="#34c6ff" stroke-opacity=".28" stroke-width="1.5"/>
+  <g fill="#ffd9a8" opacity=".35">
+    <path d="M96 270 L104 282 L98 280 L90 284 Z"/><path d="M214 250 L222 264 L214 260 L207 266 Z"/>
+    <path d="M500 272 L507 282 L500 280 L494 284 Z"/><path d="M744 246 L752 260 L744 256 L737 262 Z"/>
+    <path d="M700 262 L707 272 L700 270 L694 274 Z"/>
+  </g>
+  <g>
+    <circle cx="566" cy="226" r="30" fill="url(#windowglow)" opacity=".7"/>
+    <path d="M550 244 L550 228 L556 228 L556 222 L561 222 L561 208 L565 201 L569 208 L569 222 L576 222 L576 230 L583 230 L583 250 L566 238 Z" fill="#0b050d"/>
+    <rect x="563.5" y="224" width="3" height="4" fill="#ffd27a"/>
+  </g>
+  <g filter="url(#blur2)">
+    <path d="M566 250 L558 272 L566 286 L552 308 L560 326" fill="none" stroke="#9fe8ff" stroke-width="2.2"/>
+    <path d="M592 290 L600 306 L594 318" fill="none" stroke="#9fe8ff" stroke-width="1.6"/>
+  </g>
+  <circle cx="562" cy="296" r="56" fill="url(#hushglow)" opacity=".8"/>
+
+  <!-- mid range -->
+  <path d="M0 430 L30 404 L52 414 L84 372 L104 392 L128 380 L160 418 L196 396 L226 412 L262 384 L290 420 L330 406 L372 432 L420 412 L452 426 L494 390 L518 402 L548 368 L574 398 L606 386 L640 414 L676 392 L712 424 L748 388 L776 404 L800 396 L800 600 L0 600 Z" fill="#0e0712"/>
+  <path d="M0 430 L30 404 L52 414 L84 372 L104 392 L128 380 L160 418 L196 396 L226 412 L262 384 L290 420 L330 406 L372 432 L420 412 L452 426 L494 390 L518 402 L548 368 L574 398 L606 386 L640 414 L676 392 L712 424 L748 388 L776 404 L800 396" fill="none" stroke="#e0561a" stroke-opacity=".3" stroke-width="1.5"/>
+
+  <!-- fog bank -->
+  <g filter="url(#blur14)" opacity=".5">
+    <ellipse cx="160" cy="470" rx="220" ry="26" fill="#6b5a88"/>
+    <ellipse cx="640" cy="462" rx="230" ry="24" fill="#5b6b92"/>
+    <ellipse cx="420" cy="486" rx="260" ry="18" fill="#7a5f7c"/>
+  </g>
+
+  <!-- the Hushed, waiting in the fog -->
+  <g fill="#bfe9ff" opacity=".22">
+    <path d="M118 488 C112 470 114 452 122 446 C130 440 138 446 138 458 C140 470 142 480 138 490 Z"/>
+    <path d="M168 492 C163 476 165 460 172 455 C179 450 186 456 186 466 C188 478 188 486 184 494 Z"/>
+    <path d="M610 486 C605 468 607 452 615 447 C622 442 630 448 630 460 C632 470 634 480 630 488 Z"/>
+    <path d="M664 492 C660 478 661 464 667 459 C673 455 680 460 680 470 C681 480 681 488 678 494 Z"/>
+    <path d="M700 488 C696 474 697 462 702 457 C708 453 714 458 714 467 C715 476 715 484 712 490 Z"/>
+  </g>
+  <g fill="#e6fbff">
+    <circle cx="125" cy="452" r="1.3"/><circle cx="131" cy="452" r="1.3"/>
+    <circle cx="175" cy="461" r="1.2"/><circle cx="181" cy="461" r="1.2"/>
+    <circle cx="619" cy="453" r="1.3"/><circle cx="625" cy="453" r="1.3"/>
+    <circle cx="670" cy="465" r="1.1"/><circle cx="675" cy="465" r="1.1"/>
+  </g>
+  <g filter="url(#blur2)" fill="#34c6ff" opacity=".8">
+    <circle cx="128" cy="452" r="4"/><circle cx="178" cy="461" r="4"/><circle cx="622" cy="453" r="4"/><circle cx="672" cy="465" r="3.5"/>
+  </g>
+
+  <!-- foreground ground -->
+  <path d="M0 512 C140 496 260 502 400 510 C560 520 660 500 800 508 L800 600 L0 600 Z" fill="#08050a"/>
+
+  <!-- the black road -->
+  <path d="M218 600 C286 566 346 538 372 512 C392 492 366 480 384 466 C400 454 438 452 452 440 L462 441 C452 456 418 462 410 474 C400 490 426 500 414 520 C396 548 460 574 560 600 Z" fill="#0d0a10"/>
+  <path d="M218 600 C286 566 346 538 372 512 C392 492 366 480 384 466 C400 454 438 452 452 440" fill="none" stroke="url(#roadwet)" stroke-width="2"/>
+  <path d="M560 600 C460 574 396 548 414 520 C426 500 400 490 410 474 C418 462 452 456 462 441" fill="none" stroke="url(#roadwet)" stroke-width="2"/>
+  <g stroke="#ff9a3c" stroke-opacity=".22" stroke-width="1.2" fill="none">
+    <path d="M300 590 L352 584"/><path d="M332 568 L392 566"/><path d="M356 548 L404 548"/>
+    <path d="M430 590 L494 590"/><path d="M372 532 L402 532"/><path d="M384 500 L404 498"/>
+    <path d="M392 478 L410 478"/><path d="M420 462 L436 460"/>
+  </g>
+  <path d="M390 600 C392 572 398 548 400 530" stroke="#ffb347" stroke-opacity=".18" stroke-width="10" filter="url(#blur6)"/>
+
+  <!-- the courier -->
+  <g transform="translate(352 574) scale(1.28) translate(-352 -574)">
+    <ellipse cx="352" cy="574" rx="54" ry="8" fill="#000" opacity=".6"/>
+    <path d="M340 382 C326 382 320 396 321 410 C322 420 326 426 321 433 C302 441 294 460 291 486 C287 520 276 548 260 574 L298 570 L310 580 L326 570 L340 582 L354 570 L374 576 L390 562 C416 566 440 558 462 540 C438 540 416 530 404 512 C398 482 386 452 364 436 C358 430 356 422 357 410 C358 394 352 382 340 382 Z" fill="#040206"/>
+    <path d="M340 382 C326 382 320 396 321 410 C322 420 326 426 321 433 C302 441 294 460 291 486 C287 520 276 548 260 574" fill="none" stroke="url(#rimL)" stroke-width="2.5" opacity=".9"/>
+    <path d="M340 382 C352 382 358 394 357 410 C356 422 358 430 364 436 C386 452 398 482 404 512 C416 530 438 540 462 540" fill="none" stroke="#ffb347" stroke-opacity=".35" stroke-width="1.5"/>
+    <path d="M314 480 L286 560 L282 572 L292 566 L318 484 Z" fill="#040206"/>
+    <path d="M314 480 L318 484" stroke="#ffcf6b" stroke-width="2" opacity=".6"/>
+    <circle cx="0" cy="0" r="1" fill="url(#boxglow)" transform="translate(378 470) scale(70)"/>
+    <path d="M368 462 L388 458 L390 472 L370 476 Z" fill="#ffb347" opacity=".35"/>
+  </g>
+
+  <!-- embers -->
+  <g fill="#ffcf6b">
+    <circle cx="402" cy="440" r="1.4" opacity=".9"/><circle cx="416" cy="418" r="1" opacity=".7"/>
+    <circle cx="388" cy="404" r="1.2" opacity=".6"/><circle cx="430" cy="392" r=".9" opacity=".5"/>
+    <circle cx="410" cy="372" r=".8" opacity=".4"/>
+  </g>
+
+  <!-- rain, grain, vignette -->
+  
+  
+  
+</svg>

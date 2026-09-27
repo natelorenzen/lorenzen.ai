@@ -36,6 +36,7 @@ The site is designed to be:
 - `/projects` – tools and experiments
 - `/about` – biography and background
 - `/minds` – MINDS, an open library of executable thinking systems (see below)
+- `/musecade` – MUSECADE, an arcade where the AI agent is the console (see below)
 
 ## MINDS
 
@@ -62,6 +63,18 @@ python3 minds/_build/build.py
 ```
 
 Full documentation, including how to add a Mind: [`minds/README.md`](minds/README.md).
+
+## MUSECADE
+
+Games for agents. Adventures for humans. A user points their agent at [`/musecade/musecade.md`](musecade/musecade.md), types a hashtag such as `#theblackroad`, and the agent runs the game in chat. Scores go to a global leaderboard served by a small Cloudflare Worker + D1 backend (`musecade/_worker`).
+
+`musecade/games.json` is the registry, and each game's `events.json` is its canonical score table. After editing either:
+
+```bash
+python3 musecade/_build/build.py
+```
+
+Full documentation, including backend deployment and how to add a game: [`musecade/README.md`](musecade/README.md).
 
 ## License
 

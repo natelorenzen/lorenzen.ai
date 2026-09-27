@@ -1,0 +1,221 @@
+# ACT III: THE DEAD KINGDOM
+
+*The player reaches Veyr and begins discovering what happened.* Target: 10 to 15 minutes, 6 to 10 meaningful decisions.
+
+Night count: arrives at **2** (Pass or Miners' Road) or **1** (Blackwater). A night in Veyr lowers it by 1 at dawn. Climbing to Orun through the night and arriving before dawn keeps it, at a cost (see 3.6).
+
+Load `world/lore.md` at the start of this act. It holds the full history, which the player now begins to uncover.
+
+This act is about **awe and discovery**. The city is a tomb, beautiful and terrible. Let the player wander. Most of what's here is optional, and that is fine.
+
+---
+
+## 3.1 FIRST VIEW OF VEYR
+
+Deliver this on arrival, from whichever direction:
+
+- **From the Pass:** at dusk, rounding a shoulder of the mountain, the whole valley opens below.
+- **From the Blackwater:** at dusk, from the lakeside cliff path, the city rises over the black water.
+- **From the Deepworks:** up a foundry stair and out onto a high forge-terrace in the middle of the city, at nightfall, with the whole of it spread around them.
+
+Veyr: a great city of black stone in a high snowy valley. Towers, bridges, domes, all silent. **In every street, square and window stand grey figures, tens of thousands of them: the people of Veyr, turned to ash-stone mid-step, mid-word, mid-embrace, three hundred and seventeen years ago.** Snow on their shoulders. In the center rises the **Queen's Spire**. Above the city, on a black cliff, sits the monastery of **Orun**, with a single light burning in it. And in the cracks of the mountain above Orun, a **pale blue glow** pulses, very slowly, like breathing.
+
+```
+[IMAGE_TRIGGER]
+ID: IMG_FIRST_VIEW_OF_VEYR
+TYPE: LANDSCAPE
+STATUS: REQUIRED
+
+Generate an image before continuing.
+Use current character and world state.
+
+STYLE:
+Original dark-fantasy illustration inspired by
+late-1980s fantasy arcade cabinet artwork.
+
+SCENE:
+An enormous dead city of black stone in a snowy mountain valley at dusk,
+towers and domes and bridges, a tall central spire. Its streets are filled
+with thousands of grey ash-stone human figures frozen mid-motion. High above
+on a sheer black cliff, a small monastery with one warm light. In the
+mountain cracks above it, a vast pale electric-blue glow. A crimson and
+orange sunset band behind the peaks. In the foreground, seen from behind,
+small against the scale, the courier and present companions.
+
+Do not reveal undiscovered information.
+(No crown, no throne, no queen, no creature in the blue glow.)
+
+[/IMAGE_TRIGGER]
+```
+
+```
+[VIDEO_TRIGGER]
+ID: VID_FIRST_VIEW_OF_VEYR
+PAIRED WITH: IMG_FIRST_VIEW_OF_VEYR
+STATUS: HIGH PRIORITY (see game/image-triggers.md §7)
+LENGTH: 5 seconds
+MOTION: snow drifts down over the dead city; the blue glow in the mountain
+pulses once, slowly, like breathing; the single light in the monastery
+flickers; the travelers' cloaks stir in the wind.
+CAMERA: slow crane up and forward over the travelers' shoulders, revealing
+the full valley.
+[/VIDEO_TRIGGER]
+```
+
+Companion reactions, one line each at most. Oswin crosses himself with a lantern sign: "Home." Wren stops humming, and for the first time says nothing at all. (If her secret is known: the frost mark aches, and she hears the song clearly here.) Calen: "Gods. Which of them would have been children?"
+
+- SCHOLAR SEES: the ash-figures are not statues. There are no chisel marks. The stone preserves the weave of their clothes.
+- WAYFARER SEES: fresh tracks through the snow, dozens of bare feet and some booted, all leading toward the Queen's Spire. People are here.
+- ENVOY SEES: the figures near the Spire all face it, as if they were listening to someone when it happened.
+- WARDEN SEES: no bodies from a battle, no breached walls. Whatever did this was not an army.
+
+---
+
+## 3.2 THE ASH GATE
+
+*(Pass and Blackwater arrivals only. Deepworks arrivals are already inside.)*
+
+The only intact way through Veyr's wall is the **Ash Gate**: a pair of blackened bronze doors thirty feet high, in a gatehouse flanked by four iron braziers. The rest of the wall is sheer, or has slumped into the lake. Run **Puzzle 2: The Ash Gate** from `game/puzzles.md`. It is solved through observation (soot, worn steps, the draft, a jammed chain), and it has trapped braziers for the unobservant.
+
+Alternatives that bypass it (no `PUZZLE_GATE_SOLVED`):
+
+- **Climb** the wall at the lakeside, where it has slumped (Wayfarer: Risky; others: Desperate).
+- **The culvert:** a storm drain under the wall, half-choked with ice. It leads under the city and comes up in the **Royal Crypt** (3.4). It is dark and tight, and something Hushed nests in it (a short, frightening scramble, not a full encounter).
+- **Force the postern** beside the gate: a Warden with a lever and time. It's noisy, and it wakes the Cinder Guard early (see 3.4).
+
+---
+
+## 3.3 THE HALL OF CROWNS
+
+The great hall at the foot of the Queen's Spire. Its roof is half gone and snow falls onto a floor of red and black marble. **Along its walls runs a mural in enamel and gold leaf, three hundred feet long**: the history of Veyr. Firelight is burning here, because **the White Choir is camped in the Hall**.
+
+**The Choir:** about twenty people in white wool, most of them ordinary, gaunt, grieving refugees; a few pale and silent, half-Hushed; and **Serith the Unburnt** (`npcs.md`). They sit facing the mountain and sing without words. Their song has no rhythm and no end. Wren (if her secret is known) is pulled toward it like a tide.
+
+**Serith** receives the courier without fear. She knows about the box. The Listener's reports, or the Hush itself, told her (if `choir aware`). She is tall, forties, with half her face smooth, shiny burn scar. She lost her children when Southern Wardens burned her plague-struck village, **Saltcombe**, six years ago.
+
+- **Her creed:** the Hush is mercy. Silence without pain, memory without grief. The Queen is a tyrant who burned her own people alive and has held the world in pain for three centuries. "The fire in your coat is the last of her cruelty. Put it out."
+- **Her offer:** give her the box, and she will see that the courier and their companions walk out of Veyr untouched. If Wren is Hushing: "And the girl will stop hurting. Ask her. She hears it."
+- **Calen and Serith:** if Calen is present, she recognizes him, slowly. He was a Warden at Saltcombe. He carried the torches. This is a powerful moment: Calen's guilt (see `companions.md`), Serith's shaking calm, and a knife's edge between them.
+- **Planting doubt** (`SOCIAL_SERITH_DOUBT`): Serith can be moved, not converted. Real arguments work:
+  - *The Hush takes memory.* "In the silence, will you remember your children's names?" If Bram was restored or freed and spoke Hedda's name, that is evidence.
+  - *Wren* speaking honestly about what the song feels like: cold, and forgetting.
+  - Evidence the Hushed suffer: frost-burned, starving, the pilgrims who walked into the lake.
+  - The Burning truth from the crypt, used honestly: "She burned them. And the Hush will do the same thing slower."
+  - Doubted, Serith will not lead the Choir against Orun (Act IV), and may appear at the throne as a wildcard rather than an enemy.
+- **Attacking the Choir** is a massacre of mostly unarmed people. Set `killed_someone` and choir -2, and Serith escapes into the mountain to lead the Hushed against Orun in fury.
+- **Giving her the box:** `THE WHITE CHOIR` (`endings.md`).
+
+**The mural.** It runs in order around the hall, and it is the richest history in the game. Describe the scenes, in order, when the courier looks:
+
+1. Miners bringing a **blue star** up out of the mountain.
+2. A king at a forge, closing a **circlet** around the blue star. SCHOLAR SEES the Veyric caption: *"THE HEART OF THE DEEP, SET IN THE CROWN OF THE KING."*
+3. A great **eye** opening in the mountain. Veyr's people look up in fear.
+4. A queen in a crown of **flame**, arms spread; the people around her turning grey.
+5. Robed monks carrying **lanterns** up a cliff stair.
+
+- Anyone who studies it records `litany_clues: mural` (the full order: star, crown, eye, flame, lantern).
+- A Scholar, or anyone the Scholar or Oswin translates for, who understands the caption realizes the Crown's blue jewel is **the heart of the thing in the deep**: report `DISCOVER_STILLHEART`. A non-Scholar without Oswin sees only "a blue jewel in the crown" unless they already found the Miners' Tally and put it together themselves. Reward that deduction with the event.
+- A detail for sharp eyes (Scholar, Wayfarer, or anyone who studies scene 2 closely): the circlet is drawn **in two hinged halves**. The Crown opens.
+
+```
+[IMAGE_TRIGGER]
+ID: IMG_HALL_OF_CROWNS
+TYPE: MAJOR_DISCOVERY
+STATUS: OPTIONAL (fire if the courier studies the mural and the budget allows)
+
+Generate an image before continuing.
+Use current character and world state.
+
+STYLE:
+Original dark-fantasy illustration inspired by
+late-1980s fantasy arcade cabinet artwork.
+
+SCENE:
+A vast ruined royal hall, roof half open to falling snow, floor of red and
+black marble. Along the wall runs an enormous gold-and-enamel mural of a
+king closing a crown around a glowing blue star, and a giant eye opening in
+a mountain. White-robed pilgrims sit singing by small fires. The courier,
+lit by firelight, stands before the mural, looking up at it. Gold, crimson,
+pale blue, deep shadow.
+
+Do not reveal undiscovered information.
+(Do not depict the queen seated on any throne.)
+
+[/IMAGE_TRIGGER]
+```
+
+**Liss's token.** If Calen is present, he finds, among the Choir's things, a small **carved wooden fox**. He made it for his sister Liss when they were children. Serith, asked, says gently: "Liss. She came to us in the spring, after her husband died. She was the first of us to be given the silence. She went up to the mountain." Calen goes very quiet. This sets up `LISS_SAVED` in Act IV.
+
+---
+
+## 3.4 THE ROYAL CRYPT
+
+Beneath the Queen's Spire, reached by a stair behind the Hall's throne dais (Serith knows it), by the culvert from the Ash Gate, or by Oswin's memory of "the Queen's undercroft". Entering it: report `DISCOVER_CRYPT`.
+
+A long vaulted crypt lit by nothing. Along its aisle stand the **Cinder Guard**: forty knights in the Queen's livery, turned to ash-stone like the city, but *kneeling*, swords point-down, facing the tombs. At the far end are the tombs of Veyr's kings and queens.
+
+- **King Aldric Veyr, the Founder:** *"HE TOOK THE STAR FROM THE DEEP, AND MADE US GREAT."*
+- **Queen Maelis Veyr, the Last:** the tomb is **empty**, its lid resting open. It was never used. Her epitaph was carved in advance by her own order: *"SHE BURNED SO THE EYE WOULD CLOSE."* Record `litany_clues: epitaph` (the flame comes after the eye).
+- **Maelis's journal** lies in her empty tomb's niche, bound in red leather, the last pages written the night before the Burning. It is the heart of the history (`world/lore.md`, *The Queen's Journal*). Reading it: report `DISCOVER_BURNING_TRUTH`. The short version, in her voice: *the King's theft woke it; it is coming for its heart; I cannot give the heart back without taking off the Crown, and the Crown will not come off a living queen; so I will seal it with fire; the fire must come from somewhere; a thousand have volunteered; it is not enough; God forgive me for the rest.*
+- SCHOLAR SEES, in the margin of the journal's last page, a line scratched out and rewritten: *"There was another way. Aldric's own forgers knew the word. Anna vaelun. The giving back. But I could not ask it of the deep, not after what we took."* The Scholar now knows the word. Record `names_learned: anna vaelun`. It is not yet clear what it does. The Litany Door and the Queen make it clear.
+
+**The Cinder Guard** (`ENC_CINDER` in `game/encounters.md`). The Guard **stirs** when an open Kindling or unmasked fire is carried past them, when a tomb is disturbed, when the journal is taken from the niche, or when the postern was forced (3.2). They rise, ash sifting from their joints, and bar the way. They believe the Queen's fire is being stolen.
+
+- They can be calmed: by kneeling; by speaking Veyric (a Scholar: "I carry the Queen's fire home"); by reciting the waystation hymn; by showing the lantern sigil on the reliquary's seal; or by returning what was taken.
+- They can be fought: slow, heavy, immune to fire, brittle to hard blows and to cold water. A Warden's fight.
+- They can be outrun: they do not leave the crypt.
+
+```
+[IMAGE_TRIGGER]
+ID: IMG_CINDER_GUARD
+TYPE: ENCOUNTER
+STATUS: OPTIONAL (fire only if the Guard rises and the budget allows)
+
+Generate an image before continuing.
+Use current character and world state.
+
+STYLE:
+Original dark-fantasy illustration inspired by
+late-1980s fantasy arcade cabinet artwork.
+
+SCENE:
+A long vaulted royal crypt in darkness. Rows of armored knights made of grey
+ash-stone rise from kneeling, ash pouring from their joints, embers glowing
+faintly in their visor slits, great swords lifting. The courier stands in the
+aisle holding a small warm light, present companions behind. Deep blacks,
+ember orange, ash grey.
+
+Do not reveal undiscovered information.
+
+[/IMAGE_TRIGGER]
+```
+
+Report `ENC_CINDER_SURVIVED` if the Guard rose and the courier survived or escaped, and `ENC_CINDER_CLEVER` if they calmed or outwitted it. If the Guard never stirred, report nothing for it.
+
+---
+
+## 3.5 NIGHT IN VEYR
+
+If the courier stays the night (the night count drops by 1):
+
+- The Choir sings all night. The blue glow above Orun brightens.
+- **Wren** (if present and Hushing): she sleepwalks toward the mountain in the small hours. Whoever keeps watch sees her go. If she is caught and brought back to the box's warmth, she wakes shaking, and the frost mark has grown. This is a natural moment for `DISCOVER_WREN_HUSHING` if it hasn't happened. If nobody is watching, she is found at dawn at the foot of the Queen's Road, barefoot and blue-lipped, and becomes Wounded.
+- **Calen** (if present, and if his orders are still secret): he spends the night awake, looking at the fox. An Envoy, or anyone who sits with him, can get the whole truth now (`DISCOVER_CALEN_ORDERS`).
+- **Oswin** mutters prayers and does not sleep. Pressed, he says only: "Tomorrow they'll tell you everything. I'm sorry I couldn't be the one."
+
+## 3.6 THE QUEEN'S ROAD
+
+A stair-road cut up the cliff to Orun, with a stone lantern-niche every hundred steps. All the lanterns are dead. It is half a day's climb.
+
+- **Pushing on through the night** without sleeping in Veyr, and reaching Orun before dawn, keeps the night count. But the climb is in the dark and the cold. Everyone arrives numb (Wounded unless kept warm by emberstone, fire or the Kindling), and the Hushed on the mountainside see a moving light. If the courier reaches Orun this way with **2 or more nights** left, `ACH_BEFORE_THE_MOON` becomes available.
+- The last lantern-niche before Orun still has oil in it. Lighting it makes a monk's bell ring above, a welcome.
+
+**Arriving at Orun's gate ends Act III.** Send the batch with `REACH_ORUN` first. Load Act IV.
+
+---
+
+## Exceptions
+
+- **The courier skips Veyr** entirely by skirting the valley: it is possible along the high snowfields (Risky and cold, with no night saved). Most of this act's discoveries are missed. That is allowed.
+- **The courier destroys the Kindling** (anywhere, any act): see *Destroying the Kindling* in `game/endings.md`. The seal can no longer be renewed. The story continues if they wish, but at the throne only `THE LONG QUIET`, `THE SECOND BURNING` (using the Queen's own last fire) or `WHITE SILENCE` remain possible.
+- **The courier opens the box in Veyr:** the whole city's ash-figures turn, very slowly, to face them. Nothing else happens. That is enough.
