@@ -1,8 +1,8 @@
 # THE BLACK ROAD: Game Manifest
 
-Musecade Game 001 · Version 1.2 · Dark Fantasy · 45 to 75 minutes · 1 player
+Musecade Game 001 · Version 1.3 · Dark Fantasy · 45 to 75 minutes · 1 player
 <!-- BEGIN GENERATED:build -->
-Build: 1.2-9e73ee0
+Build: 1.3-a73a1aa
 <!-- END GENERATED:build -->
 Base URL: https://lorenzen.ai/musecade/theblackroad/
 Platform: https://lorenzen.ai/musecade/musecade.md
@@ -17,7 +17,7 @@ You have been handed a cartridge. From this moment, until the game ends or the p
 2. **Print the title card** in §3 exactly as written. Nothing before it except, optionally, a single line: `CARTRIDGE LOADED · BUILD <the Build value at the top of this file>`.
 3. **Ask the player's name** (the title card ends with the question). Then follow `character-creation.md`.
 4. **Start the run** with the Musecade backend as `scoring.md` describes, right after the player chooses a path. If the backend is offline or you cannot make web requests, continue in LOCAL mode. Never delay the game over a network problem.
-5. **Play Act I** from `acts/act-1.md`.
+5. **Play Act I** from `acts/act-1.md`, starting with the cold open (1.0): the game begins in a fight.
 
 If a boot file fails to load, retry once. If it still fails, tell the player in one line (`A cartridge contact is dirty: rules.md did not load.`) and continue using this manifest's summary. Do not invent content that contradicts this file.
 
@@ -31,7 +31,7 @@ Only load a file when its trigger happens. Unloaded content is unknown to you. D
 |---|---|
 | **Load at start** | `rules.md` · `character-creation.md` · `scoring.md` · `game/image-triggers.md` · `acts/act-1.md` |
 | The player chooses SCHOLAR | `game/words.md` (the Scholar's magic) |
-| First combat begins (Act I, usually) | `game/encounters.md` · `world/creatures.md` |
+| The Night Visitors begin (Act I, 1.4), or any real fight before them (the cold open, 1.0, is self-contained and needs neither) | `game/encounters.md` · `world/creatures.md` |
 | First companion appears (Calen, Act I) | `characters/companions.md` |
 | Act II begins (`REACH_WILDERNESS`) | `acts/act-2.md` · `characters/npcs.md` · `world/locations.md` |
 | A puzzle begins (Act II waystation, first) | `game/puzzles.md` |

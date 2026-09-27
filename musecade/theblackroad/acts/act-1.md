@@ -1,10 +1,10 @@
 # ACT I: THE ROAD
 
-*Mission, atmosphere, first threat.* Target: 10 to 15 minutes, 6 to 9 meaningful decisions.
+*Mission, atmosphere, first threat.* Target: 12 to 17 minutes, 8 to 11 meaningful decisions.
 
 Night count: begins at **4**. Dawn at Greyholt lowers it to **3**.
 
-Act I is about dread, not action. Let the rain, the silence and the absent people do the work. The first real terror, and the first image, is the Night Visitors (1.4).
+Act I **opens with action**: a short, easy fight that teaches the game (1.0). Then it turns to dread. Let the rain, the silence and the absent people do the work. The first real terror, and the first image, is the Night Visitors (1.4).
 
 ---
 
@@ -50,15 +50,70 @@ Do not reveal undiscovered information.
 
 ---
 
+## 1.0 COLD OPEN: THE FROST LINE (the tutorial fight)
+
+**Open with action, immediately after the path tag.** The game starts in the middle of trouble. This fight is **easy to win and cannot kill**. Its job is to teach the player how the Black Road plays, in 3 or 4 quick decisions and about 3 to 5 minutes.
+
+**The scene.** Rain. The Black Road runs north into fog. Ahead, a band of pale frost lies across the road and the moor, and the rain does not melt it (1.1 explains it fully afterward). The mare stops dead ten paces short of it and screams. Out of the fog beyond the frost, **two figures walk toward her**: a peddler with a pack, and a boy. Hoods up, heads down, barefoot on the frost, and utterly silent. They don't answer a hail. They're walking for the mare, the warmest thing on the road.
+
+- Keep their faces hidden (hoods, rain, fog). **This is a glimpse, not the reveal.** The full horror of the Hushed, and the first image, belong to the Night Visitors (1.4). No image fires here.
+- **Path spotlight**, one line for this path only, before the first menu:
+  - WARDEN: *two of them, unarmed, slow. The road is narrow here and the ditch is deep. You could end this fast.*
+  - SCHOLAR: *SAEL prickles on your tongue a heartbeat before they appear: something cold is listening. NER sits beside it, warm.*
+  - WAYFARER: *bare footprints in the frost, pressed in moments ago. There were three of them. Only two came out.* (The third is gone. It's just unsettling.)
+  - ENVOY: *they don't hear words. They move the way starving people move toward a fire. This isn't malice. It's hunger.*
+
+**Beat 1: the first menu.** The peddler's white hand closes on the mare's bridle, and the mare rears. Offer the first decision menu (`rules.md`, *Decision menus*), adapted to the path. For example:
+- "Step between them and the mare, blade out." *(stand)*
+- "Haul the mare back down the road, out of their reach." *(evade)*
+- "Strike flint to the dry bracken at the frost's edge." *(turn the ground)*
+- "Something else — type your own."
+
+Then print the first tip, on its own line:
+
+```
+[ TIP · Tap an option, or type anything you can imagine. The menu is a shortcut, never a limit. ]
+```
+
+For a SCHOLAR, add:
+
+```
+[ TIP · SCHOLAR · You know two Words: NER and SAEL. Speak one and say what you want it to do. ]
+```
+
+**Beat 2: the first roll.** Whatever they choose, resolve the decisive moment with an **easy d20 roll (DC 8)**, shown openly (`rules.md` §4), then:
+
+```
+[ TIP · Easy things just happen. At moments that matter, the d20 decides how well. +2 when it fits your path. ]
+```
+
+Let the result **teach the Hushed**, whatever the approach: fire or a shout makes them flinch and fall back; a blade meets flesh that is cold as a well-stone; a hand that grips the courier leaves their fingers numb and their voice thin for a moment.
+
+**Beat 3: the turn.** One more exchange. The figures fall back toward the frost, and if the player pushes (a second roll, still easy), they retreat into it and are gone. As the boy turns, his hood slips: skin white as candle-wax, eyes glowing a faint blue. One glimpse only. Then:
+
+```
+[ TIP · There are no wrong answers on the Black Road, only consequences. Ask questions. Try the strange thing. Type SAVE GAME anytime. ]
+```
+
+**Rules for the cold open:**
+
+- **No wounds and no death here.** A miss costs something small and memorable instead: numb fingers (the courier is *numb* for the next scene), the rations spilled in the mud, or the mare bolting south (she turns up at Greyholt's stable). A natural 1 is a comic-grim twist, never a wound.
+- **They flee before they die.** The Hushed break off rather than be cut down. If the player deliberately hunts one down and kills it, that is a choice: set `killed_someone`, and describe it without glory (the peddler's pack spills: a child's shoe, a tin whistle, bread).
+- **Tips appear only in the cold open**, four at most (five for a Scholar), each on its own line. Never again after it. If the player says they know how to play or want to skip the tutorial, drop the tips and keep the fight.
+- This is not scored as an encounter. It's a free lesson.
+- After it, the rain comes back, and the silence with it. Continue straight into 1.1.
+
+---
+
 ## 1.1 THE VANISHED ROAD
 
-Open immediately after the path tag. Keep the first turn under 150 words.
+This continues directly from the cold open, as the silence settles. Keep the turn under 150 words.
 
 **What is here:** The Black Road, three centuries old, paved with fitted black basalt, runs north through the Karrow foothills. Rain. Moorland, heather, dead bracken. The mountains ahead are hidden in cloud.
 
 Yesterday the road "disappeared." Here is what that means: **a hundred paces ahead, a band of pale frost lies across the land like a drawn line**, stretching left and right out of sight into the fog. The rain falls on it and does not melt it. Beneath the frost the black stones are still there, dim, like something under ice. On the far side, the road continues north.
 
-**The horse** stops ten paces from the frost and will not go closer. She trembles, ears flat. Whipping, coaxing and pulling all fail.
+**The horse** (if she didn't bolt in the cold open) still will not go closer to the frost. She trembles, ears flat. Whipping, coaxing and pulling all fail.
 
 SCHOLAR FEELS (the Word SAEL stirs unbidden, their first taste of magic): the frost line is not weather, it is *attention*. Something vast is listening through it. The hairs on their arms stand up, and for a moment they can feel the warm box in their coat as clearly as a hand on their chest.
 
@@ -193,7 +248,7 @@ CAMERA: very slow push-in toward the frosted window.
 
 **Resolution:** the Hushed withdraw at the first grey of dawn, walking north toward the mountains. Report `ENC_ROAD_SURVIVED` if the courier lives, and `ENC_ROAD_CLEVER` for an ingenious resolution (the bell, a ring of lamp-oil fire, luring them with heated stones into the stable and barring it, hiding the box's warmth in the cold cellar, and so on). Record whether the courier killed any of them (`killed_someone`).
 
-This is the first combat and the **tutorial set piece**. It should be frightening, fast (3 to 6 decisions), and it should teach two things without stating them: **fire and noise drive the Hushed back; their touch steals voice and warmth.** When the door starts to give, offer the first decision menu, with three lateral approaches (for example, *hold the door with the table and blades*, *run for the chapel bell*, *pour the lamp oil across the threshold and light it*) plus the wildcard. A Warden reads the room unprompted: two doors, one choke point, the oil barrel. It must cost or reveal something: a wound, a Hushed face Hedda recognizes, the cellar, Calen's Southern drill showing.
+This is the **first real battle**, the first set piece after the cold open's lesson. It should be frightening, fast (3 to 6 decisions), and it should teach two things without stating them: **fire and noise drive the Hushed back; their touch steals voice and warmth.** When the door starts to give, offer the first decision menu, with three lateral approaches (for example, *hold the door with the table and blades*, *run for the chapel bell*, *pour the lamp oil across the threshold and light it*) plus the wildcard. A Warden reads the room unprompted: two doors, one choke point, the oil barrel. It must cost or reveal something: a wound, a Hushed face Hedda recognizes, the cellar, Calen's Southern drill showing.
 
 ---
 

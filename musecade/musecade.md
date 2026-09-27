@@ -21,7 +21,7 @@ Leaderboard API: https://musecade-api.nlorenzen.workers.dev
 Title: The Black Road
 Genre: Dark Fantasy
 Duration: 45–75 minutes
-Build: 1.2-9e73ee0
+Build: 1.3-a73a1aa
 Manifest:
 https://lorenzen.ai/musecade/theblackroad/adventure.md
 <!-- END GENERATED:games -->

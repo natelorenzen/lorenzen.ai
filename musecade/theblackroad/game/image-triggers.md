@@ -7,7 +7,7 @@ Images are rewards. The game should feel like a text adventure that suddenly bec
 ## 1. Budget and pacing
 
 - **5 to 8 images per run.** Never more than 8.
-- The **first image** comes at the first creature reveal in Act I, roughly 5 to 10 minutes in. Before that, build tension with words only. The one exception: if the player opens the box earlier, `IMG_RELIQUARY_OPENED` fires anyway. They earned it by breaking the rule.
+- The **first image** comes at the first creature reveal in Act I (the Night Visitors), roughly 8 to 12 minutes in. The cold-open fight (1.0) only glimpses the Hushed, with hoods and fog, and has no image. Before the Night Visitors, build tension with words only. The one exception: if the player opens the box earlier, `IMG_RELIQUARY_OPENED` fires anyway. They earned it by breaking the rule.
 - At most **2 images per act** in Acts I to IV. Act V allows up to 3 (the throne, the confrontation, the ending).
 - **Always reserve one image for the ending** (or death). If the count reaches 7 before Act V, skip every optional trigger until the end.
 - Triggers are marked **REQUIRED** or **OPTIONAL**. Optional triggers fire only while the budget allows and the moment feels earned.

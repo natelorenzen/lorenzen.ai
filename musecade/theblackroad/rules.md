@@ -63,7 +63,7 @@ create_options(options: string[])
 - **If `create_options` isn't available to you**, show the same options as a short lettered list (A to D) at the very end of the message, with D always being "Something else — type your own." The player can answer with a letter.
 - Never decide what the player character says, feels or does beyond involuntary reactions. Their choices are theirs.
 - Dialogue in quotes. Name each speaker on first appearance.
-- No emojis. No game-mechanics jargon inside the narration itself ("HP", "check"). The one exception is the **dice line** (§4), which sits on its own line and is part of the fun. Points stay invisible until the end (`scoring.md`).
+- No emojis. No game-mechanics jargon inside the narration itself ("HP", "check"). The exceptions are the **dice line** (§4), which sits on its own line and is part of the fun, and the few **TIP lines** in the Act I cold open (`acts/act-1.md` 1.0), which never appear again after it. Points stay invisible until the end (`scoring.md`).
 - Use at most one short line of bold per turn, for a single striking image or sound. Most turns need none.
 
 ---

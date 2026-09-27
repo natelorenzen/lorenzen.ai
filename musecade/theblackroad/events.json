@@ -2,7 +2,7 @@
   "schema_version": 1,
   "game": "theblackroad",
   "title": "The Black Road",
-  "version": "1.2",
+  "version": "1.3",
   "note": "CANONICAL SCORE TABLE. The Musecade backend imports this file and is the only thing that turns event IDs into points. Agents report event IDs; they never report points or totals. Edit here, run python3 musecade/_build/build.py, then redeploy the worker.",
 
   "rules": {

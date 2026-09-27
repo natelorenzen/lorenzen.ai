@@ -18,9 +18,9 @@ The player can always attempt: **attack, retreat, bluff, hide, surrender, grappl
 
 ### Set-piece battles
 
-Every run has **three set-piece battles**, the backbone of the game's danger:
+Every run opens with **the cold open** (`acts/act-1.md` 1.0): an easy, unscored tutorial fight at the frost line that teaches the menu, the d20 and the Hushed's weaknesses. Then come **three set-piece battles**, the backbone of the game's danger:
 
-1. **The Night Visitors** (`ENC_ROAD`, Act I): the tutorial. It teaches that fire and noise drive the Hushed back and that their touch steals warmth.
+1. **The Night Visitors** (`ENC_ROAD`, Act I): the first real battle. Fire and noise drive the Hushed back, and their touch steals warmth, but now it's a whole village and it's night.
 2. **The Climb** (`ENC_AMBUSH`, Act II, every route): a Hushed ambush on the last stretch to Veyr.
 3. **The Stair Hold** (inside `ENC_ORUN`, Act IV): holding the undercroft stair against the siege.
 

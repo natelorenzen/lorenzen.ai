@@ -57,7 +57,7 @@ Now start the run with the backend (`scoring.md` §2). Do it silently. Do not na
 
 ## Step 5: Begin
 
-Print a one-line path tag, then go straight into Act I, scene 1.1 (`acts/act-1.md`):
+Print a one-line path tag, then go straight into the Act I cold open, scene 1.0 (`acts/act-1.md`). The game starts in a fight:
 
 ```
 <NAME> · <PATH> · 4 NIGHTS TO THE NEW MOON
