@@ -27,6 +27,7 @@ Usage:
 Standard library only.
 """
 
+import hashlib
 import json
 import re
 import sys
@@ -202,9 +203,29 @@ summaries = [s for s in (check_game(g) for g in live) if s]
 api = (config.get("api_base") or "").rstrip("/")
 api_line = (f"Leaderboard API: {api}\n" if api
             else "Leaderboard API: OFFLINE (not yet connected; runs are scored locally and not ranked)\n")
+BUILD_BLOCK = re.compile(r"(<!-- BEGIN GENERATED:build -->\n)(.*?)(<!-- END GENERATED:build -->)", re.S)
+
+
+def build_stamp(g):
+    """version-contenthash over every published file of the game, ignoring the stamp itself."""
+    gdir = MC / g["slug"]
+    h = hashlib.sha256()
+    for p in sorted(gdir.rglob("*")):
+        if p.is_file() and p.suffix in (".md", ".json", ".html"):
+            text = BUILD_BLOCK.sub(r"\1\3", p.read_text(encoding="utf-8"))
+            h.update(str(p.relative_to(gdir)).encode() + b"\0" + text.encode())
+    return f"{g['version']}-{h.hexdigest()[:7]}"
+
+
+stamps = {g["slug"]: build_stamp(g) for g in live}
+for g in live:
+    adv = MC / g["slug"] / "adventure.md"
+    a = adv.read_text(encoding="utf-8")
+    write_if_changed(adv, replace_block(a, "build", f"Build: {stamps[g['slug']]}\n", adv))
+
 games_md = "".join(
     f"### {g['command']}\n\nTitle: {g['title']}\nGenre: {g['genre']}\n"
-    f"Duration: {g['duration'].replace(' min', ' minutes')}\nManifest:\n{g['manifest']}\n"
+    f"Duration: {g['duration'].replace(' min', ' minutes')}\nBuild: {stamps[g['slug']]}\nManifest:\n{g['manifest']}\n"
     + ("\n" if i < len(live) - 1 else "")
     for i, g in enumerate(live)
 )
@@ -232,7 +253,7 @@ for p in [router, MC / "README.md"]:
 # ------------------------------------------------------------------ report
 
 for s in summaries:
-    print(f"  {s['slug']}: {s['events']} events, {s['endings']} endings, {s['secrets']} secrets, "
+    print(f"  {s['slug']} build {stamps[s['slug']]}: {s['events']} events, {s['endings']} endings, {s['secrets']} secrets, "
           f"{s['images']} image triggers, {s['videos']} video triggers, score ceiling {s['ceiling']:,}")
 print(f"  leaderboard API: {api or 'OFFLINE'}")
 for w in warnings:

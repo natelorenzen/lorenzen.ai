@@ -2,7 +2,7 @@
   "schema_version": 1,
   "game": "theblackroad",
   "title": "The Black Road",
-  "version": "1.0",
+  "version": "1.1",
   "note": "CANONICAL SCORE TABLE. The Musecade backend imports this file and is the only thing that turns event IDs into points. Agents report event IDs; they never report points or totals. Edit here, run python3 musecade/_build/build.py, then redeploy the worker.",
 
   "rules": {
@@ -93,7 +93,8 @@
     "ACH_THREE_INSTRUCTIONS": { "category": "achievement", "hidden": true, "points": 400, "title": "THREE INSTRUCTIONS", "description": "Reach the throne having never opened, never surrendered, and never been late.", "min_act": 5, "requires": ["REACH_THRONE"], "excludes": ["ACH_WHATS_IN_THE_BOX", "ACH_OATHBREAKER"] },
     "ACH_OATHBREAKER":      { "category": "achievement", "hidden": true, "points": 250, "title": "OATHBREAKER", "description": "Break all three instructions.", "min_act": 2, "excludes": ["ACH_THREE_INSTRUCTIONS"] },
     "ACH_UNSEEN":           { "category": "achievement", "hidden": true, "points": 400, "title": "UNSEEN", "description": "Pass through the Siege of Orun without being seen.", "min_act": 4 },
-    "ACH_QUEENS_TONGUE":    { "category": "achievement", "hidden": true, "points": 300, "title": "THE QUEEN'S TONGUE", "description": "Address the Ember Queen in Old Veyric.", "min_act": 5, "requires": ["QUEEN_SPOKEN"] }
+    "ACH_QUEENS_TONGUE":    { "category": "achievement", "hidden": true, "points": 300, "title": "THE QUEEN'S TONGUE", "description": "Address the Ember Queen in Old Veyric.", "min_act": 5, "requires": ["QUEEN_SPOKEN"] },
+    "ACH_LAST_SPEAKER":     { "category": "achievement", "hidden": true, "points": 400, "title": "THE LAST SPEAKER", "description": "As a Scholar, recover all six Words of Weight.", "min_act": 4 }
   },
 
   "endings": {

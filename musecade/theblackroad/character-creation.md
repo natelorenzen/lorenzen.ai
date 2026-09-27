@@ -43,6 +43,12 @@ Ask: "One sentence: what do people see when you walk into a tavern? Or say *surp
 
 If they say "surprise me", invent one plausible line that fits their path. Record it as `look` in visual state. It is used in every image.
 
+## Step 3b: Dice
+
+Ask in one line: **"When fate is in doubt we roll a d20. Will you roll your own dice, or shall I roll for you?"** Record `dice: player` or `dice: dm` (`rules.md` §4). If the player doesn't care, you roll.
+
+If the path is SCHOLAR, fetch `game/words.md` now.
+
 ## Step 4: Start the run
 
 Now start the run with the backend (`scoring.md` §2). Do it silently. Do not narrate network activity unless it fails, and then use one line only.
@@ -78,7 +84,8 @@ An archivist, apostate priest, tutor or hedge-magister. Knows that stories are c
 
 - **Starts with:** a brass-shod walking staff, a satchel of notebooks and charcoal, a shuttered lamp with oil for two nights, a small knife, a magnifying lens, flint and tinder, three days' rations, a waterskin, 40 gold crowns.
 - **Sees:** Old Veyric inscriptions (reads them fully), ritual geometry, heraldry, contradictions in the official story of the Burning, the unnatural cold as a *phenomenon* rather than weather.
-- **Signature openings:** reading the Weeping Milestone; deducing the Litany order; speaking to the Ember Queen in her own tongue (`ACH_QUEENS_TONGUE`); understanding what the Stillheart is.
+- **Magic: Words of Weight.** The Scholar knows two Old Veyric Words that carry real, small power: **NER** ("kindle": a fingertip flame, warm hands) and **SAEL** ("stillness": sensing the uncanny). They recover four more Words through the story, and their power grows from a whisper to a command. Every casting strains them. See `game/words.md`. Mention the two Words in the first Act I turn, as a feeling rather than a rule: *"Two words your old master taught you sit on your tongue like coals."*
+- **Signature openings:** reading the Weeping Milestone; deducing the Litany order; speaking to the Ember Queen in her own tongue (`ACH_QUEENS_TONGUE`); understanding what the Stillheart is; recovering all six Words (`ACH_LAST_SPEAKER`).
 - **Weak spot:** a stand-up fight. You can fight, badly and desperately.
 
 ### WAYFARER

@@ -77,6 +77,7 @@ The courier arrives at dusk. They cannot reach anywhere else before dark, and th
 - He will not yet say *why* the courier is expected. That is his secret (`DISCOVER_OSWIN_PURPOSE`), and it comes out later (Act IV, or earlier under great trust or pressure).
 - He can translate the Weeping Milestone from a rubbing or a good description (`DISCOVER_MILESTONE_VERSE`).
 - He knows the waystation hymn, painted on the shrine wall: *"We keep the watch the Queen began; / we tend the flame she burned for."* It is a Litany clue: **the flame comes before the lantern, and the lantern is last.** Record `litany_clues: hymn`.
+- SCHOLAR: the hymn's first line is painted beneath in Veyric, *"ennar maelis…"*. Hearing Oswin sing it (or reading it with care), the Scholar feels *ennar*, "keep", settle into them. `WORD LEARNED: ENNAR, "keep"`. (`maelis` is there too, but the Scholar doesn't yet know what it truly names; that comes in the crypt.)
 - Recruit: `RECRUIT_OSWIN`. He simply comes. He was always going to.
 
 **Aldous Fenn** is a smuggler of **emberstone** (see `npcs.md`), red crystals prised from Veyr's ruins that burn hot for hours when struck. They are illegal in the South and precious in winter. He came *down* from Veyr by the Miners' Road. Pressure, a fair trade, or discretion about his cargo (`SOCIAL_FENN_BARGAIN`) gets two emberstones, directions to the Miners' Road (`DISCOVER_LONG_WAY`), or both.
@@ -220,6 +221,7 @@ Obstacles (resolve 2 or 3; keep the pace up):
 
 - SCHOLAR SEES (or Oswin translates): *"In the first year of the King, we cut the blue heart from the ice-cave at the bottom of the world. It sang to us. Master Veyr took it up to the forge. Since then the deep is cold, and the men dream of silence. We have stopped singing at work. We cannot hear ourselves."*
 - Report `DISCOVER_MINERS_TALLY` (for anyone who understands it). Record `litany_clues: tally` (the theft comes first, and the waking comes after the crown).
+- SCHOLAR: if THARRU was missed at the milestone, it is here: the miners "carried the heart up". `WORD LEARNED: THARRU, "carry"`.
 
 ```
 [IMAGE_TRIGGER]

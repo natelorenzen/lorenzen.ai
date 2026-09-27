@@ -84,6 +84,7 @@ Maelis can speak if spoken to, respectfully or otherwise. Her voice is a whisper
   - On what she wants: "To finish. Whatever you choose, choose it before my fire does."
   - **If handed the Kindling herself:** see `LONG LIVE THE QUEEN`. She can tell the courier this is possible only if asked directly, "Is there a way *you* could hold it?" She answers honestly: "Give me the coal, and I will burn as I did the day I sat down. Young, and whole, and for another age. I would not ask it. I am telling you it is possible."
 - **She will not beg, and she will not lie.**
+- **To a Scholar** she can teach any Word they are missing, if asked, in exchange for their name, spoken in Veyric. `WORD LEARNED` as usual. It is her last gift, and it can complete the six (`ACH_LAST_SPEAKER`).
 
 ---
 
@@ -121,6 +122,7 @@ If none of the above applies, or if the Queen is refused, or the courier lingers
   - `untouched`: the Hush is simply vast and indifferent, and the Cradle is Risky.
 - It does not fight like an enemy. It **takes**: warmth, voice, memory. Every exchange in its presence without fire costs numbness.
 - It can be driven back with the Kindling's flares, the Crown's fire, or noise. It can be spoken to. It understands *giving back*.
+- **A Scholar who speaks ANNA VAELUN** to it (a great casting, rolled) makes it stop and *listen*. The way to the Cradle becomes safe for this scene, even if Bram was killed.
 
 ### Too Late variant
 

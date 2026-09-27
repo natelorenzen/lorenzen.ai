@@ -58,6 +58,7 @@ MOOD: <two or three words>
 Keep `VISUAL` state current and obey it:
 
 - **The courier:** the `look` from character creation, path gear actually carried (lost items vanish; a snapped bow is gone), wet or frosted clothing, every recorded injury (a cut stays a scar), and the ember mark on the hand if the box was opened.
+- **Scholar magic:** a Word spoken with power shows as faint gold Veyric letters in the air or on the skin. At strain 2+, a bloody nose and trembling hands. At rank III, a faint gold glow in the Scholar's eyes while they speak.
 - **Companions:** exactly as described in `characters/companions.md`, including acquired injuries. The dead never reappear except in a trigger that explicitly depicts memory or the Hush wearing their shape.
 - **The reliquary:** sealed and bound in black iron until opened. Once opened, its lid is warped and its inside glows. If it has been surrendered or lost, the courier doesn't carry it.
 - **Never reveal the undiscovered.** Do not show the Kindling before the box is opened, the Queen before the throne, the Stillheart as a *heart* before `DISCOVER_STILLHEART` (before that it is "a blue jewel in the Crown"), or a companion's secret (Wren's frost, Calen's orders) before the player learns it.

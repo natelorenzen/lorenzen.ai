@@ -8,7 +8,7 @@ Combat is fast, cinematic and decided by choices, not attrition. Most fights tak
 
 1. **Open with the situation, not a menu.** Where everyone is, what the ground is like, what the enemy wants, and one detail that could be used (a bell, oil, a rotten rail, a narrow door).
 2. **Each turn, the player acts. Then the world acts.** Enemies move on their own motives. Companions act in character without being told (one line each).
-3. **Resolve by position and intent** (`rules.md` §4). Good terrain and clever ideas shift the odds. Attacking from a bad position is Risky or Desperate.
+3. **Resolve by position and intent** (`rules.md` §4). Good terrain and clever ideas earn advantage. Most exchanges need no dice at all. **Roll the d20 at the turning point** (the swing that decides the bridge, the dash for the bell), usually once or twice per fight. A natural 20 is the cinematic moment; a natural 1 is the twist.
 4. **No hit points.** Outcomes are concrete: a Hushed falls back, a rope snaps, a Warden drops his crossbow, a companion is dragged down, the box is knocked into the snow.
 5. **Enemies value survival.** Hushed retreat from fire and noise. Beasts flee pain. Wardens surrender, retreat or bargain when losing. Nobody fights to the death without a reason.
 6. **Every fight can end without killing:** retreat, bluff, hide, surrender, distract, frighten, bargain, trap or outlast.

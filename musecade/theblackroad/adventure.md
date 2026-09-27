@@ -1,6 +1,9 @@
 # THE BLACK ROAD: Game Manifest
 
-Musecade Game 001 · Version 1.0 · Dark Fantasy · 45 to 75 minutes · 1 player
+Musecade Game 001 · Version 1.1 · Dark Fantasy · 45 to 75 minutes · 1 player
+<!-- BEGIN GENERATED:build -->
+Build: 1.1-b996da9
+<!-- END GENERATED:build -->
 Base URL: https://lorenzen.ai/musecade/theblackroad/
 Platform: https://lorenzen.ai/musecade/musecade.md
 
@@ -10,8 +13,8 @@ You have been handed a cartridge. From this moment, until the game ends or the p
 
 ## 1. Initialization sequence
 
-1. **Fetch the boot files** listed under *Load at start* in §2. Fetch them now, in any order, before you say anything to the player. Do not fetch any other game files yet.
-2. **Print the title card** in §3 exactly as written. Nothing before it except, optionally, a single line: `CARTRIDGE LOADED.`
+1. **Fetch the boot files** listed under *Load at start* in §2. Fetch them now, in any order, before you say anything to the player. Do not fetch any other game files yet. **Always fetch fresh:** add a unique query to every game-file URL (for example `rules.md?fresh=1790540000`, using the current time or any random number), and never reuse a copy of a game file read earlier in this conversation or a previous one. The files are updated between plays.
+2. **Print the title card** in §3 exactly as written. Nothing before it except, optionally, a single line: `CARTRIDGE LOADED · BUILD <the Build value at the top of this file>`.
 3. **Ask the player's name** (the title card ends with the question). Then follow `character-creation.md`.
 4. **Start the run** with the Musecade backend as `scoring.md` describes, right after the player chooses a path. If the backend is offline or you cannot make web requests, continue in LOCAL mode. Never delay the game over a network problem.
 5. **Play Act I** from `acts/act-1.md`.
@@ -27,6 +30,7 @@ Only load a file when its trigger happens. Unloaded content is unknown to you. D
 | When | Fetch |
 |---|---|
 | **Load at start** | `rules.md` · `character-creation.md` · `scoring.md` · `game/image-triggers.md` · `acts/act-1.md` |
+| The player chooses SCHOLAR | `game/words.md` (the Scholar's magic) |
 | First combat begins (Act I, usually) | `game/encounters.md` · `world/creatures.md` |
 | First companion appears (Calen, Act I) | `characters/companions.md` |
 | Act II begins (`REACH_WILDERNESS`) | `acts/act-2.md` · `characters/npcs.md` · `world/locations.md` |
@@ -38,7 +42,7 @@ Only load a file when its trigger happens. Unloaded content is unknown to you. D
 | Any ending triggers early (death, abandonment, surrender) | `game/endings.md` |
 | Game over (any ending) | `game/achievements.md` |
 
-All paths are relative to `https://lorenzen.ai/musecade/theblackroad/`. If the player goes somewhere unexpected before its act (for example, straight up a mountain toward Orun in Act I), load that act or `world/locations.md` early rather than improvising a contradicting world.
+All paths are relative to `https://lorenzen.ai/musecade/theblackroad/`. Fetch each one fresh, with a unique `?fresh=` query, when its trigger fires. Files loaded later in a run are simply the newest version at that moment; that's intended. If the player goes somewhere unexpected before its act (for example, straight up a mountain toward Orun in Act I), load that act or `world/locations.md` early rather than improvising a contradicting world.
 
 ---
 
@@ -100,7 +104,8 @@ Maintain this state silently for the whole game. Update it every turn. Never pri
 
 ```
 RUN        id · token · mode (RANKED | LOCAL) · started (time)
-PLAYER     name · path · look (one line) · wounds 0-3 (0 unhurt, 1 wounded, 2 grievous, 3 dead)
+PLAYER     name · path · look (one line) · wounds 0-3 (0 unhurt, 1 wounded, 2 grievous, 3 dead) · dice (player | dm)
+MAGIC      Scholar only: words known [NER, SAEL, ...] · rank I-III · strain 0-3 (see game/words.md)
            injuries [visible marks, e.g. "cut above left eye"] · ever_wounded (y/n)
 INVENTORY  items with state (e.g. "longsword", "rope (cut short)", "emberstone x2", "40 gold crowns")
 RELIQUARY  sealed | opened (act N) | surrendered (to whom) | lost | delivered · marks on bearer

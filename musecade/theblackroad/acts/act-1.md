@@ -60,6 +60,8 @@ Yesterday the road "disappeared." Here is what that means: **a hundred paces ahe
 
 **The horse** stops ten paces from the frost and will not go closer. She trembles, ears flat. Whipping, coaxing and pulling all fail.
 
+SCHOLAR FEELS (the Word SAEL stirs unbidden, their first taste of magic): the frost line is not weather, it is *attention*. Something vast is listening through it. The hairs on their arms stand up, and for a moment they can feel the warm box in their coat as clearly as a hand on their chest.
+
 **Inside the frost line:** no sound. Footsteps make none. Speech comes out flat and small, as though the air is swallowing it. Breath does not steam. Crossing on foot takes a minute and leaves the courier *numb* (fingers stiff, face aching) for a short while. It is safe, but it feels deeply wrong. On the far side, sound returns like a held breath released.
 
 **Ways past the horse problem:**
@@ -72,6 +74,7 @@ Yesterday the road "disappeared." Here is what that means: **a hundred paces ahe
 
 - Everyone sees the pictograms: **a hand lifting a star out of a mountain; a circlet; an open eye.** (These are the first three stations of the Litany. See `game/puzzles.md`. Record `litany_clues: milestone`.)
 - SCHOLAR SEES: the script reads, in Old Veyric: *"ORUN, FORTY LEAGUES. VEYR WAS BORN OF WHAT IT TOOK. WHAT WAS TAKEN, THE MOUNTAIN MOURNS."* The weeping is condensation, but it only happens on this stone, and the Scholar knows that cold stone sweats when something colder lies beneath it. Report `DISCOVER_MILESTONE_VERSE`.
+- SCHOLAR, reading the whole stone down to the moss at its foot: a traveler's blessing, *"THARRU, AND BE CARRIED."* Speaking it aloud, the Scholar feels the word take weight on their tongue. `WORD LEARNED: THARRU, "carry"` (`game/words.md`). The Scholar reaches rank II.
 - Non-Scholars can copy the glyphs or make a rubbing. If Oswin or a Scholar later translates it, report `DISCOVER_MILESTONE_VERSE` then.
 - WAYFARER SEES: at the base, scratched and old, a **hooked crescent**: a smugglers' mark you've seen on caches in the south. It points northeast, into the hills. (It marks the old Miners' Road. On its own this is only a hint. See Act II.)
 - WARDEN SEES: in the mud beside the road, a dozen sets of hobnailed boots, Southern military issue, four or five days old, heading north. Someone marched soldiers up this road.
@@ -184,6 +187,7 @@ CAMERA: very slow push-in toward the frosted window.
 - **What hurts them:** fire and loud sound. They recoil from flame and flinch from noise. **The chapel bell** is a weapon, and a Scholar or Envoy may guess why: "a silence that hates noise". Killing them is possible (they are frail flesh), but they are the people of Greyholt.
 - **Bram** breaks his chain during the siege (unless he was freed or restored) and comes up the cellar stair toward the warmth. Hedda throws herself in front of him.
 - **Calen** fights if present: efficiently, grimly, trying not to kill ("They're farmers, not soldiers.").
+- **A Scholar** has their first real use for magic here: NER to relight the guttering lantern, or to make the nearest Hushed flinch; SAEL to feel where the next one is pressing. At rank I it's barely enough, and that's the point. Roll pivotal castings (`rules.md` §4).
 
 **The Moor variant:** if the courier is caught outside, the Hushed walk out of the fog on the open moor. The terrain is a stone sheepfold, a peat stream, a lightning-dead oak, and the frost line itself (sound dies inside it). Greyholt's lantern is visible a mile away.
 

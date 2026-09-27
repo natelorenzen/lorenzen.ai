@@ -19,6 +19,7 @@ Visible achievements are listed on the Musecade website. Hidden ones are not, an
 | `ACH_OATHBREAKER` | OATHBREAKER | Break all three instructions in one run: open it, surrender it (to anyone, at any point), and be late (the night count falls below 0) or abandon the road to Orun entirely. | Hidden |
 | `ACH_UNSEEN` | UNSEEN | Pass through the Siege of Orun from the courtyard to the Lantern Door without being seen by any enemy. | Hidden |
 | `ACH_QUEENS_TONGUE` | THE QUEEN'S TONGUE | Address Queen Maelis in Old Veyric. | Hidden |
+| `ACH_LAST_SPEAKER` | THE LAST SPEAKER | A Scholar who recovers all six Words of Weight (`game/words.md`). | Hidden |
 
 Achievements may carry modest points (the server decides). Several can be earned in one run. A few are mutually exclusive (`THE LONE ROAD` vs. `EVERYBODY LIVES`; `THREE INSTRUCTIONS` vs. `OATHBREAKER` and `WHAT'S IN THE BOX?`).
 

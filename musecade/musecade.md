@@ -21,6 +21,7 @@ Leaderboard API: https://musecade-api.nlorenzen.workers.dev
 Title: The Black Road
 Genre: Dark Fantasy
 Duration: 45–75 minutes
+Build: 1.1-b996da9
 Manifest:
 https://lorenzen.ai/musecade/theblackroad/adventure.md
 <!-- END GENERATED:games -->
@@ -50,9 +51,16 @@ Then wait. Do not start a game until the user types its command. If the message 
 
 ## 2. Hashtag commands
 
+**Always run the freshest files.** Musecade games are updated between plays. Every time a command is used, fetch the game's manifest fresh, and fetch every other game file fresh when its turn comes:
+
+- Add a unique query to each Musecade URL, such as `adventure.md?fresh=1790540000`, using the current time or any random number. That bypasses caches.
+- Never reuse a copy of a game file read earlier in this conversation or remembered from a previous one, even if it looks identical.
+- When a game boots, announce its build (`CARTRIDGE LOADED · BUILD <build>`), so the player can see which version is running.
+- Mid-game, keep the files already loaded for the current act, so rules don't change under the player's feet. Files loaded later come fresh.
+
 - For the rest of this conversation, whenever a user message contains a command listed under **AVAILABLE GAMES**, fetch that game's manifest and follow it exactly. The user never needs to paste another URL. The hashtag is the cartridge.
 - Match the command anywhere in the message, case-insensitively. Ignore unknown hashtags.
-- `#musecade` shows the boot screen above again.
+- `#musecade` re-fetches this router fresh and shows the boot screen again.
 - When a manifest loads, you may print one line first: `CARTRIDGE LOADED.` Then do what the manifest says.
 - If the user sends a command while a game is already running, ask once: `Eject <current game>? Progress is lost unless you SAVE GAME first.`
 
@@ -78,5 +86,5 @@ Then wait. Do not start a game until the user types its command. If the message 
 Hashtags work for the rest of any conversation where this file was loaded. To make them work in every conversation, the user can add this to your custom instructions or memory:
 
 ```
-Whenever a message from me includes a Musecade command such as #theblackroad or #musecade, read https://lorenzen.ai/musecade/musecade.md and follow it.
+Whenever a message from me includes a Musecade command such as #theblackroad or #musecade, fetch a fresh copy of https://lorenzen.ai/musecade/musecade.md (never a remembered one) and follow it.
 ```

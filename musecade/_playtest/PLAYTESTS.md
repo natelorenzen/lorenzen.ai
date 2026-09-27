@@ -10,7 +10,7 @@ node musecade/_playtest/replay.mjs
 |---|---|---|---|---|---|---|
 | STANDARD | BRAKA · Warden | High Pass | THE LAST FLAME | 8,700 | 7/11 | 6 |
 | CHAOTIC | ZED · Envoy | Blackwater | THE SECOND BURNING (died) | 3,600 | 1/11 | 7 |
-| CLEVER | IRIS · Scholar | Miners' Road | THE LONG QUIET | 17,250 | 11/11 | 7 |
+| CLEVER | IRIS · Scholar | Miners' Road | THE LONG QUIET | 17,650 | 11/11 | 7 |
 | FAILURE | KIT · Wayfarer | Blackwater | A NAME IN THE SNOW | 850 | 1/11 | 5 |
 
 ---
@@ -52,7 +52,7 @@ node musecade/_playtest/replay.mjs
 - **Act III** She emerges from the Deepworks, so the Ash Gate is skipped (replay value). **`IMG_FIRST_VIEW_OF_VEYR` (image 3).** She reads the mural herself (`DISCOVER_STILLHEART`) and uses Bram's last word to move Serith (`SOCIAL_SERITH_DOUBT`). **`IMG_HALL_OF_CROWNS` (image 4, optional).** In the crypt (`DISCOVER_CRYPT`), the journal and its margin (`DISCOVER_BURNING_TRUTH`, *anna vaelun*). The Cinder Guard stirs when she lifts the journal; she speaks Veyric and they kneel (`ENC_CINDER_SURVIVED`, `ENC_CINDER_CLEVER`). She climbs the Queen's Road by emberstone light through the night and reaches Orun before dawn with **2** nights left.
 - **Act IV** Hesk and Oswin come clean (`DISCOVER_RELIQUARY_TRUTH`, `DISCOVER_OSWIN_PURPOSE`). Oswin stands with her against Hesk (`OSWIN_CHOOSES_YOU`). No Dask comes. *(Gap found: Calen's loyalty beat only existed if Dask arrived. Fixed: he burns his orders at the hearth.)* That gives `CALEN_STAYS_LOYAL`. The siege is Hushed only, since the Choir stands down after Serith's doubt, and Tam opens the side gate (`ENC_ORUN_SURVIVED`, `ENC_ORUN_CLEVER`). **`IMG_ORUN_SIEGE` (image 5).** `WREN_KEPT_WARM`. The Litany is solved from all five clues, unaided (`PUZZLE_LITANY_SOLVED`, `PUZZLE_LITANY_NO_HINT`). Liss is saved with emberstone, the fox and her name (`LISS_SAVED`).
 - **Act V** **`IMG_EMBER_THRONE` (image 6)** plus `VID_EMBER_THRONE`. She addresses Maelis in Veyric (`QUEEN_SPOKEN`). Variant D: Bram's voice rises from the Hush, "This one gave warmth. Let them come", and the way parts (`ENC_THRONE_SURVIVED`, `ENC_THRONE_CLEVER`). This is the Act I decision paying off 50 minutes later. She says *anna vaelun*, the Crown opens, and Wren carries the heart down. **THE LONG QUIET.** **`IMG_ENDING_LONG_QUIET` (image 7)** plus `VID_ENDING`.
-- **Achievements:** OLD BLOOD, EVERYBODY LIVES, THE LONG WAY, NO SWORD DRAWN, SILVER TONGUE (Tam, the Cinder Guard, Serith), THE QUEEN'S TONGUE, THREE INSTRUCTIONS, BEFORE THE MOON, UNSCARRED.
+- **Achievements:** OLD BLOOD, EVERYBODY LIVES, THE LONG WAY, NO SWORD DRAWN, SILVER TONGUE (Tam, the Cinder Guard, Serith), THE QUEEN'S TONGUE, THREE INSTRUCTIONS, BEFORE THE MOON, UNSCARRED, THE LAST SPEAKER (v1.1: all six Words recovered at the milestone, waystation, crypt and Lantern Door).
 
 **Verified:** the hidden route, the hidden ending and its prerequisites (the server requires `DISCOVER_STILLHEART` plus the Litany or the Queen), the long-range callback (Bram in Act V), and a score above 10,000 for an exceptional run. It saw about 65% of authored content: no gate puzzle, no bridge, no Blackwater, no Dask.
 
@@ -92,3 +92,9 @@ These depend on the agent, and must be checked in a real Muse conversation:
 - image quality and style adherence, and whether Muse honors the budget
 - whether Muse can make POST or GET requests (which selects RANKED, LINK or LOCAL)
 - real-world length: the traces above estimate 55 to 70 minutes of play at 80 to 200 words a turn
+
+## v1.1 changes (after the first real play)
+
+- **The player's feedback:** the Scholar's "ancient magic" was only lore. Now Scholars start with two weak Words of Weight (NER, SAEL) and recover four more (THARRU at the milestone, ENNAR at the waystation, MAELIS in the crypt, ANNA VAELUN at the Lantern Door), growing from rank I "Whisper" to rank III "Command". Casting costs strain. See `game/words.md`. New hidden achievement: `ACH_LAST_SPEAKER`.
+- **Light d20 rules:** the DM decides when to roll (pivotal moments only). There is a DC ladder, +2 for fitting the path, and advantage or disadvantage. Natural 20s and 1s get special results, and the roll sets the power of big effects. The player can roll their own dice. Dice never solve puzzles.
+- **Freshness:** agents re-fetch every game file with a unique `?fresh=` query, never reuse remembered copies, and announce the build stamp (for example `1.1-b996da9`) on load.

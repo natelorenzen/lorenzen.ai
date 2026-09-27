@@ -7,7 +7,7 @@
     "genre": "Dark Fantasy",
     "duration": "45–75 min",
     "status": "live",
-    "version": "1.0",
+    "version": "1.1",
     "players": 1,
     "endings": "10+",
     "difficulty": "???",
@@ -16,7 +16,28 @@
     "page": "https://lorenzen.ai/musecade/theblackroad/",
     "events": "https://lorenzen.ai/musecade/theblackroad/events.json"
   },
-  { "id": "002", "title": null, "slug": null, "command": null, "genre": "Mystery", "status": "coming_soon" },
-  { "id": "003", "title": null, "slug": null, "command": null, "genre": "Science Fiction", "status": "coming_soon" },
-  { "id": "004", "title": null, "slug": null, "command": null, "genre": "Survival", "status": "coming_soon" }
+  {
+    "id": "002",
+    "title": null,
+    "slug": null,
+    "command": null,
+    "genre": "Mystery",
+    "status": "coming_soon"
+  },
+  {
+    "id": "003",
+    "title": null,
+    "slug": null,
+    "command": null,
+    "genre": "Science Fiction",
+    "status": "coming_soon"
+  },
+  {
+    "id": "004",
+    "title": null,
+    "slug": null,
+    "command": null,
+    "genre": "Survival",
+    "status": "coming_soon"
+  }
 ]

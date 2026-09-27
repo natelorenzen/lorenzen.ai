@@ -62,6 +62,8 @@ Nothing in this repo can force an agent to behave. The files are written to be f
 
 `#musecade` reprints the boot screen. `EXIT GAME`, `SAVE GAME` and `RESUME` are handled by each game.
 
+**Freshness:** you can edit any game file, push, and the next hashtag runs the new version. The router tells agents to re-fetch every Musecade file with a unique `?fresh=` query, which bypasses GitHub Pages' 10-minute cache and the agent's own fetch cache, and never to reuse a copy from earlier in the conversation or from memory. `build.py` stamps each game with `version-contenthash` (for example `1.1-b996da9`) in `adventure.md` and `musecade.md`, and the agent announces it on load (`CARTRIDGE LOADED · BUILD 1.1-b996da9`), so you can confirm which build is running. Files already loaded for the current act stay put mid-game; everything loaded afterward is fresh.
+
 ## 4. Game manifests and progressive loading
 
 Each game is a folder of Markdown files. `adventure.md` is the bootloader: the title card, the hidden truth in compact form, the hidden-state schema, and a **load table**. At start, Muse loads only the boot files (for The Black Road: `rules.md`, `character-creation.md`, `scoring.md`, `game/image-triggers.md`, `acts/act-1.md`). Everything else loads when its trigger fires: the first combat loads `encounters.md` and `creatures.md`, `REACH_VEYR` loads Act III and `lore.md`, any ending loads `endings.md`, and so on. Content that isn't loaded yet doesn't exist for the DM, which keeps context small and secrets safe.
@@ -132,6 +134,11 @@ Muse keeps a hidden state block (defined in `adventure.md` §5): run credentials
 - **Names:** uppercased, A–Z, 0–9 and spaces, 12 characters maximum, with a small blocklist.
 
 **Achievements** are `ACH_*` events with modest points. **Endings** are sent only with completion. Typical completed runs score about 3,000 to 8,500, exceptional runs 10,000 to 17,000, and early deaths a few hundred.
+
+## 6b. Dice and magic
+
+- **d20, light rules** (`rules.md` §4): the DM decides when to roll, and only at pivotal moments (roughly 10 to 20 per campaign). There is a DC ladder of 8, 12, 15, 18 and 20, +2 when the action fits the path, and advantage or disadvantage in place of other modifiers. A natural 20 succeeds with extra power; a natural 1 is a disaster with a twist. For effects with a size, the roll sets the power. The player can roll their own dice, and the DM never fudges. Dice never solve puzzles.
+- **Words of Weight** (`game/words.md`, loaded only for Scholars): six Old Veyric Words (NER, SAEL, THARRU, ENNAR, MAELIS, ANNA VAELUN). The Scholar starts with two and recovers the rest through the story, growing from rank I (Whisper) to rank III (Command). Casting costs strain, which clears at dawn.
 
 ## 7. Images and video
 

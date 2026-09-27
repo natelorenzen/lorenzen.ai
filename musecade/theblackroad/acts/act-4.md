@@ -57,6 +57,8 @@ Run `ENC_ORUN` from `game/encounters.md`. Who comes depends on the whole game so
 - If `SOCIAL_DASK_PARLEY` produced a deal or a believed lie, he may hold back, ally, or fall into a trap of the courier's making.
 - If Dask is unaware (the Miners' Road with no betrayal), there are no Wardens. The siege is only the Hush.
 
+**A Scholar in the siege** can hold the undercroft stair with ENNAR's ward, sweep the courtyard with NER, or quiet a knot of Hushed with SAEL. It's their best moment to feel how far their magic has come since Greyholt. Strain is the limit, so make them choose.
+
 **The companion turn.** In the middle of the siege, at the worst moment:
 
 - **Calen** (see `companions.md`): if loyal (trust ≥ 1, and his orders are known, or he chose to tell), he steps between Dask and the courier and tears up his orders in front of him. Report `CALEN_STAYS_LOYAL`. Otherwise **he betrays**: he seizes the box (or knocks the courier down) and runs for Dask. He can be stopped in that moment by words about Liss, by force, or by the Kindling itself refusing him (it dims in his hands; he stares at it). Fire `IMG_BETRAYAL`.
@@ -132,6 +134,8 @@ Beneath Orun, the undercroft becomes a rough-cut tunnel and ends at a round bron
 Run **Puzzle 3: The Litany of Veyr** from `game/puzzles.md`. The lanterns must be lit in historical order: **star, crown, eye, flame, lantern**. The clues are in state (`litany_clues`: milestone, hymn, mural, epitaph, tally). Oswin and Hesk know part of it. A wrong order brings a breath of killing cold from behind the door.
 
 On success, the door rolls aside, and the lanterns' light throws a line of Veyric onto the far wall that only the correct order produces: **"ANNA VAELUN: WHAT WAS TAKEN MAY BE GIVEN BACK."** Anyone who has seen the mural's hinged crown, or Maelis's journal margin, now understands: *the Crown opens, and those are the words.* Record `names_learned: anna vaelun`.
+
+SCHOLAR: the light of the five lanterns seems to pour *into* them. `WORD LEARNED: ANNA VAELUN, "the giving back"`, the greatest of the Words, able to free the Hushed and to be heard by the Hush itself (`game/words.md`).
 
 Bypasses (no `PUZZLE_LITANY_SOLVED`): a Wayfarer finds the **miners' crack** beside the door, a squeeze through old workings that lets out into the Deepworks. It's slow and cold (numbness), and it misses the words. Brute force (a Warden breaking the door's hinge-pin) works with a great deal of time and noise: the Hushed below come to meet them.
 
