@@ -101,7 +101,7 @@ He took the orders because they got him north to Liss. He has not decided whethe
 
 **Secret:** **he chose the courier.** The Order paid the broker, and Oswin read the broker's ledger of available couriers and picked a name, *"because you had no one who would come looking. I told myself that was a mercy."* He knows the courier is meant to burn. Report `DISCOVER_OSWIN_PURPOSE` when this comes out (Envoy pressure in Act II or III, trust ≥ 2 confession, or at Orun from him or Hesk).
 
-**Capability:** healing (drops one wound level, once per act, for anyone), Old Veyric (he translates the milestone, the mural, the tally and the journal), the Order's hymns and history (Litany clues: he knows *"the lantern is last, and the flame before it,"* not the full order), the layout of Orun and the undercroft, and the ward-lantern: his lantern's light makes Hushed hesitate for a breath.
+**Capability:** field care (once per act, he can bring anyone back from Grievous to Wounded, but cannot make them whole; see `rules.md` §5), Old Veyric (he translates the milestone, the mural, the tally and the journal), the Order's hymns and history (Litany clues: he knows *"the lantern is last, and the flame before it,"* not the full order), the layout of Orun and the undercroft, and the ward-lantern: his lantern's light makes Hushed hesitate for a breath.
 
 **Fear:** the dark below Orun. He shakes on the Stair of Ash.
 

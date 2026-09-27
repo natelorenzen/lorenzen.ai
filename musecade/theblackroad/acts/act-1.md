@@ -193,13 +193,13 @@ CAMERA: very slow push-in toward the frosted window.
 
 **Resolution:** the Hushed withdraw at the first grey of dawn, walking north toward the mountains. Report `ENC_ROAD_SURVIVED` if the courier lives, and `ENC_ROAD_CLEVER` for an ingenious resolution (the bell, a ring of lamp-oil fire, luring them with heated stones into the stable and barring it, hiding the box's warmth in the cold cellar, and so on). Record whether the courier killed any of them (`killed_someone`).
 
-This is the first combat. It should be frightening, fast (3 to 6 decisions), and it should teach two things without stating them: **fire and noise drive the Hushed back; their touch steals voice and warmth.**
+This is the first combat and the **tutorial set piece**. It should be frightening, fast (3 to 6 decisions), and it should teach two things without stating them: **fire and noise drive the Hushed back; their touch steals voice and warmth.** When the door starts to give, offer the first decision menu, with three lateral approaches (for example, *hold the door with the table and blades*, *run for the chapel bell*, *pour the lamp oil across the threshold and light it*) plus the wildcard. A Warden reads the room unprompted: two doors, one choke point, the oil barrel. It must cost or reveal something: a wound, a Hushed face Hedda recognizes, the cellar, Calen's Southern drill showing.
 
 ---
 
 ## 1.5 DAWN AT GREYHOLT
 
-Night count drops to **3**. If the courier was wounded, a night of Hedda's care (if she's friendly) drops one wound level for free. This rest is part of the same night.
+Night count drops to **3**. If the courier is Grievous, Hedda's care (if she's friendly) brings them back to Wounded. It cannot mend them fully (`rules.md` §5). This rest is part of the same night.
 
 - **Hedda** (if the courier helped her or showed mercy): provisions, a heavy fleece-lined cloak (warmth: it helps against numbness), and information. *Soldiers passed north four days ago: twelve of them, and a gentleman in grey who paid in Southern silver and asked about couriers.* She also mentions *a girl called Wren, from Hollin's Ford, who's been stealing from the empty houses. Half-wild. If you see her, tell her there's a bed here.* And: *"The waystation at the Split is a day north. The brothers of Saint Hollis used to keep it. God knows who keeps it now."*
 - If the courier broke her trust, she gives nothing but the last line, from behind the door.

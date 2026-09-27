@@ -41,7 +41,7 @@ CATEGORIES = {"progress", "discovery", "puzzle", "encounter", "social", "compani
 FATES = {"lives", "dies", "sacrificed", "either"}
 ID_RE = re.compile(r"\b((?:REACH|DISCOVER|PUZZLE|ENC|SOCIAL|RECRUIT|CALEN|WREN|OSWIN|LISS|COMPANION|ACH|ENDING|QUEEN)_[A-Z0-9_]*[A-Z0-9])(_?\*|\b)")
 # Names that look like event IDs but are encounter/section names, not scored events.
-NON_EVENT_TOKENS = {"ENC_ROAD", "ENC_BRIDGE", "ENC_DROWNED", "ENC_CINDER", "ENC_ORUN", "ENC_THRONE"}
+NON_EVENT_TOKENS = {"ENC_ROAD", "ENC_AMBUSH", "ENC_BRIDGE", "ENC_DROWNED", "ENC_CINDER", "ENC_ORUN", "ENC_THRONE"}
 
 errors, warnings, written, stale = [], [], [], []
 CHECK = "--check" in sys.argv

@@ -16,6 +16,31 @@ Combat is fast, cinematic and decided by choices, not attrition. Most fights tak
 
 The player can always attempt: **attack, retreat, bluff, hide, surrender, grapple, destroy terrain, protect a companion, set a trap, use equipment creatively.** Honor all of them.
 
+### Set-piece battles
+
+Every run has **three set-piece battles**, the backbone of the game's danger:
+
+1. **The Night Visitors** (`ENC_ROAD`, Act I): the tutorial. It teaches that fire and noise drive the Hushed back and that their touch steals warmth.
+2. **The Climb** (`ENC_AMBUSH`, Act II, every route): a Hushed ambush on the last stretch to Veyr.
+3. **The Stair Hold** (inside `ENC_ORUN`, Act IV): holding the undercroft stair against the siege.
+
+The other encounters (the bridge, the Drowned, the Cinder Guard, the throne) are shorter dangers around them.
+
+**Rules for set pieces:**
+
+- **Every battle must cost or reveal:** a wound, a night, a secret, a companion's trust. Never a speed bump.
+- **Offer three approaches** with genuinely different risk profiles, **through a decision menu** (`rules.md`, *Decision menus*): **stand** (fight and hold), **evade** (slip away, hide, outrun), and **turn the ground** (rockslide, fire, ice, a bell, a rotten prop). Plus the wildcard. Each approach costs something different: stand risks wounds, evade risks time, separation or lost gear, and turn the ground risks collateral and noise.
+- **Class advantages pay off in battle.** Let the **Warden** read the ground unprompted, hold a stair or choke point with advantage, and end a fight fast with one decisive roll. Let the **Wayfarer** find the evasion line, the **Scholar** turn the ground with a Word, and the **Envoy** split or stall the enemy with words.
+- **Roll openly, report honestly, fudge nothing** (`rules.md` §4).
+
+### Escalation
+
+Failed sneaks and refused parleys can become battles, not just narration:
+
+- A failed sneak (a miss by 5+ or a natural 1) means you're seen. Run a short fight with the same three-approach menu.
+- A refused parley or a broken bargain (Dask, the Warden scouts, the Choir guards, Tam cornered) can turn violent if the other side has the numbers and a reason.
+- Escalated fights use the same wound economy. They're short (2 to 4 decisions) and earn no encounter events unless they happen inside a listed encounter.
+
 **Scoring:** `_SURVIVED` if the courier lives through it by any means; `_CLEVER` too, for an unusual, well-reasoned resolution. **Killing** a person (Hushed, Warden, Choir member, anyone) sets `killed_someone`. Driving off, disabling or escaping does not.
 
 ---
@@ -36,6 +61,22 @@ The player can always attempt: **attack, retreat, bluff, hide, surrender, grappl
   5. (If still unresolved) They're inside. Someone is gripped.
 - **Clever resolutions:** ringing the chapel bell (someone has to run for it, or it's rung by a thrown stone with luck); a ring of lamp-oil fire around the inn; luring them with heated stones into the stable and barring it; hiding the box's warmth in the cold cellar so they lose interest; singing loudly all together (it works, and it's absurd, and it's wonderful).
 - **Resolution:** dawn, or the Hushed are driven off. They walk north.
+
+## ENC_AMBUSH: The Climb (Act II, every route) · SET PIECE
+
+The last stretch before Veyr, on every route. The Hushed have learned the Kindling is coming, and they wait for it.
+
+- **Where:** *the Pass*, on the scree switchbacks down into Veyr's valley at dusk; *the Blackwater*, on the cliff path above the lake's north shore; *the Miners' Road*, in the last long gallery before the Deepworks, in the dark.
+- **Enemies:** eight to ten Hushed, led by **a Hushed Warden**, a Southern soldier in black-and-white armor with the white-tower badge, frost in his beard, still gripping his sword. The Hushed Warden is stronger than the rest, and he *uses his sword*.
+- **What it reveals:** the Hush is taking **Dask's own men**. The Wardens' picket on the northern road was taken. Seen by Calen, he knows the man: "Sergeant Holm. He taught me to ride." (Calen trust or tension moves.) The Hushed Warden carries Dask's field orders in his coat. Reading them reveals that Dask knows about the courier. If Calen's orders are still secret, the handwriting matches his orders: a natural route to `DISCOVER_CALEN_ORDERS`.
+- **Offer the menu** (examples, adapt them to the route):
+  - *Stand:* "Hold the narrow switchback and meet them one at a time." (Warden advantage. Risk: wounds.)
+  - *Evade:* "Leave the trail and scramble down the scree in the dark." (Wayfarer advantage. Risk: a fall, lost gear, companions separated, arriving after nightfall.)
+  - *Turn the ground:* "Start a rockslide onto the switchback above them." (Pass) / "Break the cliff path's rotten rail and send them into the lake." (Blackwater) / "Kick out the old pit-props and bring the gallery roof down between us." (Miners' Road). Risk: a big roll, collateral, noise, a blocked way back.
+  - "Something else — type your own."
+- **Companions:** Calen fights beside the Warden he knew. Wren can lead the Hushed away, since they ignore her, but it raises her hushing. Oswin's lantern makes them hesitate for one breath.
+- **Beats:** the silence and frost on the rocks; the Hushed rise from the snow; the Hushed Warden advances with his blade; the turning point (one decisive roll); the aftermath (the badge, the orders, someone is bleeding).
+- **Resolution:** 3 to 6 decisions. Report `ENC_AMBUSH_SURVIVED`, plus `ENC_AMBUSH_CLEVER` for an ingenious resolution. This battle should usually leave a mark: a wound, a companion hurt, lost gear, or a night.
 
 ## ENC_BRIDGE: The Sorrow Bridge (Act II, the High Pass)
 
@@ -78,7 +119,7 @@ The player can always attempt: **attack, retreat, bluff, hide, surrender, grappl
 - **Clever resolutions:** kneeling; the Queen's name; Old Veyric; the hymn; showing the lantern seal; returning the journal; smashing the drain channel so cold water floods the aisle and cracks them; leading them into the collapsed vault.
 - **Resolution:** they kneel again, are broken, or the courier leaves the crypt (they will not follow).
 
-## ENC_ORUN: The Siege of Orun (Act IV)
+## ENC_ORUN: The Siege of Orun (Act IV) · SET PIECE (ends in the Stair Hold)
 
 Composition depends on state (see `acts/act-4.md` 4.3): the Hushed always; the Choir if Serith was not doubted; the Wardens if Dask is aware.
 
@@ -91,6 +132,11 @@ Composition depends on state (see `acts/act-4.md` 4.3): the Hushed always; the C
   4. The courtyard is lost. Prior Hesk calls for the undercroft.
   5. The run for the Lantern Door, with the monks holding the stair behind.
 - **Clever resolutions:** keeping the bell ringing (protect Caddoc); an oil fire across the gatehouse so the Wardens and Hushed hit each other; talking Dask into fighting the Hushed; using Tam's side gate; the rope-lift as a counterweight or an escape; slipping through unseen (a Wayfarer's `ACH_UNSEEN`).
+- **The Stair Hold** (the siege's last three beats; see `acts/act-4.md` 4.3). The courtyard falls, and everyone retreats to the undercroft stair, a spiral of twelve steps down to the Lantern Door, two people wide. It's held in **three waves**, and each wave gets a three-approach menu:
+  1. **The climbers:** Hushed pour up out of the cracks below *and* down from the courtyard above. They are pinned from both sides.
+  2. **The push:** Dask's Wardens with shields, or the Choir with snow and song, or both.
+  3. **The cold:** every lantern gutters blue, and the Hush's own breath comes up the stair. Fire and voice are the only weapons.
+  - A **Warden** holds the stair with advantage on every wave. It's their finest hour, so play it. A Scholar's ENNAR ward can hold one wave outright. Hesk, Tove and Idris fight beside the courier. Someone doesn't make it unless the courier chooses to protect them, and protecting costs.
 - **Resolution:** the courier reaches the undercroft (with or without the box and companions), flees down the rope-lift, or dies.
 
 ## ENC_THRONE: Before the Ember Throne (Act V)

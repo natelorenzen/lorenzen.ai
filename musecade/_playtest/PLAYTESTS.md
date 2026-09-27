@@ -8,10 +8,10 @@ node musecade/_playtest/replay.mjs
 
 | Run | Player | Route | Ending | Score | Secrets | Images |
 |---|---|---|---|---|---|---|
-| STANDARD | BRAKA · Warden | High Pass | THE LAST FLAME | 8,700 | 7/11 | 6 |
-| CHAOTIC | ZED · Envoy | Blackwater | THE SECOND BURNING (died) | 3,600 | 1/11 | 7 |
-| CLEVER | IRIS · Scholar | Miners' Road | THE LONG QUIET | 17,650 | 11/11 | 7 |
-| FAILURE | KIT · Wayfarer | Blackwater | A NAME IN THE SNOW | 850 | 1/11 | 5 |
+| STANDARD | BRAKA · Warden | High Pass | THE LAST FLAME | 8,900 | 7/11 | 6 |
+| CHAOTIC | ZED · Envoy | Blackwater | THE SECOND BURNING (died) | 3,800 | 1/11 | 7 |
+| CLEVER | IRIS · Scholar | Miners' Road | THE LONG QUIET | 18,100 | 11/11 | 7 |
+| FAILURE | KIT · Wayfarer | Blackwater | A NAME IN THE SNOW | 1,050 | 1/11 | 5 |
 
 ---
 
@@ -98,3 +98,10 @@ These depend on the agent, and must be checked in a real Muse conversation:
 - **The player's feedback:** the Scholar's "ancient magic" was only lore. Now Scholars start with two weak Words of Weight (NER, SAEL) and recover four more (THARRU at the milestone, ENNAR at the waystation, MAELIS in the crypt, ANNA VAELUN at the Lantern Door), growing from rank I "Whisper" to rank III "Command". Casting costs strain. See `game/words.md`. New hidden achievement: `ACH_LAST_SPEAKER`.
 - **Light d20 rules:** the DM decides when to roll (pivotal moments only). There is a DC ladder, +2 for fitting the path, and advantage or disadvantage. Natural 20s and 1s get special results, and the roll sets the power of big effects. The player can roll their own dice. Dice never solve puzzles.
 - **Freshness:** agents re-fetch every game file with a unique `?fresh=` query, never reuse remembered copies, and announce the build stamp (for example `1.1-b996da9`) on load.
+
+## v1.2 changes (the player's rules for agency, menus and battle)
+
+- **Player agency (hard rule):** the DM never picks the player's action or plays the "optimal" line on request, and advises only from what the courier has discovered. Companions may counsel, and may be wrong. This is also a platform rule in `musecade.md`.
+- **Decision menus:** the `create_options` tool renders 3 lateral options plus "Something else — type your own", at real decision points only (one or two per scene). There is a lettered-list fallback for agents without the tool. Menus never reveal undiscovered options and are never used for the final choice at the throne.
+- **Wound economy:** field care only pulls someone from Grievous back to Wounded; only Orun's infirmary or a lost night fully heals; a miss by 1 to 4 in battle costs a wound by default. Most runs now carry a wound into Act IV. In the traces: BRAKA (Greyholt, the Climb), ZED (the Climb, Kindling burns), KIT (from the moor onward), while IRIS stays UNSCARRED only by turning the ground at every battle.
+- **Three set-piece battles** with stand, evade and turn-the-ground menus: the Night Visitors (tutorial), **the Climb** (new: `ENC_AMBUSH`, a Hushed ambush on every route that reveals the Hush is taking Dask's own Wardens), and the **Stair Hold** (three waves ending the Siege of Orun). Failed sneaks and refused parleys can escalate into short fights.

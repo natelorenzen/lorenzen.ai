@@ -162,7 +162,7 @@ Report `ENC_THRONE_SURVIVED` if the courier lives through the confrontation, and
 
 ## 5.4 THE CHOICE
 
-When the confrontation is resolved (or suspended: the Hush waits, and a stalemate can be a pause), the courier chooses. **Do not present these as a list.** They are what can happen. Let the player find their own.
+When the confrontation is resolved (or suspended: the Hush waits, and a stalemate can be a pause), the courier chooses. **Do not present these as a list, and never as a decision menu.** They are what can happen. Let the player find their own.
 
 | If the courier... | Ending |
 |---|---|

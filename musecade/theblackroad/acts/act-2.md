@@ -253,9 +253,15 @@ The tunnel climbs and ends in **the Deepworks**, the old foundry-caverns directl
 
 ---
 
+## 2.5 THE CLIMB (every route)
+
+Before the courier sights Veyr, run **`ENC_AMBUSH`** (`game/encounters.md`), the Act II set-piece battle, at the route's last stretch: the Pass switchbacks, the Blackwater cliff path, or the Miners' Road's last gallery. It uses a three-approach decision menu. It should cost or reveal: a wound, lost gear, a night, and the Hushed Warden's badge and orders (the Hush is taking Dask's men).
+
+---
+
 ## Act II transitions and exceptions
 
-- **Sighting Veyr ends Act II.** Send the Act II batch with `REACH_VEYR` first. Load Act III.
+- **Sighting Veyr ends Act II**, after the Climb. Send the Act II batch in the order things happened, which puts `REACH_VEYR` last. Load Act III.
 - **Turning back:** `THE ROAD SOUTH`.
 - **Giving the box to Serith, a Listener or the Choir:** `THE WHITE CHOIR` (see `endings.md`).
 - **Selling it to Dask:** `THE CROWN OF CHAINS`.

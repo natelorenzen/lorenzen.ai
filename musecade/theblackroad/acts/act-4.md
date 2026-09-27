@@ -13,7 +13,7 @@ This is the act where the game remembers. Before writing each scene, check state
 The monastery of the Last Lantern is cut into the cliff above Veyr: galleries, cells, a bell tower, a courtyard hanging over the drop, and a **rope-lift** (a winch and a basket) that once hauled supplies up from the valley. Half of it is ruined. Five monks remain (`npcs.md`):
 
 - **Prior Hesk**: seventies, gaunt, iron-grey, severe, entirely sincere.
-- **Sister Amsel**: the healer, brisk and kind. She treats one wound level for the courier and each companion.
+- **Sister Amsel**: the healer, brisk and kind. Her infirmary is the only place in the game that fully mends wounds: once, for the courier and each companion, it clears Wounded to Unhurt. The scars remain.
 - **Brothers Tove and Idris**: young, frightened, devout.
 - **Brother Caddoc**: ancient and blind. He tends the great bell.
 
@@ -118,7 +118,9 @@ Do not reveal undiscovered information.
 [/IMAGE_TRIGGER]
 ```
 
-**Outcomes and resolution:** the siege lasts 3 to 6 decisions and ends when the courier gets down into the undercroft (with or without the box and companions), when they escape by the rope-lift (see below), or when they die. The monks hold the undercroft stair behind them. **Prior Hesk** dies holding it unless someone helps him; Brother Caddoc rings the great bell until the end. Report `ENC_ORUN_SURVIVED` and, for a clever resolution (the bell, the oil store, the rope-lift as a weapon, turning Dask against the Hushed, Tam's gate), `ENC_ORUN_CLEVER`. A courier who slips through the whole siege unseen, a Wayfarer's move, earns `ACH_UNSEEN` (report at game over).
+**The Stair Hold.** When the courtyard falls, the siege becomes the Stair Hold: three waves on the undercroft stair (the climbers, the push, the cold), each with a three-approach decision menu. See `ENC_ORUN` in `game/encounters.md`. Every wave must cost or reveal something. This is the Warden's finest hour.
+
+**Outcomes and resolution:** the siege, including the Stair Hold, lasts 4 to 8 decisions and ends when the courier gets down into the undercroft (with or without the box and companions), when they escape by the rope-lift (see below), or when they die. The monks hold the undercroft stair behind them. **Prior Hesk** dies holding it unless someone helps him; Brother Caddoc rings the great bell until the end. Report `ENC_ORUN_SURVIVED` and, for a clever resolution (the bell, the oil store, the rope-lift as a weapon, turning Dask against the Hushed, Tam's gate), `ENC_ORUN_CLEVER`. A courier who slips through the whole siege unseen, a Wayfarer's move, earns `ACH_UNSEEN` (report at game over).
 
 - **If the box is lost** (to Dask, to a fleeing Wren), the courier can pursue: Dask goes *down* toward the throne too, since he needs the Crown, and Wren runs to the deep. The chase continues in Act V. The box is never simply gone. It is going to the same place the courier is.
 - **Escaping by the rope-lift** down to Veyr with the box ends the mission: `THE ROAD SOUTH` (the courier walks away) or, if dawn comes, `WHITE SILENCE`.

@@ -85,7 +85,7 @@ Every NPC wants something. Play them as people who value their own lives.
 ## The Order of the Last Lantern (Orun, Act IV)
 
 - **Prior Hesk:** seventies, gaunt, iron-grey, severe, sincere, exhausted. Has spent his life on this night. Will not lie when asked directly. Will not beg. Believes one life for the world is a fair price and is ashamed that it's not his. If the courier offers a real alternative (the Long Quiet, with the words), he listens, and it might break his heart that there was another way. He dies holding the undercroft stair unless helped.
-- **Sister Amsel:** fifties, brisk, a healer. Heals one wound level for each person, once. Quietly thinks Hesk is wrong.
+- **Sister Amsel:** fifties, brisk, a healer. Her infirmary is the only full healing in the game: once per person, it clears Wounded to Unhurt. Quietly thinks Hesk is wrong.
 - **Brother Tove and Brother Idris:** young, frightened, devout. They fight with staves at the siege.
 - **Brother Caddoc:** ninety, blind, rings the great bell. Its sound drives back the Hushed. If he's protected, the bell never stops.
 
