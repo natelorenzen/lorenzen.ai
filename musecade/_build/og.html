@@ -1,0 +1,110 @@
+<!doctype html>
+<!--
+  Musecade share-card generator (build tool; _build/ is not published).
+  Draws a 600x315 pixel-art card and doubles it nearest-neighbor to 1200x630.
+  Serve the repo locally (python3 -m http.server), open /musecade/_build/og.html,
+  then call:  await window.card("home")  or  await window.card("theblackroad")
+  Each returns a PNG data URL. Add new games to CARDS below.
+-->
+<meta charset="utf-8">
+<title>og</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<body style="background:#222;margin:0">
+<canvas id="out" width="1200" height="630" style="width:1200px;height:630px;image-rendering:pixelated"></canvas>
+<script>
+const CARDS = {
+  home: {
+    art: "/musecade/assets/blackroad-keyart.png",
+    top: "INSERT AGENT",
+    title: ["MUSECADE"],
+    titleSize: 32,
+    lines: ["GAMES FOR AGENTS.", "ADVENTURES FOR HUMANS."],
+    cmd: "lorenzen.ai/musecade",
+    foot: "YOUR AGENT IS THE CONSOLE",
+  },
+  theblackroad: {
+    art: "/musecade/assets/blackroad-keyart.png",
+    top: "MUSECADE · GAME 001",
+    title: ["THE BLACK", "ROAD"],
+    titleSize: 24,
+    lines: ["A DARK FANTASY ADVENTURE", "45-75 MIN · 10+ ENDINGS"],
+    cmd: "#theblackroad",
+    foot: "POINT YOUR AGENT AT MUSECADE",
+  },
+};
+
+function load(src) { return new Promise((ok, no) => { const i = new Image(); i.onload = () => ok(i); i.onerror = no; i.src = src; }); }
+
+function gradientText(ctx, text, x, y, size) {
+  // stacked-shadow arcade logo: dark extrusion, then gold-to-crimson face in bands
+  ctx.font = `${size}px "Press Start 2P"`;
+  ctx.textBaseline = "top";
+  ctx.fillStyle = "#16040a"; ctx.fillText(text, x, y + 4);
+  ctx.fillStyle = "#6d1320"; ctx.fillText(text, x, y + 2);
+  const bands = ["#fff1c4", "#ffe19a", "#d9ab43", "#d9ab43", "#b8462b", "#d7263d"];
+  const h = size;
+  bands.forEach((c, i) => {
+    ctx.save();
+    ctx.beginPath(); ctx.rect(x - 2, y + Math.floor((i * h) / bands.length), 2000, Math.ceil(h / bands.length)); ctx.clip();
+    ctx.fillStyle = c; ctx.fillText(text, x, y);
+    ctx.restore();
+  });
+}
+
+window.card = async function (name) {
+  const c = CARDS[name];
+  await document.fonts.load('32px "Press Start 2P"');
+  await document.fonts.load('16px "VT323"');
+  const W = 600, H = 315;
+  const off = document.createElement("canvas"); off.width = W; off.height = H;
+  const ctx = off.getContext("2d");
+  ctx.imageSmoothingEnabled = false;
+
+  // room + cabinet bezel
+  ctx.fillStyle = "#040306"; ctx.fillRect(0, 0, W, H);
+  ctx.fillStyle = "#140c18"; ctx.fillRect(6, 6, W - 12, H - 12);
+  ctx.fillStyle = "#07050a"; ctx.fillRect(10, 10, W - 20, H - 20);
+  for (let x = 12; x < W - 12; x += 8) { ctx.fillStyle = "#2c1f33"; ctx.fillRect(x, H - 34, 4, 2); } // dashed rule
+
+  // key art in a CRT frame (256x192 drawn 1:1, which is 2x in the final card)
+  const art = await load(c.art);
+  const ax = W - 256 - 26, ay = 36;
+  ctx.fillStyle = "#3a2216"; ctx.fillRect(ax - 6, ay - 6, 268, 204);
+  ctx.fillStyle = "#000"; ctx.fillRect(ax - 3, ay - 3, 262, 198);
+  ctx.drawImage(art, ax, ay, 256, 192);
+  ctx.fillStyle = "rgba(255,160,80,.18)"; ctx.fillRect(ax - 6, ay - 6, 268, 1);
+
+  // text column
+  const tx = 26;
+  ctx.textBaseline = "top";
+  ctx.font = '8px "Press Start 2P"'; ctx.fillStyle = "#62ffa0";
+  ctx.fillRect(tx, 38, 6, 6); ctx.fillText(c.top, tx + 12, 37);
+  let y = 62;
+  for (const t of c.title) { gradientText(ctx, t, tx, y, c.titleSize); y += c.titleSize + 12; }
+  y += 6;
+  ctx.font = '8px "Press Start 2P"';
+  c.lines.forEach((l, i) => { ctx.fillStyle = i === 0 ? "#eadfc6" : "#d9ab43"; ctx.fillText(l, tx, y); y += 16; });
+  // command box
+  y += 10;
+  ctx.font = '16px "VT323"';
+  const w = Math.ceil(ctx.measureText(c.cmd).width) + 16;
+  ctx.fillStyle = "#164a2e"; ctx.fillRect(tx, y, w + 4, 26);
+  ctx.fillStyle = "#020403"; ctx.fillRect(tx + 2, y + 2, w, 22);
+  ctx.fillStyle = "#62ffa0"; ctx.fillText(c.cmd, tx + 10, y + 5);
+  ctx.fillRect(tx + 10 + Math.ceil(ctx.measureText(c.cmd).width) + 2, y + 6, 6, 13);
+  // footer
+  ctx.font = '8px "Press Start 2P"'; ctx.fillStyle = "#d7263d";
+  ctx.fillText(c.foot, tx, H - 26);
+  ctx.fillStyle = "#5f5549"; ctx.fillText("LORENZEN.AI", W - 26 - 88, H - 26);
+
+  // scanlines
+  for (let sy = 0; sy < H; sy += 2) { ctx.fillStyle = "rgba(0,0,0,.18)"; ctx.fillRect(0, sy, W, 1); }
+
+  const out = document.getElementById("out");
+  const o = out.getContext("2d");
+  o.imageSmoothingEnabled = false;
+  o.drawImage(off, 0, 0, 1200, 630);
+  return out.toDataURL("image/png");
+};
+</script>
+</body>

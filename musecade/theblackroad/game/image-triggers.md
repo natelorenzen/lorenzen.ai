@@ -25,23 +25,33 @@ If you cannot generate images, write one extra line of vivid description instead
 
 ## 3. The Musecade style
 
-**DARK FANTASY × 1989 ARCADE CABINET ART.**
+**DARK FANTASY × 1991 ARCADE PIXEL ART.**
 
-Hand-painted fantasy arcade cabinet side art. Dramatic airbrush illustration. Powerful silhouettes, deep blacks, fiery orange, electric blue, crimson, glowing magic, atmospheric fog, analog film grain, dramatic rim lighting, enormous landscapes, heroic low-angle composition.
+Every image should look like a screenshot from a lost early-90s arcade adventure: the kind of pixel-art cutscene that played between levels on a cabinet in a dark arcade. Retro arcade style isn't optional; it's the identity of Musecade.
 
-- Painterly, never pixel art. The pixel and CRT look belongs to the Musecade website, not the game images.
-- Palette discipline: the Kindling, the Crown and all fire are **orange-gold and crimson**. The Hush, the Hushed and the Stillheart are **pale electric blue**. Everything else sinks toward black.
-- No text, logos, lettering, UI, borders or watermarks inside the image.
-- **Never imitate** any existing game, artist, franchise, film, character or logo. Do not name artists in prompts.
-- Landscape 4:3 or 16:9.
+- **Real pixel art.** Low resolution (roughly 320×240) scaled up with crisp, square, clearly visible pixels. Pixels should be visible at a glance.
+- **A limited palette** of about 32 colors. Use **ordered (checkerboard) dithering** for skies, fog, glow and shading.
+- **No** anti-aliasing, smooth gradients, painterly brushwork, airbrush, photorealism, 3D rendering or soft focus.
+- Bold, sprite-style silhouettes with one-pixel dark outlines; layered, parallax-style backgrounds; dramatic arcade framing (big skies, tiny heroes, huge threats).
+- **Palette discipline:** the Kindling, the Crown and all fire are **orange-gold and crimson**. The Hush, the Hushed and the Stillheart are **pale electric blue**. Everything else sinks into deep blacks and purples.
+- No text, logos, lettering, score counters, UI, borders or watermarks inside the image.
+- **Never imitate** any existing game, artist, franchise, film, character or logo. Do not name games or artists in prompts.
+- Landscape, 4:3 (preferred, like an arcade screen) or 16:9.
 
 ## 4. Prompt template
 
+Always start the image prompt with the style paragraph, word for word. It's what keeps every image in the arcade style.
+
 ```
-Original dark-fantasy illustration inspired by late-1980s fantasy arcade
-cabinet artwork: hand-painted airbrush style, dramatic lighting, deep blacks,
-fiery orange and crimson against pale electric blue, atmospheric fog,
-analog grain, heroic composition. No text, no logos, no borders.
+Authentic retro arcade pixel art, like a cutscene screenshot from a 1991
+fantasy arcade adventure game: low resolution (about 320x240) scaled up with
+crisp square clearly visible pixels, limited 32-color palette, ordered
+checkerboard dithering for gradients, fog and glow, no anti-aliasing, no
+smooth gradients, no painterly brushwork, no photorealism, no 3D. Bold
+sprite-style silhouettes with 1-pixel dark outlines, layered parallax
+backgrounds, dramatic arcade composition. Deep blacks and purples; fire in
+orange-gold and crimson; the uncanny in pale electric blue. No text, no UI,
+no borders.
 
 SCENE: <the trigger's SCENE, filled with current specifics>
 
@@ -52,6 +62,8 @@ ARTIFACTS: <only artifacts the player has seen: e.g. "the black iron box,
             sealed" or "the open box, a coal of living fire inside">
 MOOD: <two or three words>
 ```
+
+If a generated image comes out smooth or painted rather than pixelated, note it, and push harder on "visible pixels, 320x240, dithering" in the next prompt. Don't regenerate mid-scene; keep the game moving.
 
 ## 5. Visual continuity
 
@@ -108,9 +120,10 @@ Some agents can generate short video, either natively or by handing the job to a
 **Prompt template:**
 
 ```
-5-second cinematic clip, animating the still image just generated.
-Hand-painted 1980s fantasy arcade cabinet art brought to life:
-painterly, airbrushed, analog grain. One continuous shot. No text,
+5-second clip animating the pixel-art still just generated, as if the
+arcade cutscene came alive: keep the exact pixel-art look (crisp visible
+pixels, limited palette, dithering, no smoothing or motion blur), animated
+like early-90s sprite and parallax animation. One continuous shot. No text,
 no dialogue, no cuts.
 
 MOTION: <the trigger's MOTION line>

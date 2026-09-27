@@ -142,7 +142,7 @@ Muse keeps a hidden state block (defined in `adventure.md` §5): run credentials
 
 ## 7. Images and video
 
-`game/image-triggers.md` defines the style (dark fantasy × 1989 arcade cabinet art: painterly, with fire in orange and crimson and the Hush in electric blue), the prompt template, visual-continuity rules, a 5-to-8 image budget (the first at the first creature reveal, one always reserved for the ending), and a catalog of every `[IMAGE_TRIGGER]` in the game. Agents that can make video also get up to three 5-second `[VIDEO_TRIGGER]` clips, which animate the still just generated. Triggers carry "do not reveal undiscovered information" guards.
+`game/image-triggers.md` defines the style (dark fantasy × 1991 arcade pixel art: real visible pixels, a 32-color palette and dithering, with fire in orange and crimson and the Hush in electric blue), the prompt template, visual-continuity rules, a 5-to-8 image budget (the first at the first creature reveal, one always reserved for the ending), and a catalog of every `[IMAGE_TRIGGER]` in the game. Agents that can make video also get up to three 5-second `[VIDEO_TRIGGER]` clips, which animate the still just generated. Triggers carry "do not reveal undiscovered information" guards.
 
 The **website's** key art is true pixel art: `assets/blackroad-keyart.png` is 256×192, a 30-color palette with Bayer dithering, shown with `image-rendering: pixelated`. It is rendered from `_build/keyart-src.svg` by `_build/pixelize.html` (open it through a local server and call `pixelize()`).
 

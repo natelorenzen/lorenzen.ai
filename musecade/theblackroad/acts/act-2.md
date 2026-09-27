@@ -34,8 +34,8 @@ Generate an image before continuing.
 Use current character and world state.
 
 STYLE:
-Original dark-fantasy illustration inspired by
-late-1980s fantasy arcade cabinet artwork.
+Authentic retro arcade pixel art: the Musecade pixel style
+(game/image-triggers.md §3). Pixels visible at a glance.
 
 SCENE:
 A snowy pine wood, grey morning light. A wiry young woman with a dark braid
@@ -142,8 +142,8 @@ Generate an image before continuing.
 Use current character and world state.
 
 STYLE:
-Original dark-fantasy illustration inspired by
-late-1980s fantasy arcade cabinet artwork.
+Authentic retro arcade pixel art: the Musecade pixel style
+(game/image-triggers.md §3). Pixels visible at a glance.
 
 SCENE:
 A sagging rope-and-plank bridge over a vast black chasm, a white river far
@@ -185,8 +185,8 @@ Generate an image before continuing.
 Use current character and world state.
 
 STYLE:
-Original dark-fantasy illustration inspired by
-late-1980s fantasy arcade cabinet artwork.
+Authentic retro arcade pixel art: the Musecade pixel style
+(game/image-triggers.md §3). Pixels visible at a glance.
 
 SCENE:
 Dawn mist on a black mountain lake. A drowned stone bell tower rises from
@@ -233,8 +233,8 @@ Generate an image before continuing.
 Use current character and world state.
 
 STYLE:
-Original dark-fantasy illustration inspired by
-late-1980s fantasy arcade cabinet artwork.
+Authentic retro arcade pixel art: the Musecade pixel style
+(game/image-triggers.md §3). Pixels visible at a glance.
 
 SCENE:
 A vast underground gallery of black rock veined with glowing red crystal.

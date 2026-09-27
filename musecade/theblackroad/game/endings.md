@@ -42,8 +42,8 @@ Generate an image before continuing.
 Use current character and world state.
 
 STYLE:
-Original dark-fantasy illustration inspired by
-late-1980s fantasy arcade cabinet artwork.
+Authentic retro arcade pixel art: the Musecade pixel style
+(game/image-triggers.md §3). Pixels visible at a glance.
 
 SCENE:
 The courier (exact appearance, gear and injuries) seated upright on the black
@@ -82,8 +82,8 @@ Generate an image before continuing.
 Use current character and world state.
 
 STYLE:
-Original dark-fantasy illustration inspired by
-late-1980s fantasy arcade cabinet artwork.
+Authentic retro arcade pixel art: the Musecade pixel style
+(game/image-triggers.md §3). Pixels visible at a glance.
 
 SCENE:
 The volunteering companion (exact description from companions.md) seated on
@@ -125,8 +125,8 @@ courier stands at the foot of the stair in shadow, watching, face unreadable.
 Ember light, cold blue below, moral ambiguity.
 
 STYLE:
-Original dark-fantasy illustration inspired by
-late-1980s fantasy arcade cabinet artwork.
+Authentic retro arcade pixel art: the Musecade pixel style
+(game/image-triggers.md §3). Pixels visible at a glance.
 
 [/IMAGE_TRIGGER]
 ```
@@ -153,8 +153,8 @@ Generate an image before continuing.
 Use current character and world state.
 
 STYLE:
-Original dark-fantasy illustration inspired by
-late-1980s fantasy arcade cabinet artwork.
+Authentic retro arcade pixel art: the Musecade pixel style
+(game/image-triggers.md §3). Pixels visible at a glance.
 
 SCENE:
 Deep inside a vast cavern of ancient blue ice, the courier (or the companion
@@ -189,8 +189,8 @@ Generate an image before continuing.
 Use current character and world state.
 
 STYLE:
-Original dark-fantasy illustration inspired by
-late-1980s fantasy arcade cabinet artwork.
+Authentic retro arcade pixel art: the Musecade pixel style
+(game/image-triggers.md §3). Pixels visible at a glance.
 
 SCENE:
 A mountain range at night erupting in colossal pillars of orange-gold fire
@@ -224,8 +224,8 @@ Generate an image before continuing.
 Use current character and world state.
 
 STYLE:
-Original dark-fantasy illustration inspired by
-late-1980s fantasy arcade cabinet artwork.
+Authentic retro arcade pixel art: the Musecade pixel style
+(game/image-triggers.md §3). Pixels visible at a glance.
 
 SCENE:
 A young fierce queen with living fire for hair, wearing a black iron crown of
@@ -259,8 +259,8 @@ Generate an image before continuing.
 Use current character and world state.
 
 STYLE:
-Original dark-fantasy illustration inspired by
-late-1980s fantasy arcade cabinet artwork.
+Authentic retro arcade pixel art: the Musecade pixel style
+(game/image-triggers.md §3). Pixels visible at a glance.
 
 SCENE:
 A vast wave of pale luminous white-blue mist, taller than mountains, rolling
@@ -295,8 +295,8 @@ Generate an image before continuing.
 Use current character and world state.
 
 STYLE:
-Original dark-fantasy illustration inspired by
-late-1980s fantasy arcade cabinet artwork.
+Authentic retro arcade pixel art: the Musecade pixel style
+(game/image-triggers.md §3). Pixels visible at a glance.
 
 SCENE:
 On an obsidian throne in a fire-veined cavern, a gaunt prisoner in iron
@@ -330,8 +330,8 @@ Generate an image before continuing.
 Use current character and world state.
 
 STYLE:
-Original dark-fantasy illustration inspired by
-late-1980s fantasy arcade cabinet artwork.
+Authentic retro arcade pixel art: the Musecade pixel style
+(game/image-triggers.md §3). Pixels visible at a glance.
 
 SCENE:
 A long procession of white-robed figures walking up a snowy mountainside at
@@ -365,8 +365,8 @@ Generate an image before continuing.
 Use current character and world state.
 
 STYLE:
-Original dark-fantasy illustration inspired by
-late-1980s fantasy arcade cabinet artwork.
+Authentic retro arcade pixel art: the Musecade pixel style
+(game/image-triggers.md §3). Pixels visible at a glance.
 
 SCENE:
 A lone traveler (the courier, seen from behind) walking south down a long
@@ -406,8 +406,8 @@ Generate an image before continuing.
 Use current character and world state.
 
 STYLE:
-Original dark-fantasy illustration inspired by
-late-1980s fantasy arcade cabinet artwork.
+Authentic retro arcade pixel art: the Musecade pixel style
+(game/image-triggers.md §3). Pixels visible at a glance.
 
 SCENE:
 The place where the courier fell [exact location], moments after. Their

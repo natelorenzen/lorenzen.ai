@@ -32,8 +32,8 @@ Generate an image before continuing.
 Use current character and world state.
 
 STYLE:
-Original dark-fantasy illustration inspired by
-late-1980s fantasy arcade cabinet artwork.
+Authentic retro arcade pixel art: the Musecade pixel style
+(game/image-triggers.md §3). Pixels visible at a glance.
 
 SCENE:
 Close, low angle. The courier's hands hold the black iron box open.
@@ -205,8 +205,8 @@ Generate an image before continuing.
 Use current character and world state.
 
 STYLE:
-Original dark-fantasy illustration inspired by
-late-1980s fantasy arcade cabinet artwork.
+Authentic retro arcade pixel art: the Musecade pixel style
+(game/image-triggers.md §3). Pixels visible at a glance.
 
 SCENE:
 Night, a lone stone inn on a black hillside, one lantern guttering above

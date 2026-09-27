@@ -74,8 +74,8 @@ Generate an image before continuing.
 Use current character and world state.
 
 STYLE:
-Original dark-fantasy illustration inspired by
-late-1980s fantasy arcade cabinet artwork.
+Authentic retro arcade pixel art: the Musecade pixel style
+(game/image-triggers.md §3). Pixels visible at a glance.
 
 SCENE:
 A cliffside monastery at dusk under a moonless sky, its great bell tower
@@ -110,8 +110,8 @@ resolve. Behind them, their destination: [Dask and his Wardens on the stair]
 or [the glowing blue mouth of the undercroft]. The courier, reaching out.
 
 STYLE:
-Original dark-fantasy illustration inspired by
-late-1980s fantasy arcade cabinet artwork.
+Authentic retro arcade pixel art: the Musecade pixel style
+(game/image-triggers.md §3). Pixels visible at a glance.
 
 Do not reveal undiscovered information.
 

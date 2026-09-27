@@ -30,8 +30,8 @@ Generate an image before continuing.
 Use current character and world state.
 
 STYLE:
-Original dark-fantasy illustration inspired by
-late-1980s fantasy arcade cabinet artwork.
+Authentic retro arcade pixel art: the Musecade pixel style
+(game/image-triggers.md §3). Pixels visible at a glance.
 
 SCENE:
 An enormous dead city of black stone in a snowy mountain valley at dusk,
@@ -127,8 +127,8 @@ Generate an image before continuing.
 Use current character and world state.
 
 STYLE:
-Original dark-fantasy illustration inspired by
-late-1980s fantasy arcade cabinet artwork.
+Authentic retro arcade pixel art: the Musecade pixel style
+(game/image-triggers.md §3). Pixels visible at a glance.
 
 SCENE:
 A vast ruined royal hall, roof half open to falling snow, floor of red and
@@ -176,8 +176,8 @@ Generate an image before continuing.
 Use current character and world state.
 
 STYLE:
-Original dark-fantasy illustration inspired by
-late-1980s fantasy arcade cabinet artwork.
+Authentic retro arcade pixel art: the Musecade pixel style
+(game/image-triggers.md §3). Pixels visible at a glance.
 
 SCENE:
 A long vaulted royal crypt in darkness. Rows of armored knights made of grey

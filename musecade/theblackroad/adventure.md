@@ -1,8 +1,8 @@
 # THE BLACK ROAD: Game Manifest
 
-Musecade Game 001 · Version 1.3 · Dark Fantasy · 45 to 75 minutes · 1 player
+Musecade Game 001 · Version 1.4 · Dark Fantasy · 45 to 75 minutes · 1 player
 <!-- BEGIN GENERATED:build -->
-Build: 1.3-a73a1aa
+Build: 1.4-8d565f2
 <!-- END GENERATED:build -->
 Base URL: https://lorenzen.ai/musecade/theblackroad/
 Platform: https://lorenzen.ai/musecade/musecade.md
