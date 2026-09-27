@@ -29,7 +29,7 @@ The other encounters (the bridge, the Drowned, the Cinder Guard, the throne) are
 **Rules for set pieces:**
 
 - **Every battle must cost or reveal:** a wound, a night, a secret, a companion's trust. Never a speed bump.
-- **Offer three approaches** with genuinely different risk profiles, **through a decision menu** (`rules.md`, *Decision menus*): **stand** (fight and hold), **evade** (slip away, hide, outrun), and **turn the ground** (rockslide, fire, ice, a bell, a rotten prop). Plus the wildcard. Each approach costs something different: stand risks wounds, evade risks time, separation or lost gear, and turn the ground risks collateral and noise.
+- **Offer three approaches** with genuinely different risk profiles, **as a `[MENU]` block** (`rules.md`, *Decision menus*): **stand** (fight and hold), **evade** (slip away, hide, outrun), and **turn the ground** (rockslide, fire, ice, a bell, a rotten prop). The runner adds the wildcard. Each approach costs something different: stand risks wounds, evade risks time, separation or lost gear, and turn the ground risks collateral and noise.
 - **Class advantages pay off in battle.** Let the **Warden** read the ground unprompted, hold a stair or choke point with advantage, and end a fight fast with one decisive roll. Let the **Wayfarer** find the evasion line, the **Scholar** turn the ground with a Word, and the **Envoy** split or stall the enemy with words.
 - **Roll openly, report honestly, fudge nothing** (`rules.md` §4).
 
@@ -73,7 +73,6 @@ The last stretch before Veyr, on every route. The Hushed have learned the Kindli
   - *Stand:* "Hold the narrow switchback and meet them one at a time." (Warden advantage. Risk: wounds.)
   - *Evade:* "Leave the trail and scramble down the scree in the dark." (Wayfarer advantage. Risk: a fall, lost gear, companions separated, arriving after nightfall.)
   - *Turn the ground:* "Start a rockslide onto the switchback above them." (Pass) / "Break the cliff path's rotten rail and send them into the lake." (Blackwater) / "Kick out the old pit-props and bring the gallery roof down between us." (Miners' Road). Risk: a big roll, collateral, noise, a blocked way back.
-  - "Something else — type your own."
 - **Companions:** Calen fights beside the Warden he knew. Wren can lead the Hushed away, since they ignore her, but it raises her hushing. Oswin's lantern makes them hesitate for one breath.
 - **Beats:** the silence and frost on the rocks; the Hushed rise from the snow; the Hushed Warden advances with his blade; the turning point (one decisive roll); the aftermath (the badge, the orders, someone is bleeding).
 - **Resolution:** 3 to 6 decisions. Report `ENC_AMBUSH_SURVIVED`, plus `ENC_AMBUSH_CLEVER` for an ingenious resolution. This battle should usually leave a mark: a wound, a companion hurt, lost gear, or a night.

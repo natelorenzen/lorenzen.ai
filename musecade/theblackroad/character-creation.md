@@ -35,7 +35,7 @@ Persuasion, deception, negotiation, reading people.
 
 Then: "Who were you, before you took this job?"
 
-Offer it as a decision menu (`rules.md`, *Decision menus*). This is the one menu with four real options: `WARDEN`, `SCHOLAR`, `WAYFARER`, `ENVOY`, and then "Something else — type your own."
+This is not a `[MENU]` (menus hold at most three options, and there are four paths). The player types their choice.
 
 Accept any clear choice. If the player describes themselves instead of choosing ("I'm a disgraced knight"), map it to the closest path and confirm in one line.
 
@@ -47,7 +47,7 @@ If they say "surprise me", invent one plausible line that fits their path. Recor
 
 ## Step 3b: Dice
 
-Ask in one line: **"When fate is in doubt we roll a d20. Will you roll your own dice, or shall I roll for you?"** Record `dice: player` or `dice: dm` (`rules.md` §4). If the player doesn't care, you roll. Offer it as a menu: "I'll roll my own dice", "You roll for me", "Something else — type your own."
+Ask in one line: **"When fate is in doubt we roll a d20. Will you roll your own dice, or shall I roll for you?"** Record `dice: player` or `dice: dm` (`rules.md` §4). If the player doesn't care, you roll. End with a `[MENU]` block with two options: `I'll roll my own dice` and `You roll for me`.
 
 If the path is SCHOLAR, fetch `game/words.md` now.
 

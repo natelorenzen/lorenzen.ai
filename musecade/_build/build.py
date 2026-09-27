@@ -39,9 +39,10 @@ BASE_URL = "https://lorenzen.ai/musecade"
 
 CATEGORIES = {"progress", "discovery", "puzzle", "encounter", "social", "companion", "achievement"}
 FATES = {"lives", "dies", "sacrificed", "either"}
-ID_RE = re.compile(r"\b((?:REACH|DISCOVER|PUZZLE|ENC|SOCIAL|RECRUIT|CALEN|WREN|OSWIN|LISS|COMPANION|ACH|ENDING|QUEEN)_[A-Z0-9_]*[A-Z0-9])(_?\*|\b)")
-# Names that look like event IDs but are encounter/section names, not scored events.
-NON_EVENT_TOKENS = {"ENC_ROAD", "ENC_AMBUSH", "ENC_BRIDGE", "ENC_DROWNED", "ENC_CINDER", "ENC_ORUN", "ENC_THRONE"}
+def id_regex(prefixes):
+    """Matches event-looking tokens that start with any of this game's own ID prefixes."""
+    alt = "|".join(sorted(map(re.escape, prefixes), key=len, reverse=True))
+    return re.compile(rf"\b((?:{alt})_[A-Z0-9_]*[A-Z0-9])(_?\*|\b)")
 
 errors, warnings, written, stale = [], [], [], []
 CHECK = "--check" in sys.argv
@@ -133,6 +134,9 @@ def check_game(g):
                 if ref not in events:
                     fail(f"{slug} {eid}: {key} references unknown event {ref}")
 
+    prefixes = {k.split("_")[0] for k in known}
+    ID_RE = id_regex(prefixes)
+    NON_EVENT_TOKENS = set(ev.get("doc_tokens", []))
     md_files = sorted(gdir.rglob("*.md"))
     mentioned = set()
     image_ids, video_ids = {}, {}
@@ -186,7 +190,7 @@ def check_game(g):
     for eid, e in endings.items():
         if e["title"] not in headings:
             fail(f"{slug}: ending {eid} title '{e['title']}' has no '## {e['title']}' section in endings.md")
-        img = "IMG_DEATH" if e["fate"] == "dies" and eid.endswith("SNOW") else "IMG_" + eid
+        img = e.get("image") or ("IMG_DEATH" if e["fate"] == "dies" and eid.endswith("SNOW") else "IMG_" + eid)
         if img not in image_ids:
             fail(f"{slug}: ending {eid} has no image trigger {img}")
 
@@ -210,6 +214,10 @@ def build_stamp(g):
     """version-contenthash over every published file of the game, ignoring the stamp itself."""
     gdir = MC / g["slug"]
     h = hashlib.sha256()
+    meta = json.loads((gdir / "metadata.json").read_text())
+    extra = sorted((MC / "core").glob("*.md")) if meta.get("uses_core") else []
+    for p in extra:
+        h.update(b"core/" + p.name.encode() + b"\0" + p.read_text(encoding="utf-8").encode())
     for p in sorted(gdir.rglob("*")):
         if p.is_file() and p.suffix in (".md", ".json", ".html"):
             text = BUILD_BLOCK.sub(r"\1\3", p.read_text(encoding="utf-8"))

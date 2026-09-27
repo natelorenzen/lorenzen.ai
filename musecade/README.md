@@ -140,6 +140,20 @@ Muse keeps a hidden state block (defined in `adventure.md` §5): run credentials
 - **d20, light rules** (`rules.md` §4): the DM decides when to roll, and only at pivotal moments (roughly 10 to 20 per campaign). There is a DC ladder of 8, 12, 15, 18 and 20, +2 when the action fits the path, and advantage or disadvantage in place of other modifiers. A natural 20 succeeds with extra power; a natural 1 is a disaster with a twist. For effects with a size, the roll sets the power. The player can roll their own dice, and the DM never fudges. Dice never solve puzzles.
 - **Words of Weight** (`game/words.md`, loaded only for Scholars): six Old Veyric Words (NER, SAEL, THARRU, ENNAR, MAELIS, ANNA VAELUN). The Scholar starts with two and recovers the rest through the story, growing from rank I (Whisper) to rank III (Command). Casting costs strain, which clears at dawn.
 
+## 6c. Decision menus are runner-owned
+
+Game files never tell the model to call a tool, because that pattern trips agents' prompt-injection defenses. At decision points the model ends its reply with a plain-text block:
+
+```
+[MENU]
+- Hold the stair
+- Fall back to the arch
+- Light the oil store
+[/MENU]
+```
+
+The **Musecade runner** (the client that loops turns with the model, not this repo) strips the block, renders up to 3 buttons, always appends the wildcard "Something else — type your own", sends a tapped option's exact text as the player's next message, re-prompts once if a decision-point reply is missing its block, and falls back to an A–D lettered list where buttons can't render. Without a runner, the block still reads as a plain list.
+
 ## 7. Images and video
 
 `game/image-triggers.md` defines the style (dark fantasy × 1991 arcade pixel art: real visible pixels, a 32-color palette and dithering, with fire in orange and crimson and the Hush in electric blue), the prompt template, visual-continuity rules, a 5-to-8 image budget (the first at the first creature reveal, one always reserved for the ending), and a catalog of every `[IMAGE_TRIGGER]` in the game. Agents that can make video also get up to three 5-second `[VIDEO_TRIGGER]` clips, which animate the still just generated. Triggers carry "do not reveal undiscovered information" guards.

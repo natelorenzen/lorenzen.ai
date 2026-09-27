@@ -63,11 +63,10 @@ Do not reveal undiscovered information.
   - WAYFARER: *bare footprints in the frost, pressed in moments ago. There were three of them. Only two came out.* (The third is gone. It's just unsettling.)
   - ENVOY: *they don't hear words. They move the way starving people move toward a fire. This isn't malice. It's hunger.*
 
-**Beat 1: the first menu.** The peddler's white hand closes on the mare's bridle, and the mare rears. Offer the first decision menu (`rules.md`, *Decision menus*), adapted to the path. For example:
+**Beat 1: the first menu.** The peddler's white hand closes on the mare's bridle, and the mare rears. End the turn with the first `[MENU]` block (`rules.md`, *Decision menus*), adapted to the path. For example:
 - "Step between them and the mare, blade out." *(stand)*
 - "Haul the mare back down the road, out of their reach." *(evade)*
 - "Strike flint to the dry bracken at the frost's edge." *(turn the ground)*
-- "Something else — type your own."
 
 Then print the first tip, on its own line:
 
