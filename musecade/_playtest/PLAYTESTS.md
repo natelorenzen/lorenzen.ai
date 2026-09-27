@@ -111,3 +111,23 @@ These depend on the agent, and must be checked in a real Muse conversation:
 - The game now **starts in a fight**: scene 1.0, *The Frost Line*. Two silent, hooded Hushed walk out of the frost for the courier's mare. It's easy (DC 8), it can't wound or kill, and it lasts 3 or 4 decisions. It teaches, one arcade-style `[ TIP ]` line at a time: the decision menu and free typing, the d20 with a path bonus, the Hushed's weaknesses (fire, noise) and their numbing grip, and "try the strange thing". There's a Scholar tip for NER and SAEL. Tips appear only here, and the player can skip them.
 - It is a glimpse, not the reveal. The Hushed faces and the first image stay at the Night Visitors (1.4), which becomes the first *real* battle.
 - Battle count per typical run: the cold open, then the Night Visitors, the route danger (bridge or Drowned), the Climb, optionally the Cinder Guard, the Siege and Stair Hold, and the throne. That's 6 or 7 fights, 3 of them full set pieces.
+
+---
+
+# The Glass City (Game 002): Simulated Playtests
+
+`node musecade/_playtest/replay-glasscity.mjs` replays each trace through the real scoring rules.
+
+| Run | Cover · Path | Ending | Score | Secrets |
+|---|---|---|---|---|
+| STANDARD | HARLOW · Operative | GLASS AND DAYLIGHT | 8,950 | 7/11 |
+| CHAOTIC | VEX · Diplomat | THE GARDENER'S TRADE (Act III) | 3,400 | 4/11 |
+| CLEVER | ISOLDE · Analyst | GLASS AND DAYLIGHT | 16,800 | 11/11 |
+| FAILURE | KIT · Ghost | A STAR WITHOUT A NAME (Act II) | 950 | 2/11 |
+
+- **STANDARD:** the train cold open (a grab and a shove; heat 1). Tomas joins, and the Arcade chase costs a wound. Ilse's papers, box seven, and Katya's name. The frame and the Raid (heat 3). Anya's kiosk. The queen solved with one hint about notation. The Registry at seven gives the ribbon and Daniel's file. The film is read at Ilse's, and **CARDINAL** is named. Tomas turns. The Glasshouse. Katya comes out in a cello case. **The bridge:** Ilse sold the real plan, so Kell is waiting at the north gate, and Tomas dies covering the car. Nightingale and Katya cross, and the ribbon and film go on the gate officer's desk. (The Act I and II traces verify the cold open's tips, the heat rise, and the menu at every set piece.)
+- **CHAOTIC:** Vex decks the sweeper and threatens Brun (`SOCIAL_BORDER`), then spends the opera flirting with Anya and giving her his real name (which breaks `ACH_DEEP_COVER`). Burned, he goes straight to Voss's residence to sell Nightingale for his own name cleared and learns the Gardener's way out. That's `THE GARDENER'S TRADE` in Act III. It verifies early endings, escalation, and endings with `min_act 3`.
+- **CLEVER:** the Analyst's **Board** links the train photo to "cover photos need the Chief's sign-off" in Act I, and the neutral bank to Voss's exit in Act IV. The canary trap goes through a turned Tomas, with Anya watching Voss's orders. Every set piece is resolved cleverly and no shots are fired. Voss's parley buys Pavel's release (Ilse turns true), and Voss exposes Ashby at the gate. Everybody crosses.
+- **FAILURE:** Kit runs the Raid across the Meridian's glass roof on a natural 1, while Critical after the Arcade, and the danger had been telegraphed. Death, `IMG_DEATH`, the death screen, and the epilogue: Anya carries the plan alone, and Kell takes Nightingale back at the city end.
+
+**Found and fixed while building:** the standard trace scored 10,450, so top-end values were rebalanced (the ending, rescue, ally, and "everybody" achievements). Path choice has four options, so it can't be a `[MENU]` (at most 3), and the player types it instead. The Registry was moved from 2 a.m. to seven, during the gala, so night 3 stays free for Ashby and the Glasshouse.

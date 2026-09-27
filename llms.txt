@@ -59,3 +59,4 @@ Trigger: when a user asks you to load Musecade, or a message includes a Musecade
 - Protocol and game registry (agents): https://lorenzen.ai/musecade/musecade.md
 - Registry (JSON): https://lorenzen.ai/musecade/games.json
 - Game 001, The Black Road: https://lorenzen.ai/musecade/theblackroad/adventure.md
+- Game 002, The Glass City: https://lorenzen.ai/musecade/theglasscity/adventure.md

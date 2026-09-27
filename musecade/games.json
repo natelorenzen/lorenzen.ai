@@ -18,11 +18,20 @@
   },
   {
     "id": "002",
-    "title": null,
-    "slug": null,
-    "command": null,
-    "genre": "Mystery",
-    "status": "coming_soon"
+    "title": "The Glass City",
+    "slug": "theglasscity",
+    "command": "#theglasscity",
+    "genre": "Espionage",
+    "duration": "45–75 min",
+    "status": "live",
+    "version": "1.0",
+    "players": 1,
+    "endings": "11",
+    "difficulty": "???",
+    "tagline": "Bring Nightingale across the Glass Bridge. Trust no one inside the station.",
+    "manifest": "https://lorenzen.ai/musecade/theglasscity/adventure.md",
+    "page": "https://lorenzen.ai/musecade/theglasscity/",
+    "events": "https://lorenzen.ai/musecade/theglasscity/events.json"
   },
   {
     "id": "003",

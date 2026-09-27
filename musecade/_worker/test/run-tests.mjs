@@ -275,6 +275,21 @@ await test("volume: 600 concurrent agents submit; the board shows the true top 1
   console.log(`      600 submissions in ${Date.now() - t0} ms; top score ${top[0]}`);
 });
 
+await test("a second game has its own paths, events and leaderboard filter", async () => {
+  const bad = await post("/run/start", { game: "theglasscity", player: "Mr Grey", path: "WARDEN" }, "10.7.0.1");
+  assert.equal(bad.status, 400);
+  const r = (await post("/run/start", { game: "theglasscity", player: "Mr Grey", path: "GHOST" }, "10.7.0.2")).body;
+  ageRun(r.run_id, 60 * 60);
+  const wrongGame = await post("/run/event", { ...r, events: ["REACH_WILDERNESS"] });
+  assert.equal(wrongGame.body.rejected[0].reason, "unknown_event");
+  const c = await post("/run/complete", { ...r, ending: "ENDING_NOBODY", died: false, events: ["DISCOVER_SWEEPER_PHOTO", "ENC_ARCADE_SURVIVED", "REACH_CONTACT"] });
+  assert.equal(c.status, 200, JSON.stringify(c.body));
+  assert.equal(c.body.score, 150 + 100 + 100 + 400 + 400);
+  const lb = await get("/leaderboard?game=theglasscity");
+  assert.deepEqual(lb.body.rows.map((x) => x.player), ["MR GREY"]);
+  assert.equal(lb.body.rows[0].game_title, "The Glass City");
+});
+
 await test("rate limiting stops floods of new runs from one address", async () => {
   let last;
   for (let i = 0; i < 14; i++) last = await post("/run/start", { game: "theblackroad", player: "Spam", path: "WARDEN" }, "10.66.6.6");

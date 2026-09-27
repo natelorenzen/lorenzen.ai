@@ -14,8 +14,9 @@
 // events.json, imported here at build time. The server never accepts a score.
 
 import THE_BLACK_ROAD from "../../theblackroad/events.json" with { type: "json" };
+import THE_GLASS_CITY from "../../theglasscity/events.json" with { type: "json" };
 
-export const GAMES = { theblackroad: THE_BLACK_ROAD };
+export const GAMES = { theblackroad: THE_BLACK_ROAD, theglasscity: THE_GLASS_CITY };
 
 const MAX_BODY_BYTES = 8192;
 const MAX_EVENTS_PER_REQUEST = 60;

@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "game": "theglasscity",
+  "title": "The Glass City",
+  "version": "1.0",
+  "note": "CANONICAL SCORE TABLE. The Musecade backend imports this file and is the only thing that turns event IDs into points. Edit here, run python3 musecade/_build/build.py, then redeploy the worker.",
+
+  "rules": {
+    "survival_bonus": 400,
+    "max_events_per_run": 80,
+    "min_seconds_for_ranking": 300,
+    "run_ttl_days": 30,
+    "acts": 5
+  },
+
+  "paths": ["OPERATIVE", "ANALYST", "GHOST", "DIPLOMAT"],
+
+  "doc_tokens": ["ENC_ARCADE", "ENC_RAID", "ENC_GLASSHOUSE", "ENC_BRIDGE"],
+
+  "events": {
+    "REACH_CONTACT": { "category": "progress", "points": 100, "title": "Contact", "sets_act": 2, "min_act": 1 },
+    "REACH_BURNED":  { "category": "progress", "points": 200, "title": "Burned", "sets_act": 3, "min_act": 2, "requires": ["REACH_CONTACT"] },
+    "REACH_MOLE":    { "category": "progress", "points": 300, "title": "The Mole", "sets_act": 4, "min_act": 3, "requires": ["REACH_BURNED"] },
+    "REACH_BRIDGE":  { "category": "progress", "points": 400, "title": "The Glass Bridge", "sets_act": 5, "min_act": 4, "requires": ["REACH_MOLE"] },
+
+    "DISCOVER_SWEEPER_PHOTO":  { "category": "discovery", "secret": true, "points": 150, "title": "Someone Sent Your Photograph", "min_act": 1 },
+    "DISCOVER_TOMAS_REPORTS":  { "category": "discovery", "secret": true, "points": 250, "title": "Tomas Reports Upstairs", "min_act": 1 },
+    "DISCOVER_ANYA_HANDLER":   { "category": "discovery", "secret": true, "points": 250, "title": "Anya Runs Nightingale", "min_act": 2 },
+    "DISCOVER_ILSE_REPORTS":   { "category": "discovery", "secret": true, "points": 250, "title": "Ilse Sells to the Gardener", "min_act": 2 },
+    "DISCOVER_PAVEL":          { "category": "discovery", "secret": true, "points": 200, "title": "The Brother at Hollow Hill", "min_act": 2 },
+    "DISCOVER_MORROW_LEAK":    { "category": "discovery", "secret": true, "points": 200, "title": "The Aide and the Reporter", "min_act": 2 },
+    "DISCOVER_KATYA":          { "category": "discovery", "secret": true, "points": 300, "title": "Nightingale's Daughter", "min_act": 2 },
+    "DISCOVER_THE_FRAME":      { "category": "discovery", "secret": true, "points": 300, "title": "Your Name on the List", "min_act": 2 },
+    "DISCOVER_ASHBY_SON":      { "category": "discovery", "secret": true, "points": 350, "title": "Daniel Ashby, 1962", "min_act": 3 },
+    "DISCOVER_VOSS_GARDEN":    { "category": "discovery", "secret": true, "points": 350, "title": "The Gardener's Way Out", "min_act": 3 },
+    "DISCOVER_CARDINAL":       { "category": "discovery", "secret": true, "points": 500, "title": "Cardinal", "min_act": 3 },
+
+    "PUZZLE_QUEEN_SOLVED":     { "category": "puzzle", "points": 450, "title": "Where the Queen Protects It", "min_act": 2 },
+    "PUZZLE_QUEEN_NO_HINT":    { "category": "puzzle", "points": 200, "title": "The Queen, Unaided", "min_act": 2, "requires": ["PUZZLE_QUEEN_SOLVED"] },
+    "PUZZLE_ARCHIVE_SOLVED":   { "category": "puzzle", "points": 400, "title": "The Registry at Two", "min_act": 3 },
+    "PUZZLE_ARCHIVE_NO_HINT":  { "category": "puzzle", "points": 200, "title": "The Registry, Unaided", "min_act": 3, "requires": ["PUZZLE_ARCHIVE_SOLVED"] },
+    "PUZZLE_CANARY_SOLVED":    { "category": "puzzle", "points": 500, "title": "The Mole Unmasked", "min_act": 3 },
+    "PUZZLE_CANARY_NO_HINT":   { "category": "puzzle", "points": 250, "title": "The Mole, Unaided", "min_act": 3, "requires": ["PUZZLE_CANARY_SOLVED"] },
+
+    "ENC_ARCADE_SURVIVED":     { "category": "encounter", "points": 100, "title": "The Glass Galleries", "min_act": 1 },
+    "ENC_ARCADE_CLEVER":       { "category": "encounter", "points": 150, "title": "The Glass Galleries, Outwitted", "min_act": 1 },
+    "ENC_RAID_SURVIVED":       { "category": "encounter", "points": 200, "title": "The Raid", "min_act": 2 },
+    "ENC_RAID_CLEVER":         { "category": "encounter", "points": 250, "title": "The Raid, Outwitted", "min_act": 2 },
+    "ENC_GLASSHOUSE_SURVIVED": { "category": "encounter", "points": 200, "title": "The Glasshouse", "min_act": 4 },
+    "ENC_GLASSHOUSE_CLEVER":   { "category": "encounter", "points": 300, "title": "The Glasshouse, Outwitted", "min_act": 4 },
+    "ENC_BRIDGE_SURVIVED":     { "category": "encounter", "points": 250, "title": "The Glass Bridge", "min_act": 5 },
+    "ENC_BRIDGE_CLEVER":       { "category": "encounter", "points": 350, "title": "The Glass Bridge, Outwitted", "min_act": 5 },
+
+    "SOCIAL_BORDER":            { "category": "social", "points": 100, "title": "Papers, Please", "min_act": 1 },
+    "SOCIAL_NIGHTINGALE_TRUST": { "category": "social", "points": 300, "title": "Box Seven", "min_act": 2 },
+    "SOCIAL_ILSE_DEAL":         { "category": "social", "points": 150, "title": "The Bookbinder's Price", "min_act": 2 },
+    "SOCIAL_MARGOT":            { "category": "social", "points": 200, "title": "On the Record", "min_act": 3 },
+    "SOCIAL_VOSS_PARLEY":       { "category": "social", "points": 350, "title": "Terms with the Gardener", "min_act": 4 },
+    "SOCIAL_ASHBY_CONFRONT":    { "category": "social", "points": 350, "title": "Across the Chief's Desk", "min_act": 4 },
+
+    "RECRUIT_TOMAS": { "category": "companion", "points": 100, "title": "Tomas Reyne Joins", "min_act": 1 },
+    "RECRUIT_ILSE":  { "category": "companion", "points": 100, "title": "Ilse Varga Joins", "min_act": 2 },
+    "RECRUIT_ANYA":  { "category": "companion", "points": 100, "title": "Anya Sorel Joins", "min_act": 3 },
+    "ALLY_TOMAS_TURNED": { "category": "companion", "points": 200, "title": "Tomas Chooses You", "min_act": 3, "requires": ["RECRUIT_TOMAS"] },
+    "ALLY_ILSE_TRUE":    { "category": "companion", "points": 200, "title": "Ilse Stops Selling", "min_act": 3, "requires": ["RECRUIT_ILSE"] },
+    "ALLY_ANYA_CHOOSES": { "category": "companion", "points": 200, "title": "Anya Chooses", "min_act": 4, "requires": ["RECRUIT_ANYA"] },
+    "RESCUE_KATYA":      { "category": "companion", "points": 250, "title": "Katya Comes Too", "min_act": 4, "requires": ["DISCOVER_KATYA"] },
+    "COMPANION_SURVIVES_TOMAS": { "category": "companion", "points": 100, "title": "Tomas Survives", "min_act": 3, "requires": ["RECRUIT_TOMAS"] },
+    "COMPANION_SURVIVES_ILSE":  { "category": "companion", "points": 100, "title": "Ilse Survives", "min_act": 3, "requires": ["RECRUIT_ILSE"] },
+    "COMPANION_SURVIVES_ANYA":  { "category": "companion", "points": 100, "title": "Anya Survives", "min_act": 3, "requires": ["RECRUIT_ANYA"] },
+
+    "ACH_NO_SHOTS_FIRED":   { "category": "achievement", "points": 700, "title": "NO SHOTS FIRED", "description": "Finish without firing a gun or killing anyone.", "min_act": 4 },
+    "ACH_CANARY_TRAP":      { "category": "achievement", "points": 500, "title": "CANARY TRAP", "description": "Unmask the mole with a canary trap.", "min_act": 3, "requires": ["PUZZLE_CANARY_SOLVED"] },
+    "ACH_EVERYBODY_CROSSES":{ "category": "achievement", "points": 400, "title": "EVERYBODY CROSSES", "description": "Nightingale crosses and every recruited ally survives.", "min_act": 5, "requires_any": ["RECRUIT_TOMAS", "RECRUIT_ILSE", "RECRUIT_ANYA"] },
+    "ACH_COLD_TRAIL":       { "category": "achievement", "points": 400, "title": "COLD TRAIL", "description": "Finish without Heat ever rising above 2.", "min_act": 4 },
+    "ACH_WHOLE_TRUTH":      { "category": "achievement", "points": 700, "title": "THE WHOLE TRUTH", "description": "Learn why everyone is doing what they're doing.", "min_act": 4, "requires": ["DISCOVER_THE_FRAME", "DISCOVER_ASHBY_SON", "DISCOVER_VOSS_GARDEN", "DISCOVER_KATYA", "DISCOVER_CARDINAL"] },
+    "ACH_TWO_BIRDS":        { "category": "achievement", "hidden": true, "points": 300, "title": "TWO BIRDS", "description": "Get Nightingale and her daughter across the bridge.", "min_act": 5, "requires": ["RESCUE_KATYA"] },
+    "ACH_OLD_FLAMES":       { "category": "achievement", "hidden": true, "points": 300, "title": "OLD FLAMES", "description": "Anya chooses you, and you both walk away.", "min_act": 5, "requires": ["ALLY_ANYA_CHOOSES"] },
+    "ACH_DEEP_COVER":       { "category": "achievement", "hidden": true, "points": 400, "title": "DEEP COVER", "description": "Never give anyone your real name.", "min_act": 4 },
+    "ACH_DOUBLE_BLIND":     { "category": "achievement", "hidden": true, "points": 400, "title": "DOUBLE BLIND", "description": "Turn both of the people reporting on you.", "min_act": 4, "requires": ["ALLY_TOMAS_TURNED", "ALLY_ILSE_TRUE"] },
+    "ACH_CHECKMATE":        { "category": "achievement", "hidden": true, "points": 400, "title": "CHECKMATE", "description": "Crack the queen cipher without help.", "min_act": 3, "requires": ["PUZZLE_QUEEN_NO_HINT"] },
+    "ACH_LONE_WOLF":        { "category": "achievement", "hidden": true, "points": 600, "title": "LONE WOLF", "description": "Reach the bridge without recruiting anyone.", "min_act": 5, "requires": ["REACH_BRIDGE"], "excludes": ["RECRUIT_TOMAS", "RECRUIT_ILSE", "RECRUIT_ANYA"] },
+    "ACH_GARDENERS_NOD":    { "category": "achievement", "hidden": true, "points": 300, "title": "THE GARDENER'S NOD", "description": "Colonel Voss lets you walk away.", "min_act": 4, "requires": ["SOCIAL_VOSS_PARLEY"] }
+  },
+
+  "endings": {
+    "ENDING_GLASS_AND_DAYLIGHT":  { "title": "GLASS AND DAYLIGHT", "points": 1600, "fate": "lives", "min_act": 5, "requires": ["REACH_BRIDGE", "DISCOVER_CARDINAL"] },
+    "ENDING_BRIDGE_AT_DAWN":      { "title": "THE BRIDGE AT DAWN", "points": 1600, "fate": "dies", "min_act": 5, "requires": ["REACH_BRIDGE"] },
+    "ENDING_THIRD_COUNTRY":       { "title": "THE THIRD COUNTRY", "points": 1500, "fate": "lives", "min_act": 4, "requires": ["RECRUIT_ANYA"] },
+    "ENDING_FRONT_PAGE":          { "title": "FRONT PAGE", "points": 1400, "fate": "lives", "min_act": 3, "requires": ["SOCIAL_MARGOT"] },
+    "ENDING_QUIET_PROMOTION":     { "title": "THE QUIET PROMOTION", "points": 1200, "fate": "lives", "min_act": 5, "requires": ["REACH_BRIDGE"] },
+    "ENDING_TWO_FLAGS":           { "title": "TWO FLAGS", "points": 1000, "fate": "lives", "min_act": 4 },
+    "ENDING_GARDENERS_TRADE":     { "title": "THE GARDENER'S TRADE", "points": 900, "fate": "lives", "min_act": 3 },
+    "ENDING_CARDINAL":            { "title": "CARDINAL", "points": 800, "fate": "lives", "min_act": 4, "requires": ["DISCOVER_CARDINAL"] },
+    "ENDING_QUIET_ROOM":          { "title": "A QUIET ROOM", "points": 400, "fate": "sacrificed", "min_act": 1 },
+    "ENDING_NOBODY":              { "title": "NOBODY", "points": 400, "fate": "lives", "min_act": 1 },
+    "ENDING_STAR_WITHOUT_A_NAME": { "title": "A STAR WITHOUT A NAME", "points": 0, "fate": "dies", "min_act": 1, "image": "IMG_DEATH" }
+  }
+}

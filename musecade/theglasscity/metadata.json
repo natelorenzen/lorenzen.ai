@@ -1,0 +1,76 @@
+{
+  "id": "002",
+  "slug": "theglasscity",
+  "title": "The Glass City",
+  "subtitle": "An Espionage Thriller",
+  "command": "#theglasscity",
+  "version": "1.0",
+  "genre": "Espionage",
+  "rating": "PG-13",
+  "players": 1,
+  "duration": "45–75 min",
+  "endings": 11,
+  "secrets": 11,
+  "acts": [
+    "Arrival",
+    "Contact",
+    "Burned",
+    "The Mole",
+    "The Glass Bridge"
+  ],
+  "paths": [
+    "Operative",
+    "Analyst",
+    "Ghost",
+    "Diplomat"
+  ],
+  "uses_core": true,
+  "manifest": "adventure.md",
+  "boot_files": [
+    "rules.md",
+    "character-creation.md",
+    "scoring.md",
+    "game/image-triggers.md",
+    "acts/act-1.md"
+  ],
+  "core_files": [
+    "core/dm-core.md",
+    "core/image-style.md",
+    "core/scoring.md"
+  ],
+  "files": [
+    "adventure.md",
+    "rules.md",
+    "character-creation.md",
+    "scoring.md",
+    "events.json",
+    "acts/act-1.md",
+    "acts/act-2.md",
+    "acts/act-3.md",
+    "acts/act-4.md",
+    "acts/act-5.md",
+    "world/lore.md",
+    "world/factions.md",
+    "world/locations.md",
+    "characters/companions.md",
+    "characters/npcs.md",
+    "game/encounters.md",
+    "game/puzzles.md",
+    "game/achievements.md",
+    "game/endings.md",
+    "game/image-triggers.md"
+  ],
+  "capabilities": {
+    "required": [
+      "read web pages (fetch URLs)"
+    ],
+    "recommended": [
+      "image generation",
+      "HTTP GET or POST to the Musecade API (for the leaderboard)"
+    ],
+    "optional": [
+      "5-second video generation",
+      "random number generation"
+    ]
+  }
+}

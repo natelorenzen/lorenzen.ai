@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Source for musecade/assets/glasscity-keyart.png (pixelized by pixelize.html, palette "theglasscity"). -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#03050a"/>
+      <stop offset=".35" stop-color="#0c1424"/>
+      <stop offset=".45" stop-color="#1b2d4a"/>
+      <stop offset=".52" stop-color="#4a7898"/>
+    </linearGradient>
+    <linearGradient id="lake" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#132036"/>
+      <stop offset="1" stop-color="#03050a"/>
+    </linearGradient>
+    <radialGradient id="lamp" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#ffd98a" stop-opacity=".95"/>
+      <stop offset=".35" stop-color="#f08a24" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#b85a14" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glassglow" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#9fd0e0" stop-opacity=".8"/>
+      <stop offset="1" stop-color="#34587a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="beam" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4f1f7" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#d4f1f7" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="cone" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f08a24" stop-opacity=".6"/>
+      <stop offset="1" stop-color="#6e3512" stop-opacity=".15"/>
+    </linearGradient>
+    <filter id="b4" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4"/></filter>
+    <filter id="b10" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="10"/></filter>
+  </defs>
+
+  <rect width="800" height="600" fill="url(#sky)"/>
+  <!-- moon behind cloud -->
+  <circle cx="610" cy="96" r="34" fill="#d4f1f7" opacity=".85"/>
+  <g filter="url(#b10)" opacity=".85"><ellipse cx="600" cy="112" rx="140" ry="22" fill="#1b2d4a"/><ellipse cx="180" cy="80" rx="200" ry="26" fill="#132036"/></g>
+  <!-- searchlight from the island -->
+  <polygon points="700,250 60,20 30,70" fill="url(#beam)" opacity=".5" filter="url(#b4)" transform="matrix(-1 0 0 1 760 0)"/>
+
+  <!-- far city: domes, towers, lit windows -->
+  <path d="M0 330 L0 270 L30 270 L30 250 L52 250 L52 272 L80 272 L80 236 C80 212 118 212 118 236 L118 276 L150 276 L150 258 L170 244 L190 258 L190 280 L230 280 L230 226 L244 214 L258 226 L258 284 L300 284 L300 262 C300 246 326 246 326 262 L326 290 L360 290 L360 300 L0 330 Z" fill="#070b16"/>
+  <path d="M80 236 C80 212 118 212 118 236 Z" fill="#1d5a55"/>
+  <path d="M300 262 C300 246 326 246 326 262 Z" fill="#1d5a55"/>
+  <g fill="#ffb347">
+    <rect x="36" y="262" width="4" height="4"/><rect x="88" y="250" width="4" height="4"/><rect x="104" y="262" width="4" height="4"/>
+    <rect x="160" y="266" width="4" height="4"/><rect x="238" y="240" width="4" height="4"/><rect x="246" y="258" width="4" height="4"/>
+    <rect x="310" y="272" width="4" height="4"/><rect x="62" y="280" width="4" height="4"/><rect x="200" y="288" width="4" height="4"/>
+  </g>
+  <!-- the island towers -->
+  <path fill-opacity="1" d="M560 300 L560 214 L584 214 L584 190 L604 190 L604 214 L626 214 L626 170 L648 160 L670 170 L670 226 L700 226 L700 200 L724 200 L724 240 L800 240 L800 300 Z" fill="#070b16"/>
+  <g fill="#9fd0e0"><rect x="568" y="224" width="4" height="4"/><rect x="592" y="200" width="4" height="4"/><rect x="636" y="180" width="4" height="4"/><rect x="650" y="196" width="4" height="4"/><rect x="708" y="210" width="4" height="4"/><rect x="740" y="252" width="4" height="4"/></g>
+  <rect x="646" y="152" width="4" height="10" fill="#d7263d"/>
+
+  <g fill="#ffb347">
+    <rect x="44" y="290" width="4" height="4"/><rect x="128" y="286" width="4" height="4"/><rect x="176" y="276" width="4" height="4"/><rect x="270" y="294" width="4" height="4"/><rect x="340" y="296" width="4" height="4"/>
+  </g>
+  <g fill="#9fd0e0"><rect x="576" y="262" width="4" height="4"/><rect x="612" y="240" width="4" height="4"/><rect x="660" y="226" width="4" height="4"/><rect x="684" y="250" width="4" height="4"/><rect x="760" y="270" width="4" height="4"/><rect x="600" y="280" width="4" height="4"/></g>
+  <!-- lake -->
+  <rect y="300" width="800" height="300" fill="url(#lake)"/>
+
+  <!-- the Glass Bridge -->
+  <ellipse cx="420" cy="296" rx="260" ry="30" fill="url(#glassglow)" opacity=".7" filter="url(#b10)"/>
+  <path d="M220 316 L760 286 L760 272 L220 300 Z" fill="#26405f"/>
+  <path d="M220 300 C340 272 600 262 760 272 L760 262 C600 250 340 258 220 290 Z" fill="#6ea2bd" opacity=".85"/>
+  <g stroke="#0c1424" stroke-width="3">
+    <line x1="250" y1="310" x2="250" y2="290"/><line x1="300" y1="308" x2="300" y2="283"/><line x1="350" y1="305" x2="350" y2="278"/>
+    <line x1="400" y1="302" x2="400" y2="273"/><line x1="450" y1="300" x2="450" y2="270"/><line x1="500" y1="297" x2="500" y2="267"/>
+    <line x1="550" y1="294" x2="550" y2="265"/><line x1="600" y1="292" x2="600" y2="264"/><line x1="650" y1="290" x2="650" y2="264"/><line x1="700" y1="288" x2="700" y2="266"/>
+  </g>
+  <g fill="#ffd98a"><rect x="272" y="298" width="3" height="3"/><rect x="372" y="292" width="3" height="3"/><rect x="472" y="287" width="3" height="3"/><rect x="572" y="283" width="3" height="3"/><rect x="672" y="281" width="3" height="3"/></g>
+  <g fill="#26405f"><rect x="330" y="316" width="10" height="60"/><rect x="500" y="306" width="10" height="70"/><rect x="670" y="300" width="10" height="70"/></g>
+  <!-- the lone figure mid-span -->
+  <rect x="478" y="274" width="4" height="12" fill="#03050a"/><rect x="477" y="271" width="6" height="4" fill="#03050a"/>
+  <!-- reflections -->
+  <g opacity=".5">
+    <rect x="230" y="340" width="520" height="3" fill="#6ea2bd"/><rect x="260" y="360" width="440" height="2" fill="#4a7898"/>
+    <rect x="300" y="384" width="360" height="2" fill="#34587a"/><rect x="340" y="410" width="260" height="2" fill="#26405f"/>
+  </g>
+  <g fill="#f08a24" opacity=".6"><rect x="90" y="360" width="6" height="40"/><rect x="236" y="350" width="4" height="30"/></g>
+
+  <!-- foreground quay -->
+  <path d="M0 470 L380 452 L420 600 L0 600 Z" fill="#070b16"/>
+  <path d="M0 470 L380 452" stroke="#34587a" stroke-width="2"/>
+  <g stroke="#132036" stroke-width="2"><line x1="40" y1="500" x2="330" y2="486"/><line x1="30" y1="540" x2="360" y2="524"/><line x1="20" y1="580" x2="390" y2="566"/></g>
+  <!-- sodium streetlamp -->
+  <rect x="148" y="300" width="6" height="170" fill="#03050a"/>
+  <path d="M136 300 L166 300 L160 290 L142 290 Z" fill="#03050a"/>
+  <circle cx="151" cy="304" r="60" fill="url(#lamp)"/>
+  <polygon points="140,306 162,306 250,500 60,500" fill="url(#cone)"/>
+  <!-- the player: trench coat, hat, red umbrella -->
+  <g transform="translate(206 492) scale(1.5) translate(-206 -492)">
+  <ellipse cx="206" cy="492" rx="44" ry="6" fill="#03050a" opacity=".7"/>
+  <path d="M168 404 C176 380 236 380 244 404 Z" fill="#9e1b2a"/>
+  <path d="M168 404 C176 384 206 382 206 404 Z" fill="#d7263d"/>
+  <line x1="206" y1="384" x2="206" y2="440" stroke="#03050a" stroke-width="3"/>
+  <path d="M196 414 C188 414 186 422 188 428 L184 492 L198 492 L204 456 L210 492 L224 492 L222 428 C224 420 220 414 212 414 Z" fill="#1a1a1e"/>
+  <rect x="195" y="404" width="20" height="12" fill="#1a1a1e"/>
+  <path d="M189 430 L184 492 L192 492 Z" fill="#b85a14" opacity=".55"/>
+  <!-- briefcase -->
+  <rect x="220" y="454" width="16" height="12" fill="#3a1c0c"/>
+  </g>
+
+  <!-- rain -->
+  <g stroke="#9fd0e0" stroke-opacity=".35" stroke-width="1.5">
+    <line x1="40" y1="20" x2="34" y2="44"/><line x1="120" y1="120" x2="114" y2="144"/><line x1="260" y1="60" x2="254" y2="84"/>
+    <line x1="340" y1="200" x2="334" y2="224"/><line x1="460" y1="40" x2="454" y2="64"/><line x1="540" y1="160" x2="534" y2="184"/>
+    <line x1="700" y1="100" x2="694" y2="124"/><line x1="760" y1="360" x2="754" y2="384"/><line x1="620" y1="420" x2="614" y2="444"/>
+    <line x1="480" y1="500" x2="474" y2="524"/><line x1="300" y1="560" x2="294" y2="584"/><line x1="80" y1="420" x2="74" y2="444"/>
+  </g>
+</svg>

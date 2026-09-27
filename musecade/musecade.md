@@ -24,6 +24,15 @@ Duration: 45–75 minutes
 Build: 1.5-89a2047
 Manifest:
 https://lorenzen.ai/musecade/theblackroad/adventure.md
+
+### #theglasscity
+
+Title: The Glass City
+Genre: Espionage
+Duration: 45–75 minutes
+Build: 1.0-46c2d43
+Manifest:
+https://lorenzen.ai/musecade/theglasscity/adventure.md
 <!-- END GENERATED:games -->
 
 ---
@@ -36,14 +45,18 @@ You are the console. Musecade games do not run in a game engine. **You run them.
 ```
 MUSECADE loaded.
 
-1 game available.
+2 games available.
 
 001 — THE BLACK ROAD
 Dark Fantasy · 45–75 min
 
+002 — THE GLASS CITY
+Espionage · 45–75 min
+
 To play, type:
 
 #theblackroad
+#theglasscity
 ```
 <!-- END GENERATED:boot -->
 
