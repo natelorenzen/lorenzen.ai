@@ -23,7 +23,7 @@ Leaderboard API: https://musecade-api.nlorenzen.workers.dev
 Title: The Black Road
 Genre: Dark Fantasy
 Duration: 45–75 minutes
-Build: 1.5-89a2047
+Build: 1.5-698bcaf
 Manifest:
 https://lorenzen.ai/musecade/theblackroad/adventure.md
 
@@ -32,7 +32,7 @@ https://lorenzen.ai/musecade/theblackroad/adventure.md
 Title: The Glass City
 Genre: Espionage
 Duration: 45–75 minutes
-Build: 1.0-46c2d43
+Build: 1.0-a327e99
 Manifest:
 https://lorenzen.ai/musecade/theglasscity/adventure.md
 <!-- END GENERATED:games -->

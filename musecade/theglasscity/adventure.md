@@ -2,7 +2,7 @@
 
 Musecade Game 002 · Version 1.0 · Espionage · 45 to 75 minutes · 1 player · PG-13
 <!-- BEGIN GENERATED:build -->
-Build: 1.0-46c2d43
+Build: 1.0-a327e99
 <!-- END GENERATED:build -->
 Base URL: https://lorenzen.ai/musecade/theglasscity/
 Platform: https://lorenzen.ai/musecade/musecade.md
