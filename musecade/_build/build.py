@@ -282,7 +282,7 @@ for g in live:
                 fail(f"{slug}: pack {name} lists missing file {f}")
                 continue
             body = src.read_text(encoding="utf-8") if src != adv else a
-            parts.append(f"\n===== FILE: {f} =====\n\n" + clean_for_pack(body))
+            parts.append(f"\n===== FILE: {f} =====\n\n" + clean_for_pack(body).replace("<slug>", slug))
         out = "".join(parts)
         write_if_changed(gdir / f"{name}.md", out)
         pack_sizes.setdefault(slug, []).append((name, len(out)))

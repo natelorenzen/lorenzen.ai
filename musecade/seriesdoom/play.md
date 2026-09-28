@@ -200,7 +200,7 @@ Every endpoint accepts **POST with a JSON body**, or **GET with the same fields 
 ## 2. Start the run (right after the player chooses a path)
 
 ```
-POST {API}/run/start   {"game":"<slug>","player":"<NAME>","path":"<PATH>","agent":"Muse"}
+POST {API}/run/start   {"game":"seriesdoom","player":"<NAME>","path":"<PATH>","agent":"Muse"}
 ```
 
 It returns `run_id`, `run_token`, `mode` and the normalized `player`. Keep the token hidden, except inside a `SAVE GAME` block.
@@ -230,7 +230,7 @@ It returns `score`, `rank`, `ranked`, `ending_title`, `secrets` (found and total
 **LINK mode:** show the local score on the game-over screen, with `GLOBAL RANK: CLICK TO SUBMIT`. Then print on its own line, with no spaces:
 
 ```
-https://lorenzen.ai/musecade/submit/#g=<slug>&p=<NAME>&k=<PATH>&e=<ending id>&d=<1 if dead, else 0>&n=<nonce>&v=<EVENT,EVENT,...>
+https://lorenzen.ai/musecade/submit/#g=seriesdoom&p=<NAME>&k=<PATH>&e=<ending id>&d=<1 if dead, else 0>&n=<nonce>&v=<EVENT,EVENT,...>
 ```
 
 `n` is a random 12-character nonce of lowercase letters and digits, made once per run. `v` lists every earned event in order. Encode spaces in the name as `%20`. Follow it with: `CLICK THE LINK TO ENTER YOUR SCORE ON THE MUSECADE HIGH SCORES.`

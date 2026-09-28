@@ -299,6 +299,24 @@ await test("a game with no death refuses died:true", async () => {
   assert.equal(ok.body.score, 250 + 300 + 400);
 });
 
+await test("every game can post a ranked run to its own board", async () => {
+  const early = { theblackroad: "ENDING_NAME_IN_THE_SNOW", theglasscity: "ENDING_STAR_WITHOUT_A_NAME", theseaglassinn: "ENDING_LAST_FERRY", seriesdoom: "ENDING_RUNWAY_ZERO" };
+  assert.deepEqual(Object.keys(early).sort(), Object.keys(GAMES).sort());
+  for (const [slug, ending] of Object.entries(early)) {
+    const paths = GAMES[slug].paths; const path = Array.isArray(paths) ? paths[0] : Object.keys(paths)[0];
+    const s = await post("/run/start", { game: slug, player: `Every ${slug.slice(0, 5)}`, path }, `10.9.${ip++}.1`);
+    assert.equal(s.status, 200, `${slug}: ${JSON.stringify(s.body)}`);
+    const r = s.body;
+    ageRun(r.run_id, 60 * 60);
+    const c = await post("/run/complete", { ...r, ending, died: GAMES[slug].endings[ending].fate === "dies" });
+    assert.equal(c.status, 200, `${slug}: ${JSON.stringify(c.body)}`);
+    assert.equal(c.body.ranked, true, `${slug}: ${JSON.stringify(c.body)}`);
+    const own = await get(`/leaderboard?game=${slug}&limit=50`);
+    assert.equal(typeof c.body.rank, "number", slug);
+    assert.ok(own.body.rows.length > 0 && own.body.rows.every((x) => x.game === slug), slug);
+  }
+});
+
 await test("rate limiting stops floods of new runs from one address", async () => {
   let last;
   for (let i = 0; i < 14; i++) last = await post("/run/start", { game: "theblackroad", player: "Spam", path: "WARDEN" }, "10.66.6.6");
