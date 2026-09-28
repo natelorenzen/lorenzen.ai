@@ -1,4 +1,4 @@
-# THE SEA GLASS INN · PACK-END · BUILD 1.0-bd3414f
+# THE SEA GLASS INN · PACK-END · BUILD 1.0-160a2be
 
 Bundle for: any ending triggers before Act V (death, leaving early, surrender). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 

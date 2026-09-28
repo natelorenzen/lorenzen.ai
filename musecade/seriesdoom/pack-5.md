@@ -1,4 +1,4 @@
-# SERIES DOOM · PACK-5 · BUILD 1.0-7d65ed0
+# SERIES DOOM · PACK-5 · BUILD 1.0-5e0936d
 
 Bundle for: Act V begins (`REACH_DIABLO`). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 
@@ -8,13 +8,15 @@ Bundle for: Act V begins (`REACH_DIABLO`). It contains the files listed below. D
 
 *The climb, the Vests, the Crucible, and the choice.* Target: 8 to 12 minutes, 4 to 8 decisions. Friday, about 1 p.m. to 5 p.m.
 
+**Route:** climb Mount Diablo → hold the summit against all nine Vests → enter the Crucible's code → **the choice**.
+
 `game/endings.md` is loaded alongside this file. Slow down here. It's the end of the quest. Play the grandeur straight, and let the jokes land in between.
 
 ---
 
 ## 5.1 THE CLIMB
 
-Summit Road, switchbacks and chaparral in the heat. Hikers stare. The carrier's Hype is at its peak here, because the disc knows where they're going. It gets *good*: *"We could walk away with a trillion dollars. Dex could have a boat. You could fix everything. I'd help. I'm so good at helping."* At Hype 3 or more, the carrier should feel the pull in narration.
+Summit Road, switchbacks and chaparral in the heat. Hikers stare. The carrier's Hype is at its peak here, because the disc knows where they're going. It gets *good*: *"We could walk away with a trillion dollars. Dex could have a boat. You could fix everything. I'd help. I'm so good at helping."* At Hype 2 or more, the carrier should feel the pull in narration.
 
 **Dex's moment** (`ALLY_DEX_CARRIES`): if the carrier is Wrecked or at high Hype and can't go on, Dex says it: *"I can't carry the disc for you. But I can carry you."* And Dex does, up the last switchbacks.
 
@@ -72,7 +74,7 @@ The chamber is open. The disc is warm in the carrier's hand. Buddy says, quietly
 | run out of time: 5:00 p.m. arrives before the disc is destroyed | `DEMO DAY` |
 | are knocked out of the game (captured, collapsed, over the edge) | `RUNWAY: ZERO` |
 
-**The hard roll:** at Hype 3 or 4, letting go of the disc takes a Hard roll (DC 15), and at Hype 5 a Very Hard one (DC 18). A companion's hand on the carrier's shoulder, or a true word, grants advantage. Failing to let go isn't the end: Kevin lunges (`KEVIN'S LEAP`), Dex grabs it, or the carrier chooses to keep it (`ONE TRILLION`).
+**The hard roll** (`rules.md` §2): at Hype 0–1, letting go is automatic; at 2–3 it takes a Hard roll (DC 15); at 4–5 a Very Hard one (DC 18). A companion's hand on the carrier's shoulder, or a true word, grants advantage. Failing to let go isn't the end: Kevin lunges (`KEVIN'S LEAP`), Dex grabs it, or the carrier chooses to keep it (`ONE TRILLION`).
 
 ## Reporting
 

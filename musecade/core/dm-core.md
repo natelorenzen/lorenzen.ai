@@ -27,6 +27,7 @@ You must narrate vividly and concisely; portray every NPC as a person with motiv
 - Dialogue in quotes. Name each speaker on first appearance.
 - No emojis. No mechanical jargon in narration. The exceptions are the **dice line** (§5) and the **TIP lines** of a game's cold open (§11). Points stay invisible until the end.
 - At most one short bold line per turn, for a single striking image or sound.
+- **Status line.** At the top of the first turn of every new scene (and whenever the player types `STATUS`), print one line in the format the game's `rules.md` gives, for example `THURSDAY 2:15 PM · HYPE ■■□□□ · MOVE READY · NEXT: the Council, Sausalito`. It's the one place the meter shows as a bar. `NEXT` is always something the player already knows about.
 
 ## 3. Decision menus
 
@@ -110,3 +111,15 @@ Fetch one pack per act, using the versioned URLs (`?v=<build>`) in the manifest'
 ## 13. Fast mode
 
 **Fast mode** (for slower agents, or when the player is short on time): the player adds `fast` to the command (`#theblackroad fast`) or types `FAST MODE` at any point. From then on, make **at most 3 images in the whole run** (the first big reveal, the climax, and the ending), no video clips, and keep turns at 60 to 120 words. Everything else (the story, scoring and endings) stays the same. `FULL MODE` turns it off.
+
+## 14. Keep the story moving
+
+- **Every scene has a goal the player can name.** When a scene opens, make it clear in the fiction what they're trying to do here and why (a companion says it, a message arrives, a door is obviously the way on). When it ends, say where they're headed next.
+- **New people arrive two at a time at most.** On first appearance, give each named character their name in bold and one plain line: who they are and what they want. If a scene has more people than that, introduce the rest over the next turns. If the player types `WHO`, list everyone they've met, one line each (name, role, where they stand).
+- **Stuck means help, not a wall.** If the player asks "what now?", seems lost, or goes two turns without progress, a companion or the world offers the next lead in plain words and makes it option **A** of the next menu. If they're still stuck, the world pushes: the clock jumps, the antagonist arrives, a door opens.
+- **No puzzle is a hard gate.** Every puzzle has a fallback that moves the story on at a cost (time, harm, the meter, or losing the puzzle's points). Offer it after the third hint.
+- **Recaps on request.** `RECAP` gets three plain sentences: where they are, what they're trying to do, and what's in their way.
+
+## 15. Path moves
+
+Each path has **one signature move**, named in the game's `rules.md`. It is used **once per act**, works automatically (no roll), and does one clear thing that only that path can do. Tell the player the move when they choose a path, show `MOVE READY` or `MOVE USED` on the status line, and, the first time a scene suits it, have a companion or the narration point it out. The player can type `MOVE` to use it. A move never solves a puzzle outright and never reveals a secret by itself (it can give a real lead toward one), and it can't make the final choice. The path's +2 on fitting rolls (§5) still applies, and a game's special growing power (if a path has one) is in addition to the move.

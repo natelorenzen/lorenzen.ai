@@ -20,6 +20,7 @@ Three puzzles: environmental (the Hive), social (the leak) and historical (the C
 
 - **Solution:** trigger the 4th-floor "ALL HANDS" to draw the Landlord to the lights while they slip down the unlit stairwell. Ride behind the cleaning robot through the badge doors, or hack its badge. Say *"please"* to the stairwell lock. (A Hacker can spoof a booking; an Operator reads the schedule; a Hustler talks the voice-lock into anything.)
 - **Solved** (they got through by using the building against itself): `PUZZLE_HIVE_SOLVED`, plus `PUZZLE_HIVE_NO_HINT` if unaided. The Landlord still comes. See `ENC_HIVE`, and Gary's stand.
+- **Fallback** (after the third hint): the Landlord wakes early and they have to run the long way, down the fire escape: it costs an hour and everyone ends up Bruised, with no puzzle event.
 - **The Wall of Pivots** is on the 3rd floor. It's a Crucible clue (Puzzle 3).
 
 ---
@@ -48,6 +49,7 @@ Three puzzles: environmental (the Hive), social (the leak) and historical (the C
 5. The email signature reads *"Founders @ Walkr (sent from a DVD)"*.
 
 - **Solved:** identify Buddy with at least **two** clues: `PUZZLE_LEAK_SOLVED`, plus `_NO_HINT`, plus `DISCOVER_BUDDY_EMAILS`. The fix is airplane mode, a Faraday pouch from a chip bag, or pulling the Wi-Fi card. The Vests lose the trail until Act V.
+- **Fallback:** if it's unsolved by the Ferry Building, Dex finds the Sent folder by accident (`acts/act-3.md` 3.3). No puzzle events.
 - **Wrong accusations:** accusing a companion costs trust (-2) and makes a scene (Leo is devastated, Gemma is furious, Brandon is smug). Accusing Gary makes him sad, and he forgives it instantly.
 
 ---

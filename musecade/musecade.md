@@ -32,27 +32,27 @@ https://lorenzen.ai/musecade/theblackroad/play.md?v=1.5-22eb3e0
 Title: The Glass City
 Genre: Espionage
 Duration: 45–75 minutes
-Build: 1.0-c2285e0
+Build: 1.0-e6af1ae
 Play:
-https://lorenzen.ai/musecade/theglasscity/play.md?v=1.0-c2285e0
+https://lorenzen.ai/musecade/theglasscity/play.md?v=1.0-e6af1ae
 
 ### #theseaglassinn
 
 Title: The Sea Glass Inn
 Genre: Drama · Mystery
 Duration: 45–75 minutes
-Build: 1.0-bd3414f
+Build: 1.0-160a2be
 Play:
-https://lorenzen.ai/musecade/theseaglassinn/play.md?v=1.0-bd3414f
+https://lorenzen.ai/musecade/theseaglassinn/play.md?v=1.0-160a2be
 
 ### #seriesdoom
 
 Title: Series Doom
 Genre: Satire · Comedy
 Duration: 45–75 minutes
-Build: 1.0-7d65ed0
+Build: 1.0-5e0936d
 Play:
-https://lorenzen.ai/musecade/seriesdoom/play.md?v=1.0-7d65ed0
+https://lorenzen.ai/musecade/seriesdoom/play.md?v=1.0-5e0936d
 <!-- END GENERATED:games -->
 
 ---

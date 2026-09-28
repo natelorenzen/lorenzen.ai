@@ -14,13 +14,23 @@ An epic fantasy quest across the Bay Area, told with a completely straight face.
 
 ## 2. Hype: the disc's pull
 
-The disc talks, in a friendly notification-toast voice, to whoever carries it. It offers **powers**: reroute every traffic light on Market Street, write an irresistible pitch, generate $40,000 in a Venmo account, predict exactly what a VC wants to hear, or hack a robotaxi.
+**Hype is how badly the disc wants to keep you.** It's the one number the player should always understand. It runs **0 to 5** and shows on the status line as a bar: `HYPE ■■□□□`.
 
-- **Using a power works**, spectacularly, and raises the carrier's `hype` by 1. (Record `used_disc`.)
-- **Hype 0–1:** normal. **2:** the carrier starts saying things like "circle back" and "at scale" without noticing. **3:** they refer to the quest as "the mission" and to companions as "resources"; it costs companion trust, and rolls to *let go of the disc* are made with disadvantage. **4:** they seriously consider keeping it. **5:** the disc decides for them, and at the Crucible they must win a Very Hard roll (DC 18) to let go.
-- **Hype falls** (by 1) when the carrier hands the disc to someone else for a while, when a companion says something true and kind to them, when they touch grass (literally: a real moment outdoors, off their phone), or after a whole act without using a power.
-- Dex can carry the disc for a stretch, and Dex's hype is tracked too.
-- Record `max_hype` for `ACH_LOW_HYPE`.
+**What raises it:** using one of the disc's powers (+1, every time). That's the only thing. The disc offers powers often, in a friendly notification voice: reroute every traffic light on Market Street, write an irresistible pitch, put $40,000 in a Venmo account, hack a robotaxi. **They always work.** That's the trap. (Record `used_disc`.)
+
+**What lowers it (−1 each):** handing the disc to Dex for a scene; a companion telling the carrier something true and kind; touching grass (a real moment outdoors, off your phone); or getting through a whole act without using a power.
+
+**What it does:** three plain bands, and say which one they're in when it changes (`HYPE 3 · THE DISC IS TALKING OVER YOU`).
+
+| Hype | Band | Effect |
+|---|---|---|
+| 0–1 | **Yourself** | No effect. |
+| 2–3 | **Pitching** | You start saying "circle back" and "at scale". Companions notice, and trust is harder to gain. At the Crucible, letting go takes a **DC 15** roll. |
+| 4–5 | **Hooked** | You call the quest "the mission" and your friends "resources". Companions may try to take the disc from you. At the Crucible, letting go takes a **DC 18** roll. |
+
+At 0–1, letting go at the Crucible is automatic.
+
+**At the end** it matters twice: `ACH_LOW_HYPE` needs a `max_hype` of 1 or less, and a founder who can't let go at the Crucible risks `ONE TRILLION` or `KEVIN'S LEAP`. Only the carrier's Hype counts. While Dex carries the disc, the bar pauses.
 
 ## 3. Harm
 
@@ -39,14 +49,16 @@ Healing is scarce: a coffee and a burrito take Wrecked back to Bruised, once per
 
 ## 5. Paths: what kind of founder
 
-**+2** on d20 rolls that fit (`core/dm-core.md` §5). The act files mark `HACKER SEES`, `HUSTLER SEES`, `VISIONARY SEES` and `OPERATOR SEES`.
+Each path gets **+2** on d20 rolls that fit (`core/dm-core.md` §5), sees different things (the act files mark `HACKER SEES`, `HUSTLER SEES`, `VISIONARY SEES`, `OPERATOR SEES`), and has **one move per act** (`core/dm-core.md` §15):
 
-| Path | Notices | Excels at |
+| Path | Notices | Move (once per act, no roll) |
 |---|---|---|
-| **HACKER** | Systems, code, hardware, what's actually broken | Hacking, building contraptions, debugging (Buddy included), tech the disc doesn't control |
-| **HUSTLER** | Who has money, who wants what, the sale | Pitching, bluffing, negotiating, talking past security |
-| **VISIONARY** | The story, the mission, what people secretly long for | Inspiring, rallying, the big speech; the **Reality Distortion Field** (§6) |
-| **OPERATOR** | Logistics, schedules, the fastest route, the budget | Plans, timing, keeping the team alive, spreadsheets in a crisis |
+| **HACKER** | systems, code, what's actually broken | **ROOT ACCESS:** take over one device or system in the scene (a door, a robotaxi, the lights, a Vest's tablet) and make it do one thing. |
+| **HUSTLER** | who has money, who wants what | **THE ASK:** one person gives you one real yes: a favor, a ride, a secret, a way in. Not the disc, and not their life. |
+| **VISIONARY** | what people secretly long for | **THE KEYNOTE:** one speech that turns a room or a crowd for a scene. Also grows the Reality Distortion Field (§6). |
+| **OPERATOR** | routes, schedules, the budget | **THE PLAN:** say what you want to happen; the team pulls it off cleanly, and the clock gets 2 hours back. |
+
+The moves are how the founders beat the Bay Area **without** the disc. When a scene is exactly what a move is for, have Dex point at it: *"This is literally your thing."*
 
 ## 6. Reality Distortion Field (Visionary only)
 
@@ -54,11 +66,15 @@ The Visionary's growing power is **belief**. Each person they genuinely rally to
 
 | Rank | How | Effect |
 |---|---|---|
-| **I** | at the start | They can make one person *want* to help, for a scene |
-| **II** | three people rallied | Crowds listen; a Visionary speech rolls with advantage |
-| **III** | six rallied | They can talk a room of VCs, or the Vests themselves, into anything (a roll, once per act). Buddy listens to them. |
+| **I** | at the start | The Keynote works on one person, or a small room |
+| **II** | three people rallied | The Keynote works on crowds, and Visionary speeches roll with advantage |
+| **III** | six rallied | The Keynote works twice per act and can turn the Vests themselves. Buddy listens to you. |
 
-Mark rank changes with one line: `REALITY DISTORTION FIELD · RANK II`. Report `ACH_DISTORTION_FIELD` at rank III. **The field does not come from the disc.** It's the one power that doesn't raise Hype.
+Mark rank changes with one line: `REALITY DISTORTION FIELD · RANK II`. Report `ACH_DISTORTION_FIELD` at rank III. **The field does not come from the disc**, so it never raises Hype.
+
+## Status line
+
+`<DAY TIME> · HYPE ■■□□□ · MOVE READY · NEXT: <where they're headed>`, for example `THURSDAY 10:00 AM · HYPE ■□□□□ · MOVE READY · NEXT: win the Council`. Add `· <HARM>` when the carrier is Bruised or Wrecked.
 
 ## 7. Set pieces
 

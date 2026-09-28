@@ -2,6 +2,8 @@
 
 *One long night. The mentor, the enemy spymaster, the daughter, and every loyalty coming due.* Target: 12 to 16 minutes, 8 to 12 decisions. Covers night 3, from dusk to the hour before dawn.
 
+**Route:** face Ashby → meet Colonel Voss at the Glasshouse at midnight → *get Katya out* (if you know about her) → each ally's moment → **be ready at the bridge before dawn**.
+
 Before each scene, check state: which allies are recruited, and their trust and secrets; what the player can **prove** (the film, the ribbon, the canary result, Daniel's file); heat; whether Katya is known; and whether Margot is in play.
 
 ---

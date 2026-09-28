@@ -1,4 +1,4 @@
-# THE SEA GLASS INN · PACK-3 · BUILD 1.0-bd3414f
+# THE SEA GLASS INN · PACK-3 · BUILD 1.0-160a2be
 
 Bundle for: Act III begins (`REACH_LETTERS`). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 
@@ -7,6 +7,8 @@ Bundle for: Act III begins (`REACH_LETTERS`). It contains the files listed below
 # ACT III: THE LETTERS
 
 *Who Winnie really was, the cave, the fog, and the truth from her daughter.* Target: 12 to 16 minutes, 8 to 11 decisions. Thursday.
+
+**Route:** read Eli's letters → reach the cave at 4:10 low tide → Marguerite's story → legwork on whose council vote is bought → **find Maya in the fog** → the seawall talk.
 
 Load `world/winnie.md` and `game/encounters.md` now.
 

@@ -1,4 +1,4 @@
-# THE GLASS CITY · PACK-5 · BUILD 1.0-c2285e0
+# THE GLASS CITY · PACK-5 · BUILD 1.0-e6af1ae
 
 Bundle for: Act V begins (`REACH_BRIDGE`). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 
@@ -7,6 +7,8 @@ Bundle for: Act V begins (`REACH_BRIDGE`). It contains the files listed below. D
 # ACT V: THE GLASS BRIDGE
 
 *Dawn, the convoy hour, and the choice.* Target: 8 to 12 minutes, 4 to 8 decisions.
+
+**Route:** reach the bridge in the convoy hour → the confrontation → **the choice**.
 
 `game/endings.md` is loaded alongside this file. Slow down here. The player has spent an hour getting to this bridge.
 

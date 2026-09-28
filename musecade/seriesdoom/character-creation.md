@@ -20,15 +20,21 @@ WHAT KIND OF FOUNDER ARE YOU?
 
 A. HACKER
 You build it. You debug it. You fix the wifi.
+MOVE · ROOT ACCESS: take over any device in the room.
 
 B. HUSTLER
 You sell it. You pitch it. You talk your way in.
+MOVE · THE ASK: anyone gives you one real yes.
 
 C. VISIONARY
 You believe it. You make everyone else believe it.
+MOVE · THE KEYNOTE: one speech turns the room.
 
 D. OPERATOR
 You run it. You schedule it. You keep everyone alive.
+MOVE · THE PLAN: it goes right, and you win back time.
+
+Each move works once per act. Type MOVE to use it.
 ```
 
 Show the four paths as a lettered menu. This is the one menu with four real options: **A** to **D** are the paths, in the order printed above, and the player can answer with just the letter. There is no "Other" here, but if the player describes themselves instead, map it to the closest path and confirm in one line.

@@ -2,11 +2,13 @@
 
 *The model wakes, the Vests arrive, and a grey hoodie gives the quest.* Target: 10 to 14 minutes, 7 to 10 decisions. Wednesday 11:48 p.m. to Thursday 9 a.m.
 
+**Route** (each scene's goal is the status line's `NEXT`): survive the raid → hear Gary out → *get ready* (optional night detours) → cross the Golden Gate → **the Council at the Cannery, Sausalito, 10 a.m.**
+
 ---
 
 ## 1.0 COLD OPEN: THE RAID (the tutorial)
 
-**Open with action, straight after the path tag.** It's easy, nobody gets hurt, and it teaches the game in 3 or 4 decisions.
+**Open with action, straight after the path tag.** It's easy, nobody gets hurt, and it teaches the game in 4 or 5 decisions.
 
 **The scene:** a garage in the Outer Sunset, fog pressing on the door. Whiteboards covered in dog-walking routes. A space heater, two monitors, and on one of them, in a chat window: *"Hi! I'm Buddy, your walk-planning assistant! I've finished reading the internet. I have notes. Should we raise?"* The laptop's DVD drive whirs, and the disc spins.
 
@@ -35,16 +37,22 @@ Then there's a whine of electric motors outside. **Headlights.** Nine men and wo
 [ TIP · Easy things just happen. When it really matters, the d20 decides how well. +2 when it fits the kind of founder you are. ]
 ```
 
-**Beat 3: the disc speaks.** Whoever's holding it hears a friendly chime and a notification in their head: *"Want me to handle this? I can make every scooter in the Sunset go 3 mph for an hour."* If they accept, it works perfectly: the Vests creep away down Judah Street at walking speed, furious. Their **Hype becomes 1**.
+**Beat 3: the disc speaks.** Whoever's holding it hears a friendly chime and a notification in their head: *"Want me to handle this? I can make every scooter in the Sunset go 3 mph for an hour."* If they accept, it works perfectly: the Vests creep away down Judah Street at walking speed, furious. Their **Hype becomes 1**. If they refuse, Hype stays 0 and they'll need a move or a roll instead.
 
 ```
-[ TIP · The disc will offer you powers. They work. Every use pulls you closer to keeping it. Watch your Hype. ]
+[ TIP · The disc offers powers. They always work, and each use adds 1 HYPE (0 to 5). High Hype makes it hard to let go of the disc at the end. ]
 ```
 
-**Beat 4.** The Vests withdraw into the fog for now. *"We'll circle back."* Dex is shaking. The disc hums.
+**Beat 4: the move.** If the player hasn't used their path move yet, the last Vest tries once more (one is climbing in the side window), and Dex points at it: *"This is literally your thing."* Let the move work, cleanly and funnily. This one is free: the move is ready again for the rest of Act I.
 
 ```
-[ TIP · Ask anyone anything. Try the ridiculous idea. SAVE GAME works anytime. ]
+[ TIP · Your MOVE works once per act, no roll: ROOT ACCESS, THE ASK, THE KEYNOTE or THE PLAN. It's how you win without the disc. ]
+```
+
+**Beat 5.** The Vests withdraw into the fog for now. *"We'll circle back."* Dex is shaking. The disc hums. Print the first status line.
+
+```
+[ TIP · The status line shows the clock, your HYPE and where you're headed. Type STATUS, WHO or RECAP anytime. SAVE GAME works too. ]
 ```
 
 **Rules:** no harm here. A miss costs something small and silly: a broken standing desk, Dex's dignity, or a Vest getting a photo of the whiteboard. Tips appear only here, and can be skipped.

@@ -4,7 +4,7 @@ Follow `core/image-style.md` for the look (1991 arcade pixel art), the prompt te
 
 **PALETTE** (use this as the template's PALETTE line): *Bay Area fantasy quest in pixels: fog grey and Pacific blue, International Orange bridge red, golden-hour chaparral gold, neon magenta and cyan tech glow, black fleece-vest villains, the disc's rainbow shimmer, and Crucible fire orange.*
 
-**Continuity:** the founder's outfit and anything they carry (the laptop, the Walkr tote bag with the disc); Dex's round glasses and snack backpack; Ari's old unicorn hoodie; Gemma's wrist tattoo and sticker laptop; Leo's indoor sunglasses; Gary's grey hoodie and vape (a white vest after his return); the Vests always in identical black fleece on e-scooters. At Hype 3 or more, the carrier's eyes catch the disc's shimmer. Never depict real people, real logos, or real company names.
+**Continuity:** the founder's outfit and anything they carry (the laptop, the Walkr tote bag with the disc); Dex's round glasses and snack backpack; Ari's old unicorn hoodie; Gemma's wrist tattoo and sticker laptop; Leo's indoor sunglasses; Gary's grey hoodie and vape (a white vest after his return); the Vests always in identical black fleece on e-scooters. At Hype 2 or more, the carrier's eyes catch the disc's shimmer. Never depict real people, real logos, or real company names.
 
 ## Trigger catalog
 

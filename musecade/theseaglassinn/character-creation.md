@@ -23,15 +23,21 @@ WHO HAVE YOU BEEN?
 
 A. CARETAKER
 Hosting, feeding, listening, holding everyone together.
+MOVE · PUT THE KETTLE ON: someone tells you what's wrong.
 
 B. STRATEGIST
 Numbers, contracts, negotiation, seeing the angles.
+MOVE · THE FINE PRINT: see the angle that matters.
 
 C. ARTIST
 Color, light, detail, making beautiful things. (Once. Maybe again.)
+MOVE · A QUICK SKETCH: draw it, and see what you missed.
 
 D. ADVENTURER
 Boats, weather, cold water, saying yes.
+MOVE · SAY YES: go where no one else can.
+
+Each move works once per act. Type MOVE to use it.
 ```
 
 Show the four paths as a lettered menu. This is the one menu with four real options: **A** to **D** are the paths, in the order printed above, and the player can answer with just the letter. There is no "Other" here, but if the player describes themselves instead, map it to the closest path and confirm in one line.

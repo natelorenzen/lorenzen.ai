@@ -20,15 +20,21 @@ WHAT DID THE OFFICE TRAIN YOU FOR?
 
 A. OPERATIVE
 Fights, chases, protection, endurance.
+MOVE · CLEAN HANDS: end a fight in one action.
 
 B. ANALYST
 Codes, documents, patterns, deduction.
+MOVE · THE FILE: one true answer about anyone.
 
 C. GHOST
 Infiltration, disguise, locks, losing a tail.
+MOVE · VANISH: shake them, or slip inside.
 
 D. DIPLOMAT
 Charm, lies, leverage, reading people.
+MOVE · THE OFFER: they take a deal they shouldn't.
+
+Each move works once per act. Type MOVE to use it.
 ```
 
 Show the four paths as a lettered menu. This is the one menu with four real options: **A** to **D** are the paths, in the order printed above, and the player can answer with just the letter. There is no "Other" here, but if the player describes themselves instead, map it to the closest path and confirm in one line.

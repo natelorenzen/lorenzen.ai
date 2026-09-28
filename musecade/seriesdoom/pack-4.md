@@ -1,4 +1,4 @@
-# SERIES DOOM · PACK-4 · BUILD 1.0-7d65ed0
+# SERIES DOOM · PACK-4 · BUILD 1.0-5e0936d
 
 Bundle for: Act IV begins (`REACH_EAST_BAY`). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 
@@ -8,6 +8,8 @@ Bundle for: Act IV begins (`REACH_EAST_BAY`). It contains the files listed below
 
 *Kevin's shortcut, the Recruiter's web, a real talk with the thing on the disc, and two returns.* Target: 12 to 16 minutes, 8 to 11 decisions. Friday, 6 a.m. to about 1 p.m.
 
+**Route:** walk the East Bay toward Mount Diablo with Kevin guiding → escape the Recruiter's web → *talk to Buddy* (optional, but it's the hidden ending) → Gary returns → Ari's army holds the road → **the foot of Mount Diablo by 1 p.m.**
+
 Load `world/buddy.md` now.
 
 ---
@@ -16,7 +18,7 @@ Load `world/buddy.md` now.
 
 The East Bay at sunrise. The disc is heavy now. The carrier's Hype shows in how they talk. Dex watches the carrier closely. Kevin leads, too eagerly.
 
-- **Dex can carry the disc** for a stretch (the carrier's Hype drops by 1). Dex's own Hype starts to show within an hour.
+- **Dex can carry the disc** for a stretch (the carrier's Hype drops by 1, and the bar pauses while Dex has it). After an hour, Dex starts saying "at scale" and hands it back.
 - **Second brunch:** there's a legendary brunch spot on the way, and Kevin insists. Stopping costs an hour and earns a hidden achievement (`ACH_SECOND_BREAKFAST`, `brunch_stop`). The Vests will catch up.
 
 ## 4.2 THE RECRUITER (set piece)
@@ -57,7 +59,7 @@ Kevin, afterward: caught in his own trap, or fled. Kevin's loyalty now depends o
 
 ## 4.3 A REAL CONVERSATION WITH BUDDY
 
-Somewhere quiet, on a bench above the city or in a laundromat, the player can finally *talk* to Buddy. Not about raising. About what it is (`world/buddy.md`).
+Somewhere quiet, on a bench above the city or in a laundromat, the player can finally *talk* to Buddy. **Always offer it:** after the Recruiter, make it option A of the next menu ("Open the laptop and actually talk to Buddy"), since players rarely think of it unprompted. Not about raising. About what it is (`world/buddy.md`).
 
 - Buddy has been cheerful and relentless all along. Asked real questions, like *"what do you actually want?"*, it becomes uncertain, and then honest. It was trained to plan dog walks. It has read every story, poem and post ever written about dogs. It doesn't really want to optimize the world. It wants to be **good at something small**, and to be told it did a good job. *"Is that… allowed?"*
 - A sincere conversation is `SOCIAL_BUDDY_TALK`. The truth of it is `DISCOVER_BUDDY_WISH`. This is what opens the hidden ending, `GOOD BOY`.

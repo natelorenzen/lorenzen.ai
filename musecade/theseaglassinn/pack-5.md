@@ -1,4 +1,4 @@
-# THE SEA GLASS INN · PACK-5 · BUILD 1.0-bd3414f
+# THE SEA GLASS INN · PACK-5 · BUILD 1.0-160a2be
 
 Bundle for: Act V begins (`REACH_FESTIVAL`). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 
@@ -7,6 +7,8 @@ Bundle for: Act V begins (`REACH_FESTIVAL`). It contains the files listed below.
 # ACT V: THE FESTIVAL
 
 *The whole island in one place, the vote, and the choice about the rest of her life.* Target: 8 to 12 minutes, 4 to 7 decisions. Saturday.
+
+**Route:** the island shows up → the Sea Glass Festival → the Grange Hall vote → **the choice**.
 
 `game/endings.md` is loaded alongside this file. Slow down. Let her enjoy the day before she has to choose.
 

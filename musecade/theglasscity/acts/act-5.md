@@ -2,6 +2,8 @@
 
 *Dawn, the convoy hour, and the choice.* Target: 8 to 12 minutes, 4 to 8 decisions.
 
+**Route:** reach the bridge in the convoy hour → the confrontation → **the choice**.
+
 `game/endings.md` is loaded alongside this file. Slow down here. The player has spent an hour getting to this bridge.
 
 ---

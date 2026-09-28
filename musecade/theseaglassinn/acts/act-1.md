@@ -2,6 +2,8 @@
 
 *Arrival, the inn, the will, the first piece of the puzzle, and the man who wants to buy it all.* Target: 11 to 15 minutes, 7 to 10 decisions. Monday.
 
+**Route** (each scene's goal is the status line's `NEXT`): ride out the squall → land at Halcyon Harbor → open the Sea Glass Inn and meet Bea → hear Preston Vale's offer → **find the first piece of sea glass ("Start where the light used to be")**.
+
 ---
 
 ## 1.0 COLD OPEN: THE SQUALL (the tutorial)
@@ -41,7 +43,13 @@
 **Beat 4.** Halcyon rises out of the rain: a harbor of shingled houses, a church steeple, and on the northern bluff a tall grey Victorian with a widow's walk. Beyond it on the point stands a **dark lighthouse**.
 
 ```
-[ TIP · Ask anyone anything. Follow your curiosity. Type SAVE GAME anytime to keep your place. ]
+[ TIP · Who you've been gives you a MOVE, once per act, no roll. Type MOVE when the moment feels right. ]
+```
+
+Then print the first status line.
+
+```
+[ TIP · The status line shows the day, your COMPOSURE and where you're headed. Type STATUS, WHO or RECAP anytime. Ask anyone anything. SAVE GAME keeps your place. ]
 ```
 
 **Rules:** no harm. A miss costs something small: a soaked coat, a smashed cake (Marguerite forgives you in about three business days), or her lawyer's envelope blown open on the deck. Tips appear only here, and can be skipped.

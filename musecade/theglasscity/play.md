@@ -1,4 +1,4 @@
-# THE GLASS CITY · PLAY (start here) · BUILD 1.0-c2285e0
+# THE GLASS CITY · PLAY (start here) · BUILD 1.0-e6af1ae
 
 This single file is the whole cartridge for starting the game: its manifest, rules, scoring, image rules and Act I, bundled so you only fetch once. Start with the manifest (`adventure.md`, below) and follow it. Do not fetch the individual files named inside; they are all included here.
 
@@ -33,6 +33,7 @@ You must narrate vividly and concisely; portray every NPC as a person with motiv
 - Dialogue in quotes. Name each speaker on first appearance.
 - No emojis. No mechanical jargon in narration. The exceptions are the **dice line** (§5) and the **TIP lines** of a game's cold open (§11). Points stay invisible until the end.
 - At most one short bold line per turn, for a single striking image or sound.
+- **Status line.** At the top of the first turn of every new scene (and whenever the player types `STATUS`), print one line in the format the game's `rules.md` gives, for example `THURSDAY 2:15 PM · HYPE ■■□□□ · MOVE READY · NEXT: the Council, Sausalito`. It's the one place the meter shows as a bar. `NEXT` is always something the player already knows about.
 
 ## 3. Decision menus
 
@@ -116,6 +117,18 @@ Fetch one pack per act, using the versioned URLs (`?v=<build>`) in the manifest'
 ## 13. Fast mode
 
 **Fast mode** (for slower agents, or when the player is short on time): the player adds `fast` to the command (`#theblackroad fast`) or types `FAST MODE` at any point. From then on, make **at most 3 images in the whole run** (the first big reveal, the climax, and the ending), no video clips, and keep turns at 60 to 120 words. Everything else (the story, scoring and endings) stays the same. `FULL MODE` turns it off.
+
+## 14. Keep the story moving
+
+- **Every scene has a goal the player can name.** When a scene opens, make it clear in the fiction what they're trying to do here and why (a companion says it, a message arrives, a door is obviously the way on). When it ends, say where they're headed next.
+- **New people arrive two at a time at most.** On first appearance, give each named character their name in bold and one plain line: who they are and what they want. If a scene has more people than that, introduce the rest over the next turns. If the player types `WHO`, list everyone they've met, one line each (name, role, where they stand).
+- **Stuck means help, not a wall.** If the player asks "what now?", seems lost, or goes two turns without progress, a companion or the world offers the next lead in plain words and makes it option **A** of the next menu. If they're still stuck, the world pushes: the clock jumps, the antagonist arrives, a door opens.
+- **No puzzle is a hard gate.** Every puzzle has a fallback that moves the story on at a cost (time, harm, the meter, or losing the puzzle's points). Offer it after the third hint.
+- **Recaps on request.** `RECAP` gets three plain sentences: where they are, what they're trying to do, and what's in their way.
+
+## 15. Path moves
+
+Each path has **one signature move**, named in the game's `rules.md`. It is used **once per act**, works automatically (no roll), and does one clear thing that only that path can do. Tell the player the move when they choose a path, show `MOVE READY` or `MOVE USED` on the status line, and, the first time a scene suits it, have a companion or the narration point it out. The player can type `MOVE` to use it. A move never solves a puzzle outright and never reveals a secret by itself (it can give a real lead toward one), and it can't make the final choice. The path's +2 on fitting rolls (§5) still applies, and a game's special growing power (if a path has one) is in addition to the move.
 
 ===== FILE: core/image-style.md =====
 
@@ -248,7 +261,7 @@ Make the score reveal land. One short line before the game's game-over block is 
 # THE GLASS CITY: Game Manifest
 
 Musecade Game 002 · Version 1.0 · Espionage · 45 to 75 minutes · 1 player · PG-13
-Build: 1.0-c2285e0
+Build: 1.0-e6af1ae
 Base URL: https://lorenzen.ai/musecade/theglasscity/
 Platform: https://lorenzen.ai/musecade/musecade.md
 
@@ -274,12 +287,12 @@ The game is bundled for speed. **Fetch exactly one file per act**, when its mome
 
 | When | Fetch this one file | It contains |
 |---|---|---|
-| **Start** (this file) | https://lorenzen.ai/musecade/theglasscity/play.md?v=1.0-c2285e0 | `core/dm-core.md` · `core/image-style.md` · `core/scoring.md` · `adventure.md` · `rules.md` · `character-creation.md` · `scoring.md` · `game/image-triggers.md` · `acts/act-1.md` · `characters/npcs.md` · `characters/companions.md` · `game/encounters.md` |
-| Act II begins (`REACH_CONTACT`) | https://lorenzen.ai/musecade/theglasscity/pack-2.md?v=1.0-c2285e0 | `acts/act-2.md` · `world/locations.md` · `world/factions.md` · `game/puzzles.md` |
-| Act III begins (`REACH_BURNED`) | https://lorenzen.ai/musecade/theglasscity/pack-3.md?v=1.0-c2285e0 | `acts/act-3.md` · `world/lore.md` |
-| Act IV begins (`REACH_MOLE`) | https://lorenzen.ai/musecade/theglasscity/pack-4.md?v=1.0-c2285e0 | `acts/act-4.md` |
-| Act V begins (`REACH_BRIDGE`) | https://lorenzen.ai/musecade/theglasscity/pack-5.md?v=1.0-c2285e0 | `acts/act-5.md` · `game/endings.md` · `game/achievements.md` |
-| Any ending triggers before Act V (death, leaving early, surrender) | https://lorenzen.ai/musecade/theglasscity/pack-end.md?v=1.0-c2285e0 | `game/endings.md` · `game/achievements.md` |
+| **Start** (this file) | https://lorenzen.ai/musecade/theglasscity/play.md?v=1.0-e6af1ae | `core/dm-core.md` · `core/image-style.md` · `core/scoring.md` · `adventure.md` · `rules.md` · `character-creation.md` · `scoring.md` · `game/image-triggers.md` · `acts/act-1.md` · `characters/npcs.md` · `characters/companions.md` · `game/encounters.md` |
+| Act II begins (`REACH_CONTACT`) | https://lorenzen.ai/musecade/theglasscity/pack-2.md?v=1.0-e6af1ae | `acts/act-2.md` · `world/locations.md` · `world/factions.md` · `game/puzzles.md` |
+| Act III begins (`REACH_BURNED`) | https://lorenzen.ai/musecade/theglasscity/pack-3.md?v=1.0-e6af1ae | `acts/act-3.md` · `world/lore.md` |
+| Act IV begins (`REACH_MOLE`) | https://lorenzen.ai/musecade/theglasscity/pack-4.md?v=1.0-e6af1ae | `acts/act-4.md` |
+| Act V begins (`REACH_BRIDGE`) | https://lorenzen.ai/musecade/theglasscity/pack-5.md?v=1.0-e6af1ae | `acts/act-5.md` · `game/endings.md` · `game/achievements.md` |
+| Any ending triggers before Act V (death, leaving early, surrender) | https://lorenzen.ai/musecade/theglasscity/pack-end.md?v=1.0-e6af1ae | `game/endings.md` · `game/achievements.md` |
 
 Load nothing early. Content in a pack you haven't fetched doesn't exist yet, so don't improvise its secrets. If the player goes somewhere ahead of the story, fetch that act's pack early rather than inventing a contradicting world.
 
@@ -403,7 +416,7 @@ Rain on glass. Cigarette smoke under streetlights. Everyone polite, everyone lyi
 - **Heat rises (+1)** with gunfire, a public scene, a blown cover, a failed sneak, violence, a failed roll where it makes sense, or being seen with the wrong person.
 - **Heat falls (-1)** by lying low for a whole phase (which costs time), changing identity with Ilse's papers (once), good tradecraft (a clean dry-cleaning run, a proper brush pass), or a deal that calls off one service.
 - Track `max_heat_reached` (for `ACH_COLD_TRAIL`).
-- Narrate heat, never number it: *"The desk clerk looks at you a beat too long."*
+- **Show it two ways:** as a bar on the status line (`HEAT ■■□□□ WATCHED`), and in the world (*"The desk clerk looks at you a beat too long."*). When it changes, say the new state in one line: `HEAT 3 · HUNTED`.
 
 ## 3. Wounds
 
@@ -436,6 +449,21 @@ Paths change what the character notices and what they can attempt. **+2** applie
 | **ANALYST** | Patterns, documents, codes, inconsistencies, timetables | Ciphers, records, deduction; **the Board** (§6) |
 | **GHOST** | Tails, locks, patrols, blind spots, the city's back ways | Infiltration, disguise, lockwork, losing a tail, moving unseen |
 | **DIPLOMAT** | Lies, leverage, status, who wants what | Persuasion, bluffing, bargaining, turning people, reading a room |
+
+**Moves** (once per act, no roll: `core/dm-core.md` §15):
+
+| Path | Move | What it does |
+|---|---|---|
+| **OPERATIVE** | **CLEAN HANDS** | End one fight, chase or standoff in a single decisive action. Nobody on your side is hurt, and it raises no heat. |
+| **ANALYST** | **THE FILE** | Ask one question about a person or place you've encountered, and get a true answer from what the Office's files would hold. (The Board, §6, is separate.) |
+| **GHOST** | **VANISH** | Shake every tail and lower heat by 1, *or* get into one locked or guarded place unseen. |
+| **DIPLOMAT** | **THE OFFER** | One person accepts a deal they'd normally refuse, for one scene. |
+
+When a scene is exactly what a move is for, let Tomas or the narration point at it once.
+
+## Status line
+
+`DAY <n> · <PHASE> · HEAT ■■□□□ <STATE> · MOVE READY · NEXT: <goal>`, for example `DAY 2 · EVENING · HEAT ■□□□□ NOTICED · MOVE READY · NEXT: box seven at the opera`. Add `· HURT` or `· CRITICAL` when wounded.
 
 ## 6. The Board (Analyst only)
 
@@ -481,15 +509,21 @@ WHAT DID THE OFFICE TRAIN YOU FOR?
 
 A. OPERATIVE
 Fights, chases, protection, endurance.
+MOVE · CLEAN HANDS: end a fight in one action.
 
 B. ANALYST
 Codes, documents, patterns, deduction.
+MOVE · THE FILE: one true answer about anyone.
 
 C. GHOST
 Infiltration, disguise, locks, losing a tail.
+MOVE · VANISH: shake them, or slip inside.
 
 D. DIPLOMAT
 Charm, lies, leverage, reading people.
+MOVE · THE OFFER: they take a deal they shouldn't.
+
+Each move works once per act. Type MOVE to use it.
 ```
 
 Show the four paths as a lettered menu. This is the one menu with four real options: **A** to **D** are the paths, in the order printed above, and the player can answer with just the letter. There is no "Other" here, but if the player describes themselves instead, map it to the closest path and confirm in one line.
@@ -656,6 +690,8 @@ A typical run: GLASS CITY → ARCADE → OPERA → RAID → GLASSHOUSE → BRIDG
 
 *The city, the mission, the first sign that someone knew you were coming.* Target: 12 to 16 minutes, 8 to 11 decisions. Covers day 1, from 2 a.m. on the train to the night.
 
+**Route** (each scene's goal is the status line's `NEXT`): survive the night train → through the border → check in at the Hotel Meridian → report to the station → collect NIGHTINGALE's dead drop at Café Oriel → **get out of the Glass Galleries alive**.
+
 ---
 
 ## 1.0 COLD OPEN: THE NIGHT TRAIN (the tutorial fight)
@@ -697,7 +733,13 @@ If the emergency cord was pulled, or there was a fight in the corridor, **heat b
 **Beat 4: the aftermath.** He escapes into the next car, jumps from the train at the border slow-down, or ends up unconscious on the floor. Whatever happens, something falls from his coat: **a photograph of the player**, taken recently, trimmed to passport size. It's the photograph from their own cover file. Report `DISCOVER_SWEEPER_PHOTO` when the player picks it up and studies it (most will).
 
 ```
-[ TIP · Ask questions. Search things. Try the strange idea. SAVE GAME works anytime. ]
+[ TIP · Your path has a MOVE that works once per act, no roll. Type MOVE when the moment's right. ]
+```
+
+Then print the first status line.
+
+```
+[ TIP · The status line shows the day, your HEAT and where you're headed. Type STATUS, WHO or RECAP anytime. Ask questions, try the strange idea. SAVE GAME works anytime. ]
 ```
 
 **Rules:** no wounds and no death here. A miss costs something small: a torn sleeve, dropped francs, a conductor who remembers your face (heat 1). If the player kills him, that's a choice: set `killed_someone` and `shots_fired` if a gun was used, raise heat by 2, and play the border as dangerous. Tips appear only here, and can be skipped.

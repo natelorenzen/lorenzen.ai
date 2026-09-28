@@ -2,6 +2,8 @@
 
 *Hunted by both sides, with no station and no cover, the player turns spy-hunter.* Target: 12 to 16 minutes, 8 to 12 decisions. Covers day 3, from dawn to evening.
 
+**Route:** find a place to hide and allies → read the microfilm → set the canary trap to find the mole → break into the Registry during the gala for proof → *Margot Fane* (optional) → **name CARDINAL before night falls**.
+
 Load `world/lore.md` now: the history behind Ashby, Voss and the Office.
 
 Heat is at least 3. Public actions roll with disadvantage until the player lowers it (`rules.md` §2).

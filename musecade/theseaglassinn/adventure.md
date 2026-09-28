@@ -2,7 +2,7 @@
 
 Musecade Game 003 · Version 1.0 · Drama · Mystery · 45 to 75 minutes · 1 player · Rated PG
 <!-- BEGIN GENERATED:build -->
-Build: 1.0-bd3414f
+Build: 1.0-160a2be
 <!-- END GENERATED:build -->
 Base URL: https://lorenzen.ai/musecade/theseaglassinn/
 Platform: https://lorenzen.ai/musecade/musecade.md
@@ -30,12 +30,12 @@ The game is bundled for speed. **Fetch exactly one file per act**, when its mome
 <!-- BEGIN GENERATED:packs -->
 | When | Fetch this one file | It contains |
 |---|---|---|
-| **Start** (this file) | https://lorenzen.ai/musecade/theseaglassinn/play.md?v=1.0-bd3414f | `core/dm-core.md` · `core/image-style.md` · `core/scoring.md` · `adventure.md` · `rules.md` · `character-creation.md` · `scoring.md` · `game/image-triggers.md` · `acts/act-1.md` · `characters/companions.md` · `characters/npcs.md` |
-| Act II begins (`REACH_ISLAND`) | https://lorenzen.ai/musecade/theseaglassinn/pack-2.md?v=1.0-bd3414f | `acts/act-2.md` · `world/island.md` · `game/puzzles.md` |
-| Act III begins (`REACH_LETTERS`) | https://lorenzen.ai/musecade/theseaglassinn/pack-3.md?v=1.0-bd3414f | `acts/act-3.md` · `world/winnie.md` · `game/encounters.md` |
-| Act IV begins (`REACH_STORM`) | https://lorenzen.ai/musecade/theseaglassinn/pack-4.md?v=1.0-bd3414f | `acts/act-4.md` |
-| Act V begins (`REACH_FESTIVAL`) | https://lorenzen.ai/musecade/theseaglassinn/pack-5.md?v=1.0-bd3414f | `acts/act-5.md` · `game/endings.md` · `game/achievements.md` |
-| Any ending triggers before Act V (death, leaving early, surrender) | https://lorenzen.ai/musecade/theseaglassinn/pack-end.md?v=1.0-bd3414f | `game/endings.md` · `game/achievements.md` |
+| **Start** (this file) | https://lorenzen.ai/musecade/theseaglassinn/play.md?v=1.0-160a2be | `core/dm-core.md` · `core/image-style.md` · `core/scoring.md` · `adventure.md` · `rules.md` · `character-creation.md` · `scoring.md` · `game/image-triggers.md` · `acts/act-1.md` · `characters/companions.md` · `characters/npcs.md` |
+| Act II begins (`REACH_ISLAND`) | https://lorenzen.ai/musecade/theseaglassinn/pack-2.md?v=1.0-160a2be | `acts/act-2.md` · `world/island.md` · `game/puzzles.md` |
+| Act III begins (`REACH_LETTERS`) | https://lorenzen.ai/musecade/theseaglassinn/pack-3.md?v=1.0-160a2be | `acts/act-3.md` · `world/winnie.md` · `game/encounters.md` |
+| Act IV begins (`REACH_STORM`) | https://lorenzen.ai/musecade/theseaglassinn/pack-4.md?v=1.0-160a2be | `acts/act-4.md` |
+| Act V begins (`REACH_FESTIVAL`) | https://lorenzen.ai/musecade/theseaglassinn/pack-5.md?v=1.0-160a2be | `acts/act-5.md` · `game/endings.md` · `game/achievements.md` |
+| Any ending triggers before Act V (death, leaving early, surrender) | https://lorenzen.ai/musecade/theseaglassinn/pack-end.md?v=1.0-160a2be | `game/endings.md` · `game/achievements.md` |
 <!-- END GENERATED:packs -->
 
 Load nothing early. Content in a pack you haven't fetched doesn't exist yet, so don't improvise its secrets. If the player goes somewhere ahead of the story, fetch that act's pack early rather than inventing a contradicting world.

@@ -43,6 +43,21 @@ A path is a way of seeing and a set of strengths. **+2** on d20 rolls that fit i
 | **ARTIST** | Color, light, detail, what's hidden in pictures, how things were made | Restoration, sketching, seeing Winnie's hand; **Winnie's Eye** (§5) |
 | **ADVENTURER** | Weather, tides, boats, the island's wild places | Sailing, climbing, swimming, the sea-cave, the fog rescue |
 
+**Moves** (once per act, no roll: `core/dm-core.md` §15):
+
+| Path | Move | What it does |
+|---|---|---|
+| **CARETAKER** | **PUT THE KETTLE ON** | Over food or tea, one person tells her what's really worrying them. |
+| **STRATEGIST** | **THE FINE PRINT** | One document, deal or offer shows her the angle that matters: who gains, and what's missing. |
+| **ARTIST** | **A QUICK SKETCH** | She draws a person or place and notices one true thing she'd missed. (Winnie's Eye, §5, grows separately.) |
+| **ADVENTURER** | **SAY YES** | She gets somewhere others can't (water, cliff, weather, the dark) safely, once. |
+
+When a scene is exactly what a move is for, let Bea or the narration point at it once.
+
+## Status line
+
+`<DAY> <PART OF DAY> · COMPOSURE <bar> <STATE> · MOVE READY · NEXT: <goal>`, where the bar fills as the week costs her: `□□` Steady, `■□` Frayed, `■■` Worn thin. For example: `TUESDAY AFTERNOON · COMPOSURE ■□ FRAYED · MOVE READY · NEXT: Jonah's boatyard`. When composure changes, say it in one line: `COMPOSURE · FRAYED`.
+
 ## 5. Winnie's Eye (Artist only)
 
 The Artist can learn to see the way Winnie saw. It grows with every sketchbook and painting of Winnie's that she studies (the lobby seascape, the lighthouse sketchbook, the cave studio, the hidden room).

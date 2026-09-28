@@ -1,4 +1,4 @@
-# THE GLASS CITY · PACK-2 · BUILD 1.0-c2285e0
+# THE GLASS CITY · PACK-2 · BUILD 1.0-e6af1ae
 
 Bundle for: Act II begins (`REACH_CONTACT`). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 
@@ -7,6 +7,8 @@ Bundle for: Act II begins (`REACH_CONTACT`). It contains the files listed below.
 # ACT II: CONTACT
 
 *Nightingale, the old flame, the forger, and the moment the player's own side turns on them.* Target: 13 to 17 minutes, 9 to 12 decisions. Covers day 2 and night 2.
+
+**Route:** papers from Ilse the bookbinder → *a free afternoon* (optional) → meet NIGHTINGALE at the opera, box seven → *find where the Queen protects the film* (possible tonight) → the frame lands → **survive the 2 a.m. raid**.
 
 Load `world/locations.md` and `game/puzzles.md` now. Load `world/factions.md` when Anya, Voss or a Directorate officer is identified.
 

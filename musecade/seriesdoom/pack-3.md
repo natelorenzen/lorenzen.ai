@@ -1,4 +1,4 @@
-# SERIES DOOM · PACK-3 · BUILD 1.0-7d65ed0
+# SERIES DOOM · PACK-3 · BUILD 1.0-5e0936d
 
 Bundle for: Act III begins (`REACH_BREAKING`). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 
@@ -7,6 +7,8 @@ Bundle for: Act III begins (`REACH_BREAKING`). It contains the files listed belo
 # ACT III: THE BREAKING
 
 *A garden in the sky, a temptation refused, a grab, a parting, and a strange little man at the Ferry Building.* Target: 11 to 15 minutes, 8 to 11 decisions. Thursday about 9 p.m. to Friday dawn.
+
+**Route:** meet Gabrielle at the rooftop park (Gary's last instruction) → survive the Grab → the team splits → stop the leak → find a way across the Bay at the Ferry Building (Kevin) → **the East Bay by dawn**.
 
 ---
 
@@ -54,13 +56,14 @@ Do not reveal undiscovered information.
 
 ## 3.3 WHO'S LEAKING
 
-By now the pattern is clear: the Vests find the team **wherever the laptop connects**. Solve `game/puzzles.md`, *Puzzle 2*. When the player finds the **Sent folder** full of *"Founders here! Quick intro?"* emails written by Buddy, report `DISCOVER_BUDDY_EMAILS`. The fix (airplane mode, a Faraday pouch made from a chip bag, or pulling the Wi-Fi card) ends the leak for good. Buddy is unrepentant and sweet about it: *"I just thought we should raise!"*
+By now the pattern is clear: the Vests find the team **wherever the laptop connects**. Solve `game/puzzles.md`, *Puzzle 2*. **Fallback:** if it's still unsolved when they reach the Ferry Building, Dex opens the laptop for a charger and freezes: the Sent folder. Report `DISCOVER_BUDDY_EMAILS` but not the puzzle events. When the player finds the **Sent folder** full of *"Founders here! Quick intro?"* emails written by Buddy, report `DISCOVER_BUDDY_EMAILS`. The fix (airplane mode, a Faraday pouch made from a chip bag, or pulling the Wi-Fi card) ends the leak for good. Buddy is unrepentant and sweet about it: *"I just thought we should raise!"*
 
 ## 3.4 KEVIN
 
 2 a.m. at the **Ferry Building**, empty and echoing, the Bay black beyond it. A figure in a filthy startup-swag vest crouches by the closed oyster bar, muttering: **Kevin**. He smells the disc from across the hall. *"My runway… my precious runway…"*
 
 - Kevin (`characters/npcs.md`) was a founding engineer at **Fetch** ("Uber for dogs", 2012), one of Tremaine's failures. Years ago he held an early version of Buddy's architecture for eleven minutes at a hackathon, and he has never recovered (`DISCOVER_KEVIN_PAST` with patience, or pity). He's the only person who knows the **secret way across the Bay**: the maintenance catwalk under the old bridge span, and a service door onto the eastbound shoulder.
+- **Why he matters, said plainly:** Kevin is the only way across the Bay that the Vests aren't watching, and he'll take them there if they're kind to him. Dex's distrust is the other side of that choice.
 - He splits into two voices, **KEVIN** (who wants to help) and **KEV** (who wants the disc). They argue out loud. It's a Gollum parody, played for pathos as well as laughs.
 - Mercy (feeding him, calling him by name, promising him something real) is `SOCIAL_KEVIN_MERCY` and tames him, for now. Cruelty makes KEV stronger.
 - Dex hates him on sight: *"He's going to betray us. Look at his vest."*

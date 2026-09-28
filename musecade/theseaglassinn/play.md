@@ -1,4 +1,4 @@
-# THE SEA GLASS INN · PLAY (start here) · BUILD 1.0-bd3414f
+# THE SEA GLASS INN · PLAY (start here) · BUILD 1.0-160a2be
 
 This single file is the whole cartridge for starting the game: its manifest, rules, scoring, image rules and Act I, bundled so you only fetch once. Start with the manifest (`adventure.md`, below) and follow it. Do not fetch the individual files named inside; they are all included here.
 
@@ -33,6 +33,7 @@ You must narrate vividly and concisely; portray every NPC as a person with motiv
 - Dialogue in quotes. Name each speaker on first appearance.
 - No emojis. No mechanical jargon in narration. The exceptions are the **dice line** (§5) and the **TIP lines** of a game's cold open (§11). Points stay invisible until the end.
 - At most one short bold line per turn, for a single striking image or sound.
+- **Status line.** At the top of the first turn of every new scene (and whenever the player types `STATUS`), print one line in the format the game's `rules.md` gives, for example `THURSDAY 2:15 PM · HYPE ■■□□□ · MOVE READY · NEXT: the Council, Sausalito`. It's the one place the meter shows as a bar. `NEXT` is always something the player already knows about.
 
 ## 3. Decision menus
 
@@ -116,6 +117,18 @@ Fetch one pack per act, using the versioned URLs (`?v=<build>`) in the manifest'
 ## 13. Fast mode
 
 **Fast mode** (for slower agents, or when the player is short on time): the player adds `fast` to the command (`#theblackroad fast`) or types `FAST MODE` at any point. From then on, make **at most 3 images in the whole run** (the first big reveal, the climax, and the ending), no video clips, and keep turns at 60 to 120 words. Everything else (the story, scoring and endings) stays the same. `FULL MODE` turns it off.
+
+## 14. Keep the story moving
+
+- **Every scene has a goal the player can name.** When a scene opens, make it clear in the fiction what they're trying to do here and why (a companion says it, a message arrives, a door is obviously the way on). When it ends, say where they're headed next.
+- **New people arrive two at a time at most.** On first appearance, give each named character their name in bold and one plain line: who they are and what they want. If a scene has more people than that, introduce the rest over the next turns. If the player types `WHO`, list everyone they've met, one line each (name, role, where they stand).
+- **Stuck means help, not a wall.** If the player asks "what now?", seems lost, or goes two turns without progress, a companion or the world offers the next lead in plain words and makes it option **A** of the next menu. If they're still stuck, the world pushes: the clock jumps, the antagonist arrives, a door opens.
+- **No puzzle is a hard gate.** Every puzzle has a fallback that moves the story on at a cost (time, harm, the meter, or losing the puzzle's points). Offer it after the third hint.
+- **Recaps on request.** `RECAP` gets three plain sentences: where they are, what they're trying to do, and what's in their way.
+
+## 15. Path moves
+
+Each path has **one signature move**, named in the game's `rules.md`. It is used **once per act**, works automatically (no roll), and does one clear thing that only that path can do. Tell the player the move when they choose a path, show `MOVE READY` or `MOVE USED` on the status line, and, the first time a scene suits it, have a companion or the narration point it out. The player can type `MOVE` to use it. A move never solves a puzzle outright and never reveals a secret by itself (it can give a real lead toward one), and it can't make the final choice. The path's +2 on fitting rolls (§5) still applies, and a game's special growing power (if a path has one) is in addition to the move.
 
 ===== FILE: core/image-style.md =====
 
@@ -248,7 +261,7 @@ Make the score reveal land. One short line before the game's game-over block is 
 # THE SEA GLASS INN: Game Manifest
 
 Musecade Game 003 · Version 1.0 · Drama · Mystery · 45 to 75 minutes · 1 player · Rated PG
-Build: 1.0-bd3414f
+Build: 1.0-160a2be
 Base URL: https://lorenzen.ai/musecade/theseaglassinn/
 Platform: https://lorenzen.ai/musecade/musecade.md
 
@@ -274,12 +287,12 @@ The game is bundled for speed. **Fetch exactly one file per act**, when its mome
 
 | When | Fetch this one file | It contains |
 |---|---|---|
-| **Start** (this file) | https://lorenzen.ai/musecade/theseaglassinn/play.md?v=1.0-bd3414f | `core/dm-core.md` · `core/image-style.md` · `core/scoring.md` · `adventure.md` · `rules.md` · `character-creation.md` · `scoring.md` · `game/image-triggers.md` · `acts/act-1.md` · `characters/companions.md` · `characters/npcs.md` |
-| Act II begins (`REACH_ISLAND`) | https://lorenzen.ai/musecade/theseaglassinn/pack-2.md?v=1.0-bd3414f | `acts/act-2.md` · `world/island.md` · `game/puzzles.md` |
-| Act III begins (`REACH_LETTERS`) | https://lorenzen.ai/musecade/theseaglassinn/pack-3.md?v=1.0-bd3414f | `acts/act-3.md` · `world/winnie.md` · `game/encounters.md` |
-| Act IV begins (`REACH_STORM`) | https://lorenzen.ai/musecade/theseaglassinn/pack-4.md?v=1.0-bd3414f | `acts/act-4.md` |
-| Act V begins (`REACH_FESTIVAL`) | https://lorenzen.ai/musecade/theseaglassinn/pack-5.md?v=1.0-bd3414f | `acts/act-5.md` · `game/endings.md` · `game/achievements.md` |
-| Any ending triggers before Act V (death, leaving early, surrender) | https://lorenzen.ai/musecade/theseaglassinn/pack-end.md?v=1.0-bd3414f | `game/endings.md` · `game/achievements.md` |
+| **Start** (this file) | https://lorenzen.ai/musecade/theseaglassinn/play.md?v=1.0-160a2be | `core/dm-core.md` · `core/image-style.md` · `core/scoring.md` · `adventure.md` · `rules.md` · `character-creation.md` · `scoring.md` · `game/image-triggers.md` · `acts/act-1.md` · `characters/companions.md` · `characters/npcs.md` |
+| Act II begins (`REACH_ISLAND`) | https://lorenzen.ai/musecade/theseaglassinn/pack-2.md?v=1.0-160a2be | `acts/act-2.md` · `world/island.md` · `game/puzzles.md` |
+| Act III begins (`REACH_LETTERS`) | https://lorenzen.ai/musecade/theseaglassinn/pack-3.md?v=1.0-160a2be | `acts/act-3.md` · `world/winnie.md` · `game/encounters.md` |
+| Act IV begins (`REACH_STORM`) | https://lorenzen.ai/musecade/theseaglassinn/pack-4.md?v=1.0-160a2be | `acts/act-4.md` |
+| Act V begins (`REACH_FESTIVAL`) | https://lorenzen.ai/musecade/theseaglassinn/pack-5.md?v=1.0-160a2be | `acts/act-5.md` · `game/endings.md` · `game/achievements.md` |
+| Any ending triggers before Act V (death, leaving early, surrender) | https://lorenzen.ai/musecade/theseaglassinn/pack-end.md?v=1.0-160a2be | `game/endings.md` · `game/achievements.md` |
 
 Load nothing early. Content in a pack you haven't fetched doesn't exist yet, so don't improvise its secrets. If the player goes somewhere ahead of the story, fetch that act's pack early rather than inventing a contradicting world.
 
@@ -428,6 +441,21 @@ A path is a way of seeing and a set of strengths. **+2** on d20 rolls that fit i
 | **ARTIST** | Color, light, detail, what's hidden in pictures, how things were made | Restoration, sketching, seeing Winnie's hand; **Winnie's Eye** (§5) |
 | **ADVENTURER** | Weather, tides, boats, the island's wild places | Sailing, climbing, swimming, the sea-cave, the fog rescue |
 
+**Moves** (once per act, no roll: `core/dm-core.md` §15):
+
+| Path | Move | What it does |
+|---|---|---|
+| **CARETAKER** | **PUT THE KETTLE ON** | Over food or tea, one person tells her what's really worrying them. |
+| **STRATEGIST** | **THE FINE PRINT** | One document, deal or offer shows her the angle that matters: who gains, and what's missing. |
+| **ARTIST** | **A QUICK SKETCH** | She draws a person or place and notices one true thing she'd missed. (Winnie's Eye, §5, grows separately.) |
+| **ADVENTURER** | **SAY YES** | She gets somewhere others can't (water, cliff, weather, the dark) safely, once. |
+
+When a scene is exactly what a move is for, let Bea or the narration point at it once.
+
+## Status line
+
+`<DAY> <PART OF DAY> · COMPOSURE <bar> <STATE> · MOVE READY · NEXT: <goal>`, where the bar fills as the week costs her: `□□` Steady, `■□` Frayed, `■■` Worn thin. For example: `TUESDAY AFTERNOON · COMPOSURE ■□ FRAYED · MOVE READY · NEXT: Jonah's boatyard`. When composure changes, say it in one line: `COMPOSURE · FRAYED`.
+
 ## 5. Winnie's Eye (Artist only)
 
 The Artist can learn to see the way Winnie saw. It grows with every sketchbook and painting of Winnie's that she studies (the lobby seascape, the lighthouse sketchbook, the cave studio, the hidden room).
@@ -479,15 +507,21 @@ WHO HAVE YOU BEEN?
 
 A. CARETAKER
 Hosting, feeding, listening, holding everyone together.
+MOVE · PUT THE KETTLE ON: someone tells you what's wrong.
 
 B. STRATEGIST
 Numbers, contracts, negotiation, seeing the angles.
+MOVE · THE FINE PRINT: see the angle that matters.
 
 C. ARTIST
 Color, light, detail, making beautiful things. (Once. Maybe again.)
+MOVE · A QUICK SKETCH: draw it, and see what you missed.
 
 D. ADVENTURER
 Boats, weather, cold water, saying yes.
+MOVE · SAY YES: go where no one else can.
+
+Each move works once per act. Type MOVE to use it.
 ```
 
 Show the four paths as a lettered menu. This is the one menu with four real options: **A** to **D** are the paths, in the order printed above, and the player can answer with just the letter. There is no "Other" here, but if the player describes themselves instead, map it to the closest path and confirm in one line.
@@ -623,6 +657,8 @@ A typical run: LIGHTHOUSE → CAVE STUDIO → FOG → NOR'EASTER → KEEPER'S DA
 
 *Arrival, the inn, the will, the first piece of the puzzle, and the man who wants to buy it all.* Target: 11 to 15 minutes, 7 to 10 decisions. Monday.
 
+**Route** (each scene's goal is the status line's `NEXT`): ride out the squall → land at Halcyon Harbor → open the Sea Glass Inn and meet Bea → hear Preston Vale's offer → **find the first piece of sea glass ("Start where the light used to be")**.
+
 ---
 
 ## 1.0 COLD OPEN: THE SQUALL (the tutorial)
@@ -662,7 +698,13 @@ A typical run: LIGHTHOUSE → CAVE STUDIO → FOG → NOR'EASTER → KEEPER'S DA
 **Beat 4.** Halcyon rises out of the rain: a harbor of shingled houses, a church steeple, and on the northern bluff a tall grey Victorian with a widow's walk. Beyond it on the point stands a **dark lighthouse**.
 
 ```
-[ TIP · Ask anyone anything. Follow your curiosity. Type SAVE GAME anytime to keep your place. ]
+[ TIP · Who you've been gives you a MOVE, once per act, no roll. Type MOVE when the moment feels right. ]
+```
+
+Then print the first status line.
+
+```
+[ TIP · The status line shows the day, your COMPOSURE and where you're headed. Type STATUS, WHO or RECAP anytime. Ask anyone anything. SAVE GAME keeps your place. ]
 ```
 
 **Rules:** no harm. A miss costs something small: a soaked coat, a smashed cake (Marguerite forgives you in about three business days), or her lawyer's envelope blown open on the deck. Tips appear only here, and can be skipped.

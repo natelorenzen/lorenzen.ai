@@ -2,6 +2,8 @@
 
 *Nightingale, the old flame, the forger, and the moment the player's own side turns on them.* Target: 13 to 17 minutes, 9 to 12 decisions. Covers day 2 and night 2.
 
+**Route:** papers from Ilse the bookbinder → *a free afternoon* (optional) → meet NIGHTINGALE at the opera, box seven → *find where the Queen protects the film* (possible tonight) → the frame lands → **survive the 2 a.m. raid**.
+
 Load `world/locations.md` and `game/puzzles.md` now. Load `world/factions.md` when Anya, Voss or a Directorate officer is identified.
 
 ---

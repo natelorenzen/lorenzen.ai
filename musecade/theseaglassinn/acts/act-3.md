@@ -2,6 +2,8 @@
 
 *Who Winnie really was, the cave, the fog, and the truth from her daughter.* Target: 12 to 16 minutes, 8 to 11 decisions. Thursday.
 
+**Route:** read Eli's letters → reach the cave at 4:10 low tide → Marguerite's story → legwork on whose council vote is bought → **find Maya in the fog** → the seawall talk.
+
 Load `world/winnie.md` and `game/encounters.md` now.
 
 ---

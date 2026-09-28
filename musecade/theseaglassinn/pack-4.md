@@ -1,4 +1,4 @@
-# THE SEA GLASS INN · PACK-4 · BUILD 1.0-bd3414f
+# THE SEA GLASS INN · PACK-4 · BUILD 1.0-160a2be
 
 Bundle for: Act IV begins (`REACH_STORM`). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 
@@ -7,6 +7,8 @@ Bundle for: Act IV begins (`REACH_STORM`). It contains the files listed below. D
 # ACT IV: THE STORM
 
 *The day the island holds its breath, and the night the house tells its secret.* Target: 12 to 16 minutes, 8 to 11 decisions. Friday.
+
+**Route:** see through Vale's "engineer" → the violet glass and the window → **hold the inn together through the nor'easter** → the room behind the wall → the long night's conversations.
 
 ---
 

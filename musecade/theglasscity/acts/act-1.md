@@ -2,6 +2,8 @@
 
 *The city, the mission, the first sign that someone knew you were coming.* Target: 12 to 16 minutes, 8 to 11 decisions. Covers day 1, from 2 a.m. on the train to the night.
 
+**Route** (each scene's goal is the status line's `NEXT`): survive the night train → through the border → check in at the Hotel Meridian → report to the station → collect NIGHTINGALE's dead drop at Café Oriel → **get out of the Glass Galleries alive**.
+
 ---
 
 ## 1.0 COLD OPEN: THE NIGHT TRAIN (the tutorial fight)
@@ -43,7 +45,13 @@ If the emergency cord was pulled, or there was a fight in the corridor, **heat b
 **Beat 4: the aftermath.** He escapes into the next car, jumps from the train at the border slow-down, or ends up unconscious on the floor. Whatever happens, something falls from his coat: **a photograph of the player**, taken recently, trimmed to passport size. It's the photograph from their own cover file. Report `DISCOVER_SWEEPER_PHOTO` when the player picks it up and studies it (most will).
 
 ```
-[ TIP · Ask questions. Search things. Try the strange idea. SAVE GAME works anytime. ]
+[ TIP · Your path has a MOVE that works once per act, no roll. Type MOVE when the moment's right. ]
+```
+
+Then print the first status line.
+
+```
+[ TIP · The status line shows the day, your HEAT and where you're headed. Type STATUS, WHO or RECAP anytime. Ask questions, try the strange idea. SAVE GAME works anytime. ]
 ```
 
 **Rules:** no wounds and no death here. A miss costs something small: a torn sleeve, dropped francs, a conductor who remembers your face (heat 1). If the player kills him, that's a choice: set `killed_someone` and `shots_fired` if a gun was used, raise heat by 2, and play the border as dangerous. Tips appear only here, and can be skipped.

@@ -1,4 +1,4 @@
-# THE SEA GLASS INN · PACK-2 · BUILD 1.0-bd3414f
+# THE SEA GLASS INN · PACK-2 · BUILD 1.0-160a2be
 
 Bundle for: Act II begins (`REACH_ISLAND`). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 
@@ -7,6 +7,8 @@ Bundle for: Act II begins (`REACH_ISLAND`). It contains the files listed below. 
 # ACT II: THE ISLAND
 
 *The trail, the town, the neighbor, the cousin, and the daughter.* Target: 12 to 16 minutes, 8 to 12 decisions. Tuesday and Wednesday.
+
+**Route:** the green glass at Doucette's Bakery → learn how the council vote stands at the hardware store → meet Jonah at the boatyard → Lydia arrives → *the church and the library* (optional) → Maya arrives on Wednesday → *plan the cave for Thursday's low tide* → **Wednesday night around the kitchen table**.
 
 Load `world/island.md` and `game/puzzles.md` now.
 

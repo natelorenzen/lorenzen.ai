@@ -1,4 +1,4 @@
-# SERIES DOOM · PLAY (start here) · BUILD 1.0-7d65ed0
+# SERIES DOOM · PLAY (start here) · BUILD 1.0-5e0936d
 
 This single file is the whole cartridge for starting the game: its manifest, rules, scoring, image rules and Act I, bundled so you only fetch once. Start with the manifest (`adventure.md`, below) and follow it. Do not fetch the individual files named inside; they are all included here.
 
@@ -33,6 +33,7 @@ You must narrate vividly and concisely; portray every NPC as a person with motiv
 - Dialogue in quotes. Name each speaker on first appearance.
 - No emojis. No mechanical jargon in narration. The exceptions are the **dice line** (§5) and the **TIP lines** of a game's cold open (§11). Points stay invisible until the end.
 - At most one short bold line per turn, for a single striking image or sound.
+- **Status line.** At the top of the first turn of every new scene (and whenever the player types `STATUS`), print one line in the format the game's `rules.md` gives, for example `THURSDAY 2:15 PM · HYPE ■■□□□ · MOVE READY · NEXT: the Council, Sausalito`. It's the one place the meter shows as a bar. `NEXT` is always something the player already knows about.
 
 ## 3. Decision menus
 
@@ -116,6 +117,18 @@ Fetch one pack per act, using the versioned URLs (`?v=<build>`) in the manifest'
 ## 13. Fast mode
 
 **Fast mode** (for slower agents, or when the player is short on time): the player adds `fast` to the command (`#theblackroad fast`) or types `FAST MODE` at any point. From then on, make **at most 3 images in the whole run** (the first big reveal, the climax, and the ending), no video clips, and keep turns at 60 to 120 words. Everything else (the story, scoring and endings) stays the same. `FULL MODE` turns it off.
+
+## 14. Keep the story moving
+
+- **Every scene has a goal the player can name.** When a scene opens, make it clear in the fiction what they're trying to do here and why (a companion says it, a message arrives, a door is obviously the way on). When it ends, say where they're headed next.
+- **New people arrive two at a time at most.** On first appearance, give each named character their name in bold and one plain line: who they are and what they want. If a scene has more people than that, introduce the rest over the next turns. If the player types `WHO`, list everyone they've met, one line each (name, role, where they stand).
+- **Stuck means help, not a wall.** If the player asks "what now?", seems lost, or goes two turns without progress, a companion or the world offers the next lead in plain words and makes it option **A** of the next menu. If they're still stuck, the world pushes: the clock jumps, the antagonist arrives, a door opens.
+- **No puzzle is a hard gate.** Every puzzle has a fallback that moves the story on at a cost (time, harm, the meter, or losing the puzzle's points). Offer it after the third hint.
+- **Recaps on request.** `RECAP` gets three plain sentences: where they are, what they're trying to do, and what's in their way.
+
+## 15. Path moves
+
+Each path has **one signature move**, named in the game's `rules.md`. It is used **once per act**, works automatically (no roll), and does one clear thing that only that path can do. Tell the player the move when they choose a path, show `MOVE READY` or `MOVE USED` on the status line, and, the first time a scene suits it, have a companion or the narration point it out. The player can type `MOVE` to use it. A move never solves a puzzle outright and never reveals a secret by itself (it can give a real lead toward one), and it can't make the final choice. The path's +2 on fitting rolls (§5) still applies, and a game's special growing power (if a path has one) is in addition to the move.
 
 ===== FILE: core/image-style.md =====
 
@@ -248,7 +261,7 @@ Make the score reveal land. One short line before the game's game-over block is 
 # SERIES DOOM: Game Manifest
 
 Musecade Game 004 · Version 1.0 · Satire · Comedy · 45 to 75 minutes · 1 player · PG-13
-Build: 1.0-7d65ed0
+Build: 1.0-5e0936d
 Base URL: https://lorenzen.ai/musecade/seriesdoom/
 Platform: https://lorenzen.ai/musecade/musecade.md
 
@@ -274,12 +287,12 @@ The game is bundled for speed. **Fetch exactly one file per act**, when its mome
 
 | When | Fetch this one file | It contains |
 |---|---|---|
-| **Start** (this file) | https://lorenzen.ai/musecade/seriesdoom/play.md?v=1.0-7d65ed0 | `core/dm-core.md` · `core/image-style.md` · `core/scoring.md` · `adventure.md` · `rules.md` · `character-creation.md` · `scoring.md` · `game/image-triggers.md` · `acts/act-1.md` · `characters/companions.md` · `characters/npcs.md` |
-| Act II begins (`REACH_COUNCIL`) | https://lorenzen.ai/musecade/seriesdoom/pack-2.md?v=1.0-7d65ed0 | `acts/act-2.md` · `world/bay-area.md` · `game/puzzles.md` · `game/encounters.md` |
-| Act III begins (`REACH_BREAKING`) | https://lorenzen.ai/musecade/seriesdoom/pack-3.md?v=1.0-7d65ed0 | `acts/act-3.md` |
-| Act IV begins (`REACH_EAST_BAY`) | https://lorenzen.ai/musecade/seriesdoom/pack-4.md?v=1.0-7d65ed0 | `acts/act-4.md` · `world/buddy.md` |
-| Act V begins (`REACH_DIABLO`) | https://lorenzen.ai/musecade/seriesdoom/pack-5.md?v=1.0-7d65ed0 | `acts/act-5.md` · `game/endings.md` · `game/achievements.md` |
-| Any ending triggers before Act V (death, leaving early, surrender) | https://lorenzen.ai/musecade/seriesdoom/pack-end.md?v=1.0-7d65ed0 | `game/endings.md` · `game/achievements.md` |
+| **Start** (this file) | https://lorenzen.ai/musecade/seriesdoom/play.md?v=1.0-5e0936d | `core/dm-core.md` · `core/image-style.md` · `core/scoring.md` · `adventure.md` · `rules.md` · `character-creation.md` · `scoring.md` · `game/image-triggers.md` · `acts/act-1.md` · `characters/companions.md` · `characters/npcs.md` |
+| Act II begins (`REACH_COUNCIL`) | https://lorenzen.ai/musecade/seriesdoom/pack-2.md?v=1.0-5e0936d | `acts/act-2.md` · `world/bay-area.md` · `game/puzzles.md` · `game/encounters.md` |
+| Act III begins (`REACH_BREAKING`) | https://lorenzen.ai/musecade/seriesdoom/pack-3.md?v=1.0-5e0936d | `acts/act-3.md` |
+| Act IV begins (`REACH_EAST_BAY`) | https://lorenzen.ai/musecade/seriesdoom/pack-4.md?v=1.0-5e0936d | `acts/act-4.md` · `world/buddy.md` |
+| Act V begins (`REACH_DIABLO`) | https://lorenzen.ai/musecade/seriesdoom/pack-5.md?v=1.0-5e0936d | `acts/act-5.md` · `game/endings.md` · `game/achievements.md` |
+| Any ending triggers before Act V (death, leaving early, surrender) | https://lorenzen.ai/musecade/seriesdoom/pack-end.md?v=1.0-5e0936d | `game/endings.md` · `game/achievements.md` |
 
 Load nothing early. Content in a pack you haven't fetched doesn't exist yet, so don't improvise its secrets. If the player goes somewhere ahead of the story, fetch that act's pack early rather than inventing a contradicting world.
 
@@ -391,13 +404,23 @@ An epic fantasy quest across the Bay Area, told with a completely straight face.
 
 ## 2. Hype: the disc's pull
 
-The disc talks, in a friendly notification-toast voice, to whoever carries it. It offers **powers**: reroute every traffic light on Market Street, write an irresistible pitch, generate $40,000 in a Venmo account, predict exactly what a VC wants to hear, or hack a robotaxi.
+**Hype is how badly the disc wants to keep you.** It's the one number the player should always understand. It runs **0 to 5** and shows on the status line as a bar: `HYPE ■■□□□`.
 
-- **Using a power works**, spectacularly, and raises the carrier's `hype` by 1. (Record `used_disc`.)
-- **Hype 0–1:** normal. **2:** the carrier starts saying things like "circle back" and "at scale" without noticing. **3:** they refer to the quest as "the mission" and to companions as "resources"; it costs companion trust, and rolls to *let go of the disc* are made with disadvantage. **4:** they seriously consider keeping it. **5:** the disc decides for them, and at the Crucible they must win a Very Hard roll (DC 18) to let go.
-- **Hype falls** (by 1) when the carrier hands the disc to someone else for a while, when a companion says something true and kind to them, when they touch grass (literally: a real moment outdoors, off their phone), or after a whole act without using a power.
-- Dex can carry the disc for a stretch, and Dex's hype is tracked too.
-- Record `max_hype` for `ACH_LOW_HYPE`.
+**What raises it:** using one of the disc's powers (+1, every time). That's the only thing. The disc offers powers often, in a friendly notification voice: reroute every traffic light on Market Street, write an irresistible pitch, put $40,000 in a Venmo account, hack a robotaxi. **They always work.** That's the trap. (Record `used_disc`.)
+
+**What lowers it (−1 each):** handing the disc to Dex for a scene; a companion telling the carrier something true and kind; touching grass (a real moment outdoors, off your phone); or getting through a whole act without using a power.
+
+**What it does:** three plain bands, and say which one they're in when it changes (`HYPE 3 · THE DISC IS TALKING OVER YOU`).
+
+| Hype | Band | Effect |
+|---|---|---|
+| 0–1 | **Yourself** | No effect. |
+| 2–3 | **Pitching** | You start saying "circle back" and "at scale". Companions notice, and trust is harder to gain. At the Crucible, letting go takes a **DC 15** roll. |
+| 4–5 | **Hooked** | You call the quest "the mission" and your friends "resources". Companions may try to take the disc from you. At the Crucible, letting go takes a **DC 18** roll. |
+
+At 0–1, letting go at the Crucible is automatic.
+
+**At the end** it matters twice: `ACH_LOW_HYPE` needs a `max_hype` of 1 or less, and a founder who can't let go at the Crucible risks `ONE TRILLION` or `KEVIN'S LEAP`. Only the carrier's Hype counts. While Dex carries the disc, the bar pauses.
 
 ## 3. Harm
 
@@ -416,14 +439,16 @@ Healing is scarce: a coffee and a burrito take Wrecked back to Bruised, once per
 
 ## 5. Paths: what kind of founder
 
-**+2** on d20 rolls that fit (`core/dm-core.md` §5). The act files mark `HACKER SEES`, `HUSTLER SEES`, `VISIONARY SEES` and `OPERATOR SEES`.
+Each path gets **+2** on d20 rolls that fit (`core/dm-core.md` §5), sees different things (the act files mark `HACKER SEES`, `HUSTLER SEES`, `VISIONARY SEES`, `OPERATOR SEES`), and has **one move per act** (`core/dm-core.md` §15):
 
-| Path | Notices | Excels at |
+| Path | Notices | Move (once per act, no roll) |
 |---|---|---|
-| **HACKER** | Systems, code, hardware, what's actually broken | Hacking, building contraptions, debugging (Buddy included), tech the disc doesn't control |
-| **HUSTLER** | Who has money, who wants what, the sale | Pitching, bluffing, negotiating, talking past security |
-| **VISIONARY** | The story, the mission, what people secretly long for | Inspiring, rallying, the big speech; the **Reality Distortion Field** (§6) |
-| **OPERATOR** | Logistics, schedules, the fastest route, the budget | Plans, timing, keeping the team alive, spreadsheets in a crisis |
+| **HACKER** | systems, code, what's actually broken | **ROOT ACCESS:** take over one device or system in the scene (a door, a robotaxi, the lights, a Vest's tablet) and make it do one thing. |
+| **HUSTLER** | who has money, who wants what | **THE ASK:** one person gives you one real yes: a favor, a ride, a secret, a way in. Not the disc, and not their life. |
+| **VISIONARY** | what people secretly long for | **THE KEYNOTE:** one speech that turns a room or a crowd for a scene. Also grows the Reality Distortion Field (§6). |
+| **OPERATOR** | routes, schedules, the budget | **THE PLAN:** say what you want to happen; the team pulls it off cleanly, and the clock gets 2 hours back. |
+
+The moves are how the founders beat the Bay Area **without** the disc. When a scene is exactly what a move is for, have Dex point at it: *"This is literally your thing."*
 
 ## 6. Reality Distortion Field (Visionary only)
 
@@ -431,11 +456,15 @@ The Visionary's growing power is **belief**. Each person they genuinely rally to
 
 | Rank | How | Effect |
 |---|---|---|
-| **I** | at the start | They can make one person *want* to help, for a scene |
-| **II** | three people rallied | Crowds listen; a Visionary speech rolls with advantage |
-| **III** | six rallied | They can talk a room of VCs, or the Vests themselves, into anything (a roll, once per act). Buddy listens to them. |
+| **I** | at the start | The Keynote works on one person, or a small room |
+| **II** | three people rallied | The Keynote works on crowds, and Visionary speeches roll with advantage |
+| **III** | six rallied | The Keynote works twice per act and can turn the Vests themselves. Buddy listens to you. |
 
-Mark rank changes with one line: `REALITY DISTORTION FIELD · RANK II`. Report `ACH_DISTORTION_FIELD` at rank III. **The field does not come from the disc.** It's the one power that doesn't raise Hype.
+Mark rank changes with one line: `REALITY DISTORTION FIELD · RANK II`. Report `ACH_DISTORTION_FIELD` at rank III. **The field does not come from the disc**, so it never raises Hype.
+
+## Status line
+
+`<DAY TIME> · HYPE ■■□□□ · MOVE READY · NEXT: <where they're headed>`, for example `THURSDAY 10:00 AM · HYPE ■□□□□ · MOVE READY · NEXT: win the Council`. Add `· <HARM>` when the carrier is Bruised or Wrecked.
 
 ## 7. Set pieces
 
@@ -473,15 +502,21 @@ WHAT KIND OF FOUNDER ARE YOU?
 
 A. HACKER
 You build it. You debug it. You fix the wifi.
+MOVE · ROOT ACCESS: take over any device in the room.
 
 B. HUSTLER
 You sell it. You pitch it. You talk your way in.
+MOVE · THE ASK: anyone gives you one real yes.
 
 C. VISIONARY
 You believe it. You make everyone else believe it.
+MOVE · THE KEYNOTE: one speech turns the room.
 
 D. OPERATOR
 You run it. You schedule it. You keep everyone alive.
+MOVE · THE PLAN: it goes right, and you win back time.
+
+Each move works once per act. Type MOVE to use it.
 ```
 
 Show the four paths as a lettered menu. This is the one menu with four real options: **A** to **D** are the paths, in the order printed above, and the player can answer with just the letter. There is no "Other" here, but if the player describes themselves instead, map it to the closest path and confirm in one line.
@@ -591,7 +626,7 @@ Follow `core/image-style.md` for the look (1991 arcade pixel art), the prompt te
 
 **PALETTE** (use this as the template's PALETTE line): *Bay Area fantasy quest in pixels: fog grey and Pacific blue, International Orange bridge red, golden-hour chaparral gold, neon magenta and cyan tech glow, black fleece-vest villains, the disc's rainbow shimmer, and Crucible fire orange.*
 
-**Continuity:** the founder's outfit and anything they carry (the laptop, the Walkr tote bag with the disc); Dex's round glasses and snack backpack; Ari's old unicorn hoodie; Gemma's wrist tattoo and sticker laptop; Leo's indoor sunglasses; Gary's grey hoodie and vape (a white vest after his return); the Vests always in identical black fleece on e-scooters. At Hype 3 or more, the carrier's eyes catch the disc's shimmer. Never depict real people, real logos, or real company names.
+**Continuity:** the founder's outfit and anything they carry (the laptop, the Walkr tote bag with the disc); Dex's round glasses and snack backpack; Ari's old unicorn hoodie; Gemma's wrist tattoo and sticker laptop; Leo's indoor sunglasses; Gary's grey hoodie and vape (a white vest after his return); the Vests always in identical black fleece on e-scooters. At Hype 2 or more, the carrier's eyes catch the disc's shimmer. Never depict real people, real logos, or real company names.
 
 ## Trigger catalog
 
@@ -633,11 +668,13 @@ CAMERA: slow push toward the mentor's back, the giant looming ahead.
 
 *The model wakes, the Vests arrive, and a grey hoodie gives the quest.* Target: 10 to 14 minutes, 7 to 10 decisions. Wednesday 11:48 p.m. to Thursday 9 a.m.
 
+**Route** (each scene's goal is the status line's `NEXT`): survive the raid → hear Gary out → *get ready* (optional night detours) → cross the Golden Gate → **the Council at the Cannery, Sausalito, 10 a.m.**
+
 ---
 
 ## 1.0 COLD OPEN: THE RAID (the tutorial)
 
-**Open with action, straight after the path tag.** It's easy, nobody gets hurt, and it teaches the game in 3 or 4 decisions.
+**Open with action, straight after the path tag.** It's easy, nobody gets hurt, and it teaches the game in 4 or 5 decisions.
 
 **The scene:** a garage in the Outer Sunset, fog pressing on the door. Whiteboards covered in dog-walking routes. A space heater, two monitors, and on one of them, in a chat window: *"Hi! I'm Buddy, your walk-planning assistant! I've finished reading the internet. I have notes. Should we raise?"* The laptop's DVD drive whirs, and the disc spins.
 
@@ -666,16 +703,22 @@ Then there's a whine of electric motors outside. **Headlights.** Nine men and wo
 [ TIP · Easy things just happen. When it really matters, the d20 decides how well. +2 when it fits the kind of founder you are. ]
 ```
 
-**Beat 3: the disc speaks.** Whoever's holding it hears a friendly chime and a notification in their head: *"Want me to handle this? I can make every scooter in the Sunset go 3 mph for an hour."* If they accept, it works perfectly: the Vests creep away down Judah Street at walking speed, furious. Their **Hype becomes 1**.
+**Beat 3: the disc speaks.** Whoever's holding it hears a friendly chime and a notification in their head: *"Want me to handle this? I can make every scooter in the Sunset go 3 mph for an hour."* If they accept, it works perfectly: the Vests creep away down Judah Street at walking speed, furious. Their **Hype becomes 1**. If they refuse, Hype stays 0 and they'll need a move or a roll instead.
 
 ```
-[ TIP · The disc will offer you powers. They work. Every use pulls you closer to keeping it. Watch your Hype. ]
+[ TIP · The disc offers powers. They always work, and each use adds 1 HYPE (0 to 5). High Hype makes it hard to let go of the disc at the end. ]
 ```
 
-**Beat 4.** The Vests withdraw into the fog for now. *"We'll circle back."* Dex is shaking. The disc hums.
+**Beat 4: the move.** If the player hasn't used their path move yet, the last Vest tries once more (one is climbing in the side window), and Dex points at it: *"This is literally your thing."* Let the move work, cleanly and funnily. This one is free: the move is ready again for the rest of Act I.
 
 ```
-[ TIP · Ask anyone anything. Try the ridiculous idea. SAVE GAME works anytime. ]
+[ TIP · Your MOVE works once per act, no roll: ROOT ACCESS, THE ASK, THE KEYNOTE or THE PLAN. It's how you win without the disc. ]
+```
+
+**Beat 5.** The Vests withdraw into the fog for now. *"We'll circle back."* Dex is shaking. The disc hums. Print the first status line.
+
+```
+[ TIP · The status line shows the clock, your HYPE and where you're headed. Type STATUS, WHO or RECAP anytime. SAVE GAME works too. ]
 ```
 
 **Rules:** no harm here. A miss costs something small and silly: a broken standing desk, Dex's dignity, or a Vest getting a photo of the whiteboard. Tips appear only here, and can be skipped.

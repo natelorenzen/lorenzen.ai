@@ -26,7 +26,7 @@ Rain on glass. Cigarette smoke under streetlights. Everyone polite, everyone lyi
 - **Heat rises (+1)** with gunfire, a public scene, a blown cover, a failed sneak, violence, a failed roll where it makes sense, or being seen with the wrong person.
 - **Heat falls (-1)** by lying low for a whole phase (which costs time), changing identity with Ilse's papers (once), good tradecraft (a clean dry-cleaning run, a proper brush pass), or a deal that calls off one service.
 - Track `max_heat_reached` (for `ACH_COLD_TRAIL`).
-- Narrate heat, never number it: *"The desk clerk looks at you a beat too long."*
+- **Show it two ways:** as a bar on the status line (`HEAT ■■□□□ WATCHED`), and in the world (*"The desk clerk looks at you a beat too long."*). When it changes, say the new state in one line: `HEAT 3 · HUNTED`.
 
 ## 3. Wounds
 
@@ -59,6 +59,21 @@ Paths change what the character notices and what they can attempt. **+2** applie
 | **ANALYST** | Patterns, documents, codes, inconsistencies, timetables | Ciphers, records, deduction; **the Board** (§6) |
 | **GHOST** | Tails, locks, patrols, blind spots, the city's back ways | Infiltration, disguise, lockwork, losing a tail, moving unseen |
 | **DIPLOMAT** | Lies, leverage, status, who wants what | Persuasion, bluffing, bargaining, turning people, reading a room |
+
+**Moves** (once per act, no roll: `core/dm-core.md` §15):
+
+| Path | Move | What it does |
+|---|---|---|
+| **OPERATIVE** | **CLEAN HANDS** | End one fight, chase or standoff in a single decisive action. Nobody on your side is hurt, and it raises no heat. |
+| **ANALYST** | **THE FILE** | Ask one question about a person or place you've encountered, and get a true answer from what the Office's files would hold. (The Board, §6, is separate.) |
+| **GHOST** | **VANISH** | Shake every tail and lower heat by 1, *or* get into one locked or guarded place unseen. |
+| **DIPLOMAT** | **THE OFFER** | One person accepts a deal they'd normally refuse, for one scene. |
+
+When a scene is exactly what a move is for, let Tomas or the narration point at it once.
+
+## Status line
+
+`DAY <n> · <PHASE> · HEAT ■■□□□ <STATE> · MOVE READY · NEXT: <goal>`, for example `DAY 2 · EVENING · HEAT ■□□□□ NOTICED · MOVE READY · NEXT: box seven at the opera`. Add `· HURT` or `· CRITICAL` when wounded.
 
 ## 6. The Board (Analyst only)
 

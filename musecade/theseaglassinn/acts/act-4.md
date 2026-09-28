@@ -2,6 +2,8 @@
 
 *The day the island holds its breath, and the night the house tells its secret.* Target: 12 to 16 minutes, 8 to 11 decisions. Friday.
 
+**Route:** see through Vale's "engineer" → the violet glass and the window → **hold the inn together through the nor'easter** → the room behind the wall → the long night's conversations.
+
 ---
 
 ## 4.1 MORNING: VALE'S ENGINEER
