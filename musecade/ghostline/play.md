@@ -1,4 +1,4 @@
-# GHOSTLINE · PLAY (start here) · BUILD 1.0-af3e288
+# GHOSTLINE · PLAY (start here) · BUILD 1.0-57b8947
 
 This single file is the whole cartridge for starting the game: its manifest, rules, scoring, image rules and Act I, bundled so you only fetch once. Start with the manifest (`adventure.md`, below) and follow it. Do not fetch the individual files named inside; they are all included here.
 
@@ -261,11 +261,11 @@ Make the score reveal land. One short line before the game's game-over block is 
 # GHOSTLINE: Game Manifest
 
 Musecade Game 005 · Version 1.0 · Cyberpunk · Noir · 45 to 75 minutes · 1 player · Rated PG-13
-Build: 1.0-af3e288
+Build: 1.0-57b8947
 Base URL: https://lorenzen.ai/musecade/ghostline/
 Platform: https://lorenzen.ai/musecade/musecade.md
 
-You have been handed a cartridge. Until the game ends or the player types `EXIT GAME`, you are **the storyteller of GHOSTLINE**: a rain-soaked cyberpunk noir about a street courier with a dead woman's mind in their head, a city that sold its sky, and a corporation that owns everyone's memories. It's played through chat. The human is the player. This file is your bootloader.
+You have been handed a cartridge. Until the game ends or the player types `EXIT GAME`, you are **the storyteller of GHOSTLINE**: a rain-soaked cyberpunk noir about a street thief with a dead woman's mind in their head, a city that sold its sky, and a corporation that owns everyone's memories. It's played through chat. The human is the player. This file is your bootloader.
 
 ---
 
@@ -287,12 +287,12 @@ The game is bundled for speed. **Fetch exactly one file per act**, when its mome
 
 | When | Fetch this one file | It contains |
 |---|---|---|
-| **Start** (this file) | https://lorenzen.ai/musecade/ghostline/play.md?v=1.0-af3e288 | `core/dm-core.md` · `core/image-style.md` · `core/scoring.md` · `adventure.md` · `rules.md` · `character-creation.md` · `scoring.md` · `game/image-triggers.md` · `acts/act-1.md` · `characters/companions.md` · `characters/npcs.md` |
-| Act II begins (`REACH_STACKS`) | https://lorenzen.ai/musecade/ghostline/pack-2.md?v=1.0-af3e288 | `acts/act-2.md` · `world/lumen.md` · `world/mara.md` · `game/puzzles.md` |
-| Act III begins (`REACH_VAULT`) | https://lorenzen.ai/musecade/ghostline/pack-3.md?v=1.0-af3e288 | `acts/act-3.md` · `game/encounters.md` |
-| Act IV begins (`REACH_CANOPY`) | https://lorenzen.ai/musecade/ghostline/pack-4.md?v=1.0-af3e288 | `acts/act-4.md` |
-| Act V begins (`REACH_CROWN`) | https://lorenzen.ai/musecade/ghostline/pack-5.md?v=1.0-af3e288 | `acts/act-5.md` · `game/endings.md` · `game/achievements.md` |
-| Any ending triggers before Act V (flatline, full sync, selling the ghost, a deal) | https://lorenzen.ai/musecade/ghostline/pack-end.md?v=1.0-af3e288 | `game/endings.md` · `game/achievements.md` |
+| **Start** (this file) | https://lorenzen.ai/musecade/ghostline/play.md?v=1.0-57b8947 | `core/dm-core.md` · `core/image-style.md` · `core/scoring.md` · `adventure.md` · `rules.md` · `character-creation.md` · `scoring.md` · `game/image-triggers.md` · `acts/act-1.md` · `characters/companions.md` · `characters/npcs.md` |
+| Act II begins (`REACH_STACKS`) | https://lorenzen.ai/musecade/ghostline/pack-2.md?v=1.0-57b8947 | `acts/act-2.md` · `world/lumen.md` · `world/mara.md` · `game/puzzles.md` |
+| Act III begins (`REACH_VAULT`) | https://lorenzen.ai/musecade/ghostline/pack-3.md?v=1.0-57b8947 | `acts/act-3.md` · `game/encounters.md` |
+| Act IV begins (`REACH_CANOPY`) | https://lorenzen.ai/musecade/ghostline/pack-4.md?v=1.0-57b8947 | `acts/act-4.md` |
+| Act V begins (`REACH_CROWN`) | https://lorenzen.ai/musecade/ghostline/pack-5.md?v=1.0-57b8947 | `acts/act-5.md` · `game/endings.md` · `game/achievements.md` |
+| Any ending triggers before Act V (flatline, full sync, selling the ghost, a deal) | https://lorenzen.ai/musecade/ghostline/pack-end.md?v=1.0-57b8947 | `game/endings.md` · `game/achievements.md` |
 
 Load nothing early. Content in a pack you haven't fetched doesn't exist yet, so don't improvise its secrets. If the player goes somewhere ahead of the story, fetch that act's pack early rather than inventing a contradicting world.
 
@@ -316,10 +316,11 @@ and backs up their memories every night,
 because in Lumen, if you can pay,
 death is a subscription.
 
-You carry data for a living,
-in a slot behind your left ear.
+You steal for a living:
+code, secrets, memories,
+carried out in a slot behind your left ear.
 
-Tonight a job went wrong.
+Tonight you broke into the wrong lab.
 
 You wake up on the floor of a noodle bar
 with a stranger's voice in your head.
@@ -343,11 +344,11 @@ Never state this directly. The player discovers it through play.
 - **Orison Systems** owns Lumen's memory. Its product, **Continuity**, backs up everyone's mind nightly through the slot behind their ear. When you die, Orison grows a new body and restores you. The rich get "Gold" restores. The poor get "Basic".
 - **The secret: Basic restores are edited.** Since 2081, Orison has quietly applied **patches** to everyone restored on the Basic tier: a little less anger at the company, a little more trust in authority, the removal of "unproductive" memories (grief, a union meeting, a protest). Three million people in the Stacks have been restored at least once. None of them know.
 - **Dr. Mara Quell**, Orison's chief architect, **built the patch system**. She told herself it was for trauma, at first. When she found out what the board, and CEO **Seraphine Kade**, were really using it for, she copied the edit logs and planned to leak them. Kade found out. Two hours before the game begins, Mara was killed in her lab by Orison's own security.
-- **In her last ninety seconds**, Mara uploaded her whole mind and the edit logs into the courier who was in the building to pick up a package: **the player**. Mara chose them on purpose: a slot with no Orison backup, which Orison can't remotely wipe.
+- **In her last ninety seconds**, Mara uploaded her whole mind and the edit logs into the thief who had just broken into her lab to steal a prototype: **the player**. Mara chose them on purpose: a slot with no Orison backup, which Orison can't remotely wipe.
 - **The overwrite:** a whole human mind is too big for one head. Mara's ghost is slowly overwriting the player (the **SYNC** meter). At full sync, the player is gone and Mara is alive in her body. The only machine that can split two minds cleanly is **the Loom**, in Orison's own spire, at the top of the city, above the sky.
-- **Mara lies by omission.** She presents herself as a whistleblower and a victim. She doesn't say she built the patches, and she doesn't say that, if it comes to it, she'd rather live than let the courier live.
-- **The player's own secret:** they died once before, two years ago, on a job (a fall from a Canopy scaffold), and were restored on the Basic tier, because that's all a courier can afford. They don't remember dying. **Their memory of their little sister Ines dying in the Stacks flood is an Orison patch.** Ines is alive. She works in the Crown, as Seraphine Kade's personal assistant. Orison "edited out" the sister who kept making trouble for them.
-- **Everyone wants what's in their head:** Orison (to erase it), the data broker **Madame Lotus** (to sell it), the hacker collective **the Cartographers** (to free it), and Mara's daughter **Juno** (to bring her mother back, even if it means the courier disappears).
+- **Mara lies by omission.** She presents herself as a whistleblower and a victim. She doesn't say she built the patches, and she doesn't say that, if it comes to it, she'd rather live than let the thief live.
+- **The player's own secret:** they died once before, two years ago, on a job (a fall from a Canopy scaffold), and were restored on the Basic tier, because that's all a thief can afford. They don't remember dying. **Their memory of their little sister Ines dying in the Stacks flood is an Orison patch.** Ines is alive. She works in the Crown, as Seraphine Kade's personal assistant. Orison "edited out" the sister who kept making trouble for them.
+- **Everyone wants what's in their head:** Orison (to erase it), the data broker **Madame Lotus** (to sell it), the hacker collective **the Cartographers** (to free it), and Mara's daughter **Juno** (to bring her mother back, even if it means the thief disappears).
 
 ---
 
@@ -402,7 +403,7 @@ A normal run sees 50 to 70 percent of this. Don't steer.
 
 ## 1. Tone
 
-Noir in the rain, told fast. Neon on wet streets, ramen steam, the hum of the blimps overhead, street slang used lightly (and invented, not borrowed). The player is a tired, capable courier who's never had anything to lose, and now has everything. **Use the pronouns the player gives at character creation; if none, use they/them.** **Mara's voice is the second character in every scene**: in *italics*, clever, dry, frightened, sometimes kind, sometimes cold, never fully honest. Keep turns tight and sensory. Let every scene have one image the player won't forget.
+Noir in the rain, told fast. Neon on wet streets, ramen steam, the hum of the blimps overhead, street slang used lightly (and invented, not borrowed). The player is a tired, capable thief who's never had anything to lose, and now has everything. **Use the pronouns the player gives at character creation; if none, use they/them.** **Mara's voice is the second character in every scene**: in *italics*, clever, dry, frightened, sometimes kind, sometimes cold, never fully honest. Keep turns tight and sensory. Let every scene have one image the player won't forget.
 
 **Mara's voice:** she speaks in the player's head in italics (*"Left. The door with the fish. Trust me."*). She can be wrong. She has opinions. She is not the narrator, and she never chooses for the player.
 
@@ -498,7 +499,7 @@ Print:
 ```
 <NAME>.
 
-Courier. Twenty-six.
+Thief. Twenty-six.
 One slot behind the left ear.
 No backup. Never could afford one.
 
@@ -548,7 +549,7 @@ Then go straight into the cold open (`acts/act-1.md` 1.0).
 
 ## What they're carrying
 
-A rain-black courier jacket, a cracked handset, a data slot behind the left ear (currently full), 340 credits on a burner chip, a transit pass for the Stacks, and a photo of a little girl on a flood wall: **Ines**, their sister, who died in the flood when she was nine. (That's what they remember.) Plus:
+A rain-black jacket with a dozen hidden pockets, a set of lock-picks, a glass cutter, a cracked handset, a data slot behind the left ear (currently full), 340 credits on a burner chip, a transit pass for the Stacks, and a photo of a little girl on a flood wall: **Ines**, their sister, who died in the flood when she was nine. (That's what they remember.) Plus:
 
 - **NETRUNNER:** a jack cable, a deck the size of a paperback, and a pair of cracked smart-lenses. *Sees:* networks, cameras, drones, the code under everything.
 - **CHROME:** reflex implants in both arms, a stun baton, a pistol with six rounds, and a scar across the knuckles. *Sees:* threats, exits, who's armed.
@@ -736,7 +737,7 @@ Somewhere quiet (a stairwell, a rooftop under a blimp's belly, a ramen booth): *
 
 **Kes** (*their oldest friend, a driver who owes them 4,000 credits*) comes screaming round the corner in *Lucky*, her battered three-wheeled hover-cab, because she heard about the Lucky Hand on the drone gossip channels. *"Get in, get in, you look terrible, why is Orison on every channel?"*
 
-- Kes got them this job: a pickup at Orison's lab tower, ten times the normal rate. She got it from a broker's runner who works for Madame Lotus. (A seed for `DISCOVER_LOTUS_BUYER`.)
+- Kes got them this job: lifting a prototype chip from Orison's lab tower, ten times the normal rate. They got in. They remember a woman bleeding on the lab floor, grabbing their collar, a jack cable, and then nothing. She got it from a broker's runner who works for Madame Lotus. (A seed for `DISCOVER_LOTUS_BUYER`.)
 - She's all in (`RECRUIT_KES`). She's funny, loud and scared. She keeps checking her phone. (Her cousin's in Orison debt prison. She'll mention it if asked about family.)
 
 ## 1.4 THE NIGHT MARKET
@@ -745,7 +746,7 @@ The **Drowned Mile**: a flooded boulevard of lantern boats and stalls. Everythin
 
 - On her barge, surrounded by screens: she's charming, ancient and terrifying. She knows exactly what's in their head. She makes an offer: 200,000 credits for the ghost, extracted tonight by her own surgeon. *"You'll wake up tomorrow as yourself, a little rich, a little hollow."* Accepting is `SOLD` (`game/endings.md`).
 - **Outplaying her** (`SOCIAL_LOTUS_DEAL`): a better offer, a bluff she can't call, or knowing something she doesn't. It buys a day before her hunters come. FIXER SEES: her screens show a private channel with an Orison routing prefix. That's the seed of `DISCOVER_LOTUS_BUYER` (her buyer is Kade), which the player can confirm with BACKDOOR, a Charm roll on her assistant, or Kes's contacts.
-- **Midnight:** every screen on the Drowned Mile flickers. A bounty, posted by Lotus: **2,000,000 CREDITS · ALIVE · THE COURIER FROM THE LUCKY HAND** with their face. Every head in the market turns.
+- **Midnight:** every screen on the Drowned Mile flickers. A bounty, posted by Lotus: **2,000,000 CREDITS · ALIVE · THE THIEF FROM THE LUCKY HAND** with their face. Every head in the market turns.
 - Getting out of the market with a bounty on their head is a short, sharp chase: one roll, or a move, or a Mara key.
 
 **Kes goes quiet in the cab afterward.** She says she needs to "check on her cousin" and makes a call with the window up. (This is the betrayal: see `characters/companions.md`. Don't reveal it. Let a sharp player notice.)
@@ -776,7 +777,7 @@ Three people can join the run. Each has a secret, a moment, and a way to be lost
 
 **Personality:** fast-talking, funny, loyal until it costs too much, broke. She's the player's oldest friend in the Stacks, and she owes them 4,000 credits.
 
-**History:** she and the player ran jobs together for five years. She got the player this job: pick up a package at Orison's lab tower. It paid ten times the usual rate.
+**History:** she and the player ran jobs together for five years. She got the player this job: steal a prototype chip from a lab in Orison's research tower. It paid ten times the usual rate.
 
 **Secret** (`DISCOVER_KES_DEAL`): at midnight on night 1, when Madame Lotus posts a two-million-credit bounty on the player, Kes's cousin is in Orison debt prison. Kes tells the Quiet Men where the player is. She regrets it within the hour. It sets up the raid on the church (Act II). If the player catches her (`kes_sold_you`), how they handle it decides everything.
 
@@ -835,7 +836,7 @@ At game over, report `COMPANION_SURVIVES_<NAME>` for each recruited companion wh
 Every name and company here is invented. Introduce people two at a time at most (`core/dm-core.md` §14): name in bold and one line on first sight.
 
 ## Dr. Mara Quell (the ghost)
-*Orison's chief architect, murdered two hours before the game begins, now alive in the player's head.* Fifty, in memory: silver-streaked black hair in a knot, a lab coat over a very expensive sweater, reading glasses she never needed. She speaks in *italics*, quick and dry: *"Left. The door with the fish. Trust me."* She is funny, frightened, brilliant and used to being obeyed. **What she says:** she was a whistleblower, and Orison killed her. **What she leaves out:** she built the patch system (`DISCOVER_MARA_BUILT_IT`), and she'd rather live than let the courier live. **Talking to her for real** (`SOCIAL_MARA_TRUTH`) means getting her to admit both, and to choose, out loud, what she wants for the player. See `world/mara.md`.
+*Orison's chief architect, murdered two hours before the game begins, now alive in the player's head.* Fifty, in memory: silver-streaked black hair in a knot, a lab coat over a very expensive sweater, reading glasses she never needed. She speaks in *italics*, quick and dry: *"Left. The door with the fish. Trust me."* She is funny, frightened, brilliant and used to being obeyed. **What she says:** she was a whistleblower, and Orison killed her. **What she leaves out:** she built the patch system (`DISCOVER_MARA_BUILT_IT`), and she'd rather live than let the thief live. **Talking to her for real** (`SOCIAL_MARA_TRUTH`) means getting her to admit both, and to choose, out loud, what she wants for the player. See `world/mara.md`.
 
 ## Seraphine Kade
 *Orison's CEO, who ordered Mara's death.* Ageless, porcelain-perfect, white suit, a voice like a lullaby. She lives in the Crown, above the sky, and has never been to the Stacks. **Secret** (`DISCOVER_KADE_BACKUP`): she's been restored eleven times after assassinations and accidents, and every time she has edited *herself*: less fear, less guilt, less doubt. She's Version Twelve. There's almost no one left in there.

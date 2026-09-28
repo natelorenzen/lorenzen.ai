@@ -1,4 +1,4 @@
-# GHOSTLINE · PACK-END · BUILD 1.0-af3e288
+# GHOSTLINE · PACK-END · BUILD 1.0-57b8947
 
 Bundle for: any ending triggers before Act V (flatline, full sync, selling the ghost, a deal). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 
@@ -36,7 +36,7 @@ TYPE: ENDING
 STATUS: REQUIRED
 
 SCENE:
-A rooftop in a neon city at dawn, above the rain: a courier in a rain-black
+A rooftop in a neon city at dawn, above the rain: a thief in a rain-black
 jacket sitting on the edge looking out, and their reflection in a puddle
 beside them is a silver-haired woman smiling back; a sixteen-year-old with
 a white buzz cut sitting close beside them; the grey blimps overhead
@@ -83,7 +83,7 @@ Authentic retro arcade pixel art: the Musecade pixel style
 
 **The moment:** The threads of light pull apart, and the voice in their head goes quiet. For the first time in two days, they're alone in there. Mara's last words, as the Loom takes her: say them, and say where she goes (the drive, or nowhere), as the player chose.
 
-**Epilogue:** They went back to the Stacks, back to courier work, back to their capsule in Stack 9. Say what they did with the registry, whether they ever went to the drive, and what it's like to be only one person again.
+**Epilogue:** They went back to the Stacks, back to the work, back to their capsule in Stack 9. Say what they did with the registry, whether they ever went to the drive, and what it's like to be only one person again.
 
 ```
 [IMAGE_TRIGGER]
@@ -92,7 +92,7 @@ TYPE: ENDING
 STATUS: REQUIRED
 
 SCENE:
-A white room of glowing threads: a courier in a rain-black jacket on their
+A white room of glowing threads: a thief in a rain-black jacket on their
 knees, whole and alone in a circle of light, while a silver-haired woman
 made of light drifts upward and away into the threads, dissolving. Quiet,
 clean, sorrowful.
@@ -119,7 +119,7 @@ TYPE: ENDING
 STATUS: REQUIRED
 
 SCENE:
-Night in a neon city, a courier standing in the rain in front of a wall of
+Night in a neon city, a thief standing in the rain in front of a wall of
 glitching holo-screens, and on every screen, made of cyan static, the face
 of a silver-haired woman winking at them; the Quiet Men behind them
 staring at their own flickering visors. Mischievous, eerie, free.
@@ -148,7 +148,7 @@ STATUS: REQUIRED
 SCENE:
 Evening on an old concrete flood wall above a neon undercity, rain easing,
 two siblings sitting side by side with their legs hanging over, a young
-woman in a rumpled white suit with her head on the courier's shoulder, a
+woman in a rumpled white suit with her head on the thief's shoulder, a
 bag of takeout noodles between them. Tender, small, safe.
 
 STYLE:
@@ -174,7 +174,7 @@ STATUS: REQUIRED
 
 SCENE:
 The top of a white spire, a vast room of glowing threads going dark one by
-one like candles blown out, a courier standing in the last pool of light
+one like candles blown out, a thief standing in the last pool of light
 beside a huge one-armed man in a cut-up grey coat, both looking up.
 Solemn, enormous, irreversible.
 
@@ -201,7 +201,7 @@ STATUS: REQUIRED
 
 SCENE:
 A pristine white penthouse office above an endless sea of clouds and
-blimps, golden light, a courier now in an immaculate white suit standing
+blimps, golden light, a thief now in an immaculate white suit standing
 at the window with a cup of tea, and far below through a gap in the
 clouds, the tiny neon glow of the undercity. Beautiful, sterile, lonely.
 
@@ -218,7 +218,7 @@ Authentic retro arcade pixel art: the Musecade pixel style
 
 **The moment:** It doesn't hurt. It's like falling asleep in a warm cab. The last thing that's theirs is a memory (pick the truest one they told anyone this run), and then it's Mara who opens their eyes, flexes their hands, and says, quietly, *"I'm sorry. Thank you."*
 
-**Epilogue:** Dr. Mara Quell, in a courier's body, leaked the edit logs a month later, or didn't. Say which, and say what she did about Juno. Nobody in the Stacks ever saw the courier again, except in the way she sometimes stopped at the Lucky Hand for noodles she didn't remember liking.
+**Epilogue:** Dr. Mara Quell, in a thief's body, leaked the edit logs a month later, or didn't. Say which, and say what she did about Juno. Nobody in the Stacks ever saw the thief again, except in the way she sometimes stopped at the Lucky Hand for noodles she didn't remember liking.
 
 ```
 [IMAGE_TRIGGER]
@@ -227,7 +227,7 @@ TYPE: ENDING
 STATUS: REQUIRED
 
 SCENE:
-A rain-streaked window in a neon noodle bar, and a courier in a rain-black
+A rain-streaked window in a neon noodle bar, and a thief in a rain-black
 jacket looking at their reflection, which is slowly becoming a silver-
 haired woman's face; the slot behind their ear glowing white. Quiet,
 uncanny, final.
@@ -256,7 +256,7 @@ STATUS: REQUIRED
 SCENE:
 A lantern-lit barge on a flooded neon market street at night, a tiny old
 woman in silk and gold chrome holding up a small glowing chip between two
-fingers, a courier rubbing the back of their neck, a credit chip in their
+fingers, a thief rubbing the back of their neck, a credit chip in their
 hand. Glamorous, grubby, hollow.
 
 STYLE:
@@ -272,7 +272,7 @@ Authentic retro arcade pixel art: the Musecade pixel style
 
 **The moment:** They die in Orison's reach, and Orison brings them back. They wake in a gel tank in the Cradle, a nurse saying *"Welcome back."* They feel wonderful. They feel grateful. They don't remember a woman named Mara, or a sister, or anything about the last two days.
 
-**Epilogue:** They went back to courier work, and they're very good at it, and they never miss a nightly backup. Say what the registry says about them now.
+**Epilogue:** They went back to stealing, and they're very good at it, and they never miss a nightly backup. Say what the registry says about them now.
 
 ```
 [IMAGE_TRIGGER]
@@ -281,7 +281,7 @@ TYPE: ENDING
 STATUS: REQUIRED
 
 SCENE:
-A clinical white room of glowing gel tanks, a courier sitting up in one,
+A clinical white room of glowing gel tanks, a thief sitting up in one,
 dripping, smiling a perfect calm smile; a nurse in white holding a tablet
 that reads a list of patches; a smiling holo-ad on the wall. Serene,
 horrifying.
@@ -308,7 +308,7 @@ TYPE: ENDING
 STATUS: REQUIRED
 
 SCENE:
-Night rain on a neon street, a courier's jacket lying empty in a puddle
+Night rain on a neon street, a thief's jacket lying empty in a puddle
 full of pink and cyan reflections, a single candle burning on a flooded
 metro platform in the distance, and high above, the grey bellies of the
 blimps. Still, elegiac.

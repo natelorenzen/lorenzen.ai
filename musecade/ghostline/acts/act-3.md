@@ -51,10 +51,10 @@ Authentic retro arcade pixel art: the Musecade pixel style
 
 SCENE:
 A cold white vault deep underground, walls of humming storage racks with
-tiny blinking lights, a single terminal glowing; a courier in a rain-black
+tiny blinking lights, a single terminal glowing; a thief in a rain-black
 jacket staring at the screen, where two photos glow side by side, their own
 face and a young woman's; frost on the floor; in the reflection on the
-screen, a silver-haired woman's face overlapping the courier's. Clinical,
+screen, a silver-haired woman's face overlapping the thief's. Clinical,
 devastating.
 
 Do not reveal undiscovered information.

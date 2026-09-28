@@ -83,7 +83,7 @@ Somewhere quiet (a stairwell, a rooftop under a blimp's belly, a ramen booth): *
 
 **Kes** (*their oldest friend, a driver who owes them 4,000 credits*) comes screaming round the corner in *Lucky*, her battered three-wheeled hover-cab, because she heard about the Lucky Hand on the drone gossip channels. *"Get in, get in, you look terrible, why is Orison on every channel?"*
 
-- Kes got them this job: a pickup at Orison's lab tower, ten times the normal rate. She got it from a broker's runner who works for Madame Lotus. (A seed for `DISCOVER_LOTUS_BUYER`.)
+- Kes got them this job: lifting a prototype chip from Orison's lab tower, ten times the normal rate. They got in. They remember a woman bleeding on the lab floor, grabbing their collar, a jack cable, and then nothing. She got it from a broker's runner who works for Madame Lotus. (A seed for `DISCOVER_LOTUS_BUYER`.)
 - She's all in (`RECRUIT_KES`). She's funny, loud and scared. She keeps checking her phone. (Her cousin's in Orison debt prison. She'll mention it if asked about family.)
 
 ## 1.4 THE NIGHT MARKET
@@ -92,7 +92,7 @@ The **Drowned Mile**: a flooded boulevard of lantern boats and stalls. Everythin
 
 - On her barge, surrounded by screens: she's charming, ancient and terrifying. She knows exactly what's in their head. She makes an offer: 200,000 credits for the ghost, extracted tonight by her own surgeon. *"You'll wake up tomorrow as yourself, a little rich, a little hollow."* Accepting is `SOLD` (`game/endings.md`).
 - **Outplaying her** (`SOCIAL_LOTUS_DEAL`): a better offer, a bluff she can't call, or knowing something she doesn't. It buys a day before her hunters come. FIXER SEES: her screens show a private channel with an Orison routing prefix. That's the seed of `DISCOVER_LOTUS_BUYER` (her buyer is Kade), which the player can confirm with BACKDOOR, a Charm roll on her assistant, or Kes's contacts.
-- **Midnight:** every screen on the Drowned Mile flickers. A bounty, posted by Lotus: **2,000,000 CREDITS · ALIVE · THE COURIER FROM THE LUCKY HAND** with their face. Every head in the market turns.
+- **Midnight:** every screen on the Drowned Mile flickers. A bounty, posted by Lotus: **2,000,000 CREDITS · ALIVE · THE THIEF FROM THE LUCKY HAND** with their face. Every head in the market turns.
 - Getting out of the market with a bounty on their head is a short, sharp chase: one roll, or a move, or a Mara key.
 
 **Kes goes quiet in the cab afterward.** She says she needs to "check on her cousin" and makes a call with the window up. (This is the betrayal: see `characters/companions.md`. Don't reveal it. Let a sharp player notice.)

@@ -59,9 +59,9 @@ https://lorenzen.ai/musecade/seriesdoom/play.md?v=1.0-5e0936d
 Title: Ghostline
 Genre: Cyberpunk · Noir
 Duration: 45–75 minutes
-Build: 1.0-af3e288
+Build: 1.0-57b8947
 Play:
-https://lorenzen.ai/musecade/ghostline/play.md?v=1.0-af3e288
+https://lorenzen.ai/musecade/ghostline/play.md?v=1.0-57b8947
 <!-- END GENERATED:games -->
 
 ---

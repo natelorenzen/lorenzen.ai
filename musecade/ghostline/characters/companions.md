@@ -10,7 +10,7 @@ Three people can join the run. Each has a secret, a moment, and a way to be lost
 
 **Personality:** fast-talking, funny, loyal until it costs too much, broke. She's the player's oldest friend in the Stacks, and she owes them 4,000 credits.
 
-**History:** she and the player ran jobs together for five years. She got the player this job: pick up a package at Orison's lab tower. It paid ten times the usual rate.
+**History:** she and the player ran jobs together for five years. She got the player this job: steal a prototype chip from a lab in Orison's research tower. It paid ten times the usual rate.
 
 **Secret** (`DISCOVER_KES_DEAL`): at midnight on night 1, when Madame Lotus posts a two-million-credit bounty on the player, Kes's cousin is in Orison debt prison. Kes tells the Quiet Men where the player is. She regrets it within the hour. It sets up the raid on the church (Act II). If the player catches her (`kes_sold_you`), how they handle it decides everything.
 

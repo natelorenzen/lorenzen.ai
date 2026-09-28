@@ -11,7 +11,7 @@ For the storyteller only. Reveal it through evidence and people, never as a summ
 
 ## How she died
 - She copied the edit logs and the patch registry key, planning to give them to the Cartographers. Kade found out. Two nights ago Kade ordered a team of **Quiet Men** to her lab (`DISCOVER_MARA_MURDER`: she heard Kade's voice on their comms: *"Quietly, please. She was family."*). One of them was **Brother Null**, who fired.
-- In her last ninety seconds, she jacked her whole mind and the logs into the courier who'd come for a package (the player), because a slot with no Orison backup can't be wiped remotely.
+- In her last ninety seconds, she jacked her whole mind and the logs into the thief who'd broken into her lab to steal a prototype (the player), because a slot with no Orison backup can't be wiped remotely.
 
 ## What she wants
 - To live. She'll help the player reach the Loom, and she means it, mostly. At the Loom she'll try to keep the body if she can, unless the player has reached her (`SOCIAL_MARA_TRUTH`).
@@ -27,4 +27,4 @@ For the storyteller only. Reveal it through evidence and people, never as a summ
 Mara locked her partition of the ghost (the registry key and her message to the Cartographers) behind three memories, each with a moment she patched. The passphrase is the three true words underneath. See `game/puzzles.md`.
 
 ## What's on the logs
-Every Basic restore since 2081, with a patch list: `GRATITUDE+2`, `ANGER(ORISON)-3`, `UNION_MEMORY:DELETE`, `GRIEF(FLOOD_2085):INSERT`. Including one courier (the player, restored after a scaffold fall two years ago: `SIBLING_DEATH:INSERT`) and one union organizer (Ines, restored after a "workplace accident": `SIBLING_DEATH:INSERT`, `LOYALTY(KADE)+4`).
+Every Basic restore since 2081, with a patch list: `GRATITUDE+2`, `ANGER(ORISON)-3`, `UNION_MEMORY:DELETE`, `GRIEF(FLOOD_2085):INSERT`. Including one thief (the player, restored after a scaffold fall two years ago: `SIBLING_DEATH:INSERT`) and one union organizer (Ines, restored after a "workplace accident": `SIBLING_DEATH:INSERT`, `LOYALTY(KADE)+4`).

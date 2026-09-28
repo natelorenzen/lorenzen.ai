@@ -56,7 +56,7 @@ SCENE:
 A surreal digital dreamscape: three floating memory rooms suspended in a
 void of glowing cyan code, a rainy tenement kitchen, a white laboratory, a
 birthday party in a glass penthouse, each glitching at the edges; a
-courier in a rain-black jacket walking a bridge of light between them, and
+thief in a rain-black jacket walking a bridge of light between them, and
 a translucent silver-haired woman in a lab coat walking beside them like a
 reflection. Dreamlike, eerie, neon.
 
@@ -69,7 +69,7 @@ Do not reveal undiscovered information.
 [VIDEO_TRIGGER]
 ID: VID_MEMORY_PALACE
 PAIRED WITH: IMG_MEMORY_PALACE
-MOTION: the memory rooms drift and rotate slowly in the void; glitch lines ripple across the kitchen; the translucent woman turns her head toward the courier
+MOTION: the memory rooms drift and rotate slowly in the void; glitch lines ripple across the kitchen; the translucent woman turns her head toward the thief
 CAMERA: slow orbit around the bridge of light
 [/VIDEO_TRIGGER]
 ```

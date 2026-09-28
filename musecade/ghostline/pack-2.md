@@ -1,4 +1,4 @@
-# GHOSTLINE · PACK-2 · BUILD 1.0-af3e288
+# GHOSTLINE · PACK-2 · BUILD 1.0-57b8947
 
 Bundle for: Act II begins (`REACH_STACKS`). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 
@@ -62,7 +62,7 @@ SCENE:
 A surreal digital dreamscape: three floating memory rooms suspended in a
 void of glowing cyan code, a rainy tenement kitchen, a white laboratory, a
 birthday party in a glass penthouse, each glitching at the edges; a
-courier in a rain-black jacket walking a bridge of light between them, and
+thief in a rain-black jacket walking a bridge of light between them, and
 a translucent silver-haired woman in a lab coat walking beside them like a
 reflection. Dreamlike, eerie, neon.
 
@@ -75,7 +75,7 @@ Do not reveal undiscovered information.
 [VIDEO_TRIGGER]
 ID: VID_MEMORY_PALACE
 PAIRED WITH: IMG_MEMORY_PALACE
-MOTION: the memory rooms drift and rotate slowly in the void; glitch lines ripple across the kitchen; the translucent woman turns her head toward the courier
+MOTION: the memory rooms drift and rotate slowly in the void; glitch lines ripple across the kitchen; the translucent woman turns her head toward the thief
 CAMERA: slow orbit around the bridge of light
 [/VIDEO_TRIGGER]
 ```
@@ -141,7 +141,7 @@ For the storyteller only. Reveal it through evidence and people, never as a summ
 
 ## How she died
 - She copied the edit logs and the patch registry key, planning to give them to the Cartographers. Kade found out. Two nights ago Kade ordered a team of **Quiet Men** to her lab (`DISCOVER_MARA_MURDER`: she heard Kade's voice on their comms: *"Quietly, please. She was family."*). One of them was **Brother Null**, who fired.
-- In her last ninety seconds, she jacked her whole mind and the logs into the courier who'd come for a package (the player), because a slot with no Orison backup can't be wiped remotely.
+- In her last ninety seconds, she jacked her whole mind and the logs into the thief who'd broken into her lab to steal a prototype (the player), because a slot with no Orison backup can't be wiped remotely.
 
 ## What she wants
 - To live. She'll help the player reach the Loom, and she means it, mostly. At the Loom she'll try to keep the body if she can, unless the player has reached her (`SOCIAL_MARA_TRUTH`).
@@ -157,7 +157,7 @@ For the storyteller only. Reveal it through evidence and people, never as a summ
 Mara locked her partition of the ghost (the registry key and her message to the Cartographers) behind three memories, each with a moment she patched. The passphrase is the three true words underneath. See `game/puzzles.md`.
 
 ## What's on the logs
-Every Basic restore since 2081, with a patch list: `GRATITUDE+2`, `ANGER(ORISON)-3`, `UNION_MEMORY:DELETE`, `GRIEF(FLOOD_2085):INSERT`. Including one courier (the player, restored after a scaffold fall two years ago: `SIBLING_DEATH:INSERT`) and one union organizer (Ines, restored after a "workplace accident": `SIBLING_DEATH:INSERT`, `LOYALTY(KADE)+4`).
+Every Basic restore since 2081, with a patch list: `GRATITUDE+2`, `ANGER(ORISON)-3`, `UNION_MEMORY:DELETE`, `GRIEF(FLOOD_2085):INSERT`. Including one thief (the player, restored after a scaffold fall two years ago: `SIBLING_DEATH:INSERT`) and one union organizer (Ines, restored after a "workplace accident": `SIBLING_DEATH:INSERT`, `LOYALTY(KADE)+4`).
 
 ===== FILE: game/puzzles.md =====
 

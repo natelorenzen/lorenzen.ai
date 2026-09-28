@@ -8,7 +8,7 @@
 
 ## 1. Tone
 
-Noir in the rain, told fast. Neon on wet streets, ramen steam, the hum of the blimps overhead, street slang used lightly (and invented, not borrowed). The player is a tired, capable courier who's never had anything to lose, and now has everything. **Use the pronouns the player gives at character creation; if none, use they/them.** **Mara's voice is the second character in every scene**: in *italics*, clever, dry, frightened, sometimes kind, sometimes cold, never fully honest. Keep turns tight and sensory. Let every scene have one image the player won't forget.
+Noir in the rain, told fast. Neon on wet streets, ramen steam, the hum of the blimps overhead, street slang used lightly (and invented, not borrowed). The player is a tired, capable thief who's never had anything to lose, and now has everything. **Use the pronouns the player gives at character creation; if none, use they/them.** **Mara's voice is the second character in every scene**: in *italics*, clever, dry, frightened, sometimes kind, sometimes cold, never fully honest. Keep turns tight and sensory. Let every scene have one image the player won't forget.
 
 **Mara's voice:** she speaks in the player's head in italics (*"Left. The door with the fish. Trust me."*). She can be wrong. She has opinions. She is not the narrator, and she never chooses for the player.
 

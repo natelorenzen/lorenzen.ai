@@ -12,7 +12,7 @@
 
 ## 5.1 THE GARDENS
 
-The Crown in daylight: sky gardens, fountains, glass bridges between towers, people in white who've never seen rain. Nobody looks at a courier in a wet jacket, because couriers are invisible here.
+The Crown in daylight: sky gardens, fountains, glass bridges between towers, people in white who've never seen rain. Nobody looks twice at someone in a wet jacket carrying a tray: up here, staff are invisible, and a good thief knows how to look like staff.
 
 - **Ines** (`SOCIAL_INES`): she crosses a garden bridge with a tablet, in a white suit, fast, efficient, **alive**: twenty-two, the same crooked front tooth. She doesn't know the player. She has a patched memory of a sibling who drowned in the flood. Making her remember, even a little (a song they sang on the flood wall, the scar on her palm from the fence, the photo in the player's jacket), is the moment. She may not remember at all. She may remember one thing, and cry, and not know why. Don't resolve her fully. She can help them into the Spire (she has Kade's schedule and access), or turn them in, depending on what she remembers.
 - **Mara's key:** she knows the Spire's service entrances; SYNC +1, as always.
@@ -46,7 +46,7 @@ Use current character and world state.
 SCENE:
 The top of a white spire: a vast cathedral room of glowing white threads
 strung like harp strings from floor to ceiling, sunlight through a glass
-roof; in the center a courier in a rain-black jacket standing in a circle
+roof; in the center a thief in a rain-black jacket standing in a circle
 of light, and facing them, made of threads of light, a silver-haired woman;
 floating around them, glowing panes of memories. Sacred, strange, final.
 

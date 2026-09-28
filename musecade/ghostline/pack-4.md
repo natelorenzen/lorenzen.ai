@@ -1,4 +1,4 @@
-# GHOSTLINE · PACK-4 · BUILD 1.0-af3e288
+# GHOSTLINE · PACK-4 · BUILD 1.0-57b8947
 
 Bundle for: Act IV begins (`REACH_CANOPY`). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 
@@ -54,7 +54,7 @@ SCENE:
 Dawn above an endless sea of grey ad-blimp backs stretching to the horizon,
 glowing holo-ads fading in the light; gleaming white and gold towers rising
 out of the blimps like islands, the tallest a slender white spire; on the
-roof of the nearest blimp a courier in a rain-black jacket shielding their
+roof of the nearest blimp a thief in a rain-black jacket shielding their
 eyes from the first real sunlight, the crew beside them. Awe, triumph,
 vertigo.
 

@@ -13,7 +13,7 @@ Print:
 ```
 <NAME>.
 
-Courier. Twenty-six.
+Thief. Twenty-six.
 One slot behind the left ear.
 No backup. Never could afford one.
 
@@ -63,7 +63,7 @@ Then go straight into the cold open (`acts/act-1.md` 1.0).
 
 ## What they're carrying
 
-A rain-black courier jacket, a cracked handset, a data slot behind the left ear (currently full), 340 credits on a burner chip, a transit pass for the Stacks, and a photo of a little girl on a flood wall: **Ines**, their sister, who died in the flood when she was nine. (That's what they remember.) Plus:
+A rain-black jacket with a dozen hidden pockets, a set of lock-picks, a glass cutter, a cracked handset, a data slot behind the left ear (currently full), 340 credits on a burner chip, a transit pass for the Stacks, and a photo of a little girl on a flood wall: **Ines**, their sister, who died in the flood when she was nine. (That's what they remember.) Plus:
 
 - **NETRUNNER:** a jack cable, a deck the size of a paperback, and a pair of cracked smart-lenses. *Sees:* networks, cameras, drones, the code under everything.
 - **CHROME:** reflex implants in both arms, a stun baton, a pistol with six rounds, and a scar across the knuckles. *Sees:* threats, exits, who's armed.
