@@ -44,7 +44,7 @@ An hour of grey light before dusk. The courier can prepare (barricade, lay fire,
 
 ## 4.3 THE SIEGE OF ORUN
 
-Run `ENC_ORUN` from `game/encounters.md`. Who comes depends on the whole game so far:
+Run `ENC_ORUN` from `game/encounters-4.md`. Who comes depends on the whole game so far:
 
 **From below: the Hushed.** Always. Pale figures climb out of the undercroft cracks and up the cliff, drawn by the Kindling. With them comes a sound like wind through a thousand throats.
 - If Serith was **not** doubted, she leads the **White Choir** with them, singing, torches out, and the Choir tries to reach the box and smother it in snow.
@@ -118,7 +118,7 @@ Do not reveal undiscovered information.
 [/IMAGE_TRIGGER]
 ```
 
-**The Stair Hold.** When the courtyard falls, the siege becomes the Stair Hold: three waves on the undercroft stair (the climbers, the push, the cold), each with a three-approach decision menu. See `ENC_ORUN` in `game/encounters.md`. Every wave must cost or reveal something. This is the Warden's finest hour.
+**The Stair Hold.** When the courtyard falls, the siege becomes the Stair Hold: three waves on the undercroft stair (the climbers, the push, the cold), each with a three-approach decision menu. See `ENC_ORUN` in `game/encounters-4.md`. Every wave must cost or reveal something. This is the Warden's finest hour.
 
 **Outcomes and resolution:** the siege, including the Stair Hold, lasts 4 to 8 decisions and ends when the courier gets down into the undercroft (with or without the box and companions), when they escape by the rope-lift (see below), or when they die. The monks hold the undercroft stair behind them. **Prior Hesk** dies holding it unless someone helps him; Brother Caddoc rings the great bell until the end. Report `ENC_ORUN_SURVIVED` and, for a clever resolution (the bell, the oil store, the rope-lift as a weapon, turning Dask against the Hushed, Tam's gate), `ENC_ORUN_CLEVER`. A courier who slips through the whole siege unseen, a Wayfarer's move, earns `ACH_UNSEEN` (report at game over).
 

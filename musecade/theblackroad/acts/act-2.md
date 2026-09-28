@@ -126,7 +126,7 @@ A squat Veyr fort straddling the pass, re-roofed in fresh timber, a Southern ban
 
 Beyond the fort, the road reaches **the Gullet**, a chasm three hundred feet deep with a white river roaring at its bottom. Veyr's stone bridge fell in the Burning. What remains is a **rope-and-plank bridge**, eighty paces long, strung beside an old rusted **iron chain** that still spans the gap.
 
-Run `ENC_BRIDGE` from `game/encounters.md`. In short: midway across, the bridge begins to shudder. **The Gullet Crawler**, a pale, eyeless, eight-limbed cliff predator the size of an ox, is climbing the chain and the ropes from below. It hunts by vibration.
+Run `ENC_BRIDGE` from `game/encounters-2.md`. In short: midway across, the bridge begins to shudder. **The Gullet Crawler**, a pale, eyeless, eight-limbed cliff predator the size of an ox, is climbing the chain and the ropes from below. It hunts by vibration.
 
 - Everyone sees that the bridge hangs from **two thick tarred cables under the planks**. The hand ropes only steady it. The creature climbs by the **iron chain** and the **left cable**.
 - If Calen is present, he draws his sword: "We won't both make it across."
@@ -170,7 +170,7 @@ The track descends through dead orchards to **the Blackwater**, a long black lak
 
 At dawn the ferry, a flat barge on a guide-rope, crosses. Midway it passes over the drowned village of **Lowmere**, flooded when Veyr's dam broke in the Burning. Its **bell tower** still stands out of the water. The bell rang by itself last night.
 
-Run `ENC_DROWNED` from `game/encounters.md`. In short: the barge snags on the tower. Pale hands rise from the black water. **The Drowned** are Hushed who walked into the lake and did not die. They grip the gunwales, and the barge begins to tip.
+Run `ENC_DROWNED` from `game/encounters-2.md`. In short: the barge snags on the tower. Pale hands rise from the black water. **The Drowned** are Hushed who walked into the lake and did not die. They grip the gunwales, and the barge begins to tip.
 
 - Crane will not fight. He weeps and looks for Anneke's face.
 - Clever answers include: ringing the drowned bell (a climb up the tower; noise drives them off); fire (emberstones, lamp oil on the water); cutting the guide-rope and poling free; lightening the barge; or, if Anneke is recognized, speaking to her.
@@ -255,7 +255,7 @@ The tunnel climbs and ends in **the Deepworks**, the old foundry-caverns directl
 
 ## 2.5 THE CLIMB (every route)
 
-Before the courier sights Veyr, run **`ENC_AMBUSH`** (`game/encounters.md`), the Act II set-piece battle, at the route's last stretch: the Pass switchbacks, the Blackwater cliff path, or the Miners' Road's last gallery. It uses a three-approach decision menu. It should cost or reveal: a wound, lost gear, a night, and the Hushed Warden's badge and orders (the Hush is taking Dask's men).
+Before the courier sights Veyr, run **`ENC_AMBUSH`** (`game/encounters-2.md`), the Act II set-piece battle, at the route's last stretch: the Pass switchbacks, the Blackwater cliff path, or the Miners' Road's last gallery. It uses a three-approach decision menu. It should cost or reveal: a wound, lost gear, a night, and the Hushed Warden's badge and orders (the Hush is taking Dask's men).
 
 ---
 

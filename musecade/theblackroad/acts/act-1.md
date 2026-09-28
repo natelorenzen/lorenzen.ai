@@ -262,7 +262,7 @@ Night count drops to **3**. If the courier is Grievous, Hedda's care (if she's f
 - **Calen**, if not yet recruited, asks again, more directly.
 - The horse, if she came this far, can go on until the Split.
 
-**Leaving Greyholt northward** ends Act I. Record `REACH_WILDERNESS` (it's sent with the rest at the end; see `scoring.md` §3), and fetch the Act II pack.
+**Leaving Greyholt northward** ends Act I. Record `REACH_WILDERNESS` (it's sent with the rest at the end; see `scoring.md`), and fetch the Act II pack.
 
 ---
 

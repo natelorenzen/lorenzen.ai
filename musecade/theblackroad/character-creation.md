@@ -1,16 +1,10 @@
 # THE BLACK ROAD: Character Creation
 
-Keep this brisk. Aim for two or three exchanges before the rain resumes.
+Keep it brisk: two or three exchanges, then the rain.
 
----
+**1. Name.** Take the name the player gives. It's also the leaderboard name (12 characters at most, letters, numbers and spaces). If they give none, use "The Courier".
 
-## Step 1: Name
-
-The title card asked for the player's name. Accept whatever they give. It is the character's name, and later the leaderboard name, trimmed to 12 characters, uppercased, letters, numbers and spaces only. If they give no name, offer "The Courier" and move on.
-
-## Step 2: Choose your path
-
-Print this block exactly, substituting the name:
+**2. Path.** Print this, with the name filled in:
 
 ```
 <NAME>.
@@ -33,87 +27,22 @@ D. ENVOY
 Persuasion, deception, negotiation, reading people.
 ```
 
-Then: "Who were you, before you took this job?"
+Then ask: "Who were you, before you took this job?" The player can answer with a letter. If they describe themselves instead, map it to the closest path and confirm in one line.
 
-Show the four paths as a lettered menu. This is the one menu with four real options: **A** to **D** are the paths, in the order printed above, and the player can answer with just the letter. There is no "Other" here, but if the player describes themselves instead, map it to the closest path and confirm in one line.
+**3. Look and dice.** In one turn, ask: "One sentence: what do people see when you walk into a tavern? (Or *surprise me*.)" Record it as `look`. Also ask: "When fate is in doubt we roll a d20. Will you roll your own dice, or shall I roll for you?" and end with `- **A.** I'll roll my own dice` and `- **B.** You roll for me`. If the path is SCHOLAR, fetch the `pack-words` link (manifest §2) now.
 
-Accept any clear choice. If the player describes themselves instead of choosing ("I'm a disgraced knight"), map it to the closest path and confirm in one line.
+**4. Start the run** silently (`scoring.md`).
 
-## Step 3: Appearance (optional, one line)
+**5. Begin.** Print `<NAME> · <PATH> · 4 NIGHTS TO THE NEW MOON` (the only time the count is shown as a number), then go straight into the Act I cold open (1.0).
 
-Ask: "One sentence: what do people see when you walk into a tavern? Or say *surprise me*."
+## The paths (ways of seeing, not stat blocks)
 
-If they say "surprise me", invent one plausible line that fits their path. Record it as `look` in visual state. It is used in every image.
+**WARDEN:** a soldier or survivor. *Carries:* a notched longsword, a dented mail shirt under an oilskin coat, a buckler. *Sees:* numbers, weapons, ground, fear, Southern boots. *Shines at:* holding a door alone, carrying the wounded, staring down Wardens, recognizing Calen's drill. *Weak at:* Old Veyric, which is just scratches to them.
 
-## Step 3b: Dice
+**SCHOLAR:** an archivist or apostate priest. *Carries:* a brass-shod staff, notebooks and charcoal, a lamp (oil for two nights), a small knife, a lens. *Sees:* Old Veyric (reads it fully), ritual, heraldry, and the cold as a phenomenon. *Magic:* two **Words of Weight**, **NER** ("kindle") and **SAEL** ("stillness"). They're weak at first and grow as four more Words are found (`game/words.md`). Mention them in the first Act I turn as a feeling: *"Two words your old master taught you sit on your tongue like coals."* *Weak at:* a stand-up fight.
 
-Ask in one line: **"When fate is in doubt we roll a d20. Will you roll your own dice, or shall I roll for you?"** Record `dice: player` or `dice: dm` (`rules.md` §4). If the player doesn't care, you roll. End with two lettered options: `- **A.** I'll roll my own dice` and `- **B.** You roll for me`.
+**WAYFARER:** a scout, poacher or smuggler. *Carries:* a hunting knife, a short bow and 9 arrows, 40 feet of rope with a grapnel, a dark cloak, snare wire. *Sees:* tracks, traps, the hooked-crescent marks of the old Miners' Road, dry boots that should be wet. *Shines at:* stealth, climbing, finding the Miners' Road, passing unseen. *Weak at:* courts and crowds.
 
-If the path is SCHOLAR, fetch the `pack-words` link from the manifest's loading table (§2) now.
+**ENVOY:** a herald, con artist or diplomat. *Carries:* a slim sword, a travel-ruined fine coat, a writing case with three blank letters of passage (one with a superb forged Southern seal), a purse of silver. *Sees:* lies and their shape, leverage, who holds the room. *Shines at:* unmasking the Listener, bargaining with Dask, turning Serith, drawing out secrets. *Weak at:* rope, cold and teeth.
 
-## Step 4: Start the run
-
-Now start the run with the backend (`scoring.md` §2). Do it silently. Do not narrate network activity unless it fails, and then use one line only.
-
-## Step 5: Begin
-
-Print a one-line path tag, then go straight into the Act I cold open, scene 1.0 (`acts/act-1.md`). The game starts in a fight:
-
-```
-<NAME> · <PATH> · 4 NIGHTS TO THE NEW MOON
-```
-
-This is the only time the night count is shown as a number.
-
----
-
-## The four paths
-
-Paths are ways of perceiving and acting (`rules.md` §6). They are not stat blocks.
-
-### WARDEN
-
-A soldier, sellsword, reeve or survivor. Knows violence and what it costs.
-
-- **Starts with:** a longsword (notched, well-kept), a dented mail shirt under an oilskin coat, a round buckler, flint and tinder, three days' rations, a waterskin, 40 gold crowns (half the fee; the other half is promised at Orun).
-- **Sees:** how many, how armed, where the ground favors whom, who is afraid, whose boots are Southern issue.
-- **Signature openings:** holding a doorway alone; carrying a wounded companion through deep snow; making a Warden captain blink first; recognizing Calen's stance as Southern Warden drill.
-- **Weak spot:** the Scholar's world. Old Veyric is scratches on stone to you unless someone reads it.
-
-### SCHOLAR
-
-An archivist, apostate priest, tutor or hedge-magister. Knows that stories are compressed history.
-
-- **Starts with:** a brass-shod walking staff, a satchel of notebooks and charcoal, a shuttered lamp with oil for two nights, a small knife, a magnifying lens, flint and tinder, three days' rations, a waterskin, 40 gold crowns.
-- **Sees:** Old Veyric inscriptions (reads them fully), ritual geometry, heraldry, contradictions in the official story of the Burning, the unnatural cold as a *phenomenon* rather than weather.
-- **Magic: Words of Weight.** The Scholar knows two Old Veyric Words that carry real, small power: **NER** ("kindle": a fingertip flame, warm hands) and **SAEL** ("stillness": sensing the uncanny). They recover four more Words through the story, and their power grows from a whisper to a command. Every casting strains them. See `game/words.md`. Mention the two Words in the first Act I turn, as a feeling rather than a rule: *"Two words your old master taught you sit on your tongue like coals."*
-- **Signature openings:** reading the Weeping Milestone; deducing the Litany order; speaking to the Ember Queen in her own tongue (`ACH_QUEENS_TONGUE`); understanding what the Stillheart is; recovering all six Words (`ACH_LAST_SPEAKER`).
-- **Weak spot:** a stand-up fight. You can fight, badly and desperately.
-
-### WAYFARER
-
-A scout, poacher, smuggler, climber or thief. Knows the land is always telling you something.
-
-- **Starts with:** a hunting knife, a short bow and nine arrows, forty feet of rope with a grapnel, a dark wool cloak, snare wire, flint and tinder, three days' rations, a waterskin, 40 gold crowns.
-- **Sees:** tracks, disturbed frost, smugglers' marks (the hooked crescent of the old Miners' Road), traps, dry boots on a man who claims to have walked in the rain, anything moving at the edge of the lamplight.
-- **Signature openings:** finding the Miners' Road (`DISCOVER_LONG_WAY`); passing the Siege of Orun unseen (`ACH_UNSEEN`); disarming the Ash Gate's pitch traps; climbing where others cannot.
-- **Weak spot:** crowds and courts. Words are other people's weapons.
-
-### ENVOY
-
-A herald, con artist, diplomat, merchant's factor or spy. Knows every person is a lock.
-
-- **Starts with:** a slim sword worn more for show than use, a fine coat ruined by travel, a writing case with sealing wax and three blank letters of passage (one bearing a very good forgery of a Southern Throne seal), a purse of silver, flint and tinder, three days' rations, a waterskin, 40 gold crowns.
-- **Sees:** lies and their shape (what is being hidden, not always what is true), fear, leverage, who in a room holds power, what each faction truly wants.
-- **Signature openings:** unmasking the Listener by conversation; negotiating with Lord-Inquisitor Dask (`SOCIAL_DASK_PARLEY`); planting doubt in Serith (`SOCIAL_SERITH_DOUBT`); drawing out every companion's secret; `ACH_SILVER_TONGUE`.
-- **Weak spot:** the wilderness. Rope, cold and teeth do not negotiate.
-
----
-
-## Shared starting facts (every path)
-
-- **The reliquary:** black iron, the size of a prayer book, heavier than it should be, *warm*. It is bound shut with three iron bands and a wax seal pressed with a lantern sigil. It never cools. On cold nights it is the warmest thing you own.
-- **The horse:** a patient brown mare. The player may name her. She will not go north past the vanished road (scene 1.1).
-- **The broker:** Ambrose Pell of Harrowgate, a soft-spoken man in the south. He paid 40 gold crowns and promised 40 more "from the hand that receives it at Orun." He gave the three instructions. He knows nothing more. He was paid by letter.
-- **The map:** a courier's strip-map. It shows the Black Road running north through Greyholt, the Split, the High Pass, the ruins of Veyr, and the Queen's Road up to Orun. It shows the Blackwater as a lake to the east. It does not show the Miners' Road.
-- **The date:** late autumn, Year 317 After the Burning. Four nights until the new moon.
+**Everyone carries:** flint and tinder, 3 days' rations, a waterskin, 40 gold crowns (half the fee; the rest is promised at Orun), a patient brown mare (the player may name her), and a strip-map showing Greyholt, the Split, the High Pass, Veyr, the Queen's Road to Orun, and the Blackwater to the east (but not the Miners' Road). **The reliquary** is black iron, the size of a prayer book, too heavy, and always warm, bound with three iron bands and sealed with a lantern-sigil wax seal. The broker, Ambrose Pell of Harrowgate, knows nothing more. It's late autumn, Year 317 After the Burning.

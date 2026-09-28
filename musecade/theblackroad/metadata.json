@@ -53,7 +53,16 @@
     "game/achievements.md",
     "game/endings.md",
     "game/image-triggers.md",
-    "game/words.md"
+    "game/words.md",
+    "characters/companions-2.md",
+    "world/creatures-2.md",
+    "world/creatures-3.md",
+    "world/creatures-5.md",
+    "game/encounters-2.md",
+    "game/encounters-3.md",
+    "game/encounters-4.md",
+    "game/encounters-5.md",
+    "game/gameover.md"
   ],
   "capabilities": {
     "required": [
@@ -91,9 +100,12 @@
       "when": "Act II begins (`REACH_WILDERNESS`)",
       "files": [
         "acts/act-2.md",
+        "characters/companions-2.md",
         "characters/npcs.md",
         "world/locations.md",
         "world/factions.md",
+        "world/creatures-2.md",
+        "game/encounters-2.md",
         "game/puzzles.md"
       ]
     },
@@ -101,28 +113,35 @@
       "when": "Act III begins (`REACH_VEYR`)",
       "files": [
         "acts/act-3.md",
-        "world/lore.md"
+        "world/lore.md",
+        "world/creatures-3.md",
+        "game/encounters-3.md"
       ]
     },
     "pack-4": {
       "when": "Act IV begins (`REACH_ORUN`)",
       "files": [
-        "acts/act-4.md"
+        "acts/act-4.md",
+        "game/encounters-4.md"
       ]
     },
     "pack-5": {
       "when": "Act V begins (`REACH_THRONE`)",
       "files": [
         "acts/act-5.md",
+        "world/creatures-5.md",
+        "game/encounters-5.md",
         "game/endings.md",
-        "game/achievements.md"
+        "game/achievements.md",
+        "game/gameover.md"
       ]
     },
     "pack-end": {
       "when": "any ending triggers before Act V (death, leaving early, surrender)",
       "files": [
         "game/endings.md",
-        "game/achievements.md"
+        "game/achievements.md",
+        "game/gameover.md"
       ]
     },
     "pack-words": {

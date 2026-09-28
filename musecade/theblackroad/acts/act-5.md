@@ -90,7 +90,7 @@ Maelis can speak if spoken to, respectfully or otherwise. Her voice is a whisper
 
 ## 5.3 THE CONFRONTATION
 
-Who is in this room depends on everything before. Use the **first** variant that applies. If several apply, combine them, and let them collide with each other. Run it as `ENC_THRONE` (`game/encounters.md`), in 3 to 6 decisions.
+Who is in this room depends on everything before. Use the **first** variant that applies. If several apply, combine them, and let them collide with each other. Run it as `ENC_THRONE` (`game/encounters-5.md`), in 3 to 6 decisions.
 
 ### A. Dask
 
@@ -181,4 +181,4 @@ When the confrontation is resolved (or suspended: the Hush waits, and a stalemat
 - **The Kindling** must be given freely to anyone but its carrier (or the one who opened the box). Taken by force, it dims to nothing: `WHITE SILENCE`, unless the heart is returned.
 - **The Crown** kills an unwilling wearer at once. "Willing" means *wanting it*. Dask wants it.
 - **The Long Quiet** needs the words (the Litany Door, the journal margin, or the Queen). Without them, prying the Crown open breaks it: `THE SECOND BURNING`. The descent to the Cradle is safe if the Hush let them pass (Bram), Risky if the Hush is indifferent, and Desperate if it is hostile. A companion may carry the heart instead (Wren passes easily; the Hushed know her). If the carrier is Hushed or dies on the way but the heart reaches the Cradle, the ending is still `THE LONG QUIET`, and that person's fate goes into the epilogue.
-- **Report** `QUEEN_SPOKEN`, `ENC_THRONE_*` and any remaining events, then complete the run with the ending (`scoring.md` §4). Fire the ending's image (`endings.md`), narrate the ending and epilogue, and then print the game-over screen.
+- **Report** `QUEEN_SPOKEN`, `ENC_THRONE_*` and any remaining events, then complete the run with the ending (`game/gameover.md`). Fire the ending's image (`endings.md`), narrate the ending and epilogue, and then print the game-over screen.

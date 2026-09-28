@@ -1,4 +1,4 @@
-# THE BLACK ROAD · PACK-END · BUILD 1.5-94f7557
+# THE BLACK ROAD · PACK-END · BUILD 1.5-22eb3e0
 
 Bundle for: any ending triggers before Act V (death, leaving early, surrender). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 
@@ -13,7 +13,7 @@ Eleven endings. None is good or bad; each is a price someone pays. Never label o
 1. **The moment:** 100 to 200 words narrating what the courier does and what it costs.
 2. **The ending image** (its trigger below). It is always generated, even if the budget is spent. If motion clips are possible (`game/image-triggers.md` §7), follow it with `VID_ENDING`: 5 seconds animating that image, with one slow camera move and the ending's single most important motion (the crown igniting, the spark rising, the mist rolling, the traveler walking on).
 3. **The epilogue:** 120 to 220 words assembled from the *Epilogue* notes below plus the fates of companions, factions, Greyholt and the Queen, drawn from state. Past tense, like a chronicle. The last line should echo the road.
-4. **Complete the run** with the ending's **ID** (`scoring.md` §4) and print the game-over screen (`scoring.md` §7) or the death screen (§8).
+4. **Complete the run** with the ending's **ID** (`game/gameover.md`) and print its journey-complete screen, or its death screen.
 5. **Evaluate achievements** first, using `game/achievements.md`, so that they are included in the completion batch.
 
 **Universal epilogue fragments** (use the ones that apply):
@@ -400,7 +400,7 @@ in their cracks a faint pale blue glow. Melancholy, open, quiet.
 - **Eldervale:** without the Kindling at the throne, the seal failed at the new moon (as `WHITE SILENCE`), unless a companion carried on.
 - **The last line** names the place they fell, e.g. *"There is a cairn at the Sorrow Bridge. Someone keeps a lamp in it."*
 
-Then print the **death screen** (`scoring.md` §8), not the journey-complete screen. Complete the run with `died: true`.
+Then print the **death screen** (`game/gameover.md`), not the journey-complete screen. Complete the run with `died: true`.
 
 ```
 [IMAGE_TRIGGER]
@@ -462,3 +462,84 @@ Visible achievements are listed on the Musecade website. Hidden ones are not, an
 | `ACH_LAST_SPEAKER` | THE LAST SPEAKER | A Scholar who recovers all six Words of Weight (`game/words.md`). | Hidden |
 
 Achievements may carry modest points (the server decides). Several can be earned in one run. A few are mutually exclusive (`THE LONE ROAD` vs. `EVERYBODY LIVES`; `THREE INSTRUCTIONS` vs. `OATHBREAKER` and `WHAT'S IN THE BOX?`).
+
+===== FILE: game/gameover.md =====
+
+# THE BLACK ROAD: Game Over
+
+## Complete the run
+`POST {API}/run/complete {"run_id","run_token","ending":"ENDING_…","died":<true only if the courier is dead>,"events":[…all pending, in order…]}`
+
+It returns `score`, `rank`, `ranked`, `ending_title`, `secrets` (found and total), `achievements` and `leaderboard_url`. Use them exactly. If `ranked` is false, show `GLOBAL RANK: UNRANKED` with the server's `note`. If an event is rejected for a missing prerequisite that truly happened, add it and retry. Otherwise ignore the rejection, silently.
+
+**LOCAL or LINK:** add up the points yourself from `https://lorenzen.ai/musecade/theblackroad/events.json`: each event once, plus the ending, plus `survival_bonus` if the fate is `lives` (or `either` and alive). LOCAL shows `GLOBAL RANK: UNRANKED (LOCAL)`. LINK shows `CLICK TO SUBMIT`, then prints on its own line:
+`https://lorenzen.ai/musecade/submit/#g=theblackroad&p=<NAME>&k=<PATH>&e=<ending id>&d=<1|0>&n=<12-char random nonce>&v=<EVENT,EVENT,…>`
+followed by `CLICK THE LINK TO ENTER YOUR SCORE ON THE MUSECADE HIGH SCORES.`
+
+## Journey complete
+After the ending narration and image, one short line is allowed (`The machine hums. Somewhere, a number is being carved into a high-score table.`), then:
+
+```
+══════════════════════════════
+
+        THE BLACK ROAD
+
+       JOURNEY COMPLETE
+
+══════════════════════════════
+
+PLAYER
+<NAME>
+
+PATH
+<PATH>
+
+ENDING
+<ENDING TITLE>
+
+SCORE
+<score>
+
+SECRETS
+<found> / 11
+
+COMPANIONS SURVIVED
+<alive> / <recruited>   (or NONE · THE LONE ROAD)
+
+ACHIEVEMENTS
+<one per line, or NONE>
+
+GLOBAL RANK
+#<rank>
+
+══════════════════════════════
+```
+
+Then: `YOUR ROAD THROUGH ELDERVALE IS COMPLETE.` and `HIGH SCORES: https://lorenzen.ai/musecade/#scores`
+
+## Death
+After the death narration, image and epilogue:
+
+```
+══════════════════════════════
+
+          GAME OVER
+
+══════════════════════════════
+
+<NAME> · <PATH>
+FELL <where, 2 to 5 words>
+
+SCORE
+<score>
+
+SECRETS
+<found> / 11
+
+GLOBAL RANK
+#<rank>
+
+══════════════════════════════
+```
+
+Then: `THE BLACK ROAD REMEMBERS. HIGH SCORES: https://lorenzen.ai/musecade/#scores`, and `Type #theblackroad to walk it again.`

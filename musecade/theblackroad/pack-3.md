@@ -1,4 +1,4 @@
-# THE BLACK ROAD · PACK-3 · BUILD 1.5-94f7557
+# THE BLACK ROAD · PACK-3 · BUILD 1.5-22eb3e0
 
 Bundle for: Act III begins (`REACH_VEYR`). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 
@@ -166,7 +166,7 @@ A long vaulted crypt lit by nothing. Along its aisle stand the **Cinder Guard**:
 - SCHOLAR SEES, in the margin of the journal's last page, a line scratched out and rewritten: *"There was another way. Aldric's own forgers knew the word. Anna vaelun. The giving back. But I could not ask it of the deep, not after what we took."* The Scholar now knows the word. Record `names_learned: anna vaelun`. It is not yet clear what it does. The Litany Door and the Queen make it clear.
 - SCHOLAR, reading the journal: *maelis* is not only her name, it is the Veyric word for **ember**. She was named for the fire she would become. `WORD LEARNED: MAELIS, "ember"`. With it comes authority the Cinder Guard can feel (`game/words.md`).
 
-**The Cinder Guard** (`ENC_CINDER` in `game/encounters.md`). The Guard **stirs** when an open Kindling or unmasked fire is carried past them, when a tomb is disturbed, when the journal is taken from the niche, or when the postern was forced (3.2). They rise, ash sifting from their joints, and bar the way. They believe the Queen's fire is being stolen.
+**The Cinder Guard** (`ENC_CINDER` in `game/encounters-3.md`). The Guard **stirs** when an open Kindling or unmasked fire is carried past them, when a tomb is disturbed, when the journal is taken from the niche, or when the postern was forced (3.2). They rise, ash sifting from their joints, and bar the way. They believe the Queen's fire is being stolen.
 
 - They can be calmed: by kneeling; by speaking Veyric (a Scholar: "I carry the Queen's fire home"); by speaking the Word MAELIS with power (a roll, for a Scholar at rank III); by reciting the waystation hymn; by showing the lantern sigil on the reliquary's seal; or by returning what was taken.
 - They can be fought: slow, heavy, immune to fire, brittle to hard blows and to cold water. A Warden's fight.
@@ -312,3 +312,34 @@ Leave these open. Do not resolve them, even at the end:
 - Whether the Hush is conscious in any way a person would recognize.
 - Whether the Hushed suffer.
 - Whether Maelis was right.
+
+===== FILE: world/creatures-3.md =====
+
+# ELDERVALE: The Cinder Guard
+
+## The Cinder Guard
+
+Queen Maelis's forty knights, turned to ash-stone in the Burning, kneeling in the Royal Crypt.
+
+- **Look:** knights of grey ash-stone in the Queen's flame livery, embers faint in their visor slits. Ash pours from their joints when they move.
+- **Want:** to guard the Queen's rest and her fire. They wake when fire passes that isn't hers (an open Kindling, a torch waved at a tomb), when a tomb is disturbed, or when the crypt is broken into by force.
+- **Behavior:** slow, heavy, relentless inside the crypt. They never leave it.
+- **Weakness:** hard blunt blows shatter them; cold water cracks them. Fire does nothing.
+- **Calming:** kneeling, the Queen's name, Old Veyric, the waystation hymn, the lantern sigil on the reliquary seal, returning a disturbed object.
+
+===== FILE: game/encounters-3.md =====
+
+# THE BLACK ROAD: Encounters, Act III
+
+## ENC_CINDER: The Cinder Guard (Act III, the Royal Crypt)
+
+- **Enemies:** up to forty Cinder Guard, though usually only the nearest eight rise.
+- **Their goal:** stop the Queen's fire being stolen, and drive intruders out of the crypt.
+- **Terrain:** a long vaulted aisle, tombs, the Queen's empty tomb at the far end, a drain channel of meltwater along the floor, a collapsed side vault, the stair out.
+- **Beats:**
+  1. Ash sifts. A knight lifts its head.
+  2. Eight rise, swords lifting, and bar the aisle.
+  3. They advance, slowly, relentlessly.
+  4. The stair out is blocked or open, depending on where the courier stands.
+- **Clever resolutions:** kneeling; the Queen's name; Old Veyric; the hymn; showing the lantern seal; returning the journal; smashing the drain channel so cold water floods the aisle and cracks them; leading them into the collapsed vault.
+- **Resolution:** they kneel again, are broken, or the courier leaves the crypt (they will not follow).

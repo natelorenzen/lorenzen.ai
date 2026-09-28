@@ -7,7 +7,7 @@ Eleven endings. None is good or bad; each is a price someone pays. Never label o
 1. **The moment:** 100 to 200 words narrating what the courier does and what it costs.
 2. **The ending image** (its trigger below). It is always generated, even if the budget is spent. If motion clips are possible (`game/image-triggers.md` §7), follow it with `VID_ENDING`: 5 seconds animating that image, with one slow camera move and the ending's single most important motion (the crown igniting, the spark rising, the mist rolling, the traveler walking on).
 3. **The epilogue:** 120 to 220 words assembled from the *Epilogue* notes below plus the fates of companions, factions, Greyholt and the Queen, drawn from state. Past tense, like a chronicle. The last line should echo the road.
-4. **Complete the run** with the ending's **ID** (`scoring.md` §4) and print the game-over screen (`scoring.md` §7) or the death screen (§8).
+4. **Complete the run** with the ending's **ID** (`game/gameover.md`) and print its journey-complete screen, or its death screen.
 5. **Evaluate achievements** first, using `game/achievements.md`, so that they are included in the completion batch.
 
 **Universal epilogue fragments** (use the ones that apply):
@@ -394,7 +394,7 @@ in their cracks a faint pale blue glow. Melancholy, open, quiet.
 - **Eldervale:** without the Kindling at the throne, the seal failed at the new moon (as `WHITE SILENCE`), unless a companion carried on.
 - **The last line** names the place they fell, e.g. *"There is a cairn at the Sorrow Bridge. Someone keeps a lamp in it."*
 
-Then print the **death screen** (`scoring.md` §8), not the journey-complete screen. Complete the run with `died: true`.
+Then print the **death screen** (`game/gameover.md`), not the journey-complete screen. Complete the run with `died: true`.
 
 ```
 [IMAGE_TRIGGER]
