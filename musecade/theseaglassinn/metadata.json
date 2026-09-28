@@ -71,5 +71,60 @@
       "5-second video generation",
       "random number generation"
     ]
+  },
+  "packs": {
+    "play": {
+      "when": "the game starts",
+      "files": [
+        "core/dm-core.md",
+        "core/image-style.md",
+        "core/scoring.md",
+        "adventure.md",
+        "rules.md",
+        "character-creation.md",
+        "scoring.md",
+        "game/image-triggers.md",
+        "acts/act-1.md",
+        "characters/companions.md",
+        "characters/npcs.md"
+      ]
+    },
+    "pack-2": {
+      "when": "Act II begins (`REACH_ISLAND`)",
+      "files": [
+        "acts/act-2.md",
+        "world/island.md",
+        "game/puzzles.md"
+      ]
+    },
+    "pack-3": {
+      "when": "Act III begins (`REACH_LETTERS`)",
+      "files": [
+        "acts/act-3.md",
+        "world/winnie.md",
+        "game/encounters.md"
+      ]
+    },
+    "pack-4": {
+      "when": "Act IV begins (`REACH_STORM`)",
+      "files": [
+        "acts/act-4.md"
+      ]
+    },
+    "pack-5": {
+      "when": "Act V begins (`REACH_FESTIVAL`)",
+      "files": [
+        "acts/act-5.md",
+        "game/endings.md",
+        "game/achievements.md"
+      ]
+    },
+    "pack-end": {
+      "when": "any ending triggers before Act V (death, leaving early, surrender)",
+      "files": [
+        "game/endings.md",
+        "game/achievements.md"
+      ]
+    }
   }
 }

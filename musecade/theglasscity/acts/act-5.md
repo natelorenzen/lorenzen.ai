@@ -52,7 +52,7 @@ CAMERA: slow push along the bridge.
 
 ## 5.2 THE CONFRONTATION
 
-Who is on the bridge depends on everything before. Combine these, and run it as **`ENC_BRIDGE`** (`game/encounters.md`), with a three-approach `[MENU]` at the turning point.
+Who is on the bridge depends on everything before. Combine these, and run it as **`ENC_BRIDGE`** (`game/encounters.md`), with a three-approach lettered menu at the turning point.
 
 - **Ashby is at the Concord end.** If he's free, he's there as station chief to "receive the defector". He has two men, and orders that NIGHTINGALE be shot "resisting" once she's through the gate, with the film on her. He smiles at the player like a proud teacher.
 - **Kell is at the city end**, if Voss died in the Glasshouse or never dealt: a sniper in the tollhouse tower and men at the checkpoint. If Ilse sold the real plan, Kell knows the gate and the car.

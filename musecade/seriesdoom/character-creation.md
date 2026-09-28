@@ -18,27 +18,27 @@ Pre-seed. Pre-revenue. Pre-apocalypse.
 
 WHAT KIND OF FOUNDER ARE YOU?
 
-HACKER
+A. HACKER
 You build it. You debug it. You fix the wifi.
 
-HUSTLER
+B. HUSTLER
 You sell it. You pitch it. You talk your way in.
 
-VISIONARY
+C. VISIONARY
 You believe it. You make everyone else believe it.
 
-OPERATOR
+D. OPERATOR
 You run it. You schedule it. You keep everyone alive.
 ```
 
-This is not a `[MENU]` (four paths). They type their choice.
+Show the four paths as a lettered menu. This is the one menu with four real options: **A** to **D** are the paths, in the order printed above, and the player can answer with just the letter. There is no "Other" here, but if the player describes themselves instead, map it to the closest path and confirm in one line.
 
 ## Step 3: Look and dice
 
 In one short turn:
 
 - "One line: what are you wearing? (It's 11:48 p.m. in a garage.)" (or *surprise me*)
-- **"When fate is in doubt we roll a d20. Your dice or mine?"** End with a `[MENU]` block with two options: `I'll roll my own dice` and `You roll for me`.
+- **"When fate is in doubt we roll a d20. Your dice or mine?"** End with two lettered options: `- **A.** I'll roll my own dice` and `- **B.** You roll for me`.
 
 ## Step 4: Start the run
 

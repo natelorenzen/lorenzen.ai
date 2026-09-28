@@ -16,13 +16,14 @@
   - GHOST: *the window drops six inches. The luggage rack is bolted to the partition, and beyond it is the next compartment.*
   - DIPLOMAT: *he's nervous. He's rehearsed his first line and is waiting for you to speak first.*
 
-**Beat 1: the first menu.** He reaches for the briefcase: *"Customs, sir. Routine."* End the turn with the first `[MENU]` block, adapted to the path. For example:
-- "Grab his wrist and put him against the window." *(stand)*
-- "Hand him the briefcase and slip out while he's looking inside." *(evade)*
-- "Kill the compartment light and pull the emergency cord." *(turn the ground)*
+**Beat 1: the first menu.** He reaches for the briefcase: *"Customs, sir. Routine."* End the turn with the first lettered menu, adapted to the path. For example:
+- **A.** Grab his wrist and put him against the window. *(stand)*
+- **B.** Hand him the briefcase and slip out while he's looking inside. *(evade)*
+- **C.** Kill the compartment light and pull the emergency cord. *(turn the ground)*
+- **D.** Other: type your own
 
 ```
-[ TIP · Tap an option, or type anything you can imagine. The menu is a shortcut, never a limit. ]
+[ TIP · Type A, B or C to choose, or type anything you can imagine. The options are a shortcut, never a limit. ]
 ```
 
 **Beat 2: the first roll.** Resolve the decisive moment with an **easy d20 (DC 8)**, shown openly, then:
@@ -173,7 +174,7 @@ Do not reveal undiscovered information.
 
 Afterward: heat is at least 1. If the player caught one of the men, he knows nothing but his orders: *"Take the courier from the train. Find out who they meet. Don't mark the face."* **Whoever gave those orders knew the player's face before they arrived.**
 
-**Night 1 ends.** The player can sleep at the Meridian, stay somewhere else, or walk the city. Tomorrow evening is the opera. **Send the Act I batch with `REACH_CONTACT` last**, and load Act II.
+**Night 1 ends.** The player can sleep at the Meridian, stay somewhere else, or walk the city. Tomorrow evening is the opera. **Record `REACH_CONTACT`** (it's sent with everything else at the end) and fetch the Act II pack.
 
 ---
 

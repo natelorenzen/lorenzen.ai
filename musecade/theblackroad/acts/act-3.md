@@ -211,7 +211,7 @@ A stair-road cut up the cliff to Orun, with a stone lantern-niche every hundred 
 - **Pushing on through the night** without sleeping in Veyr, and reaching Orun before dawn, keeps the night count. But the climb is in the dark and the cold. Everyone arrives numb (Wounded unless kept warm by emberstone, fire or the Kindling), and the Hushed on the mountainside see a moving light. If the courier reaches Orun this way with **2 or more nights** left, `ACH_BEFORE_THE_MOON` becomes available.
 - The last lantern-niche before Orun still has oil in it. Lighting it makes a monk's bell ring above, a welcome.
 
-**Arriving at Orun's gate ends Act III.** Send the batch with `REACH_ORUN` first. Load Act IV.
+**Arriving at Orun's gate ends Act III.** Record `REACH_ORUN` and fetch the Act IV pack.
 
 ---
 

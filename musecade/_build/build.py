@@ -61,7 +61,7 @@ def replace_block(text, name, body, path):
 
 
 def write_if_changed(path, new):
-    old = path.read_text(encoding="utf-8")
+    old = path.read_text(encoding="utf-8") if path.exists() else None
     if old == new:
         return
     if CHECK:
@@ -69,6 +69,10 @@ def write_if_changed(path, new):
     else:
         path.write_text(new, encoding="utf-8")
         written.append(str(path.relative_to(ROOT)))
+
+
+def is_pack(path):
+    return path.parent.name != "acts" and (path.name == "play.md" or path.name.startswith("pack-"))
 
 
 def no_liquid(path):
@@ -91,8 +95,8 @@ for g in live:
             fail(f"games.json {g.get('id')}: live game missing '{k}'")
     if g.get("command") != "#" + str(g.get("slug")):
         fail(f"games.json {g['id']}: command must be '#<slug>'")
-    if g.get("manifest") != f"{BASE_URL}/{g['slug']}/adventure.md":
-        fail(f"games.json {g['id']}: manifest must be {BASE_URL}/{g['slug']}/adventure.md")
+    if g.get("manifest") != f"{BASE_URL}/{g['slug']}/play.md":
+        fail(f"games.json {g['id']}: manifest must be {BASE_URL}/{g['slug']}/play.md")
 
 
 # ------------------------------------------------------------------ per game
@@ -109,10 +113,14 @@ def check_game(g):
     for f in meta.get("files", []):
         if not (gdir / f).exists():
             fail(f"{slug}/metadata.json lists missing file {f}")
-    adventure = (gdir / "adventure.md").read_text()
-    for f in meta.get("boot_files", []):
-        if f"`{f}`" not in adventure:
-            fail(f"{slug}: boot file {f} is not named in adventure.md's load table")
+    play_files = (meta.get("packs") or {}).get("play", {}).get("files", [])
+    for f in ["adventure.md"] + meta.get("boot_files", []):
+        if f not in play_files:
+            fail(f"{slug}: boot file {f} is missing from the play pack in metadata.json")
+    for pname, spec in (meta.get("packs") or {}).items():
+        for f in spec["files"]:
+            if not ((MC / f) if f.startswith("core/") else (gdir / f)).exists():
+                fail(f"{slug}: pack {pname} lists missing file {f}")
 
     ev = json.loads((gdir / "events.json").read_text())
     events, endings = ev["events"], ev["endings"]
@@ -137,7 +145,7 @@ def check_game(g):
     prefixes = {k.split("_")[0] for k in known}
     ID_RE = id_regex(prefixes)
     NON_EVENT_TOKENS = set(ev.get("doc_tokens", []))
-    md_files = sorted(gdir.rglob("*.md"))
+    md_files = sorted(p for p in gdir.rglob("*.md") if not is_pack(p))
     mentioned = set()
     image_ids, video_ids = {}, {}
     for p in md_files:
@@ -207,7 +215,7 @@ summaries = [s for s in (check_game(g) for g in live) if s]
 api = (config.get("api_base") or "").rstrip("/")
 api_line = (f"Leaderboard API: {api}\n" if api
             else "Leaderboard API: OFFLINE (not yet connected; runs are scored locally and not ranked)\n")
-BUILD_BLOCK = re.compile(r"(<!-- BEGIN GENERATED:build -->\n)(.*?)(<!-- END GENERATED:build -->)", re.S)
+BUILD_BLOCK = re.compile(r"(<!-- BEGIN GENERATED:(?:build|packs) -->\n)(.*?)(<!-- END GENERATED:(?:build|packs) -->)", re.S)
 
 
 def build_stamp(g):
@@ -219,21 +227,69 @@ def build_stamp(g):
     for p in extra:
         h.update(b"core/" + p.name.encode() + b"\0" + p.read_text(encoding="utf-8").encode())
     for p in sorted(gdir.rglob("*")):
-        if p.is_file() and p.suffix in (".md", ".json", ".html"):
+        if p.is_file() and p.suffix in (".md", ".json", ".html") and not is_pack(p):
             text = BUILD_BLOCK.sub(r"\1\3", p.read_text(encoding="utf-8"))
             h.update(str(p.relative_to(gdir)).encode() + b"\0" + text.encode())
     return f"{g['version']}-{h.hexdigest()[:7]}"
 
 
 stamps = {g["slug"]: build_stamp(g) for g in live}
+pack_sizes = {}
+
+
+def pack_url(slug, name):
+    return f"{BASE_URL}/{slug}/{name}.md?v={stamps[slug]}"
+
+
+def clean_for_pack(text):
+    """Runtime copy of a source file: no HTML comments, no maintainer-only sections, tight spacing."""
+    text = re.sub(r"<!--.*?-->\n?", "", text, flags=re.S)
+    text = re.sub(r"(?ms)^## Adding .*?(?=^## |\Z)", "", text)
+    text = re.sub(r"\n{3,}", "\n\n", text)
+    return text.strip() + "\n"
+
+
 for g in live:
-    adv = MC / g["slug"] / "adventure.md"
+    slug = g["slug"]
+    gdir = MC / slug
+    meta = json.loads((gdir / "metadata.json").read_text())
+    packs = meta.get("packs") or {}
+    if not packs:
+        fail(f"{slug}: metadata.json has no packs")
+        continue
+    rows = ["| When | Fetch this one file | It contains |", "|---|---|---|"]
+    for name, spec in packs.items():
+        rows.append(f"| {'**Start** (this file)' if name == 'play' else spec['when'][0].upper() + spec['when'][1:]} | {pack_url(slug, name)} | {' · '.join('`' + f + '`' for f in spec['files'])} |")
+    adv = gdir / "adventure.md"
     a = adv.read_text(encoding="utf-8")
-    write_if_changed(adv, replace_block(a, "build", f"Build: {stamps[g['slug']]}\n", adv))
+    a = replace_block(a, "build", f"Build: {stamps[slug]}\n", adv)
+    a = replace_block(a, "packs", "\n".join(rows) + "\n", adv)
+    write_if_changed(adv, a)
+    for name, spec in packs.items():
+        parts = []
+        head = f"# {g['title'].upper()} · {'PLAY (start here)' if name == 'play' else name.upper()} · BUILD {stamps[slug]}\n\n"
+        if name == "play":
+            head += ("This single file is the whole cartridge for starting the game: its manifest, rules, scoring, image rules and Act I, "
+                     "bundled so you only fetch once. Start with the manifest (`adventure.md`, below) and follow it. "
+                     "Do not fetch the individual files named inside; they are all included here.\n")
+        else:
+            head += (f"Bundle for: {spec['when']}. It contains the files listed below. Do not fetch them individually. "
+                     f"Keep playing from where you are. Everything loaded earlier still applies.\n")
+        parts.append(head)
+        for f in spec["files"]:
+            src = (MC / f) if f.startswith("core/") else (gdir / f)
+            if not src.exists():
+                fail(f"{slug}: pack {name} lists missing file {f}")
+                continue
+            body = src.read_text(encoding="utf-8") if src != adv else a
+            parts.append(f"\n===== FILE: {f} =====\n\n" + clean_for_pack(body))
+        out = "".join(parts)
+        write_if_changed(gdir / f"{name}.md", out)
+        pack_sizes.setdefault(slug, []).append((name, len(out)))
 
 games_md = "".join(
     f"### {g['command']}\n\nTitle: {g['title']}\nGenre: {g['genre']}\n"
-    f"Duration: {g['duration'].replace(' min', ' minutes')}\nBuild: {stamps[g['slug']]}\nManifest:\n{g['manifest']}\n"
+    f"Duration: {g['duration'].replace(' min', ' minutes')}\nBuild: {stamps[g['slug']]}\nPlay:\n{pack_url(g['slug'], 'play')}\n"
     + ("\n" if i < len(live) - 1 else "")
     for i, g in enumerate(live)
 )
@@ -263,6 +319,8 @@ for p in [router, MC / "README.md"]:
 for s in summaries:
     print(f"  {s['slug']} build {stamps[s['slug']]}: {s['events']} events, {s['endings']} endings, {s['secrets']} secrets, "
           f"{s['images']} image triggers, {s['videos']} video triggers, score ceiling {s['ceiling']:,}")
+for slug, sizes in pack_sizes.items():
+    print(f"  {slug} packs: " + ", ".join(f"{n} {sz // 1024}KB (~{sz // 4000}k tok)" for n, sz in sizes))
 print(f"  leaderboard API: {api or 'OFFLINE'}")
 for w in warnings:
     print("  warning:", w)

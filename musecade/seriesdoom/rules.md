@@ -1,6 +1,6 @@
 # SERIES DOOM: Game Rules
 
-`core/dm-core.md` governs every turn: player agency, `[MENU]` decision menus, the d20, turn format, hints, saves and the cold open. This file adds the game's own systems and wins on any conflict.
+`core/dm-core.md` governs every turn: player agency, lettered decision menus, the d20, turn format, hints, saves and the cold open. This file adds the game's own systems and wins on any conflict.
 
 **Rating: PG-13.** Slapstick peril, cartoon chases, and absurd danger that is taken completely seriously by everyone involved. No gore and no cruelty.
 
@@ -62,7 +62,7 @@ Mark rank changes with one line: `REALITY DISTORTION FIELD · RANK II`. Report `
 
 ## 7. Set pieces
 
-Every big confrontation offers three approaches as a `[MENU]` (fight or stand, run, or turn the ground), per `core/dm-core.md` §6 and `game/encounters.md`. They must cost or reveal something.
+Every big confrontation offers three approaches as a lettered menu (fight or stand, run, or turn the ground, plus D. Other), per `core/dm-core.md` §6 and `game/encounters.md`. They must cost or reveal something.
 
 ## 8. The final choice is never a menu
 

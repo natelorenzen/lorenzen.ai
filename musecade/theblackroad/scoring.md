@@ -49,7 +49,7 @@ Store `run_id` and `run_token` in hidden state. Never show the token to the play
 
 ## 3. Report events
 
-Queue events as they happen. **Send them in one batch at each act transition, and in the final batch at completion.** Always list events in the order they happened, because the server checks the order. So an act's batch ends with the `REACH_*` event for the next act, which happened last.
+**For speed, hold every event until the end.** Keep them in `pending`, always in the order they happened (the server checks the order), and send them all with `/run/complete` (§4). A whole run then makes only two network calls. Use `/run/event` below only just before `SAVE GAME`, if a run is paused for a long time.
 
 ```
 POST {API}/run/event

@@ -99,4 +99,4 @@ Do not reveal undiscovered information.
 - **Gary's stand** happens in every run: on the bridge of standing desks over the freight shaft, Gary turns, raises his vape pen, and bellows: **"YOU SHALL NOT PIVOT!"** The desks break. Gary and the Landlord fall together into the dark. Gary's last words, as he falls: *"Fly, you founders!"* The player can't prevent it. They can make it count, or be cleverer on the way out.
 - Afterward: grief, dust, and the city lights through a broken window.
 
-**Thursday night.** Out of the Hive on the far side of SoMa. **Send the Act II batch with `REACH_BREAKING` last.** Load Act III.
+**Thursday night.** Out of the Hive on the far side of SoMa. **Record `REACH_BREAKING`** (it's sent with everything else at the end) and fetch the Act III pack.

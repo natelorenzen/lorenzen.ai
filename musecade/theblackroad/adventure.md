@@ -2,7 +2,7 @@
 
 Musecade Game 001 · Version 1.5 · Dark Fantasy · 45 to 75 minutes · 1 player
 <!-- BEGIN GENERATED:build -->
-Build: 1.5-698bcaf
+Build: 1.5-94f7557
 <!-- END GENERATED:build -->
 Base URL: https://lorenzen.ai/musecade/theblackroad/
 Platform: https://lorenzen.ai/musecade/musecade.md
@@ -13,36 +13,33 @@ You have been handed a cartridge. From this moment, until the game ends or the p
 
 ## 1. Initialization sequence
 
-1. **Fetch the boot files** listed under *Load at start* in §2. Fetch them now, in any order, before you say anything to the player. Do not fetch any other game files yet. **Always fetch fresh:** add a unique query to every game-file URL (for example `rules.md?fresh=1790540000`, using the current time or any random number), and never reuse a copy of a game file read earlier in this conversation or a previous one. The files are updated between plays.
+1. **You're probably reading this inside `play.md`**, the game's one-file bundle. If so, everything needed to start (this manifest, the rules, character creation, scoring, image rules and Act I) is already loaded below, so **don't fetch anything else now**. (If you opened `adventure.md` on its own, fetch the `play.md` link in §2 instead, and follow that.)
 2. **Print the title card** in §3 exactly as written. Nothing before it except, optionally, a single line: `CARTRIDGE LOADED · BUILD <the Build value at the top of this file>`.
 3. **Ask the player's name** (the title card ends with the question). Then follow `character-creation.md`.
-4. **Start the run** with the Musecade backend as `scoring.md` describes, right after the player chooses a path. If the backend is offline or you cannot make web requests, continue in LOCAL mode. Never delay the game over a network problem.
+4. **Start the run** with the Musecade backend as `scoring.md` describes, right after the player chooses a path. If the player chooses SCHOLAR, also fetch the `pack-words` link in §2. If the backend is offline or you cannot make web requests, continue in LOCAL mode. Never delay the game over a network problem.
 5. **Play Act I** from `acts/act-1.md`, starting with the cold open (1.0): the game begins in a fight.
 
-If a boot file fails to load, retry once. If it still fails, tell the player in one line (`A cartridge contact is dirty: rules.md did not load.`) and continue using this manifest's summary. Do not invent content that contradicts this file.
+If a pack fails to load, retry once. If it still fails, tell the player in one line (`A cartridge contact is dirty: pack-2 did not load.`) and continue from what you have, without inventing content that contradicts it.
 
 ---
 
-## 2. Progressive loading
+## 2. Loading: one file per act
 
-Only load a file when its trigger happens. Unloaded content is unknown to you. Do not improvise its secrets. Wait until you have loaded it.
+The game is bundled for speed. **Fetch exactly one file per act**, when its moment comes, using the URLs in this table **exactly as written**. The `?v=` part changes automatically whenever the game is updated, so you always get the newest version, and unchanged files load instantly from cache. Never fetch the individual source files named inside a pack (for example `acts/act-2.md`): they're already included in it. When a file you've loaded says "load X now", X is either already in the pack you have, or it arrives with the next pack.
 
-| When | Fetch |
-|---|---|
-| **Load at start** | `rules.md` · `character-creation.md` · `scoring.md` · `game/image-triggers.md` · `acts/act-1.md` |
-| The player chooses SCHOLAR | `game/words.md` (the Scholar's magic) |
-| The Night Visitors begin (Act I, 1.4), or any real fight before them (the cold open, 1.0, is self-contained and needs neither) | `game/encounters.md` · `world/creatures.md` |
-| First companion appears (Calen, Act I) | `characters/companions.md` |
-| Act II begins (`REACH_WILDERNESS`) | `acts/act-2.md` · `characters/npcs.md` · `world/locations.md` |
-| A puzzle begins (Act II waystation, first) | `game/puzzles.md` |
-| Dask, a Warden, Serith or a Choir Listener is first identified | `world/factions.md` |
-| Act III begins (`REACH_VEYR`) | `acts/act-3.md` · `world/lore.md` |
-| Act IV begins (`REACH_ORUN`) | `acts/act-4.md` |
-| Act V begins (`REACH_THRONE`) | `acts/act-5.md` · `game/endings.md` |
-| Any ending triggers early (death, abandonment, surrender) | `game/endings.md` |
-| Game over (any ending) | `game/achievements.md` |
+<!-- BEGIN GENERATED:packs -->
+| When | Fetch this one file | It contains |
+|---|---|---|
+| **Start** (this file) | https://lorenzen.ai/musecade/theblackroad/play.md?v=1.5-94f7557 | `adventure.md` · `rules.md` · `character-creation.md` · `scoring.md` · `game/image-triggers.md` · `acts/act-1.md` · `game/encounters.md` · `world/creatures.md` · `characters/companions.md` |
+| Act II begins (`REACH_WILDERNESS`) | https://lorenzen.ai/musecade/theblackroad/pack-2.md?v=1.5-94f7557 | `acts/act-2.md` · `characters/npcs.md` · `world/locations.md` · `world/factions.md` · `game/puzzles.md` |
+| Act III begins (`REACH_VEYR`) | https://lorenzen.ai/musecade/theblackroad/pack-3.md?v=1.5-94f7557 | `acts/act-3.md` · `world/lore.md` |
+| Act IV begins (`REACH_ORUN`) | https://lorenzen.ai/musecade/theblackroad/pack-4.md?v=1.5-94f7557 | `acts/act-4.md` |
+| Act V begins (`REACH_THRONE`) | https://lorenzen.ai/musecade/theblackroad/pack-5.md?v=1.5-94f7557 | `acts/act-5.md` · `game/endings.md` · `game/achievements.md` |
+| Any ending triggers before Act V (death, leaving early, surrender) | https://lorenzen.ai/musecade/theblackroad/pack-end.md?v=1.5-94f7557 | `game/endings.md` · `game/achievements.md` |
+| The player chooses SCHOLAR | https://lorenzen.ai/musecade/theblackroad/pack-words.md?v=1.5-94f7557 | `game/words.md` |
+<!-- END GENERATED:packs -->
 
-All paths are relative to `https://lorenzen.ai/musecade/theblackroad/`. Fetch each one fresh, with a unique `?fresh=` query, when its trigger fires. Files loaded later in a run are simply the newest version at that moment; that's intended. If the player goes somewhere unexpected before its act (for example, straight up a mountain toward Orun in Act I), load that act or `world/locations.md` early rather than improvising a contradicting world.
+Load nothing early. Content in a pack you haven't fetched doesn't exist yet, so don't improvise its secrets. If the player goes somewhere ahead of the story, fetch that act's pack early rather than inventing a contradicting world.
 
 ---
 

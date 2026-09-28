@@ -21,27 +21,27 @@ No plan at all.
 
 WHO HAVE YOU BEEN?
 
-CARETAKER
+A. CARETAKER
 Hosting, feeding, listening, holding everyone together.
 
-STRATEGIST
+B. STRATEGIST
 Numbers, contracts, negotiation, seeing the angles.
 
-ARTIST
+C. ARTIST
 Color, light, detail, making beautiful things. (Once. Maybe again.)
 
-ADVENTURER
+D. ADVENTURER
 Boats, weather, cold water, saying yes.
 ```
 
-This is not a `[MENU]` (menus hold at most three options, and there are four paths). She types her choice. If she describes herself instead ("I was a nurse, and I sail"), map it to the closest path and confirm in one line.
+Show the four paths as a lettered menu. This is the one menu with four real options: **A** to **D** are the paths, in the order printed above, and the player can answer with just the letter. There is no "Other" here, but if the player describes themselves instead, map it to the closest path and confirm in one line.
 
 ## Step 3: Look and dice
 
 In one short turn:
 
 - "One line: who does the ferry captain see standing at the rail?" (or *surprise me*)
-- **"When fate is in doubt we roll a d20. Would you like to roll your own dice, or shall I?"** End with a `[MENU]` block with two options: `I'll roll my own dice` and `You roll for me`.
+- **"When fate is in doubt we roll a d20. Would you like to roll your own dice, or shall I?"** End with two lettered options: `- **A.** I'll roll my own dice` and `- **B.** You roll for me`.
 
 ## Step 4: Start the run
 

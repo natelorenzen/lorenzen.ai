@@ -1,10 +1,10 @@
 # SERIES DOOM: Set Pieces
 
-Cartoon peril taken completely seriously. Every set piece follows `core/dm-core.md` §6: three approaches as a `[MENU]`, a d20 at the turning point, and it must **cost or reveal** something. A miss by 1 to 4 costs a harm level or an hour. **The disc can end any of them instantly** (+1 Hype). Always let the player know it's offering.
+Cartoon peril taken completely seriously. Every set piece follows `core/dm-core.md` §6: three approaches as a lettered menu, a d20 at the turning point, and it must **cost or reveal** something. A miss by 1 to 4 costs a harm level or an hour. **The disc can end any of them instantly** (+1 Hype). Always let the player know it's offering.
 
 ## Rules
 1. Open with the absurd situation, played dead straight, plus one usable detail.
-2. **Three approaches:** **stand** (fight, hold, confront), **run** (escape, hide, outpace), **turn the ground** (use the setting: neon, sprinklers, scooters, lanyards).
+2. **Three approaches (A, B, C, plus D. Other):** **stand** (fight, hold, confront), **run** (escape, hide, outpace), **turn the ground** (use the setting: neon, sprinklers, scooters, lanyards).
 3. **Paths pay off:** the Hacker turns the building's tech, the Hustler talks the enemy into a meeting, the Visionary rallies bystanders (the Field grows), and the Operator has the plan and the timing.
 4. Nobody is ever gorily hurt. The worst is "acquired", zip-tied, stuck in a loop, or tumbling down scree.
 

@@ -2,7 +2,7 @@
 
 Musecade Game 002 · Version 1.0 · Espionage · 45 to 75 minutes · 1 player · PG-13
 <!-- BEGIN GENERATED:build -->
-Build: 1.0-a327e99
+Build: 1.0-c2285e0
 <!-- END GENERATED:build -->
 Base URL: https://lorenzen.ai/musecade/theglasscity/
 Platform: https://lorenzen.ai/musecade/musecade.md
@@ -13,31 +13,32 @@ You have been handed a cartridge. Until the game ends or the player types `EXIT 
 
 ## 1. Initialization sequence
 
-1. **Fetch the boot files** in §2, *Load at start*, before you say anything. **Always fetch fresh:** add a unique query to each URL (for example `rules.md?fresh=1790540000`), and never reuse a remembered copy.
+1. **You're probably reading this inside `play.md`**, the game's one-file bundle. If so, everything needed to start (this manifest, the rules, character creation, scoring, image rules and Act I) is already loaded below, so **don't fetch anything else now**. (If you opened `adventure.md` on its own, fetch the `play.md` link in §2 instead, and follow that.)
 2. **Print the title card** (§3) exactly. Before it, you may print one line only: `CARTRIDGE LOADED · BUILD <the Build value above>`.
 3. **Ask the cover name** (the card ends with the question), then follow `character-creation.md`.
 4. **Start the run** with the Musecade backend after the path is chosen (`core/scoring.md`). If you can't, play in LINK or LOCAL mode. Never delay the game over the network.
 5. **Play Act I** from `acts/act-1.md`, starting with the cold open (1.0): the game begins in a fight on a night train.
 
-If a boot file fails to load, retry once, then say in one line which file is missing, and continue from this manifest.
+If a pack fails to load, retry once, then say in one line which pack is missing, and continue from what you have.
 
 ---
 
-## 2. Progressive loading
+## 2. Loading: one file per act
 
-All paths are relative to `https://lorenzen.ai/musecade/` for `core/` files and `https://lorenzen.ai/musecade/theglasscity/` for everything else. Fetch each file fresh when its trigger fires. Content you haven't loaded doesn't exist yet, so don't improvise its secrets.
+The game is bundled for speed. **Fetch exactly one file per act**, when its moment comes, using the URLs in this table **exactly as written**. The `?v=` part changes automatically whenever the game is updated, so you always get the newest version, and unchanged files load instantly from cache. Never fetch the individual source files named inside a pack (for example `acts/act-2.md`): they're already included in it. When a file you've loaded says "load X now", X is either already in the pack you have, or it arrives with the next pack.
 
-| When | Fetch |
-|---|---|
-| **Load at start** | `core/dm-core.md` · `core/image-style.md` · `core/scoring.md` · `rules.md` · `character-creation.md` · `scoring.md` · `game/image-triggers.md` · `acts/act-1.md` |
-| The station team is introduced (Act I, 1.3) | `characters/npcs.md` · `characters/companions.md` |
-| The Glass Galleries chase begins (Act I, 1.5) | `game/encounters.md` |
-| Act II begins (`REACH_CONTACT`) | `acts/act-2.md` · `world/locations.md` · `game/puzzles.md` |
-| Colonel Voss, Anya or any Directorate officer is first identified | `world/factions.md` |
-| Act III begins (`REACH_BURNED`) | `acts/act-3.md` · `world/lore.md` |
-| Act IV begins (`REACH_MOLE`) | `acts/act-4.md` |
-| Act V begins (`REACH_BRIDGE`), or any ending triggers early | `acts/act-5.md` · `game/endings.md` |
-| Game over | `game/achievements.md` |
+<!-- BEGIN GENERATED:packs -->
+| When | Fetch this one file | It contains |
+|---|---|---|
+| **Start** (this file) | https://lorenzen.ai/musecade/theglasscity/play.md?v=1.0-c2285e0 | `core/dm-core.md` · `core/image-style.md` · `core/scoring.md` · `adventure.md` · `rules.md` · `character-creation.md` · `scoring.md` · `game/image-triggers.md` · `acts/act-1.md` · `characters/npcs.md` · `characters/companions.md` · `game/encounters.md` |
+| Act II begins (`REACH_CONTACT`) | https://lorenzen.ai/musecade/theglasscity/pack-2.md?v=1.0-c2285e0 | `acts/act-2.md` · `world/locations.md` · `world/factions.md` · `game/puzzles.md` |
+| Act III begins (`REACH_BURNED`) | https://lorenzen.ai/musecade/theglasscity/pack-3.md?v=1.0-c2285e0 | `acts/act-3.md` · `world/lore.md` |
+| Act IV begins (`REACH_MOLE`) | https://lorenzen.ai/musecade/theglasscity/pack-4.md?v=1.0-c2285e0 | `acts/act-4.md` |
+| Act V begins (`REACH_BRIDGE`) | https://lorenzen.ai/musecade/theglasscity/pack-5.md?v=1.0-c2285e0 | `acts/act-5.md` · `game/endings.md` · `game/achievements.md` |
+| Any ending triggers before Act V (death, leaving early, surrender) | https://lorenzen.ai/musecade/theglasscity/pack-end.md?v=1.0-c2285e0 | `game/endings.md` · `game/achievements.md` |
+<!-- END GENERATED:packs -->
+
+Load nothing early. Content in a pack you haven't fetched doesn't exist yet, so don't improvise its secrets. If the player goes somewhere ahead of the story, fetch that act's pack early rather than inventing a contradicting world.
 
 ---
 

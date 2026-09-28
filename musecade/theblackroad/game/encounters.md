@@ -29,7 +29,7 @@ The other encounters (the bridge, the Drowned, the Cinder Guard, the throne) are
 **Rules for set pieces:**
 
 - **Every battle must cost or reveal:** a wound, a night, a secret, a companion's trust. Never a speed bump.
-- **Offer three approaches** with genuinely different risk profiles, **as a `[MENU]` block** (`rules.md`, *Decision menus*): **stand** (fight and hold), **evade** (slip away, hide, outrun), and **turn the ground** (rockslide, fire, ice, a bell, a rotten prop). The runner adds the wildcard. Each approach costs something different: stand risks wounds, evade risks time, separation or lost gear, and turn the ground risks collateral and noise.
+- **Offer three approaches** with genuinely different risk profiles, **as a lettered menu** (`rules.md`, *Decision menus*): **stand** (fight and hold), **evade** (slip away, hide, outrun), and **turn the ground** (rockslide, fire, ice, a bell, a rotten prop). Always add **D. Other: type your own**. Each approach costs something different: stand risks wounds, evade risks time, separation or lost gear, and turn the ground risks collateral and noise.
 - **Class advantages pay off in battle.** Let the **Warden** read the ground unprompted, hold a stair or choke point with advantage, and end a fight fast with one decisive roll. Let the **Wayfarer** find the evasion line, the **Scholar** turn the ground with a Word, and the **Envoy** split or stall the enemy with words.
 - **Roll openly, report honestly, fudge nothing** (`rules.md` §4).
 

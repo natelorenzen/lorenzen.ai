@@ -72,4 +72,4 @@ If Ari was recruited and survived the Breaking: at noon, every phone in the East
 
 ## The foot of the mountain
 
-About 1 p.m. **Mount Diablo** rises over the East Bay, gold and chaparral, with the Crucible's plume of flame just visible on the summit. **Send the Act IV batch with `REACH_DIABLO` last.** Load Act V and `game/endings.md`.
+About 1 p.m. **Mount Diablo** rises over the East Bay, gold and chaparral, with the Crucible's plume of flame just visible on the summit. **Record `REACH_DIABLO`** (it's sent with everything else at the end) and fetch the Act V pack.

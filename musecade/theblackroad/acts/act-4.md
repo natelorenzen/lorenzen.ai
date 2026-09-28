@@ -152,7 +152,7 @@ Below the door, a stair of black glass winds down a shaft so deep that its botto
 - **Liss.** If Calen is present, he sees her among them: a woman his age, his coloring, frost-white, eyes filmed blue. He says her name and she does not turn. **Saving her** takes warmth pressed to her heart for a long time (emberstone, or one flare of the open Kindling), her name, and something of hers: *the wooden fox*. If it works, the frost cracks off her like eggshell, and she says "Cal?" in a voice like a child's. Report `LISS_SAVED`. She is too weak to go further, and Calen must choose whether to stay with her or go on. If she is saved and Calen is loyal, he goes on: "She'll keep. The world won't."
 - **Wren** hears her mother here. If she was kept warm, she holds the courier's hand the whole way down. If she ran earlier, she is here, halfway down the stair, standing among the Hushed and turning pale. She can still be called back (trust ≥ 0, her name, warmth). Otherwise she walks down ahead of them into the light.
 
-The stair ends at an arch of fused black glass, and beyond it is a vast cavern full of fire and ice. **Crossing the arch ends Act IV.** Send the batch with `REACH_THRONE` first. Load `acts/act-5.md` and `game/endings.md`.
+The stair ends at an arch of fused black glass, and beyond it is a vast cavern full of fire and ice. **Crossing the arch ends Act IV.** Record `REACH_THRONE` and fetch the Act V pack.
 
 ---
 

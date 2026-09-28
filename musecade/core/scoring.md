@@ -30,7 +30,7 @@ It returns `run_id`, `run_token`, `mode` and the normalized `player`. Keep the t
 
 ## 3. Report events
 
-Queue events as they happen, and send them in one batch at each act transition, **in the order they happened**. That means each act's batch ends with the `REACH_*` event for the next act.
+**For speed, hold every event until the end.** Keep them in `pending`, in the order they happened, and send them all in one go with `/run/complete` (§4). A whole run then makes only two network calls: one to start, one to finish. The `/run/event` endpoint below exists for runs that span several sessions: use it only just before `SAVE GAME` if a run is paused for a long time.
 
 ```
 POST {API}/run/event   {"run_id":"…","run_token":"…","events":["…","…"]}

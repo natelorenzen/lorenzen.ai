@@ -5,7 +5,7 @@ Spy violence is fast, ugly and rare, and every fight raises Heat. Most confronta
 ## Rules
 
 1. **Open with the situation:** who, where, what they want, and one usable detail (a glass roof, a fire alarm, a tram bell, a boiler valve).
-2. **Three approaches, as a `[MENU]` block** at the turning point (`core/dm-core.md` §3): **stand** (fight, hold, protect), **evade** (run, hide, lose them, a disguise), and **turn the ground** (an alarm, a blackout, shattered glass, a crowd, a steam valve). Each has a different price: stand costs wounds and heat, evade costs time, gear or separation, and turn the ground costs collateral and noise.
+2. **Three approaches, as a lettered menu** (A, B, C, plus D. Other) at the turning point (`core/dm-core.md` §3): **stand** (fight, hold, protect), **evade** (run, hide, lose them, a disguise), and **turn the ground** (an alarm, a blackout, shattered glass, a crowd, a steam valve). Each has a different price: stand costs wounds and heat, evade costs time, gear or separation, and turn the ground costs collateral and noise.
 3. **Roll the d20 at the turning point**, usually once or twice per confrontation (`core/dm-core.md` §5). A miss by 1 to 4 costs a wound or +1 heat (`rules.md` §3).
 4. **Enemies value survival.** Snatch teams want the player alive. Office security wants an arrest, not a body. Kell's men are the only ones who shoot to kill.
 5. **Every confrontation must cost or reveal:** a wound, heat, lost gear, a companion's trust, or a secret.
@@ -37,4 +37,4 @@ See `acts/act-1.md` 1.0.
 - **Reveals:** Kell's orders came through Ashby. Whether Voss survives decides who holds the city end of the bridge.
 
 ## ENC_BRIDGE: The Glass Bridge (Act V)
-See `acts/act-5.md` 5.2. The confrontation depends on who is there: Ashby at the Concord gate, Kell at the city end, Voss mid-span, a betrayal coming due, or Katya missing. Use the three-approach `[MENU]` at the turning point, but **never at the final choice**.
+See `acts/act-5.md` 5.2. The confrontation depends on who is there: Ashby at the Concord gate, Kell at the city end, Voss mid-span, a betrayal coming due, or Katya missing. Use the three-approach lettered menu at the turning point, but **never at the final choice**.

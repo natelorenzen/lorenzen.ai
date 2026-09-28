@@ -61,4 +61,4 @@ By now the pattern is clear: the Vests find the team **wherever the laptop conne
 
 ## Crossing the Bay
 
-Dawn, Friday. The catwalk under the bridge is wind, gulls, and the Bay a hundred feet below. It's a short, windy scene, with a roll if they're reckless. It comes out onto the East Bay shoreline at sunrise, **eleven hours before Demo Day** (about 6 a.m.). **Send the Act III batch with `REACH_EAST_BAY` last.** Load Act IV.
+Dawn, Friday. The catwalk under the bridge is wind, gulls, and the Bay a hundred feet below. It's a short, windy scene, with a roll if they're reckless. It comes out onto the East Bay shoreline at sunrise, **eleven hours before Demo Day** (about 6 a.m.). **Record `REACH_EAST_BAY`** (it's sent with everything else at the end) and fetch the Act IV pack.

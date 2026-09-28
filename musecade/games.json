@@ -12,7 +12,7 @@
     "endings": "10+",
     "difficulty": "???",
     "tagline": "Carry the black box to Orun before the new moon.",
-    "manifest": "https://lorenzen.ai/musecade/theblackroad/adventure.md",
+    "manifest": "https://lorenzen.ai/musecade/theblackroad/play.md",
     "page": "https://lorenzen.ai/musecade/theblackroad/",
     "events": "https://lorenzen.ai/musecade/theblackroad/events.json"
   },
@@ -29,7 +29,7 @@
     "endings": "11",
     "difficulty": "???",
     "tagline": "Bring Nightingale across the Glass Bridge. Trust no one inside the station.",
-    "manifest": "https://lorenzen.ai/musecade/theglasscity/adventure.md",
+    "manifest": "https://lorenzen.ai/musecade/theglasscity/play.md",
     "page": "https://lorenzen.ai/musecade/theglasscity/",
     "events": "https://lorenzen.ai/musecade/theglasscity/events.json"
   },
@@ -46,7 +46,7 @@
     "endings": "11",
     "difficulty": "???",
     "tagline": "An island, a failing inn, a great-aunt's secret, and seven days to decide the rest of your life.",
-    "manifest": "https://lorenzen.ai/musecade/theseaglassinn/adventure.md",
+    "manifest": "https://lorenzen.ai/musecade/theseaglassinn/play.md",
     "page": "https://lorenzen.ai/musecade/theseaglassinn/",
     "events": "https://lorenzen.ai/musecade/theseaglassinn/events.json"
   },
@@ -63,7 +63,7 @@
     "endings": "11",
     "difficulty": "???",
     "tagline": "Two founders accidentally built world-ending AGI. The only copy is on a DVD. It has to be burned on Mount Diablo before Demo Day.",
-    "manifest": "https://lorenzen.ai/musecade/seriesdoom/adventure.md",
+    "manifest": "https://lorenzen.ai/musecade/seriesdoom/play.md",
     "page": "https://lorenzen.ai/musecade/seriesdoom/",
     "events": "https://lorenzen.ai/musecade/seriesdoom/events.json"
   },

@@ -98,4 +98,4 @@ Mother and daughter on the harbor seawall under one blanket, after the fog. This
 
 ## Thursday night
 
-The weather radio in Bea's kitchen crackles: a **nor'easter** will hit tomorrow night, with gusts to seventy, a storm surge, and ferries cancelled. Bea says a word she's not allowed to say in front of the Feeneys. **Send the Act III batch with `REACH_STORM` last.** Load Act IV.
+The weather radio in Bea's kitchen crackles: a **nor'easter** will hit tomorrow night, with gusts to seventy, a storm surge, and ferries cancelled. Bea says a word she's not allowed to say in front of the Feeneys. **Record `REACH_STORM`** (it's sent with everything else at the end) and fetch the Act IV pack.

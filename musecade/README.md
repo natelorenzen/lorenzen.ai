@@ -73,11 +73,11 @@ Nothing in this repo can force an agent to behave. The files are written to be f
 
 `#musecade` reprints the boot screen. `EXIT GAME`, `SAVE GAME` and `RESUME` are handled by each game.
 
-**Freshness:** you can edit any game file, push, and the next hashtag runs the new version. The router tells agents to re-fetch every Musecade file with a unique `?fresh=` query, which bypasses GitHub Pages' 10-minute cache and the agent's own fetch cache, and never to reuse a copy from earlier in the conversation or from memory. `build.py` stamps each game with `version-contenthash` (for example `1.1-b996da9`) in `adventure.md` and `musecade.md`, and the agent announces it on load (`CARTRIDGE LOADED · BUILD 1.1-b996da9`), so you can confirm which build is running. Files already loaded for the current act stay put mid-game; everything loaded afterward is fresh.
+**Freshness:** you can edit any game file, run the build and push, and the next hashtag runs the new version. The router is fetched fresh; every game link it gives carries `?v=<build>`, a content hash that changes whenever the game changes, so agents get new files immediately while unchanged ones come from cache. The agent announces the build on load (`CARTRIDGE LOADED · BUILD 1.0-7d65ed0`), so you can confirm which version is running.
 
 ## 4. Game manifests and progressive loading
 
-Each game is a folder of Markdown files. `adventure.md` is the bootloader: the title card, the hidden truth in compact form, the hidden-state schema, and a **load table**. At start, Muse loads only the boot files (for The Black Road: `rules.md`, `character-creation.md`, `scoring.md`, `game/image-triggers.md`, `acts/act-1.md`). Everything else loads when its trigger fires: the first combat loads `encounters.md` and `creatures.md`, `REACH_VEYR` loads Act III and `lore.md`, any ending loads `endings.md`, and so on. Content that isn't loaded yet doesn't exist for the DM, which keeps context small and secrets safe.
+Each game is a folder of Markdown source files, bundled at build time into one pack per act (§6d). `adventure.md` is the bootloader: the title card, the hidden truth in compact form, the hidden-state schema, and a generated **pack table**. At start, Muse fetches only `play.md`. Each later act is one more fetch (`pack-2.md` through `pack-5.md`). Content that isn't loaded yet doesn't exist for the DM, which keeps context small and secrets safe.
 
 ```
 theblackroad/
@@ -151,19 +151,30 @@ Muse keeps a hidden state block (defined in `adventure.md` §5): run credentials
 - **d20, light rules** (`rules.md` §4): the DM decides when to roll, and only at pivotal moments (roughly 10 to 20 per campaign). There is a DC ladder of 8, 12, 15, 18 and 20, +2 when the action fits the path, and advantage or disadvantage in place of other modifiers. A natural 20 succeeds with extra power; a natural 1 is a disaster with a twist. For effects with a size, the roll sets the power. The player can roll their own dice, and the DM never fudges. Dice never solve puzzles.
 - **Words of Weight** (`game/words.md`, loaded only for Scholars): six Old Veyric Words (NER, SAEL, THARRU, ENNAR, MAELIS, ANNA VAELUN). The Scholar starts with two and recovers the rest through the story, growing from rank I (Whisper) to rank III (Command). Casting costs strain, which clears at dawn.
 
-## 6c. Decision menus are runner-owned
+## 6c. Decision menus
 
-Game files never tell the model to call a tool, because that pattern trips agents' prompt-injection defenses. At decision points the model ends its reply with a plain-text block:
+At decision points the model ends its reply with three lettered options and an "other":
 
 ```
-[MENU]
-- Hold the stair
-- Fall back to the arch
-- Light the oil store
-[/MENU]
+- **A.** Hold the stair
+- **B.** Fall back to the arch
+- **C.** Light the oil store
+- **D.** Other: type your own
 ```
 
-The **Musecade runner** (the client that loops turns with the model, not this repo) strips the block, renders up to 3 buttons, always appends the wildcard "Something else — type your own", sends a tapped option's exact text as the player's next message, re-prompts once if a decision-point reply is missing its block, and falls back to an A–D lettered list where buttons can't render. Without a runner, the block still reads as a plain list.
+The player answers with just a letter, or types anything. Game files never tell the model to call a tool, because agents flag that pattern as prompt injection. Path choice is the one four-option menu (A–D, with no "other").
+
+## 6d. Speed: one file per act
+
+Agents are slow at many small fetches, and every file they read stays in context. So the build bundles each game:
+
+- `play.md`: everything needed to start (manifest, rules, scoring, image rules and Act I, plus the shared `core/` files for games that use them). **One fetch starts a game.**
+- `pack-2.md` … `pack-5.md`: one fetch per act transition. `pack-end.md` is for early endings, and `pack-words.md` for the Black Road's Scholar.
+- Links carry `?v=<build>`: the CDN caches each version, and every update changes the URL automatically, so agents get the newest files without cache-busting. Only the small router is fetched fresh.
+- Packs strip HTML comments and maintainer-only sections. Pack contents are defined in each game's `metadata.json` (`packs`), and `build.py` regenerates them. **Never edit a pack by hand**: edit the source files and rebuild.
+- The router loads **no** games, and loads exactly one game when its hashtag is typed. It suggests a fresh conversation when switching games.
+- Events are held until the end and sent with `/run/complete`, so a run makes two network calls.
+- **Fast mode** (`#game fast` or `FAST MODE`) caps a run at 3 images, with no video and shorter turns.
 
 ## 7. Images and video
 

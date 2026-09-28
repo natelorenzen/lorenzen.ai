@@ -106,7 +106,7 @@ Do not reveal undiscovered information.
 
 It should cost or reveal something: a wound, the briefcase, the microfilm (if it wasn't hidden), or heat. It also reveals that the Office men carry a warrant naming the player as CARDINAL (`DISCOVER_THE_FRAME` if not yet). **Heat becomes at least 3.** The player is burned.
 
-**Send the Act II batch with `REACH_BURNED` last.** Load Act III.
+**Record `REACH_BURNED`** (it's sent with everything else at the end) and fetch the Act III pack.
 
 ---
 

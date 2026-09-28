@@ -20,22 +20,22 @@ and sealed the ledger with black wax.
 
 CHOOSE YOUR PATH
 
-WARDEN
+A. WARDEN
 Combat, survival, intimidation, endurance.
 
-SCHOLAR
+B. SCHOLAR
 History, languages, investigation, ancient magic.
 
-WAYFARER
+C. WAYFARER
 Stealth, perception, traps, exploration.
 
-ENVOY
+D. ENVOY
 Persuasion, deception, negotiation, reading people.
 ```
 
 Then: "Who were you, before you took this job?"
 
-This is not a `[MENU]` (menus hold at most three options, and there are four paths). The player types their choice.
+Show the four paths as a lettered menu. This is the one menu with four real options: **A** to **D** are the paths, in the order printed above, and the player can answer with just the letter. There is no "Other" here, but if the player describes themselves instead, map it to the closest path and confirm in one line.
 
 Accept any clear choice. If the player describes themselves instead of choosing ("I'm a disgraced knight"), map it to the closest path and confirm in one line.
 
@@ -47,9 +47,9 @@ If they say "surprise me", invent one plausible line that fits their path. Recor
 
 ## Step 3b: Dice
 
-Ask in one line: **"When fate is in doubt we roll a d20. Will you roll your own dice, or shall I roll for you?"** Record `dice: player` or `dice: dm` (`rules.md` §4). If the player doesn't care, you roll. End with a `[MENU]` block with two options: `I'll roll my own dice` and `You roll for me`.
+Ask in one line: **"When fate is in doubt we roll a d20. Will you roll your own dice, or shall I roll for you?"** Record `dice: player` or `dice: dm` (`rules.md` §4). If the player doesn't care, you roll. End with two lettered options: `- **A.** I'll roll my own dice` and `- **B.** You roll for me`.
 
-If the path is SCHOLAR, fetch `game/words.md` now.
+If the path is SCHOLAR, fetch the `pack-words` link from the manifest's loading table (§2) now.
 
 ## Step 4: Start the run
 

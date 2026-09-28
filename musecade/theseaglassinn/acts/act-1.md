@@ -16,13 +16,14 @@
   - ARTIST: *for one second the light through the rain goes exactly the color of the glass in your pocket.*
   - ADVENTURER: *the ferry will roll again in about four seconds. You can feel it coming through your feet.*
 
-**Beat 1: the first menu.** End the turn with a `[MENU]` block. For example:
-- Get between her and the traps and brace them.
-- Grab her arm and pull her toward the cabin.
-- Cut the loose line so the traps slide the other way.
+**Beat 1: the first menu.** End the turn with a lettered menu. For example:
+- **A.** Get between her and the traps and brace them.
+- **B.** Grab her arm and pull her toward the cabin.
+- **C.** Cut the loose line so the traps slide the other way.
+- **D.** Other: type your own
 
 ```
-[ TIP · Tap an option, or type anything you can imagine. The options are a shortcut, never a limit. ]
+[ TIP · Type A, B or C to choose, or type anything you can imagine. The options are a shortcut, never a limit. ]
 ```
 
 **Beat 2: the first roll.** An **easy d20 (DC 8)**, shown openly, then:
@@ -126,7 +127,7 @@ CAMERA: slow push along the bluff path toward the lighthouse.
 [/VIDEO_TRIGGER]
 ```
 
-**Monday night.** Rain on the roof, the boiler groaning, Room 6's bucket going *plink*. Bea leaves a plate of stew on the counter. The first night of seven. **Send the Act I batch with `REACH_ISLAND` last.** Load Act II.
+**Monday night.** Rain on the roof, the boiler groaning, Room 6's bucket going *plink*. Bea leaves a plate of stew on the counter. The first night of seven. **Record `REACH_ISLAND`** (it's sent with everything else at the end) and fetch the Act II pack.
 
 ---
 

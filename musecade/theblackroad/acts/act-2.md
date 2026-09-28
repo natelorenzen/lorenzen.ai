@@ -261,7 +261,7 @@ Before the courier sights Veyr, run **`ENC_AMBUSH`** (`game/encounters.md`), the
 
 ## Act II transitions and exceptions
 
-- **Sighting Veyr ends Act II**, after the Climb. Send the Act II batch in the order things happened, which puts `REACH_VEYR` last. Load Act III.
+- **Sighting Veyr ends Act II**, after the Climb. Record `REACH_VEYR` and fetch the Act III pack.
 - **Turning back:** `THE ROAD SOUTH`.
 - **Giving the box to Serith, a Listener or the Choir:** `THE WHITE CHOIR` (see `endings.md`).
 - **Selling it to Dask:** `THE CROWN OF CHAINS`.

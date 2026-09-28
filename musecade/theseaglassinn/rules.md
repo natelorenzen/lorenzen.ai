@@ -1,6 +1,6 @@
 # THE SEA GLASS INN: Game Rules
 
-`core/dm-core.md` governs every turn: player agency, `[MENU]` decision menus, the d20, turn format, hints, saves and the cold open. This file adds the game's own systems and wins on any conflict.
+`core/dm-core.md` governs every turn: player agency, lettered decision menus, the d20, turn format, hints, saves and the cold open. This file adds the game's own systems and wins on any conflict.
 
 **Rating: PG.** No violence and no death. Romance is slow and respectful: glances, a shared boat ride, one kiss at most, if the player chooses it. Grief, divorce, job loss and a daughter's struggles are handled with honesty and warmth, never mockery, and never as a lecture.
 
@@ -61,7 +61,7 @@ The companions (`characters/companions.md`) have lives of their own. Trust follo
 
 ## 7. Menus and the final choice
 
-Use `[MENU]` blocks at real decision points (`core/dm-core.md` §3). **The final choice at the festival is never a menu**: what she does with the inn, the painting and her life is hers to find.
+Use lettered menus (A, B, C, plus D. Other) at real decision points (`core/dm-core.md` §3). **The final choice at the festival is never a menu**: what she does with the inn, the painting and her life is hers to find.
 
 ## 8. Images
 

@@ -19,13 +19,14 @@ Then there's a whine of electric motors outside. **Headlights.** Nine men and wo
   - VISIONARY: *they're scared of the thing on the disc. You can see it in how they stand.*
   - OPERATOR: *back door, side gate, Dex's car keys on the hook, eleven seconds.*
 
-**Beat 1: the first menu.** End the turn with a `[MENU]` block. For example:
-- Hold the door down while Dex grabs the disc.
-- Out the back door and over the fence to the alley.
-- Reverse the garage door opener and trap their scooters under it.
+**Beat 1: the first menu.** End the turn with a lettered menu. For example:
+- **A.** Hold the door down while Dex grabs the disc.
+- **B.** Out the back door and over the fence to the alley.
+- **C.** Reverse the garage door opener and trap their scooters under it.
+- **D.** Other: type your own
 
 ```
-[ TIP · Tap an option, or type anything you can imagine. The options are a shortcut, never a limit. ]
+[ TIP · Type A, B or C to choose, or type anything you can imagine. The options are a shortcut, never a limit. ]
 ```
 
 **Beat 2: the first roll.** An **easy d20 (DC 8)**, shown openly, then:
@@ -77,7 +78,7 @@ Six hours before sunrise. Options, each costing time (`world/bay-area.md`):
 
 Morning fog and the Golden Gate Bridge. The Vests are watching every route out of the city. A short, tense crossing: the robotaxi they're in reroutes itself toward Sand Hill Road (Eye Capital), or a Vest on a scooter paces them in the bike lane. Resolve it quickly (it's an escalation-style scene, unscored), with a small cost or a disc temptation.
 
-**Arriving at the Cannery in Sausalito ends Act I.** Send the batch with `REACH_COUNCIL` last. Load Act II.
+**Arriving at the Cannery in Sausalito ends Act I.** Record `REACH_COUNCIL` (it's sent with everything else at the end) and fetch the Act II pack.
 
 ---
 

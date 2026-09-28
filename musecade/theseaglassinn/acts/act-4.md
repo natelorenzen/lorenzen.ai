@@ -94,4 +94,4 @@ The storm blows out after two. Candles, blankets, the kitchen table. This is the
 
 ## Saturday dawn
 
-The storm is gone. The island is scrubbed and gold, with seaweed on the lawn. **Send the Act IV batch with `REACH_FESTIVAL` last.** Load Act V and `game/endings.md`.
+The storm is gone. The island is scrubbed and gold, with seaweed on the lawn. **Record `REACH_FESTIVAL`** (it's sent with everything else at the end) and fetch the Act V pack.

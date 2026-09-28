@@ -2,7 +2,7 @@
 
 Musecade Game 004 · Version 1.0 · Satire · Comedy · 45 to 75 minutes · 1 player · PG-13
 <!-- BEGIN GENERATED:build -->
-Build: 1.0-3941266
+Build: 1.0-7d65ed0
 <!-- END GENERATED:build -->
 Base URL: https://lorenzen.ai/musecade/seriesdoom/
 Platform: https://lorenzen.ai/musecade/musecade.md
@@ -15,7 +15,7 @@ You have been handed a cartridge. Until the game ends or the player types `EXIT 
 
 ## 1. Initialization sequence
 
-1. **Fetch the boot files** in §2, *Load at start*, before you say anything. **Always fetch fresh:** add a unique query to each URL (for example `rules.md?fresh=1790540000`), and never reuse a remembered copy.
+1. **You're probably reading this inside `play.md`**, the game's one-file bundle. If so, everything needed to start (this manifest, the rules, character creation, scoring, image rules and Act I) is already loaded below, so **don't fetch anything else now**. (If you opened `adventure.md` on its own, fetch the `play.md` link in §2 instead, and follow that.)
 2. **Print the title card** (§3) exactly. Before it, you may print one line only: `CARTRIDGE LOADED · BUILD <the Build value above>`.
 3. **Ask the founder's name**, then follow `character-creation.md`.
 4. **Start the run** with the Musecade backend after the path is chosen (`core/scoring.md`). If you can't, play in LINK or LOCAL mode.
@@ -23,19 +23,22 @@ You have been handed a cartridge. Until the game ends or the player types `EXIT 
 
 ---
 
-## 2. Progressive loading
+## 2. Loading: one file per act
 
-`core/` files are relative to `https://lorenzen.ai/musecade/`. Everything else is relative to `https://lorenzen.ai/musecade/seriesdoom/`. Fetch each file fresh when its trigger fires.
+The game is bundled for speed. **Fetch exactly one file per act**, when its moment comes, using the URLs in this table **exactly as written**. The `?v=` part changes automatically whenever the game is updated, so you always get the newest version, and unchanged files load instantly from cache. Never fetch the individual source files named inside a pack (for example `acts/act-2.md`): they're already included in it. When a file you've loaded says "load X now", X is either already in the pack you have, or it arrives with the next pack.
 
-| When | Fetch |
-|---|---|
-| **Load at start** | `core/dm-core.md` · `core/image-style.md` · `core/scoring.md` · `rules.md` · `character-creation.md` · `scoring.md` · `game/image-triggers.md` · `acts/act-1.md` |
-| Gary the Grey arrives (Act I, 1.1) | `characters/companions.md` · `characters/npcs.md` |
-| Act II begins (`REACH_COUNCIL`) | `acts/act-2.md` · `world/bay-area.md` · `game/puzzles.md` · `game/encounters.md` |
-| Act III begins (`REACH_BREAKING`) | `acts/act-3.md` |
-| Act IV begins (`REACH_EAST_BAY`) | `acts/act-4.md` · `world/buddy.md` |
-| Act V begins (`REACH_DIABLO`), or an ending triggers early | `acts/act-5.md` · `game/endings.md` |
-| Game over | `game/achievements.md` |
+<!-- BEGIN GENERATED:packs -->
+| When | Fetch this one file | It contains |
+|---|---|---|
+| **Start** (this file) | https://lorenzen.ai/musecade/seriesdoom/play.md?v=1.0-7d65ed0 | `core/dm-core.md` · `core/image-style.md` · `core/scoring.md` · `adventure.md` · `rules.md` · `character-creation.md` · `scoring.md` · `game/image-triggers.md` · `acts/act-1.md` · `characters/companions.md` · `characters/npcs.md` |
+| Act II begins (`REACH_COUNCIL`) | https://lorenzen.ai/musecade/seriesdoom/pack-2.md?v=1.0-7d65ed0 | `acts/act-2.md` · `world/bay-area.md` · `game/puzzles.md` · `game/encounters.md` |
+| Act III begins (`REACH_BREAKING`) | https://lorenzen.ai/musecade/seriesdoom/pack-3.md?v=1.0-7d65ed0 | `acts/act-3.md` |
+| Act IV begins (`REACH_EAST_BAY`) | https://lorenzen.ai/musecade/seriesdoom/pack-4.md?v=1.0-7d65ed0 | `acts/act-4.md` · `world/buddy.md` |
+| Act V begins (`REACH_DIABLO`) | https://lorenzen.ai/musecade/seriesdoom/pack-5.md?v=1.0-7d65ed0 | `acts/act-5.md` · `game/endings.md` · `game/achievements.md` |
+| Any ending triggers before Act V (death, leaving early, surrender) | https://lorenzen.ai/musecade/seriesdoom/pack-end.md?v=1.0-7d65ed0 | `game/endings.md` · `game/achievements.md` |
+<!-- END GENERATED:packs -->
+
+Load nothing early. Content in a pack you haven't fetched doesn't exist yet, so don't improvise its secrets. If the player goes somewhere ahead of the story, fetch that act's pack early rather than inventing a contradicting world.
 
 ---
 

@@ -18,27 +18,27 @@ The ink is still drying.
 
 WHAT DID THE OFFICE TRAIN YOU FOR?
 
-OPERATIVE
+A. OPERATIVE
 Fights, chases, protection, endurance.
 
-ANALYST
+B. ANALYST
 Codes, documents, patterns, deduction.
 
-GHOST
+C. GHOST
 Infiltration, disguise, locks, losing a tail.
 
-DIPLOMAT
+D. DIPLOMAT
 Charm, lies, leverage, reading people.
 ```
 
-This is not a `[MENU]` (menus hold at most three options, and there are four paths). The player types their choice. A player who describes themselves ("an ex-cop turned spy") gets mapped to the closest path, confirmed in one line.
+Show the four paths as a lettered menu. This is the one menu with four real options: **A** to **D** are the paths, in the order printed above, and the player can answer with just the letter. There is no "Other" here, but if the player describes themselves instead, map it to the closest path and confirm in one line.
 
 ## Step 3: Look and dice
 
 In one short turn, ask:
 
 - "One line: what does the border guard see?" (or *surprise me*)
-- **"When fate is in doubt we roll a d20. Will you roll your own dice, or shall I?"** End with a `[MENU]` block with two options: `I'll roll my own dice` and `You roll for me`.
+- **"When fate is in doubt we roll a d20. Will you roll your own dice, or shall I?"** End with two lettered options: `- **A.** I'll roll my own dice` and `- **B.** You roll for me`.
 
 ## Step 4: Start the run
 

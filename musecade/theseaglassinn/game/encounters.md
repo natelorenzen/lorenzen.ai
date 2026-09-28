@@ -1,10 +1,10 @@
 # THE SEA GLASS INN: Set Pieces
 
-There are no fights on Halcyon. The set pieces are the sea and the weather, and the stakes are people she loves, the inn, and her own composure. They still follow the Musecade rules: three genuinely different approaches as a `[MENU]` block, a d20 at the turning point, and every set piece must **cost or reveal** something.
+There are no fights on Halcyon. The set pieces are the sea and the weather, and the stakes are people she loves, the inn, and her own composure. They still follow the Musecade rules: three genuinely different approaches as a lettered menu, a d20 at the turning point, and every set piece must **cost or reveal** something.
 
 ## Rules
 1. **Open with the situation:** what's at risk, where, and one usable detail (a foghorn, the church bell, the lighthouse generator, a sump pump, the co-op boats).
-2. **Three approaches as a `[MENU]`:** **go in yourself** (brave and direct; it costs composure and risks harm to the inn or to you), **rally the island** (call people in; it costs time and favors, and pride), and **use what's here** (the lighthouse, the bell, the tides, clever improvising; a bigger roll with a bigger payoff).
+2. **Three approaches as a lettered menu (A, B, C, plus D. Other):** **go in yourself** (brave and direct; it costs composure and risks harm to the inn or to you), **rally the island** (call people in; it costs time and favors, and pride), and **use what's here** (the lighthouse, the bell, the tides, clever improvising; a bigger roll with a bigger payoff).
 3. **Roll the d20 at the turning point** (`core/dm-core.md` §5). A miss by 1 to 4 costs composure +1, or damage to the inn. Nobody dies. The worst outcomes are fear, loss of property, and hard feelings.
 4. **Paths pay off:** the Adventurer handles boats, weather and cold water; the Caretaker keeps people calm and organized; the Strategist makes the plan and knows who to call; the Artist sees the detail that matters (a light in the fog, the seam in the paneling).
 5. `_SURVIVED` means she came through it; `_CLEVER` means it was handled masterfully, and earns both.

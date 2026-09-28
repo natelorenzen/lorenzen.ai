@@ -71,7 +71,7 @@ Each recruited ally has a moment tonight (`characters/companions.md`):
 
 ## The hour before dawn
 
-The rain stops. The lake goes pewter. Convoy engines turn over on the summit's last morning. **Send the Act IV batch with `REACH_BRIDGE` last.** Load Act V and `game/endings.md`.
+The rain stops. The lake goes pewter. Convoy engines turn over on the summit's last morning. **Record `REACH_BRIDGE`** (it's sent with everything else at the end) and fetch the Act V pack.
 
 ---
 

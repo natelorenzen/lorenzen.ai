@@ -60,7 +60,7 @@ The lobby tide clock stopped at 4:10, the seascape's rocks, and the harbor's tid
 
 ## Wednesday night
 
-Four people and some guests around Bea's kitchen table: Lydia, Maya, Bea, perhaps Jonah. Somebody laughs until they cry. **Send the Act II batch with `REACH_LETTERS` last.** Load Act III.
+Four people and some guests around Bea's kitchen table: Lydia, Maya, Bea, perhaps Jonah. Somebody laughs until they cry. **Record `REACH_LETTERS`** (it's sent with everything else at the end) and fetch the Act III pack.
 
 ---
 

@@ -80,7 +80,7 @@ The *Herald* reporter, sharp and fearless, would print "CONCORD SPY CHIEF WAS DI
 
 ## Night 3 begins
 
-The act ends when the player has **named CARDINAL** (by any route), or when **night 3 falls**, whichever comes first. Voss sends word through Anya or Ilse: *"The Glasshouse. Midnight. Come alone. We should talk, you and I."* **Send the Act III batch with `REACH_MOLE` last.** Load Act IV.
+The act ends when the player has **named CARDINAL** (by any route), or when **night 3 falls**, whichever comes first. Voss sends word through Anya or Ilse: *"The Glasshouse. Midnight. Come alone. We should talk, you and I."* **Record `REACH_MOLE`** (it's sent with everything else at the end) and fetch the Act IV pack.
 
 ---
 

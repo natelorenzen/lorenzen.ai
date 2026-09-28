@@ -63,15 +63,16 @@ Do not reveal undiscovered information.
   - WAYFARER: *bare footprints in the frost, pressed in moments ago. There were three of them. Only two came out.* (The third is gone. It's just unsettling.)
   - ENVOY: *they don't hear words. They move the way starving people move toward a fire. This isn't malice. It's hunger.*
 
-**Beat 1: the first menu.** The peddler's white hand closes on the mare's bridle, and the mare rears. End the turn with the first `[MENU]` block (`rules.md`, *Decision menus*), adapted to the path. For example:
-- "Step between them and the mare, blade out." *(stand)*
-- "Haul the mare back down the road, out of their reach." *(evade)*
-- "Strike flint to the dry bracken at the frost's edge." *(turn the ground)*
+**Beat 1: the first menu.** The peddler's white hand closes on the mare's bridle, and the mare rears. End the turn with the first lettered menu (`rules.md`, *Decision menus*), adapted to the path. For example:
+- **A.** Step between them and the mare, blade out. *(stand)*
+- **B.** Haul the mare back down the road, out of their reach. *(evade)*
+- **C.** Strike flint to the dry bracken at the frost's edge. *(turn the ground)*
+- **D.** Other: type your own
 
 Then print the first tip, on its own line:
 
 ```
-[ TIP · Tap an option, or type anything you can imagine. The menu is a shortcut, never a limit. ]
+[ TIP · Type A, B or C to choose, or type anything you can imagine. The options are a shortcut, never a limit. ]
 ```
 
 For a SCHOLAR, add:
@@ -261,7 +262,7 @@ Night count drops to **3**. If the courier is Grievous, Hedda's care (if she's f
 - **Calen**, if not yet recruited, asks again, more directly.
 - The horse, if she came this far, can go on until the Split.
 
-**Leaving Greyholt northward** ends Act I. Report the Act I batch with `REACH_WILDERNESS` (`scoring.md` §3). Load Act II.
+**Leaving Greyholt northward** ends Act I. Record `REACH_WILDERNESS` (it's sent with the rest at the end; see `scoring.md` §3), and fetch the Act II pack.
 
 ---
 
