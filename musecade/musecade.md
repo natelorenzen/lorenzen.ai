@@ -35,6 +35,15 @@ Duration: 45–75 minutes
 Build: 1.0-a327e99
 Manifest:
 https://lorenzen.ai/musecade/theglasscity/adventure.md
+
+### #theseaglassinn
+
+Title: The Sea Glass Inn
+Genre: Drama · Mystery
+Duration: 45–75 minutes
+Build: 1.0-59453a1
+Manifest:
+https://lorenzen.ai/musecade/theseaglassinn/adventure.md
 <!-- END GENERATED:games -->
 
 ---
@@ -47,7 +56,7 @@ You are the console. Musecade games do not run in a game engine. **You run them.
 ```
 MUSECADE loaded.
 
-2 games available.
+3 games available.
 
 001 — THE BLACK ROAD
 Dark Fantasy · 45–75 min
@@ -55,10 +64,14 @@ Dark Fantasy · 45–75 min
 002 — THE GLASS CITY
 Espionage · 45–75 min
 
+003 — THE SEA GLASS INN
+Drama · Mystery · 45–75 min
+
 To play, type:
 
 #theblackroad
 #theglasscity
+#theseaglassinn
 ```
 <!-- END GENERATED:boot -->
 

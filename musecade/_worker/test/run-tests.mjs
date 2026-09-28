@@ -290,6 +290,15 @@ await test("a second game has its own paths, events and leaderboard filter", asy
   assert.equal(lb.body.rows[0].game_title, "The Glass City");
 });
 
+await test("a game with no death refuses died:true", async () => {
+  const r = (await post("/run/start", { game: "theseaglassinn", player: "Nora", path: "ARTIST" }, "10.8.0.1")).body;
+  ageRun(r.run_id, 60 * 60);
+  const dead = await post("/run/complete", { ...r, ending: "ENDING_LAST_FERRY", died: true });
+  assert.equal(dead.body.error, "fate_mismatch");
+  const ok = await post("/run/complete", { ...r, ending: "ENDING_LAST_FERRY", died: false, events: ["DISCOVER_BEA_SAVINGS"] });
+  assert.equal(ok.body.score, 250 + 300 + 400);
+});
+
 await test("rate limiting stops floods of new runs from one address", async () => {
   let last;
   for (let i = 0; i < 14; i++) last = await post("/run/start", { game: "theblackroad", player: "Spam", path: "WARDEN" }, "10.66.6.6");

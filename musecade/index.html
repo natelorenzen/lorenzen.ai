@@ -40,7 +40,7 @@
 
 <div class="boot" aria-hidden="true"><pre>MUSECADE SYSTEM v1.0
 MEMORY CHECK ......... OK
-CARTRIDGE SLOTS ...... 2 LIVE / 4 DARK
+CARTRIDGE SLOTS ...... 3 LIVE / 3 DARK
 AGENT PORT ........... READY
 INSERT AGENT_</pre></div>
 <div class="flash" aria-hidden="true"></div>
@@ -56,7 +56,7 @@ INSERT AGENT_</pre></div>
     </div>
     <div class="group">
       <!-- BEGIN GENERATED:count -->
-      <span class="live"><span class="led" aria-hidden="true"></span>2 GAMES AVAILABLE</span>
+      <span class="live"><span class="led" aria-hidden="true"></span>3 GAMES AVAILABLE</span>
       <!-- END GENERATED:count -->
       <button type="button" class="sound-toggle" data-sound-toggle aria-pressed="false">SOUND: OFF</button>
     </div>
@@ -84,7 +84,7 @@ INSERT AGENT_</pre></div>
       <li>PLAY THROUGH CHAT</li>
     </ol>
 
-    <p class="attract" data-attract='["INSERT AGENT","PLAYER 1 READY","SUMMON A GAME","NEW CARTRIDGE: THE GLASS CITY"]' aria-hidden="true">INSERT AGENT</p>
+    <p class="attract" data-attract='["INSERT AGENT","PLAYER 1 READY","SUMMON A GAME","NEW CARTRIDGE: THE SEA GLASS INN"]' aria-hidden="true">INSERT AGENT</p>
   </section>
 
   <section class="section" id="select" aria-labelledby="select-title">
@@ -142,36 +142,37 @@ INSERT AGENT_</pre></div>
         </div>
       </article>
 
+
+      <article class="cabinet live" aria-labelledby="g003">
+        <div class="cab-marquee">
+          <div class="cab-no">GAME 003</div>
+          <h3 class="cab-title" id="g003">THE SEA GLASS INN</h3>
+        </div>
+        <div class="cab-body">
+          <a class="cab-screen" href="/musecade/theseaglassinn/" aria-label="The Sea Glass Inn: cabinet details">
+            <img src="/musecade/assets/seaglass-keyart.png" width="256" height="192" loading="lazy" alt="Pixel art: a woman holding sea glass to the sunset on a beach, an inn on the bluff and a lighthouse on the point.">
+          </a>
+          <div class="cab-panel">
+            <div class="cab-genre">DRAMA · MYSTERY</div>
+            <ul class="cab-facts">
+              <li>45–75 MINUTES</li>
+              <li>11 ENDINGS</li>
+              <li>GLOBAL LEADERBOARD</li>
+            </ul>
+            <span class="cmd">#theseaglassinn</span>
+            <div class="cab-actions">
+              <button type="button" class="btn" data-summon="#theseaglassinn">SUMMON GAME</button>
+              <a class="cab-link" href="/musecade/theseaglassinn/">VIEW CABINET &gt;</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
     </div>
 
     <div class="cabinets dark-row">
 
-      <article class="cabinet dark" aria-label="Game 003, coming soon, drama">
-        <div class="cab-marquee">
-          <div class="cab-no">GAME 003</div>
-          <h3 class="cab-title redacted">?????????</h3>
-        </div>
-        <div class="cab-screen" aria-hidden="true">
-          <div class="hint">
-            <svg viewBox="0 0 64 48" preserveAspectRatio="xMidYMid slice">
-              <rect width="64" height="48" fill="#07060c"/>
-              <rect x="0" y="36" width="64" height="12" fill="#0d1624"/>
-              <g fill="#1f6f94" opacity=".5"><rect x="4" y="39" width="8" height="1"/><rect x="40" y="42" width="10" height="1"/><rect x="20" y="44" width="6" height="1"/></g>
-              <g fill="#1d0e22"><rect x="40" y="16" width="6" height="20"/><rect x="39" y="12" width="8" height="4"/><rect x="41" y="10" width="4" height="2"/></g>
-              <rect x="41" y="13" width="4" height="2" fill="#ffd27a" opacity=".8"/>
-              <polygon points="45,14 64,8 64,20" fill="#ffd27a" opacity=".12"/>
-              <g fill="#1d0e22"><rect x="10" y="28" width="14" height="8"/><polygon points="9,28 17,22 25,28"/></g>
-              <rect x="14" y="31" width="2" height="2" fill="#ffae45" opacity=".8"/>
-            </svg>
-          </div>
-          <div class="static"></div>
-          <div class="qmark">?</div>
-        </div>
-        <div class="cab-panel">
-          <div class="cab-genre">DRAMA</div>
-          <div class="cab-actions"><span class="soon">COMING SOON</span></div>
-        </div>
-      </article>
+
 
       <article class="cabinet dark" aria-label="Game 004, coming soon, satire">
         <div class="cab-marquee">
@@ -280,6 +281,7 @@ INSERT AGENT_</pre></div>
 <span class="tx-line"><span class="who muse">MUSE ›</span> MUSECADE loaded. 1 game available.</span>
 <span class="tx-line">        001 — THE BLACK ROAD · Dark Fantasy · 45–75 min</span>
 <span class="tx-line">        002 — THE GLASS CITY · Espionage · 45–75 min</span>
+<span class="tx-line">        003 — THE SEA GLASS INN · Drama · Mystery · 45–75 min</span>
 <span class="tx-line">        To play, type: #theblackroad</span>
 <span class="tx-line"><span class="who">YOU ›</span> #theblackroad</span>
 <span class="tx-line"><span class="who muse">MUSE ›</span> Rain has followed you for three days. Inside your coat is a black iron box. Do not open it…</span>
@@ -337,6 +339,7 @@ INSERT AGENT_</pre></div>
           <button type="button" class="tab" data-game="all" aria-pressed="true">ALL GAMES</button>
           <button type="button" class="tab" data-game="theblackroad" aria-pressed="false">THE BLACK ROAD</button>
           <button type="button" class="tab" data-game="theglasscity" aria-pressed="false">THE GLASS CITY</button>
+          <button type="button" class="tab" data-game="theseaglassinn" aria-pressed="false">THE SEA GLASS INN</button>
         </div>
         <div class="board-body" aria-live="polite"><div class="board-msg"><b>READING HIGH SCORES…</b></div></div>
         <p class="board-foot"><span class="board-caption">ALL TIME</span> · real runs only · † fell on the road</p>

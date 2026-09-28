@@ -131,3 +131,23 @@ These depend on the agent, and must be checked in a real Muse conversation:
 - **FAILURE:** Kit runs the Raid across the Meridian's glass roof on a natural 1, while Critical after the Arcade, and the danger had been telegraphed. Death, `IMG_DEATH`, the death screen, and the epilogue: Anya carries the plan alone, and Kell takes Nightingale back at the city end.
 
 **Found and fixed while building:** the standard trace scored 10,450, so top-end values were rebalanced (the ending, rescue, ally, and "everybody" achievements). Path choice has four options, so it can't be a `[MENU]` (at most 3), and the player types it instead. The Registry was moved from 2 a.m. to seven, during the gala, so night 3 stays free for Ashby and the Glasshouse.
+
+---
+
+# The Sea Glass Inn (Game 003): Simulated Playtests
+
+`node musecade/_playtest/replay-seaglassinn.mjs` replays each trace through the real scoring rules. This game has no death, so the fourth trace is the **retreat** run (leaving early).
+
+| Run | Name · Path | Ending | Score | Secrets |
+|---|---|---|---|---|
+| STANDARD | NORA · Caretaker | THE KEEPER | ~8,750 | 9/11 |
+| CHAOTIC | ROX · Adventurer | THE WIDE WORLD (Act II) | 1,950 | 1/11 |
+| CLEVER | IVY · Artist | MARLOWE HOUSE | ~15,900 | 11/11 |
+| RETREAT | JO · Strategist | THE LAST FERRY (Act II) | 1,100 | 1/11 |
+
+- **STANDARD:** the ferry squall (Marguerite and the cake), Bea's secret ledger, the lighthouse and the cobalt glass. Marguerite is won over at the bakery rush. Jonah's shed, the *Winifred*, the letters, and Lydia's foreclosure notice. Maya arrives. The tide cave is solved with one nudge, which gives Marlowe. The fog rescue, then the seawall talk. The storm reveals the room. The long night brings peace with Lydia and a partnership with Bea. The speech at the vote. She keeps the inn.
+- **CHAOTIC:** Rox tries to sail to the mainland on day one (Jonah stops her), squeezes Vale for better terms (`SOCIAL_VALE_TERMS`), learns Vale knows about "the Marlowe", and sells on Tuesday out of spite at the art world. THE WIDE WORLD from Act II, which verifies early endings and a deliberately short run.
+- **CLEVER:** the Artist's Eye reaches rank III in the cave. The council puzzle is solved from the survey stakes and the registry of deeds. The window opens before the storm (FIRST LIGHT). She relights the lighthouse in the nor'easter. She gives the painting to the island.
+- **RETREAT:** Jo reads the will, finds Lydia's foreclosure, feels the weight of everything, and takes Tuesday's ferry. THE LAST FERRY, with the "came back years later" epilogue.
+
+**Verified:** no-death fate enforcement (`died:true` is refused), the tide timing, the order of the white and violet glass, the storm fallback for the room, and that the final choice is never offered as a menu. **Fixed:** near-certain secrets (the room, the painting) were worth too much, so the standard run scored 9,300; they've been rebalanced.
