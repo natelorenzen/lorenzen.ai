@@ -46,6 +46,11 @@ PALETTES.seriesdoom = HEX([
     "#6b5a2a","#b89a4a","#e6cf7a",
     "#1d1d22","#3a3a44","#6c6c7a","#b4b4c0","#f4f4f8",
     "#2f7d3a","#7fd07a"]);
+PALETTES.ghostline = HEX([
+    "#07050d","#0a0714","#120c22","#1a1030","#241e38","#2a2440","#3a2a5e","#4a1a44",
+    "#ff3fa4","#ff8ac8","#ffd1ea","#2ef2ff","#9ff6ff","#e8f9ff","#9bff4f","#d6ff9e",
+    "#e0302a","#ff6a3d","#ffe08a","#f7d38a","#fff3c4",
+    "#1c1630","#0f0c18","#1a1216","#6a78b8","#3a3a5a","#6a6a8a","#b8b0d0","#c8d0f0","#e8e4f4"]);
 let PALETTE = PALETTES.theblackroad;
 
 const BAYER = [[0,8,2,10],[12,4,14,6],[3,11,1,9],[15,7,13,5]];
@@ -94,7 +99,7 @@ window.pixelize = async function (src = "keyart-src.svg", W = 256, H = 192, spre
       if (x < 0 || y >= H) continue;
       const i = (y * W + x) * 4;
       const lum = px[i] * .3 + px[i + 1] * .59 + px[i + 2] * .11;
-      const rainIdx = { theblackroad: [17, 16], theglasscity: [6, 8], theseaglassinn: [5, 6], seriesdoom: [3, 4] }[palette];
+      const rainIdx = { theblackroad: [17, 16], theglasscity: [6, 8], theseaglassinn: [5, 6], seriesdoom: [3, 4], ghostline: [24, 26] }[palette];
       const col = lum < 60 ? PALETTE[rainIdx[0]] : PALETTE[rainIdx[1]];
       px[i] = col[0]; px[i + 1] = col[1]; px[i + 2] = col[2];
     }

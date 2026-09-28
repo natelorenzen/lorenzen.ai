@@ -69,18 +69,27 @@
   },
   {
     "id": "005",
-    "title": null,
-    "slug": null,
-    "command": null,
-    "genre": "Survival",
-    "status": "coming_soon"
+    "title": "Ghostline",
+    "slug": "ghostline",
+    "command": "#ghostline",
+    "genre": "Cyberpunk · Noir",
+    "duration": "45–75 min",
+    "status": "live",
+    "version": "1.0",
+    "players": 1,
+    "endings": "11",
+    "difficulty": "???",
+    "tagline": "A dead woman's mind is overwriting yours. Forty-eight hours to reach the top of the city.",
+    "manifest": "https://lorenzen.ai/musecade/ghostline/play.md",
+    "page": "https://lorenzen.ai/musecade/ghostline/",
+    "events": "https://lorenzen.ai/musecade/ghostline/events.json"
   },
   {
     "id": "006",
     "title": null,
     "slug": null,
     "command": null,
-    "genre": "Science Fiction",
+    "genre": "Survival",
     "status": "coming_soon"
   },
   {

@@ -171,3 +171,24 @@ v2.0 recasts the game as a teen summer thriller. `node musecade/_playtest/replay
 - **FAILURE:** Bo accuses Gemma of being the leak (trust -2), splits the team badly at the rooftop park, and tries to jump the fountain rail on a natural 1 while Wrecked. The danger was telegraphed. RUNWAY: ZERO, with the plaque epilogue (Gemma carries the disc on and aligns it).
 
 **Verified:** no real people or companies anywhere (validated by review, not by code); parody lines rewritten to be original rather than near-quotes; the no-emoji rule; the hidden ending's prerequisites enforced server-side (`DISCOVER_BUDDY_WISH` plus `SOCIAL_BUDDY_TALK`).
+
+---
+
+# Ghostline (Game 005): Simulated Playtests
+
+`node musecade/_playtest/replay-ghostline.mjs` replays each trace through the real scoring rules.
+
+| Run | Name · Path | Ending | Score | Secrets |
+|---|---|---|---|---|
+| STANDARD | VEGA · Chrome | OPEN SKY | 8,750 | 8/11 |
+| CHAOTIC | RAZ · Fixer | THE NEW ARCHITECT (Act IV) | 2,950 | 2/11 |
+| CLEVER | NYX · Netrunner | TWO MINDS (hidden) | 16,950 | 11/11 |
+| FAILURE | KIT · Medtech | FLATLINE (Act II) | 300 | 0/11 |
+
+- **STANDARD:** out through the noodle bar's steam, Tallow's verdict, Mara names Kade's voice. Vega outbluffs Lotus. At the church raid the secret tunnel gives Kes away, and Mara recognizes Null. The palace opens on RIVER · CONSENT · ALONE. Into the Cradle cold and expected (ice-room body bag, forged death record). The registry: three million edits, Mara's signature, Vega's own death, Ines alive. Kes stays on the Canopy. The registry is broadcast from the Spire.
+- **CHAOTIC:** Raz uses Mara's keys everywhere (SYNC 4 by Act III). Juno's *Lullaby* nearly finishes the job. With the overwrite close, Raz takes Kade's offer relayed through a Quiet Man's chime.
+- **CLEVER:** Nyx never uses a key, anchors at the flood wall and scaffold 9, and gets Null's confession before the raid ends. The Deep reaches rank III in the vault. On the Canopy Mara admits everything, Kes stays, and Juno deletes *Lullaby*. Ines half-remembers on the garden bridge. The Loom is sorted cleanly (the flood and the gratitude marked as patches), and both minds consent.
+- **FAILURE:** Kit ignores Tallow, runs the church raid on the main stairs with Null, and takes a telegraphed Very Hard jump between metro cars while Bleeding. Natural 1.
+
+**Verified:** SYNC rises on schedule (Acts III and V) and on every key; the fate rule (`FULL SYNC`, `RESTORED` and `FLATLINE` complete with `died: true`); the Loom's six memories agree with the registry and the memory palace; player pronouns stay neutral in the source files; and no real brands appear anywhere.
+

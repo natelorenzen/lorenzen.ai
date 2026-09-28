@@ -1,0 +1,130 @@
+{
+  "id": "005",
+  "slug": "ghostline",
+  "title": "Ghostline",
+  "subtitle": "A Cyberpunk Noir",
+  "command": "#ghostline",
+  "version": "1.0",
+  "genre": "Cyberpunk · Noir",
+  "rating": "PG-13",
+  "players": 1,
+  "duration": "45–75 min",
+  "endings": 11,
+  "secrets": 11,
+  "acts": [
+    "Wake",
+    "The Stacks",
+    "The Vault",
+    "The Canopy",
+    "The Crown"
+  ],
+  "paths": [
+    "Netrunner",
+    "Chrome",
+    "Fixer",
+    "Medtech"
+  ],
+  "uses_core": true,
+  "manifest": "adventure.md",
+  "boot_files": [
+    "rules.md",
+    "character-creation.md",
+    "scoring.md",
+    "game/image-triggers.md",
+    "acts/act-1.md"
+  ],
+  "core_files": [
+    "core/dm-core.md",
+    "core/image-style.md",
+    "core/scoring.md"
+  ],
+  "files": [
+    "adventure.md",
+    "rules.md",
+    "character-creation.md",
+    "scoring.md",
+    "events.json",
+    "acts/act-1.md",
+    "acts/act-2.md",
+    "acts/act-3.md",
+    "acts/act-4.md",
+    "acts/act-5.md",
+    "world/lumen.md",
+    "world/mara.md",
+    "characters/companions.md",
+    "characters/npcs.md",
+    "game/encounters.md",
+    "game/puzzles.md",
+    "game/achievements.md",
+    "game/endings.md",
+    "game/image-triggers.md"
+  ],
+  "capabilities": {
+    "required": [
+      "read web pages (fetch URLs)"
+    ],
+    "recommended": [
+      "image generation",
+      "HTTP GET or POST to the Musecade API (for the leaderboard)"
+    ],
+    "optional": [
+      "5-second video generation",
+      "random number generation"
+    ]
+  },
+  "packs": {
+    "play": {
+      "when": "the game starts",
+      "files": [
+        "core/dm-core.md",
+        "core/image-style.md",
+        "core/scoring.md",
+        "adventure.md",
+        "rules.md",
+        "character-creation.md",
+        "scoring.md",
+        "game/image-triggers.md",
+        "acts/act-1.md",
+        "characters/companions.md",
+        "characters/npcs.md"
+      ]
+    },
+    "pack-2": {
+      "when": "Act II begins (`REACH_STACKS`)",
+      "files": [
+        "acts/act-2.md",
+        "world/lumen.md",
+        "world/mara.md",
+        "game/puzzles.md"
+      ]
+    },
+    "pack-3": {
+      "when": "Act III begins (`REACH_VAULT`)",
+      "files": [
+        "acts/act-3.md",
+        "game/encounters.md"
+      ]
+    },
+    "pack-4": {
+      "when": "Act IV begins (`REACH_CANOPY`)",
+      "files": [
+        "acts/act-4.md"
+      ]
+    },
+    "pack-5": {
+      "when": "Act V begins (`REACH_CROWN`)",
+      "files": [
+        "acts/act-5.md",
+        "game/endings.md",
+        "game/achievements.md"
+      ]
+    },
+    "pack-end": {
+      "when": "any ending triggers before Act V (flatline, full sync, selling the ghost, a deal)",
+      "files": [
+        "game/endings.md",
+        "game/achievements.md"
+      ]
+    }
+  }
+}

@@ -53,6 +53,15 @@ Duration: 45–75 minutes
 Build: 1.0-5e0936d
 Play:
 https://lorenzen.ai/musecade/seriesdoom/play.md?v=1.0-5e0936d
+
+### #ghostline
+
+Title: Ghostline
+Genre: Cyberpunk · Noir
+Duration: 45–75 minutes
+Build: 1.0-af3e288
+Play:
+https://lorenzen.ai/musecade/ghostline/play.md?v=1.0-af3e288
 <!-- END GENERATED:games -->
 
 ---
@@ -65,7 +74,7 @@ You are the console. Musecade games do not run in a game engine. **You run them.
 ```
 MUSECADE loaded.
 
-4 games available.
+5 games available.
 
 001 — THE BLACK ROAD
 Dark Fantasy · 45–75 min
@@ -79,12 +88,16 @@ Teen Thriller · Mystery · 45–75 min
 004 — SERIES DOOM
 Satire · Comedy · 45–75 min
 
+005 — GHOSTLINE
+Cyberpunk · Noir · 45–75 min
+
 To play, type:
 
 #theblackroad
 #theglasscity
 #theseaglassinn
 #seriesdoom
+#ghostline
 ```
 <!-- END GENERATED:boot -->
 

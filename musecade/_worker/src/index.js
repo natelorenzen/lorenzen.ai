@@ -17,8 +17,9 @@ import THE_BLACK_ROAD from "../../theblackroad/events.json" with { type: "json" 
 import THE_GLASS_CITY from "../../theglasscity/events.json" with { type: "json" };
 import THE_SEA_GLASS_INN from "../../theseaglassinn/events.json" with { type: "json" };
 import SERIES_DOOM from "../../seriesdoom/events.json" with { type: "json" };
+import GHOSTLINE from "../../ghostline/events.json" with { type: "json" };
 
-export const GAMES = { theblackroad: THE_BLACK_ROAD, theglasscity: THE_GLASS_CITY, theseaglassinn: THE_SEA_GLASS_INN, seriesdoom: SERIES_DOOM };
+export const GAMES = { theblackroad: THE_BLACK_ROAD, theglasscity: THE_GLASS_CITY, theseaglassinn: THE_SEA_GLASS_INN, seriesdoom: SERIES_DOOM, ghostline: GHOSTLINE };
 
 const MAX_BODY_BYTES = 8192;
 const MAX_EVENTS_PER_REQUEST = 60;

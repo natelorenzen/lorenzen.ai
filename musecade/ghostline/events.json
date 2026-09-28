@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "game": "ghostline",
+  "title": "Ghostline",
+  "version": "1.0",
+  "note": "CANONICAL SCORE TABLE. The Musecade backend imports this file and is the only thing that turns event IDs into points. Edit here, run python3 musecade/_build/build.py, then redeploy the worker.",
+
+  "rules": {
+    "survival_bonus": 400,
+    "max_events_per_run": 80,
+    "min_seconds_for_ranking": 300,
+    "run_ttl_days": 30,
+    "acts": 5
+  },
+
+  "paths": ["NETRUNNER", "CHROME", "FIXER", "MEDTECH"],
+
+  "doc_tokens": ["ENC_CHURCH", "ENC_CANOPY", "ENC_SPIRE", "COMPANION_SURVIVES"],
+
+  "events": {
+    "REACH_STACKS": { "category": "progress", "points": 100, "title": "The Stacks", "sets_act": 2, "min_act": 1 },
+    "REACH_VAULT":  { "category": "progress", "points": 200, "title": "The Vault", "sets_act": 3, "min_act": 2, "requires": ["REACH_STACKS"] },
+    "REACH_CANOPY": { "category": "progress", "points": 300, "title": "The Canopy", "sets_act": 4, "min_act": 3, "requires": ["REACH_VAULT"] },
+    "REACH_CROWN":  { "category": "progress", "points": 400, "title": "The Crown", "sets_act": 5, "min_act": 4, "requires": ["REACH_CANOPY"] },
+
+    "DISCOVER_MARA_MURDER":   { "category": "discovery", "secret": true, "points": 250, "title": "Who Killed Mara Quell", "min_act": 1 },
+    "DISCOVER_LOTUS_BUYER":   { "category": "discovery", "secret": true, "points": 200, "title": "Madame Lotus's Buyer", "min_act": 1 },
+    "DISCOVER_KES_DEAL":      { "category": "discovery", "secret": true, "points": 250, "title": "What Kes Sold", "min_act": 1 },
+    "DISCOVER_NULL_PAST":     { "category": "discovery", "secret": true, "points": 300, "title": "The Man in Grey", "min_act": 2 },
+    "DISCOVER_JUNO_PLAN":     { "category": "discovery", "secret": true, "points": 250, "title": "What Juno Wants", "min_act": 2 },
+    "DISCOVER_LOOM_PRICE":    { "category": "discovery", "secret": true, "points": 250, "title": "The Price of the Loom", "min_act": 2 },
+    "DISCOVER_EDITS":         { "category": "discovery", "secret": true, "points": 450, "title": "Three Million Edits", "min_act": 3 },
+    "DISCOVER_YOUR_DEATH":    { "category": "discovery", "secret": true, "points": 350, "title": "You Died Once", "min_act": 3 },
+    "DISCOVER_MARA_BUILT_IT": { "category": "discovery", "secret": true, "points": 350, "title": "The Architect", "min_act": 3 },
+    "DISCOVER_SISTER_ALIVE":  { "category": "discovery", "secret": true, "points": 400, "title": "Ines", "min_act": 3 },
+    "DISCOVER_KADE_BACKUP":   { "category": "discovery", "secret": true, "points": 300, "title": "Seraphine Kade, Version Twelve", "min_act": 4 },
+
+    "PUZZLE_PALACE_SOLVED":   { "category": "puzzle", "points": 400, "title": "The Memory Palace", "min_act": 2 },
+    "PUZZLE_PALACE_NO_HINT":  { "category": "puzzle", "points": 200, "title": "The Palace, Unaided", "min_act": 2, "requires": ["PUZZLE_PALACE_SOLVED"] },
+    "PUZZLE_VAULT_SOLVED":    { "category": "puzzle", "points": 450, "title": "Only the Dead Get In", "min_act": 3 },
+    "PUZZLE_VAULT_NO_HINT":   { "category": "puzzle", "points": 200, "title": "The Vault, Unaided", "min_act": 3, "requires": ["PUZZLE_VAULT_SOLVED"] },
+    "PUZZLE_LOOM_SOLVED":     { "category": "puzzle", "points": 500, "title": "Which Memories Are Yours", "min_act": 5 },
+    "PUZZLE_LOOM_NO_HINT":    { "category": "puzzle", "points": 250, "title": "The Loom, Unaided", "min_act": 5, "requires": ["PUZZLE_LOOM_SOLVED"] },
+
+    "ENC_CHURCH_SURVIVED": { "category": "encounter", "points": 250, "title": "The Raid on the Church", "min_act": 2 },
+    "ENC_CHURCH_CLEVER":   { "category": "encounter", "points": 300, "title": "The Raid, Masterfully", "min_act": 2 },
+    "ENC_CANOPY_SURVIVED": { "category": "encounter", "points": 300, "title": "The Canopy Climb", "min_act": 4 },
+    "ENC_CANOPY_CLEVER":   { "category": "encounter", "points": 350, "title": "The Canopy, Masterfully", "min_act": 4 },
+    "ENC_SPIRE_SURVIVED":  { "category": "encounter", "points": 300, "title": "The Spire", "min_act": 5 },
+    "ENC_SPIRE_CLEVER":    { "category": "encounter", "points": 350, "title": "The Spire, Masterfully", "min_act": 5 },
+
+    "SOCIAL_LOTUS_DEAL":      { "category": "social", "points": 250, "title": "A Deal with Madame Lotus", "min_act": 1 },
+    "SOCIAL_CARTOGRAPHERS":   { "category": "social", "points": 250, "title": "The Cartographers' Trust", "min_act": 2 },
+    "SOCIAL_NULL_CONFESSION": { "category": "social", "points": 300, "title": "Brother Null's Confession", "min_act": 2, "requires": ["DISCOVER_NULL_PAST"] },
+    "SOCIAL_MARA_TRUTH":      { "category": "social", "points": 450, "title": "Mara, Unedited", "min_act": 4, "requires": ["DISCOVER_MARA_BUILT_IT"] },
+    "SOCIAL_INES":            { "category": "social", "points": 350, "title": "My Sister's Face", "min_act": 4, "requires": ["DISCOVER_SISTER_ALIVE"] },
+
+    "RECRUIT_KES":   { "category": "companion", "points": 100, "title": "Kes Drives", "min_act": 1 },
+    "RECRUIT_NULL":  { "category": "companion", "points": 100, "title": "Brother Null Walks With You", "min_act": 2 },
+    "RECRUIT_JUNO":  { "category": "companion", "points": 100, "title": "Juno Jacks In", "min_act": 2 },
+    "KES_STAYS":     { "category": "companion", "points": 250, "title": "Kes Stays", "min_act": 4, "requires": ["RECRUIT_KES"] },
+    "NULL_REDEEMED": { "category": "companion", "points": 250, "title": "Null's Penance", "min_act": 3, "requires": ["RECRUIT_NULL"] },
+    "JUNO_LETS_GO":  { "category": "companion", "points": 300, "title": "Juno Lets Go", "min_act": 4, "requires": ["RECRUIT_JUNO"] },
+    "COMPANION_SURVIVES_KES":  { "category": "companion", "points": 150, "title": "Kes Lives", "min_act": 4, "requires": ["RECRUIT_KES"] },
+    "COMPANION_SURVIVES_NULL": { "category": "companion", "points": 150, "title": "Null Lives", "min_act": 4, "requires": ["RECRUIT_NULL"] },
+    "COMPANION_SURVIVES_JUNO": { "category": "companion", "points": 150, "title": "Juno Lives", "min_act": 4, "requires": ["RECRUIT_JUNO"] },
+
+    "ACH_NO_KEYS":        { "category": "achievement", "points": 500, "title": "NO KEYS", "description": "Reach the Canopy without ever using one of Mara's keys.", "min_act": 4 },
+    "ACH_FULL_STORY":     { "category": "achievement", "points": 600, "title": "THE FULL STORY", "description": "Learn about the edits, who built them, your own death, and your sister.", "min_act": 4, "requires": ["DISCOVER_EDITS", "DISCOVER_MARA_BUILT_IT", "DISCOVER_YOUR_DEATH", "DISCOVER_SISTER_ALIVE"] },
+    "ACH_CREW":           { "category": "achievement", "points": 400, "title": "THE CREW", "description": "Finish with Kes, Null and Juno alive and loyal.", "min_act": 5, "requires": ["KES_STAYS", "NULL_REDEEMED", "JUNO_LETS_GO"] },
+    "ACH_NO_BODY_COUNT":  { "category": "achievement", "points": 400, "title": "NO BODY COUNT", "description": "Reach the Crown without killing anyone.", "min_act": 5 },
+    "ACH_STILL_ME":       { "category": "achievement", "hidden": true, "points": 400, "title": "STILL ME", "description": "Reach the Loom with Sync never above 2.", "min_act": 5 },
+    "ACH_THE_DEEP":       { "category": "achievement", "hidden": true, "points": 400, "title": "THE DEEP", "description": "As a Netrunner, reach the third rank of the Deep.", "min_act": 4 },
+    "ACH_UNTOUCHED":      { "category": "achievement", "hidden": true, "points": 300, "title": "NOT A SCRATCH", "description": "Reach the Crown without ever being hurt.", "min_act": 5 },
+    "ACH_ANCHORED":       { "category": "achievement", "hidden": true, "points": 300, "title": "ANCHORED", "description": "Use all four kinds of anchor.", "min_act": 4 }
+  },
+
+  "endings": {
+    "ENDING_TWO_MINDS":     { "title": "TWO MINDS", "points": 2200, "fate": "lives", "min_act": 5, "requires": ["PUZZLE_LOOM_SOLVED", "SOCIAL_MARA_TRUTH"] },
+    "ENDING_OPEN_SKY":      { "title": "OPEN SKY", "points": 1700, "fate": "lives", "min_act": 5, "requires": ["DISCOVER_EDITS"] },
+    "ENDING_CLEAN_SPLIT":   { "title": "CLEAN SPLIT", "points": 1400, "fate": "lives", "min_act": 5 },
+    "ENDING_INTO_THE_WIRE": { "title": "INTO THE WIRE", "points": 1300, "fate": "lives", "min_act": 5, "requires": ["SOCIAL_CARTOGRAPHERS"] },
+    "ENDING_HOME":          { "title": "HOME", "points": 1200, "fate": "lives", "min_act": 4, "requires": ["DISCOVER_SISTER_ALIVE"] },
+    "ENDING_THE_UNBACKED":  { "title": "THE UNBACKED", "points": 1100, "fate": "lives", "min_act": 5, "requires": ["RECRUIT_NULL"] },
+    "ENDING_NEW_ARCHITECT": { "title": "THE NEW ARCHITECT", "points": 800, "fate": "lives", "min_act": 4 },
+    "ENDING_FULL_SYNC":     { "title": "FULL SYNC", "points": 500, "fate": "dies", "min_act": 2 },
+    "ENDING_SOLD":          { "title": "SOLD", "points": 400, "fate": "lives", "min_act": 1 },
+    "ENDING_RESTORED":      { "title": "RESTORED", "points": 300, "fate": "dies", "min_act": 3 },
+    "ENDING_FLATLINE":      { "title": "FLATLINE", "points": 0, "fate": "dies", "min_act": 1 }
+  }
+}
