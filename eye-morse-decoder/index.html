@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="robots" content="noindex, nofollow, noarchive" />
+<meta name="googlebot" content="noindex, nofollow" />
+<meta name="referrer" content="no-referrer" />
+<title>Eye Morse Decoder</title>
+<style>
+  :root{
+    --bg:#0a0a0c; --panel:#121216; --panel2:#19191f; --text:#f4f4f5;
+    --muted:#9b9ba5; --line:#2a2a32; --accent:#f5f5f5; --good:#8ef0a7;
+    --warn:#ffd166; --bad:#ff7b7b;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font:14px/1.45 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+  .wrap{max-width:1280px;margin:0 auto;padding:28px}
+  h1{font-size:28px;margin:0 0 6px}
+  p{color:var(--muted);margin:0 0 18px}
+  .grid{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
+  @media(max-width:900px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}
+  .toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+  button,.filebtn{background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:9px;padding:9px 12px;cursor:pointer}
+  button:hover,.filebtn:hover{border-color:#555}
+  button.primary{background:#f4f4f5;color:#111;border-color:#f4f4f5;font-weight:700}
+  button:disabled{opacity:.45;cursor:not-allowed}
+  input[type=file]{display:none}
+  input[type=range]{width:160px}
+  .stage{position:relative;background:#000;border:1px solid var(--line);border-radius:10px;overflow:hidden;min-height:260px}
+  video{display:block;width:100%;max-height:650px;background:#000}
+  canvas.overlay{position:absolute;inset:0;width:100%;height:100%;cursor:crosshair}
+  .meta{display:flex;gap:16px;color:var(--muted);margin-top:8px;flex-wrap:wrap}
+  .row{display:flex;align-items:center;gap:10px;margin:10px 0}
+  .row label{min-width:118px;color:var(--muted)}
+  input[type=number]{background:#0e0e12;color:var(--text);border:1px solid var(--line);border-radius:8px;padding:7px;width:92px}
+  .eye{border:1px solid var(--line);border-radius:10px;padding:10px;margin:10px 0;background:#0e0e12}
+  .eyehead{display:flex;justify-content:space-between;gap:10px;align-items:center}
+  .eyehead strong{font-size:13px}
+  .tag{font:12px ui-monospace,SFMono-Regular,Menlo,monospace;color:#d7d7df}
+  pre{white-space:pre-wrap;word-break:break-word;background:#0b0b0e;border:1px solid var(--line);border-radius:8px;padding:10px;max-height:230px;overflow:auto}
+  table{width:100%;border-collapse:collapse;font-size:12px}
+  th,td{padding:7px 6px;border-bottom:1px solid var(--line);text-align:left}
+  th{color:var(--muted);font-weight:600}
+  .status{font-size:12px;color:var(--muted)}
+  .status.good{color:var(--good)}
+  .status.warn{color:var(--warn)}
+  .progress{height:7px;border-radius:99px;background:#23232b;overflow:hidden}
+  .progress > div{height:100%;width:0;background:#e8e8eb}
+  .small{font-size:12px;color:var(--muted)}
+  .sel{background:#0e0e12;color:#fff;border:1px solid var(--line);border-radius:8px;padding:7px;max-width:100%}
+  canvas.chart{display:block;width:100%;height:90px;margin:8px 0;background:#0b0b0e;border:1px solid var(--line);border-radius:8px}
+  .big{font-size:22px;font-weight:700;color:#fff;letter-spacing:.04em;margin:6px 0}
+  canvas.overlay{pointer-events:none}
+  canvas.overlay.adding{pointer-events:auto}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Eye Morse Decoder</h1>
+  <p>Upload a video of someone blinking in Morse code, draw a box around each eye, and decode it. A short blink is a dot, a long blink is a dash, a pause separates letters, and a longer pause separates words. Everything runs in your browser. The video never leaves your device.</p>
+
+  <div class="grid">
+    <section class="card">
+      <div class="toolbar">
+        <label class="filebtn">Upload video<input id="file" type="file" accept="video/*"></label>
+        <button id="addEye" disabled>Add eye region</button>
+        <button id="clearEyes" disabled>Clear regions</button>
+        <button id="analyze" class="primary" disabled>Analyze</button>
+      </div>
+
+      <div class="stage" id="stage">
+        <video id="video" controls playsinline></video>
+        <canvas id="overlay" class="overlay"></canvas>
+      </div>
+      <div class="meta">
+        <span id="duration">Duration: —</span>
+        <span id="dims">Video: —</span>
+        <span id="regions">Regions: 0</span>
+      </div>
+      <div class="small" style="margin-top:10px">Pause the video on a frame where the eyes are open, click “Add eye region”, then drag a snug box around one eye. Repeat for the other eye. For best results, film face-on, in good light, with the head still.</div>
+    </section>
+
+    <aside class="card">
+      <h3 style="margin-top:0">Analysis settings</h3>
+      <div class="row"><label>Sample FPS</label><input id="fps" type="number" min="5" max="60" value="30"></div>
+      <div class="row"><label>Detect</label>
+        <select id="feature" class="sel">
+          <option value="openness">Eye open / closed (contrast)</option>
+          <option value="brightness">Light brightness</option>
+        </select>
+      </div>
+      <div class="row"><label>Signal is</label>
+        <select id="polarity" class="sel">
+          <option value="auto">Auto (the rarer state, e.g. eyes closed)</option>
+          <option value="low">Low value (closed eye)</option>
+          <option value="high">High value (light on)</option>
+        </select>
+      </div>
+      <div class="row"><label>Threshold mode</label>
+        <select id="thresholdMode" class="sel">
+          <option value="auto">Auto per eye</option>
+          <option value="manual">Manual</option>
+        </select>
+      </div>
+      <div class="row"><label>Manual threshold</label><input id="manualThreshold" type="number" min="0" max="255" value="30"><span class="small">see chart</span></div>
+      <div class="row"><label>Dot unit (ms)</label><input id="unitMs" type="number" min="20" max="3000" value="300"></div>
+      <div class="row"><label>Auto timing</label><input id="autoTiming" type="checkbox" checked></div>
+      <div class="row"><label>Ignore pulses &lt;</label><input id="minPulseMs" type="number" min="0" max="1000" value="70"><span class="small">ms</span></div>
+
+      <div id="status" class="status">Load a video to begin.</div>
+      <div class="progress" style="margin-top:8px"><div id="bar"></div></div>
+
+      <h3>Eye regions</h3>
+      <div id="eyeList"><div class="small">No regions selected.</div></div>
+    </aside>
+  </div>
+
+  <section class="card" style="margin-top:18px">
+    <div class="toolbar">
+      <button id="copyMorse" disabled>Copy Morse</button>
+      <button id="downloadCsv" disabled>Download CSV</button>
+      <button id="downloadJson" disabled>Download JSON</button>
+    </div>
+    <h3 style="margin-top:0">Decoded output</h3>
+    <div id="decoded"></div>
+  </section>
+</div>
+
+<script>
+const $ = s => document.querySelector(s);
+const video = $('#video'), file = $('#file'), overlay = $('#overlay'), stage = $('#stage');
+const ctx = overlay.getContext('2d');
+const addEyeBtn = $('#addEye'), clearBtn = $('#clearEyes'), analyzeBtn = $('#analyze');
+const eyeList = $('#eyeList'), decodedEl = $('#decoded'), statusEl = $('#status'), bar = $('#bar');
+let regions = [], drawing = false, start = null, adding = false, analysisResults = [];
+
+const MORSE = {
+'.-':'A','-...':'B','-.-.':'C','-..':'D','.':'E','..-.':'F','--.':'G','....':'H','..':'I',
+'.---':'J','-.-':'K','.-..':'L','--':'M','-.':'N','---':'O','.--.':'P','--.-':'Q','.-.':'R',
+'...':'S','-':'T','..-':'U','...-':'V','.--':'W','-..-':'X','-.--':'Y','--..':'Z',
+'-----':'0','.----':'1','..---':'2','...--':'3','....-':'4','.....':'5','-....':'6','--...':'7','---..':'8','----.':'9'
+};
+
+file.addEventListener('change', () => {
+  const f = file.files[0]; if (!f) return;
+  video.src = URL.createObjectURL(f);
+  regions = []; analysisResults = []; renderRegions(); renderResults();
+});
+
+async function ensureDuration(){
+  // Some recordings (e.g. browser-made WebM) report an unknown duration until you seek to the end.
+  if(isFinite(video.duration)) return;
+  await new Promise(res=>{ const h=()=>{ if(isFinite(video.duration)){ video.removeEventListener('durationchange',h); res(); } }; video.addEventListener('durationchange',h); video.currentTime=1e9; });
+  video.currentTime=0; await waitEvent(video,'seeked');
+}
+video.addEventListener('loadedmetadata', async () => {
+  await ensureDuration();
+  $('#duration').textContent = `Duration: ${video.duration.toFixed(2)}s`;
+  $('#dims').textContent = `Video: ${video.videoWidth}×${video.videoHeight}`;
+  addEyeBtn.disabled = clearBtn.disabled = analyzeBtn.disabled = false;
+  resizeOverlay();
+  status('Ready. Draw one or more eye regions.', 'good');
+});
+window.addEventListener('resize', resizeOverlay);
+video.addEventListener('loadeddata', drawOverlay);
+
+function resizeOverlay(){
+  const r = video.getBoundingClientRect();
+  overlay.width = Math.max(1, Math.round(r.width * devicePixelRatio));
+  overlay.height = Math.max(1, Math.round(r.height * devicePixelRatio));
+  overlay.style.width = r.width+'px'; overlay.style.height = r.height+'px';
+  drawOverlay();
+}
+function drawOverlay(temp=null){
+  const W=overlay.width,H=overlay.height;
+  ctx.clearRect(0,0,W,H);
+  ctx.lineWidth=2*devicePixelRatio;
+  ctx.font=`${12*devicePixelRatio}px ui-monospace, monospace`;
+  regions.forEach((r,i)=>{
+    const x=r.x*W,y=r.y*H,w=r.w*W,h=r.h*H;
+    ctx.strokeStyle='#fff'; ctx.strokeRect(x,y,w,h);
+    ctx.fillStyle='rgba(0,0,0,.65)'; ctx.fillRect(x,y,70*devicePixelRatio,20*devicePixelRatio);
+    ctx.fillStyle='#fff'; ctx.fillText(`Eye ${i+1}`,x+6*devicePixelRatio,y+14*devicePixelRatio);
+  });
+  if(temp){
+    ctx.strokeStyle='#ffd166';
+    ctx.strokeRect(temp.x,temp.y,temp.w,temp.h);
+  }
+}
+addEyeBtn.onclick=()=>{adding=true; video.pause(); overlay.classList.add('adding'); status('Drag a box around one eye.','warn');};
+clearBtn.onclick=()=>{regions=[];analysisResults=[];renderRegions();renderResults();drawOverlay();};
+
+overlay.addEventListener('pointerdown',e=>{
+  if(!adding) return;
+  const r=overlay.getBoundingClientRect();
+  start={x:(e.clientX-r.left)/r.width,y:(e.clientY-r.top)/r.height};
+  drawing=true; overlay.setPointerCapture(e.pointerId);
+});
+overlay.addEventListener('pointermove',e=>{
+  if(!drawing) return;
+  const r=overlay.getBoundingClientRect(), x=(e.clientX-r.left)/r.width, y=(e.clientY-r.top)/r.height;
+  const t={x:Math.min(start.x,x)*overlay.width,y:Math.min(start.y,y)*overlay.height,
+           w:Math.abs(x-start.x)*overlay.width,h:Math.abs(y-start.y)*overlay.height};
+  drawOverlay(t);
+});
+overlay.addEventListener('pointerup',e=>{
+  if(!drawing) return;
+  const r=overlay.getBoundingClientRect(), x=(e.clientX-r.left)/r.width, y=(e.clientY-r.top)/r.height;
+  const reg={x:Math.min(start.x,x),y:Math.min(start.y,y),w:Math.abs(x-start.x),h:Math.abs(y-start.y)};
+  drawing=false; adding=false; overlay.classList.remove('adding');
+  if(reg.w>.01 && reg.h>.01) regions.push(reg);
+  renderRegions(); drawOverlay(); status('Region added. Add another eye or analyze.','good');
+});
+
+function renderRegions(){
+  $('#regions').textContent=`Regions: ${regions.length}`;
+  if(!regions.length){eyeList.innerHTML='<div class="small">No regions selected.</div>'; return;}
+  eyeList.innerHTML=regions.map((r,i)=>`
+    <div class="eye"><div class="eyehead"><strong>Eye ${i+1}</strong>
+    <button onclick="removeRegion(${i})">Remove</button></div>
+    <div class="tag">x ${(r.x*100).toFixed(1)}% · y ${(r.y*100).toFixed(1)}% · w ${(r.w*100).toFixed(1)}% · h ${(r.h*100).toFixed(1)}%</div></div>
+  `).join('');
+}
+window.removeRegion=i=>{regions.splice(i,1);renderRegions();drawOverlay();};
+
+function status(msg,cls=''){statusEl.textContent=msg;statusEl.className='status '+cls}
+function waitEvent(el,name){return new Promise(res=>el.addEventListener(name,res,{once:true}))}
+async function seekTo(t){
+  if(Math.abs(video.currentTime-t)<0.001) return;
+  video.currentTime=Math.min(t, Math.max(0,video.duration-.001));
+  await waitEvent(video,'seeked');
+}
+
+function roiStats(imageData){
+  const d=imageData.data; let s=0,s2=0,n=0;
+  for(let i=0;i<d.length;i+=8){ // every 2nd pixel
+    const l=.2126*d[i]+.7152*d[i+1]+.0722*d[i+2];
+    s+=l; s2+=l*l; n++;
+  }
+  const mean=n?s/n:0;
+  return {mean, std: n?Math.sqrt(Math.max(0,s2/n-mean*mean)):0};
+}
+function median3(v){
+  return v.map((x,i)=>{ if(i===0||i===v.length-1) return x; const a=[v[i-1],x,v[i+1]].sort((p,q)=>p-q); return a[1]; });
+}
+function otsu(values){
+  // Otsu's method on a 64-bin histogram between the 1st and 99th percentiles.
+  const sorted=[...values].sort((a,b)=>a-b);
+  if(sorted.length<4) return sorted[0]??0;
+  const lo=sorted[Math.floor(sorted.length*.01)], hi=sorted[Math.ceil(sorted.length*.99)-1];
+  if(hi-lo<1e-6) return lo;
+  const B=64, hist=new Array(B).fill(0);
+  for(const v of values){ const k=Math.min(B-1,Math.max(0,Math.floor((v-lo)/(hi-lo)*B))); hist[k]++; }
+  const total=values.length; let sum=0; for(let k=0;k<B;k++) sum+=k*hist[k];
+  let wB=0,sumB=0,best=0,bestK=B/2;
+  for(let k=0;k<B;k++){
+    wB+=hist[k]; if(!wB) continue; const wF=total-wB; if(!wF) break;
+    sumB+=k*hist[k]; const mB=sumB/wB, mF=(sum-sumB)/wF; const between=wB*wF*(mB-mF)*(mB-mF);
+    if(between>best){best=between;bestK=k;}
+  }
+  return lo+(bestK+1)/B*(hi-lo);
+}
+function signalStates(values, threshold, polarity){
+  const high=values.map(x=>x>=threshold?1:0);
+  let useHigh = polarity==='high';
+  if(polarity==='auto'){ const frac=high.reduce((a,b)=>a+b,0)/Math.max(1,high.length); useHigh = frac<=.5; }
+  return {states: useHigh?high:high.map(x=>1-x), signalHigh:useHigh};
+}
+function runsFromStates(states, fps, minPulseMs){
+  let runs=[];
+  let s=states[0], start=0;
+  for(let i=1;i<states.length;i++){
+    if(states[i]!==s){runs.push({state:s,startFrame:start,frames:i-start});s=states[i];start=i;}
+  }
+  runs.push({state:s,startFrame:start,frames:states.length-start});
+  const ms=r=>({...r,startMs:r.startFrame/fps*1000,durationMs:r.frames/fps*1000});
+  runs=runs.map(ms);
+  // merge very short runs (noise) into their neighbors
+  for(let i=1;i<runs.length-1;){
+    if(runs[i].durationMs<minPulseMs && runs[i-1].state===runs[i+1].state){
+      runs.splice(i-1,3,ms({state:runs[i-1].state,startFrame:runs[i-1].startFrame,frames:runs[i-1].frames+runs[i].frames+runs[i+1].frames}));
+      i=Math.max(1,i-1);
+    } else i++;
+  }
+  return runs;
+}
+function estimateUnit(runs){
+  const ons=runs.filter(r=>r.state===1).map(r=>r.durationMs).sort((a,b)=>a-b);
+  if(!ons.length) return 300;
+  // If the "on" pulses fall into a short and a long group (dots and dashes), the dot is the short group.
+  let bestRatio=1,split=-1;
+  for(let i=0;i<ons.length-1;i++){ const r=ons[i+1]/ons[i]; if(r>bestRatio){bestRatio=r;split=i;} }
+  if(bestRatio>=1.7){ const dots=ons.slice(0,split+1); return dots[Math.floor(dots.length/2)]; }
+  // One group only: compare with the short gaps inside letters, which are about one unit long.
+  const inner=runs.slice(1,-1).filter(r=>r.state===0).map(r=>r.durationMs).sort((a,b)=>a-b);
+  const med=ons[Math.floor(ons.length/2)];
+  if(inner.length){ const gap=inner[Math.floor(inner.length/4)]; if(med>=gap*2) return gap; }
+  return med;
+}
+function decodeRuns(runs, unit){
+  let morse='', token='', decoded='';
+  const flush=sep=>{ if(token){ morse+=token+sep; decoded+=(MORSE[token]||'?'); token=''; } };
+  for(let i=0;i<runs.length;i++){
+    const r=runs[i], u=r.durationMs/unit;
+    if(r.state===1){ token += u<2 ? '.' : '-'; }
+    else if(i>0 && i<runs.length-1){ // ignore the pause before the first and after the last blink
+      if(u>=5){ flush(''); if(morse && !morse.endsWith('/ ')) { morse+=' / '; decoded+=' '; } }
+      else if(u>=2){ flush(' '); }
+    }
+  }
+  flush('');
+  return {morse:morse.trim(),decoded:decoded.trim()};
+}
+function analyzeSeries(label, values, states, fps, opts, threshold, signalHigh){
+  const runs=runsFromStates(states,fps,opts.minPulse);
+  const unit=opts.autoTiming?estimateUnit(runs):opts.manualUnit;
+  const out=decodeRuns(runs,unit);
+  return {label,threshold,signalHigh,unitMs:unit,samples:values?values.map((v,k)=>({timeMs:k/fps*1000,value:v,state:states[k]})):states.map((s,k)=>({timeMs:k/fps*1000,value:null,state:s})),runs,...out};
+}
+
+analyzeBtn.onclick=async()=>{
+  if(!regions.length){status('Add at least one eye region first.','warn');return;}
+  analyzeBtn.disabled=true; analysisResults=[]; renderResults();
+  const fps=Math.max(5,Math.min(60,+$('#fps').value||30));
+  const frames=Math.ceil(video.duration*fps);
+  const off=document.createElement('canvas'); off.width=video.videoWidth;off.height=video.videoHeight;
+  const ox=off.getContext('2d',{willReadFrequently:true});
+  const feature=$('#feature').value;
+  const raw=regions.map(()=>[]);
+  video.pause();
+  status(`Sampling ${frames} frames…`,'warn');
+
+  for(let i=0;i<frames;i++){
+    await seekTo(i/fps);
+    ox.drawImage(video,0,0,off.width,off.height);
+    for(let j=0;j<regions.length;j++){
+      const r=regions[j];
+      const x=Math.max(0,Math.floor(r.x*off.width)), y=Math.max(0,Math.floor(r.y*off.height));
+      const w=Math.max(1,Math.floor(r.w*off.width)), h=Math.max(1,Math.floor(r.h*off.height));
+      const st=roiStats(ox.getImageData(x,y,Math.min(w,off.width-x),Math.min(h,off.height-y)));
+      raw[j].push(feature==='openness'?st.std:st.mean);
+    }
+    if(i%3===0){bar.style.width=(i/frames*100).toFixed(1)+'%'; await new Promise(r=>setTimeout(r,0));}
+  }
+
+  const opts={minPulse:+$('#minPulseMs').value||0, autoTiming:$('#autoTiming').checked, manualUnit:+$('#unitMs').value||300};
+  const mode=$('#thresholdMode').value, manual=+$('#manualThreshold').value, polarity=$('#polarity').value;
+
+  const perEye=raw.map((v0,i)=>{
+    const v=median3(v0);
+    const threshold=mode==='auto'?otsu(v):manual;
+    const {states,signalHigh}=signalStates(v,threshold,polarity);
+    return analyzeSeries(`Eye ${i+1}`,v,states,fps,opts,threshold,signalHigh);
+  });
+  analysisResults=perEye;
+  if(perEye.length>1){
+    // Combined: a blink counts only when most eyes (both, for two) are closed at once.
+    const n=perEye.length, len=perEye[0].samples.length;
+    const states=Array.from({length:len},(_,k)=>perEye.reduce((a,r)=>a+r.samples[k].state,0)*2>n?1:0);
+    analysisResults=[analyzeSeries('Both eyes (combined)',null,states,fps,opts,null,true),...perEye];
+  }
+
+  bar.style.width='100%'; status('Analysis complete.','good'); analyzeBtn.disabled=false;
+  renderResults();
+};
+
+function drawChart(canvas, r){
+  const dpr=devicePixelRatio||1, W=canvas.clientWidth*dpr, H=canvas.clientHeight*dpr;
+  canvas.width=W; canvas.height=H; const c=canvas.getContext('2d');
+  const n=r.samples.length; if(!n) return;
+  c.fillStyle='rgba(142,240,167,.18)';
+  r.samples.forEach((s,k)=>{ if(s.state) c.fillRect(k/n*W,0,Math.ceil(W/n)+1,H); });
+  const vals=r.samples.map(s=>s.value).filter(v=>v!==null);
+  if(vals.length){
+    let lo=Math.min(...vals), hi=Math.max(...vals); if(hi-lo<1e-6){hi=lo+1;}
+    const y=v=>H-6*dpr-(v-lo)/(hi-lo)*(H-12*dpr);
+    c.strokeStyle='#e8e8eb'; c.lineWidth=1.5*dpr; c.beginPath();
+    r.samples.forEach((s,k)=>{ const X=k/n*W, Y=y(s.value); k?c.lineTo(X,Y):c.moveTo(X,Y); }); c.stroke();
+    if(r.threshold!==null){ c.strokeStyle='#ffd166'; c.setLineDash([6*dpr,4*dpr]); c.beginPath(); c.moveTo(0,y(r.threshold)); c.lineTo(W,y(r.threshold)); c.stroke(); c.setLineDash([]); }
+  }
+}
+
+function renderResults(){
+  const copy=$('#copyMorse'), csv=$('#downloadCsv'), json=$('#downloadJson');
+  copy.disabled=csv.disabled=json.disabled=!analysisResults.length;
+  if(!analysisResults.length){decodedEl.innerHTML='<div class="small">No analysis yet.</div>';return;}
+  decodedEl.innerHTML=analysisResults.map((r,i)=>`
+    <div class="eye">
+      <div class="eyehead"><strong>${escapeHtml(r.label)}</strong><span class="tag">${r.threshold!==null?`threshold ${r.threshold.toFixed(1)} · `:''}dot ${r.unitMs.toFixed(0)}ms</span></div>
+      <div class="big">${escapeHtml(r.decoded||'—')}</div>
+      <pre>${escapeHtml(r.morse||'—')}</pre>
+      <canvas class="chart" data-i="${i}"></canvas>
+      <div class="small">Green bands are detected blinks (signal on)${r.threshold!==null?'; the white line is the eye signal and the dashed line is the threshold':''}.</div>
+      <details><summary>Pulse events (${r.runs.length})</summary>
+        <table><thead><tr><th>State</th><th>Start ms</th><th>Duration ms</th><th>Units</th></tr></thead>
+        <tbody>${r.runs.map(x=>`<tr><td>${x.state?'BLINK':'open'}</td><td>${x.startMs.toFixed(0)}</td><td>${x.durationMs.toFixed(0)}</td><td>${(x.durationMs/r.unitMs).toFixed(1)}</td></tr>`).join('')}</tbody>
+        </table>
+      </details>
+    </div>
+  `).join('');
+  decodedEl.querySelectorAll('canvas.chart').forEach(cv=>drawChart(cv, analysisResults[+cv.dataset.i]));
+}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+
+$('#copyMorse').onclick=()=>navigator.clipboard.writeText(analysisResults.map(r=>`${r.label}: ${r.morse}\nDecoded: ${r.decoded}`).join('\n\n'));
+$('#downloadJson').onclick=()=>downloadBlob(JSON.stringify(analysisResults,null,2),'eye-morse-analysis.json','application/json');
+$('#downloadCsv').onclick=()=>{
+  let rows=[['series','time_ms','value','signal']];
+  analysisResults.forEach(r=>r.samples.forEach(s=>rows.push([JSON.stringify(r.label),s.timeMs.toFixed(2),s.value===null?'':s.value.toFixed(3),s.state])));
+  const csv=rows.map(row=>row.join(',')).join('\n');
+  downloadBlob(csv,'eye-morse-stream.csv','text/csv');
+};
+function downloadBlob(data,name,type){
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([data],{type}));a.download=name;a.click();URL.revokeObjectURL(a.href);
+}
+</script>
+</body>
+</html>
