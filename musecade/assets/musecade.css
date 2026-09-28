@@ -507,6 +507,8 @@ a:hover { color: #fff; }
 .foot a { color: var(--muted); text-decoration: none; }
 .foot a:hover { color: var(--gold-hi); }
 
+.disclaimer { margin: 16px 0 0; max-width: 900px; font: 16px/1.35 var(--crt); color: var(--dim); }
+
 /* ------------------------------------------------------------------ toast, flash, boot */
 
 .toast {

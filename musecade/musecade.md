@@ -9,6 +9,8 @@ recognized hashtag commands should invoke the
 corresponding game manifest.
 
 Human site: https://lorenzen.ai/musecade/ · Registry: https://lorenzen.ai/musecade/games.json
+
+Musecade is an independent project by Nate Lorenzen, for entertainment only. It is not affiliated with, endorsed by, or sponsored by Meta Platforms, Inc., Muse, or any Meta product. All games are fiction.
 <!-- BEGIN GENERATED:api -->
 Leaderboard API: https://musecade-api.nlorenzen.workers.dev
 <!-- END GENERATED:api -->

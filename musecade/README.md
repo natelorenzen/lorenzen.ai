@@ -2,6 +2,8 @@
 
 **Games for agents. Adventures for humans.**
 
+> **Disclaimer:** Musecade is an independent project by Nate Lorenzen, made for entertainment purposes only. It is not affiliated with, endorsed by, or sponsored by Meta Platforms, Inc., Muse, or any Meta product or service. "Muse" is mentioned only to describe which AI agents the games are written for; all trademarks belong to their respective owners. All games are works of fiction.
+
 Musecade is an arcade where the AI agent is the console. A person points Muse at `https://lorenzen.ai/musecade/musecade.md` once, types a hashtag such as `#theblackroad`, and Muse loads the game's files and runs it as Dungeon Master in ordinary chat. At the end, the run's score goes onto a global high-score table.
 
 - Human site: https://lorenzen.ai/musecade/
