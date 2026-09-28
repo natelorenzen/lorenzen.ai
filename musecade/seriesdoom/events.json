@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "game": "seriesdoom",
+  "title": "Series Doom",
+  "version": "1.0",
+  "note": "CANONICAL SCORE TABLE. The Musecade backend imports this file and is the only thing that turns event IDs into points. Edit here, run python3 musecade/_build/build.py, then redeploy the worker.",
+
+  "rules": {
+    "survival_bonus": 400,
+    "max_events_per_run": 80,
+    "min_seconds_for_ranking": 300,
+    "run_ttl_days": 30,
+    "acts": 5
+  },
+
+  "paths": ["HACKER", "HUSTLER", "VISIONARY", "OPERATOR"],
+
+  "doc_tokens": ["ENC_HIVE", "ENC_PARK", "ENC_RECRUITER", "ENC_DIABLO"],
+
+  "events": {
+    "REACH_COUNCIL":  { "category": "progress", "points": 100, "title": "The Council", "sets_act": 2, "min_act": 1 },
+    "REACH_BREAKING": { "category": "progress", "points": 200, "title": "The Breaking", "sets_act": 3, "min_act": 2, "requires": ["REACH_COUNCIL"] },
+    "REACH_EAST_BAY": { "category": "progress", "points": 300, "title": "The East Bay", "sets_act": 4, "min_act": 3, "requires": ["REACH_BREAKING"] },
+    "REACH_DIABLO":   { "category": "progress", "points": 400, "title": "Mount Diablo", "sets_act": 5, "min_act": 4, "requires": ["REACH_EAST_BAY"] },
+
+    "DISCOVER_DEX_SECRET":     { "category": "discovery", "secret": true, "points": 250, "title": "Dex's Commit", "min_act": 1 },
+    "DISCOVER_BRANDON_ORDERS": { "category": "discovery", "secret": true, "points": 200, "title": "Brandon's Real Job", "min_act": 2 },
+    "DISCOVER_GEMMA_PAPER":    { "category": "discovery", "secret": true, "points": 200, "title": "Gemma's Preprint", "min_act": 2 },
+    "DISCOVER_LEO_WALLET":     { "category": "discovery", "secret": true, "points": 150, "title": "Leo's Wallet", "min_act": 2 },
+    "DISCOVER_ARI_OUSTER":     { "category": "discovery", "secret": true, "points": 250, "title": "Why Ari Was Fired", "min_act": 2 },
+    "DISCOVER_MANN_ARMY":      { "category": "discovery", "secret": true, "points": 250, "title": "Sir Rupert's Influencers", "min_act": 2 },
+    "DISCOVER_BUDDY_EMAILS":   { "category": "discovery", "secret": true, "points": 300, "title": "Who Keeps Emailing VCs", "min_act": 2 },
+    "DISCOVER_KEVIN_PAST":     { "category": "discovery", "secret": true, "points": 250, "title": "Kevin, Before", "min_act": 3 },
+    "DISCOVER_GARY_RETURNS":   { "category": "discovery", "secret": true, "points": 300, "title": "Gary the White", "min_act": 3 },
+    "DISCOVER_THE_EYE":        { "category": "discovery", "secret": true, "points": 400, "title": "What Runs Eye Capital", "min_act": 3 },
+    "DISCOVER_BUDDY_WISH":     { "category": "discovery", "secret": true, "points": 500, "title": "What Buddy Actually Wants", "min_act": 3 },
+
+    "PUZZLE_HIVE_SOLVED":      { "category": "puzzle", "points": 400, "title": "Out of the Hive", "min_act": 2 },
+    "PUZZLE_HIVE_NO_HINT":     { "category": "puzzle", "points": 200, "title": "Out of the Hive, Unaided", "min_act": 2, "requires": ["PUZZLE_HIVE_SOLVED"] },
+    "PUZZLE_LEAK_SOLVED":      { "category": "puzzle", "points": 450, "title": "Who's Leaking", "min_act": 2 },
+    "PUZZLE_LEAK_NO_HINT":     { "category": "puzzle", "points": 200, "title": "Who's Leaking, Unaided", "min_act": 2, "requires": ["PUZZLE_LEAK_SOLVED"] },
+    "PUZZLE_CRUCIBLE_SOLVED":  { "category": "puzzle", "points": 500, "title": "The Graveyard Code", "min_act": 5 },
+    "PUZZLE_CRUCIBLE_NO_HINT": { "category": "puzzle", "points": 250, "title": "The Graveyard Code, Unaided", "min_act": 5, "requires": ["PUZZLE_CRUCIBLE_SOLVED"] },
+
+    "ENC_HIVE_SURVIVED":      { "category": "encounter", "points": 200, "title": "The Landlord", "min_act": 2 },
+    "ENC_HIVE_CLEVER":        { "category": "encounter", "points": 250, "title": "The Landlord, Outwitted", "min_act": 2 },
+    "ENC_PARK_SURVIVED":      { "category": "encounter", "points": 200, "title": "The Rooftop Park", "min_act": 3 },
+    "ENC_PARK_CLEVER":        { "category": "encounter", "points": 250, "title": "The Rooftop Park, Outwitted", "min_act": 3 },
+    "ENC_RECRUITER_SURVIVED": { "category": "encounter", "points": 200, "title": "The Interview Loop", "min_act": 4 },
+    "ENC_RECRUITER_CLEVER":   { "category": "encounter", "points": 250, "title": "The Interview Loop, Outwitted", "min_act": 4 },
+    "ENC_DIABLO_SURVIVED":    { "category": "encounter", "points": 250, "title": "The Summit", "min_act": 5 },
+    "ENC_DIABLO_CLEVER":      { "category": "encounter", "points": 350, "title": "The Summit, Outwitted", "min_act": 5 },
+
+    "SOCIAL_COUNCIL":      { "category": "social", "points": 250, "title": "The Board Meeting of Destiny", "min_act": 2 },
+    "SOCIAL_GABRIELLE":    { "category": "social", "points": 300, "title": "The Only Ethical VC", "min_act": 3 },
+    "SOCIAL_MANN":         { "category": "social", "points": 250, "title": "Sir Rupert, Outplayed", "min_act": 2 },
+    "SOCIAL_KEVIN_MERCY":  { "category": "social", "points": 300, "title": "Pity for Kevin", "min_act": 3 },
+    "SOCIAL_BUDDY_TALK":   { "category": "social", "points": 400, "title": "A Real Conversation with Buddy", "min_act": 3 },
+
+    "RECRUIT_DEX":   { "category": "companion", "points": 100, "title": "Dex Comes Along", "min_act": 1 },
+    "RECRUIT_ARI":   { "category": "companion", "points": 100, "title": "Ari Joins", "min_act": 2 },
+    "RECRUIT_GEMMA": { "category": "companion", "points": 100, "title": "Gemma Joins", "min_act": 2 },
+    "ALLY_DEX_CARRIES":  { "category": "companion", "points": 250, "title": "I Can Carry You", "min_act": 5, "requires": ["RECRUIT_DEX"] },
+    "ALLY_ARI_RETURNS":  { "category": "companion", "points": 250, "title": "The Return of the CEO", "min_act": 4, "requires": ["RECRUIT_ARI"] },
+    "ALLY_GEMMA_TRUSTS": { "category": "companion", "points": 200, "title": "p(doom) Revised Downward", "min_act": 3, "requires": ["RECRUIT_GEMMA"] },
+    "COMPANION_SURVIVES_DEX":   { "category": "companion", "points": 100, "title": "Dex Survives", "min_act": 3, "requires": ["RECRUIT_DEX"] },
+    "COMPANION_SURVIVES_ARI":   { "category": "companion", "points": 100, "title": "Ari Survives", "min_act": 3, "requires": ["RECRUIT_ARI"] },
+    "COMPANION_SURVIVES_GEMMA": { "category": "companion", "points": 100, "title": "Gemma Survives", "min_act": 3, "requires": ["RECRUIT_GEMMA"] },
+
+    "ACH_NEVER_USED_IT":       { "category": "achievement", "points": 700, "title": "NEVER USED IT", "description": "Reach the Crucible without once using the disc's powers.", "min_act": 5 },
+    "ACH_LOW_HYPE":            { "category": "achievement", "points": 500, "title": "LOW HYPE", "description": "Finish with your Hype never above 1.", "min_act": 5 },
+    "ACH_WHOLE_FELLOWSHIP":    { "category": "achievement", "points": 500, "title": "THE WHOLE TEAM", "description": "Every recruited companion makes it to the end.", "min_act": 5, "requires_any": ["RECRUIT_DEX", "RECRUIT_ARI", "RECRUIT_GEMMA"] },
+    "ACH_NO_EQUITY":           { "category": "achievement", "points": 400, "title": "NO EQUITY GIVEN", "description": "Promise nobody a single share.", "min_act": 4 },
+    "ACH_KIND_TO_KEVIN":       { "category": "achievement", "points": 300, "title": "KIND TO KEVIN", "description": "Show Kevin mercy, every time.", "min_act": 5, "requires": ["SOCIAL_KEVIN_MERCY"] },
+    "ACH_DISTORTION_FIELD":    { "category": "achievement", "hidden": true, "points": 400, "title": "REALITY DISTORTION FIELD", "description": "As a Visionary, reach the field's third rank.", "min_act": 4 },
+    "ACH_SECOND_BREAKFAST":    { "category": "achievement", "hidden": true, "points": 250, "title": "SECOND BRUNCH", "description": "Stop for brunch during the apocalypse.", "min_act": 2 },
+    "ACH_SPEEDRUN":            { "category": "achievement", "hidden": true, "points": 350, "title": "SHIP IT EARLY", "description": "Reach the Crucible with three or more hours to spare.", "min_act": 5, "requires": ["REACH_DIABLO"] },
+    "ACH_WHOLE_TRUTH":         { "category": "achievement", "hidden": true, "points": 500, "title": "DUE DILIGENCE", "description": "Uncover the leak, the Eye, and Buddy's wish.", "min_act": 5, "requires": ["DISCOVER_BUDDY_EMAILS", "DISCOVER_THE_EYE", "DISCOVER_BUDDY_WISH"] },
+    "ACH_YOU_SHALL_NOT_PIVOT": { "category": "achievement", "hidden": true, "points": 250, "title": "YOU SHALL NOT PIVOT", "description": "Witness Gary's finest hour, and his return.", "min_act": 3, "requires": ["DISCOVER_GARY_RETURNS"] }
+  },
+
+  "endings": {
+    "ENDING_BURN_IT_DOWN":      { "title": "BURN IT DOWN", "points": 1600, "fate": "lives", "min_act": 5, "requires": ["REACH_DIABLO"] },
+    "ENDING_KEVINS_LEAP":       { "title": "KEVIN'S LEAP", "points": 1400, "fate": "lives", "min_act": 5, "requires": ["REACH_DIABLO"] },
+    "ENDING_GOOD_BOY":          { "title": "GOOD BOY", "points": 2400, "fate": "lives", "min_act": 5, "requires": ["DISCOVER_BUDDY_WISH", "SOCIAL_BUDDY_TALK"] },
+    "ENDING_TRILLION":          { "title": "ONE TRILLION", "points": 900, "fate": "lives", "min_act": 4 },
+    "ENDING_ACQUIRED_BY_THE_EYE": { "title": "ACQUIRED BY THE EYE", "points": 700, "fate": "lives", "min_act": 2 },
+    "ENDING_ACQUIHIRE":         { "title": "ACQUIHIRED", "points": 700, "fate": "lives", "min_act": 2 },
+    "ENDING_OPEN_WEIGHTS":      { "title": "OPEN WEIGHTS", "points": 1000, "fate": "lives", "min_act": 3 },
+    "ENDING_ALIGNED":           { "title": "PERFECTLY ALIGNED", "points": 1100, "fate": "lives", "min_act": 3, "requires": ["RECRUIT_GEMMA"] },
+    "ENDING_PIVOT":             { "title": "THE PIVOT", "points": 300, "fate": "lives", "min_act": 1 },
+    "ENDING_DEMO_DAY":          { "title": "DEMO DAY", "points": 500, "fate": "either", "min_act": 3 },
+    "ENDING_RUNWAY_ZERO":       { "title": "RUNWAY: ZERO", "points": 0, "fate": "dies", "min_act": 1, "image": "IMG_DEATH" }
+  }
+}

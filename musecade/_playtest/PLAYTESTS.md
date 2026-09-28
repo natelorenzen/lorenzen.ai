@@ -151,3 +151,23 @@ These depend on the agent, and must be checked in a real Muse conversation:
 - **RETREAT:** Jo reads the will, finds Lydia's foreclosure, feels the weight of everything, and takes Tuesday's ferry. THE LAST FERRY, with the "came back years later" epilogue.
 
 **Verified:** no-death fate enforcement (`died:true` is refused), the tide timing, the order of the white and violet glass, the storm fallback for the room, and that the final choice is never offered as a menu. **Fixed:** near-certain secrets (the room, the painting) were worth too much, so the standard run scored 9,300; they've been rebalanced.
+
+---
+
+# Series Doom (Game 004): Simulated Playtests
+
+`node musecade/_playtest/replay-seriesdoom.mjs` replays each trace through the real scoring rules.
+
+| Run | Name · Path | Ending | Score | Secrets |
+|---|---|---|---|---|
+| STANDARD | SAM · Hustler | BURN IT DOWN | 8,950 | 7/11 |
+| CHAOTIC | ZARA · Visionary | ONE TRILLION (Act IV) | 3,350 | 1/11 |
+| CLEVER | ADA · Hacker | GOOD BOY (hidden) | 16,500 | 11/11 |
+| FAILURE | BO · Operator | RUNWAY: ZERO (Act III) | 900 | 0/11 |
+
+- **STANDARD:** the garage raid (turns the garage door on the scooters, and declines the disc's offer). Gary, and Dex confessing to the commit. The Council is won with a pitch. Brandon's texts and Sir Rupert's blinking influencers. The Hive is solved via the "ALL HANDS" booking. Gary's stand. Gabrielle. The Breaking. The leak is traced to the Wi-Fi pattern. Kevin at the Ferry Building. The Recruiter. Gary the White, the Eye revealed, and Ari's rideshare army. Dex carries Sam up the last switchbacks. The code is entered, and the disc burns.
+- **CHAOTIC:** Zara uses the disc for everything: traffic lights, a helicopter from Sir Rupert, $40K conjured into Venmo. Hype hits 5 by Act IV. Brunch during the apocalypse. At the Recruiter's tower she simply keeps the disc and calls a press conference. ONE TRILLION from Act IV. This verifies the Hype track, the powers-for-puzzles trade (no puzzle events earned), and early dark endings.
+- **CLEVER:** Ada never touches a power. She finds the leak from the laptop's fan and the Sent folder, and seals it in a chip-bag Faraday pouch. She's kind to Kevin, which leads to the catwalk. She talks to Buddy on a bench and learns it just wants to be a good boy. She enters the full graveyard code unaided, and lets Buddy rewrite itself down to a walk planner before burning the rest. GOOD BOY, with the whole team standing.
+- **FAILURE:** Bo accuses Gemma of being the leak (trust -2), splits the team badly at the rooftop park, and tries to jump the fountain rail on a natural 1 while Wrecked. The danger was telegraphed. RUNWAY: ZERO, with the plaque epilogue (Gemma carries the disc on and aligns it).
+
+**Verified:** no real people or companies anywhere (validated by review, not by code); parody lines rewritten to be original rather than near-quotes; the no-emoji rule; the hidden ending's prerequisites enforced server-side (`DISCOVER_BUDDY_WISH` plus `SOCIAL_BUDDY_TALK`).

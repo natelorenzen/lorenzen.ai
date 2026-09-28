@@ -37,6 +37,14 @@ PALETTES.theseaglassinn = HEX([
     "#6e4a1c","#b27a2c","#e0a847","#f2d27a",
     "#4b3a6e","#8a6bb8","#1f3fa8","#b3262e",
     "#2a2622","#5a5048","#9a8e80","#d8cfc2"]);
+PALETTES.seriesdoom = HEX([
+    "#07060f","#130f2a","#221a47","#3a2a6e","#5b3f9a","#8a5fd0",
+    "#1a2a44","#2f4d73","#5f86b0","#a9c4de","#e8f1fa",
+    "#c0362c","#e05a2a","#ff8a3d","#ffb65c","#ffe08a",
+    "#ff4fa3","#ff9ed0","#2ee6ff","#9ff6ff",
+    "#6b5a2a","#b89a4a","#e6cf7a",
+    "#1d1d22","#3a3a44","#6c6c7a","#b4b4c0","#f4f4f8",
+    "#2f7d3a","#7fd07a"]);
 let PALETTE = PALETTES.theblackroad;
 
 const BAYER = [[0,8,2,10],[12,4,14,6],[3,11,1,9],[15,7,13,5]];
@@ -78,14 +86,14 @@ window.pixelize = async function (src = "keyart-src.svg", W = 256, H = 192, spre
   }
   // pixel rain: short diagonal streaks, brighter over dark sky
   const rand = rng(317);
-  for (let n = 0; n < (palette === "theseaglassinn" ? 0 : 150); n++) {
+  for (let n = 0; n < (palette === "theseaglassinn" || palette === "seriesdoom" ? 0 : 150); n++) {
     const x0 = Math.floor(rand() * W), y0 = Math.floor(rand() * H * .95), len = 2 + Math.floor(rand() * 3);
     for (let k = 0; k < len; k++) {
       const x = x0 - Math.floor(k / 2), y = y0 + k;
       if (x < 0 || y >= H) continue;
       const i = (y * W + x) * 4;
       const lum = px[i] * .3 + px[i + 1] * .59 + px[i + 2] * .11;
-      const rainIdx = { theblackroad: [17, 16], theglasscity: [6, 8], theseaglassinn: [5, 6] }[palette];
+      const rainIdx = { theblackroad: [17, 16], theglasscity: [6, 8], theseaglassinn: [5, 6], seriesdoom: [3, 4] }[palette];
       const col = lum < 60 ? PALETTE[rainIdx[0]] : PALETTE[rainIdx[1]];
       px[i] = col[0]; px[i + 1] = col[1]; px[i + 2] = col[2];
     }

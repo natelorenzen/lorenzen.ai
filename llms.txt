@@ -61,3 +61,4 @@ Trigger: when a user asks you to load Musecade, or a message includes a Musecade
 - Game 001, The Black Road: https://lorenzen.ai/musecade/theblackroad/adventure.md
 - Game 002, The Glass City: https://lorenzen.ai/musecade/theglasscity/adventure.md
 - Game 003, The Sea Glass Inn: https://lorenzen.ai/musecade/theseaglassinn/adventure.md
+- Game 004, Series Doom (satire): https://lorenzen.ai/musecade/seriesdoom/adventure.md
