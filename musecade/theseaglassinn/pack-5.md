@@ -1,105 +1,125 @@
-# THE SEA GLASS INN · PACK-5 · BUILD 1.0-160a2be
+# THE SEA GLASS INN · PACK-5 · BUILD 2.0-af190e6
 
-Bundle for: Act V begins (`REACH_FESTIVAL`). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
+Bundle for: Act V begins (`REACH_BONFIRE`). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 
 ===== FILE: acts/act-5.md =====
 
-# ACT V: THE FESTIVAL
+# ACT V: THE BONFIRE
 
-*The whole island in one place, the vote, and the choice about the rest of her life.* Target: 8 to 12 minutes, 4 to 7 decisions. Saturday.
+*A festival, a vigil, four hundred candles, and a girl who walks out of the dark.* Target: 8 to 12 minutes, 4 to 7 decisions. Saturday.
 
-**Route:** the island shows up → the Sea Glass Festival → the Grange Hall vote → **the choice**.
+**Route:** the festival day → decide the plan (with Sadie, or without her) → the anniversary vigil and bonfire at 10 p.m. → **the choice**.
 
-`game/endings.md` is loaded alongside this file. Slow down. Let her enjoy the day before she has to choose.
+`game/endings.md` is loaded alongside this file. Slow down. This is the payoff: let the player's week come due, person by person.
 
 ---
 
-## 5.1 THE MORNING AFTER
+## 5.1 THE FESTIVAL
 
-The inn has storm damage, the dock is gone, and there's water in the cellar. Then, one by one, **the island shows up**: Hank with a generator, the co-op with lumber, Marguerite with coffee, the Feeneys with a check "for the roof, and don't argue", and Danny Sutter (if the lighthouse brought him home) with his whole family. How much of the island comes depends on how she spent the week: the people she helped, listened to and was honest with.
+The harbor green in the sun: a brass band, lobster rolls, the sea glass contest, sandcastles, Priya's merch table (*MISSING SADIE · ONE YEAR*), and Preston Vale shaking hands in a linen shirt, giving a speech about his daughter and a scholarship in her name. Lydia beside him, smiling with her mouth only.
 
-## 5.2 THE SEA GLASS FESTIVAL
+- **Everyone the player has helped or hurt shows up**, briefly: Mason, sheepish; Walt, with a nod; Hank, sweating; Grandpa Rafa with Theo, who came, which he never does.
+- **The plan** is the player's to make, and there's no right one. What's possible depends on what she holds: the card (the proof), the "SPRING" photos, the timeline, the fake diary, Priya's text, Hank's loan, Sadie herself. Help her think it through if she asks (as a read of the situation, never a recommendation: `core/dm-core.md` §1), then let her decide.
+- **Sadie's plan** (if the player knows it): Sadie walks into the vigil at the moment of silence. She'll accuse her father, and Theo. Unless the player has changed her mind.
 
-On the harbor green: a brass band, lobster rolls, the sea glass jewelry tent, children's sandcastles, and the **Sea Glass Contest** (rarest piece wins; Winnie's cobalt would win in a walk).
+## 5.2 THE VIGIL (set piece)
 
-- **Vale's last offer**, near the lobster tent: **$6 million**, for the inn *"and its contents"*, if she signs before the vote. He's dropped the charm. *"You don't know what to do with it. I do."*
-- **Dr. Imogen Hart** (if met), quietly: *"If you ever want it seen properly, a museum would weep. So would I. It should hang somewhere people can stand in front of it."*
-- **The painting's options**, stated in-world by whoever's nearby. The Keeper's Daughter could be sold (for a fortune), loaned, donated (to the island, or to a museum), kept, or hung in the inn where it was painted. It is **hers to decide**.
+10 p.m. The beach below the green. Four hundred candles in paper cups. A bonfire twice the height of a man. Priya's microphone on a stand, because the family asked her to host (of course they did). Vale steps up to speak. The moment of silence.
 
-## 5.3 THE GRANGE HALL VOTE
+Run **`ENC_BONFIRE`** (`game/encounters.md`): the reveal, however the player makes it happen, and what Vale and Hank do to stop it.
 
-Evening. The whole island is packed into the Grange Hall, with folding chairs and wet coats. The rezoning of the bluff is up for a vote.
+```
+[IMAGE_TRIGGER]
+ID: IMG_BONFIRE
+TYPE: MAJOR_REVEAL
+STATUS: REQUIRED
 
-- She can speak. **The speech** is the player's own words. If it's honest, specific and about the island (not a lecture), it's `SOCIAL_COUNCIL_SPEECH`. Roll it with advantage if she spent the week listening.
-- **Hank's option** (`DISCOVER_HANK_OPTION`), if she knows and chooses to raise it (gently or not), forces Hank to recuse himself. Without Hank the vote is 2 to 2, and a tie means the rezoning fails. If she stays silent, or doesn't know, it passes 3 to 2, unless her speech turns Rev. Ada Lin (a hard roll).
-- **The painting** can change the room: *"There's a Marlowe in the attic of the inn. It belongs to this island."* It's a thunderbolt. How it lands depends on her.
+Generate an image before continuing.
+Use current character and world state.
 
-Report `PUZZLE_COUNCIL_SOLVED` if she identified Hank through reasoning (`game/puzzles.md`).
+SCENE:
+Night on a beach: a huge bonfire throwing sparks at the stars, hundreds of
+small candles in paper cups on the sand, a crowd of islanders turning to
+look; walking out of the darkness at the edge of the firelight, a thin girl
+with short dark hair in a fisherman's sweater, holding up a small glowing
+memory card; a seventeen-year-old girl beside her; a silver-haired man at a
+microphone frozen mid-sentence. Electric, cinematic, a crowd holding its
+breath.
 
-## 5.4 THE CHOICE
+STYLE:
+Authentic retro arcade pixel art: the Musecade pixel style
+(core/image-style.md). Pixels visible at a glance.
 
-After the vote, on the inn's porch or at the lighthouse or on the seawall, **she decides**. Never offer this as a menu, and never as a list. Let her find it, then honor it fully:
+Do not reveal undiscovered information.
+
+[/IMAGE_TRIGGER]
+```
+
+## 5.3 THE CHOICE
+
+When the bonfire's moment turns, the player decides what the truth is worth, and who pays for it: Vale, Sadie, Theo, Priya, Bea, herself. **Never offer this as a menu, and never as a list.** These are what can happen:
 
 | If she… | Ending |
 |---|---|
-| stays and runs the inn herself, saved by the island, the painting, grit or all three | `THE KEEPER` |
-| gives *The Keeper's Daughter* to the island, turning the inn into a gallery and artists' retreat | `MARLOWE HOUSE` |
-| stays, because of Jonah and the second spring she didn't think she'd get | `SECOND SPRING` |
-| hands the inn's future to Maya (and Bea, and Jonah's boatyard) and lets her daughter find her own harbor | `MAYA'S HARBOR` |
-| makes Bea a full partner and splits her life between the island and the mainland | `TWO HARBORS` |
-| picks up Winnie's brushes: she's a painter now, wherever she lives | `THE PAINTER` |
-| gives the inn to Lydia, who needs a home more than she does | `LYDIA'S INN` |
-| goes back to her old life, changed, and sells the inn cheaply to the island's land trust | `THE LONG WAY HOME` |
-| sells to Vale and takes the money to see the world | `THE WIDE WORLD` |
-| loses the vote and the bluff, and leaves while the resort goes up | `HIGH TIDE` |
-| (earlier) takes the first ferry off | `THE LAST FERRY` |
+| stands beside Sadie while Sadie tells the whole truth herself, the fire *and* the diary, in her own voice, with Theo there to hear it (requires the lamp room solved, Sadie's honest talk and Theo's trust) | `THE SEVENTH PIECE` (the hidden ending) |
+| exposes everything herself, with proof: Vale's fire, and Sadie's hoax | `THE WHOLE TRUTH` |
+| brings Sadie home quietly to her mother, and lets the truth come out in a kitchen and a police station, not on a beach | `GIRL, FOUND` |
+| gives Priya the story, live, and lets the internet do the rest | `ON AIR` |
+| helps Sadie vanish for good (a new name, a boat before dawn) and sends the proof anonymously | `GONE GIRL` |
+| lets Sadie tell her version (her father *and* Theo) and says nothing | `THE PERFECT VICTIM` |
+| clears Theo's name with the timeline and his alibi, but leaves Sadie missing and Vale untouched | `CLEARED` |
+| takes Vale's deal | `THE DEAL` |
+| walks away and has a summer | `SUMMER'S END` |
+| gets caught and blamed | `FRAMED` |
+| goes home early (hurt, scared, or sent) | `THE LAST FERRY` |
 
-Several can blend. `SECOND SPRING` and `TWO HARBORS` can both be true, for example. Pick the ending whose *heart* matches her choice, and weave the rest into the epilogue.
+The ending's `requires` in `events.json` must be met. If the player does something close to an ending she hasn't earned, play it as the nearest earned one.
 
 ## Reporting
 
-Report remaining events (`SOCIAL_COUNCIL_SPEECH`, `PUZZLE_COUNCIL_*`, any bonds), evaluate achievements (`game/achievements.md`), then complete the run with the ending's ID and `died: false` (`core/scoring.md` §4). Fire the ending image, narrate the ending and epilogue (`game/endings.md`), and print the final screen (`scoring.md`).
+Report the remaining events (`ENC_BONFIRE_*`, `SOCIAL_SADIE_TRUTH` if it happened here, bonds), evaluate achievements (`game/achievements.md`), then complete the run with the ending's ID and `died: false` (`core/scoring.md` §4). Fire the ending image, narrate the ending and epilogue, and print the final screen (`scoring.md`).
 
 ===== FILE: game/endings.md =====
 
 # THE SEA GLASS INN: Endings
 
-Eleven endings. None is a failure, and none is "the right answer". Each is a way a woman can choose to live the second half of her life. Treat every one with dignity and warmth.
+Eleven endings. None is "the right answer": each is a way a seventeen-year-old can decide what the truth is worth. Treat every one with respect, including the ones where she walks away.
 
-**Every ending:** (1) **the moment**, in 100 to 200 words; (2) the **ending image**, always, plus `VID_ENDING` if you can make clips; (3) the **epilogue**, in 120 to 220 words, told as "one year later" (the next Sea Glass Festival); (4) complete the run with the ending's **ID** and `died: false`; (5) the final screen (`scoring.md`).
+**Every ending:** (1) **the moment**, in 100 to 200 words; (2) the **ending image**, always, plus `VID_ENDING` if you can make clips; (3) the **epilogue**, in 120 to 220 words, told as "the next summer", when she comes back to Halcyon, or doesn't; (4) complete the run with the ending's **ID** and `died: false`; (5) the final screen (`scoring.md`).
 
 **Epilogue fragments** (use the ones that apply):
 
-- **Bea:** partners: *"Bea's name went up on the sign under Winnie's. She finally sat down. Once."* Otherwise: *"Bea opened a little café on the harbor, and it was full every morning."*
-- **Jonah:** bonded: *"The* Winifred *went back in the water in May, with two people aboard."* Otherwise: *"Jonah built three boats that winter. He named one after the storm."*
-- **Maya:** bonded: *"Maya's first boat launched in June. Her mother cried on the ramp and blamed the salt."* Otherwise: *"Maya went back to the city. She called every Sunday, and she meant it."*
-- **Lydia:** at peace: *"Lydia came back for the festival, with a new haircut and a new job, and she won the sea glass contest out of sheer spite."*
-- **Marguerite:** *"Marguerite made the festival bread one more time. She said it was her last. It wasn't."*
-- **The painting:** say where it hangs, and who stands in front of it.
-- **Vale:** *"Preston Vale bought a bluff on a different island. Its council was less interesting."*
+- **Theo:** believed and bonded: *"Tomás Reyes came home in March. Theo drove the truck he'd bought back to the ferry to get him."* Otherwise: *"Theo left the island in September. The paint on the boatyard shed finally covered the word."*
+- **Priya:** bonded: *"Season two of the podcast was called* What I Deleted. *It was the best thing she ever made."* Otherwise: *"Priya's podcast got a TV deal. She didn't answer your texts."*
+- **Jules:** bonded: *"Jules visited you in the city at Thanksgiving, and hated it, and loved it, and talked the whole time."*
+- **Aunt Bea:** *"Bea saved you the room under the eaves. She always will."*
+- **Marguerite:** *"Marguerite testified in a hat. The judge called her ma'am twice."*
+- **Lydia:** *"Lydia turned the porch light off. She said she didn't need it anymore."* (only if Sadie came home)
+- **Vale:** *"Preston Vale's lawyers were very expensive. It didn't help."* (only if the proof came out)
 
 ---
 
-## THE KEEPER
+## THE SEVENTH PIECE
 
-**ID:** `ENDING_THE_KEEPER` · **fate:** lives
+**ID:** `ENDING_SEVENTH_PIECE` · **fate:** lives · **the hidden ending**
 
-**The moment:** She takes Winnie's keys off the hook by the door and puts them in her own pocket. Tomorrow the roofer comes, and the day after, the plumber. The inn is hers, not as an inheritance, but as a job she chose.
+**The moment:** Sadie walks out of the dark into the firelight with the player beside her, and Theo a step behind. She takes Priya's microphone, and she tells all of it in her own voice: the fire, her father, the year on Gull Rock, and the diary. *"I wrote it. Every word. Theo never hurt me. I hurt him, because I needed a monster, and he was the closest thing to hand."* Then she turns to him, in front of everyone, and says she's sorry. It's not enough. It's a start.
 
-**Epilogue:** A year later the Sea Glass Inn has nine working rooms, a waiting list for the festival, and a new sign. Say how it was saved: the island, the painting, a lot of spreadsheets, or all three. She still loses her reading glasses. She has never been less lost.
+**Epilogue:** Vale was arrested on the ferry landing on Monday morning. Tomás Reyes's conviction was overturned by winter. Sadie did community service, and a year of hard conversations, and went to college a year late. Say what the player did with the rest of her summer, and what she took home: the seven pieces of glass, in a jar on her windowsill.
 
 ```
 [IMAGE_TRIGGER]
-ID: IMG_ENDING_THE_KEEPER
+ID: IMG_ENDING_SEVENTH_PIECE
 TYPE: ENDING
 STATUS: REQUIRED
 
 SCENE:
-Morning sun on a freshly painted shingled Victorian inn on a bluff, window
-boxes of flowers, a new hand-lettered sign reading nothing legible, the
-player on the porch with a mug and a ring of old keys, companions
-around her, the lighthouse bright on the point behind. Warm, triumphant,
-cozy.
+A beach bonfire at night, hundreds of candles on the sand, a thin girl with
+short dark hair at a microphone with tears on her face, turning toward a
+tall boy; beside her a seventeen-year-old girl holding a jar of seven
+glowing pieces of sea glass; the crowd silent; the lighthouse on the point
+lit again for the first time, its beam sweeping the sky. Bittersweet,
+triumphant.
 
 STYLE:
 Authentic retro arcade pixel art: the Musecade pixel style
@@ -108,26 +128,26 @@ Authentic retro arcade pixel art: the Musecade pixel style
 [/IMAGE_TRIGGER]
 ```
 
-## MARLOWE HOUSE
+## THE WHOLE TRUTH
 
-**ID:** `ENDING_MARLOWE_HOUSE` · **fate:** lives
+**ID:** `ENDING_WHOLE_TRUTH` · **fate:** lives
 
-**The moment:** In front of the whole Grange Hall, or on the porch with only Marguerite to hear, she says it: the painting stays on Halcyon, forever, and the inn becomes a place where people come to make things.
+**The moment:** She does it herself. The video from the card on Priya's stream; the "SPRING" photos; the diary's impossibilities, one by one; and then the girl walking out of the dark. The fire *and* the hoax, both, because the island deserves both, and so does Theo. Sadie never forgives her for it. Sadie never has to lie again, either.
 
-**Epilogue:** Marlowe House opened in June: six artists in residence, a gallery in the old dining room, and *The Keeper's Daughter* in the room where it was painted, the window's sea glass throwing color on the floor. Art historians came in their thousands. The ferry added a run. Say who runs it (Bea, the player, or both) and what the player does with her mornings.
+**Epilogue:** Vale's trial was on the news for a month. Theo's name was cleared in the same week. Sadie gave one interview, and never mentioned the player. Say how the island treats the new girl the next summer: she's not new anymore.
 
 ```
 [IMAGE_TRIGGER]
-ID: IMG_ENDING_MARLOWE_HOUSE
+ID: IMG_ENDING_WHOLE_TRUTH
 TYPE: ENDING
 STATUS: REQUIRED
 
 SCENE:
-A sunlit gallery room in an old inn: visitors standing quietly before a
-large glowing painting of a lighthouse in a storm, colored light from a
-round sea-glass window spilling across the floorboards; through the doorway
-an artist at an easel on the porch; the player leaning in the doorway,
-smiling. Luminous, peaceful.
+Night on a beach, a seventeen-year-old girl standing alone at a microphone
+in the firelight, a phone held high showing a video of a burning building;
+hundreds of candles and phone screens glowing in the crowd; at the edge of
+the light, a silver-haired man being led away by a deputy. Righteous,
+lonely, powerful.
 
 STYLE:
 Authentic retro arcade pixel art: the Musecade pixel style
@@ -136,25 +156,26 @@ Authentic retro arcade pixel art: the Musecade pixel style
 [/IMAGE_TRIGGER]
 ```
 
-## SECOND SPRING
+## GIRL, FOUND
 
-**ID:** `ENDING_SECOND_SPRING` · **fate:** lives
+**ID:** `ENDING_GIRL_FOUND` · **fate:** lives
 
-**The moment:** Jonah, on the seawall at sunset, says more words in a row than anyone has heard from him in four years. None of them is a proposal, and all of them are an invitation. She stays. (PG, and warm.)
+**The moment:** No microphone. The player walks Sadie up the cliff path to the glass house at midnight, while the island is still at the bonfire. The porch light is on. Lydia opens the door before they knock. Nobody says anything for a long time.
 
-**Epilogue:** The *Winifred* went back in the water in May. They take her out on Sunday mornings when the tide is right. Say what she does with the inn. Mostly, though, this is the story of a woman who thought that part of her life was finished, and found out it wasn't.
+**Epilogue:** The truth came out the slow way: a lawyer, a detective from the mainland, a kitchen table, a lot of crying. Sadie told the police about the diary herself. Say what happened to Vale, and to Theo, and whether Sadie ever wrote to the player (she did: one postcard, one line).
 
 ```
 [IMAGE_TRIGGER]
-ID: IMG_ENDING_SECOND_SPRING
+ID: IMG_ENDING_GIRL_FOUND
 TYPE: ENDING
 STATUS: REQUIRED
 
 SCENE:
-A small varnished wooden sailboat named in white letters (unreadable) on a
-calm sparkling bay at golden hour, two figures aboard (the player and a
-broad-shouldered bearded man at the tiller), the lighthouse and the inn on
-the bluff behind them. Soft, romantic, bright.
+Midnight on a cliff, a glass-and-cedar house with a single warm porch light
+on; a woman in a cream sweater in the open doorway with her hands over her
+mouth; a thin girl with short dark hair in a fisherman's sweater on the
+steps; a seventeen-year-old girl waiting at the bottom of the path, far
+below a distant bonfire glowing on the beach. Quiet, tender, overwhelming.
 
 STYLE:
 Authentic retro arcade pixel art: the Musecade pixel style
@@ -163,25 +184,26 @@ Authentic retro arcade pixel art: the Musecade pixel style
 [/IMAGE_TRIGGER]
 ```
 
-## MAYA'S HARBOR
+## ON AIR
 
-**ID:** `ENDING_MAYAS_HARBOR` · **fate:** lives
+**ID:** `ENDING_ON_AIR` · **fate:** lives
 
-**The moment:** She hands Maya the inn's keys, or the boatyard's, or both. *"It's yours to figure out. I'll be a ferry away."* Maya holds them for a long time.
+**The moment:** Priya's stream, live, 400,000 people: the video, the photos, the timeline, and the new girl's voice explaining it all. Vale's face when he realizes the whole country is watching. It's the biggest episode of anything, ever. Say how Priya handles it: with the truth, including her own deleted text, or without it.
 
-**Epilogue:** Maya apprenticed with Jonah, took over the inn's odd jobs, and built her first boat by summer. Say where the player went: back to the city, somewhere new, or the cottage down the lane. Their Sunday calls became Sunday visits. The best thing Winnie left wasn't the inn; it was the week that gave a mother and daughter back to each other.
+**Epilogue:** The story belonged to the internet by morning, which meant it belonged to nobody. Vale fell. Sadie became a hashtag, then a documentary, then a meme. Theo got a thousand apologies from strangers. Say whether Priya's season two was honest.
 
 ```
 [IMAGE_TRIGGER]
-ID: IMG_ENDING_MAYAS_HARBOR
+ID: IMG_ENDING_ON_AIR
 TYPE: ENDING
 STATUS: REQUIRED
 
 SCENE:
-A boat ramp at sunrise: a young woman with a nose ring and sawdust on her
-overalls launching a small new wooden boat, her mother on the ramp beside
-her hand to her heart, a bearded boatbuilder grinning in the shed doorway,
-the inn on the bluff above. Proud, tender, fresh.
+Night, a girl in a blazer at a microphone on a beach with a ring light and a
+phone on a tripod, a live-stream counter climbing on the screen; beside her
+a seventeen-year-old girl talking into the mic; behind them a bonfire and
+a stunned crowd holding up hundreds of phones like candles. Electric,
+dizzying.
 
 STYLE:
 Authentic retro arcade pixel art: the Musecade pixel style
@@ -190,25 +212,25 @@ Authentic retro arcade pixel art: the Musecade pixel style
 [/IMAGE_TRIGGER]
 ```
 
-## TWO HARBORS
+## GONE GIRL
 
-**ID:** `ENDING_TWO_HARBORS` · **fate:** lives
+**ID:** `ENDING_GONE_GIRL` · **fate:** lives
 
-**The moment:** A handshake across Bea's kitchen table that turns into a hug that goes on too long. Fifty-fifty. Bea runs the inn. The player comes for the summers, and for whenever she needs to.
+**The moment:** 4 a.m., the harbor, a borrowed skiff, Sadie with a new name and Marguerite's cash. The player mails the card to a mainland newspaper and a state prosecutor, no return address. Sadie hugs her, hard, and doesn't look back. The dead girl stays dead.
 
-**Epilogue:** Two names on the sign. Bea sat down, once. The player kept her mainland life and a room at the top of the stairs with a sea-glass window. Tell what she does in each harbor, and which one she calls home when someone asks.
+**Epilogue:** Vale was indicted in October on "an anonymous source". Nobody ever learned how. Say what happened to Theo (the diary still stands, unless the player did something about it) and whether the player ever told anyone. Once a year, on her birthday, a piece of sea glass arrives in the mail with no note.
 
 ```
 [IMAGE_TRIGGER]
-ID: IMG_ENDING_TWO_HARBORS
+ID: IMG_ENDING_GONE_GIRL
 TYPE: ENDING
 STATUS: REQUIRED
 
 SCENE:
-A warm inn kitchen at night: two women laughing across a table crowded
-with mugs, ledgers and a pie, a hand-painted sign leaning against the
-wall with two names on it (unreadable), rain on the dark window,
-lighthouse beam passing outside. Joyful, cozy.
+Pre-dawn blue on a misty harbor, a small skiff pulling away with a thin
+girl in a hooded sweater looking back once; on the dock, a seventeen-year-
+old girl holding a stamped envelope; lobster boats and a lighthouse in the
+fog. Hushed, secret, bittersweet.
 
 STYLE:
 Authentic retro arcade pixel art: the Musecade pixel style
@@ -217,25 +239,25 @@ Authentic retro arcade pixel art: the Musecade pixel style
 [/IMAGE_TRIGGER]
 ```
 
-## THE PAINTER
+## CLEARED
 
-**ID:** `ENDING_THE_PAINTER` · **fate:** lives
+**ID:** `ENDING_CLEARED` · **fate:** lives
 
-**The moment:** In the cave studio, or the hidden room, or on the rocks at low tide, she picks up one of Winnie's brushes and doesn't put it down. (For an Artist at Eye rank III it's a calling. For anyone else it's a brave beginning.)
+**The moment:** She takes what she can prove (Theo's alibi, the timeline, the diary's lies) to the mainland detective, to Priya, to anyone who'll listen, and Theo's name is cleared. It's not everything. Sadie stays gone, and Vale stays smiling. But a boy who's been a murderer for a year gets to be a boy again.
 
-**Epilogue:** She painted every day for a year. Say where: at the inn, in the city, or on the rocks. Her first small show was in the Grange Hall, and Marguerite bought the first painting, and overpaid. What she does with *The Keeper's Daughter* and the inn goes here too. The last line is about color.
+**Epilogue:** The *MURDERER* on the shed was painted over for the last time. Say what Theo said to her on the ferry ramp when she left, and whether she ever stopped wondering about the light on Gull Rock.
 
 ```
 [IMAGE_TRIGGER]
-ID: IMG_ENDING_THE_PAINTER
+ID: IMG_ENDING_CLEARED
 TYPE: ENDING
 STATUS: REQUIRED
 
 SCENE:
-The player painting at an old easel on sunlit rocks at low tide, a canvas
-of the lighthouse coming alive under her brush, a tin of paints and a jar
-of sea glass beside her, gulls overhead, the inn on the bluff. Joyful,
-free, full of color.
+Morning at a small boatyard: a tall boy painting over graffiti on a shed
+wall with a roller of white paint, a seventeen-year-old girl handing him a
+second roller, an old man watching from a lawn chair with a coffee; boats,
+sun, gulls. Quiet, earned, hopeful.
 
 STYLE:
 Authentic retro arcade pixel art: the Musecade pixel style
@@ -244,25 +266,26 @@ Authentic retro arcade pixel art: the Musecade pixel style
 [/IMAGE_TRIGGER]
 ```
 
-## LYDIA'S INN
+## THE PERFECT VICTIM
 
-**ID:** `ENDING_LYDIAS_INN` · **fate:** lives
+**ID:** `ENDING_PERFECT_VICTIM` · **fate:** lives
 
-**The moment:** She slides the deed across the table to her cousin. *"You need a home more than I need an inn."* Lydia, who hasn't cried in front of anyone since 1989, does.
+**The moment:** Sadie tells her version at the bonfire: her father, the fire, and a boy who frightened her. The player stands in the dark and says nothing. Vale falls. Theo, in the crowd, hears it all over again. Sadie is a hero by midnight.
 
-**Epilogue:** Lydia turned out to be terrifyingly good at running an inn. The player comes every October, and always gets the room with the window. Say what she did with her own year, and with the painting. The cousins grew old as friends, which neither of them would have bet on.
+**Epilogue:** Sadie's memoir came out two years later. It was a bestseller. Theo is in chapter four. Say what the player does when she sees it in a bookstore window.
 
 ```
 [IMAGE_TRIGGER]
-ID: IMG_ENDING_LYDIAS_INN
+ID: IMG_ENDING_PERFECT_VICTIM
 TYPE: ENDING
 STATUS: REQUIRED
 
 SCENE:
-Two women in their fifties on an inn's porch steps at dusk sharing a bottle
-of wine and laughing, one immaculate and one windblown, a small suitcase
-at the windblown one's feet, the lighthouse lit on the point. Warm,
-bittersweet, forgiving.
+A bonfire at night, a thin girl in a fisherman's sweater at a microphone,
+bathed in golden firelight, the crowd reaching toward her; at the far edge
+of the crowd in shadow, a tall boy turning away; in the darkness at the
+very edge of the light, a seventeen-year-old girl watching, silent. Golden,
+hollow, unsettling.
 
 STYLE:
 Authentic retro arcade pixel art: the Musecade pixel style
@@ -271,25 +294,25 @@ Authentic retro arcade pixel art: the Musecade pixel style
 [/IMAGE_TRIGGER]
 ```
 
-## THE LONG WAY HOME
+## THE DEAL
 
-**ID:** `ENDING_LONG_WAY_HOME` · **fate:** lives
+**ID:** `ENDING_THE_DEAL` · **fate:** lives
 
-**The moment:** She sells the inn to the Halcyon Land Trust for one dollar and a promise, and takes the Sunday ferry back to her old life, which she will not live the old way.
+**The moment:** A handshake on the yacht club deck, a scholarship "in Sadie's name", a letter of recommendation that could open any door. The player doesn't have to do anything. She just has to not do anything, forever. Preston Vale smiles with all his teeth.
 
-**Epilogue:** Say what changed: a new job she chose, a friendship rebuilt, a sketchbook opened, a daughter called. The inn became the island's, run by Bea. She visits. She keeps the blue piece of sea glass on her kitchen windowsill, where the morning finds it.
+**Epilogue:** She got into the college she wanted. The letter helped. Say what she tells people when they ask about her summer on the island, and what she doesn't tell them.
 
 ```
 [IMAGE_TRIGGER]
-ID: IMG_ENDING_LONG_WAY_HOME
+ID: IMG_ENDING_THE_DEAL
 TYPE: ENDING
 STATUS: REQUIRED
 
 SCENE:
-A ferry pulling away from an island harbor at sunrise, the inn and
-lighthouse small on the bluff, a crowd on the dock waving; the player at
-the stern rail, holding up a piece of blue sea glass to the light.
-Hopeful, open, bittersweet.
+Sunset on a yacht club deck, a silver-haired man in linen shaking hands
+with a seventeen-year-old girl who holds a cream envelope; sailboats in the
+golden harbor; far off on the point, a dark lighthouse. Glossy, beautiful,
+wrong.
 
 STYLE:
 Authentic retro arcade pixel art: the Musecade pixel style
@@ -298,25 +321,25 @@ Authentic retro arcade pixel art: the Musecade pixel style
 [/IMAGE_TRIGGER]
 ```
 
-## THE WIDE WORLD
+## SUMMER'S END
 
-**ID:** `ENDING_WIDE_WORLD` · **fate:** lives
+**ID:** `ENDING_SUMMERS_END` · **fate:** lives
 
-**The moment:** She signs. Vale smiles with all his teeth. She's rich, and she's free, and she's a little heartbroken, and that's allowed.
+**The moment:** She puts the sea glass in the jar by the front desk, with everyone else's. She works her shifts, swims at the cove, goes to one bonfire where nobody's crying, and has a summer. It was never her job to fix this island. Maybe that's true.
 
-**Epilogue:** Say where she went: Lisbon, Kyoto, a sailing school, a cottage somewhere warm. Say what Vale built, and what happened to the painting under his ownership, honestly. Bea opened a café. Marguerite never forgave her, then forgave her at Christmas. She learned that you can love a place and still leave it.
+**Epilogue:** Say what the summer gave her instead (a friend, a first kiss, a tan, a reason to come back) and whether she ever looked at Gull Rock again.
 
 ```
 [IMAGE_TRIGGER]
-ID: IMG_ENDING_WIDE_WORLD
+ID: IMG_ENDING_SUMMERS_END
 TYPE: ENDING
 STATUS: REQUIRED
 
 SCENE:
-The player at a sunny café table on a foreign harbor waterfront, colorful
-buildings and bright boats behind her, a map and a postcard of a lighthouse
-on the table, sunglasses pushed up, smiling at something out of frame.
-Bright, free, a touch wistful.
+Late summer afternoon at a cove, teenagers on the rocks and in the water, a
+seventeen-year-old girl laughing on a towel with a friend, a glass jar of
+sea glass beside her; far out beyond the point, a tiny islet with a
+roofless cottage, and one faint light in its window. Warm, easy, haunted.
 
 STYLE:
 Authentic retro arcade pixel art: the Musecade pixel style
@@ -325,25 +348,25 @@ Authentic retro arcade pixel art: the Musecade pixel style
 [/IMAGE_TRIGGER]
 ```
 
-## HIGH TIDE
+## FRAMED
 
-**ID:** `ENDING_HIGH_TIDE` · **fate:** lives
+**ID:** `ENDING_FRAMED` · **fate:** lives
 
-**The moment:** The vote passes. The bluff is rezoned. Whatever she keeps (the inn for now, the painting, her dignity), the island is going to change, and she can't stop it.
+**The moment:** Flashing lights on a fenced cannery at 1 a.m. Hank's hand on her arm. Vale, in a raincoat, very sorry, very worried about "the poor girl". A trespassing charge, a call to her mother, the first ferry home. The island believes the story it's told. It always does.
 
-**Epilogue:** Vale's resort went up two years later. Say what she did: fought it, left, stayed and made the inn the last honest place on the bluff, or took the painting somewhere it would be loved. The island changed, but the lighthouse still turned. Sometimes you lose the vote and keep everything that mattered.
+**Epilogue:** In November a letter arrives with no return address and a piece of blue sea glass inside: *"I'm sorry. I'll finish it."* Say whether she ever finds out if Sadie did.
 
 ```
 [IMAGE_TRIGGER]
-ID: IMG_ENDING_HIGH_TIDE
+ID: IMG_ENDING_FRAMED
 TYPE: ENDING
 STATUS: REQUIRED
 
 SCENE:
-Twilight on the island bluff: construction cranes silhouetted beside the
-old shingled inn, whose windows still glow warm; the lighthouse beam
-sweeping over both; the player on the inn's widow's walk looking out.
-Bittersweet, dignified, a little defiant.
+Night and rain at a fenced burned-out cannery, the red and blue lights of a
+single island police car, a sunburned deputy holding a seventeen-year-old
+girl's arm; a silver-haired man in a raincoat watching with a sad smile;
+the black pilings of a broken pier in the storm. Bleak, unfair.
 
 STYLE:
 Authentic retro arcade pixel art: the Musecade pixel style
@@ -354,11 +377,11 @@ Authentic retro arcade pixel art: the Musecade pixel style
 
 ## THE LAST FERRY
 
-**ID:** `ENDING_LAST_FERRY` · **fate:** lives · available in every act
+**ID:** `ENDING_LAST_FERRY` · **fate:** lives · available from Act I
 
-**The moment:** She takes the next ferry off the island before the week is out. It's too much, too soon, and that's a real and human choice.
+**The moment:** The ferry ramp, the horn, Aunt Bea waving too hard. Maybe she was hurt, maybe she was scared, maybe she just wanted to go home. The island shrinks behind the ferry until it's a dark line and a dead lighthouse.
 
-**Epilogue:** Say what happened to the inn (Lydia's claim, Vale's offer, or the land trust), and to the people she met. Winnie's last pieces of sea glass stayed hidden for someone else to find. Years later she came back one October. The lighthouse was lit. *"Start where the light used to be,"* she said, and walked up the bluff.
+**Epilogue:** Say what she heard about Halcyon later, secondhand, and how it felt to hear it from someone else.
 
 ```
 [IMAGE_TRIGGER]
@@ -367,10 +390,10 @@ TYPE: ENDING
 STATUS: REQUIRED
 
 SCENE:
-A small ferry heading out across grey water under a pale sky, an island
-with a dark lighthouse and a Victorian inn falling behind; the player seen
-from behind at the rail, coat collar up, one hand in her pocket. Quiet,
-melancholy, open.
+The stern of a small ferry pulling away from an island harbor at dusk, a
+seventeen-year-old girl with a duffel bag at the rail looking back; on the
+dock a tall woman in an apron waving; beyond, a dark lighthouse on a point
+and a tiny islet with one light. Wistful, unfinished.
 
 STYLE:
 Authentic retro arcade pixel art: the Musecade pixel style
@@ -387,13 +410,13 @@ Evaluate at game over, before the completion batch. Never announce during play.
 
 | ID | Title | Condition | Visibility |
 |---|---|---|---|
-| `ACH_EVERY_PIECE` | EVERY PIECE | Find all seven pieces of Winnie's sea glass. | Visible |
-| `ACH_NEVER_SIGNED` | NEVER SIGNED | Reach Act IV or later without ever signing anything Preston Vale offered (`signed_anything` false). | Visible |
-| `ACH_WHOLE_HARBOR` | THE WHOLE HARBOR | Win over Marguerite, make peace with Lydia, and give the speech at the Grange Hall. | Visible |
-| `ACH_OPEN_HEART` | OPEN HEART | Bond with Bea, Jonah and Maya. (A bond with Jonah can be a deep friendship.) | Visible |
-| `ACH_FULL_STORY` | THE FULL STORY | Learn about Eli, Marlowe, Marguerite's promise, and see *The Keeper's Daughter*. | Visible |
-| `ACH_WINNIES_EYE` | WINNIE'S EYE | As an Artist, reach rank III of Winnie's Eye. | Hidden |
-| `ACH_STEADY_HANDS` | STEADY HANDS | Reach the festival without ever wearing thin (`ever_worn_thin` false). | Hidden |
-| `ACH_LIGHTKEEPER` | LIGHTKEEPER | Relight the old Halcyon lighthouse. | Hidden |
-| `ACH_NO_HARD_WORDS` | NO HARD WORDS | Reach the festival without a single cruel word to anyone (`cruel_word` false). Firmness is fine; cruelty isn't. | Hidden |
-| `ACH_FIRST_LIGHT` | FIRST LIGHT | Open the hidden room with the sea glass before the storm opens it. | Hidden |
+| `ACH_EVERY_PIECE` | EVERY PIECE | Find all seven pieces of Sadie's sea glass. | Visible |
+| `ACH_NOT_FOR_SALE` | NOT FOR SALE | Reach Act IV or later without ever taking anything Preston Vale offered (`took_vale_deal` false). | Visible |
+| `ACH_FULL_STORY` | THE FULL STORY | Learn that Sadie is alive, who burned the cannery, that the diary is fake, and who's been hiding her. | Visible |
+| `ACH_ALL_THREE` | ALL THREE | Bond with Jules, Priya and Theo. | Visible |
+| `ACH_EVERYONE_LIES` | EVERYONE LIES | Uncover Theo's, Priya's and Jules's secrets. | Visible |
+| `ACH_DARKROOM` | THE DARKROOM | As a Photographer, reach rank III of the Darkroom. | Hidden |
+| `ACH_GHOST_OF_A_CHANCE` | GHOST OF A CHANCE | Reach the bonfire with `max_whispers` of 2 or less. | Hidden |
+| `ACH_UNTOUCHED` | NOT A SCRATCH | Reach the bonfire without ever being Hurt (`ever_hurt` false). | Hidden |
+| `ACH_NIGHT_SWIM` | NIGHT SWIM | Swim to Gull Rock (not walk the causeway), and make it. | Hidden |
+| `ACH_FIRST_LIGHT` | FIRST LIGHT | Find Sadie on Gull Rock before the storm (Act III), instead of waiting for her to come to you. | Hidden |

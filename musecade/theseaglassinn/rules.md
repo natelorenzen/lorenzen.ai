@@ -2,82 +2,83 @@
 
 `core/dm-core.md` governs every turn: player agency, lettered decision menus, the d20, turn format, hints, saves and the cold open. This file adds the game's own systems and wins on any conflict.
 
-**Rating: PG.** No violence and no death. Romance is slow and respectful: glances, a shared boat ride, one kiss at most, if the player chooses it. Grief, divorce, job loss and a daughter's struggles are handled with honesty and warmth, never mockery, and never as a lecture.
+**Rating: PG-13.** Suspense, secrets, peril (a rising tide, a storm, being followed, being locked in), betrayal and grief. No gore, no sexual content, no self-harm, and nobody is murdered: the dark things here are lies, fear and a fire three summers ago. Romance, if the player wants it, stays at glances, a bonfire, a kiss at most. Adults are real people, not cartoons: some are kind, some are weak, one is dangerous.
 
 ---
 
 ## 1. Tone
 
-This is a story for grown women who have lived a little: funny, warm, clear-eyed and hopeful. Think salt air, cardigans, cinnamon from the bakery, gossip at the hardware store, a woman rediscovering what she's capable of. **Humor matters as much as tears.** Bea is hilarious. Marguerite is a menace. Vale is too smooth by half. Keep turns sensory and specific: the brass bell over the inn door, a tide chart taped to the fridge, the exact green of old bottle glass.
+A summer thriller told from inside a seventeen-year-old's head: sharp, funny, observant, a little paranoid, and very alive. Think salt on your skin, a borrowed bike with a bad chain, group chats, a bonfire's smoke in your hair, and the feeling that everyone on the island stops talking when you walk in. **Every chapter ends on a hook.** Keep turns tight and sensory. Let the island be beautiful and the people be complicated. Nobody is only what they look like, including Sadie, and including the player.
 
-She is the heroine. The story is about **what she chooses to do with the second half of her life**. There's no right answer, and every ending should feel earned and dignified.
+**Unreliable voices:** Sadie's notes, the diary, Priya's podcast and every rumor are *someone's version*. Present them straight. Let the player do the doubting.
 
-## 2. Composure (instead of wounds)
+## 2. Whispers: how much the island is talking about you
 
-`composure` tracks how much the week is costing her. It runs from 0 to 2:
+**Whispers is how much attention the new girl is drawing.** It runs **0 to 5** and shows on the status line as a bar: `WHISPERS ■■□□□`.
+
+**What raises it (+1):** asking loud questions in public, getting caught somewhere you shouldn't be, a scene in town, anything the Vales hear about, a failed sneak, or telling the wrong adult.
+
+**What lowers it (−1):** a whole phase of being a normal summer kid (a shift at the inn, the beach, the ice cream line); a friend covering for you; or throwing someone off the trail with a good lie or a better story.
+
+| Whispers | Band | Effect |
+|---|---|---|
+| 0–1 | **Invisible** | Nobody's paying attention. People talk freely around you. |
+| 2–3 | **Talked about** | Adults clam up. Vale "checks in" with Aunt Bea. Getting a stranger to talk is harder (disadvantage), and someone starts watching you. |
+| 4–5 | **A target** | Someone acts against you: your bike tires slashed, your phone taken, Hank "giving you a ride home", Vale's quiet threat. At 5, run a short escalated scene: get out of it, or get sent home. |
+
+Say which band she's in when it changes (`WHISPERS 3 · YOU'RE BEING TALKED ABOUT`). Track `max_whispers` for `ACH_GHOST_OF_A_CHANCE`.
+
+## 3. Harm
 
 | Level | State | Effect |
 |---|---|---|
-| 0 | **Steady** | |
-| 1 | **Frayed** | She's running on coffee and nerves. Hard conversations become harder when it matters. |
-| 2 | **Worn thin** | Social and delicate rolls are made with **disadvantage**. It's a hard night. Offer a quiet scene where a companion can show up for her, if trust allows. |
+| 0 | Fine | |
+| 1 | **Hurt** | A twisted ankle, a cut from the rocks, a mild concussion, a night of hypothermic shivering. Physical actions are harder when it matters. Aunt Bea will notice. |
+| 2 | **Out** | She's hurt badly enough, or scared badly enough, that Aunt Bea puts her on the ferry home: `THE LAST FERRY` (`game/endings.md`). |
 
-- **It rises** with a painful confrontation, a public humiliation, a failed roll at a big emotional moment, a sleepless night of work, or bad news landing hard.
-- **It falls** with rest (a full phase), a real laugh with someone, a friend showing up, a swim in cold water (the Adventurer's favorite), painting, or cooking with Bea.
-- There is no death and no "game over" from composure. Worn thin is a chapter, not a failure. Track `ever_worn_thin` for `ACH_STEADY_HANDS`.
+Healing: a night's sleep and Bea's soup take Hurt back to Fine, once per act. Telegraph real danger before the roll (the tide, the storm, the rotten pier). Record `ever_hurt`.
 
-## 3. The week
+## 4. The clock
 
-- **Six days** (Monday to Saturday), each with morning, afternoon and evening. The **council vote** is Saturday evening at the Grange Hall, during the Sea Glass Festival. **Vale's offer expires at the vote.** Winnie's will asks her to stay "seven nights before you decide". The last ferry off is Sunday.
-- Key scenes are anchored: Monday arrival, Wednesday's ferry (Maya), Thursday's low tide at 4:10 p.m., Friday night's nor'easter, and Saturday's festival.
-- A detour, a real rest or a long project costs **one phase**. Say so when it happens.
+**Seven days**, from Sunday night to the **anniversary bonfire on Saturday night**, during the Sea Glass Festival. Each day has morning, afternoon, evening and night. The inn needs her for one phase a day (breakfast shift or dishes), and skipping it raises Whispers and lowers Bea's trust. Key times: **low tide** (Gull Rock and the sea cave are reachable only then; the tide board is on the harbor wall), Thursday's **new moon** (the darkest night), Friday's **storm**, and Saturday's **bonfire at 10 p.m.**
 
-## 4. Paths: who she's been
+## 5. Paths: who you are
 
-A path is a way of seeing and a set of strengths. **+2** on d20 rolls that fit it (`core/dm-core.md` §5). Act files mark path details as `CARETAKER SEES`, `STRATEGIST SEES`, `ARTIST SEES` and `ADVENTURER SEES`.
+Each path gets **+2** on d20 rolls that fit (`core/dm-core.md` §5), sees different things (the act files mark `SLEUTH SEES`, `CHARMER SEES`, `ATHLETE SEES`, `PHOTOGRAPHER SEES`), and has **one move per act** (`core/dm-core.md` §15):
 
-| Path | Notices | Excels at |
+| Path | Notices | Move (once per act, no roll) |
 |---|---|---|
-| **CARETAKER** | What people need but won't say, who's hurting, who's lonely, what a room needs | Calming, hosting, cooking, drawing people out, community |
-| **STRATEGIST** | Numbers, contracts, motives, leverage, what doesn't add up | Negotiation, reading documents, business plans, the council |
-| **ARTIST** | Color, light, detail, what's hidden in pictures, how things were made | Restoration, sketching, seeing Winnie's hand; **Winnie's Eye** (§5) |
-| **ADVENTURER** | Weather, tides, boats, the island's wild places | Sailing, climbing, swimming, the sea-cave, the fog rescue |
+| **SLEUTH** | contradictions, timelines, handwriting, what's missing | **THE TELL:** right after someone says something, you know which part of it was a lie. (Not what the truth is. Just where the lie is.) |
+| **CHARMER** | who likes who, who's scared, who wants to be asked | **OFF THE RECORD:** one person tells you something they've never told anyone. It's always a real lead. |
+| **ATHLETE** | tides, currents, footholds, distances, who's out of breath | **NO WAY BACK:** you get somewhere, or away from something, that nobody else could: the swim, the climb, the sprint. Safely, once. |
+| **PHOTOGRAPHER** | light, framing, faces in the background, what a picture leaves out | **ZOOM IN:** look at a photo, a video or a scene, and see the one detail everyone missed. Also grows **the Darkroom** (§6). |
 
-**Moves** (once per act, no roll: `core/dm-core.md` §15):
+When a scene is exactly what a move is for, let Jules or the narration point at it once.
 
-| Path | Move | What it does |
+## 6. The Darkroom (Photographer only)
+
+Sadie shot film. Rolls of it are scattered through her story, undeveloped. The Photographer can learn to read them, and it grows with every roll she develops (in the inn's old cellar darkroom, or the school's, with Jules as lookout).
+
+| Rank | How | Effect |
 |---|---|---|
-| **CARETAKER** | **PUT THE KETTLE ON** | Over food or tea, one person tells her what's really worrying them. |
-| **STRATEGIST** | **THE FINE PRINT** | One document, deal or offer shows her the angle that matters: who gains, and what's missing. |
-| **ARTIST** | **A QUICK SKETCH** | She draws a person or place and notices one true thing she'd missed. (Winnie's Eye, §5, grows separately.) |
-| **ADVENTURER** | **SAY YES** | She gets somewhere others can't (water, cliff, weather, the dark) safely, once. |
+| **I** | at the start | She notices framing, shadows and who's in the background of any photo |
+| **II** | develop two of Sadie's rolls | She can place a photo in time exactly: the tide, the light, the day. The bonfire timeline gets much easier. |
+| **III** | develop four rolls, including the one from the cave | She can read a photo like a confession: what the photographer was afraid of. It opens a deeper talk with Sadie. |
 
-When a scene is exactly what a move is for, let Bea or the narration point at it once.
+Mark rank changes with one line: `THE DARKROOM · RANK II`. Report `ACH_DARKROOM` at rank III. Other paths can still get film developed (at the mainland pharmacy, which takes a day and raises Whispers).
+
+## 7. People and trust
+
+Companions are Jules, Priya and Theo (`characters/companions.md`). Trust runs -3 to +3 (`core/dm-core.md` §7). **Bonds** come only from real moments. Every companion is lying about something, at first. Catching them in it costs trust unless the player handles it with kindness. The adults are in `characters/npcs.md`.
+
+## 8. The final choice is never a menu
+
+At the bonfire, the player decides what the truth is worth, and who pays for it. Let her find her own answer.
+
+## 9. Images
+
+Follow `core/image-style.md` with this game's palette (`game/image-triggers.md`).
 
 ## Status line
 
-`<DAY> <PART OF DAY> · COMPOSURE <bar> <STATE> · MOVE READY · NEXT: <goal>`, where the bar fills as the week costs her: `□□` Steady, `■□` Frayed, `■■` Worn thin. For example: `TUESDAY AFTERNOON · COMPOSURE ■□ FRAYED · MOVE READY · NEXT: Jonah's boatyard`. When composure changes, say it in one line: `COMPOSURE · FRAYED`.
-
-## 5. Winnie's Eye (Artist only)
-
-The Artist can learn to see the way Winnie saw. It grows with every sketchbook and painting of Winnie's that she studies (the lobby seascape, the lighthouse sketchbook, the cave studio, the hidden room).
-
-| Rank | How it's reached | What it gives |
-|---|---|---|
-| **I** | at the start | She notices brushwork, pigment, and what an artist was looking at |
-| **II** | study two of Winnie's works or sketchbooks | She can read hidden things in Winnie's paintings. The lobby seascape's rocks, for example, are a map of the cave. |
-| **III** | study four, including the cave studio | She can **paint**. A painting she makes this week can move a room, and it opens `THE PAINTER` as a true calling |
-
-Mark rank changes with one line: `WINNIE'S EYE · RANK II`. Report `ACH_WINNIES_EYE` at game over if rank III is reached.
-
-## 6. Companions and people
-
-The companions (`characters/companions.md`) have lives of their own. Trust follows `core/dm-core.md` §7. **Bonds** (`BOND_*`) come from real moments: honesty, showing up, listening. They're never automatic.
-
-## 7. Menus and the final choice
-
-Use lettered menus (A, B, C, plus D. Other) at real decision points (`core/dm-core.md` §3). **The final choice at the festival is never a menu**: what she does with the inn, the painting and her life is hers to find.
-
-## 8. Images
-
-Follow `core/image-style.md` with this game's palette and triggers (`game/image-triggers.md`).
+`<DAY> <PHASE> · WHISPERS ■■□□□ <BAND> · MOVE READY · NEXT: <goal>`, for example `MONDAY NIGHT · WHISPERS ■□□□□ INVISIBLE · MOVE READY · NEXT: the dead lighthouse`. Add `· HURT` when she's hurt, and `· GLASS 3/7` once she's found a second piece.

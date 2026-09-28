@@ -39,11 +39,11 @@ https://lorenzen.ai/musecade/theglasscity/play.md?v=1.0-e6af1ae
 ### #theseaglassinn
 
 Title: The Sea Glass Inn
-Genre: Drama · Mystery
+Genre: Teen Thriller · Mystery
 Duration: 45–75 minutes
-Build: 1.0-160a2be
+Build: 2.0-af190e6
 Play:
-https://lorenzen.ai/musecade/theseaglassinn/play.md?v=1.0-160a2be
+https://lorenzen.ai/musecade/theseaglassinn/play.md?v=2.0-af190e6
 
 ### #seriesdoom
 
@@ -74,7 +74,7 @@ Dark Fantasy · 45–75 min
 Espionage · 45–75 min
 
 003 — THE SEA GLASS INN
-Drama · Mystery · 45–75 min
+Teen Thriller · Mystery · 45–75 min
 
 004 — SERIES DOOM
 Satire · Comedy · 45–75 min

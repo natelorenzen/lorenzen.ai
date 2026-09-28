@@ -1,55 +1,74 @@
-# ACT V: THE FESTIVAL
+# ACT V: THE BONFIRE
 
-*The whole island in one place, the vote, and the choice about the rest of her life.* Target: 8 to 12 minutes, 4 to 7 decisions. Saturday.
+*A festival, a vigil, four hundred candles, and a girl who walks out of the dark.* Target: 8 to 12 minutes, 4 to 7 decisions. Saturday.
 
-**Route:** the island shows up → the Sea Glass Festival → the Grange Hall vote → **the choice**.
+**Route:** the festival day → decide the plan (with Sadie, or without her) → the anniversary vigil and bonfire at 10 p.m. → **the choice**.
 
-`game/endings.md` is loaded alongside this file. Slow down. Let her enjoy the day before she has to choose.
+`game/endings.md` is loaded alongside this file. Slow down. This is the payoff: let the player's week come due, person by person.
 
 ---
 
-## 5.1 THE MORNING AFTER
+## 5.1 THE FESTIVAL
 
-The inn has storm damage, the dock is gone, and there's water in the cellar. Then, one by one, **the island shows up**: Hank with a generator, the co-op with lumber, Marguerite with coffee, the Feeneys with a check "for the roof, and don't argue", and Danny Sutter (if the lighthouse brought him home) with his whole family. How much of the island comes depends on how she spent the week: the people she helped, listened to and was honest with.
+The harbor green in the sun: a brass band, lobster rolls, the sea glass contest, sandcastles, Priya's merch table (*MISSING SADIE · ONE YEAR*), and Preston Vale shaking hands in a linen shirt, giving a speech about his daughter and a scholarship in her name. Lydia beside him, smiling with her mouth only.
 
-## 5.2 THE SEA GLASS FESTIVAL
+- **Everyone the player has helped or hurt shows up**, briefly: Mason, sheepish; Walt, with a nod; Hank, sweating; Grandpa Rafa with Theo, who came, which he never does.
+- **The plan** is the player's to make, and there's no right one. What's possible depends on what she holds: the card (the proof), the "SPRING" photos, the timeline, the fake diary, Priya's text, Hank's loan, Sadie herself. Help her think it through if she asks (as a read of the situation, never a recommendation: `core/dm-core.md` §1), then let her decide.
+- **Sadie's plan** (if the player knows it): Sadie walks into the vigil at the moment of silence. She'll accuse her father, and Theo. Unless the player has changed her mind.
 
-On the harbor green: a brass band, lobster rolls, the sea glass jewelry tent, children's sandcastles, and the **Sea Glass Contest** (rarest piece wins; Winnie's cobalt would win in a walk).
+## 5.2 THE VIGIL (set piece)
 
-- **Vale's last offer**, near the lobster tent: **$6 million**, for the inn *"and its contents"*, if she signs before the vote. He's dropped the charm. *"You don't know what to do with it. I do."*
-- **Dr. Imogen Hart** (if met), quietly: *"If you ever want it seen properly, a museum would weep. So would I. It should hang somewhere people can stand in front of it."*
-- **The painting's options**, stated in-world by whoever's nearby. The Keeper's Daughter could be sold (for a fortune), loaned, donated (to the island, or to a museum), kept, or hung in the inn where it was painted. It is **hers to decide**.
+10 p.m. The beach below the green. Four hundred candles in paper cups. A bonfire twice the height of a man. Priya's microphone on a stand, because the family asked her to host (of course they did). Vale steps up to speak. The moment of silence.
 
-## 5.3 THE GRANGE HALL VOTE
+Run **`ENC_BONFIRE`** (`game/encounters.md`): the reveal, however the player makes it happen, and what Vale and Hank do to stop it.
 
-Evening. The whole island is packed into the Grange Hall, with folding chairs and wet coats. The rezoning of the bluff is up for a vote.
+```
+[IMAGE_TRIGGER]
+ID: IMG_BONFIRE
+TYPE: MAJOR_REVEAL
+STATUS: REQUIRED
 
-- She can speak. **The speech** is the player's own words. If it's honest, specific and about the island (not a lecture), it's `SOCIAL_COUNCIL_SPEECH`. Roll it with advantage if she spent the week listening.
-- **Hank's option** (`DISCOVER_HANK_OPTION`), if she knows and chooses to raise it (gently or not), forces Hank to recuse himself. Without Hank the vote is 2 to 2, and a tie means the rezoning fails. If she stays silent, or doesn't know, it passes 3 to 2, unless her speech turns Rev. Ada Lin (a hard roll).
-- **The painting** can change the room: *"There's a Marlowe in the attic of the inn. It belongs to this island."* It's a thunderbolt. How it lands depends on her.
+Generate an image before continuing.
+Use current character and world state.
 
-Report `PUZZLE_COUNCIL_SOLVED` if she identified Hank through reasoning (`game/puzzles.md`).
+SCENE:
+Night on a beach: a huge bonfire throwing sparks at the stars, hundreds of
+small candles in paper cups on the sand, a crowd of islanders turning to
+look; walking out of the darkness at the edge of the firelight, a thin girl
+with short dark hair in a fisherman's sweater, holding up a small glowing
+memory card; a seventeen-year-old girl beside her; a silver-haired man at a
+microphone frozen mid-sentence. Electric, cinematic, a crowd holding its
+breath.
 
-## 5.4 THE CHOICE
+STYLE:
+Authentic retro arcade pixel art: the Musecade pixel style
+(core/image-style.md). Pixels visible at a glance.
 
-After the vote, on the inn's porch or at the lighthouse or on the seawall, **she decides**. Never offer this as a menu, and never as a list. Let her find it, then honor it fully:
+Do not reveal undiscovered information.
+
+[/IMAGE_TRIGGER]
+```
+
+## 5.3 THE CHOICE
+
+When the bonfire's moment turns, the player decides what the truth is worth, and who pays for it: Vale, Sadie, Theo, Priya, Bea, herself. **Never offer this as a menu, and never as a list.** These are what can happen:
 
 | If she… | Ending |
 |---|---|
-| stays and runs the inn herself, saved by the island, the painting, grit or all three | `THE KEEPER` |
-| gives *The Keeper's Daughter* to the island, turning the inn into a gallery and artists' retreat | `MARLOWE HOUSE` |
-| stays, because of Jonah and the second spring she didn't think she'd get | `SECOND SPRING` |
-| hands the inn's future to Maya (and Bea, and Jonah's boatyard) and lets her daughter find her own harbor | `MAYA'S HARBOR` |
-| makes Bea a full partner and splits her life between the island and the mainland | `TWO HARBORS` |
-| picks up Winnie's brushes: she's a painter now, wherever she lives | `THE PAINTER` |
-| gives the inn to Lydia, who needs a home more than she does | `LYDIA'S INN` |
-| goes back to her old life, changed, and sells the inn cheaply to the island's land trust | `THE LONG WAY HOME` |
-| sells to Vale and takes the money to see the world | `THE WIDE WORLD` |
-| loses the vote and the bluff, and leaves while the resort goes up | `HIGH TIDE` |
-| (earlier) takes the first ferry off | `THE LAST FERRY` |
+| stands beside Sadie while Sadie tells the whole truth herself, the fire *and* the diary, in her own voice, with Theo there to hear it (requires the lamp room solved, Sadie's honest talk and Theo's trust) | `THE SEVENTH PIECE` (the hidden ending) |
+| exposes everything herself, with proof: Vale's fire, and Sadie's hoax | `THE WHOLE TRUTH` |
+| brings Sadie home quietly to her mother, and lets the truth come out in a kitchen and a police station, not on a beach | `GIRL, FOUND` |
+| gives Priya the story, live, and lets the internet do the rest | `ON AIR` |
+| helps Sadie vanish for good (a new name, a boat before dawn) and sends the proof anonymously | `GONE GIRL` |
+| lets Sadie tell her version (her father *and* Theo) and says nothing | `THE PERFECT VICTIM` |
+| clears Theo's name with the timeline and his alibi, but leaves Sadie missing and Vale untouched | `CLEARED` |
+| takes Vale's deal | `THE DEAL` |
+| walks away and has a summer | `SUMMER'S END` |
+| gets caught and blamed | `FRAMED` |
+| goes home early (hurt, scared, or sent) | `THE LAST FERRY` |
 
-Several can blend. `SECOND SPRING` and `TWO HARBORS` can both be true, for example. Pick the ending whose *heart* matches her choice, and weave the rest into the epilogue.
+The ending's `requires` in `events.json` must be met. If the player does something close to an ending she hasn't earned, play it as the nearest earned one.
 
 ## Reporting
 
-Report remaining events (`SOCIAL_COUNCIL_SPEECH`, `PUZZLE_COUNCIL_*`, any bonds), evaluate achievements (`game/achievements.md`), then complete the run with the ending's ID and `died: false` (`core/scoring.md` §4). Fire the ending image, narrate the ending and epilogue (`game/endings.md`), and print the final screen (`scoring.md`).
+Report the remaining events (`ENC_BONFIRE_*`, `SOCIAL_SADIE_TRUTH` if it happened here, bonds), evaluate achievements (`game/achievements.md`), then complete the run with the ending's ID and `died: false` (`core/scoring.md` §4). Fire the ending image, narrate the ending and epilogue, and print the final screen (`scoring.md`).

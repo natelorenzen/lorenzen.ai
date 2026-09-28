@@ -2,27 +2,27 @@
   "id": "003",
   "slug": "theseaglassinn",
   "title": "The Sea Glass Inn",
-  "subtitle": "A Coastal Mystery",
+  "subtitle": "A Summer Mystery",
   "command": "#theseaglassinn",
-  "version": "1.0",
-  "genre": "Drama · Mystery",
-  "rating": "PG",
+  "version": "2.0",
+  "genre": "Teen Thriller · Mystery",
+  "rating": "PG-13",
   "players": 1,
   "duration": "45–75 min",
   "endings": 11,
   "secrets": 11,
   "acts": [
-    "The Crossing",
-    "The Island",
-    "The Letters",
+    "The New Girl",
+    "The Liars",
+    "The Darkroom",
     "The Storm",
-    "The Festival"
+    "The Bonfire"
   ],
   "paths": [
-    "Caretaker",
-    "Strategist",
-    "Artist",
-    "Adventurer"
+    "Sleuth",
+    "Charmer",
+    "Athlete",
+    "Photographer"
   ],
   "uses_core": true,
   "manifest": "adventure.md",
@@ -50,7 +50,7 @@
     "acts/act-4.md",
     "acts/act-5.md",
     "world/island.md",
-    "world/winnie.md",
+    "world/sadie.md",
     "characters/companions.md",
     "characters/npcs.md",
     "game/encounters.md",
@@ -90,18 +90,18 @@
       ]
     },
     "pack-2": {
-      "when": "Act II begins (`REACH_ISLAND`)",
+      "when": "Act II begins (`REACH_LIARS`)",
       "files": [
         "acts/act-2.md",
         "world/island.md",
+        "world/sadie.md",
         "game/puzzles.md"
       ]
     },
     "pack-3": {
-      "when": "Act III begins (`REACH_LETTERS`)",
+      "when": "Act III begins (`REACH_DARKROOM`)",
       "files": [
         "acts/act-3.md",
-        "world/winnie.md",
         "game/encounters.md"
       ]
     },
@@ -112,7 +112,7 @@
       ]
     },
     "pack-5": {
-      "when": "Act V begins (`REACH_FESTIVAL`)",
+      "when": "Act V begins (`REACH_BONFIRE`)",
       "files": [
         "acts/act-5.md",
         "game/endings.md",
@@ -120,7 +120,7 @@
       ]
     },
     "pack-end": {
-      "when": "any ending triggers before Act V (death, leaving early, surrender)",
+      "when": "any ending triggers before Act V (being sent home, a deal, walking away)",
       "files": [
         "game/endings.md",
         "game/achievements.md"

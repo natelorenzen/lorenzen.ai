@@ -1,107 +1,102 @@
-# ACT I: THE CROSSING
+# ACT I: THE NEW GIRL
 
-*Arrival, the inn, the will, the first piece of the puzzle, and the man who wants to buy it all.* Target: 11 to 15 minutes, 7 to 10 decisions. Monday.
+*A bonfire, a chase, a note on her pillow, and an island where everybody stops talking when she walks in.* Target: 11 to 15 minutes, 7 to 10 decisions. Sunday night to Monday night.
 
-**Route** (each scene's goal is the status line's `NEXT`): ride out the squall → land at Halcyon Harbor → open the Sea Glass Inn and meet Bea → hear Preston Vale's offer → **find the first piece of sea glass ("Start where the light used to be")**.
+**Route** (each scene's goal is the status line's `NEXT`): survive the bonfire → find the note on her pillow → the breakfast shift and Aunt Bea → the bakery crowd → Preston Vale comes by → **the dead lighthouse, "where the light used to be"**.
 
 ---
 
-## 1.0 COLD OPEN: THE SQUALL (the tutorial)
+## 1.0 COLD OPEN: THE BONFIRE (the tutorial)
 
-**Open with action, straight after the path tag.** It's easy, nobody gets hurt, and it teaches the game in 3 or 4 decisions.
+**Open with action, straight after the path tag.** It's easy, nobody gets hurt, and it teaches the game in 4 or 5 decisions.
 
-**The scene:** the little ferry *Halcyon Belle*, forty minutes out, grey water and a gold October sky. Then a squall comes sideways off the sea. Rain like thrown gravel, and the deck tilts. A stack of **lobster traps** breaks its lashing and starts sliding toward the rail, and toward a tiny old woman in a yellow slicker clutching a cake box: **Marguerite Doucette**, eighty-two. She is more worried about the cake than the traps.
+**The scene:** Sunday night, her first night on Halcyon. Aunt Bea sent her down to the cove with a plate of cookies "to make friends", which is humiliating. A bonfire on the beach, a speaker playing something loud, thirty kids who all know each other. A girl in a blazer is filming (**Priya**, *the one with the podcast*). A freckled girl with copper curls waves like they're already friends (**Jules**, *who knows everyone*). And up on the point, black against the stars, the **dead lighthouse**, where a flashlight beam flicks on, sweeps once across the beach, and stops on *her*.
 
 - **Path spotlight**, one line for this path only:
-  - CARETAKER: *she's not afraid for herself. That cake is for someone.*
-  - STRATEGIST: *the traps are tied with one rope, and the knot is on your side.*
-  - ARTIST: *for one second the light through the rain goes exactly the color of the glass in your pocket.*
-  - ADVENTURER: *the ferry will roll again in about four seconds. You can feel it coming through your feet.*
+  - SLEUTH: *nobody else looks up. Either they're used to it, or they're pretending.*
+  - CHARMER: *the loud boy by the cooler goes quiet when the light comes on. He knows something.*
+  - ATHLETE: *the tide's out. The rocks below the point are a staircase right now. In an hour they won't be.*
+  - PHOTOGRAPHER: *the beam is warm yellow, not LED white: an old flashlight, or an old person's.*
 
-**Beat 1: the first menu.** End the turn with a lettered menu. For example:
-- **A.** Get between her and the traps and brace them.
-- **B.** Grab her arm and pull her toward the cabin.
-- **C.** Cut the loose line so the traps slide the other way.
+**Beat 1: the first menu.** The light clicks off. A figure moves on the lighthouse gallery. End the turn with a lettered menu. For example:
+- **A.** Go after the light, up the rocks, right now.
+- **B.** Ask Jules what's up there, loudly enough that everyone hears.
+- **C.** Hand out the cookies and watch who looks at the lighthouse.
 - **D.** Other: type your own
 
 ```
 [ TIP · Type A, B or C to choose, or type anything you can imagine. The options are a shortcut, never a limit. ]
 ```
 
-**Beat 2: the first roll.** An **easy d20 (DC 8)**, shown openly, then:
+**Beat 2: the first roll.** Whatever she does, the figure runs. The chase across the wet rocks is an **easy d20 (DC 8)**, shown openly, then:
 
 ```
-[ TIP · Easy things just happen. When a moment really matters, the d20 decides how well. +2 when it fits who you've been. ]
+[ TIP · Easy things just happen. When it really matters, the d20 decides how well. +2 when it fits who you are. ]
 ```
 
-**Beat 3: the turn.** The ferry rights itself, and the squall blows past as fast as it came. Marguerite, cake intact or not, looks the player up and down: *"You're Winnie's girl. You have her hands. She'd have gone for the cake too."* She won't explain.
+**Beat 3: everyone saw.** She reaches the foot of the point. The figure is gone, somewhere out on the dark rocks toward the water. Behind her, thirty kids are staring. Someone says, not quietly: *"New girl's been here two hours and she's already chasing Sadie's ghost."* **Whispers becomes 1.**
 
 ```
-[ TIP · This week will cost you. Hard days wear you thin; friends, rest and laughter bring you back. Nobody dies on Halcyon, but not every chapter is easy. ]
+[ TIP · WHISPERS is how much the island is talking about you (0 to 5). Loud questions and getting caught raise it. Too high, and someone does something about you. ]
 ```
 
-**Beat 4.** Halcyon rises out of the rain: a harbor of shingled houses, a church steeple, and on the northern bluff a tall grey Victorian with a widow's walk. Beyond it on the point stands a **dark lighthouse**.
+**Beat 4: the move.** A boy with a lifeguard whistle (**Mason**, *a rich summer kid, Sadie's old crowd*) blocks her way back up the beach and wants to know what she thinks she's doing. Jules says, under her breath: *"This is literally your thing."* Let her path move work, cleanly. This one is free: the move is ready again for the rest of Act I.
 
 ```
-[ TIP · Who you've been gives you a MOVE, once per act, no roll. Type MOVE when the moment feels right. ]
+[ TIP · Your MOVE works once per act, no roll: THE TELL, OFF THE RECORD, NO WAY BACK or ZOOM IN. It's how you win without luck. ]
 ```
 
-Then print the first status line.
+**Beat 5: the pillow.** Back at the inn, past midnight. Her room under the eaves smells like cedar and salt. On her pillow: a piece of **blue sea glass**, wrapped in a note in round, looping handwriting (the `g`s have a little flick at the end): *"I'm eighteen now. They're all lying. Start where the light used to be."* Under it, a sheet of newspaper, one year old: **MISSING: SADIE VALE, 17.** There's a faint dusting of **flour** on the pillowcase (a clue: `DISCOVER_MARGUERITE_SECRET`, much later). Print the first status line.
 
 ```
-[ TIP · The status line shows the day, your COMPOSURE and where you're headed. Type STATUS, WHO or RECAP anytime. Ask anyone anything. SAVE GAME keeps your place. ]
+[ TIP · The status line shows the day, your WHISPERS and where you're headed. Type STATUS, WHO or RECAP anytime. Ask anyone anything. SAVE GAME keeps your place. ]
 ```
 
-**Rules:** no harm. A miss costs something small: a soaked coat, a smashed cake (Marguerite forgives you in about three business days), or her lawyer's envelope blown open on the deck. Tips appear only here, and can be skipped.
+**Rules:** no harm here. A miss costs something small: a soaked sneaker, a scraped palm, Mason's smirk. Tips appear only here, and can be skipped.
 
 ---
 
-## 1.1 HALCYON HARBOR
+## 1.1 MONDAY MORNING: THE SEA GLASS INN
 
-The ferry landing, a harbor of lobster boats, the **Halcyon General & Hardware** (owner **Hank Pruitt**, friendly and nosy), **Doucette's Bakery**, the **Grange Hall** with its banner for *THE 47TH SEA GLASS FESTIVAL · SATURDAY*, and a hand-lettered sign on a pole: *SAVE THE BLUFF. VOTE NO SATURDAY.* Beside it, a slicker sign: *VALE COASTAL: JOBS FOR HALCYON.*
+Load `characters/companions.md` and `characters/npcs.md` now (they're already in this pack).
 
-The lawyer, **Mr. Abernathy** (seventies, bow tie, office above the bakery), reads the will:
+6 a.m. The breakfast shift. **Aunt Bea** (*your mom's sister, who runs the inn*) is already three pots in. The Sea Glass Inn is a shingled Victorian on the bluff above the harbor, eleven rooms, a porch that sags, a glass jar of sea glass by the front desk for guests to add to, and a view straight across to the dead lighthouse and, beyond it, a small rocky islet with a roofless cottage on it: **Gull Rock**.
 
-- The inn and "everything in it" go to the player, *"on the condition that she stays seven nights before she decides anything at all."*
-- A sealed letter from Winnie: short, funny, unsentimental. *"You were eleven and you sorted my beach by color for an entire afternoon. Nobody else ever did that. I've left you a trail. Don't let anyone rush you. Especially the man with the teeth."*
-- Abernathy mentions, drily, that her cousin **Lydia** "has expressed an interest" in contesting.
+- Bea is funny, loving and exhausted. House rules. She asks about the bonfire. If Sadie's name comes up, Bea stops stirring for one beat too long, then changes the subject. (A seed for `DISCOVER_BEA_TOLD`.)
+- The inn's walls: a faded **MISSING** poster by the phone, and a festival poster: *THE SEA GLASS FESTIVAL · SATURDAY · ANNIVERSARY VIGIL AT THE BONFIRE*.
+- **The tide board** is taped to the fridge (Bea sails). Today's low tide: 7:40 a.m. and 8:05 p.m. The player can ask about Gull Rock: *"You can walk out at low tide. Don't. The causeway floods faster than you can run, and the cottage has been a ruin since the seventies."*
+- Doing the shift well keeps Bea's trust. Skipping it costs Whispers +1 and a very disappointed aunt.
 
-## 1.2 THE SEA GLASS INN
+## 1.2 DOUCETTE'S BAKERY
 
-Load `characters/companions.md` and `characters/npcs.md` now.
+The whole island goes to Doucette's between 8 and 10. Cinnamon, a bell over the door, a bench outside. Two people at a time:
 
-A shingled Victorian with twelve guest rooms, three of them usable. Faded chintz, a crooked brass bell over the door, and a lobby full of Winnie's odds and ends. There's a **tide clock** on the wall, stopped at **4:10**. Over the fireplace hangs a big, beautiful **seascape** of the bluff and its rocks at low tide, unsigned on its face. Up top is the **widow's walk**, with a round window of **seven empty leaded panes**. Its stair is locked, and Bea has the key.
-
-**Bea Okafor**, the manager, is forty-five, and she's been keeping the inn running with one hand and a lot of opinions. She sizes the player up: *"You're the niece. Right. Well, the boiler hates everyone, the roof leaks in Room 6, we have three guests and one of them is a travel writer, God help us. Tea?"* She stays on if the player wants her (`RECRUIT_BEA`).
-
-- **Her secret** (`DISCOVER_BEA_SAVINGS`): the inn's ledger shows Winnie's last year of bills paid by *personal checks signed B. Okafor*. STRATEGIST SEES it on a glance at the books; anyone else needs to ask or to look.
-- CARETAKER SEES: she hasn't sat down in a week, and she's afraid of being told to leave.
-- ARTIST SEES: the lobby seascape is extraordinary, far better than anything in an inn should be. The rocks are painted with unusual care, as if they mattered. (It's Winnie's work. At Eye rank II its rocks read as a map of the cave; see `rules.md` §5.)
-- ADVENTURER SEES: the tide clock isn't broken. Someone stopped it on purpose.
-- **The guests:** **Mr. and Mrs. Feeney**, retired, from the mainland, sweet and endlessly curious; and **Theo Park**, a travel writer, lanky and nosy, writing *"a piece about hidden New England"*.
+- **Jules** is behind the counter, delighted to see her: *"You chased the ghost! Nobody's done that!"* She'll tell her everything about everyone. Letting her tag along is `RECRUIT_JULES`. She mentions, as a joke, that she feeds the gulls every morning for her great-grandma, "who is weird about gulls".
+- **Marguerite** (*the ancient baker, Jules's great-grandmother*) says nothing at all to the new girl. She watches her over the bread, the whole time. If the player looks her in the eye, Marguerite nods once, like she's decided something.
+- **Priya** is at the corner table with a microphone, recording episode 52 of *Missing Sadie*: *"One year. Seven days. And a new girl on the island who chased a ghost last night."* She wants the new girl on the show, "the outsider's perspective". Saying yes is `RECRUIT_PRIYA`, and raises Whispers +1 (400,000 listeners). She's charming, pushy and, if the player is watching closely, flinches when anyone says "11:30".
+- **The green sea glass** is here, if she looks: tucked under the cushion of the outside bench, the one with a brass plaque, *"For Sadie, who sat here every morning."* Note: *"I was nine when Marguerite taught me to braid bread. She said everything strong is three weak things twisted together."*
 
 ## 1.3 THE MAN WITH THE TEETH
 
-Late afternoon. A silver rental car on the gravel. **Preston Vale** of *Vale Coastal Living*: fifties, perfect teeth, a fleece vest over a thousand-dollar shirt, genuinely charming. He brings flowers for Bea, who is not charmed.
+Midday, at the inn. A silver pickup on the gravel. **Preston Vale** (*Sadie's father, who owns half the island*) brings Bea a box of peaches and the new girl a smile.
 
-- **His offer:** **$2.1 million**, cash, for the inn "and all contents", closing in thirty days. It's a transformational number for a woman with no job. *"The offer stands until the council votes on Saturday. After that, well. I'd hate for you to miss it."*
-- STRATEGIST SEES: *"all contents, fixtures, and artworks"* in the letter of intent. It's an odd phrase for a teardown.
-- DIPLOMAT-style reads work for anyone paying attention: he glances at the ceiling twice when he mentions the attic.
-- A good negotiation (more time, better terms, a promise he can't keep, or making him show his hand) is `SOCIAL_VALE_TERMS`. **Signing anything** sets `signed_anything`. It's not the end, but Vale will hold her to it.
+- He knows her name before she says it. He's warm, sad, generous: he offers her a summer job at the yacht club ("better pay than dishes, and I'll write you a college letter that opens doors"). He asks, lightly, what she saw at the lighthouse last night.
+- **He's perfect.** Almost. SLEUTH SEES: he asks about the lighthouse before anyone told him she was there. CHARMER SEES: Bea's hand on the counter goes white. PHOTOGRAPHER SEES: his boat, *Second Wind*, is in the family photo on his phone's lock screen, and Sadie has been cropped out of it. ATHLETE SEES: he's standing between her and the door.
+- **Outplaying him** (`SOCIAL_VALE_BLUFF`): lying to his face well enough that he decides she's harmless (a roll, a move, or a great performance). Accepting the job sets `took_vale_deal` (it's not a crime, but it's a leash). Being rude raises Whispers +1.
+- As he leaves: *"Stay off the point, okay? The rocks took my daughter."*
 
-## 1.4 THE FIRST PIECE
+## 1.4 WHERE THE LIGHT USED TO BE
 
-The **blue sea glass** in her pocket, and the note: *"Start where the light used to be."*
+Evening, or night: the **dead lighthouse** on the point, decommissioned in 1998. Chain on the door (rusted through; it only *looks* locked). A spiral stair, 114 steps, a lamp room with the great lens gone and a seven-sided brass lamp housing still in place, with **seven empty slots, each the size of a piece of sea glass**. On the lamp room wall, a faded **harbor chart** painted directly on the plaster.
 
-- *Where the light used to be* is the **lighthouse** on the point. It's been dark since 1978. The keeper's cottage is boarded up, and the tower door is rusted but not locked.
-- It's a twenty-minute walk along the bluff at dusk (a phase). Or it waits for tomorrow.
-- **Inside the lamp room**, wedged behind the great dusty lens, is an envelope and a piece of **cobalt** sea glass, the rarest color. The note: *"This is the last piece, and it's in the first place, because that's how grief works. Go back to the beginning. The beginning was Marguerite, and bread."* (Record glass: blue and cobalt. The notes' dates matter; see `game/puzzles.md`.)
-- ADVENTURER SEES: the lighthouse's lamp is old, but the generator shed behind it looks recently serviced. Someone has been keeping it ready (it was Winnie).
+- **The white sea glass** sits in one of the slots. Note: *"I was six the first time I climbed up here. Dad said the light was dead. I said lights don't die. They wait."*
+- Someone has been here recently: a clean patch on the dusty floor where a person sat, an apple core, and a view straight down onto the causeway to Gull Rock. (ATHLETE SEES the causeway's high-water line. SLEUTH SEES that the apple core is today's.)
+- The player now has three pieces and three notes, each with an age. She doesn't need to understand the slots yet. Let her wonder.
 
 ```
 [IMAGE_TRIGGER]
 ID: IMG_LIGHTHOUSE
-TYPE: LANDSCAPE
+TYPE: MAJOR_REVEAL
 STATUS: REQUIRED
 
 Generate an image before continuing.
@@ -112,11 +107,13 @@ Authentic retro arcade pixel art: the Musecade pixel style
 (core/image-style.md). Pixels visible at a glance.
 
 SCENE:
-Dusk on a rocky island point: a tall dark lighthouse against an amber and
-rose sky, the sea glittering below, a shingled Victorian inn with a
-widow's walk on the bluff behind. The player, small, walking the bluff path
-toward the lighthouse, coat blowing, one hand raised to the light holding
-a piece of blue sea glass that glows where the sun hits it.
+Night inside the top of an old abandoned lighthouse: a dusty round lamp room
+with a seven-sided brass lamp housing with empty slots, a faded harbor chart
+painted on the curved wall, moonlight through salt-streaked windows; a
+seventeen-year-old girl holding a piece of glowing blue sea glass up to the
+moonlight; far below through the window, a black causeway of rocks leading
+out to a tiny islet with a roofless cottage. Eerie, beautiful, a little
+scary.
 
 Do not reveal undiscovered information.
 
@@ -127,19 +124,19 @@ Do not reveal undiscovered information.
 [VIDEO_TRIGGER]
 ID: VID_LIGHTHOUSE
 PAIRED WITH: IMG_LIGHTHOUSE
-STATUS: HIGH PRIORITY (see core/image-style.md §5)
-LENGTH: 5 seconds
-MOTION: the last sun slides down the lighthouse; waves roll in and break
-white on the rocks; the sea glass in her hand flashes blue once.
-CAMERA: slow push along the bluff path toward the lighthouse.
+MOTION: moonlight shifts through the salt-streaked glass; the sea glass in her hand catches it and throws a thin blue beam across the painted chart; far below, a tiny warm flashlight blinks once on the islet
+CAMERA: slow push in over her shoulder toward the window
 [/VIDEO_TRIGGER]
 ```
 
-**Monday night.** Rain on the roof, the boiler groaning, Room 6's bucket going *plink*. Bea leaves a plate of stew on the counter. The first night of seven. **Record `REACH_ISLAND`** (it's sent with everything else at the end) and fetch the Act II pack.
+**On the way down**, a flashlight blinks once, far out on Gull Rock, and goes dark. That's the hook.
+
+**Monday night ends Act I.** Record `REACH_LIARS` (it's sent with everything else at the end) and fetch the Act II pack.
 
 ---
 
 ## Exceptions
 
-- **She signs Vale's offer on Monday** and wants to leave: Winnie's condition means the sale can't close before seven nights. Vale doesn't mind waiting. Continue, with `signed_anything` set. She can still back out, which becomes its own drama. If she simply leaves the island on the next ferry: `THE LAST FERRY` (`game/endings.md`).
-- **She tells Vale about the sea glass trail:** he becomes very interested, and very helpful. That's a warning sign.
+- **She tells Bea or Deputy Hank about the note right away:** allowed, and it matters. Bea goes very quiet and asks her to show no one else (a seed for `DISCOVER_BEA_TOLD`). Hank takes the note "for the file", and it's gone. Whispers +2, and Vale knows by morning (`told_hank`).
+- **She wants to go home now:** she can call her mom and take Tuesday's ferry: `THE LAST FERRY`.
+- **She walks out to Gull Rock at low tide tonight:** the cottage looks empty, a ruin, and the tide chases her back (ATHLETE: easy; anyone else: a Hard roll, DC 15, or Hurt). Sadie watches from the rocks and doesn't show herself. Not yet.

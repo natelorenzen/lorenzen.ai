@@ -1,72 +1,71 @@
-# ACT II: THE ISLAND
+# ACT II: THE LIARS
 
-*The trail, the town, the neighbor, the cousin, and the daughter.* Target: 12 to 16 minutes, 8 to 12 decisions. Tuesday and Wednesday.
+*The podcast, the diary, the boy everyone blames, a mother's porch light, and a harbor log that remembers everything.* Target: 13 to 17 minutes, 9 to 12 decisions. Tuesday and Wednesday.
 
-**Route:** the green glass at Doucette's Bakery → learn how the council vote stands at the hardware store → meet Jonah at the boatyard → Lydia arrives → *the church and the library* (optional) → Maya arrives on Wednesday → *plan the cave for Thursday's low tide* → **Wednesday night around the kitchen table**.
+**Route:** Priya's studio and the diary → Theo at the boatyard → Lydia on the beach, and Sadie's room → the harbor office → *Aunt Bea's kitchen at 2 a.m.* (optional) → piece together the bonfire night → **Wednesday night: someone wants her gone**.
 
-Load `world/island.md` and `game/puzzles.md` now.
-
-This is the most open act. The sea glass trail gives shape, but let her wander. **Six phases** pass (Tuesday and Wednesday, three phases each), and she can't do everything. Keep time moving and say when a phase ends.
+Load `world/island.md`, `world/sadie.md` and `game/puzzles.md` now (they're in this pack). The player can take these scenes in any order. Push gently toward the next one when a scene is done.
 
 ---
 
-## 2.1 DOUCETTE'S BAKERY (the green glass)
+## 2.1 TUESDAY: THE STUDIO
 
-Warm, cinnamon-sweet, a bell over the door. **Marguerite Doucette** (82, flour to the elbows) runs it with her great-nephew **Luc**, who's twenty and sulky.
+**Priya's** garage, converted into a studio: foam on the walls, a ring light, and a **wall of string**: photos, timelines, maps, a year of obsession. She plays the new girl a clip from episode 1: the diary, read aloud in Priya's steady podcast voice.
 
-- Marguerite has the **green** sea glass, and the note that goes with it. She won't just hand them over. *"Winnie made me promise to give it to the right one. Tell me what you're doing here, and don't give me a speech."*
-- Winning her takes honesty, humor, rolling up her sleeves to help with the ferry-crowd rush, or real warmth. That's `SOCIAL_MARGUERITE_TRUST`, and she gives the green glass and note (dated **1972**: *"The first winter I nearly left. Marguerite fed me bread and told me the truth about myself. That's when this island became home."*).
-- She knows much more, and she's not telling yet (`DISCOVER_MARGUERITE_PROMISE` comes in Act III).
-- CARETAKER SEES: Marguerite is lonelier than she lets on. Winnie was her person.
+- **The diary:** twenty-two entries from last May and June, supposedly Sadie's, found by her father in her desk and "shared with the police". Theo grabbing her arm, Theo's temper, Theo's truck, *"If anything happens to me, it was Theo."* Priya has scans of every page. Run `game/puzzles.md`, *Puzzle 1: The Diary*. The player can start it here, and finish it whenever she's found enough.
+- **Priya is hiding something** (`DISCOVER_PRIYA_TEXT`). Tells: she won't talk about 11:30; her timeline wall has a gap between 11:10 and 11:50 that's been torn and re-pinned; she has a second, older phone she never uses. CHARMER, with trust 1+, or THE TELL on *"She never contacted anyone"*, gets her there. She breaks down. It's a big moment. The player can keep it secret, or not.
+- Priya has one of **Sadie's film rolls**, given to her two days before the bonfire, never developed: *"I couldn't. What if she's in it?"*
+- If the player hasn't recruited her yet, this is where Priya asks: `RECRUIT_PRIYA`.
 
-## 2.2 THE HARDWARE STORE AND THE COUNCIL
+## 2.2 THE BOY EVERYONE BLAMES
 
-**Hank Pruitt**, the hardware store owner and a council member, is chatty and helpful. He'll lend a ladder and gossip about everybody. On the council he's "still deciding".
+The **Reyes boatyard**. *MURDERER* still ghosts through the white paint on the shed. **Theo** (*Sadie's boyfriend, the one the diary blames*) is under a hull, and doesn't come out. **Grandpa Rafa** (*his grandfather, who owns the boatyard*) offers her a soda and a warning: *"He's had a year of people like you."*
 
-- **Tuesday evening, the public hearing** at the Grange Hall. The island argues about the bluff and the resort: jobs, ferries, the school, "people from away". Vale presents slides. The five council members are introduced (see `game/puzzles.md`, *Puzzle 2: Whose Vote Is Bought*). The vote is Saturday. She can speak, listen, or skip it.
-- It's the best place to start noticing who's lying about what.
+- **Getting past his door** takes more than one visit, or a move, or real honesty: telling him what she's doing and why, or telling him about her own rumor at home (her `backstory` matters here). Then `RECRUIT_THEO`.
+- **The amber sea glass** is taped inside the little dinghy ***SADIE*** in the back of the shed, under the thwart. Theo didn't know it was there. It hits him hard.
+- **Diary clue:** Theo sold his truck in **April**, to pay his father's appeal lawyer (Rafa has the receipt on the wall). The diary has him driving her home in it on June 12.
+- **His secret** (`DISCOVER_THEO_ALIBI`) comes with trust 2, or at the lighthouse at night, or with THE TELL on *"I was home"*: he was at the lighthouse from 11:15 to midnight, waiting for her, because she asked him to meet her there. `SOCIAL_THEO_TRUST` is the moment he tells her, if she believes him out loud.
+- He mentions his father, the cannery, the fire, once, and shuts down. (A thread for Act III.)
 
-## 2.3 JONAH'S BOATYARD
+## 2.3 THE PORCH LIGHT
 
-Next door to the inn, down the bluff steps: a shed smelling of cedar and varnish. **Jonah Reyes**, fifty-two, is a widower who builds wooden boats and says about eleven words a day. He comes over to fix the inn's dock, or the shutters, or the boiler, without being asked. It's how he talks. (`RECRUIT_JONAH` when she accepts his help and asks him in.)
+Sunset on the western beach, below the glass house on the cliff. **Lydia Vale** (*Sadie's mother*) walks the tide line every evening, barefoot, with a glass of wine.
 
-- In the corner of the shed is an old wooden dory, beautifully kept, with the name painted on her transom: ***WINIFRED***.
-- The **red** sea glass is set into the dory's bow as a tiny inlaid eye, if she looks closely (ARTIST SEES and ADVENTURER SEES it at once). The note, tucked in the dory's locker, is dated **1975**: *"He built a boat and named it after me before he'd said a word. Some men are like that. I married him in every way but on paper."*
-- Jonah's **shoebox of letters** (`DISCOVER_JONAH_LETTERS`): his grandfather **Eli Brennan**'s letters to Winnie, and hers back, which Jonah found when his mother died. He hasn't read them all. It felt like trespassing. He'll share them if trust is 1 or more. The letters, or the church plaque in 2.5, give `DISCOVER_ELI`: Eli and Winnie loved each other for three years, and Eli drowned in the great storm of February 1978.
-- Any romance is slow and PG, and entirely hers to choose. He's shy. He'll notice if she's cold and hand her his jacket without comment. He's also grieving his wife, **Sara**, who died four years ago, and he isn't sure he's allowed to like anyone.
+- She's polite and far away. The right question (about Sadie as a person, not a case; or about the porch light) or a true thing about Sadie gets her talking: `SOCIAL_LYDIA`. Then, very quietly, the go-bag (`DISCOVER_LYDIA_KNEW`), and the key to Sadie's room: *"He's in Boston until Wednesday. Find her before he does."*
+- **Sadie's room** (the house is empty; the cleaner's day off; Whispers +1 if she's seen going in, +2 if Vale's security camera catches her and she hasn't dealt with it):
+  - Her **real notebooks** from school, full of doodles, crossings-out, five different pens, coffee rings. The diary scans are one pen, one pressure, no mistakes. (A diary clue, and PHOTOGRAPHER SEES it at once.)
+  - **The red sea glass**, inside a hollowed-out paperback of *Rebecca* on her shelf. Note: *"I was fourteen when I found out my dad only smiles with his teeth. I started keeping things where the sea keeps them."*
+  - Her **camera bag**: the camera is gone (it went with the go-bag), but a **film roll** is sewn into the lining.
+  - A photo booth strip of Sadie and Theo at twelve, in the dinghy. On the back, in her looping hand: *"the Chapel. always."*
+- **Tension:** if Whispers is 3 or more, Vale's car comes up the drive early. Out the window, down the cliff path, or bluff it (a set of choices, one roll).
 
-## 2.4 LYDIA
+## 2.4 THE HARBOR OFFICE
 
-Tuesday's afternoon ferry brings **Lydia Hale**: the player's cousin, fifty, immaculate, brittle, with a rolling suitcase that works and a letter from her lawyer. *"Aunt Winnie promised me this place. I have emails."*
+**Walt Sumner** (*the harbormaster, grumpy and honest*) keeps everything on paper. He'll show a polite kid the **harbor log** for last summer's bonfire night if she asks right (Bea's niece helps):
 
-- She's staying at the inn. Of course she is.
-- **Her secret** (`DISCOVER_LYDIA_TROUBLE`): her husband left her in June, the house is in foreclosure, and she has been quietly talking to Vale about selling him her "claim". She is frightened, not evil. Tells: a phone call she takes on the porch in tears; a foreclosure notice sticking out of her bag (STRATEGIST SEES); flinching at the word *mortgage* (CARETAKER SEES).
-- Handled with cruelty, she digs in and helps Vale. Handled with grace, she softens, eventually (Act III and IV).
+- **Low tide 11:40 p.m.** High tide 5:50 a.m.
+- ***Second Wind* out 12:20 a.m., "no lights, P.V.?"**, in Walt's handwriting. In at 3:10 a.m.
+- **The boat registry:** Hank Pruitt's boat, *Miss Behavin'*, had a $41,000 loan. Paid off in full on July 30 last year by **Cedar Point Holdings**, whose address is Vale's lawyer's office (`DISCOVER_HANK_PAID` if she connects it: a Sleuth sees it at once; anyone else needs the lawyer's name, which is on Vale's yacht club letter if she took the job, or in the Herald on Priya's wall).
+- **Hank's report:** the sandal was found at 7:10 a.m. *"on a dry rock below the lighthouse"*. (The timeline's key clue: `game/puzzles.md`, *Puzzle 2*.)
 
-## 2.5 THE CHURCH AND THE LIBRARY (optional)
+## 2.5 THE BONFIRE NIGHT
 
-- **St. Brendan's by the Sea:** a memorial board for islanders lost at sea. **ELI BRENNAN · FEB 7 1978** (`DISCOVER_ELI` if not yet). Under the board, behind a loose brass plate, is the **white** sea glass and note dated **1978**: *"February. The storm took him and the Mary Ellen and two other boats. I stood at the lighthouse all night and the light was not enough."* The church's warden, **Rev. Ada Lin**, is also on the council.
-- **The Halcyon Free Library:** **Ruth Kimura**, the librarian (70, a sharp gossip). A 1981 art magazine in the stacks has an article titled *"Where Did W. Marlowe Go?"* with one blurry photograph of a young woman at a gallery opening, face half turned. ARTIST SEES Winnie's hands in the photo. Anyone with the lobby seascape in mind might wonder (a step toward `DISCOVER_MARLOWE`, in Act III).
-- **Vale** spends a lot of time at the library this week.
+Run `game/puzzles.md`, *Puzzle 2: The Bonfire Night*. It spans Acts II and III: the pieces come from Priya's recordings, Mason's stories (Jules can get them: *"Mason saves everything, he's that guy"*), the harbor log, Hank's report, Theo's secret and Sadie's film. Keep a visible list for the player if she asks (`RECAP`). She can solve it any time before the storm.
 
-## 2.6 WEDNESDAY: MAYA
+## 2.6 AUNT BEA'S KITCHEN (optional, but it matters)
 
-Wednesday's afternoon ferry brings the player's daughter **Maya**, nineteen, with a duffel bag, a nose ring she didn't have in August, and a too-bright smile. *"Surprise! Fall break!"* It isn't fall break. (`RECRUIT_MAYA` when she's welcomed in.)
-
-- **Her secret** (`DISCOVER_MAYA_SECRET`): she left college three weeks ago. She has been working at a boatyard in the city, and she loves it, and she's terrified of telling her mother. She thought everyone would see her as a failure after the divorce "broke everything". Tells: calluses on her hands, sawdust in her bag, and dodging every question about classes (CARETAKER SEES it immediately).
-- Maya wanders into Jonah's shed within an hour, and they get on alarmingly well.
-
-## 2.7 THE CAVE (possible on Thursday)
-
-The lobby tide clock stopped at 4:10, the seascape's rocks, and the harbor's tide board: see `game/puzzles.md`, *Puzzle 1: Low Water at Ten Past Four*. The cave can be reached at Thursday's afternoon low tide (Act III). Planning it now is good play.
+2 a.m., Tuesday or Wednesday. Bea can't sleep, and neither can she. Cocoa. If the player is honest with her about what she's doing (the note, the glass, the lighthouse), Bea tells her the worst thing she's ever done: Sadie came to this kitchen and said she was scared of her father, and Bea told Hank (`DISCOVER_BEA_TOLD`, `SOCIAL_BEA_TRUTH`). *"I did what you're supposed to do. And a week later she was gone."* From here on, Bea covers for her: Whispers −1, and she gets the car keys.
 
 ## Wednesday night
 
-Four people and some guests around Bea's kitchen table: Lydia, Maya, Bea, perhaps Jonah. Somebody laughs until they cry. **Record `REACH_LETTERS`** (it's sent with everything else at the end) and fetch the Act III pack.
+Back at the inn after dark. Her bike's tires are slashed. Under her door, a typed note on the yacht club's letterhead, unsigned: *"Summers here are short. Go home."* Whispers +1. If she took Vale's job, the note instead says: *"Glad you're on the team."* Either way, somebody's watching.
+
+**Wednesday night ends Act II.** Record `REACH_DARKROOM` (it's sent with everything else at the end) and fetch the Act III pack.
 
 ---
 
 ## Exceptions
 
-- **She accepts Vale's offer now and leaves on the next ferry:** `THE WIDE WORLD` (from Act II).
-- **She ignores the trail entirely:** fine. The storm will reveal the room anyway (Act IV). She'll just understand less of what she's looking at.
+- **She confronts Vale directly:** he's hurt, patient, and devastating: he calls Bea, gently, about "the stress the poor girl is under". Whispers +2. Bea is forced to ground her for a day unless she's already on her side.
+- **She accepts Vale's scholarship offer to drop it:** `THE DEAL` (from Act II). Play one more scene so it lands.
+- **She decides it's not her business and has a normal summer:** `SUMMER'S END` (from Act II).

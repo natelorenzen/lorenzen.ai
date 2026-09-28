@@ -1,69 +1,63 @@
-# THE SEA GLASS INN: Companions
+# THE SEA GLASS INN: Friends
 
-Three people can come to matter to her this week. Nobody dies, but people can leave, hold back, or be let down. Trust runs from -3 to +3 (`core/dm-core.md` §7). **Bonds** come only from real moments.
-
----
-
-## BEA OKAFOR: the inn manager
-
-**Visual:** forty-five, tall, strong, close-cropped graying hair, big gold hoop earrings, an apron over a band T-shirt, reading glasses on her head that she forgets are there.
-
-**Personality:** hilarious, blunt, fiercely loyal, allergic to nonsense and to Preston Vale. She has a nickname for everyone and a grudge against the boiler. She hums gospel while she cooks.
-
-**History:** came to Halcyon twelve years ago after a hard divorce of her own, answered Winnie's ad for "a cook who can also fix things and doesn't mind a haunted boiler", and never left. Winnie was her family.
-
-**Motivation:** keep the inn alive, and keep her home.
-
-**Secret** (`DISCOVER_BEA_SAVINGS`): in Winnie's last year she paid the oil bill, the insurance and the property taxes out of her own savings, $38,000, and never told a soul. She would like, more than anything, to own a piece of the place. She would never ask.
-
-**Capability:** runs the inn, cooks for forty, fixes most things, knows every islander's business and weakness, and is magnificent in a crisis.
-
-**Fear:** being told, politely, that she's not needed.
-
-**Bond** (`BOND_BEA`): the player learns about the savings and honors them, offers a real partnership, or simply sits down with her at 2 a.m. during the storm and is honest. Bea stays on (`RECRUIT_BEA`) from the start if asked. Treated like staff, she's professional and cool. Treated like family, she's everything.
+Three people her age can become her friends this week. Each of them is lying about something at first. Trust runs from -3 to +3 (`core/dm-core.md` §7). **Bonds** come only from real moments. Nobody dies; people can leave, shut her out, or be let down.
 
 ---
 
-## JONAH REYES: the boatbuilder next door
+## JULES DOUCETTE: the one who knows everyone
 
-**Visual:** fifty-two, broad-shouldered, a salt-and-pepper beard, a flannel shirt with sawdust in its pockets, reading glasses on a cord, a wedding ring he still wears on a chain around his neck.
+**Visual:** sixteen, small, freckled, a mop of copper curls under a faded bakery cap, flour on her cut-offs, a bike with a basket and a playing card in the spokes.
 
-**Personality:** quiet, dry, patient, kind in actions rather than words. He says about eleven words a day, and makes them count. He's unexpectedly funny when he relaxes.
+**Personality:** sunny, nosy, fearless, talks a mile a minute, laughs at her own jokes before she finishes them. She's been waiting her whole life for something to happen on Halcyon. She attaches to the new girl within the hour.
 
-**History:** he was born on Halcyon and left for the navy. He came home, and married **Sara**, a schoolteacher who died four years ago. He has built wooden boats in his grandfather's shed ever since. He is **Eli Brennan's grandson**.
+**History:** she was born on the island and has never left it for more than a week. Her great-grandmother Marguerite runs Doucette's Bakery, and Jules works the counter. She was fifteen when Sadie vanished and adored her from a distance.
 
-**Motivation:** to keep his hands busy enough not to think.
+**Secret** (`DISCOVER_JULES_BASKET`): every morning at low tide, Marguerite sends Jules to the lighthouse point with a basket of bread and a thermos, "for the gulls". She leaves it on the flat rock at the causeway. It's always gone by the next morning, basket and all, and it comes back clean. Jules has started to suspect the gulls aren't eating soup. She hasn't said so to anyone, because she's scared of what it means for Marguerite.
 
-**Secret** (`DISCOVER_JONAH_LETTERS`): a shoebox of the letters Eli and Winnie wrote each other, found in his mother's closet. He's never read them all. He also kept the old *Winifred* dory seaworthy for forty years, because his grandfather built her.
+**Capability:** knows every shortcut, every back door, every islander's name and business, and when every shop opens. Brilliant lookout. Can talk her way past any adult who has known her since she was born, which is all of them.
 
-**Capability:** boats, tides, weather, carpentry, the sea-cave approach by water, the storm (pumps and roofs), and a workboat for the fog rescue.
+**Fear:** that she'll always be the kid nobody tells anything to.
 
-**Fear:** that liking someone again is a betrayal of Sara.
-
-**Bond** (`BOND_JONAH`): patient, honest moments: reading the letters together, the boatyard step, the storm's long night. **Romance is optional and PG**: glances, a jacket around her shoulders, a sail, one kiss if the player chooses it. It's never pushed. Friendship is a complete and honored path too.
+**Bond** (`BOND_JULES`): the player tells her the truth when it would be easier to leave her out, or has her back in front of the older kids. `RECRUIT_JULES` happens in Act I if the player lets her tag along.
 
 ---
 
-## MAYA: her daughter
+## PRIYA NAIR: the podcaster
 
-**Visual:** nineteen, the player's eyes, a new nose ring, a thrifted canvas jacket, calloused hands, sawdust in her duffel bag, and a pencil behind her ear.
+**Visual:** seventeen, tall, sharp black bob, oversized blazer over a bikini top at the beach, a professional microphone in a tote bag, three phones (she says two are "for work").
 
-**Personality:** funny, sharp, restless, loving, and terrified of disappointing her mother. She makes jokes when things get serious.
+**Personality:** ambitious, clever, funny, and a little ruthless. She talks like she's always recording, because she often is. Underneath, she's grieving, and she's the most frightened person on the island.
 
-**History:** a freshman at a good university in August. By October she'd left, three weeks ago, and taken a job at a boatyard in the city. She loves it. She hasn't told anyone.
+**History:** Sadie's best friend since third grade. Her podcast, *Missing Sadie*, has 400,000 listeners and a mainland agent. It's also the reason the whole country thinks Theo did it: she read the diary excerpts on air.
 
-**Motivation:** to figure out who she is without breaking her mother's heart.
+**Secret** (`DISCOVER_PRIYA_TEXT`): at **11:32 p.m.** on the bonfire night, Sadie texted her: *"don't look for me. i mean it."* Priya deleted it before anyone could see, told no one, and started the podcast a month later. She tells herself she deleted it because she was protecting Sadie. She knows it's also because it would have ended the story.
 
-**Secret** (`DISCOVER_MAYA_SECRET`): she's dropped out. She thought the divorce had "broken everything", and she couldn't be one more broken thing.
+**Capability:** a year of interviews, recordings and timelines; every rumor on the island; a following that can make anything go viral in an hour; and fearless questions.
 
-**Capability:** hands made for tools and boats, the courage of nineteen, and she makes friends with everyone. Jonah adores her in about four minutes.
+**Fear:** that she made money from her best friend's disappearance, and that it's the worst thing a person has ever done.
 
-**Fear:** her mother's face when she tells her.
-
-**Bond** (`BOND_MAYA`): the seawall talk (Act III), or its repair during the storm (Act IV): honesty, pride said out loud, and not making it about the player. `RECRUIT_MAYA` when she arrives and is welcomed in.
+**Bond** (`BOND_PRIYA`): she tells the player about the text, and the player doesn't use it against her. Or the player makes her choose the truth over the story, and she does. `RECRUIT_PRIYA` in Act I or II, when she asks the new girl to "help with an episode".
 
 ---
 
-## A note on endings
+## THEO REYES: the boy everyone blames
 
-No companion dies. Their "survival" is about where they end up: partnered, loved, launched, or gently let go. The epilogue fragments in `game/endings.md` depend on their bonds.
+**Visual:** eighteen, tall, sunburned, dark hair he cuts himself, a grease-stained T-shirt, a split lip that's always healing, and eyes that don't meet anyone's. Works at his grandfather's boatyard.
+
+**Personality:** quiet, guarded, bitterly funny when he trusts you, gentle with small things (a stray cat, his grandfather, a torn sail). He expects everyone to think the worst of him, because everyone does.
+
+**History:** Sadie's boyfriend. His father, **Tomás**, was the night watchman at the cannery when it burned three summers ago; he's in prison on the mainland for it. After the diary came out, Theo was questioned for nine hours, never charged, and never forgiven. Someone spray-painted *MURDERER* on the boatyard. He stayed anyway. He still believes his father is innocent.
+
+**Secret** (`DISCOVER_THEO_ALIBI`): on the bonfire night, Sadie asked him to meet her at the lighthouse at 11:15. He waited until after midnight. She never came. He told the police he was home, because "I was at the lighthouse where she disappeared" sounded like a confession. His grandfather covered for him.
+
+**Capability:** boats, engines, tides, the harbor at night, the cannery ruins (he knows them better than anyone), and the strength to pull someone out of the water.
+
+**Fear:** that Sadie is dead and it's his fault for not going to look for her.
+
+**Bond** (`BOND_THEO`): the player believes him, out loud, in front of someone who matters, or goes with him to the cannery where his father lost everything. `RECRUIT_THEO` in Act II, if she gets past his door. `SOCIAL_THEO_TRUST` is the moment he tells her where he really was. Romance is possible if the player wants it (PG-13: a bonfire, a kiss at most), never assumed.
+
+---
+
+## Reporting
+
+There is no death and no companion survival event in this game. Report bonds as they happen.

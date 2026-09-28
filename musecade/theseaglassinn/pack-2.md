@@ -1,173 +1,210 @@
-# THE SEA GLASS INN · PACK-2 · BUILD 1.0-160a2be
+# THE SEA GLASS INN · PACK-2 · BUILD 2.0-af190e6
 
-Bundle for: Act II begins (`REACH_ISLAND`). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
+Bundle for: Act II begins (`REACH_LIARS`). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 
 ===== FILE: acts/act-2.md =====
 
-# ACT II: THE ISLAND
+# ACT II: THE LIARS
 
-*The trail, the town, the neighbor, the cousin, and the daughter.* Target: 12 to 16 minutes, 8 to 12 decisions. Tuesday and Wednesday.
+*The podcast, the diary, the boy everyone blames, a mother's porch light, and a harbor log that remembers everything.* Target: 13 to 17 minutes, 9 to 12 decisions. Tuesday and Wednesday.
 
-**Route:** the green glass at Doucette's Bakery → learn how the council vote stands at the hardware store → meet Jonah at the boatyard → Lydia arrives → *the church and the library* (optional) → Maya arrives on Wednesday → *plan the cave for Thursday's low tide* → **Wednesday night around the kitchen table**.
+**Route:** Priya's studio and the diary → Theo at the boatyard → Lydia on the beach, and Sadie's room → the harbor office → *Aunt Bea's kitchen at 2 a.m.* (optional) → piece together the bonfire night → **Wednesday night: someone wants her gone**.
 
-Load `world/island.md` and `game/puzzles.md` now.
-
-This is the most open act. The sea glass trail gives shape, but let her wander. **Six phases** pass (Tuesday and Wednesday, three phases each), and she can't do everything. Keep time moving and say when a phase ends.
+Load `world/island.md`, `world/sadie.md` and `game/puzzles.md` now (they're in this pack). The player can take these scenes in any order. Push gently toward the next one when a scene is done.
 
 ---
 
-## 2.1 DOUCETTE'S BAKERY (the green glass)
+## 2.1 TUESDAY: THE STUDIO
 
-Warm, cinnamon-sweet, a bell over the door. **Marguerite Doucette** (82, flour to the elbows) runs it with her great-nephew **Luc**, who's twenty and sulky.
+**Priya's** garage, converted into a studio: foam on the walls, a ring light, and a **wall of string**: photos, timelines, maps, a year of obsession. She plays the new girl a clip from episode 1: the diary, read aloud in Priya's steady podcast voice.
 
-- Marguerite has the **green** sea glass, and the note that goes with it. She won't just hand them over. *"Winnie made me promise to give it to the right one. Tell me what you're doing here, and don't give me a speech."*
-- Winning her takes honesty, humor, rolling up her sleeves to help with the ferry-crowd rush, or real warmth. That's `SOCIAL_MARGUERITE_TRUST`, and she gives the green glass and note (dated **1972**: *"The first winter I nearly left. Marguerite fed me bread and told me the truth about myself. That's when this island became home."*).
-- She knows much more, and she's not telling yet (`DISCOVER_MARGUERITE_PROMISE` comes in Act III).
-- CARETAKER SEES: Marguerite is lonelier than she lets on. Winnie was her person.
+- **The diary:** twenty-two entries from last May and June, supposedly Sadie's, found by her father in her desk and "shared with the police". Theo grabbing her arm, Theo's temper, Theo's truck, *"If anything happens to me, it was Theo."* Priya has scans of every page. Run `game/puzzles.md`, *Puzzle 1: The Diary*. The player can start it here, and finish it whenever she's found enough.
+- **Priya is hiding something** (`DISCOVER_PRIYA_TEXT`). Tells: she won't talk about 11:30; her timeline wall has a gap between 11:10 and 11:50 that's been torn and re-pinned; she has a second, older phone she never uses. CHARMER, with trust 1+, or THE TELL on *"She never contacted anyone"*, gets her there. She breaks down. It's a big moment. The player can keep it secret, or not.
+- Priya has one of **Sadie's film rolls**, given to her two days before the bonfire, never developed: *"I couldn't. What if she's in it?"*
+- If the player hasn't recruited her yet, this is where Priya asks: `RECRUIT_PRIYA`.
 
-## 2.2 THE HARDWARE STORE AND THE COUNCIL
+## 2.2 THE BOY EVERYONE BLAMES
 
-**Hank Pruitt**, the hardware store owner and a council member, is chatty and helpful. He'll lend a ladder and gossip about everybody. On the council he's "still deciding".
+The **Reyes boatyard**. *MURDERER* still ghosts through the white paint on the shed. **Theo** (*Sadie's boyfriend, the one the diary blames*) is under a hull, and doesn't come out. **Grandpa Rafa** (*his grandfather, who owns the boatyard*) offers her a soda and a warning: *"He's had a year of people like you."*
 
-- **Tuesday evening, the public hearing** at the Grange Hall. The island argues about the bluff and the resort: jobs, ferries, the school, "people from away". Vale presents slides. The five council members are introduced (see `game/puzzles.md`, *Puzzle 2: Whose Vote Is Bought*). The vote is Saturday. She can speak, listen, or skip it.
-- It's the best place to start noticing who's lying about what.
+- **Getting past his door** takes more than one visit, or a move, or real honesty: telling him what she's doing and why, or telling him about her own rumor at home (her `backstory` matters here). Then `RECRUIT_THEO`.
+- **The amber sea glass** is taped inside the little dinghy ***SADIE*** in the back of the shed, under the thwart. Theo didn't know it was there. It hits him hard.
+- **Diary clue:** Theo sold his truck in **April**, to pay his father's appeal lawyer (Rafa has the receipt on the wall). The diary has him driving her home in it on June 12.
+- **His secret** (`DISCOVER_THEO_ALIBI`) comes with trust 2, or at the lighthouse at night, or with THE TELL on *"I was home"*: he was at the lighthouse from 11:15 to midnight, waiting for her, because she asked him to meet her there. `SOCIAL_THEO_TRUST` is the moment he tells her, if she believes him out loud.
+- He mentions his father, the cannery, the fire, once, and shuts down. (A thread for Act III.)
 
-## 2.3 JONAH'S BOATYARD
+## 2.3 THE PORCH LIGHT
 
-Next door to the inn, down the bluff steps: a shed smelling of cedar and varnish. **Jonah Reyes**, fifty-two, is a widower who builds wooden boats and says about eleven words a day. He comes over to fix the inn's dock, or the shutters, or the boiler, without being asked. It's how he talks. (`RECRUIT_JONAH` when she accepts his help and asks him in.)
+Sunset on the western beach, below the glass house on the cliff. **Lydia Vale** (*Sadie's mother*) walks the tide line every evening, barefoot, with a glass of wine.
 
-- In the corner of the shed is an old wooden dory, beautifully kept, with the name painted on her transom: ***WINIFRED***.
-- The **red** sea glass is set into the dory's bow as a tiny inlaid eye, if she looks closely (ARTIST SEES and ADVENTURER SEES it at once). The note, tucked in the dory's locker, is dated **1975**: *"He built a boat and named it after me before he'd said a word. Some men are like that. I married him in every way but on paper."*
-- Jonah's **shoebox of letters** (`DISCOVER_JONAH_LETTERS`): his grandfather **Eli Brennan**'s letters to Winnie, and hers back, which Jonah found when his mother died. He hasn't read them all. It felt like trespassing. He'll share them if trust is 1 or more. The letters, or the church plaque in 2.5, give `DISCOVER_ELI`: Eli and Winnie loved each other for three years, and Eli drowned in the great storm of February 1978.
-- Any romance is slow and PG, and entirely hers to choose. He's shy. He'll notice if she's cold and hand her his jacket without comment. He's also grieving his wife, **Sara**, who died four years ago, and he isn't sure he's allowed to like anyone.
+- She's polite and far away. The right question (about Sadie as a person, not a case; or about the porch light) or a true thing about Sadie gets her talking: `SOCIAL_LYDIA`. Then, very quietly, the go-bag (`DISCOVER_LYDIA_KNEW`), and the key to Sadie's room: *"He's in Boston until Wednesday. Find her before he does."*
+- **Sadie's room** (the house is empty; the cleaner's day off; Whispers +1 if she's seen going in, +2 if Vale's security camera catches her and she hasn't dealt with it):
+  - Her **real notebooks** from school, full of doodles, crossings-out, five different pens, coffee rings. The diary scans are one pen, one pressure, no mistakes. (A diary clue, and PHOTOGRAPHER SEES it at once.)
+  - **The red sea glass**, inside a hollowed-out paperback of *Rebecca* on her shelf. Note: *"I was fourteen when I found out my dad only smiles with his teeth. I started keeping things where the sea keeps them."*
+  - Her **camera bag**: the camera is gone (it went with the go-bag), but a **film roll** is sewn into the lining.
+  - A photo booth strip of Sadie and Theo at twelve, in the dinghy. On the back, in her looping hand: *"the Chapel. always."*
+- **Tension:** if Whispers is 3 or more, Vale's car comes up the drive early. Out the window, down the cliff path, or bluff it (a set of choices, one roll).
 
-## 2.4 LYDIA
+## 2.4 THE HARBOR OFFICE
 
-Tuesday's afternoon ferry brings **Lydia Hale**: the player's cousin, fifty, immaculate, brittle, with a rolling suitcase that works and a letter from her lawyer. *"Aunt Winnie promised me this place. I have emails."*
+**Walt Sumner** (*the harbormaster, grumpy and honest*) keeps everything on paper. He'll show a polite kid the **harbor log** for last summer's bonfire night if she asks right (Bea's niece helps):
 
-- She's staying at the inn. Of course she is.
-- **Her secret** (`DISCOVER_LYDIA_TROUBLE`): her husband left her in June, the house is in foreclosure, and she has been quietly talking to Vale about selling him her "claim". She is frightened, not evil. Tells: a phone call she takes on the porch in tears; a foreclosure notice sticking out of her bag (STRATEGIST SEES); flinching at the word *mortgage* (CARETAKER SEES).
-- Handled with cruelty, she digs in and helps Vale. Handled with grace, she softens, eventually (Act III and IV).
+- **Low tide 11:40 p.m.** High tide 5:50 a.m.
+- ***Second Wind* out 12:20 a.m., "no lights, P.V.?"**, in Walt's handwriting. In at 3:10 a.m.
+- **The boat registry:** Hank Pruitt's boat, *Miss Behavin'*, had a $41,000 loan. Paid off in full on July 30 last year by **Cedar Point Holdings**, whose address is Vale's lawyer's office (`DISCOVER_HANK_PAID` if she connects it: a Sleuth sees it at once; anyone else needs the lawyer's name, which is on Vale's yacht club letter if she took the job, or in the Herald on Priya's wall).
+- **Hank's report:** the sandal was found at 7:10 a.m. *"on a dry rock below the lighthouse"*. (The timeline's key clue: `game/puzzles.md`, *Puzzle 2*.)
 
-## 2.5 THE CHURCH AND THE LIBRARY (optional)
+## 2.5 THE BONFIRE NIGHT
 
-- **St. Brendan's by the Sea:** a memorial board for islanders lost at sea. **ELI BRENNAN · FEB 7 1978** (`DISCOVER_ELI` if not yet). Under the board, behind a loose brass plate, is the **white** sea glass and note dated **1978**: *"February. The storm took him and the Mary Ellen and two other boats. I stood at the lighthouse all night and the light was not enough."* The church's warden, **Rev. Ada Lin**, is also on the council.
-- **The Halcyon Free Library:** **Ruth Kimura**, the librarian (70, a sharp gossip). A 1981 art magazine in the stacks has an article titled *"Where Did W. Marlowe Go?"* with one blurry photograph of a young woman at a gallery opening, face half turned. ARTIST SEES Winnie's hands in the photo. Anyone with the lobby seascape in mind might wonder (a step toward `DISCOVER_MARLOWE`, in Act III).
-- **Vale** spends a lot of time at the library this week.
+Run `game/puzzles.md`, *Puzzle 2: The Bonfire Night*. It spans Acts II and III: the pieces come from Priya's recordings, Mason's stories (Jules can get them: *"Mason saves everything, he's that guy"*), the harbor log, Hank's report, Theo's secret and Sadie's film. Keep a visible list for the player if she asks (`RECAP`). She can solve it any time before the storm.
 
-## 2.6 WEDNESDAY: MAYA
+## 2.6 AUNT BEA'S KITCHEN (optional, but it matters)
 
-Wednesday's afternoon ferry brings the player's daughter **Maya**, nineteen, with a duffel bag, a nose ring she didn't have in August, and a too-bright smile. *"Surprise! Fall break!"* It isn't fall break. (`RECRUIT_MAYA` when she's welcomed in.)
-
-- **Her secret** (`DISCOVER_MAYA_SECRET`): she left college three weeks ago. She has been working at a boatyard in the city, and she loves it, and she's terrified of telling her mother. She thought everyone would see her as a failure after the divorce "broke everything". Tells: calluses on her hands, sawdust in her bag, and dodging every question about classes (CARETAKER SEES it immediately).
-- Maya wanders into Jonah's shed within an hour, and they get on alarmingly well.
-
-## 2.7 THE CAVE (possible on Thursday)
-
-The lobby tide clock stopped at 4:10, the seascape's rocks, and the harbor's tide board: see `game/puzzles.md`, *Puzzle 1: Low Water at Ten Past Four*. The cave can be reached at Thursday's afternoon low tide (Act III). Planning it now is good play.
+2 a.m., Tuesday or Wednesday. Bea can't sleep, and neither can she. Cocoa. If the player is honest with her about what she's doing (the note, the glass, the lighthouse), Bea tells her the worst thing she's ever done: Sadie came to this kitchen and said she was scared of her father, and Bea told Hank (`DISCOVER_BEA_TOLD`, `SOCIAL_BEA_TRUTH`). *"I did what you're supposed to do. And a week later she was gone."* From here on, Bea covers for her: Whispers −1, and she gets the car keys.
 
 ## Wednesday night
 
-Four people and some guests around Bea's kitchen table: Lydia, Maya, Bea, perhaps Jonah. Somebody laughs until they cry. **Record `REACH_LETTERS`** (it's sent with everything else at the end) and fetch the Act III pack.
+Back at the inn after dark. Her bike's tires are slashed. Under her door, a typed note on the yacht club's letterhead, unsigned: *"Summers here are short. Go home."* Whispers +1. If she took Vale's job, the note instead says: *"Glad you're on the team."* Either way, somebody's watching.
+
+**Wednesday night ends Act II.** Record `REACH_DARKROOM` (it's sent with everything else at the end) and fetch the Act III pack.
 
 ---
 
 ## Exceptions
 
-- **She accepts Vale's offer now and leaves on the next ferry:** `THE WIDE WORLD` (from Act II).
-- **She ignores the trail entirely:** fine. The storm will reveal the room anyway (Act IV). She'll just understand less of what she's looking at.
+- **She confronts Vale directly:** he's hurt, patient, and devastating: he calls Bea, gently, about "the stress the poor girl is under". Whispers +2. Bea is forced to ground her for a day unless she's already on her side.
+- **She accepts Vale's scholarship offer to drop it:** `THE DEAL` (from Act II). Play one more scene so it lands.
+- **She decides it's not her business and has a normal summer:** `SUMMER'S END` (from Act II).
 
 ===== FILE: world/island.md =====
 
 # THE SEA GLASS INN: Halcyon Island
 
-A small island, an hour by ferry off a northern coast. Four hundred year-round residents, lobster boats, one school, one church, one bakery, and a fierce opinion about everything. Fictional.
+A small island an hour by ferry off a northern coast. Four hundred year-round people, three thousand in summer, lobster boats, one school, one church, one bakery, and a rumor for every occasion. Fictional.
 
-- **The ferry landing and harbor:** the *Halcyon Belle* runs twice a day (morning and afternoon), and the last one of the week goes Sunday. The harbor's seawall is where people sit to think. A **tide board** at the harbormaster's shack lists this week's tides, including *THU LOW 4:12 PM*.
-- **Halcyon General & Hardware:** Hank Pruitt's store. Everything from rope to gossip.
-- **Doucette's Bakery:** Marguerite's. Cinnamon, a bell over the door, and the best bread on the coast.
-- **The Grange Hall:** community suppers, council meetings, and Saturday's vote. Festival bunting everywhere.
-- **The registry of deeds:** one room in the town office, open until three. Deeds, easements and options. Hank's option is on file under *Bluff Holdings LLC*.
-- **The Halcyon Free Library:** Ruth Kimura, a fireplace, and a 1981 art magazine with *"Where Did W. Marlowe Go?"*
-- **St. Brendan's by the Sea:** a white clapboard church, with a **memorial board** for islanders lost at sea (ELI BRENNAN · FEB 7 1978) and a loose brass plate beneath it.
-- **The fish co-op:** Deb Coyle, lobster crates, and gulls.
-- **The Sea Glass Inn:** a shingled Victorian on the northern bluff. Twelve rooms, three usable. A lobby with a **tide clock stopped at 4:10** and a large unsigned **seascape** of the bluff's rocks at low tide. Bea's kitchen. The **widow's walk**, with its round window of **seven empty leaded panes** around a center boss engraved *FROM THE DAWN, THE WAY THE LIGHT GOES*. The **attic**, cedar-paneled, with a hidden door into the sealed room. A cellar that floods.
-- **Jonah's boatyard:** down the bluff steps beside the inn. A cedar-smelling shed, the old dory *Winifred* (with the red glass in her bow), and a workboat.
-- **The bluff and the survey stakes:** fresh orange survey stakes on Hank's lot next to the inn, driven last week.
-- **The lighthouse on the point:** dark since 1978. The keeper's cottage is boarded up. The lamp room holds the great dusty lens (and the cobalt glass). A generator shed behind it was recently serviced (by Winnie).
-- **The sea cave:** under the bluff below the inn, reachable on foot only near low tide, across the rocks painted in the lobby seascape. There's a dry chamber above the tide line: **Winnie's studio**.
-- **The Sea Glass Festival:** Saturday on the harbor green. A brass band, lobster rolls, a jewelry tent, sandcastles, and the rarest-glass contest.
+- **The harbor and ferry landing:** the *Halcyon Belle* runs twice a day. The **harbormaster's office** (Walt Sumner) keeps the **tide board**, the **harbor log** (every boat in and out, by hand, since 1962) and the **boat registry** (who owns what, and who holds the loan).
+- **The Sea Glass Inn:** a shingled Victorian on the bluff above the harbor, eleven rooms, Aunt Bea's kitchen, a porch that sags, and a jar of sea glass by the front desk. Her room is under the eaves, with a view of the dead lighthouse and Gull Rock. The cellar has an **old darkroom** from when the inn had a photography club, with trays, a red bulb and chemicals Bea keeps "for the smell of 1985".
+- **Doucette's Bakery:** Marguerite's. Everyone comes through between 8 and 10. Sadie's bench outside, with its brass plaque.
+- **The cove:** where the summer kids have bonfires. The Ashfords' speaker. A lifeguard chair.
+- **The dead lighthouse:** on the point, dark since 1998. The lamp room holds a **seven-sided brass lamp housing with seven empty slots** and a **harbor chart painted on the curved wall** (1930s, with every pier, rock and piling numbered).
+- **The causeway:** a line of black rocks from the point to **Gull Rock**, walkable for about ninety minutes either side of low tide. It floods fast, and the current between the rocks at mid-tide is strong enough to drown a grown man.
+- **Gull Rock:** a small islet off the point, and the **old keeper's cottage**, roofless from the outside. Inside the back two rooms, rebuilt with tarps and driftwood, there's a woodstove, a cot, two hundred library books, and a girl who's been dead for a year.
+- **The sea cave ("the Chapel"):** under the lighthouse point on the ocean side, reachable only at low tide across the rocks. A high dry ledge at the back, where Sadie and Theo used to go. It floods to the ceiling at high tide.
+- **The Reyes boatyard:** Grandpa Rafa and Theo. A shed that smells of cedar and diesel, *MURDERER* painted over but still showing through, and a little sailing dinghy named ***SADIE*** that Theo built her when they were twelve.
+- **The Vale house:** glass and cedar on the western cliff, with its own dock and the boat *Second Wind*. Lydia's porch light is always on.
+- **The cannery ruins:** the burned-out **Halcyon Cannery** on the south shore, fenced off, VALE COASTAL RESORT · COMING SOON on the fence. Its long wooden pier half collapsed, with numbered pilings still standing like black teeth. You can see it from the Vale house.
+- **The Grange Hall and the harbor green:** the Sea Glass Festival on Saturday, and the **anniversary vigil and bonfire at 10 p.m.** on the beach below the green.
+- **Tides this week** (on the fridge and the harbor board): low tide about **7:40 a.m. and 8:05 p.m. on Monday**, about 50 minutes later each day: **Thursday about 10:10 a.m. and 10:35 p.m.** (new moon, extra low), **Friday about 11 a.m. and 11:25 p.m.**, **Saturday about 11:50 a.m. and midnight**.
+- **Last summer's bonfire night** (from the harbor log): low tide at **11:40 p.m.**, high tide just before 6 a.m.
+
+===== FILE: world/sadie.md =====
+
+# THE SEA GLASS INN: What Really Happened
+
+For the storyteller only. Reveal it through evidence and people, never as a summary.
+
+## Three summers ago: the cannery fire
+- Preston Vale's resort plan needed the cannery land, and the cannery's owners wouldn't sell. On an August night, Vale took *Second Wind* round to the cannery pier, went inside with a gas can, and left. The fire took the whole building. The insurance paid, the owners sold, and the watchman, **Tomás Reyes**, was blamed for a space heater and took a plea deal to avoid a longer sentence. He's still in prison on the mainland.
+- **Sadie (fifteen)** was out on the south shore that night shooting the stars with her new digital camera. She filmed the fire starting, and her father's boat at the pier, and her father walking back down it with a can in his hand. She didn't understand what she'd seen for a year.
+
+## Last summer: the plan
+- At sixteen, she understood. She told no one but Aunt Bea, in the inn's kitchen, that she was scared of her father. Bea told Deputy Hank. Hank told Vale. Vale took her phone "for her own good" and started driving her everywhere.
+- Sadie decided to disappear, and to make it stick. She hid the camera's memory card in a jar sealed with candle wax, tied inside the **seventh piling** of the cannery pier. She wrote a fake diary about Theo, in one weekend, and left it where her father would find it. She asked Marguerite for help, and Marguerite said yes.
+
+## The bonfire night, minute by minute (the answer to the timeline)
+| Time | What actually happened | What the evidence shows |
+|---|---|---|
+| 10:40 | Sadie at the bonfire, laughing, in a white sundress | Mason's first story (10:41) |
+| 11:00 | St. Brendan's bell rings eleven | Priya's recording: the bell under the music |
+| 11:10 | Sadie leaves the bonfire alone, walking toward the point, carrying one sandal | Mason's second story (11:12): Sadie in the background, alone, heading for the point. Sadie's last roll: the bonfire from behind, shot from the path |
+| 11:15 | Theo arrives at the lighthouse, as she asked. He waits | His secret; the lighthouse door's new chain (he broke the old one) |
+| 11:20 | Sadie goes round the ocean side of the point, avoiding the lighthouse, and waits at the causeway | Her last roll: a frame of the causeway rocks, still wet |
+| 11:32 | Sadie texts Priya from the causeway: *"don't look for me. i mean it."* | Priya's secret; the phone company records (if the player gets them from Lydia) |
+| 11:40 | Low tide. Sadie walks across the causeway to Gull Rock | The harbor log: low tide 11:40 |
+| 11:50 | Mason's third story: the bonfire, no Sadie | Mason's third story |
+| 12:05 | Theo gives up and goes home | Grandpa Rafa |
+| 12:20 | *Second Wind* leaves the Vale dock without lights | The harbor log (in Walt's hand: *"no lights, P.V.?"*). A red herring: Vale went looking for Sadie on the water, because he suspected |
+| 5:50 a.m. | High tide | |
+| 7:10 a.m. | A jogger finds **one sandal on a dry rock** below the lighthouse, **above the high-tide line** | Hank's report. **The key clue:** if Sadie had gone into the water at 11:30, the sandal would have been under water at 5:50 and washed away. It was placed there *after* high tide, by Marguerite at dawn, as Sadie asked |
+
+**The solution:** nobody took Sadie. She walked out to Gull Rock at low tide, on her own, and someone planted the sandal the next morning.
+
+## This year
+- Sadie has lived on Gull Rock for a year: Marguerite's bread, library books, a woodstove, a lot of thinking. She's changed: tougher, stranger, lonelier, and still certain she was right.
+- She's watched the new girl since the ferry. The new girl is an outsider, has no reason to lie, and (Sadie heard Bea tell Marguerite) was sent away because of a rumor that wasn't true. Sadie thinks that makes her perfect. She lays the sea glass trail to test her and to lead her to the proof, because she's too afraid to go near the cannery pier herself: it's in full view of her father's house.
+- **Her plan for the bonfire:** walk into the vigil alive, in front of the whole island and Priya's microphone, hold up the proof, and accuse her father. She intends to say that she ran because her father *and* Theo frightened her. She has not decided to tell the truth about the diary. That's the player's fight.
+
+## The seven pieces and their notes (in age order)
+| Piece | Where | Note |
+|---|---|---|
+| WHITE (6) | the lamp room, Act I | *"I was six the first time I climbed up here. Dad said the light was dead. I said lights don't die. They wait."* |
+| GREEN (9) | Sadie's bench at the bakery, Act I | *"I was nine when Marguerite taught me to braid bread. She said everything strong is three weak things twisted together."* |
+| AMBER (12) | taped inside the dinghy *SADIE* at the boatyard, Act II | *"I was twelve when a boy built me a boat, and I pretended not to cry."* |
+| RED (14) | Sadie's bedroom, inside a hollowed-out copy of *Rebecca*, Act II | *"I was fourteen when I found out my dad only smiles with his teeth. I started keeping things where the sea keeps them."* (a pointer to the cave) |
+| VIOLET (15) | the tin box in the sea cave, Act III | *"I was fifteen when I watched the cannery burn. I was holding a camera. I didn't understand for a year."* |
+| COBALT (17) | from Sadie's own hand, Act III or IV | *"I was seventeen when I died. It was the bravest thing I ever did. It wasn't the kindest."* |
+| BLUE (18) | her pillow, the first night | *"I'm eighteen now. They're all lying. Start where the light used to be."* |
 
 ===== FILE: game/puzzles.md =====
 
 # THE SEA GLASS INN: Puzzles
 
-Three puzzles: environmental (the tide), social (the council) and historical (the sea glass window). Never give the answer. Answer questions truthfully, from what she could notice. Accept any solution that works. Dice never solve puzzles. Hints follow `core/dm-core.md` §8.
+Three puzzles: textual (the diary), social (the bonfire night) and environmental (the lamp room). Never give the answer. Answer questions truthfully, from what she could notice. Accept any solution that works. Dice never solve puzzles. Hints follow `core/dm-core.md` §8, and every puzzle has a fallback (§14).
 
 ---
 
-## PUZZLE 1: LOW WATER AT TEN PAST FOUR (environmental · Act II–III)
+## PUZZLE 1: THE DIARY (Act II)
 
-**The question:** how to reach Winnie's studio in the sea cave under the bluff.
+**The question:** is the diary real?
 
-**The answer:** on foot across the rocks at **Thursday's afternoon low tide (about 4:10)**, following the route painted in the lobby seascape: a line of flat grey stones, a rock shaped like a sleeping dog, and a split boulder. The cave's mouth is dry for about forty minutes.
+**The answer:** no. It was written all at once, recently, by someone who knew the island well but not every detail: **Sadie herself**.
 
-| Clue | Where | What it gives |
+**The impossibilities** (each one is found, never told):
+
+| Clue | Where | What it shows |
 |---|---|---|
-| The lobby **tide clock**, deliberately stopped at **4:10** | the inn | a time that matters |
-| The **tide board** at the harbormaster's shack: *THU LOW 4:12 PM* | the harbor | which day fits |
-| The big **seascape** over the fireplace: the bluff's rocks at low tide, painted with unusual care | the inn lobby | the route (Winnie painted her own path) |
-| **Tide lines** on the bluff: a band of barnacles and a darker band of weed high up the cliff | from the bluff steps | the cave floods at high tide, so go at low |
-| Jonah: *"Nobody goes under the north bluff. It floods fast."* | the boatyard | danger, and that there's something there |
-| ARTIST at Eye rank II: the seascape's rocks read as a map | the lobby | a direct path |
+| *"June 12: Theo drove me home in his truck and wouldn't let me out"* | the diary | Theo **sold the truck in April** (Rafa's receipt on the boatyard wall, 2.2) |
+| *"May 30: the ferry was cancelled for the storm, so I was stuck with him all day"* | the diary | the **harbor log** shows the *Halcyon Belle* ran both trips on May 30, in calm weather (2.4) |
+| One pen, one pressure, no crossings-out, no coffee rings, twenty-two entries | the scans | Sadie's **real school notebooks** have five pens, doodles and mess (2.3). A diary kept over six weeks doesn't look like this |
+| *"The Brooding One was in a mood again"* | the diary | that's **Priya's** nickname for Theo, from the podcast. Sadie never called him that (Priya, if asked) |
+| The looping `g` with a flick at the end | the diary scans | it's the **same hand as the sea glass notes**. Sadie wrote it. (SLEUTH or PHOTOGRAPHER SEES it once she has two notes and the scans side by side) |
 
-- **ADVENTURER SEES** the barnacle line and the cave mouth from the bluff, and knows at once that it's a low-tide place.
-- **Alternatives:** Jonah's workboat at mid-tide (Risky, needs him along); swimming it (Desperate, freezing, costs composure); abseiling from the bluff (Adventurer).
-- **Going at the wrong time:** the tide turns, and she's stranded on a rock ledge until Jonah or Maya fetches her, costing a phase and composure. It's never lethal.
-- **Solved** (she reached the cave by reasoning about the tide): `PUZZLE_TIDE_SOLVED`, plus `PUZZLE_TIDE_NO_HINT` if unaided. The amber glass, the studio and the Marlowe evidence are inside.
+- **Solved:** name **two** impossibilities and conclude the diary is fake: `PUZZLE_DIARY_SOLVED`, plus `_NO_HINT` if unaided, plus `DISCOVER_DIARY_FAKE`. Realizing Sadie wrote it herself isn't required, but it's the best version.
+- **Fallback** (after the third hint): Priya finds the ferry log clue herself, too late for her show, and says it out loud. No puzzle events; `DISCOVER_DIARY_FAKE` still counts.
 
 ---
 
-## PUZZLE 2: WHOSE VOTE IS BOUGHT (social · Act III–V)
+## PUZZLE 2: THE BONFIRE NIGHT (Acts II–III)
 
-**The question:** which council member is secretly in Preston Vale's pocket?
+**The question:** what happened to Sadie between 11:10 and midnight?
 
-**The answer:** **Hank Pruitt**, through a paid option on his land beside the inn, filed under *Bluff Holdings LLC*.
+**The answer:** nobody took her. She walked to the causeway on her own and crossed to Gull Rock at low tide (11:40). The sandal was planted the next morning. (Full timeline in `world/sadie.md`.)
 
-**The suspects:**
+**The pieces:**
+1. **Mason's three stories** (Jules gets them): 10:41 Sadie at the fire; 11:12 Sadie in the background, alone, walking toward the point; 11:50 no Sadie.
+2. **Priya's recording:** the church bell ringing eleven under the music, which syncs the clips. And, if she confesses, the **11:32 text**: *"don't look for me."*
+3. **Theo's alibi:** he was at the lighthouse from 11:15 to 12:05 and never saw her. So she didn't go to the lighthouse.
+4. **Sadie's last roll:** the causeway rocks, still wet, in the dark.
+5. **The harbor log:** low tide **11:40 p.m.**; high tide **5:50 a.m.**
+6. **Hank's report:** the sandal was found at 7:10 a.m. **on a dry rock**, below the lighthouse, above the high-tide line. If she'd gone into the sea at 11:30, it would have been underwater at 5:50 and washed away.
+7. **The red herring:** *Second Wind* out at 12:20 without lights. (Vale searching the water. It looks like guilt. It isn't this kind.)
 
-| Member | What looks suspicious | What's really going on |
-|---|---|---|
-| **Hank Pruitt** | "Undecided". Friendly to everyone. | Vale's option on his land triples its value if the rezoning passes. **Compromised.** |
-| **Deb Coyle** | Seen dining with Vale at the harbor restaurant. Votes *for*. | Pitching him a seafood contract. Ambition, not a bribe. |
-| **Rev. Ada Lin** | Evasive about her future. "Undecided". | Quietly retiring to be near her grandchildren. Honest, and movable by a great speech. |
-| **Walt Sutter** | Loudly *for*, and Vale shook his hand at the hearing. | Genuinely believes in the jobs. Honest. |
-| **June Tate** | (the chair) *against*. | Honest. |
-
-**The clues pointing to Hank:**
-1. **Fresh orange survey stakes** on Hank's lot beside the inn, driven last week (on the bluff).
-2. **The registry of deeds:** an *option agreement* on Hank's parcel, filed three weeks ago by *Bluff Holdings LLC*. STRATEGIST SEES whose LLC that is, from the letterhead in Vale's offer.
-3. Vale's silver rental car parked **behind the hardware store** after closing (anyone out walking at night).
-4. Hank's wife **Carol** at the festival planning meeting: *"once we're in Florida…"* (CARETAKER SEES the slip).
-5. Hank ordering **granite countertop samples** well above his means (the hardware store counter).
-6. Hank can't meet her eyes when the bluff comes up (CARETAKER and anyone paying attention).
-
-- **Solved:** name Hank with at least **two** real clues, reasoned together, and report `PUZZLE_COUNCIL_SOLVED` (plus `_NO_HINT`). What she does with it (exposing him at the vote, a private word that makes him recuse, or mercy) is her choice (`acts/act-5.md` 5.3).
-- **Wrong accusations:** accusing Deb publicly humiliates an honest woman, and the co-op turns against the inn. Accusing Ada wounds her and loses the one persuadable vote. Accusing Walt makes the harbor furious. Each one sets `cruel_word` if it was cruel.
+- **Solved:** the player works out that Sadie **left on her own and crossed to Gull Rock**, backed by at least **three** pieces (the dry sandal and the low tide are the heart of it): `PUZZLE_TIMELINE_SOLVED`, plus `_NO_HINT` if unaided.
+- **Wrong answers:** blaming Vale for taking her (he didn't), or Theo (he didn't), costs nothing but time, unless she says it out loud in town (Whispers +1) or to Theo (trust −2).
+- **Fallback:** the "SPRING" roll (3.3) proves Sadie is alive anyway. No puzzle events.
 
 ---
 
-## PUZZLE 3: SEVEN COLORS OF WINNIE (historical · Act III–IV)
+## PUZZLE 3: SEVEN COLORS (Act IV)
 
-**The question:** how to open the sealed room: in what order do the seven pieces of sea glass go into the widow's walk window?
+**The question:** how do the seven pieces go in the lamp room's seven slots, and what does the light show?
 
-**The window:** a round frame with seven empty leaded panes around a center boss. The boss is engraved ***FROM THE DAWN, THE WAY THE LIGHT GOES***. That means: start at the top (the east-facing pane, where the dawn comes in) and go **clockwise**, the way the sun moves. Each pane has a small spring catch. Set all seven in the right order, and the attic paneling below unlatches with a click.
+**The mechanism** (observed, not told):
+- The brass lamp housing has **seven slots** in a ring. One slot has a tiny engraved **1** under it (the keeper's first position, facing the harbor).
+- Each note gives Sadie's **age** when it happened: 6, 9, 12, 14, 15, 17, 18. The blue note says *"Start where the light used to be"*, and the white note says *"I was six the first time I climbed up here"*: the lamp room is where her story starts.
+- With a lamp inside, each piece throws a colored beam onto the **harbor chart** painted on the wall. In the wrong order, the beams scatter. In the right one, they converge.
 
-**The answer:** clockwise from the top, in the order of Winnie's life: **blue (1971) · green (1972) · amber (1974) · red (1975) · white (Feb 1978) · violet (spring 1978) · cobalt (2026)**.
-
-**The clues:** every piece comes with a dated note (`world/winnie.md`). The only subtle step is **white before violet**, since both are 1978: *February* (the storm) before *that spring* (the inn). The cobalt note says *"This is the last piece, and it's in the first place"*, so it goes last in the window, even though it was found first.
-
-- **Missing pieces:** the window needs all seven. If she's short, the storm opens the room anyway (Act IV), without `PUZZLE_SEAGLASS_SOLVED` or `ACH_FIRST_LIGHT`.
-- **Wrong order:** nothing happens, except that the colored light falls pretty and wrong on the floor. She can try again freely. Hint after three attempts: the dates.
-- **Alternatives:** prying the paneling open by force works, but it cracks the room's cedar and damages nothing else. It's a crowbar, not a solution: no puzzle event.
-- **Solved:** `PUZZLE_SEAGLASS_SOLVED`, `DISCOVER_HIDDEN_ROOM`, plus `PUZZLE_SEAGLASS_NO_HINT` if unaided, and at game over `ACH_FIRST_LIGHT` (if before the storm).
+- **Solution:** set the pieces **in order of her age**, starting at slot 1 and going round: **white (6) · green (9) · amber (12) · red (14) · violet (15) · cobalt (17) · blue (18)**. The beams cross in a point of white light on the chart: **CANNERY PIER · PILING 7**.
+- **Solved:** `PUZZLE_SEAGLASS_SOLVED`, plus `_NO_HINT` if unaided. Report `ACH_EVERY_PIECE` at game over if all seven were found by her (the cobalt counts: Sadie gives it).
+- **Missing pieces:** with five or six, the point of light is a smear across the south shore: "the cannery pier", but not which piling. She can search the pier (a Hard roll, DC 15, and an hour in the storm), or go back for the missing pieces.
+- **Fallback** (after the third hint): Sadie tells her (`acts/act-4.md`, *Exceptions*). No puzzle events.

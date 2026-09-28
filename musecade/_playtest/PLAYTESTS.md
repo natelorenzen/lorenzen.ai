@@ -134,23 +134,23 @@ These depend on the agent, and must be checked in a real Muse conversation:
 
 ---
 
-# The Sea Glass Inn (Game 003): Simulated Playtests
+# The Sea Glass Inn (Game 003, v2.0): Simulated Playtests
 
-`node musecade/_playtest/replay-seaglassinn.mjs` replays each trace through the real scoring rules. This game has no death, so the fourth trace is the **retreat** run (leaving early).
+v2.0 recasts the game as a teen summer thriller. `node musecade/_playtest/replay-seaglassinn.mjs` replays each trace through the real scoring rules. This game has no death, so the fourth trace is the **retreat** run (going home early).
 
 | Run | Name · Path | Ending | Score | Secrets |
 |---|---|---|---|---|
-| STANDARD | NORA · Caretaker | THE KEEPER | ~8,750 | 9/11 |
-| CHAOTIC | ROX · Adventurer | THE WIDE WORLD (Act II) | 1,950 | 1/11 |
-| CLEVER | IVY · Artist | MARLOWE HOUSE | ~15,900 | 11/11 |
-| RETREAT | JO · Strategist | THE LAST FERRY (Act II) | 1,100 | 1/11 |
+| STANDARD | NORA · Sleuth | THE WHOLE TRUTH | 8,800 | 7/11 |
+| CHAOTIC | ROX · Athlete | THE DEAL (Act III) | 2,650 | 1/11 |
+| CLEVER | IVY · Photographer | THE SEVENTH PIECE (hidden) | 16,650 | 11/11 |
+| RETREAT | JO · Charmer | THE LAST FERRY (Act II) | 1,150 | 1/11 |
 
-- **STANDARD:** the ferry squall (Marguerite and the cake), Bea's secret ledger, the lighthouse and the cobalt glass. Marguerite is won over at the bakery rush. Jonah's shed, the *Winifred*, the letters, and Lydia's foreclosure notice. Maya arrives. The tide cave is solved with one nudge, which gives Marlowe. The fog rescue, then the seawall talk. The storm reveals the room. The long night brings peace with Lydia and a partnership with Bea. The speech at the vote. She keeps the inn.
-- **CHAOTIC:** Rox tries to sail to the mainland on day one (Jonah stops her), squeezes Vale for better terms (`SOCIAL_VALE_TERMS`), learns Vale knows about "the Marlowe", and sells on Tuesday out of spite at the art world. THE WIDE WORLD from Act II, which verifies early endings and a deliberately short run.
-- **CLEVER:** the Artist's Eye reaches rank III in the cave. The council puzzle is solved from the survey stakes and the registry of deeds. The window opens before the storm (FIRST LIGHT). She relights the lighthouse in the nor'easter. She gives the painting to the island.
-- **RETREAT:** Jo reads the will, finds Lydia's foreclosure, feels the weight of everything, and takes Tuesday's ferry. THE LAST FERRY, with the "came back years later" epilogue.
+- **STANDARD:** the bonfire chase, the note on the pillow, Jules and Priya at the bakery. The diary falls apart on Theo's April truck sale and the calm-weather ferry log. Lydia hands over Sadie's room key. The Chapel floods, the SPRING roll proves Sadie is alive, and Theo shows her the cannery. Sadie comes to her at dawn on Friday. The lamp room points to piling 7, and the jar comes out of the pier in the storm. At the bonfire she exposes both the fire and the hoax.
+- **CHAOTIC:** Rox charms Vale at the inn, runs the island with Jules, swims to Gull Rock on Thursday night (NIGHT SWIM) and finds only an empty cot. Offered the scholarship with Whispers at 4, she takes it.
+- **CLEVER:** Priya confesses the 11:32 text on day two. The Photographer develops four rolls and reads the whole bonfire night off the dry sandal and the tide. She crosses to Gull Rock on the new moon (FIRST LIGHT), gets Sadie to say what she did to Theo, and at the vigil Sadie tells it all herself, with Theo there.
+- **RETREAT:** Jo joins Priya's podcast on Monday and learns about the text. Whispers hits 5 on Tuesday, and she calls her mom for the Wednesday ferry.
 
-**Verified:** no-death fate enforcement (`died:true` is refused), the tide timing, the order of the white and violet glass, the storm fallback for the room, and that the final choice is never offered as a menu. **Fixed:** near-certain secrets (the room, the painting) were worth too much, so the standard run scored 9,300; they've been rebalanced.
+**Verified:** no-death fate enforcement (`died:true` is refused); the timeline answer is consistent across `world/sadie.md`, `game/puzzles.md` and the tide table; the sea glass age order in the notes matches the lamp-room solution; Sadie's face is never shown in images before she's found; and the final choice is never offered as a menu.
 
 ---
 

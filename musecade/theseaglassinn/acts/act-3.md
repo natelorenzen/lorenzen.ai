@@ -1,35 +1,35 @@
-# ACT III: THE LETTERS
+# ACT III: THE DARKROOM
 
-*Who Winnie really was, the cave, the fog, and the truth from her daughter.* Target: 12 to 16 minutes, 8 to 11 decisions. Thursday.
+*Film in a red-lit cellar, a cave that floods, a photograph that can't exist, and a burned cannery.* Target: 12 to 16 minutes, 8 to 11 decisions. Thursday: the new moon.
 
-**Route:** read Eli's letters → reach the cave at 4:10 low tide → Marguerite's story → legwork on whose council vote is bought → **find Maya in the fog** → the seawall talk.
+**Route:** develop Sadie's film → the sea cave at morning low tide → the photograph that changes everything → the cannery ruins with Theo → solve the bonfire night → **Thursday night: the causeway, and Gull Rock**.
 
-Load `world/winnie.md` and `game/encounters.md` now.
+Load `game/encounters.md` now (it's in this pack).
 
 ---
 
-## 3.1 MORNING: ELI'S LETTERS
+## 3.1 MORNING: THE DARKROOM
 
-If Jonah has shared the shoebox, they read the letters together at Bea's kitchen table, or on the boatyard's sunny step. They're funny, tender and ordinary: fish prices, a fight about a dog, *"come home before the weather turns"*. Winnie signs a few of them with a tiny painted **W.M.**, and Eli teases her about "your city name".
+The inn's cellar darkroom: red bulb, trays, the vinegar smell of stop bath. Jules keeps watch at the top of the stairs. (PHOTOGRAPHER: this is her room now. Everyone else: Bea can show her how, or Jules's cousin can, or the pharmacy on the mainland takes a day and raises Whispers.)
 
-- `DISCOVER_ELI` if it hasn't happened yet.
-- This is a gentle, natural moment for Jonah, which is where `BOND_JONAH` can begin, and a chance for the player to talk about her own year.
-- STRATEGIST SEES: one letter from 1977 mentions *"the gallery man offering the moon for the lighthouse picture"*. Winnie refused.
+**Sadie's rolls** (whatever she's found so far):
+- **Priya's roll** (from two days before the bonfire): Sadie and Priya on the rocks, laughing; the lighthouse; Theo asleep in the dinghy; and a frame of the **causeway at low tide, with a line drawn in chalk on a rock**: the tide mark she was practicing.
+- **The roll from Sadie's room** (the bonfire night itself): the bonfire from behind, from the path to the point, alone. **The causeway rocks, still wet, in the dark.** The last frame is black. (A timeline piece: she went to the causeway, not the lighthouse.)
+- **The dinghy roll** (if Theo checks the dinghy's locker with her): Sadie at fifteen, on the south shore at night, stars. The last three frames are orange: **the cannery, burning**, and a white boat at its pier. (A cannery clue.)
 
-## 3.2 THE CAVE AT TEN PAST FOUR (the environmental puzzle)
+The Photographer's **Darkroom** rank rises with each roll (`rules.md` §6).
 
-Run `game/puzzles.md`, *Puzzle 1: Low Water at Ten Past Four*. The cave under the bluff is reachable only at the afternoon low tide (4:10 on Thursday), by the rocks mapped in the lobby seascape.
+## 3.2 THE CHAPEL (set piece)
 
-**Inside: Winnie's secret studio.** A dry chamber above the tide line, lit by a crack in the rock. An easel, jars of pigment gone to stone, forty years of sketchbooks in a sea chest, and on the walls charcoal studies of the lighthouse with a young woman on the gallery rail, again and again. Each one is signed **W.M.**
+The photo booth strip said *"the Chapel. always."* The red note said *"where the sea keeps them"*. Theo knows exactly where that is, and it hurts him to say it: the sea cave under the point, on the ocean side, where he and Sadie used to go. **Morning low tide is about 10:10.** They have maybe forty minutes inside.
 
-- **The amber sea glass** sits in a jar of turpentine, gone gold. The note is dated **1974**: *"The summer I became someone else. In the city they called me Marlowe and paid me a fortune. Here I was just Winnie who painted rocks. I liked her better."*
-- `DISCOVER_MARLOWE`: the lobby seascape, the library's article, the W.M. signatures and this studio together mean Winnie *was* W. Marlowe. ARTIST SEES it at once. Anyone else needs two of those pieces, or Marguerite (3.3).
-- ARTIST: studying the cave sketchbooks raises **Winnie's Eye** (`rules.md` §5). With the lobby seascape and the lighthouse sketchbook, that's usually **rank III** here: *her hands remember something.*
+- The high dry ledge at the back: a **tin box**, sealed with candle wax. Inside: the **violet sea glass** and its note, and a **film roll** marked in Sadie's hand: *"SPRING."*
+- **Run `ENC_CAVE`** (`game/encounters.md`): the tide turns early (a new-moon tide, extra big), a wave collapses the way out, and the Chapel starts to fill.
 
 ```
 [IMAGE_TRIGGER]
-ID: IMG_CAVE_STUDIO
-TYPE: MAJOR_DISCOVERY
+ID: IMG_THE_CHAPEL
+TYPE: MAJOR_REVEAL
 STATUS: REQUIRED
 
 Generate an image before continuing.
@@ -40,64 +40,48 @@ Authentic retro arcade pixel art: the Musecade pixel style
 (core/image-style.md). Pixels visible at a glance.
 
 SCENE:
-A hidden sea cave studio: a shaft of golden afternoon light from a crack in
-the rock falling on an old wooden easel, jars of stone-hard pigment, a sea
-chest of sketchbooks, and charcoal drawings of a lighthouse pinned to the
-rock walls. The player in the light holding up a piece of amber sea glass
-that glows like honey. Tide pools glittering at the cave mouth.
-
-Do not reveal undiscovered information.
-(Do not show the finished Keeper's Daughter painting.)
-
-[/IMAGE_TRIGGER]
-```
-
-## 3.3 MARGUERITE'S PROMISE
-
-If `SOCIAL_MARGUERITE_TRUST`, Marguerite closes the bakery at noon (unheard of), makes coffee, and tells the story (`DISCOVER_MARGUERITE_PROMISE`). Winnie was Marlowe. After Eli died she painted one last picture, *The Keeper's Daughter*, and sealed it away. *"She made me promise to keep it secret until the right one came. I told her it was ridiculous. She said, 'You'll know. She'll sort the beach by color.'"* If the player hasn't told her about that afternoon when she was eleven, Marguerite asks, and then she cries a little and blames the onions.
-
-## 3.4 THE COUNCIL (the social puzzle)
-
-The vote is Saturday. Run `game/puzzles.md`, *Puzzle 2: Whose Vote Is Bought*. Today is the day for legwork: the registry of deeds (open until three), the hardware store, the fish co-op, the church, and the survey stakes on the bluff.
-
-- Report `DISCOVER_HANK_OPTION` when she learns of Hank's secret option with Vale.
-- Report `DISCOVER_VALE_KNOWS` when she learns Vale is after the painting. That can come from the library (Vale requesting the same 1981 article), from Theo the travel writer (who overheard Vale on the ferry dock, on the phone, saying "the Marlowe"; see `characters/npcs.md`), or from the *"artworks"* clause.
-
-## 3.5 FOG OFF THE POINT (set piece)
-
-Dusk. Maya took Jonah's little sailing skiff out to sketch the lighthouse from the water, since Jonah has been teaching her. The fog comes in off the sea like a wall. The ferry horn sounds somewhere far off. Maya doesn't answer her phone. Run **`ENC_RESCUE`** (`game/encounters.md`).
-
-```
-[IMAGE_TRIGGER]
-ID: IMG_FOG_RESCUE
-TYPE: ENCOUNTER
-STATUS: REQUIRED
-
-Generate an image before continuing.
-Use current character and world state.
-
-STYLE:
-Authentic retro arcade pixel art: the Musecade pixel style
-(core/image-style.md). Pixels visible at a glance.
-
-SCENE:
-Thick silver fog at dusk over dark water and black rocks at the foot of a
-dark lighthouse; a small wooden skiff with a lone young woman barely visible
-in the murk; on the shore or in a workboat bow, the player with a lantern or
-headlamp beam cutting through the fog. Muted blues and silvers with one
-warm point of light.
+Inside a tall sea cave like a stone chapel, shafts of green-blue light
+through a hole in the rock, seawater surging in white across the floor; on a
+high dry ledge a seventeen-year-old girl opening a small rusted tin box, a
+violet piece of sea glass glowing in it; below her, a tall boy with a
+flashlight watching the water rise. Beautiful, claustrophobic, urgent.
 
 Do not reveal undiscovered information.
 
 [/IMAGE_TRIGGER]
 ```
 
-It must cost or reveal something. It might wear her composure thin, or it might finally pry out Maya's secret: soaked and shaking on the seawall, Maya blurts the truth.
+## 3.3 THE PHOTOGRAPH
 
-## 3.6 THE SEAWALL
+Developing the **"SPRING"** roll (back in the darkroom, or at Priya's, or with a Photographer's ZOOM IN on the wet negatives by flashlight): the island in spring. Snow in the lighthouse doorway. The bakery bench, **with the brass plaque that was only installed this April**. The festival poster for **this** year, on the bakery window. And the last frame: a self-portrait in a mirror, a girl with short dark hair and Sadie Vale's face.
 
-Mother and daughter on the harbor seawall under one blanket, after the fog. This is the emotional heart of the act. The conversation is the player's, so let her lead. Honest listening, telling her own year, not making Maya's life about herself, and pride said out loud earn `SOCIAL_MAYA_HEART`. A real reconciliation that lasts through the week is `BOND_MAYA`. A sharp word here (*"after everything I've done"*) sets `cruel_word` and costs trust. It can still be mended tomorrow.
+**`DISCOVER_SADIE_ALIVE`.** Give it room. This is the twist the game is built around: the girl everyone mourned has been alive the whole time, and she's been watching.
 
-## Thursday night
+- The handwriting on the notes, and the diary, and the "SPRING" label: all the same looping `g`. **She wrote the diary herself.** If the player hasn't solved *Puzzle 1* yet, this is a huge hint.
+- Companions react in character: Priya goes white; Theo walks out and has to be found; Jules says, very quietly, *"The gulls."* (`DISCOVER_JULES_BASKET` if she tells the player about the basket now.)
 
-The weather radio in Bea's kitchen crackles: a **nor'easter** will hit tomorrow night, with gusts to seventy, a storm surge, and ferries cancelled. Bea says a word she's not allowed to say in front of the Feeneys. **Record `REACH_STORM`** (it's sent with everything else at the end) and fetch the Act IV pack.
+## 3.4 THE CANNERY
+
+The burned **cannery ruins** on the south shore, fenced, VALE COASTAL RESORT · COMING SOON. Theo will go if she asks: this is where his father's life ended. (At trust 2, he asks *her*.)
+
+- Inside the fence: black beams, the long half-collapsed pier with its **numbered pilings**, and a view straight across the water to the **Vale house**. From here, anyone at the pier is visible from Vale's deck. (That's why Sadie never came back for what she hid. The player doesn't know that yet.)
+- **The fire:** Theo shows her where the space heater was supposed to have been. It doesn't make sense: the fire started at the pier end. With the dinghy roll's orange frames (3.1) and Theo's father's case file (Theo has a copy), a player can put it together: the white boat at the pier that night is *Second Wind* (`DISCOVER_CANNERY_FIRE`). Proof is another matter. The player can't prove it yet.
+- **Vale sees them.** A figure on the Vale deck with binoculars. Whispers +1.
+
+## 3.5 THE NEW MOON
+
+By Thursday evening, the player should know (or strongly suspect) that Sadie is alive, and where she is. Evening low tide is about **10:35 p.m.**, on the darkest night of the month.
+
+- **If the player hasn't solved *Puzzle 2* yet**, the sandal clue and the tide log make it click now, with a hint if needed. Nobody took Sadie. She walked to Gull Rock.
+- **Going out to Gull Rock tonight** is the player's choice: across the causeway at low tide, in the dark (a Moderate roll, DC 12; ATHLETE with advantage), or **swimming** the channel at mid-tide (a Very Hard roll, DC 18, unless it's the Athlete's move: `ACH_NIGHT_SWIM` either way if she makes it; a miss is Hurt and a rescue by Theo).
+- **If she goes, she finds Sadie** (`acts/act-4.md` 4.1 is played tonight instead of Friday). Record `ACH_FIRST_LIGHT` at game over.
+- **If she doesn't go**, Sadie comes to her: that's Act IV.
+
+**Thursday night ends Act III.** Record `REACH_STORM` (it's sent with everything else at the end) and fetch the Act IV pack. If she's going to Gull Rock tonight, fetch it now, before the crossing.
+
+---
+
+## Exceptions
+
+- **She goes to Hank or Vale with the "SPRING" photos:** Vale takes it very calmly, thanks her, and asks where the negatives are. Whispers +3. That night the darkroom is broken into. Sadie is in real danger now, and so is the player. (It leads toward `FRAMED` unless she turns it around.)
+- **She tells Priya to break the story now:** Priya wants to. If she does, it's `ON AIR` early and messily (Act IV), and Sadie runs for real.
