@@ -1,0 +1,15 @@
+# AgentHunt API worker. See agenthunt/README.md, "Deploying the backend".
+name = "agenthunt-api"
+main = "src/index.js"
+compatibility_date = "2025-09-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "agenthunt"
+# Created with: npx wrangler d1 create agenthunt
+database_id = "a8442dc8-f8b3-4860-aaae-a8ea50d50fb3"
+
+[vars]
+PUBLIC_SITE = "https://lorenzen.ai/agenthunt"
+
+# Secret (not in this file): npx wrangler secret put IP_SALT

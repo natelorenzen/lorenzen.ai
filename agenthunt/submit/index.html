@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-38KZ2T0RQ5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-38KZ2T0RQ5');
+</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>SUBMIT YOUR HUNT | AGENTHUNT</title>
+  <meta name="theme-color" content="#fff7e8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/agenthunt/assets/agenthunt.css">
+</head>
+<body>
+<div class="flash" aria-hidden="true"></div>
+<div class="machine"><div class="screen"><div class="screen-inner">
+
+  <header class="statusbar">
+    <div class="group"><a href="/agenthunt/">&lt; AGENTHUNT</a></div>
+    <div class="group"><button type="button" class="sound-toggle" data-sound-toggle aria-pressed="false">SOUND: OFF</button></div>
+  </header>
+
+  <main class="entry" aria-live="polite">
+    <h1>SUBMIT YOUR HUNT</h1>
+    <div id="view"><p class="note">READING YOUR HUNT…</p></div>
+  </main>
+  <p style="margin-top:30px" class="disclaimer">AGENTHUNT is an independent project by Nate Lorenzen, made for entertainment purposes only. It is not affiliated with, endorsed by, or sponsored by Meta Platforms, Inc., Muse, or any Meta product or service, or by any city, landmark, venue or brand named in a hunt. Only your name, your finds and your score are sent. No photos or locations.</p>
+
+</div></div></div>
+<div class="toast" role="status" aria-live="polite"></div>
+<script src="/agenthunt/assets/agenthunt.js" defer></script>
+<script>
+(async () => {
+  "use strict";
+  const view = document.getElementById("view");
+  const el = (tag, props = {}, ...kids) => { const n = Object.assign(document.createElement(tag), props); n.append(...kids); return n; };
+  const show = (...nodes) => { view.innerHTML = ""; view.append(...nodes); };
+  const fmt = (n) => Number(n).toLocaleString("en-US");
+  const spec = (pairs) => { const dl = el("dl", { className: "spec" }); pairs.forEach(([k, v]) => dl.append(el("dt", {}, k), el("dd", {}, v))); return dl; };
+
+  // #h=losangeles&p=NAME&n=nonce&m=1&f=ID:GRADE[:PROOF],...
+  const q = new URLSearchParams(location.hash.slice(1));
+  const run = {
+    hunt: (q.get("h") || "").toLowerCase().replace(/^#/, ""),
+    player: q.get("p") || "",
+    nonce: (q.get("n") || "").toLowerCase(),
+    metadata: q.get("m") === "1",
+    finds: (q.get("f") || "").split(",").map((s) => s.trim().toUpperCase()).filter(Boolean),
+  };
+  if (!/^[a-z0-9]+$/.test(run.hunt) || !run.nonce) {
+    return show(el("p", { className: "err" }, "THIS LINK IS INCOMPLETE."), el("p", { className: "note" }, "Ask your agent to print the AgentHunt submit link again, exactly as it appears."));
+  }
+
+  let data = null, api = null;
+  try { data = await (await fetch("/agenthunt/hunts.json")).json(); } catch { /* offline */ }
+  try { api = ((await (await fetch("/agenthunt/config.json", { cache: "no-cache" })).json()).api_base || "").replace(/\/+$/, "") || null; } catch { api = null; }
+  const hunt = data && data.hunts.find((h) => h.slug === run.hunt);
+  if (!hunt) return show(el("p", { className: "err" }, "UNKNOWN HUNT."));
+
+  // Preview only. The server recalculates everything.
+  const byId = Object.fromEntries(hunt.finds.map((f) => [f.id, f]));
+  const best = {};
+  run.finds.forEach((s) => {
+    const [id, grade, proof] = s.split(":");
+    const f = byId[id];
+    if (!f || !(grade in data.rules.grades)) return;
+    const pts = Math.round(f.points * data.rules.grades[grade]) + (proof === "PROOF" ? data.rules.proof_bonus : 0);
+    if (!best[id] || pts > best[id].pts) best[id] = { title: f.title, grade, pts };
+  });
+  const list = Object.values(best);
+  const local = list.reduce((s, x) => s + x.pts, 0) + (list.length === hunt.finds.length ? data.rules.sweep_bonus : 0);
+  const findList = el("ol", { className: "finds-list" }, ...list.map((x) => el("li", {}, `${x.title} · ${x.grade} · +${x.pts}`)));
+  const card = el("div", { className: "card" },
+    spec([["HUNT", hunt.title.toUpperCase()], ["HUNTER", run.player.toUpperCase() || "HUNTER"], ["FOUND", `${list.length} / ${hunt.finds.length}`], ["SCORE", fmt(local)], ["METADATA", run.metadata ? "CHECKED" : "NOT CHECKED (UNRANKED)"]]),
+    findList);
+
+  if (!api) return show(card, el("p", { className: "note" }, "THE LEADERBOARD IS OFFLINE. THIS HUNT CAN'T BE RANKED YET."));
+
+  const btn = el("button", { type: "button", className: "btn coral" }, "SUBMIT TO THE LEADERBOARD");
+  show(card, btn, el("p", { className: "note" }, "The server checks every find and calculates the score itself."));
+
+  btn.addEventListener("click", async () => {
+    btn.disabled = true;
+    btn.textContent = "SENDING…";
+    try {
+      const r = await fetch(api + "/run/submit", { method: "POST", headers: { "content-type": "application/json" },
+        body: JSON.stringify({ hunt: run.hunt, player: run.player, nonce: run.nonce, metadata: run.metadata ? 1 : 0, finds: run.finds, agent: "link" }) });
+      const d = await r.json();
+      if (!r.ok) throw new Error(d.detail || d.error || "rejected");
+      document.querySelector(".flash")?.classList.add("go");
+      show(
+        el("p", { className: "note" }, d.already_complete ? "THIS HUNT IS ALREADY ON THE BOARD." : "SCORE RECORDED."),
+        el("div", { className: "reveal" }, fmt(d.score)),
+        el("div", { className: "card" }, spec([["HUNTER", d.player], ["FOUND", `${d.found} / ${d.total}`], ["GLOBAL RANK", d.ranked ? "#" + d.rank : "UNRANKED" + (d.note ? ` (${d.note.toUpperCase()})` : "")]])),
+        el("a", { className: "btn", href: "/agenthunt/#scores" }, "VIEW LEADERBOARD")
+      );
+    } catch (e) {
+      btn.disabled = false;
+      btn.textContent = "TRY AGAIN";
+      view.append(el("p", { className: "err" }, "THE LEADERBOARD REJECTED THIS HUNT: " + String(e.message).toUpperCase()));
+    }
+  });
+})();
+</script>
+</body>
+</html>

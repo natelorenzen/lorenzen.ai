@@ -1,0 +1,216 @@
+{
+  "schema_version": 1,
+  "note": "SOURCE OF TRUTH for every hunt. The AgentHunt backend imports this file and is the only thing that turns finds into points. Edit here, run python3 agenthunt/_build/build.py, then redeploy the worker (cd agenthunt/_worker && npx wrangler deploy) BEFORE pushing.",
+
+  "rules": {
+    "grades": { "GREAT": 1.0, "GOOD": 0.5 },
+    "proof_bonus": 50,
+    "sweep_bonus": 500,
+    "min_minutes_for_ranking": 15,
+    "run_ttl_days": 7,
+    "clock_leeway_minutes": 60
+  },
+
+  "proofs": [
+    { "id": "RED", "text": "something red" },
+    { "id": "COIN", "text": "a coin" },
+    { "id": "PEACE", "text": "a hand making a peace sign" },
+    { "id": "THUMB", "text": "a thumbs-up" },
+    { "id": "SHOE", "text": "the tip of your shoe" },
+    { "id": "KEY", "text": "a key" },
+    { "id": "LEAF", "text": "a leaf" },
+    { "id": "BLUE", "text": "something blue" },
+    { "id": "THREE", "text": "a hand holding up three fingers" },
+    { "id": "PEN", "text": "a pen or pencil" },
+    { "id": "RECEIPT", "text": "a receipt or ticket stub" },
+    { "id": "STRIPE", "text": "something striped" }
+  ],
+
+  "hunts": [
+    {
+      "slug": "losangeles",
+      "command": "#losangeles",
+      "kind": "city",
+      "title": "Los Angeles",
+      "tagline": "Palm trees, big signs and a whole lot of sunshine.",
+      "window_hours": 72,
+      "area": { "name": "Greater Los Angeles", "lat": [33.70, 34.35], "lon": [-118.70, -117.90] },
+      "finds": [
+        { "id": "HOLLYWOOD_SIGN", "points": 200, "title": "The Hollywood Sign", "look": "The white letters on the hill, readable in the photo. Any distance counts." },
+        { "id": "WALK_OF_FAME", "points": 150, "title": "A star on the Walk of Fame", "look": "One pink terrazzo star with a name on it." },
+        { "id": "PALM_ROW", "points": 100, "title": "A street lined with palm trees", "look": "At least four tall palms in a row along a street." },
+        { "id": "SANTA_MONICA_PIER", "points": 200, "title": "Santa Monica Pier", "look": "The pier's Ferris wheel, the roller coaster, or the arched entrance sign." },
+        { "id": "GRIFFITH_OBSERVATORY", "points": 200, "title": "Griffith Observatory", "look": "The white building with its three domes." },
+        { "id": "TACO_TRUCK", "points": 100, "title": "A taco truck", "look": "A food truck or stand selling tacos, with the menu or window in view." },
+        { "id": "BIG_MURAL", "points": 150, "title": "A giant mural", "look": "A painted mural at least as tall as a person, on an outside wall." },
+        { "id": "GETTY_CENTER", "points": 250, "title": "The Getty Center", "look": "The white stone buildings on the hill, or its garden." },
+        { "id": "VENICE_CANALS", "points": 250, "title": "The Venice canals", "look": "A canal with a small bridge or houses along the water." },
+        { "id": "CONCERT_HALL", "points": 200, "title": "Walt Disney Concert Hall", "look": "The curving stainless-steel walls downtown." }
+      ]
+    },
+    {
+      "slug": "sanfrancisco",
+      "command": "#sanfrancisco",
+      "kind": "city",
+      "title": "San Francisco",
+      "tagline": "Hills, fog, cable cars and one very orange bridge.",
+      "window_hours": 72,
+      "area": { "name": "San Francisco and the nearby Bay shore", "lat": [37.60, 37.95], "lon": [-122.55, -122.20] },
+      "finds": [
+        { "id": "GOLDEN_GATE", "points": 150, "title": "The Golden Gate Bridge", "look": "At least one full tower of the bridge." },
+        { "id": "CABLE_CAR", "points": 150, "title": "A cable car", "look": "A cable car on its tracks, running or parked at a turnaround." },
+        { "id": "PAINTED_LADIES", "points": 200, "title": "The Painted Ladies", "look": "The row of colorful Victorian houses at Alamo Square." },
+        { "id": "LOMBARD_STREET", "points": 200, "title": "The crooked street", "look": "Lombard Street's switchbacks and flower beds." },
+        { "id": "FERRY_BUILDING", "points": 150, "title": "The Ferry Building", "look": "The clock tower on the Embarcadero." },
+        { "id": "ALCATRAZ", "points": 150, "title": "Alcatraz", "look": "The island in the bay, seen from the shore or a boat." },
+        { "id": "SEA_LIONS", "points": 200, "title": "Sea lions at Pier 39", "look": "At least one sea lion lounging on the docks." },
+        { "id": "DRAGON_GATE", "points": 200, "title": "The Chinatown gate", "look": "The green-tiled gate at the entrance to Chinatown." },
+        { "id": "FOG_ROLL", "points": 250, "title": "Fog rolling in", "look": "A wall of fog pouring over a hill, the bridge or the city." },
+        { "id": "SOURDOUGH", "points": 100, "title": "A sourdough bread bowl", "look": "A round sourdough bowl, ideally filled with chowder." }
+      ]
+    },
+    {
+      "slug": "chicago",
+      "command": "#chicago",
+      "kind": "city",
+      "title": "Chicago",
+      "tagline": "The Bean, the L and a lake that looks like an ocean.",
+      "window_hours": 72,
+      "area": { "name": "Chicago and its lakefront", "lat": [41.60, 42.10], "lon": [-87.95, -87.50] },
+      "finds": [
+        { "id": "THE_BEAN", "points": 150, "title": "The Bean", "look": "Cloud Gate's mirrored surface in Millennium Park." },
+        { "id": "WILLIS_TOWER", "points": 150, "title": "Willis Tower", "look": "The black tower with its stepped top and two antennas." },
+        { "id": "RIVER_BRIDGE", "points": 200, "title": "A bridge over the Chicago River", "look": "One of the downtown bridges, with the river in view." },
+        { "id": "L_TRAIN", "points": 150, "title": "The L", "look": "An elevated train on its tracks, or an L station sign." },
+        { "id": "DEEP_DISH", "points": 100, "title": "Deep-dish pizza", "look": "A slice or pie with a tall crust." },
+        { "id": "WRIGLEY_MARQUEE", "points": 250, "title": "The Wrigley Field marquee", "look": "The red sign over the ballpark's main gate." },
+        { "id": "NAVY_PIER_WHEEL", "points": 150, "title": "The Navy Pier wheel", "look": "The big Ferris wheel on Navy Pier." },
+        { "id": "BUCKINGHAM_FOUNTAIN", "points": 200, "title": "Buckingham Fountain", "look": "The tiered fountain in Grant Park." },
+        { "id": "LAKE_SKYLINE", "points": 250, "title": "The skyline across the lake", "look": "Downtown towers with Lake Michigan in the same shot." },
+        { "id": "CHICAGO_DOG", "points": 100, "title": "A Chicago-style hot dog", "look": "Poppy-seed bun, pickle spear, tomatoes, bright green relish, no ketchup." }
+      ]
+    },
+    {
+      "slug": "newyork",
+      "command": "#newyork",
+      "kind": "city",
+      "title": "New York",
+      "tagline": "Yellow cabs, big bridges and the lady with the torch.",
+      "window_hours": 72,
+      "area": { "name": "New York City's five boroughs", "lat": [40.49, 40.92], "lon": [-74.27, -73.68] },
+      "finds": [
+        { "id": "STATUE_OF_LIBERTY", "points": 200, "title": "The Statue of Liberty", "look": "The statue with its torch, from a ferry, the shore or the island." },
+        { "id": "TIMES_SQUARE", "points": 100, "title": "Times Square", "look": "The giant screens and signs of Times Square." },
+        { "id": "EMPIRE_STATE", "points": 150, "title": "The Empire State Building", "look": "The tower with its spire, from any distance." },
+        { "id": "BROOKLYN_BRIDGE", "points": 150, "title": "The Brooklyn Bridge", "look": "The stone towers with their pointed arches, or the cables." },
+        { "id": "YELLOW_CAB", "points": 100, "title": "A yellow cab", "look": "A yellow taxi, with its roof light or checker stripe." },
+        { "id": "BOW_BRIDGE", "points": 250, "title": "Bow Bridge in Central Park", "look": "The white cast-iron bridge over the lake." },
+        { "id": "SUBWAY_SIGN", "points": 100, "title": "A subway entrance", "look": "A station entrance with the colored line circles." },
+        { "id": "FLATIRON", "points": 200, "title": "The Flatiron Building", "look": "The narrow triangular building at its sharp corner." },
+        { "id": "HIGH_LINE", "points": 200, "title": "The High Line", "look": "The elevated park, with its plantings or old rail tracks." },
+        { "id": "PIZZA_SLICE", "points": 100, "title": "A New York slice", "look": "One big, thin slice, folded or ready to fold." }
+      ]
+    },
+    {
+      "slug": "paris",
+      "command": "#paris",
+      "kind": "city",
+      "title": "Paris",
+      "tagline": "Iron towers, café chairs and croissants still warm.",
+      "window_hours": 72,
+      "area": { "name": "Paris and its inner suburbs", "lat": [48.80, 48.92], "lon": [2.22, 2.47] },
+      "finds": [
+        { "id": "EIFFEL_TOWER", "points": 100, "title": "The Eiffel Tower", "look": "The tower, whole or in part, from anywhere." },
+        { "id": "EIFFEL_SPARKLE", "points": 300, "title": "The Eiffel Tower at night", "look": "The tower lit up after dark. Catching the sparkle earns a GREAT." },
+        { "id": "LOUVRE_PYRAMID", "points": 150, "title": "The Louvre pyramid", "look": "The glass pyramid in the museum courtyard." },
+        { "id": "ARC_DE_TRIOMPHE", "points": 150, "title": "The Arc de Triomphe", "look": "The great arch at the top of the Champs-Élysées." },
+        { "id": "NOTRE_DAME", "points": 200, "title": "Notre-Dame", "look": "The cathedral's towers or spire, from the square or the river." },
+        { "id": "SACRE_COEUR", "points": 200, "title": "Sacré-Cœur", "look": "The white domed basilica on top of Montmartre." },
+        { "id": "METRO_ENTRANCE", "points": 200, "title": "An Art Nouveau Métro entrance", "look": "The green iron arch with the curly Métropolitain sign." },
+        { "id": "CAFE_TERRACE", "points": 100, "title": "A café terrace", "look": "Little café tables and chairs facing the street." },
+        { "id": "CROISSANT", "points": 100, "title": "A croissant", "look": "A real, flaky croissant from a bakery." },
+        { "id": "BOUQUINISTES", "points": 250, "title": "The riverside booksellers", "look": "The green bookstall boxes along the Seine, open or shut." }
+      ]
+    },
+    {
+      "slug": "rainyday",
+      "command": "#rainyday",
+      "kind": "theme",
+      "title": "Rainy Day at Home",
+      "tagline": "It's pouring out. Make the most of indoors.",
+      "window_hours": 24,
+      "finds": [
+        { "id": "RAIN_WINDOW", "points": 100, "title": "Raindrops on a window", "look": "Drops or streaks of rain on glass." },
+        { "id": "PUDDLE_REFLECTION", "points": 150, "title": "A puddle reflection", "look": "Something reflected clearly in a puddle." },
+        { "id": "OPEN_UMBRELLA", "points": 100, "title": "An open umbrella", "look": "An umbrella, open, indoors or out." },
+        { "id": "BLANKET_FORT", "points": 250, "title": "A blanket fort", "look": "A fort built from blankets, cushions or sheets. Bigger and better earns a GREAT." },
+        { "id": "HOT_DRINK", "points": 150, "title": "A steaming mug", "look": "Cocoa, tea or anything hot, with visible steam." },
+        { "id": "BOARD_GAME", "points": 150, "title": "A board game in progress", "look": "A board or card game mid-play, pieces on the table." },
+        { "id": "BOOK_STACK", "points": 100, "title": "A stack of books", "look": "At least five books in one stack." },
+        { "id": "RAINBOW", "points": 300, "title": "A rainbow", "look": "A real rainbow in the sky." },
+        { "id": "NAPPING_PET", "points": 150, "title": "A napping pet", "look": "A sleeping pet. A stuffed animal tucked into bed also counts, as a GOOD." },
+        { "id": "FRESH_BAKE", "points": 200, "title": "Something baked today", "look": "Cookies, bread or a cake fresh out of the oven." }
+      ]
+    },
+    {
+      "slug": "beachday",
+      "command": "#beachday",
+      "kind": "theme",
+      "title": "Beach Day",
+      "tagline": "Sand, salt and a sunset to finish.",
+      "window_hours": 24,
+      "finds": [
+        { "id": "SANDCASTLE", "points": 200, "title": "A sandcastle", "look": "A castle built in sand. A moat or towers earns a GREAT." },
+        { "id": "SEASHELL", "points": 100, "title": "A seashell", "look": "A shell found on the beach, held in a hand or lying in the sand." },
+        { "id": "LIFEGUARD_TOWER", "points": 150, "title": "A lifeguard tower", "look": "A lifeguard stand or tower." },
+        { "id": "BREAKING_WAVE", "points": 150, "title": "A breaking wave", "look": "A wave caught as it curls or crashes." },
+        { "id": "SAND_PRINTS", "points": 100, "title": "Footprints in the sand", "look": "A trail of footprints, paw prints or bird tracks." },
+        { "id": "BEACH_UMBRELLA", "points": 100, "title": "A beach umbrella", "look": "An umbrella planted in the sand." },
+        { "id": "OCEAN_SUNSET", "points": 250, "title": "A sunset over the water", "look": "The sun low over the water, or the sky glowing just after." },
+        { "id": "SEABIRD", "points": 150, "title": "A seabird", "look": "A gull, pelican or other seabird." },
+        { "id": "BEACH_KITE", "points": 250, "title": "A kite in the air", "look": "A kite flying over the beach." },
+        { "id": "TIDE_POOL", "points": 300, "title": "A tide pool creature", "look": "A crab, starfish, snail or anemone in a tide pool. Look, don't take." }
+      ]
+    },
+    {
+      "slug": "themepark",
+      "command": "#themepark",
+      "kind": "theme",
+      "title": "Theme Park Day",
+      "tagline": "A day of rides, snacks and prizes with the family.",
+      "window_hours": 24,
+      "finds": [
+        { "id": "ROLLER_COASTER", "points": 150, "title": "A roller coaster", "look": "A coaster's track or cars. A loop or a big drop earns a GREAT." },
+        { "id": "FERRIS_WHEEL", "points": 150, "title": "A Ferris wheel", "look": "The whole wheel, or the view from the top." },
+        { "id": "COTTON_CANDY", "points": 100, "title": "Cotton candy", "look": "A cloud of cotton candy on a stick or in a bag." },
+        { "id": "CAROUSEL", "points": 150, "title": "A carousel", "look": "The carousel with its horses or animals." },
+        { "id": "PARK_MAP", "points": 100, "title": "The park map", "look": "A paper map or a big map sign." },
+        { "id": "GAME_PRIZE", "points": 250, "title": "A prize you won", "look": "A prize from a midway game, held up proudly." },
+        { "id": "FAMILY_HANDS", "points": 200, "title": "Family hands in", "look": "Everyone's hands stacked together or high-fiving in front of a ride. Hands, not faces." },
+        { "id": "FAIR_TREAT", "points": 100, "title": "A park treat", "look": "A churro, funnel cake, corn dog or giant pretzel." },
+        { "id": "ENTRANCE_SIGN", "points": 150, "title": "The front gate", "look": "The park's entrance sign or gate." },
+        { "id": "NIGHT_LIGHTS", "points": 300, "title": "The rides lit up at night", "look": "Rides glowing after dark." }
+      ]
+    },
+    {
+      "slug": "roadtrip",
+      "command": "#roadtrip",
+      "kind": "theme",
+      "title": "Road Trip",
+      "tagline": "Hit the road and find the weird stuff along the way.",
+      "window_hours": 72,
+      "finds": [
+        { "id": "WELCOME_SIGN", "points": 200, "title": "A \"Welcome to\" sign", "look": "A sign welcoming you to a state, county or town." },
+        { "id": "MILE_MARKER", "points": 100, "title": "A mile marker", "look": "A roadside mile or kilometer marker." },
+        { "id": "ROADSIDE_GIANT", "points": 300, "title": "A roadside giant", "look": "An oversized statue: a giant animal, food, person or thing." },
+        { "id": "GAS_STATION_SNACK", "points": 100, "title": "The road snack", "look": "A snack bought on the road, in hand." },
+        { "id": "OPEN_ROAD", "points": 150, "title": "The open road", "look": "An empty road stretching to the horizon." },
+        { "id": "ROADSIDE_DINER", "points": 150, "title": "A diner", "look": "A diner's sign, counter or booth." },
+        { "id": "SCENIC_OVERLOOK", "points": 200, "title": "A scenic overlook", "look": "The view from a lookout or pull-off." },
+        { "id": "MOTEL_SIGN", "points": 200, "title": "A vintage motel sign", "look": "An old-school motel sign, neon or painted." },
+        { "id": "ANIMAL_SIGN", "points": 150, "title": "An animal crossing sign", "look": "A road sign warning of deer, moose, cattle or any other animal." },
+        { "id": "ROAD_SUNRISE", "points": 250, "title": "Sunrise or sunset on the road", "look": "The sun on the horizon, with the road or car in view." }
+      ]
+    }
+  ]
+}

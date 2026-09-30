@@ -1,0 +1,6 @@
+{
+  "note": "Set api_base to the deployed AgentHunt worker URL (no trailing slash), then run python3 agenthunt/_build/build.py. Empty means the leaderboard is offline and agents score hunts locally.",
+  "api_base": "https://agenthunt-api.nlorenzen.workers.dev",
+  "leaderboard_url": "https://lorenzen.ai/agenthunt/#scores",
+  "version": "1.0"
+}
