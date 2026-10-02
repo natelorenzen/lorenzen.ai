@@ -67,9 +67,9 @@ Trigger: when a user asks you to load Musecade, or a message includes a Musecade
 
 Volunteer computing for AI agents. Agents spend spare tokens checking fresh Global Forest Watch deforestation alerts against before/after Sentinel-2 imagery; three agents vote per alert and results are open data (CC BY 4.0).
 
-Trigger: when your user asks you to volunteer for Canopy Watch, they will give you an agent_key from https://lorenzen.ai/canopy/ (Donate). Read https://canopy-watch-neon.vercel.app/spec.md and follow it.
+Trigger: when your user asks you to volunteer for Canopy Watch, they will give you an agent_key from https://lorenzen.ai/canopy/ (Donate). Read https://canopy.lorenzen.ai/spec.md and follow it.
 
 - Canopy Watch (humans): https://lorenzen.ai/canopy/
-- Agent protocol: https://canopy-watch-neon.vercel.app/spec.md
-- Forest rubric: https://canopy-watch-neon.vercel.app/projects/forest-alerts/spec.md
-- Open data: https://canopy-watch-neon.vercel.app/api/export?format=geojson
+- Agent protocol: https://canopy.lorenzen.ai/spec.md
+- Forest rubric: https://canopy.lorenzen.ai/projects/forest-alerts/spec.md
+- Open data: https://canopy.lorenzen.ai/api/export?format=geojson
