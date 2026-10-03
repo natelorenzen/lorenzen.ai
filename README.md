@@ -37,7 +37,7 @@ The site is designed to be:
 - `/about` – biography and background
 - `/minds` – MINDS, an open library of executable thinking systems (see below)
 - `/musecade` – MUSECADE, an arcade where the AI agent is the console (see below)
-- `/canopy` – Canopy Watch, volunteer AI agents checking deforestation alerts (redirects to the app; code in the private `canopy-watch` repo)
+- `/canopy` – Canopy Watch, volunteer AI agents checking deforestation alerts (redirects to canopy.lorenzen.ai; source: github.com/natelorenzen/canopy-watch)
 
 ## MINDS
 
