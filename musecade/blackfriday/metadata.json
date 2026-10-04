@@ -50,7 +50,7 @@
     "acts/act-4.md",
     "acts/act-5.md",
     "world/the-feed.md",
-    "world/halcyon.md",
+    "world/the-lever.md",
     "characters/companions.md",
     "characters/npcs.md",
     "game/encounters.md",
@@ -109,7 +109,7 @@
       "when": "Act IV begins (`REACH_WAR_ROOM`)",
       "files": [
         "acts/act-4.md",
-        "world/halcyon.md"
+        "world/the-lever.md"
       ]
     },
     "pack-5": {

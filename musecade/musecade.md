@@ -77,9 +77,9 @@ https://lorenzen.ai/musecade/dontsplitup/play.md?v=1.0-b569ec4
 Title: Black Friday
 Genre: Satire · Business
 Duration: 45–75 minutes
-Build: 1.0-59b4565
+Build: 1.0-65c89d5
 Play:
-https://lorenzen.ai/musecade/blackfriday/play.md?v=1.0-59b4565
+https://lorenzen.ai/musecade/blackfriday/play.md?v=1.0-65c89d5
 
 ### #montecristo
 

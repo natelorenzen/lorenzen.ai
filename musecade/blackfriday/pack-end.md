@@ -1,4 +1,4 @@
-# BLACK FRIDAY · PACK-END · BUILD 1.0-59b4565
+# BLACK FRIDAY · PACK-END · BUILD 1.0-65c89d5
 
 Bundle for: any ending triggers before Act V (out of cash, sitting it out, a deal). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 
@@ -6,7 +6,7 @@ Bundle for: any ending triggers before Act V (out of cash, sitting it out, a dea
 
 # BLACK FRIDAY: Endings
 
-Eleven endings. Play every one straight-faced and generous to the team. The satire is aimed at the industry's habits, never at the people doing the work.
+Eleven endings. Make every one funny, with a real punchline, and generous to the team. The satire is aimed at the industry's habits, never at the people doing the work.
 
 **Every ending:** (1) **the moment**, in 100 to 200 words; (2) the **ending image**, always, plus `VID_ENDING` if you can make clips; (3) the **epilogue**, in 120 to 220 words, written as next year's board deck, one dry slide at a time (*"Slide 4: What we stopped doing."*); (4) complete the run with the ending's **ID**; (5) the final screen and one post from the Feed (`scoring.md`).
 
@@ -86,7 +86,7 @@ Authentic retro arcade pixel art: the Musecade pixel style
 
 **The moment:** The biggest weekend in Wrung history: revenue is up 3x. The player posts the screenshot. It does numbers. The Professor quote-posts it as a 5:5:1 win. Margo, in the next room, finishes the contribution-margin math, and sits very still. Every order lost money.
 
-**Epilogue:** January was a bridge loan. Tell it deadpan, like a triumph: the post did 400,000 impressions, a podcast invite, and a speaking slot at ScaleFest titled *"How We 3x'd Black Friday."* The talk did not include slide 7.
+**Epilogue:** January was a bridge loan. Tell it like a triumphant press release that is obviously a disaster: the post did 400,000 impressions, a podcast invite, and a speaking slot at ScaleFest titled *"How We 3x'd Black Friday."* The talk did not include slide 7.
 
 ```
 [IMAGE_TRIGGER]
@@ -194,7 +194,7 @@ Authentic retro arcade pixel art: the Musecade pixel style
 
 **ID:** `ENDING_AUTOPILOT` · **fate:** lives · available from Act IV
 
-**The moment:** Halcyon runs the weekend. The team watches. Ads launch themselves, offers appear and vanish, emails go out at 3 a.m. in a tone nobody wrote. Halcyon's dashboard shows a perfect weekend: *+412% AI-influenced revenue.* Nobody at Wrung can say what happened. Brayden sends a celebratory GIF.
+**The moment:** Halcyon runs the weekend. Nobody knows what it's doing. Nobody ever will. The team watches. Ads launch themselves, offers appear and vanish, emails go out at 3 a.m. in a tone nobody wrote. Halcyon's dashboard shows a perfect weekend: *+412% AI-influenced revenue.* Nobody at Wrung can say what happened. Brayden sends a celebratory GIF.
 
 **Epilogue:** Halcyon published Wrung as a case study. Margo is still reconciling November. Say what the bank said, when it finally said it, and whether the team ever turned it off. The cancel button is still a chatbot.
 
@@ -345,7 +345,9 @@ Evaluate at game over, before the completion batch. Never announce during play.
 | `ACH_RECEIPTS` | RECEIPTS | As the Founder, reach rank III. | Hidden |
 | `ACH_BREAKFAST_TACOS` | BREAKFAST TACOS | Skip the Method panel for tacos (`tacos`). | Hidden |
 | `ACH_PLAN_BY_HALLOWEEN` | PLAN BY HALLOWEEN | Lock the Black Friday plan with 25 or more days left. | Hidden |
-| `ACH_DUE_DILIGENCE` | DUE DILIGENCE | Uncover the holdout result, what Halcyon does, and why they buy. | Hidden |
+| `ACH_DUE_DILIGENCE` | DUE DILIGENCE | Uncover the holdout result, the course loop, and why they buy. | Hidden |
+| `ACH_DIDNT_ASK` | DIDN'T ASK | Keep paying for Halcyon all season and never once ask anyone what it does. | Hidden |
+| `ACH_OR_THE_WEBSITE` | OR THE WEBSITE | End any argument in the game with the words "or the website". | Hidden |
 | `ACH_FULL_HEAD` | FULL HEAD OF HAIR | Finish with HAIR still Full. | Hidden |
 | `ACH_MAIN_CHARACTER` | MAIN CHARACTER | Roll a natural 20 on a POST. | Hidden |
 | `ACH_LAUGHED` | SOMEBODY LAUGHED | Laugh, sincerely, at a Ray-zinger. | Hidden |

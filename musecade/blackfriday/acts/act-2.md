@@ -1,20 +1,28 @@
 # ACT II: SCALEFEST
 
-*The expo hall, the god of the conference, the Method panel, an AI demo, the parking lot, and an invitation to the Back Room.* Target: 13 to 17 minutes, 9 to 12 decisions. Day 37 to Day 35, Austin.
+*An expo hall that bows, a booth that can't explain itself, the most heated panel in conference history, the question of who's the goodest, an AI demo, and a supercar.* Target: 13 to 17 minutes, 9 to 12 decisions. Day 37 to Day 35, Austin.
 
-**Route:** survive the expo hall → meet Rex → the Method panel (or tacos) → the Noosphere demo (optional) → **earn an invitation to the Back Room**.
+**Route:** through the expo hall → meet the big fish → the Great Debate (or tacos) → *the goodest* and *the demo* (optional) → **an invitation to the Back Room**.
 
-Load `game/puzzles.md` and `game/encounters.md` now. Start with the market weather (`rules.md` §5).
+Load `game/puzzles.md` and `game/encounters.md` now. Start with the market weather (`rules.md` §5), and the Enhancement of the Act (`rules.md` §15): the Algorithm has given every Wrung ad an AI background. The sponge now sits on a marble counter in a Tuscan villa. Wrung does not sell villas. Click-through is up.
 
 ---
 
 ## 2.1 THE EXPO HALL (set piece)
 
-**ScaleFest**, a convention center in Austin. Lanyards, cold brew on tap, a DJ at 9 a.m., and every screen running a lower-third: *ScaleFest · presented by HALCYON · Agentic Commerce Is Here.* The expo hall is two hundred SaaS booths, and every one of them can see the player's badge: **BRAND OWNER**.
+**ScaleFest**: a convention center in Austin, cold brew on tap, a DJ at 9 a.m., and every screen running a lower third: *presented by HALCYON · Agentic Commerce Is Here.* The expo hall is two hundred software booths, and the player's lanyard says the most powerful words in the building: **BRAND OWNER.**
 
-**The goal, said plainly by Kyle at the door:** *"Okay. We need to get to the main stage by ten for the Method panel, and we cannot come out of here with software."*
+**The goal, said plainly by Kyle at the door:** *"We need to get to the main stage by ten for the big panel. And we can't come out of here with software."*
 
-Run **`ENC_EXPO`** (`game/encounters.md`). Brand owners are gods to SaaS sellers, which means the sellers swarm. Every booth has a pitch, a QR code, a demo "that takes four minutes", and swag. The **Halcyon** booth is Booth 1, the biggest, with a fog machine and an LED wall of the words *AGENTIC · INTELLIGENT · LAYER*. **Brayden** (`world/halcyon.md`) spots the player's badge and lights up: *"You're a customer! How are you loving it?"*
+Run **`ENC_EXPO`** (`game/encounters.md`). **The Bow:** when a salesperson sees a brand-owner badge, they physically bow, a little, without realizing it. Then they swarm. Every booth has a four-minute demo, a QR code, a tote bag, and a phrase (*"we're like an operating system for your operating system"*).
+
+**Booth 1: Halcyon.** The biggest booth, with a fog machine, an LED wall reading *AGENTIC · INTELLIGENT · LAYER*, and four reps. Ask any of them what Halcyon does, and each gives a completely different answer, confidently, at the same time:
+- *"It's a layer."*
+- *"It's agentic. So it does things."*
+- *"It's less a product and more a philosophy."*
+- *"Have you tried it? Then you know."*
+
+**Brayden**, the Solutions Architect, sees the badge and lights up: *"You're a customer! How are you loving it?"* (Never let Halcyon resolve. Asking breaks `ACH_DIDNT_ASK`; walking past it, smiling, keeps it.)
 
 ```
 [IMAGE_TRIGGER]
@@ -31,52 +39,59 @@ Authentic retro arcade pixel art: the Musecade pixel style
 
 SCENE:
 A huge convention-center expo hall packed with glowing software booths,
-LED walls showing abstract charts and glowing shapes instead of words,
-salespeople in matching quarter-zips leaning out of every booth with
-tablets; in the middle aisle, a business owner with a conference lanyard
-and a tote bag holding a kitchen sponge, flanked by a young media buyer in
-a quarter-zip, being swarmed from all sides; the biggest booth at the end
-pumping fog. Epic, overwhelming, funny.
+LED walls showing abstract shapes instead of words, salespeople in
+matching quarter-zips bowing slightly toward a business owner wearing a
+lanyard and holding a kitchen sponge, like courtiers before a king; a
+young media buyer beside them clutching a free tote bag; the biggest booth
+at the end pumping theatrical fog around four reps all pointing in
+different directions. Epic, absurd, overwhelming.
 
 Do not reveal undiscovered information.
 
 [/IMAGE_TRIGGER]
 ```
 
-## 2.2 THE GOD OF THE HALL
+## 2.2 THE BIG FISH
 
-By the coffee line, the sellers part like water. **Rex Mahoney** (`characters/npcs.md`), CEO of Bulwark, walks through in a plain grey hoodie, holding a black coffee. Every booth bows. He says the number to nobody in particular: *"EIGHT FIGURES. EVERY MONTH."*
+By the coffee line, the sellers part like the sea. **Rex Mahoney** (`characters/npcs.md`), CEO of Bulwark, walks through in a plain grey hoodie, holding a black coffee. Every booth bows lower. He says the number to nobody in particular: *"EIGHT FIGURES. EVERY MONTH. TARIFFS SURVIVED. NEXT."*
 
-- **Winning his respect** (`SOCIAL_REX`) takes a real number of your own, said plainly, with no adjectives. He hates "we're growing fast", "we're scaling" and "it's early". He loves "we did $12,180 yesterday and I'm not sure how much of it was ads". Brand owners talk to brand owners in receipts. If he likes the player, he says: *"Come to the Back Room tomorrow. Gus is doing steak."* (That's the invitation, and the way to Act III.)
-- **His secret** (`DISCOVER_REX_SECRET`): with trust, or if the player is up at 5 a.m. in the hotel lobby, they catch him at a corner table, answering his own customer-support inbox, one email at a time. *"Nine years. Every morning. Don't tell anybody. It ruins the bit."*
+- **Winning his respect** (`SOCIAL_REX`): say your own real number, plainly, with no adjectives. He hates "we're scaling", "it's early", and "we're in a growth phase". He loves *"we did $12,180 yesterday and I don't know how much of it was ads."* If he likes the player: *"Come to the Back Room tomorrow. Gus is doing steak."* That's the invitation to Act III.
+- **His secret** (`DISCOVER_REX_SECRET`): at 5 a.m. in the hotel lobby, he's at a corner table answering his own customer-support inbox, one email at a time. *"Nine years. Don't tell anybody. It ruins the bit."*
 
-## 2.3 THE METHOD PANEL
+## 2.3 THE GREAT DEBATE
 
-10 a.m., main stage: *"THE GREAT DEBATE: How to Win Q4 on the Ad Platform."* On stage: **Professor Vince Calloway** (inventor of the 5:5:1 Method), **Walt Ferreira** (*"11 reasons I'm a bad follow"*), **Gord Lachance** (streaming TV), and **Lenny Szabo** (*"or the website"*). Moderator: **Benji Kaplan** of the *Margin Call* podcast.
+10 a.m., main stage: ***"THE GREAT DEBATE: How Must the Ad Account Be Structured?"*** It has the energy of a custody hearing. On stage: **Professor Vince Calloway** (Team One Campaign, and the inventor of 5:5:1), **Walt Ferreira** (who does not run exclusive cost caps and does not care if you do), **Gord Lachance** (*"Your ads aren't fatiguing. The Algorithm is murdering them by demanding four hundred more"*), and **Lenny Szabo** (*"or the website"*). Moderator: **Benji Kaplan**, who looks like a man who has seen a wall with three words on it.
 
-Play the debate big. Vince says there is one correct structure. Walt says it depends, then says he doesn't post about his brands, then stops talking. Gord says the platform is killing the ads, not the audience. Lenny says it's the website. Vince calls everyone who disagrees "cost-cap cowards". At Q&A, the player can ask one question, and **the question is the move.**
+Play it as the most unhinged panel in conference history, and go big:
+- The Professor has a man in the third row removed from his paid community, live, on his phone, for admitting to cost caps. The man's coworkers slowly move one seat away from him.
+- Walt explains his position, says he doesn't post about the brands he runs, says he'd rather delete his account than make content, and stops talking for the rest of the panel. It's the most respected forty seconds of the conference.
+- **The Landing Page Question** erupts, as it always does: a man at the mic asks whether to send traffic to a landing page or straight to the product page. The panel splits four ways. Someone suggests a landing page *for* the landing page. Lenny: *"Or the website."* (Ending any argument in the game with *"or the website"* is `ACH_OR_THE_WEBSITE`.)
+- **Q&A:** the player gets one question, and the question is the move.
+  - **Outplaying the Professor** (`SOCIAL_VINCE`): ask him for one number he'd stand behind (his own contribution margin, a holdout result, a case study still in business), bring Jun's Truthtable, or let Walt and Lenny take him apart while you hand them the mic. Vince never de-escalates. That night he posts a product from the shopping app that shouldn't exist (a self-stirring candle) and starts a new fight.
+  - **The famous screenshot** (`DISCOVER_GURU_CASE_STUDY`): his slide says *"$2.3M in 30 days with 5:5:1."* With a Founder's move, a phone search, or Hank Dorsey in the front row (*"I know that store. Candle shop. Closed in March."*), the truth: a candle shop, revenue including returns, shut down eight months later.
+- **Breakfast tacos** (`ACH_BREAKFAST_TACOS`, `tacos`): there's a taco truck outside and the panel is an hour long. Skipping it for tacos costs the panel's leads. **Ray Zhao** is at the truck, and tells a Ray-zinger. (*"What do you call a TikTok Shop SKU with no repurchase? A one-hit Shopder."* Nobody laughs. Laughing sincerely is `ACH_LAUGHED`.)
 
-- **Outplaying Vince** (`SOCIAL_VINCE`): ask him for one number he'd stand behind (his own contribution margin, an incrementality result, a case study that's still in business); bring Jun's Truthtable output; or let Walt and Lenny take him apart while you hand them the mic. Vince doesn't de-escalate. He'll promise "a video in two weeks" and post something unhinged that night.
-- **The famous screenshot** (`DISCOVER_GURU_CASE_STUDY`): Vince's slide shows *"$2.3M in 30 days with 5:5:1."* With a Founder's move, a search on a phone, or Hank Dorsey in the audience (*"I know that store. Candle shop. Closed in March."*), the truth comes out: it was a candle shop, the revenue included returns, and it shut down eight months later.
-- **Breakfast tacos** (`ACH_BREAKFAST_TACOS`, `tacos`): there's a taco truck outside, and the panel is an hour long. Skipping the panel for tacos costs the panel's leads, and wins a hidden achievement. Ray Zhao is at the truck, and tells a Ray-zinger. (Laughing sincerely is `ACH_LAUGHED`.)
+## 2.4 WHO'S THE GOODEST (optional)
 
-## 2.4 THE DEMO (optional)
+At the bar, the industry's second favorite question: **the first three hires.** Benji asks every founder he meets, and every founder answers "a creator manager." The player can answer honestly (they already have three hires, and one of them does everything). **Wren Holloway** keeps a mental list of who's actually *good*, as opposed to who's *cracked*, and if the player is about to hire someone terrible, she'll say so, quietly. (*"He's very cracked. He's not good. Those are different words."*)
 
-A side room, *"NOOSPHERE: The Shared Brain for Humans and Agents. Live Demo."* **Jasper Quill and Cole Fenn** (`characters/npcs.md`). *"Almost a thousand businesses. We're so grateful."* Cole, to the player, unprompted: *"Let's get you on Noosphere."* The agent answers any question about your business, instantly, in a chat window. Signing up is STACK +1.
+## 2.5 THE DEMO (optional)
 
-- **The demo** (`DISCOVER_NOOSPHERE_DEMO`): the answers are a little too human, with typos that get corrected. A Buyer or Operator notices the latency spikes whenever Jasper isn't in the room. Through a door left ajar: Jasper, in the next room, typing very fast. *"It's a... human-in-the-loop beta."* Played kindly: they're not crooks, they're two people with a good idea and no product yet, which is most of the expo hall.
+A side room: *"NOOSPHERE: The Shared Brain for Humans and Agents. Live Demo."* **Jasper Quill and Cole Fenn** (`characters/npcs.md`). *"Almost a thousand businesses. We're so grateful."* Cole, unprompted: *"Let's get you on Noosphere."* Noosphere has lore: everyone who says they use it doesn't, and everyone who says they don't, does. Signing up is STACK +1.
 
-**ON THE LINE (a post can save it):** a seat at the Back Room. A post from the conference that DOES NUMBERS gets Gus to DM an invitation; VIRAL gets Rex to quote-post it in all caps (`SOCIAL_REX` still has to be earned in person). What goes viral is never the panel take. It's the photo of the fog machine at the Halcyon booth, or Trent's supercar with a parking ticket on it.
+- **The demo** (`DISCOVER_NOOSPHERE_DEMO`): the AI agent answering questions is a little too human: it makes typos and corrects them, and it slows down whenever Jasper leaves the room. Through a door left ajar: Jasper, in the next room, typing very fast. *"It's a... human-in-the-loop beta."* Play it kindly: two people with a good idea and no product yet, which is most of the expo hall.
 
-**Podcast offer 1** (`rules.md` §12): the branded mic booth by the coffee line. *"Free production. We just get the pre-roll."*
+## 2.6 THE PARKING LOT
 
-## 2.5 THE PARKING LOT
+Leaving, the player passes **Trent**, leaning on a rented supercar, selling a course called *Black Friday Millionaire* to a small crowd. Someone says "supercar", the crowd says "Trent", and everyone moves on.
 
-Leaving, the player passes **Trent**, leaning on a rented supercar, selling a course called *Black Friday Millionaire* to a small crowd. Someone says "supercar", the crowd says "Trent", and everyone moves on. (Pure texture. If the player engages, he'll sell them the course: STACK +1, and it's 40 slides of screenshots.)
+**Jun Park** is at the coffee cart, quietly handing out a URL on a Post-it: *Truthtable, free, lines up your store, your ad platform and your bank.* Nobody takes one. The Feed would rather argue about hooks. It's the key to Puzzle 1 if it's unsolved.
 
-Before they go, **Jun Park** is at the coffee cart, quietly handing out a URL on a Post-it: *Truthtable, free, lines up your store, your ad platform, and your bank.* It's the key to Puzzle 1 if they haven't solved it.
+**Podcast offer 1** (`rules.md` §12): a branded mic booth by the coffee line. *"Free production. We just get the pre-roll."* (It's Halcyon's pre-roll. Nobody knows what it says.)
 
-**The invitation:** Rex's invitation to the Back Room (from `SOCIAL_REX`), or Hal Brody's, if the player impressed him at the panel Q&A, or Gus's own text, if a Founder used their move on anyone: *"Steak. 8 p.m. Brand owners only. No badges."* **Walking into the Back Room ends Act II.** Record `REACH_BACK_ROOM` (it's sent with everything else at the end) and fetch the Act III pack.
+**ON THE LINE (a post can save it):** a seat at the Back Room. A post from the conference that DOES NUMBERS gets Gus to DM an invitation; VIRAL gets Rex to quote-post it in all caps. What goes viral is never the panel take. It's the photo of the man getting kicked out of the Professor's community, or of Trent's supercar with a parking ticket on it.
+
+**The invitation:** Rex's (from `SOCIAL_REX`), or Hal Brody's if the player impressed him at the Q&A, or Gus's own text: *"Steak. 8 p.m. Brand owners only. No badges. No methods."* **Walking into the Back Room ends Act II.** Record `REACH_BACK_ROOM` (it's sent with everything else at the end) and fetch the Act III pack.
 
 **Fallback:** if nobody invited them, Dot texts: *"Gus Ferraro just called the support line to compliment the sponges. He says come to dinner."* (Dot answers every call.)
 

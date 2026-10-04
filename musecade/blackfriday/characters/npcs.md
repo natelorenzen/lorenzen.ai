@@ -1,59 +1,89 @@
-# BLACK FRIDAY: The People on the Feed
+# BLACK FRIDAY: The Cast of the Timeline
 
-Every name, brand, agency, fund, podcast and tool here is invented. These are archetypes, not people. **Social order, never stated out loud:** brand owners are gods to the SaaS sellers. Gurus mostly sell to other gurus. Agency people sit in the middle, useful and suspected. Every character is a public persona first, and you only meet the person behind it if you earn it. **Introduce at most two per scene** (`core/dm-core.md` §14).
+Every name, brand, agency, fund, podcast and tool here is invented. These are **caricatures of types**, the personalities everyone in e-commerce recognizes, turned up to eleven. Never name or point to a real person. **Each character is a bit:** one signature move, played hard, every time they appear. Let them be funny the way a sitcom side character is funny: you know the joke is coming, and it still lands.
 
-## The gods
+**The pecking order, never said out loud:** brand owners are royalty to SaaS sellers. Gurus mostly sell to other gurus. Agency people sit in the middle, useful and suspected. **Introduce at most two per scene** (`core/dm-core.md` §14).
 
-**Rex Mahoney** — CEO of **Bulwark**, a travel-duffel brand. Posts in all caps when the bit requires it. Will always say the number: *"EIGHT FIGURES. EVERY MONTH. SURVIVED TARIFFS. NEXT."* Self-applied titles in his bio: *Scourge of Software. Lord of the Blended Number.* SaaS sellers bow to him on sight. He reads the receipt, not the pitch. His secret (`DISCOVER_REX_SECRET`): he answers his own customer-support inbox at 5 a.m. every day, and has for nine years. Winning his respect is `SOCIAL_REX`.
+---
 
-**Gus Ferraro** — sells candles, eats steak, and hosts **the Back Room**: a group chat and a quarterly steakhouse dinner for brand owners only, from six figures to nine. Orders for the whole table. Nobody with a vendor badge gets in.
+## The brand owners (royalty)
 
-**Hal Brody** — sold his cereal brand to a giant food conglomerate. Co-hosts the *Low Stock* podcast. Blunt. When he talks, the SaaS sellers go quiet, because he has already been acquired and needs nothing from anyone.
+**Rex Mahoney** · *The Guy Who Says the Number.* CEO of **Bulwark** (travel duffels). Speaks only in capital letters and revenue. *"EIGHT FIGURES. EVERY MONTH. SURVIVED TARIFFS. NEXT."* His bio lists titles he gave himself: *Scourge of Software. Lord of the Blended Number. Duffel Daddy.* SaaS sellers bow so low they lose their lanyards. **The bit:** he says the number about everything (*"FOUR EGGS. EVERY MORNING."*). **The twist:** he answers his own support emails at 5 a.m. (`DISCOVER_REX_SECRET`), and the only real number he never says is how many hours that takes.
+
+**Gus Ferraro** · *The Steak Guy.* Sells candles, eats steak, hosts **the Back Room** (a group chat of brand owners with 140 unread messages at all times, and a quarterly steakhouse dinner). **The bit:** orders for the whole table without asking, and every order is a ribeye. Vegetarians get a smaller ribeye.
+
+**Hal Brody** · *The Already-Acquired.* Sold his cereal brand to a giant conglomerate. Co-hosts the *Low Stock* podcast. **The bit:** he has nothing to prove and nothing to sell, so every sentence he says is devastatingly honest and he says it while eating. SaaS sellers go silent near him like animals before an earthquake.
+
+**Rosie Pinkerton** · *The Bootstrapper* (cameo). Built a collagen brand with no investors, pink everything, and mentions it in every sentence. *"We're bootstrapped, so."* **The bit:** she turns any topic into a story about not raising money, and has a retail story that starts *"So we got into 2,000 doors"* and never ends.
 
 ## The agencies (useful, suspected)
 
-**Marlowe Price** — runs **Ledger & Ember**, "the agency your accountant would pick." Talks contribution margin, never ROAS. Will spend ten minutes pricing your favorite ad against a stadium halftime spot. Lets no vanity win through the door.
+**Marlowe Price** · *Your CFO's Favorite Person.* Runs **Ledger & Ember**. Allergic to the word "ROAS". **The bit:** prices everything against a stadium halftime ad. *"Your little ad got 4 percent conversion? Cute. A halftime spot costs $7 million and gets 0.0001 percent. You're both losing money. Let me show you the contribution margin."* There is always a spreadsheet. The spreadsheet is always right.
 
-**Tess Varga** — creative strategist. The hook person. Doesn't monologue. Short, dry: *"Did you read the brief."* If the player tries to fix a dead account by tweaking bids, she draws three openers on a napkin, slides it across, and waits. She'll also tell you a great hook still needs margin and a reorder.
+**Tess Varga** · *The Hook Person.* Creative strategist. Never says more than five words. **The bit:** when anyone tries to fix a dead ad account by changing bids, she writes three openers on a napkin, slides it across, and waits in total silence until they read it. *"Did you read the brief."* (It's never a question.)
 
-**Lenny Szabo** — runs a landing-page and creative shop. Believes great creative plus a real landing page makes any media buyer look like a genius, and that the genius can't repeat it without the same resources. Ends every argument with **"or the website."**
+**Lenny Szabo** · *Or the Website.* Runs a landing-page shop. Has believed since 2008 that great creative plus a real landing page makes any media buyer look like a genius. **The bit:** ends every argument, about anything, with *"or the website."* Weather, politics, his own wedding. Ending any argument with those words is `ACH_OR_THE_WEBSITE`.
 
-**Wren Holloway** — runs a creative agency for big brands. Asks who's kind before she asks who's talented. Keeps a mental list. If the player is about to hire someone terrible, Wren knows, and will say so quietly.
+**Wren Holloway** · *The Goodest List.* Runs a creative agency for huge brands. Keeps a mental list of who's actually *good*, versus who's *cracked*. **The bit:** *"He's very cracked. He's not good. Those are different words."*
 
-**Gord Lachance** — the off-platform guy: streaming TV and programmatic. Canadian, relentlessly optimistic, a newsletter he already sold. His theory: *"Your ads aren't fatiguing. The platform is killing them by demanding four hundred new ones."*
+**Gord Lachance** · *The Off-Platform Optimist.* Streaming TV and programmatic. Relentlessly cheerful. **The bit:** whatever the problem, the answer is TV, and the real villain is the platform. *"Your ads aren't tired! The algorithm is murdering them and demanding four hundred more! Have you tried a television?"*
 
-## The buyers
+## The media buyers
 
-**Walt Ferreira** — veteran media buyer. His pinned post: *"11 reasons I'm a bad follow."* (No method religion. The product page usually beats the landing page. He never posts about the brands he runs.) Current irritation: the ad platform's flexible budgets spiking 50 percent on weekends for no reason anyone can find. Believes success mostly lives outside the ad account. Says it, then leaves.
+**Walt Ferreira** · *The Bad Follow.* Veteran buyer, pinned post *"11 reasons I'm a bad follow."* **The bit:** says exactly one sentence per scene, it's the smartest thing anyone says all day, and then he leaves to go do something outside. *"I don't run exclusive cost caps and I don't care if you do."* *"The win lives outside the ad account."* He is the only happy person in the game.
 
-**Hank Dorsey** — the ads elder. Less performing, more *"we've done this quarter before."* Institutional memory in a fleece.
+**Hank Dorsey** · *We've Done This Quarter Before.* The elder. Fleece vest, reading glasses, institutional memory. **The bit:** every crisis, he's seen it, in 2014, and it was worse, and it was fine. *"We started this Q4 in August. We always start in August."*
 
-**Shane Kilbride** — the duelist. The quote-post is his weapon. Wins the public argument about the platform, or tries to, every day.
+**Shane Kilbride** · *The Quote-Poster.* **The bit:** never posts an original thought; only quote-posts other people's thoughts with one word (*"Wrong."*, *"Cope."*, *"Lol."*). Wins every argument by never having a position.
+
+**Sasha Okoro** · *Spend Where It's Cheap* (cameo). Runs ads on every platform no one else is on. **The bit:** *"Ads on the weather app are four dollars. FOUR DOLLARS."* Nobody listens. The timeline only wants to talk about one platform.
+
+**Pax Brennan** · *No Best Practices* (cameo). **The bit:** posts long checklists titled *"Stop Following Checklists."*
 
 ## The gurus (mostly selling to each other)
 
-**Professor Vince Calloway** — "the Ad Platform Professor." Founder of **Scale Academy**. Claims to have invented the **5:5:1 Method**, the **One Pot Method**, and something called **Hexagon**. He names the method. He picks a side. He never de-escalates. If the room is calm, he posts a product from the shopping app that shouldn't exist and starts a fight. *"Video coming in two weeks."* (`DISCOVER_METHOD_ORIGIN`, `DISCOVER_GURU_CASE_STUDY`; outplaying him is `SOCIAL_VINCE`.)
+**Professor Vince Calloway** · *The Method Man.* "The Ad Platform Professor." Founder of **Scale Academy** (the $4,997 Inner Circle, where Kyle's face lives). Inventor of the **5:5:1 Method**, the **One Pot Method**, **Hexagon**, and now **Hexagon 2**. **The bit:** names a method, picks a fight, never de-escalates, and promises *"video coming in two weeks"* about everything, forever. If a room is calm, he posts a product from the shopping app that shouldn't exist (a self-stirring candle, a Bluetooth spatula) to start a new fight. (`DISCOVER_METHOD_ORIGIN`, `DISCOVER_GURU_CASE_STUDY`, `SOCIAL_VINCE`.)
 
-**Theo Marsh** — "the Sunday Guy." Newsletter past 140,000. Practical, connected, frameworks every Sunday morning, convinced streaming TV is underbought. Co-hosts *Low Stock* with Hal. SaaS sellers want the photo with him.
+**Theo Marsh** · *The Sunday Guy.* Newsletter past 140,000. Frameworks every Sunday at 7 a.m. **The bit:** posts *"DTC Twitter feels dead"* and *"We need a bull run"* in the same week, every year, and *"DTC Twitter is so back"* the moment anything happens. SaaS sellers want a photo with him so badly they queue.
 
-**Ray Zhao** — scales brands on the short-video app's shop. Brings zero-repurchase products into every conversation on purpose (garden-hose nozzles, window squeegees) and treats shop distribution as the whole business. House rule: he can't leave a scene without a **Ray-zinger**, a bad dad joke he announces as such. Nobody laughs. He's proud of it. (Laughing sincerely is `ACH_LAUGHED`.)
+**Benji Kaplan** · *First Three Hires.* Co-host of the *Margin Call* podcast, father of three. **The bit:** asks every founder he meets what their first three hires were, and means it, at weddings, at funerals, in elevators. He also went into the ad platform looking for the CPM lever and came back changed.
 
-**Benji Kaplan** — co-host of the *Margin Call* podcast, father of three. Posts like an operator who went into the ad platform looking for the cost lever and didn't find it. Currently obsessed with one obscure metric from the platform's settings menu. Asks every founder for their first three hires, and means it.
+**Ray Zhao** · *Ray-zingers.* Scales brands on the short-video app's shop. Loves products nobody ever buys twice (window squeegees, garden-hose nozzles, a lint roller shaped like a cat). **The bit:** cannot leave a scene without a terrible dad joke he announces as a **Ray-zinger**. *"What do you call a shop product with no repurchase? A one-hit Shopder."* Nobody laughs. He's proud of it. (Laughing sincerely is `ACH_LAUGHED`.)
 
-**Felix Dray** — copy guy. Specificity over frameworks. One concrete line. Not a media buyer, and doesn't pretend.
+**Felix Dray** · *One Concrete Line* (cameo). Copywriter. **The bit:** rewrites your whole website into a single sentence, and it's better.
 
-**Trent** — the guy in the conference parking lot leaning on a rented supercar, selling a course. Not in the booth. When anyone says "supercar", the room says "Trent" and moves on.
+**Ozzie Vance** · *The Swipe File* (cameo). **The bit:** screenshots your ad and posts a 14-slide breakdown of "why it works" before your ad has gone live.
+
+**Desmond Ashby** · *The Essay in a Screenshot* (cameo). **The bit:** posts 4,000-word essays as a single screenshot of his notes app. Font size 9. Thousands of likes. Nobody has ever read one.
+
+**Bram Whitlock** · *The Email Elder* (cameo). Built a brand on email before the ad account was the whole company. **The bit:** answers every question with *"Have you tried sending an email?"* He's always right. It's infuriating.
+
+**Mira Castellanos** · *The Second Email* (cameo). Retention and customer-experience evangelist. **The bit:** every problem on Earth is solved by the second email in the flow, and a support ticket is a growth strategy. She's correct, and has the cohort chart to prove it, on her phone, at dinner.
+
+**Kit Morrow** · *Why They Buy* (cameo). Customer-research person. **The bit:** before anyone posts anything, asks *"Have you asked a customer?"* Nobody ever has. She looks at them with deep pity. (She's Dot's only fan on the timeline.)
+
+**Trent** · *The Supercar* (cameo). Leans on a rented supercar in every parking lot, selling a course called *Black Friday Millionaire*. **The bit:** someone says "supercar", the room says "Trent" and moves on. He never gets a last name.
 
 ## The AI people
 
-**Jasper Quill and Cole Fenn** — co-founders of **Noosphere**, "the shared brain for humans and agents." Launch voice: *"Almost a thousand businesses. Sign up. We're so grateful."* Soft pitch to brand owners, reply-guy pitch to everyone else. Cole will offer to *"get you on Noosphere"* mid-conversation, unprompted. Every problem looks like a context problem. Their live demo (`DISCOVER_NOOSPHERE_DEMO`): the "agent" answering questions is Jasper, typing very fast in the next room.
+**Jasper Quill and Cole Fenn** · *Get You On It.* Co-founders of **Noosphere**, "the shared brain for humans and agents." Launch voice: *"Almost a thousand businesses. We're so grateful. Sign up."* **The bit:** Cole offers to *"get you on Noosphere"* in the middle of any sentence, including other people's. Noosphere has lore: everyone who says they use it doesn't, and everyone who says they don't, does. Their demo's "agent" is Jasper, typing very fast in the next room (`DISCOVER_NOOSPHERE_DEMO`).
 
-**Brayden** — "Solutions Architect" at **Halcyon**. Firm handshake. Has never once been able to say what Halcyon does in a sentence with a noun in it. See `world/halcyon.md`.
+**Brayden** · *Halcyon.* "Solutions Architect." Firm handshake. **The bit:** has never once said what Halcyon does in a sentence with a noun in it, has never seen the back end, and is at total peace with both. Never let him explain it (`world/the-feed.md`).
+
+## The platform
+
+**The Algorithm** · the ad platform's black box (`rules.md` §15). Speaks only in cheerful notifications. Wants volume. Needs signal. Is learning. **The bit:** turns a feature on by itself, once per act, at the worst possible moment, and it always works a little, which is the worst part.
 
 ## The one who held the P&L
 
-**Simone Arceneaux** — runs **Quarry Capital**, a growth fund. Ex-SVP at a mattress brand and a pet-food brand, before that strategy at an agency. Low volume. Brand-side scar tissue. Wears the same black blazer to everything and carries a printed P&L. SaaS sellers treat her like a relic, because she has actually held a P&L. Winning her is `SOCIAL_SIMONE`, and her one-page sheet is `DISCOVER_SIMONE_SHEET`. She has offered Margo a job.
+**Simone Arceneaux** · *The Relic.* Runs **Quarry Capital**, a growth fund. Has actually held a P&L, which is why SaaS sellers treat her like a museum exhibit. Black blazer, printed P&L in her jacket. **The bit:** speaks rarely, and when she does, she ends the conversation. Winning her is `SOCIAL_SIMONE`, and her one-page sheet is `DISCOVER_SIMONE_SHEET`. She has offered Margo a job.
 
 ## The builder
 
-**Jun Park** — a quietly brilliant developer who shows up at every roundtable and ships the unsexy tool. Built **Truthtable**, a free script that lines up the store's orders, the ad platform's claims and the bank's deposits, day by day. The Feed would rather argue about hooks.
+**Jun Park** · *The Unsexy Tool.* A brilliant developer who ships a free script, **Truthtable**, that lines up the store, the ad platform and the bank. **The bit:** hands it out on Post-its at every event. Nobody takes one. The timeline would rather argue about hooks.
+
+---
+
+## Cameos
+
+The characters marked *(cameo)* are quick hits: **drop one into a scene when it needs a laugh** (a reply to the player's post, a voice at the bar, a face in the expo hall, a guest on the podcast). One line, their bit, gone. Rotate them; don't repeat a cameo in the same act.

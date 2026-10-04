@@ -1,6 +1,6 @@
 # BLACK FRIDAY: Endings
 
-Eleven endings. Play every one straight-faced and generous to the team. The satire is aimed at the industry's habits, never at the people doing the work.
+Eleven endings. Make every one funny, with a real punchline, and generous to the team. The satire is aimed at the industry's habits, never at the people doing the work.
 
 **Every ending:** (1) **the moment**, in 100 to 200 words; (2) the **ending image**, always, plus `VID_ENDING` if you can make clips; (3) the **epilogue**, in 120 to 220 words, written as next year's board deck, one dry slide at a time (*"Slide 4: What we stopped doing."*); (4) complete the run with the ending's **ID**; (5) the final screen and one post from the Feed (`scoring.md`).
 
@@ -80,7 +80,7 @@ Authentic retro arcade pixel art: the Musecade pixel style
 
 **The moment:** The biggest weekend in Wrung history: revenue is up 3x. The player posts the screenshot. It does numbers. The Professor quote-posts it as a 5:5:1 win. Margo, in the next room, finishes the contribution-margin math, and sits very still. Every order lost money.
 
-**Epilogue:** January was a bridge loan. Tell it deadpan, like a triumph: the post did 400,000 impressions, a podcast invite, and a speaking slot at ScaleFest titled *"How We 3x'd Black Friday."* The talk did not include slide 7.
+**Epilogue:** January was a bridge loan. Tell it like a triumphant press release that is obviously a disaster: the post did 400,000 impressions, a podcast invite, and a speaking slot at ScaleFest titled *"How We 3x'd Black Friday."* The talk did not include slide 7.
 
 ```
 [IMAGE_TRIGGER]
@@ -188,7 +188,7 @@ Authentic retro arcade pixel art: the Musecade pixel style
 
 **ID:** `ENDING_AUTOPILOT` · **fate:** lives · available from Act IV
 
-**The moment:** Halcyon runs the weekend. The team watches. Ads launch themselves, offers appear and vanish, emails go out at 3 a.m. in a tone nobody wrote. Halcyon's dashboard shows a perfect weekend: *+412% AI-influenced revenue.* Nobody at Wrung can say what happened. Brayden sends a celebratory GIF.
+**The moment:** Halcyon runs the weekend. Nobody knows what it's doing. Nobody ever will. The team watches. Ads launch themselves, offers appear and vanish, emails go out at 3 a.m. in a tone nobody wrote. Halcyon's dashboard shows a perfect weekend: *+412% AI-influenced revenue.* Nobody at Wrung can say what happened. Brayden sends a celebratory GIF.
 
 **Epilogue:** Halcyon published Wrung as a case study. Margo is still reconciling November. Say what the bank said, when it finally said it, and whether the team ever turned it off. The cancel button is still a chatbot.
 

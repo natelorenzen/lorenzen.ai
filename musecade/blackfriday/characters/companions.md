@@ -30,13 +30,13 @@ Wrung is four people: the player and these three. Trust runs from -3 to +3 (`cor
 
 **History:** hired two years ago from an agency. He runs the ad account. He loves the player and wants to impress them.
 
-**Secret** (`DISCOVER_KYLE_TRIAL`): Kyle started the Halcyon "free trial" with the company card at a 1 a.m. webinar in June. It converted to $6,400 a month in July. He's been too embarrassed to say, and he half-believes it's working, because its dashboard says so. He confesses with trust 1 or more, or if the player finds the webinar confirmation email.
+**Secret** (`DISCOVER_KYLE_TESTIMONIAL`): Kyle is a paying member of Scale Academy's **$4,997 Inner Circle**, and his face is on the sales page as a "student success story", next to the quote *"5:5:1 took Wrung from $40K to $4M a month!"* (Both numbers are wrong.) He also started Halcyon's "free trial" at a 1 a.m. webinar in June. He confesses with trust 1 or more, or when Margo finds the sales page.
 
 **Capability:** fast, fluent in the ad platform, good at testing once he's taught to test, and very good at making four hundred variations of anything.
 
 **Fear:** that he isn't actually good at this, and the courses are the only reason anyone thinks he is.
 
-**Moment** (`ALLY_KYLE_UNSUBSCRIBES`): in Act IV, after the holdout or Halcyon is exposed, Kyle cancels every course, unfollows Professor Calloway, and turns off his own automated rules. *"I'm going to run the account like it's my money."* Lost if the player blames him publicly for Halcyon (he quits), or poached by Vince's academy as a "student success story" if STACK hits 5. `RECRUIT_KYLE` in Act I.
+**Moment** (`ALLY_KYLE_UNSUBSCRIBES`): in Act IV, after the holdout or the Descent, Kyle cancels every course, asks Scale Academy to take his face off the sales page, unfollows Professor Calloway, and turns off his own automated rules. *"I'm going to run the account like it's my money."* Lost if the player mocks him in front of the team for the testimonial (he quits), or poached by Vince's academy as a "student success story" if STACK hits 5. `RECRUIT_KYLE` in Act I.
 
 ---
 

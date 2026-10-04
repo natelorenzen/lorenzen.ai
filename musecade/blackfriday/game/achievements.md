@@ -14,7 +14,9 @@ Evaluate at game over, before the completion batch. Never announce during play.
 | `ACH_RECEIPTS` | RECEIPTS | As the Founder, reach rank III. | Hidden |
 | `ACH_BREAKFAST_TACOS` | BREAKFAST TACOS | Skip the Method panel for tacos (`tacos`). | Hidden |
 | `ACH_PLAN_BY_HALLOWEEN` | PLAN BY HALLOWEEN | Lock the Black Friday plan with 25 or more days left. | Hidden |
-| `ACH_DUE_DILIGENCE` | DUE DILIGENCE | Uncover the holdout result, what Halcyon does, and why they buy. | Hidden |
+| `ACH_DUE_DILIGENCE` | DUE DILIGENCE | Uncover the holdout result, the course loop, and why they buy. | Hidden |
+| `ACH_DIDNT_ASK` | DIDN'T ASK | Keep paying for Halcyon all season and never once ask anyone what it does. | Hidden |
+| `ACH_OR_THE_WEBSITE` | OR THE WEBSITE | End any argument in the game with the words "or the website". | Hidden |
 | `ACH_FULL_HEAD` | FULL HEAD OF HAIR | Finish with HAIR still Full. | Hidden |
 | `ACH_MAIN_CHARACTER` | MAIN CHARACTER | Roll a natural 20 on a POST. | Hidden |
 | `ACH_LAUGHED` | SOMEBODY LAUGHED | Laugh, sincerely, at a Ray-zinger. | Hidden |
