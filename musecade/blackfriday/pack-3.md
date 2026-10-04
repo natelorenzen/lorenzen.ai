@@ -1,4 +1,4 @@
-# BLACK FRIDAY · PACK-3 · BUILD 1.0-0d8ee76
+# BLACK FRIDAY · PACK-3 · BUILD 1.0-59b4565
 
 Bundle for: Act III begins (`REACH_BACK_ROOM`). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 

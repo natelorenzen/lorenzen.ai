@@ -2,7 +2,7 @@
 
 Musecade Game 001 · Version 1.5 · Dark Fantasy · 45 to 75 minutes · 1 player
 <!-- BEGIN GENERATED:build -->
-Build: 1.5-22eb3e0
+Build: 1.5-3666e40
 <!-- END GENERATED:build -->
 Base URL: https://lorenzen.ai/musecade/theblackroad/
 Platform: https://lorenzen.ai/musecade/musecade.md
@@ -30,13 +30,13 @@ The game is bundled for speed. **Fetch exactly one file per act**, when its mome
 <!-- BEGIN GENERATED:packs -->
 | When | Fetch this one file | It contains |
 |---|---|---|
-| **Start** (this file) | https://lorenzen.ai/musecade/theblackroad/play.md?v=1.5-22eb3e0 | `adventure.md` · `rules.md` · `character-creation.md` · `scoring.md` · `game/image-triggers.md` · `acts/act-1.md` · `game/encounters.md` · `world/creatures.md` · `characters/companions.md` |
-| Act II begins (`REACH_WILDERNESS`) | https://lorenzen.ai/musecade/theblackroad/pack-2.md?v=1.5-22eb3e0 | `acts/act-2.md` · `characters/companions-2.md` · `characters/npcs.md` · `world/locations.md` · `world/factions.md` · `world/creatures-2.md` · `game/encounters-2.md` · `game/puzzles.md` |
-| Act III begins (`REACH_VEYR`) | https://lorenzen.ai/musecade/theblackroad/pack-3.md?v=1.5-22eb3e0 | `acts/act-3.md` · `world/lore.md` · `world/creatures-3.md` · `game/encounters-3.md` |
-| Act IV begins (`REACH_ORUN`) | https://lorenzen.ai/musecade/theblackroad/pack-4.md?v=1.5-22eb3e0 | `acts/act-4.md` · `game/encounters-4.md` |
-| Act V begins (`REACH_THRONE`) | https://lorenzen.ai/musecade/theblackroad/pack-5.md?v=1.5-22eb3e0 | `acts/act-5.md` · `world/creatures-5.md` · `game/encounters-5.md` · `game/endings.md` · `game/achievements.md` · `game/gameover.md` |
-| Any ending triggers before Act V (death, leaving early, surrender) | https://lorenzen.ai/musecade/theblackroad/pack-end.md?v=1.5-22eb3e0 | `game/endings.md` · `game/achievements.md` · `game/gameover.md` |
-| The player chooses SCHOLAR | https://lorenzen.ai/musecade/theblackroad/pack-words.md?v=1.5-22eb3e0 | `game/words.md` |
+| **Start** (this file) | https://lorenzen.ai/musecade/theblackroad/play.md?v=1.5-3666e40 | `adventure.md` · `rules.md` · `character-creation.md` · `scoring.md` · `game/image-triggers.md` · `acts/act-1.md` · `game/encounters.md` · `world/creatures.md` · `characters/companions.md` |
+| Act II begins (`REACH_WILDERNESS`) | https://lorenzen.ai/musecade/theblackroad/pack-2.md?v=1.5-3666e40 | `acts/act-2.md` · `characters/companions-2.md` · `characters/npcs.md` · `world/locations.md` · `world/factions.md` · `world/creatures-2.md` · `game/encounters-2.md` · `game/puzzles.md` |
+| Act III begins (`REACH_VEYR`) | https://lorenzen.ai/musecade/theblackroad/pack-3.md?v=1.5-3666e40 | `acts/act-3.md` · `world/lore.md` · `world/creatures-3.md` · `game/encounters-3.md` |
+| Act IV begins (`REACH_ORUN`) | https://lorenzen.ai/musecade/theblackroad/pack-4.md?v=1.5-3666e40 | `acts/act-4.md` · `game/encounters-4.md` |
+| Act V begins (`REACH_THRONE`) | https://lorenzen.ai/musecade/theblackroad/pack-5.md?v=1.5-3666e40 | `acts/act-5.md` · `world/creatures-5.md` · `game/encounters-5.md` · `game/endings.md` · `game/achievements.md` · `game/gameover.md` |
+| Any ending triggers before Act V (death, leaving early, surrender) | https://lorenzen.ai/musecade/theblackroad/pack-end.md?v=1.5-3666e40 | `game/endings.md` · `game/achievements.md` · `game/gameover.md` |
+| The player chooses SCHOLAR | https://lorenzen.ai/musecade/theblackroad/pack-words.md?v=1.5-3666e40 | `game/words.md` |
 <!-- END GENERATED:packs -->
 
 Load nothing early. Content in a pack you haven't fetched doesn't exist yet, so don't improvise its secrets. If the player goes somewhere ahead of the story, fetch that act's pack early rather than inventing a contradicting world.
@@ -101,7 +101,7 @@ Maintain this state silently for the whole game. Update it every turn. Never pri
 
 ```
 RUN        id · token · mode (RANKED | LOCAL) · started (time)
-PLAYER     name · path · look (one line) · wounds 0-3 (0 unhurt, 1 wounded, 2 grievous, 3 dead) · dice (player | dm)
+PLAYER     name · path · look (one line) · wounds 0-3 (0 unhurt, 1 wounded, 2 grievous, 3 dead)
 MAGIC      Scholar only: words known [NER, SAEL, ...] · rank I-III · strain 0-3 (see game/words.md)
            injuries [visible marks, e.g. "cut above left eye"] · ever_wounded (y/n)
 INVENTORY  items with state (e.g. "longsword", "rope (cut short)", "emberstone x2", "40 gold crowns")

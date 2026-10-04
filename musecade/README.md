@@ -151,7 +151,7 @@ Muse keeps a hidden state block (defined in `adventure.md` §5): run credentials
 
 ## 6b. Dice and magic
 
-- **d20, light rules** (`rules.md` §4): the DM decides when to roll, and only at pivotal moments (roughly 10 to 20 per campaign). There is a DC ladder of 8, 12, 15, 18 and 20, +2 when the action fits the path, and advantage or disadvantage in place of other modifiers. A natural 20 succeeds with extra power; a natural 1 is a disaster with a twist. For effects with a size, the roll sets the power. The player can roll their own dice, and the DM never fudges. Dice never solve puzzles.
+- **d20, light rules** (`rules.md` §4): the DM decides when to roll, and only at pivotal moments (roughly 10 to 20 per campaign). There is a DC ladder of 8, 12, 15, 18 and 20, +2 when the action fits the path, and advantage or disadvantage in place of other modifiers. A natural 20 succeeds with extra power; a natural 1 is a disaster with a twist. For effects with a size, the roll sets the power. Muse rolls every die (it never asks who rolls; a player may volunteer their own roll), and the DM never fudges. Dice never solve puzzles.
 - **Words of Weight** (`game/words.md`, loaded only for Scholars): six Old Veyric Words (NER, SAEL, THARRU, ENNAR, MAELIS, ANNA VAELUN). The Scholar starts with two and recovers the rest through the story, growing from rank I (Whisper) to rank III (Command). Casting costs strain, which clears at dawn.
 
 ## 6c. Decision menus

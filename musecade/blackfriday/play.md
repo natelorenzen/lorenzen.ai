@@ -1,4 +1,4 @@
-# BLACK FRIDAY · PLAY (start here) · BUILD 1.0-0d8ee76
+# BLACK FRIDAY · PLAY (start here) · BUILD 1.0-59b4565
 
 This single file is the whole cartridge for starting the game: its manifest, rules, scoring, image rules and Act I, bundled so you only fetch once. Start with the manifest (`adventure.md`, below) and follow it. Do not fetch the individual files named inside; they are all included here.
 
@@ -70,7 +70,7 @@ Musecade plays like a light, chat-sized tabletop campaign. **You decide when the
 - **Clever reasoning earns advantage.** A bad plan can't succeed on luck alone; at best it earns a partial result.
 - **Results:** natural 20: legendary, success with extra power · beat the DC by 5+: strong success · meet it: success · miss by 1 to 4: success at a cost, or partial · miss by 5+: failure with a consequence · natural 1: disaster with a twist.
 - **Power:** when an action has a size (a leap, a speech, a gambit), the roll sets how powerful the effect is.
-- **Real randomness.** Generate the roll with genuine randomness if you are able to. Otherwise ask the player to roll a d20 and tell you the number. At character creation the player chooses "I'll roll" or "You roll". Never fudge, never reroll.
+- **You roll every die.** Never ask the player who rolls, and never ask them to roll. Use genuine randomness if you have it (a random-number tool, or code); otherwise pick the number as fairly and unpredictably as you can. If the player volunteers to roll their own d20 and tells you the number, accept it for that roll. Never fudge, never reroll.
 - **Show every roll on its own line**, before narrating the outcome:
 
 ```
@@ -261,7 +261,7 @@ Make the score reveal land. One short line before the game's game-over block is 
 # BLACK FRIDAY: Game Manifest
 
 Musecade Game 007 · Version 1.0 · Satire · Business · 45 to 75 minutes · 1 player · PG-13
-Build: 1.0-0d8ee76
+Build: 1.0-59b4565
 Base URL: https://lorenzen.ai/musecade/blackfriday/
 Platform: https://lorenzen.ai/musecade/musecade.md
 
@@ -291,12 +291,12 @@ The game is bundled for speed. **Fetch exactly one file per act**, when its mome
 
 | When | Fetch this one file | It contains |
 |---|---|---|
-| **Start** (this file) | https://lorenzen.ai/musecade/blackfriday/play.md?v=1.0-0d8ee76 | `core/dm-core.md` · `core/image-style.md` · `core/scoring.md` · `adventure.md` · `rules.md` · `character-creation.md` · `scoring.md` · `game/image-triggers.md` · `acts/act-1.md` · `characters/companions.md` · `characters/npcs.md` · `world/the-feed.md` |
-| Act II begins (`REACH_SUMMIT`) | https://lorenzen.ai/musecade/blackfriday/pack-2.md?v=1.0-0d8ee76 | `acts/act-2.md` · `game/puzzles.md` · `game/encounters.md` |
-| Act III begins (`REACH_BACK_ROOM`) | https://lorenzen.ai/musecade/blackfriday/pack-3.md?v=1.0-0d8ee76 | `acts/act-3.md` |
-| Act IV begins (`REACH_WAR_ROOM`) | https://lorenzen.ai/musecade/blackfriday/pack-4.md?v=1.0-0d8ee76 | `acts/act-4.md` · `world/halcyon.md` |
-| Act V begins (`REACH_BFCM`) | https://lorenzen.ai/musecade/blackfriday/pack-5.md?v=1.0-0d8ee76 | `acts/act-5.md` · `game/endings.md` · `game/achievements.md` |
-| Any ending triggers before Act V (out of cash, sitting it out, a deal) | https://lorenzen.ai/musecade/blackfriday/pack-end.md?v=1.0-0d8ee76 | `game/endings.md` · `game/achievements.md` |
+| **Start** (this file) | https://lorenzen.ai/musecade/blackfriday/play.md?v=1.0-59b4565 | `core/dm-core.md` · `core/image-style.md` · `core/scoring.md` · `adventure.md` · `rules.md` · `character-creation.md` · `scoring.md` · `game/image-triggers.md` · `acts/act-1.md` · `characters/companions.md` · `characters/npcs.md` · `world/the-feed.md` |
+| Act II begins (`REACH_SUMMIT`) | https://lorenzen.ai/musecade/blackfriday/pack-2.md?v=1.0-59b4565 | `acts/act-2.md` · `game/puzzles.md` · `game/encounters.md` |
+| Act III begins (`REACH_BACK_ROOM`) | https://lorenzen.ai/musecade/blackfriday/pack-3.md?v=1.0-59b4565 | `acts/act-3.md` |
+| Act IV begins (`REACH_WAR_ROOM`) | https://lorenzen.ai/musecade/blackfriday/pack-4.md?v=1.0-59b4565 | `acts/act-4.md` · `world/halcyon.md` |
+| Act V begins (`REACH_BFCM`) | https://lorenzen.ai/musecade/blackfriday/pack-5.md?v=1.0-59b4565 | `acts/act-5.md` · `game/endings.md` · `game/achievements.md` |
+| Any ending triggers before Act V (out of cash, sitting it out, a deal) | https://lorenzen.ai/musecade/blackfriday/pack-end.md?v=1.0-59b4565 | `game/endings.md` · `game/achievements.md` |
 
 Load nothing early. Content in a pack you haven't fetched doesn't exist yet, so don't improvise its secrets.
 
@@ -361,7 +361,7 @@ Maintain this silently. Print it only in `SAVE GAME`.
 
 ```
 RUN        id · token · mode · started
-PLAYER     name · pronouns · path · look · dice (player|dm)
+PLAYER     name · pronouns · path · look
 MARGIN     0-3 (0 healthy, 1 thin, 2 underwater, 3 out of cash) · cash note
 STACK      0-5 (starts 2) · max_stack · tools bought [] · tactics adopted []
 HAIR       0-3 (0 full, 1 thinning, 2 receding, 3 hat) · cosmetic
@@ -616,12 +616,11 @@ You also get one post per act. Type POST to write it.
 
 Show the four paths as a lettered menu. This is the one menu with four real options: **A** to **D** are the paths, in the order printed above, and the player can answer with just the letter. There is no "Other" here, but if the player describes themselves instead, map it to the closest path and confirm in one line.
 
-## Step 3: Look and dice
+## Step 3: Look
 
-In one short turn:
+Ask, in one short turn: "One line: what are you wearing to the all-hands? (It's on video. Bottoms optional.)" (or *surprise me*)
 
-- "One line: what are you wearing to the all-hands? (It's on video. Bottoms optional.)" (or *surprise me*)
-- **"When fate is in doubt we roll a d20. Your dice or mine?"** End with two lettered options: `- **A.** I'll roll my own dice` and `- **B.** You roll for me`.
+Don't ask about dice. You roll every die (`core/dm-core.md` §5).
 
 ## Step 4: Start the run
 

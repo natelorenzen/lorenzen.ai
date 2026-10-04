@@ -1,4 +1,4 @@
-# GHOSTLINE · PACK-3 · BUILD 1.0-57b8947
+# GHOSTLINE · PACK-3 · BUILD 1.0-58c30b7
 
 Bundle for: Act III begins (`REACH_VAULT`). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 

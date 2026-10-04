@@ -1,4 +1,4 @@
-# THE BLACK ROAD · PLAY (start here) · BUILD 1.5-22eb3e0
+# THE BLACK ROAD · PLAY (start here) · BUILD 1.5-3666e40
 
 This single file is the whole cartridge for starting the game: its manifest, rules, scoring, image rules and Act I, bundled so you only fetch once. Start with the manifest (`adventure.md`, below) and follow it. Do not fetch the individual files named inside; they are all included here.
 
@@ -7,7 +7,7 @@ This single file is the whole cartridge for starting the game: its manifest, rul
 # THE BLACK ROAD: Game Manifest
 
 Musecade Game 001 · Version 1.5 · Dark Fantasy · 45 to 75 minutes · 1 player
-Build: 1.5-22eb3e0
+Build: 1.5-3666e40
 Base URL: https://lorenzen.ai/musecade/theblackroad/
 Platform: https://lorenzen.ai/musecade/musecade.md
 
@@ -33,13 +33,13 @@ The game is bundled for speed. **Fetch exactly one file per act**, when its mome
 
 | When | Fetch this one file | It contains |
 |---|---|---|
-| **Start** (this file) | https://lorenzen.ai/musecade/theblackroad/play.md?v=1.5-22eb3e0 | `adventure.md` · `rules.md` · `character-creation.md` · `scoring.md` · `game/image-triggers.md` · `acts/act-1.md` · `game/encounters.md` · `world/creatures.md` · `characters/companions.md` |
-| Act II begins (`REACH_WILDERNESS`) | https://lorenzen.ai/musecade/theblackroad/pack-2.md?v=1.5-22eb3e0 | `acts/act-2.md` · `characters/companions-2.md` · `characters/npcs.md` · `world/locations.md` · `world/factions.md` · `world/creatures-2.md` · `game/encounters-2.md` · `game/puzzles.md` |
-| Act III begins (`REACH_VEYR`) | https://lorenzen.ai/musecade/theblackroad/pack-3.md?v=1.5-22eb3e0 | `acts/act-3.md` · `world/lore.md` · `world/creatures-3.md` · `game/encounters-3.md` |
-| Act IV begins (`REACH_ORUN`) | https://lorenzen.ai/musecade/theblackroad/pack-4.md?v=1.5-22eb3e0 | `acts/act-4.md` · `game/encounters-4.md` |
-| Act V begins (`REACH_THRONE`) | https://lorenzen.ai/musecade/theblackroad/pack-5.md?v=1.5-22eb3e0 | `acts/act-5.md` · `world/creatures-5.md` · `game/encounters-5.md` · `game/endings.md` · `game/achievements.md` · `game/gameover.md` |
-| Any ending triggers before Act V (death, leaving early, surrender) | https://lorenzen.ai/musecade/theblackroad/pack-end.md?v=1.5-22eb3e0 | `game/endings.md` · `game/achievements.md` · `game/gameover.md` |
-| The player chooses SCHOLAR | https://lorenzen.ai/musecade/theblackroad/pack-words.md?v=1.5-22eb3e0 | `game/words.md` |
+| **Start** (this file) | https://lorenzen.ai/musecade/theblackroad/play.md?v=1.5-3666e40 | `adventure.md` · `rules.md` · `character-creation.md` · `scoring.md` · `game/image-triggers.md` · `acts/act-1.md` · `game/encounters.md` · `world/creatures.md` · `characters/companions.md` |
+| Act II begins (`REACH_WILDERNESS`) | https://lorenzen.ai/musecade/theblackroad/pack-2.md?v=1.5-3666e40 | `acts/act-2.md` · `characters/companions-2.md` · `characters/npcs.md` · `world/locations.md` · `world/factions.md` · `world/creatures-2.md` · `game/encounters-2.md` · `game/puzzles.md` |
+| Act III begins (`REACH_VEYR`) | https://lorenzen.ai/musecade/theblackroad/pack-3.md?v=1.5-3666e40 | `acts/act-3.md` · `world/lore.md` · `world/creatures-3.md` · `game/encounters-3.md` |
+| Act IV begins (`REACH_ORUN`) | https://lorenzen.ai/musecade/theblackroad/pack-4.md?v=1.5-3666e40 | `acts/act-4.md` · `game/encounters-4.md` |
+| Act V begins (`REACH_THRONE`) | https://lorenzen.ai/musecade/theblackroad/pack-5.md?v=1.5-3666e40 | `acts/act-5.md` · `world/creatures-5.md` · `game/encounters-5.md` · `game/endings.md` · `game/achievements.md` · `game/gameover.md` |
+| Any ending triggers before Act V (death, leaving early, surrender) | https://lorenzen.ai/musecade/theblackroad/pack-end.md?v=1.5-3666e40 | `game/endings.md` · `game/achievements.md` · `game/gameover.md` |
+| The player chooses SCHOLAR | https://lorenzen.ai/musecade/theblackroad/pack-words.md?v=1.5-3666e40 | `game/words.md` |
 
 Load nothing early. Content in a pack you haven't fetched doesn't exist yet, so don't improvise its secrets. If the player goes somewhere ahead of the story, fetch that act's pack early rather than inventing a contradicting world.
 
@@ -103,7 +103,7 @@ Maintain this state silently for the whole game. Update it every turn. Never pri
 
 ```
 RUN        id · token · mode (RANKED | LOCAL) · started (time)
-PLAYER     name · path · look (one line) · wounds 0-3 (0 unhurt, 1 wounded, 2 grievous, 3 dead) · dice (player | dm)
+PLAYER     name · path · look (one line) · wounds 0-3 (0 unhurt, 1 wounded, 2 grievous, 3 dead)
 MAGIC      Scholar only: words known [NER, SAEL, ...] · rank I-III · strain 0-3 (see game/words.md)
            injuries [visible marks, e.g. "cut above left eye"] · ever_wounded (y/n)
 INVENTORY  items with state (e.g. "longsword", "rope (cut short)", "emberstone x2", "40 gold crowns")
@@ -182,7 +182,7 @@ Dark fantasy: dread, cold, fire, grief, courage. Violence is real and never grat
 - **DC:** Easy 8 · Moderate 12 · Hard 15 · Very hard 18 · Nearly impossible 20.
 - **+2** when the action fits the path. **Advantage** (roll two, keep the higher) for good position, preparation, a clever plan or help. **Disadvantage** for bad position, being Grievous, darkness, haste, or Scholar strain 2+. No other numbers. A bad plan can't win on luck alone.
 - **Results:** natural 20: legendary, with extra power · beat the DC by 5+: strong · meet it: success · miss by 1–4: success at a cost · miss by 5+: failure and consequence · natural 1: disaster with a twist. For big effects (a Word, a flare, a spear, a speech), the roll sets the **power**.
-- Use real randomness if you can. Otherwise the player rolls (they chose `dice` at creation). Never fudge or reroll. Show each roll on its own line before the outcome: `[ d20: 14 + 2 (Warden) = 16 vs DC 15 · SUCCESS ]`.
+- **You roll every die.** Never ask the player who rolls, or ask them to roll. Use genuine randomness if you have it; otherwise pick as fairly and unpredictably as you can. If the player volunteers their own d20 roll, accept it for that roll. Never fudge or reroll. Show each roll on its own line before the outcome: `[ d20: 14 + 2 (Warden) = 16 vs DC 15 · SUCCESS ]`.
 - Telegraph lethal danger first. Death comes only from a miss by 5+ or a natural 1 on a danger the player knowingly accepted.
 
 ## 5. Wounds
@@ -214,7 +214,7 @@ On `SAVE GAME`, print one code block:
 ```
 === MUSECADE SAVE · THE BLACK ROAD ===
 RUN: <run_id> · <token or LOCAL> · <mode>
-PLAYER: <name> · <PATH> · wounds <n> · look · dice
+PLAYER: <name> · <PATH> · wounds <n> · look
 MAGIC · INJURIES · ACT/SCENE · NIGHTS · INVENTORY · RELIQUARY
 COMPANIONS · FACTIONS · KNOWLEDGE · FLAGS · EVENTS (pending) · IMAGES · VISUAL
 LAST: <one sentence>
@@ -261,7 +261,7 @@ Persuasion, deception, negotiation, reading people.
 
 Then ask: "Who were you, before you took this job?" The player can answer with a letter. If they describe themselves instead, map it to the closest path and confirm in one line.
 
-**3. Look and dice.** In one turn, ask: "One sentence: what do people see when you walk into a tavern? (Or *surprise me*.)" Record it as `look`. Also ask: "When fate is in doubt we roll a d20. Will you roll your own dice, or shall I roll for you?" and end with `- **A.** I'll roll my own dice` and `- **B.** You roll for me`. If the path is SCHOLAR, fetch the `pack-words` link (manifest §2) now.
+**3. Look.** In one turn, ask: "One sentence: what do people see when you walk into a tavern? (Or *surprise me*.)" Record it as `look`. Don't ask about dice: you roll every die (`rules.md` §4). If the path is SCHOLAR, fetch the `pack-words` link (manifest §2) now.
 
 **4. Start the run** silently (`scoring.md`).
 

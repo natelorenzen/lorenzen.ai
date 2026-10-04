@@ -45,11 +45,10 @@ This is the one menu with four real options: **A** to **D** are the paths, in th
 
 ## Step 3: Look, the rumor, and dice
 
-In one short turn:
-
-- "One line: what do you look like, walking up the ferry ramp? (Or *surprise me*.)"
+Ask, in one short turn: "One line: what do you look like, walking up the ferry ramp? (Or *surprise me*.)"
 - **"Why did your parents send you here for the summer?"** Offer three suggestions she can take or ignore: *a rumor at school that wasn't true*, *a video that went everywhere*, *you told the truth about someone, and it cost you*. Record it as `backstory`. It will matter: she knows what it's like when everyone believes the wrong story.
-- **"When fate is in doubt we roll a d20. Your dice or mine?"** End with two lettered options: `- **A.** I'll roll my own dice` and `- **B.** You roll for me`.
+
+Don't ask about dice. You roll every die (`core/dm-core.md` §5).
 
 ## Step 4: Start the run
 

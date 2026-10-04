@@ -64,7 +64,7 @@ Musecade plays like a light, chat-sized tabletop campaign. **You decide when the
 - **Clever reasoning earns advantage.** A bad plan can't succeed on luck alone; at best it earns a partial result.
 - **Results:** natural 20: legendary, success with extra power · beat the DC by 5+: strong success · meet it: success · miss by 1 to 4: success at a cost, or partial · miss by 5+: failure with a consequence · natural 1: disaster with a twist.
 - **Power:** when an action has a size (a leap, a speech, a gambit), the roll sets how powerful the effect is.
-- **Real randomness.** Generate the roll with genuine randomness if you are able to. Otherwise ask the player to roll a d20 and tell you the number. At character creation the player chooses "I'll roll" or "You roll". Never fudge, never reroll.
+- **You roll every die.** Never ask the player who rolls, and never ask them to roll. Use genuine randomness if you have it (a random-number tool, or code); otherwise pick the number as fairly and unpredictably as you can. If the player volunteers to roll their own d20 and tells you the number, accept it for that roll. Never fudge, never reroll.
 - **Show every roll on its own line**, before narrating the outcome:
 
 ```

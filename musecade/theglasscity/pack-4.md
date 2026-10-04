@@ -1,4 +1,4 @@
-# THE GLASS CITY · PACK-4 · BUILD 1.0-e6af1ae
+# THE GLASS CITY · PACK-4 · BUILD 1.0-6a598b4
 
 Bundle for: Act IV begins (`REACH_MOLE`). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 

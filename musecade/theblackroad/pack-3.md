@@ -1,4 +1,4 @@
-# THE BLACK ROAD · PACK-3 · BUILD 1.5-22eb3e0
+# THE BLACK ROAD · PACK-3 · BUILD 1.5-3666e40
 
 Bundle for: Act III begins (`REACH_VEYR`). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 

@@ -2,7 +2,7 @@
 
 Musecade Game 005 · Version 1.0 · Cyberpunk · Noir · 45 to 75 minutes · 1 player · Rated PG-13
 <!-- BEGIN GENERATED:build -->
-Build: 1.0-57b8947
+Build: 1.0-58c30b7
 <!-- END GENERATED:build -->
 Base URL: https://lorenzen.ai/musecade/ghostline/
 Platform: https://lorenzen.ai/musecade/musecade.md
@@ -30,12 +30,12 @@ The game is bundled for speed. **Fetch exactly one file per act**, when its mome
 <!-- BEGIN GENERATED:packs -->
 | When | Fetch this one file | It contains |
 |---|---|---|
-| **Start** (this file) | https://lorenzen.ai/musecade/ghostline/play.md?v=1.0-57b8947 | `core/dm-core.md` · `core/image-style.md` · `core/scoring.md` · `adventure.md` · `rules.md` · `character-creation.md` · `scoring.md` · `game/image-triggers.md` · `acts/act-1.md` · `characters/companions.md` · `characters/npcs.md` |
-| Act II begins (`REACH_STACKS`) | https://lorenzen.ai/musecade/ghostline/pack-2.md?v=1.0-57b8947 | `acts/act-2.md` · `world/lumen.md` · `world/mara.md` · `game/puzzles.md` |
-| Act III begins (`REACH_VAULT`) | https://lorenzen.ai/musecade/ghostline/pack-3.md?v=1.0-57b8947 | `acts/act-3.md` · `game/encounters.md` |
-| Act IV begins (`REACH_CANOPY`) | https://lorenzen.ai/musecade/ghostline/pack-4.md?v=1.0-57b8947 | `acts/act-4.md` |
-| Act V begins (`REACH_CROWN`) | https://lorenzen.ai/musecade/ghostline/pack-5.md?v=1.0-57b8947 | `acts/act-5.md` · `game/endings.md` · `game/achievements.md` |
-| Any ending triggers before Act V (flatline, full sync, selling the ghost, a deal) | https://lorenzen.ai/musecade/ghostline/pack-end.md?v=1.0-57b8947 | `game/endings.md` · `game/achievements.md` |
+| **Start** (this file) | https://lorenzen.ai/musecade/ghostline/play.md?v=1.0-58c30b7 | `core/dm-core.md` · `core/image-style.md` · `core/scoring.md` · `adventure.md` · `rules.md` · `character-creation.md` · `scoring.md` · `game/image-triggers.md` · `acts/act-1.md` · `characters/companions.md` · `characters/npcs.md` |
+| Act II begins (`REACH_STACKS`) | https://lorenzen.ai/musecade/ghostline/pack-2.md?v=1.0-58c30b7 | `acts/act-2.md` · `world/lumen.md` · `world/mara.md` · `game/puzzles.md` |
+| Act III begins (`REACH_VAULT`) | https://lorenzen.ai/musecade/ghostline/pack-3.md?v=1.0-58c30b7 | `acts/act-3.md` · `game/encounters.md` |
+| Act IV begins (`REACH_CANOPY`) | https://lorenzen.ai/musecade/ghostline/pack-4.md?v=1.0-58c30b7 | `acts/act-4.md` |
+| Act V begins (`REACH_CROWN`) | https://lorenzen.ai/musecade/ghostline/pack-5.md?v=1.0-58c30b7 | `acts/act-5.md` · `game/endings.md` · `game/achievements.md` |
+| Any ending triggers before Act V (flatline, full sync, selling the ghost, a deal) | https://lorenzen.ai/musecade/ghostline/pack-end.md?v=1.0-58c30b7 | `game/endings.md` · `game/achievements.md` |
 <!-- END GENERATED:packs -->
 
 Load nothing early. Content in a pack you haven't fetched doesn't exist yet, so don't improvise its secrets. If the player goes somewhere ahead of the story, fetch that act's pack early rather than inventing a contradicting world.
@@ -102,7 +102,7 @@ Maintain this silently. Print it only in `SAVE GAME`.
 
 ```
 RUN        id · token · mode · started
-PLAYER     name · path · look · dice (player|dm) · pronouns (as the player gives them)
+PLAYER     name · path · look · pronouns (as the player gives them)
 SYNC       0-5 · max_sync · keys used []
 HARM       0-3 (0 fine, 1 scratched, 2 bleeding, 3 flatlined)
 CLOCK      hours left of 48 · night (1-3)

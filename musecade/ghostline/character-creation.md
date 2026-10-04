@@ -40,12 +40,11 @@ Each move works once per act. Type MOVE to use it.
 
 This is the one menu with four real options: **A** to **D** are the paths, in the order printed above, and the player can answer with just the letter. If they describe themselves instead, map it to the closest path and confirm in one line.
 
-## Step 3: Look and dice
+## Step 3: Look
 
-In one short turn:
+Ask, in one short turn: "One line: what do you look like when the neon hits you? Chrome, hair, the jacket. (Or *surprise me*.)"
 
-- "One line: what do you look like when the neon hits you? Chrome, hair, the jacket. (Or *surprise me*.)"
-- **"When fate is in doubt we roll a d20. Your dice or mine?"** End with two lettered options: `- **A.** I'll roll my own dice` and `- **B.** You roll for me`.
+Don't ask about dice. You roll every die (`core/dm-core.md` §5).
 
 ## Step 4: Start the run
 

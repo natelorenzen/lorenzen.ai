@@ -39,12 +39,11 @@ Each move works once per act. Type MOVE to use it.
 
 Show the four paths as a lettered menu. This is the one menu with four real options: **A** to **D** are the paths, in the order printed above, and the player can answer with just the letter. There is no "Other" here, but if the player describes themselves instead, map it to the closest path and confirm in one line.
 
-## Step 3: Look and dice
+## Step 3: Look
 
-In one short turn, ask:
+Ask, in one short turn: "One line: what does the border guard see?" (or *surprise me*)
 
-- "One line: what does the border guard see?" (or *surprise me*)
-- **"When fate is in doubt we roll a d20. Will you roll your own dice, or shall I?"** End with two lettered options: `- **A.** I'll roll my own dice` and `- **B.** You roll for me`.
+Don't ask about dice. You roll every die (`core/dm-core.md` §5).
 
 ## Step 4: Start the run
 

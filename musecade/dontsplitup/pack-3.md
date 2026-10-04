@@ -1,4 +1,4 @@
-# DON'T SPLIT UP · PACK-3 · BUILD 1.0-3d0d253
+# DON'T SPLIT UP · PACK-3 · BUILD 1.0-b569ec4
 
 Bundle for: Act III begins (`REACH_CAMP`). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 

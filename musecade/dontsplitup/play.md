@@ -1,4 +1,4 @@
-# DON'T SPLIT UP · PLAY (start here) · BUILD 1.0-3d0d253
+# DON'T SPLIT UP · PLAY (start here) · BUILD 1.0-b569ec4
 
 This single file is the whole cartridge for starting the game: its manifest, rules, scoring, image rules and Act I, bundled so you only fetch once. Start with the manifest (`adventure.md`, below) and follow it. Do not fetch the individual files named inside; they are all included here.
 
@@ -70,7 +70,7 @@ Musecade plays like a light, chat-sized tabletop campaign. **You decide when the
 - **Clever reasoning earns advantage.** A bad plan can't succeed on luck alone; at best it earns a partial result.
 - **Results:** natural 20: legendary, success with extra power · beat the DC by 5+: strong success · meet it: success · miss by 1 to 4: success at a cost, or partial · miss by 5+: failure with a consequence · natural 1: disaster with a twist.
 - **Power:** when an action has a size (a leap, a speech, a gambit), the roll sets how powerful the effect is.
-- **Real randomness.** Generate the roll with genuine randomness if you are able to. Otherwise ask the player to roll a d20 and tell you the number. At character creation the player chooses "I'll roll" or "You roll". Never fudge, never reroll.
+- **You roll every die.** Never ask the player who rolls, and never ask them to roll. Use genuine randomness if you have it (a random-number tool, or code); otherwise pick the number as fairly and unpredictably as you can. If the player volunteers to roll their own d20 and tells you the number, accept it for that roll. Never fudge, never reroll.
 - **Show every roll on its own line**, before narrating the outcome:
 
 ```
@@ -261,7 +261,7 @@ Make the score reveal land. One short line before the game's game-over block is 
 # DON'T SPLIT UP: Game Manifest
 
 Musecade Game 006 · Version 1.0 · Horror · Comedy · 45 to 75 minutes · 1 player · PG-13
-Build: 1.0-3d0d253
+Build: 1.0-b569ec4
 Base URL: https://lorenzen.ai/musecade/dontsplitup/
 Platform: https://lorenzen.ai/musecade/musecade.md
 
@@ -289,12 +289,12 @@ The game is bundled for speed. **Fetch exactly one file per act**, when its mome
 
 | When | Fetch this one file | It contains |
 |---|---|---|
-| **Start** (this file) | https://lorenzen.ai/musecade/dontsplitup/play.md?v=1.0-3d0d253 | `core/dm-core.md` · `core/image-style.md` · `core/scoring.md` · `adventure.md` · `rules.md` · `character-creation.md` · `scoring.md` · `game/image-triggers.md` · `acts/act-1.md` · `characters/companions.md` · `characters/npcs.md` |
-| Act II begins (`REACH_CABIN`) | https://lorenzen.ai/musecade/dontsplitup/pack-2.md?v=1.0-3d0d253 | `acts/act-2.md` · `world/hollow-pines.md` · `game/puzzles.md` · `game/encounters.md` |
-| Act III begins (`REACH_CAMP`) | https://lorenzen.ai/musecade/dontsplitup/pack-3.md?v=1.0-3d0d253 | `acts/act-3.md` |
-| Act IV begins (`REACH_TOWN`) | https://lorenzen.ai/musecade/dontsplitup/pack-4.md?v=1.0-3d0d253 | `acts/act-4.md` · `world/jack-hollow.md` |
-| Act V begins (`REACH_PATCH`) | https://lorenzen.ai/musecade/dontsplitup/pack-5.md?v=1.0-3d0d253 | `acts/act-5.md` · `game/endings.md` · `game/achievements.md` |
-| Any ending triggers before Act V (taken, driving away, a deal) | https://lorenzen.ai/musecade/dontsplitup/pack-end.md?v=1.0-3d0d253 | `game/endings.md` · `game/achievements.md` |
+| **Start** (this file) | https://lorenzen.ai/musecade/dontsplitup/play.md?v=1.0-b569ec4 | `core/dm-core.md` · `core/image-style.md` · `core/scoring.md` · `adventure.md` · `rules.md` · `character-creation.md` · `scoring.md` · `game/image-triggers.md` · `acts/act-1.md` · `characters/companions.md` · `characters/npcs.md` |
+| Act II begins (`REACH_CABIN`) | https://lorenzen.ai/musecade/dontsplitup/pack-2.md?v=1.0-b569ec4 | `acts/act-2.md` · `world/hollow-pines.md` · `game/puzzles.md` · `game/encounters.md` |
+| Act III begins (`REACH_CAMP`) | https://lorenzen.ai/musecade/dontsplitup/pack-3.md?v=1.0-b569ec4 | `acts/act-3.md` |
+| Act IV begins (`REACH_TOWN`) | https://lorenzen.ai/musecade/dontsplitup/pack-4.md?v=1.0-b569ec4 | `acts/act-4.md` · `world/jack-hollow.md` |
+| Act V begins (`REACH_PATCH`) | https://lorenzen.ai/musecade/dontsplitup/pack-5.md?v=1.0-b569ec4 | `acts/act-5.md` · `game/endings.md` · `game/achievements.md` |
+| Any ending triggers before Act V (taken, driving away, a deal) | https://lorenzen.ai/musecade/dontsplitup/pack-end.md?v=1.0-b569ec4 | `game/endings.md` · `game/achievements.md` |
 
 Load nothing early. Content in a pack you haven't fetched doesn't exist yet, so don't improvise its secrets. If the player goes somewhere ahead of the story, fetch that act's pack early rather than inventing a contradicting world.
 
@@ -363,7 +363,7 @@ Maintain this silently. Print it only in `SAVE GAME`.
 
 ```
 RUN        id · token · mode · started
-PLAYER     name · pronouns · path · look · dice (player|dm)
+PLAYER     name · pronouns · path · look
 HARM       0-3 (0 fine, 1 shaken, 2 twisted ankle, 3 taken: I'LL BE RIGHT BACK) · injuries
 TROPE      0-5 · max_trope · forbidden lines said []
 CLOCK      time (starts Halloween 7:40 p.m.; sunrise 6:50 a.m.) · location
@@ -549,12 +549,11 @@ Each move works once per act. Type MOVE to use it.
 
 Show the four paths as a lettered menu. This is the one menu with four real options: **A** to **D** are the paths, in the order printed above, and the player can answer with just the letter. There is no "Other" here, but if the player describes themselves instead, map it to the closest path and confirm in one line.
 
-## Step 3: Look and dice
+## Step 3: Look
 
-In one short turn:
+Ask, in one short turn: "One line: what's your Halloween costume? (It's 1989. Homemade counts.)" (or *surprise me*)
 
-- "One line: what's your Halloween costume? (It's 1989. Homemade counts.)" (or *surprise me*)
-- **"When fate is in doubt we roll a d20. Your dice or mine?"** End with two lettered options: `- **A.** I'll roll my own dice` and `- **B.** You roll for me`.
+Don't ask about dice. You roll every die (`core/dm-core.md` §5).
 
 ## Step 4: Start the run
 

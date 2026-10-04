@@ -29,7 +29,7 @@ Persuasion, deception, negotiation, reading people.
 
 Then ask: "Who were you, before you took this job?" The player can answer with a letter. If they describe themselves instead, map it to the closest path and confirm in one line.
 
-**3. Look and dice.** In one turn, ask: "One sentence: what do people see when you walk into a tavern? (Or *surprise me*.)" Record it as `look`. Also ask: "When fate is in doubt we roll a d20. Will you roll your own dice, or shall I roll for you?" and end with `- **A.** I'll roll my own dice` and `- **B.** You roll for me`. If the path is SCHOLAR, fetch the `pack-words` link (manifest §2) now.
+**3. Look.** In one turn, ask: "One sentence: what do people see when you walk into a tavern? (Or *surprise me*.)" Record it as `look`. Don't ask about dice: you roll every die (`rules.md` §4). If the path is SCHOLAR, fetch the `pack-words` link (manifest §2) now.
 
 **4. Start the run** silently (`scoring.md`).
 

@@ -23,63 +23,63 @@ Leaderboard API: https://musecade-api.nlorenzen.workers.dev
 Title: The Black Road
 Genre: Dark Fantasy
 Duration: 45–75 minutes
-Build: 1.5-22eb3e0
+Build: 1.5-3666e40
 Play:
-https://lorenzen.ai/musecade/theblackroad/play.md?v=1.5-22eb3e0
+https://lorenzen.ai/musecade/theblackroad/play.md?v=1.5-3666e40
 
 ### #theglasscity
 
 Title: The Glass City
 Genre: Espionage
 Duration: 45–75 minutes
-Build: 1.0-e6af1ae
+Build: 1.0-6a598b4
 Play:
-https://lorenzen.ai/musecade/theglasscity/play.md?v=1.0-e6af1ae
+https://lorenzen.ai/musecade/theglasscity/play.md?v=1.0-6a598b4
 
 ### #theseaglassinn
 
 Title: The Sea Glass Inn
 Genre: Teen Thriller · Mystery
 Duration: 45–75 minutes
-Build: 2.0-af190e6
+Build: 2.0-912e7c5
 Play:
-https://lorenzen.ai/musecade/theseaglassinn/play.md?v=2.0-af190e6
+https://lorenzen.ai/musecade/theseaglassinn/play.md?v=2.0-912e7c5
 
 ### #seriesdoom
 
 Title: Series Doom
 Genre: Satire · Comedy
 Duration: 45–75 minutes
-Build: 1.0-5e0936d
+Build: 1.0-b21b408
 Play:
-https://lorenzen.ai/musecade/seriesdoom/play.md?v=1.0-5e0936d
+https://lorenzen.ai/musecade/seriesdoom/play.md?v=1.0-b21b408
 
 ### #ghostline
 
 Title: Ghostline
 Genre: Cyberpunk · Noir
 Duration: 45–75 minutes
-Build: 1.0-57b8947
+Build: 1.0-58c30b7
 Play:
-https://lorenzen.ai/musecade/ghostline/play.md?v=1.0-57b8947
+https://lorenzen.ai/musecade/ghostline/play.md?v=1.0-58c30b7
 
 ### #dontsplitup
 
 Title: Don't Split Up
 Genre: Horror · Comedy
 Duration: 45–75 minutes
-Build: 1.0-3d0d253
+Build: 1.0-b569ec4
 Play:
-https://lorenzen.ai/musecade/dontsplitup/play.md?v=1.0-3d0d253
+https://lorenzen.ai/musecade/dontsplitup/play.md?v=1.0-b569ec4
 
 ### #blackfriday
 
 Title: Black Friday
 Genre: Satire · Business
 Duration: 45–75 minutes
-Build: 1.0-0d8ee76
+Build: 1.0-59b4565
 Play:
-https://lorenzen.ai/musecade/blackfriday/play.md?v=1.0-0d8ee76
+https://lorenzen.ai/musecade/blackfriday/play.md?v=1.0-59b4565
 <!-- END GENERATED:games -->
 
 ---

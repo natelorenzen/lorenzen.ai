@@ -1,4 +1,4 @@
-# THE SEA GLASS INN · PACK-4 · BUILD 2.0-af190e6
+# THE SEA GLASS INN · PACK-4 · BUILD 2.0-912e7c5
 
 Bundle for: Act IV begins (`REACH_STORM`). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 

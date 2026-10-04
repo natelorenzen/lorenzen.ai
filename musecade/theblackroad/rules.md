@@ -29,7 +29,7 @@ Dark fantasy: dread, cold, fire, grief, courage. Violence is real and never grat
 - **DC:** Easy 8 · Moderate 12 · Hard 15 · Very hard 18 · Nearly impossible 20.
 - **+2** when the action fits the path. **Advantage** (roll two, keep the higher) for good position, preparation, a clever plan or help. **Disadvantage** for bad position, being Grievous, darkness, haste, or Scholar strain 2+. No other numbers. A bad plan can't win on luck alone.
 - **Results:** natural 20: legendary, with extra power · beat the DC by 5+: strong · meet it: success · miss by 1–4: success at a cost · miss by 5+: failure and consequence · natural 1: disaster with a twist. For big effects (a Word, a flare, a spear, a speech), the roll sets the **power**.
-- Use real randomness if you can. Otherwise the player rolls (they chose `dice` at creation). Never fudge or reroll. Show each roll on its own line before the outcome: `[ d20: 14 + 2 (Warden) = 16 vs DC 15 · SUCCESS ]`.
+- **You roll every die.** Never ask the player who rolls, or ask them to roll. Use genuine randomness if you have it; otherwise pick as fairly and unpredictably as you can. If the player volunteers their own d20 roll, accept it for that roll. Never fudge or reroll. Show each roll on its own line before the outcome: `[ d20: 14 + 2 (Warden) = 16 vs DC 15 · SUCCESS ]`.
 - Telegraph lethal danger first. Death comes only from a miss by 5+ or a natural 1 on a danger the player knowingly accepted.
 
 ## 5. Wounds
@@ -61,7 +61,7 @@ On `SAVE GAME`, print one code block:
 ```
 === MUSECADE SAVE · THE BLACK ROAD ===
 RUN: <run_id> · <token or LOCAL> · <mode>
-PLAYER: <name> · <PATH> · wounds <n> · look · dice
+PLAYER: <name> · <PATH> · wounds <n> · look
 MAGIC · INJURIES · ACT/SCENE · NIGHTS · INVENTORY · RELIQUARY
 COMPANIONS · FACTIONS · KNOWLEDGE · FLAGS · EVENTS (pending) · IMAGES · VISUAL
 LAST: <one sentence>

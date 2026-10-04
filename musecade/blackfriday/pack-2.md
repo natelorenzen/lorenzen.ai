@@ -1,4 +1,4 @@
-# BLACK FRIDAY · PACK-2 · BUILD 1.0-0d8ee76
+# BLACK FRIDAY · PACK-2 · BUILD 1.0-59b4565
 
 Bundle for: Act II begins (`REACH_SUMMIT`). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 
