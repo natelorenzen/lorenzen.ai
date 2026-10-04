@@ -20,8 +20,9 @@ import SERIES_DOOM from "../../seriesdoom/events.json" with { type: "json" };
 import GHOSTLINE from "../../ghostline/events.json" with { type: "json" };
 import DONT_SPLIT_UP from "../../dontsplitup/events.json" with { type: "json" };
 import BLACK_FRIDAY from "../../blackfriday/events.json" with { type: "json" };
+import MONTE_CRISTO from "../../montecristo/events.json" with { type: "json" };
 
-export const GAMES = { theblackroad: THE_BLACK_ROAD, theglasscity: THE_GLASS_CITY, theseaglassinn: THE_SEA_GLASS_INN, seriesdoom: SERIES_DOOM, ghostline: GHOSTLINE, dontsplitup: DONT_SPLIT_UP, blackfriday: BLACK_FRIDAY };
+export const GAMES = { theblackroad: THE_BLACK_ROAD, theglasscity: THE_GLASS_CITY, theseaglassinn: THE_SEA_GLASS_INN, seriesdoom: SERIES_DOOM, ghostline: GHOSTLINE, dontsplitup: DONT_SPLIT_UP, blackfriday: BLACK_FRIDAY, montecristo: MONTE_CRISTO };
 
 const MAX_BODY_BYTES = 8192;
 const MAX_EVENTS_PER_REQUEST = 60;

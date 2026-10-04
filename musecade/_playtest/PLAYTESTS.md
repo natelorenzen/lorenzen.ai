@@ -232,3 +232,23 @@ v2.0 recasts the game as a teen summer thriller. `node musecade/_playtest/replay
 - **FAILURE:** Bo keeps Halcyon running, adds the Professor's cost-cap structure (STACK 5), and a sitewide 40 percent pre-sale in Act IV eats the cash before Black Friday arrives.
 
 **Verified:** no real people, brands, agencies, tools or podcasts; the source cast was used only as archetypes, with names, companies, bios and catchphrases all newly invented (no real bio lines or taglines reused); ad platforms are unnamed; the offer math in `game/puzzles.md` checks out; the hidden ending's prerequisites are enforced server-side (`DISCOVER_WHY_THEY_BUY` plus `SOCIAL_CUSTOMER_CALLS`).
+
+---
+
+# The Count of Monte Cristo (Game 008): Simulated Playtests
+
+`node musecade/_playtest/replay-montecristo.mjs` replays each trace through the real scoring rules.
+
+| Run | Name · Path | Ending | Score | Secrets |
+|---|---|---|---|---|
+| STANDARD | SAM · Count | WAIT AND HOPE | 10,500 | 9/11 |
+| CHAOTIC | ZARA · Sailor | KING OF THE BANDITS (Act III) | 2,050 | 0/11 |
+| CLEVER | ADA · Scholar | EDMOND (hidden) | 17,650 | 11/11 |
+| FAILURE | BO · Abbé | THE CEMETERY OF THE CHÂTEAU D'IF (Act II) | 500 | 0/11 |
+
+- **STANDARD:** Sam stays at the arbor long enough to see the left-handed letter, but the soldiers come anyway. Faria's method names Danglars, Fernand and Villefort's father. The second opening, the red silk purse, Vampa's debt. At Auteuil, Madame Danglars faints. Haydée testifies when asked. Albert apologizes at Vincennes. Wait and hope.
+- **CHAOTIC:** Zara dives for the sea at the first chance, introduces himself as Sinbad to every smuggler on the coast, and in the catacombs takes Vampa's hand.
+- **CLEVER:** Ada solves both of Faria's riddles unaided, saves the Morrels anonymously, reaches Faria's Learning III in Rome, gives the telegraph keeper his strawberries, protects Valentine before evening 15, and answers Mercédès as Edmond. Nobody innocent is harmed. Marseille, the Catalans, a net being mended.
+- **FAILURE:** Bo refuses food in the dark too long, and then goes into the sack Grievous with the knife lost on a natural 1. The danger was telegraphed.
+
+**Verified:** all prose original (the Spada letter is a paraphrase of a public-domain text); follows the novel, not any adaptation; no depiction of suicide or harm to a child (Fernand leaves, Héloïse is arrested, Édouard is safe); the hidden ending's prerequisites are enforced server-side (`DISCOVER_MERCEDES_TRUTH` plus `SOCIAL_MERCEDES`).

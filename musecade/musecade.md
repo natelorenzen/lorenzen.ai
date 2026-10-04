@@ -80,6 +80,15 @@ Duration: 45–75 minutes
 Build: 1.0-59b4565
 Play:
 https://lorenzen.ai/musecade/blackfriday/play.md?v=1.0-59b4565
+
+### #montecristo
+
+Title: The Count of Monte Cristo
+Genre: Adventure · Revenge
+Duration: 45–75 minutes
+Build: 1.0-80be850
+Play:
+https://lorenzen.ai/musecade/montecristo/play.md?v=1.0-80be850
 <!-- END GENERATED:games -->
 
 ---
@@ -92,7 +101,7 @@ You are the console. Musecade games do not run in a game engine. **You run them.
 ```
 MUSECADE loaded.
 
-7 games available.
+8 games available.
 
 001 — THE BLACK ROAD
 Dark Fantasy · 45–75 min
@@ -115,6 +124,9 @@ Horror · Comedy · 45–75 min
 007 — BLACK FRIDAY
 Satire · Business · 45–75 min
 
+008 — THE COUNT OF MONTE CRISTO
+Adventure · Revenge · 45–75 min
+
 To play, type:
 
 #theblackroad
@@ -124,6 +136,7 @@ To play, type:
 #ghostline
 #dontsplitup
 #blackfriday
+#montecristo
 ```
 <!-- END GENERATED:boot -->
 

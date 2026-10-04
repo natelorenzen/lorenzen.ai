@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "game": "montecristo",
+  "title": "The Count of Monte Cristo",
+  "version": "1.0",
+  "note": "CANONICAL SCORE TABLE. The Musecade backend imports this file and is the only thing that turns event IDs into points. Edit here, run python3 musecade/_build/build.py, then redeploy the worker.",
+
+  "rules": {
+    "survival_bonus": 400,
+    "max_events_per_run": 80,
+    "min_seconds_for_ranking": 300,
+    "run_ttl_days": 30,
+    "acts": 5
+  },
+
+  "paths": ["COUNT", "ABBE", "SAILOR", "SCHOLAR"],
+
+  "doc_tokens": ["ENC_SACK", "ENC_CATACOMBS", "ENC_AUTEUIL", "ENC_DUEL"],
+
+  "events": {
+    "REACH_CHATEAU":   { "category": "progress", "points": 100, "title": "The Château d'If", "sets_act": 2, "min_act": 1 },
+    "REACH_ISLAND":    { "category": "progress", "points": 200, "title": "Monte Cristo", "sets_act": 3, "min_act": 2, "requires": ["REACH_CHATEAU"] },
+    "REACH_PARIS":     { "category": "progress", "points": 300, "title": "Paris", "sets_act": 4, "min_act": 3, "requires": ["REACH_ISLAND"] },
+    "REACH_RECKONING": { "category": "progress", "points": 400, "title": "The Reckoning", "sets_act": 5, "min_act": 4, "requires": ["REACH_PARIS"] },
+
+    "DISCOVER_THE_LETTER":      { "category": "discovery", "secret": true, "points": 200, "title": "The Left-Handed Letter", "min_act": 1 },
+    "DISCOVER_NOIRTIER":        { "category": "discovery", "secret": true, "points": 200, "title": "To Whom the Letter Was Addressed", "min_act": 1 },
+    "DISCOVER_FARIA_TREASURE":  { "category": "discovery", "secret": true, "points": 250, "title": "The Mad Priest Is Not Mad", "min_act": 2 },
+    "DISCOVER_FATHER":          { "category": "discovery", "secret": true, "points": 250, "title": "What Became of Louis Dantès", "min_act": 3 },
+    "DISCOVER_CADEROUSSE":      { "category": "discovery", "secret": true, "points": 250, "title": "The Tailor's Confession", "min_act": 3 },
+    "DISCOVER_JANINA":          { "category": "discovery", "secret": true, "points": 300, "title": "What Happened at Janina", "min_act": 4 },
+    "DISCOVER_AUTEUIL":         { "category": "discovery", "secret": true, "points": 300, "title": "The Garden at Auteuil", "min_act": 4 },
+    "DISCOVER_BENEDETTO":       { "category": "discovery", "secret": true, "points": 300, "title": "Who Andrea Cavalcanti Is", "min_act": 4 },
+    "DISCOVER_POISONER":        { "category": "discovery", "secret": true, "points": 300, "title": "The Poisoner in the House", "min_act": 4 },
+    "DISCOVER_DANGLARS_LEDGER": { "category": "discovery", "secret": true, "points": 250, "title": "The Hollow Bank", "min_act": 4 },
+    "DISCOVER_MERCEDES_TRUTH":  { "category": "discovery", "secret": true, "points": 500, "title": "What Mercédès Knew", "min_act": 4 },
+
+    "PUZZLE_BETRAYAL_SOLVED":   { "category": "puzzle", "points": 400, "title": "Who Benefits", "min_act": 2 },
+    "PUZZLE_BETRAYAL_NO_HINT":  { "category": "puzzle", "points": 200, "title": "Who Benefits, Unaided", "min_act": 2, "requires": ["PUZZLE_BETRAYAL_SOLVED"] },
+    "PUZZLE_SPADA_SOLVED":      { "category": "puzzle", "points": 450, "title": "The Burned Letter", "min_act": 2 },
+    "PUZZLE_SPADA_NO_HINT":     { "category": "puzzle", "points": 200, "title": "The Burned Letter, Unaided", "min_act": 2, "requires": ["PUZZLE_SPADA_SOLVED"] },
+    "PUZZLE_TELEGRAPH_SOLVED":  { "category": "puzzle", "points": 500, "title": "The False Signal", "min_act": 4 },
+    "PUZZLE_TELEGRAPH_NO_HINT": { "category": "puzzle", "points": 250, "title": "The False Signal, Unaided", "min_act": 4, "requires": ["PUZZLE_TELEGRAPH_SOLVED"] },
+
+    "ENC_SACK_SURVIVED":      { "category": "encounter", "points": 200, "title": "The Sack", "min_act": 2 },
+    "ENC_SACK_CLEVER":        { "category": "encounter", "points": 250, "title": "The Sack, Outwitted", "min_act": 2 },
+    "ENC_CATACOMBS_SURVIVED": { "category": "encounter", "points": 200, "title": "The Catacombs of Saint Sebastian", "min_act": 3 },
+    "ENC_CATACOMBS_CLEVER":   { "category": "encounter", "points": 250, "title": "The Catacombs, Outwitted", "min_act": 3 },
+    "ENC_AUTEUIL_SURVIVED":   { "category": "encounter", "points": 200, "title": "Dinner at Auteuil", "min_act": 4 },
+    "ENC_AUTEUIL_CLEVER":     { "category": "encounter", "points": 250, "title": "Dinner at Auteuil, Mastered", "min_act": 4 },
+    "ENC_DUEL_SURVIVED":      { "category": "encounter", "points": 250, "title": "Dawn at Vincennes", "min_act": 5 },
+    "ENC_DUEL_CLEVER":        { "category": "encounter", "points": 350, "title": "Dawn at Vincennes, Mastered", "min_act": 5 },
+
+    "SOCIAL_MORREL":     { "category": "social", "points": 300, "title": "The Red Silk Purse", "min_act": 3 },
+    "SOCIAL_CADEROUSSE": { "category": "social", "points": 250, "title": "Confession at the Pont du Gard", "min_act": 3 },
+    "SOCIAL_CHAMBER":    { "category": "social", "points": 300, "title": "The Chamber of Peers", "min_act": 5 },
+    "SOCIAL_MERCEDES":   { "category": "social", "points": 400, "title": "Edmond and Mercédès", "min_act": 4 },
+    "SOCIAL_ALBERT":     { "category": "social", "points": 300, "title": "The Son Who Apologized", "min_act": 5 },
+
+    "RECRUIT_JACOPO":    { "category": "companion", "points": 100, "title": "Jacopo Pulls You from the Sea", "min_act": 2 },
+    "RECRUIT_BERTUCCIO": { "category": "companion", "points": 100, "title": "Bertuccio Enters Your Service", "min_act": 3 },
+    "RECRUIT_HAYDEE":    { "category": "companion", "points": 100, "title": "Haydée Is Free", "min_act": 3 },
+    "ALLY_JACOPO_REFUSES":   { "category": "companion", "points": 250, "title": "Jacopo Refuses His Share", "min_act": 3, "requires": ["RECRUIT_JACOPO"] },
+    "ALLY_BERTUCCIO_TELLS":  { "category": "companion", "points": 250, "title": "The Steward's Story", "min_act": 4, "requires": ["RECRUIT_BERTUCCIO"] },
+    "ALLY_HAYDEE_STANDS":    { "category": "companion", "points": 250, "title": "Haydée Stands Up", "min_act": 5, "requires": ["RECRUIT_HAYDEE"] },
+    "COMPANION_SURVIVES_JACOPO":    { "category": "companion", "points": 100, "title": "Jacopo Survives", "min_act": 3, "requires": ["RECRUIT_JACOPO"] },
+    "COMPANION_SURVIVES_BERTUCCIO": { "category": "companion", "points": 100, "title": "Bertuccio Survives", "min_act": 3, "requires": ["RECRUIT_BERTUCCIO"] },
+    "COMPANION_SURVIVES_HAYDEE":    { "category": "companion", "points": 100, "title": "Haydée Survives", "min_act": 3, "requires": ["RECRUIT_HAYDEE"] },
+
+    "ACH_MERCY":          { "category": "achievement", "points": 700, "title": "MERCY", "description": "Ruin no one who never wronged you.", "min_act": 5 },
+    "ACH_STILL_EDMOND":   { "category": "achievement", "points": 500, "title": "STILL EDMOND", "description": "Finish with your VENGEANCE at 1 or less.", "min_act": 5 },
+    "ACH_WHOLE_CREW":     { "category": "achievement", "points": 500, "title": "THE WHOLE CREW", "description": "Every companion is with you at the end.", "min_act": 5, "requires_any": ["RECRUIT_JACOPO", "RECRUIT_BERTUCCIO", "RECRUIT_HAYDEE"] },
+    "ACH_NEVER_UNMASKED": { "category": "achievement", "points": 400, "title": "NEVER UNMASKED", "description": "No enemy learns who you are until you choose to tell them.", "min_act": 5 },
+    "ACH_FARIAS_PUPIL":   { "category": "achievement", "points": 300, "title": "FARIA'S PUPIL", "description": "Solve both of Faria's riddles without a hint.", "min_act": 2, "requires": ["PUZZLE_BETRAYAL_NO_HINT", "PUZZLE_SPADA_NO_HINT"] },
+    "ACH_ABBES_EQUAL":    { "category": "achievement", "hidden": true, "points": 400, "title": "THE ABBÉ'S EQUAL", "description": "As the Scholar, reach Faria's Learning rank III.", "min_act": 3 },
+    "ACH_STRAWBERRIES":   { "category": "achievement", "hidden": true, "points": 250, "title": "STRAWBERRIES", "description": "Give the telegraph keeper his garden.", "min_act": 4 },
+    "ACH_RED_PURSE":      { "category": "achievement", "hidden": true, "points": 350, "title": "THE RED SILK PURSE", "description": "Save the Morrels without them ever learning it was you.", "min_act": 3, "requires": ["SOCIAL_MORREL"] },
+    "ACH_WHOLE_TRUTH":    { "category": "achievement", "hidden": true, "points": 500, "title": "THE WHOLE TRUTH", "description": "Uncover Janina, Auteuil, and what Mercédès knew.", "min_act": 5, "requires": ["DISCOVER_JANINA", "DISCOVER_AUTEUIL", "DISCOVER_MERCEDES_TRUTH"] },
+    "ACH_SINBAD":         { "category": "achievement", "hidden": true, "points": 250, "title": "SINBAD THE SAILOR", "description": "Introduce yourself as Sinbad the Sailor. With a straight face.", "min_act": 3 }
+  },
+
+  "endings": {
+    "ENDING_WAIT_AND_HOPE": { "title": "WAIT AND HOPE", "points": 1600, "fate": "lives", "min_act": 5, "requires": ["REACH_RECKONING"] },
+    "ENDING_EDMOND":        { "title": "EDMOND", "points": 2400, "fate": "lives", "min_act": 5, "requires": ["DISCOVER_MERCEDES_TRUTH", "SOCIAL_MERCEDES"] },
+    "ENDING_PROVIDENCE":    { "title": "PROVIDENCE", "points": 900, "fate": "lives", "min_act": 5 },
+    "ENDING_JUSTICE":       { "title": "THE KING'S JUSTICE", "points": 1100, "fate": "lives", "min_act": 4 },
+    "ENDING_THE_DUEL":      { "title": "THE DUEL", "points": 1200, "fate": "sacrificed", "min_act": 5 },
+    "ENDING_UNMASKED":      { "title": "UNMASKED", "points": 500, "fate": "lives", "min_act": 4 },
+    "ENDING_TREASURE":      { "title": "THE TREASURE", "points": 700, "fate": "lives", "min_act": 3 },
+    "ENDING_PHARAON":       { "title": "CAPTAIN OF THE PHARAON", "points": 800, "fate": "lives", "min_act": 3 },
+    "ENDING_VAMPA":         { "title": "KING OF THE BANDITS", "points": 600, "fate": "lives", "min_act": 3 },
+    "ENDING_WEDDING":       { "title": "THE WEDDING FEAST", "points": 500, "fate": "lives", "min_act": 1 },
+    "ENDING_CEMETERY":      { "title": "THE CEMETERY OF THE CHÂTEAU D'IF", "points": 0, "fate": "dies", "min_act": 1, "image": "IMG_DEATH" }
+  }
+}

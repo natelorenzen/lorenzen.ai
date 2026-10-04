@@ -300,7 +300,7 @@ await test("a game with no death refuses died:true", async () => {
 });
 
 await test("every game can post a ranked run to its own board", async () => {
-  const early = { theblackroad: "ENDING_NAME_IN_THE_SNOW", theglasscity: "ENDING_STAR_WITHOUT_A_NAME", theseaglassinn: "ENDING_LAST_FERRY", seriesdoom: "ENDING_RUNWAY_ZERO", ghostline: "ENDING_FLATLINE", dontsplitup: "ENDING_RIGHT_BACK", blackfriday: "ENDING_OUT_OF_CASH" };
+  const early = { theblackroad: "ENDING_NAME_IN_THE_SNOW", theglasscity: "ENDING_STAR_WITHOUT_A_NAME", theseaglassinn: "ENDING_LAST_FERRY", seriesdoom: "ENDING_RUNWAY_ZERO", ghostline: "ENDING_FLATLINE", dontsplitup: "ENDING_RIGHT_BACK", blackfriday: "ENDING_OUT_OF_CASH", montecristo: "ENDING_CEMETERY" };
   assert.deepEqual(Object.keys(early).sort(), Object.keys(GAMES).sort());
   for (const [slug, ending] of Object.entries(early)) {
     const paths = GAMES[slug].paths; const path = Array.isArray(paths) ? paths[0] : Object.keys(paths)[0];

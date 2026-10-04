@@ -67,6 +67,12 @@ PALETTES.agenthunt = HEX([
     "#fff7e8","#fffdf7","#fff3dc","#ead7b4","#d8bf92","#cfe3ff","#a9c8ec","#7cb8ff","#2f86f5",
     "#ffd76e","#ffb627","#c77d00","#ff8a72","#ff5a4f","#b8333a",
     "#16945a","#5a3a22","#d89a70","#6c6384","#272140","#2f2947"]);
+PALETTES.montecristo = HEX([
+    "#060a1c","#0e0c14","#070c1e","#16244a","#1c3462","#2c4a7a","#3a5a92","#3a4a7a","#8a9cc8",
+    "#cfd2dc","#d8dcea","#ece8d8","#f4f2e6","#e8e4d4",
+    "#14141e","#1a1a26","#2a2c3a","#3a3c4e","#4a4c60",
+    "#5a3418","#6a4020","#c07a10","#ffc840","#ffd84a","#fff2b0",
+    "#e0304a","#2ab070","#122a1e","#d8c8b8","#3a2a1a"]);
 let PALETTE = PALETTES.theblackroad;
 
 const BAYER = [[0,8,2,10],[12,4,14,6],[3,11,1,9],[15,7,13,5]];
@@ -108,14 +114,14 @@ window.pixelize = async function (src = "keyart-src.svg", W = 256, H = 192, spre
   }
   // pixel rain: short diagonal streaks, brighter over dark sky
   const rand = rng(317);
-  for (let n = 0; n < (palette === "theseaglassinn" || palette === "seriesdoom" || palette === "dontsplitup" || palette === "blackfriday" || palette === "agenthunt" ? 0 : 150); n++) {
+  for (let n = 0; n < (palette === "theseaglassinn" || palette === "seriesdoom" || palette === "dontsplitup" || palette === "blackfriday" || palette === "agenthunt" || palette === "montecristo" ? 0 : 150); n++) {
     const x0 = Math.floor(rand() * W), y0 = Math.floor(rand() * H * .95), len = 2 + Math.floor(rand() * 3);
     for (let k = 0; k < len; k++) {
       const x = x0 - Math.floor(k / 2), y = y0 + k;
       if (x < 0 || y >= H) continue;
       const i = (y * W + x) * 4;
       const lum = px[i] * .3 + px[i + 1] * .59 + px[i + 2] * .11;
-      const rainIdx = { theblackroad: [17, 16], theglasscity: [6, 8], theseaglassinn: [5, 6], seriesdoom: [3, 4], ghostline: [24, 26], dontsplitup: [4, 6], blackfriday: [5, 6], agenthunt: [6, 7] }[palette];
+      const rainIdx = { theblackroad: [17, 16], theglasscity: [6, 8], theseaglassinn: [5, 6], seriesdoom: [3, 4], ghostline: [24, 26], dontsplitup: [4, 6], blackfriday: [5, 6], agenthunt: [6, 7], montecristo: [4, 6] }[palette];
       const col = lum < 60 ? PALETTE[rainIdx[0]] : PALETTE[rainIdx[1]];
       px[i] = col[0]; px[i + 1] = col[1]; px[i + 2] = col[2];
     }

@@ -1,0 +1,131 @@
+{
+  "id": "008",
+  "slug": "montecristo",
+  "title": "The Count of Monte Cristo",
+  "subtitle": "A Tale of Revenge",
+  "command": "#montecristo",
+  "version": "1.0",
+  "genre": "Adventure · Revenge",
+  "rating": "PG-13",
+  "players": 1,
+  "duration": "45–75 min",
+  "endings": 11,
+  "secrets": 11,
+  "acts": [
+    "Marseille",
+    "The Château d'If",
+    "Monte Cristo",
+    "Paris",
+    "The Reckoning"
+  ],
+  "paths": [
+    "The Count",
+    "The Abbé",
+    "The Sailor",
+    "The Scholar"
+  ],
+  "uses_core": true,
+  "manifest": "adventure.md",
+  "boot_files": [
+    "rules.md",
+    "character-creation.md",
+    "scoring.md",
+    "game/image-triggers.md",
+    "acts/act-1.md"
+  ],
+  "core_files": [
+    "core/dm-core.md",
+    "core/image-style.md",
+    "core/scoring.md"
+  ],
+  "files": [
+    "adventure.md",
+    "rules.md",
+    "character-creation.md",
+    "scoring.md",
+    "events.json",
+    "acts/act-1.md",
+    "acts/act-2.md",
+    "acts/act-3.md",
+    "acts/act-4.md",
+    "acts/act-5.md",
+    "world/the-world.md",
+    "world/the-treasure.md",
+    "characters/companions.md",
+    "characters/npcs.md",
+    "game/encounters.md",
+    "game/puzzles.md",
+    "game/achievements.md",
+    "game/endings.md",
+    "game/image-triggers.md"
+  ],
+  "disclaimer": "Adapted from Alexandre Dumas's novel (1844–46, public domain). All prose is original to this game; it follows no film or television adaptation.",
+  "capabilities": {
+    "required": [
+      "read web pages (fetch URLs)"
+    ],
+    "recommended": [
+      "image generation",
+      "HTTP GET or POST to the Musecade API (for the leaderboard)"
+    ],
+    "optional": [
+      "5-second video generation",
+      "random number generation"
+    ]
+  },
+  "packs": {
+    "play": {
+      "when": "the game starts",
+      "files": [
+        "core/dm-core.md",
+        "core/image-style.md",
+        "core/scoring.md",
+        "adventure.md",
+        "rules.md",
+        "character-creation.md",
+        "scoring.md",
+        "game/image-triggers.md",
+        "acts/act-1.md",
+        "characters/companions.md",
+        "characters/npcs.md"
+      ]
+    },
+    "pack-2": {
+      "when": "Act II begins (`REACH_CHATEAU`)",
+      "files": [
+        "acts/act-2.md",
+        "world/the-treasure.md",
+        "game/puzzles.md",
+        "game/encounters.md"
+      ]
+    },
+    "pack-3": {
+      "when": "Act III begins (`REACH_ISLAND`)",
+      "files": [
+        "acts/act-3.md",
+        "world/the-world.md"
+      ]
+    },
+    "pack-4": {
+      "when": "Act IV begins (`REACH_PARIS`)",
+      "files": [
+        "acts/act-4.md"
+      ]
+    },
+    "pack-5": {
+      "when": "Act V begins (`REACH_RECKONING`)",
+      "files": [
+        "acts/act-5.md",
+        "game/endings.md",
+        "game/achievements.md"
+      ]
+    },
+    "pack-end": {
+      "when": "any ending triggers before Act V (death, a different life, a deal)",
+      "files": [
+        "game/endings.md",
+        "game/achievements.md"
+      ]
+    }
+  }
+}

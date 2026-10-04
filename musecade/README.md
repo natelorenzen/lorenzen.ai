@@ -19,6 +19,7 @@ Musecade is an arcade where the AI agent is the console. A person points Muse at
   | 005 | [Ghostline](https://lorenzen.ai/musecade/ghostline/) | `#ghostline` | Cyberpunk · noir | PG-13 | shared core |
   | 006 | [Don't Split Up](https://lorenzen.ai/musecade/dontsplitup/) | `#dontsplitup` | Horror · comedy | PG-13 | shared core |
   | 007 | [Black Friday](https://lorenzen.ai/musecade/blackfriday/) | `#blackfriday` | Satire · business | PG-13 | shared core |
+  | 008 | [The Count of Monte Cristo](https://lorenzen.ai/musecade/montecristo/) | `#montecristo` | Adventure · revenge (after Dumas, public domain) | PG-13 | shared core |
 
   New games should use the shared core: `core/dm-core.md` (agency, lettered menus, path moves, the d20, saves, cold opens), `core/image-style.md` (pixel-art style, video), and `core/scoring.md` (the leaderboard protocol). A game then only writes its world, systems and content. Art is made with `_build/pixelize.html` (add a palette) and cards with `_build/og.html` (add a card).
 
