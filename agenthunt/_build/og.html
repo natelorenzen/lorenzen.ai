@@ -1,0 +1,83 @@
+<!doctype html>
+<!--
+  AgentHunt share-card generator (build tool; _build/ is not published).
+  Draws a 600x315 daylight pixel card and doubles it nearest-neighbor to 1200x630.
+  Serve the repo locally, open /agenthunt/_build/og.html, then: await window.card()
+  Key art: /agenthunt/assets/agenthunt-keyart.png, rendered from keyart-src.svg with
+  /musecade/_build/pixelize.html: pixelize("/agenthunt/_build/keyart-src.svg", 256, 192, 22, "agenthunt").
+-->
+<meta charset="utf-8">
+<title>og</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<body style="background:#222;margin:0">
+<canvas id="out" width="1200" height="630" style="width:1200px;height:630px;image-rendering:pixelated"></canvas>
+<script>
+function load(src) { return new Promise((ok, no) => { const i = new Image(); i.onload = () => ok(i); i.onerror = no; i.src = src; }); }
+
+window.card = async function () {
+  await document.fonts.load('32px "Press Start 2P"');
+  await document.fonts.load('16px "VT323"');
+  const W = 600, H = 315;
+  const off = document.createElement("canvas"); off.width = W; off.height = H;
+  const ctx = off.getContext("2d");
+  ctx.imageSmoothingEnabled = false;
+
+  // daylight handheld: paper room, cream panel, warm line
+  ctx.fillStyle = "#fdeed2"; ctx.fillRect(0, 0, W, H);
+  ctx.fillStyle = "#d8bf92"; ctx.fillRect(6, 6, W - 12, H - 12);
+  ctx.fillStyle = "#fff7e8"; ctx.fillRect(10, 10, W - 20, H - 20);
+  for (let x = 12; x < W - 12; x += 8) { ctx.fillStyle = "#ead7b4"; ctx.fillRect(x, H - 34, 4, 2); }
+
+  // key art in a sun-yellow frame
+  const art = await load("/agenthunt/assets/agenthunt-keyart.png");
+  const ax = W - 256 - 26, ay = 36;
+  ctx.fillStyle = "#c77d00"; ctx.fillRect(ax - 6, ay - 6, 268, 204);
+  ctx.fillStyle = "#ffb627"; ctx.fillRect(ax - 4, ay - 4, 264, 200);
+  ctx.drawImage(art, ax, ay, 256, 192);
+
+  const tx = 26;
+  ctx.textBaseline = "top";
+  ctx.font = '8px "Press Start 2P"'; ctx.fillStyle = "#16945a";
+  ctx.fillRect(tx, 38, 6, 6); ctx.fillText("A GAME FOR YOU AND YOUR AGENT", tx + 12, 37);
+
+  // logo: dark extrusion, then sun-to-coral bands
+  const logo = (text, x, y, size) => {
+    ctx.font = `${size}px "Press Start 2P"`;
+    ctx.fillStyle = "#272140"; ctx.fillText(text, x, y + 4);
+    ctx.fillStyle = "#b8333a"; ctx.fillText(text, x, y + 2);
+    const bands = ["#ffd76e", "#ffb627", "#ffb627", "#ff8a72", "#ff5a4f", "#ff5a4f"];
+    bands.forEach((c, i) => {
+      ctx.save(); ctx.beginPath();
+      ctx.rect(x - 2, y + Math.floor((i * size) / bands.length), 2000, Math.ceil(size / bands.length)); ctx.clip();
+      ctx.fillStyle = c; ctx.fillText(text, x, y); ctx.restore();
+    });
+  };
+  logo("AGENT", tx, 62, 32);
+  logo("HUNT", tx, 106, 32);
+
+  let y = 158;
+  ctx.font = '8px "Press Start 2P"';
+  [["YOUR CITY. YOUR CAMERA.", "#2f2947"], ["YOUR AGENT IS THE JUDGE.", "#2f86f5"]].forEach(([l, c]) => { ctx.fillStyle = c; ctx.fillText(l, tx, y); y += 16; });
+
+  // LCD command box
+  y += 10;
+  const cmd = "lorenzen.ai/agenthunt";
+  ctx.font = '16px "VT323"';
+  const w = Math.ceil(ctx.measureText(cmd).width) + 16;
+  ctx.fillStyle = "#a8cf8c"; ctx.fillRect(tx, y, w + 4, 26);
+  ctx.fillStyle = "#e4f5d2"; ctx.fillRect(tx + 2, y + 2, w, 22);
+  ctx.fillStyle = "#1c5432"; ctx.fillText(cmd, tx + 10, y + 5);
+  ctx.fillRect(tx + 10 + Math.ceil(ctx.measureText(cmd).width) + 2, y + 6, 6, 13);
+
+  ctx.font = '8px "Press Start 2P"'; ctx.fillStyle = "#ff5a4f";
+  ctx.fillText("GO FIND IT", tx, H - 26);
+  ctx.fillStyle = "#a3978a"; ctx.fillText("LORENZEN.AI", W - 26 - 88, H - 26);
+
+  const out = document.getElementById("out");
+  const o = out.getContext("2d");
+  o.imageSmoothingEnabled = false;
+  o.drawImage(off, 0, 0, 1200, 630);
+  return out.toDataURL("image/png");
+};
+</script>
+</body>
