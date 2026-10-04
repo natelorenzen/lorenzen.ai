@@ -86,18 +86,36 @@
   },
   {
     "id": "006",
-    "title": null,
-    "slug": null,
-    "command": null,
-    "genre": "Survival",
-    "status": "coming_soon"
+    "title": "Don't Split Up",
+    "slug": "dontsplitup",
+    "command": "#dontsplitup",
+    "genre": "Horror · Comedy",
+    "duration": "45–75 min",
+    "status": "live",
+    "version": "1.0",
+    "players": 1,
+    "endings": "11",
+    "difficulty": "???",
+    "tagline": "Halloween, 1989. A free cabin, a monster that follows the rules of a horror movie, and three friends who would very much like not to be in one.",
+    "manifest": "https://lorenzen.ai/musecade/dontsplitup/play.md",
+    "page": "https://lorenzen.ai/musecade/dontsplitup/",
+    "events": "https://lorenzen.ai/musecade/dontsplitup/events.json"
   },
   {
     "id": "007",
-    "title": null,
-    "slug": null,
-    "command": null,
-    "genre": "Mystery",
-    "status": "coming_soon"
+    "title": "Black Friday",
+    "slug": "blackfriday",
+    "command": "#blackfriday",
+    "genre": "Satire · Business",
+    "duration": "45–75 min",
+    "status": "live",
+    "version": "1.0",
+    "players": 1,
+    "endings": "11",
+    "difficulty": "???",
+    "tagline": "Six weeks to Black Friday. CPMs are going up, CVR is going down, and your hair is falling out. Build a plan that survives contribution margin.",
+    "manifest": "https://lorenzen.ai/musecade/blackfriday/play.md",
+    "page": "https://lorenzen.ai/musecade/blackfriday/",
+    "events": "https://lorenzen.ai/musecade/blackfriday/events.json"
   }
 ]

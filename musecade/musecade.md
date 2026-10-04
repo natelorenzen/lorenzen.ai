@@ -62,6 +62,24 @@ Duration: 45–75 minutes
 Build: 1.0-57b8947
 Play:
 https://lorenzen.ai/musecade/ghostline/play.md?v=1.0-57b8947
+
+### #dontsplitup
+
+Title: Don't Split Up
+Genre: Horror · Comedy
+Duration: 45–75 minutes
+Build: 1.0-3d0d253
+Play:
+https://lorenzen.ai/musecade/dontsplitup/play.md?v=1.0-3d0d253
+
+### #blackfriday
+
+Title: Black Friday
+Genre: Satire · Business
+Duration: 45–75 minutes
+Build: 1.0-0d8ee76
+Play:
+https://lorenzen.ai/musecade/blackfriday/play.md?v=1.0-0d8ee76
 <!-- END GENERATED:games -->
 
 ---
@@ -74,7 +92,7 @@ You are the console. Musecade games do not run in a game engine. **You run them.
 ```
 MUSECADE loaded.
 
-5 games available.
+7 games available.
 
 001 — THE BLACK ROAD
 Dark Fantasy · 45–75 min
@@ -91,6 +109,12 @@ Satire · Comedy · 45–75 min
 005 — GHOSTLINE
 Cyberpunk · Noir · 45–75 min
 
+006 — DON'T SPLIT UP
+Horror · Comedy · 45–75 min
+
+007 — BLACK FRIDAY
+Satire · Business · 45–75 min
+
 To play, type:
 
 #theblackroad
@@ -98,6 +122,8 @@ To play, type:
 #theseaglassinn
 #seriesdoom
 #ghostline
+#dontsplitup
+#blackfriday
 ```
 <!-- END GENERATED:boot -->
 

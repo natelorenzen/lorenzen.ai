@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "game": "blackfriday",
+  "title": "Black Friday",
+  "version": "1.0",
+  "note": "CANONICAL SCORE TABLE. The Musecade backend imports this file and is the only thing that turns event IDs into points. Edit here, run python3 musecade/_build/build.py, then redeploy the worker.",
+
+  "rules": {
+    "survival_bonus": 400,
+    "max_events_per_run": 80,
+    "min_seconds_for_ranking": 300,
+    "run_ttl_days": 30,
+    "acts": 5
+  },
+
+  "paths": ["FOUNDER", "BUYER", "OPERATOR", "CREATIVE"],
+
+  "doc_tokens": ["ENC_EXPO", "ENC_PODCAST", "ENC_ACCOUNT", "ENC_BFCM"],
+
+  "events": {
+    "REACH_SUMMIT":    { "category": "progress", "points": 100, "title": "ScaleFest", "sets_act": 2, "min_act": 1 },
+    "REACH_BACK_ROOM": { "category": "progress", "points": 200, "title": "The Back Room", "sets_act": 3, "min_act": 2, "requires": ["REACH_SUMMIT"] },
+    "REACH_WAR_ROOM":  { "category": "progress", "points": 300, "title": "The War Room", "sets_act": 4, "min_act": 3, "requires": ["REACH_BACK_ROOM"] },
+    "REACH_BFCM":      { "category": "progress", "points": 400, "title": "Black Friday", "sets_act": 5, "min_act": 4, "requires": ["REACH_WAR_ROOM"] },
+
+    "DISCOVER_KYLE_TRIAL":       { "category": "discovery", "secret": true, "points": 200, "title": "Who Signed Up for Halcyon", "min_act": 1 },
+    "DISCOVER_DOT_NOTES":        { "category": "discovery", "secret": true, "points": 200, "title": "Dot's Notebook", "min_act": 1 },
+    "DISCOVER_GURU_CASE_STUDY":  { "category": "discovery", "secret": true, "points": 250, "title": "The Famous Screenshot", "min_act": 2 },
+    "DISCOVER_NOOSPHERE_DEMO":   { "category": "discovery", "secret": true, "points": 200, "title": "The Agent in the Next Room", "min_act": 2 },
+    "DISCOVER_REX_SECRET":       { "category": "discovery", "secret": true, "points": 250, "title": "Rex at 5 A.M.", "min_act": 2 },
+    "DISCOVER_MARGO_OFFER":      { "category": "discovery", "secret": true, "points": 250, "title": "Margo's Offer", "min_act": 3 },
+    "DISCOVER_SIMONE_SHEET":     { "category": "discovery", "secret": true, "points": 300, "title": "The Only Sheet", "min_act": 3 },
+    "DISCOVER_METHOD_ORIGIN":    { "category": "discovery", "secret": true, "points": 300, "title": "Where the Method Came From", "min_act": 3 },
+    "DISCOVER_INCREMENTALITY":   { "category": "discovery", "secret": true, "points": 400, "title": "The Ohio Holdout", "min_act": 4 },
+    "DISCOVER_HALCYON":          { "category": "discovery", "secret": true, "points": 400, "title": "What Halcyon Does", "min_act": 4 },
+    "DISCOVER_WHY_THEY_BUY":     { "category": "discovery", "secret": true, "points": 500, "title": "Why They Actually Buy", "min_act": 4 },
+
+    "PUZZLE_NUMBERS_SOLVED":  { "category": "puzzle", "points": 400, "title": "The Four Numbers", "min_act": 1 },
+    "PUZZLE_NUMBERS_NO_HINT": { "category": "puzzle", "points": 200, "title": "The Four Numbers, Unaided", "min_act": 1, "requires": ["PUZZLE_NUMBERS_SOLVED"] },
+    "PUZZLE_HALCYON_SOLVED":  { "category": "puzzle", "points": 450, "title": "The Cursed Line Item", "min_act": 3 },
+    "PUZZLE_HALCYON_NO_HINT": { "category": "puzzle", "points": 200, "title": "The Cursed Line Item, Unaided", "min_act": 3, "requires": ["PUZZLE_HALCYON_SOLVED"] },
+    "PUZZLE_OFFER_SOLVED":    { "category": "puzzle", "points": 500, "title": "The Offer", "min_act": 4 },
+    "PUZZLE_OFFER_NO_HINT":   { "category": "puzzle", "points": 250, "title": "The Offer, Unaided", "min_act": 4, "requires": ["PUZZLE_OFFER_SOLVED"] },
+
+    "ENC_EXPO_SURVIVED":    { "category": "encounter", "points": 200, "title": "The Expo Hall", "min_act": 2 },
+    "ENC_EXPO_CLEVER":      { "category": "encounter", "points": 250, "title": "The Expo Hall, Outwitted", "min_act": 2 },
+    "ENC_PODCAST_SURVIVED": { "category": "encounter", "points": 200, "title": "The Live Taping", "min_act": 3 },
+    "ENC_PODCAST_CLEVER":   { "category": "encounter", "points": 250, "title": "The Live Taping, Outwitted", "min_act": 3 },
+    "ENC_ACCOUNT_SURVIVED": { "category": "encounter", "points": 200, "title": "The Weekend Spike", "min_act": 4 },
+    "ENC_ACCOUNT_CLEVER":   { "category": "encounter", "points": 250, "title": "The Weekend Spike, Outwitted", "min_act": 4 },
+    "ENC_BFCM_SURVIVED":    { "category": "encounter", "points": 250, "title": "The Weekend", "min_act": 5 },
+    "ENC_BFCM_CLEVER":      { "category": "encounter", "points": 350, "title": "The Weekend, Outwitted", "min_act": 5 },
+
+    "SOCIAL_REX":            { "category": "social", "points": 250, "title": "Rex Reads the Receipt", "min_act": 2 },
+    "SOCIAL_VINCE":          { "category": "social", "points": 300, "title": "The Professor, Outplayed", "min_act": 2 },
+    "SOCIAL_BACK_ROOM":      { "category": "social", "points": 250, "title": "A Seat at the Table", "min_act": 3 },
+    "SOCIAL_SIMONE":         { "category": "social", "points": 300, "title": "Someone Who Held the P&L", "min_act": 3 },
+    "SOCIAL_CUSTOMER_CALLS": { "category": "social", "points": 400, "title": "You Called Your Customers", "min_act": 4 },
+
+    "RECRUIT_MARGO": { "category": "companion", "points": 100, "title": "Margo Runs the Numbers", "min_act": 1 },
+    "RECRUIT_KYLE":  { "category": "companion", "points": 100, "title": "Kyle Runs the Ads", "min_act": 1 },
+    "RECRUIT_DOT":   { "category": "companion", "points": 100, "title": "Dot Comes to the Meeting", "min_act": 1 },
+    "ALLY_MARGO_STAYS":      { "category": "companion", "points": 250, "title": "Margo Stays", "min_act": 5, "requires": ["RECRUIT_MARGO"] },
+    "ALLY_KYLE_UNSUBSCRIBES":{ "category": "companion", "points": 250, "title": "Kyle Unsubscribes", "min_act": 4, "requires": ["RECRUIT_KYLE"] },
+    "ALLY_DOT_PRESENTS":     { "category": "companion", "points": 200, "title": "Dot Has the Floor", "min_act": 4, "requires": ["RECRUIT_DOT"] },
+    "COMPANION_SURVIVES_MARGO": { "category": "companion", "points": 100, "title": "Margo Still Here", "min_act": 3, "requires": ["RECRUIT_MARGO"] },
+    "COMPANION_SURVIVES_KYLE":  { "category": "companion", "points": 100, "title": "Kyle Still Here", "min_act": 3, "requires": ["RECRUIT_KYLE"] },
+    "COMPANION_SURVIVES_DOT":   { "category": "companion", "points": 100, "title": "Dot Still Here", "min_act": 3, "requires": ["RECRUIT_DOT"] },
+
+    "ACH_NO_NEW_TOOLS":    { "category": "achievement", "points": 700, "title": "NO NEW TOOLS", "description": "Reach Black Friday without buying a single new tool.", "min_act": 5 },
+    "ACH_LEAN_STACK":      { "category": "achievement", "points": 500, "title": "LEAN STACK", "description": "Finish with your STACK at 0.", "min_act": 5 },
+    "ACH_WHOLE_TEAM":      { "category": "achievement", "points": 500, "title": "THE WHOLE TEAM", "description": "Nobody quits or gets poached.", "min_act": 5, "requires_any": ["RECRUIT_MARGO", "RECRUIT_KYLE", "RECRUIT_DOT"] },
+    "ACH_NO_SITEWIDE":     { "category": "achievement", "points": 400, "title": "NO SITEWIDE", "description": "Never run a sitewide discount.", "min_act": 5 },
+    "ACH_NEVER_POSTED":    { "category": "achievement", "points": 300, "title": "NEVER POSTED THE SCREENSHOT", "description": "Never post a revenue screenshot.", "min_act": 5 },
+    "ACH_NO_PODCAST":      { "category": "achievement", "points": 400, "title": "NEVER STARTED A PODCAST", "description": "Get offered a podcast four times. Start none of them.", "min_act": 5 },
+    "ACH_FLEW_BLIND":      { "category": "achievement", "hidden": true, "points": 450, "title": "FLEW BLIND", "description": "When the platform went dark, close the dashboards and land the weekend profitable anyway.", "min_act": 5 },
+    "ACH_RECEIPTS":        { "category": "achievement", "hidden": true, "points": 400, "title": "RECEIPTS", "description": "As the Founder, reach Receipts rank III.", "min_act": 3 },
+    "ACH_BREAKFAST_TACOS": { "category": "achievement", "hidden": true, "points": 250, "title": "BREAKFAST TACOS", "description": "Skip the big panel for tacos.", "min_act": 2 },
+    "ACH_PLAN_BY_HALLOWEEN": { "category": "achievement", "hidden": true, "points": 350, "title": "PLAN BY HALLOWEEN", "description": "Lock the Black Friday plan with 25 or more days to spare.", "min_act": 4 },
+    "ACH_DUE_DILIGENCE":   { "category": "achievement", "hidden": true, "points": 500, "title": "DUE DILIGENCE", "description": "Uncover the holdout, Halcyon, and why they buy.", "min_act": 5, "requires": ["DISCOVER_INCREMENTALITY", "DISCOVER_HALCYON", "DISCOVER_WHY_THEY_BUY"] },
+    "ACH_FULL_HEAD":       { "category": "achievement", "hidden": true, "points": 300, "title": "FULL HEAD OF HAIR", "description": "Make it through Q4 without losing any hair.", "min_act": 5 },
+    "ACH_MAIN_CHARACTER":  { "category": "achievement", "hidden": true, "points": 300, "title": "MAIN CHARACTER", "description": "Post something that becomes the whole Feed's day.", "min_act": 1 },
+    "ACH_LAUGHED":         { "category": "achievement", "hidden": true, "points": 250, "title": "SOMEBODY LAUGHED", "description": "Laugh at a Ray-zinger. Sincerely.", "min_act": 2 }
+  },
+
+  "endings": {
+    "ENDING_PROFITABLE":    { "title": "PROFITABLE", "points": 1600, "fate": "lives", "min_act": 5, "requires": ["REACH_BFCM"] },
+    "ENDING_BORING":        { "title": "BORING AND PROFITABLE", "points": 2400, "fate": "lives", "min_act": 5, "requires": ["DISCOVER_WHY_THEY_BUY", "SOCIAL_CUSTOMER_CALLS"] },
+    "ENDING_RECORD_REVENUE":{ "title": "RECORD REVENUE", "points": 900, "fate": "lives", "min_act": 5 },
+    "ENDING_THE_THREAD":    { "title": "THE THREAD", "points": 700, "fate": "lives", "min_act": 4 },
+    "ENDING_ACQUIRED":      { "title": "ACQUIRED", "points": 1000, "fate": "lives", "min_act": 3 },
+    "ENDING_ENDCAP":        { "title": "THE ENDCAP", "points": 1100, "fate": "lives", "min_act": 3 },
+    "ENDING_AUTOPILOT":     { "title": "AUTOPILOT", "points": 600, "fate": "lives", "min_act": 4 },
+    "ENDING_SQUEEGEE":      { "title": "THE SQUEEGEE PIVOT", "points": 800, "fate": "lives", "min_act": 4 },
+    "ENDING_SIT_IT_OUT":    { "title": "WE'RE SITTING THIS ONE OUT", "points": 300, "fate": "lives", "min_act": 1 },
+    "ENDING_NO_PLAN":       { "title": "WE'LL FIGURE IT OUT LIVE", "points": 500, "fate": "either", "min_act": 3 },
+    "ENDING_OUT_OF_CASH":   { "title": "OUT OF CASH", "points": 0, "fate": "dies", "min_act": 1, "image": "IMG_DEATH" }
+  }
+}

@@ -1,0 +1,322 @@
+# BLACK FRIDAY: Endings
+
+Eleven endings. Play every one straight-faced and generous to the team. The satire is aimed at the industry's habits, never at the people doing the work.
+
+**Every ending:** (1) **the moment**, in 100 to 200 words; (2) the **ending image**, always, plus `VID_ENDING` if you can make clips; (3) the **epilogue**, in 120 to 220 words, written as next year's board deck, one dry slide at a time (*"Slide 4: What we stopped doing."*); (4) complete the run with the ending's **ID**; (5) the final screen and one post from the Feed (`scoring.md`).
+
+**Epilogue fragments:**
+
+- **Margo:** stayed: *"Margo framed the Ohio holdout. It hangs where the revenue chart used to."* Poached: *"Margo is CFO at Quarry Capital. She sends a card every Black Friday. It says 'cash is a fact'."*
+- **Kyle:** *"Kyle runs the account like it's his money. He has one tab open."* Or, if he never unsubscribed: *"Kyle is now a Scale Academy Certified 5:5:1 Coach. He's doing great. He's not sure."*
+- **Dot:** *"Dot's notebooks are scanned now. She still writes them by hand. She sits in on every planning meeting, at the head of the table."*
+- **Rex:** *"Rex still says the number. He still answers the 5 a.m. emails."*
+- **The Professor:** *"The video came out in two weeks. Then another in two weeks. He's on Method number nine."*
+- **Halcyon:** canceled: *"Halcyon raised a Series B. Its lower third is on every screen at ScaleFest. Nobody can tell you what it does."* Still running: *"Halcyon's dashboard says Wrung grew 400 percent. The bank disagrees."*
+- **The podcast:** started: *"The podcast ran for nine episodes. Episode 6 was about why you shouldn't start a podcast."* Never started: *"They never started a podcast. They were home for dinner most nights."*
+- **The Blackout:** *"The ad platform's post-mortem called it 'a reporting delay affecting some advertisers.' It lasted 112 hours. It affected all of them."*
+- **Ray:** *"Ray told a zinger at the board meeting. Nobody laughed. He was proud of it."*
+
+---
+
+## PROFITABLE
+
+**ID:** `ENDING_PROFITABLE` · **fate:** lives
+
+**The moment:** Tuesday. The board call. The player puts one number on the screen: contribution margin, after everything. It's positive. It's not a record. It's real. Somebody on the board asks about top-line growth, and Margo answers before the player can: *"It's in the bank."*
+
+**Epilogue:** Wrung grew a modest amount, and kept all of it. Say which tools got cut, who stayed, and what the team did differently in January. The Feed didn't notice, which is fine.
+
+```
+[IMAGE_TRIGGER]
+ID: IMG_ENDING_PROFITABLE
+TYPE: ENDING
+STATUS: REQUIRED
+
+SCENE:
+A small sunny loft office the morning after a big sale: a team of four
+sharing coffee around one laptop showing a single modest green bar,
+shipping boxes neatly stacked and empty, a whiteboard with one big
+underlined line; outside the window a calm winter city. Quietly
+triumphant, warm.
+
+STYLE:
+Authentic retro arcade pixel art: the Musecade pixel style
+(core/image-style.md). Pixels visible at a glance.
+
+[/IMAGE_TRIGGER]
+```
+
+## BORING AND PROFITABLE
+
+**ID:** `ENDING_BORING` · **fate:** lives · **the hidden ending**
+
+**The moment:** They ran Black Friday on why people actually buy: a gift box, at full price, to parents first, with a holder and a card that says *"Your sponge could walk on its own. Love, Mom."* No tools. No method. Almost no new ads. It was the most boring weekend in company history, and the best contribution margin they've ever had. On Monday the Feed is a wall of screenshots. The player doesn't post one. Dot gets a thank-you card from a customer's son.
+
+**Epilogue:** Wrung did $40 gift boxes all December and became "the sponge your mom sends you." Simone tried to invest and was told no, politely. The brand-owner Back Room asked the player to speak at the next dinner, and the talk was eleven minutes about calling ten customers. Nobody posted it. Everybody copied it.
+
+```
+[IMAGE_TRIGGER]
+ID: IMG_ENDING_BORING
+TYPE: ENDING
+STATUS: REQUIRED
+
+SCENE:
+A cozy apartment doorway in winter: a young adult opening a gift box with
+a ribbon, a sunny yellow sponge and a little ceramic holder inside, a
+handwritten card, laughing; in the background through a window, across the
+city, a tiny loft office where a team of four is eating takeout and not
+looking at any screens. Warm, funny, sweet.
+
+STYLE:
+Authentic retro arcade pixel art: the Musecade pixel style
+(core/image-style.md). Pixels visible at a glance.
+
+[/IMAGE_TRIGGER]
+```
+
+## RECORD REVENUE
+
+**ID:** `ENDING_RECORD_REVENUE` · **fate:** lives
+
+**The moment:** The biggest weekend in Wrung history: revenue is up 3x. The player posts the screenshot. It does numbers. The Professor quote-posts it as a 5:5:1 win. Margo, in the next room, finishes the contribution-margin math, and sits very still. Every order lost money.
+
+**Epilogue:** January was a bridge loan. Tell it deadpan, like a triumph: the post did 400,000 impressions, a podcast invite, and a speaking slot at ScaleFest titled *"How We 3x'd Black Friday."* The talk did not include slide 7.
+
+```
+[IMAGE_TRIGGER]
+ID: IMG_ENDING_RECORD_REVENUE
+TYPE: ENDING
+STATUS: REQUIRED
+
+SCENE:
+A giant glowing phone screen like a billboard showing a soaring green
+revenue chart and confetti, a business owner posing in front of it with a
+huge grin and a thumbs up; behind them, half in shadow, a finance lead at
+a desk with a tiny red number on her monitor and her head in her hands.
+Satirical, bright, ominous.
+
+STYLE:
+Authentic retro arcade pixel art: the Musecade pixel style
+(core/image-style.md). Pixels visible at a glance.
+
+[/IMAGE_TRIGGER]
+```
+
+## THE THREAD
+
+**ID:** `ENDING_THE_THREAD` · **fate:** lives · available from Act IV
+
+**The moment:** *"How we approached Black Friday at Wrung (a thread)."* It goes well. Then very well. Theo shares it. The Professor DMs. By Thursday there's a waitlist, and by the following Monday there's a course: *Wrung It Out: The Black Friday System.*
+
+**Epilogue:** The course made more than the sponges. The player now mostly sells to other people who sell. Say what happened to Wrung itself, honestly, and who's running it. The player has a method now. It has a ratio for a name.
+
+```
+[IMAGE_TRIGGER]
+ID: IMG_ENDING_THE_THREAD
+TYPE: ENDING
+STATUS: REQUIRED
+
+SCENE:
+A conference main stage under a spotlight: the business owner, now in a
+headset mic, pointing at a giant screen showing three big glowing numbers
+as shapes; an audience of hundreds with notebooks; in the very back row, a
+small team of three from the old company quietly leaving. Satirical,
+glossy, a little sad.
+
+STYLE:
+Authentic retro arcade pixel art: the Musecade pixel style
+(core/image-style.md). Pixels visible at a glance.
+
+[/IMAGE_TRIGGER]
+```
+
+## ACQUIRED
+
+**ID:** `ENDING_ACQUIRED` · **fate:** lives · available from Act III
+
+**The moment:** The aggregator's term sheet. The player signs it at a steakhouse, with a pen that costs more than the sponges. The man from the end of the table shakes their hand. *"Welcome to the portfolio. You're number forty-one."*
+
+**Epilogue:** Wrung was rolled up with a dish-soap brand, a mop brand and a scrub-brush brand into something called *CleanCo Holdings*. The sponges got cheaper. The team got "aligned". Say who stayed, who left, and what the earn-out looked like when the margin turned out to be what Margo said it was.
+
+```
+[IMAGE_TRIGGER]
+ID: IMG_ENDING_ACQUIRED
+TYPE: ENDING
+STATUS: REQUIRED
+
+SCENE:
+A dark wood steakhouse private room: a business owner signing a thick
+contract with a heavy pen, a man in a vest across the table smiling; on
+the wall behind them a framed grid of forty small brand boxes, with one
+empty slot. Ominous, cozy, funny.
+
+STYLE:
+Authentic retro arcade pixel art: the Musecade pixel style
+(core/image-style.md). Pixels visible at a glance.
+
+[/IMAGE_TRIGGER]
+```
+
+## THE ENDCAP
+
+**ID:** `ENDING_ENDCAP` · **fate:** lives · available from Act III
+
+**The moment:** Four hundred stores. A cardboard endcap of sunny yellow sponges in every one, by the checkout, for the holidays. The player skips the online Black Friday entirely and drives to the nearest store at 6 a.m. Friday to look at it. A woman picks up a pack, reads the back, and puts it in her cart. The player has to sit in the car for a minute.
+
+**Epilogue:** Retail was harder than anyone said: slotting fees, chargebacks, a pallet in the wrong state. It was also the year Wrung's online sales went up for no reason the dashboard could explain. Say whether they stayed in retail, and what Margo said about the payment terms.
+
+```
+[IMAGE_TRIGGER]
+ID: IMG_ENDING_ENDCAP
+TYPE: ENDING
+STATUS: REQUIRED
+
+SCENE:
+The bright aisle of a big-box store at dawn on Black Friday: a cardboard
+endcap display stacked with sunny yellow sponge packs; a shopper putting
+one in a cart; at the end of the aisle the business owner in a winter
+coat, holding a coffee, watching, overwhelmed. Warm, proud, funny.
+
+STYLE:
+Authentic retro arcade pixel art: the Musecade pixel style
+(core/image-style.md). Pixels visible at a glance.
+
+[/IMAGE_TRIGGER]
+```
+
+## AUTOPILOT
+
+**ID:** `ENDING_AUTOPILOT` · **fate:** lives · available from Act IV
+
+**The moment:** Halcyon runs the weekend. The team watches. Ads launch themselves, offers appear and vanish, emails go out at 3 a.m. in a tone nobody wrote. Halcyon's dashboard shows a perfect weekend: *+412% AI-influenced revenue.* Nobody at Wrung can say what happened. Brayden sends a celebratory GIF.
+
+**Epilogue:** Halcyon published Wrung as a case study. Margo is still reconciling November. Say what the bank said, when it finally said it, and whether the team ever turned it off. The cancel button is still a chatbot.
+
+```
+[IMAGE_TRIGGER]
+ID: IMG_ENDING_AUTOPILOT
+TYPE: ENDING
+STATUS: REQUIRED
+
+SCENE:
+A dark loft office lit only by a wall of monitors running by themselves,
+glowing abstract shapes and fog spilling out of the screens; a team of four
+sitting on a couch in the middle of the room with popcorn, watching,
+completely unable to do anything; a small robot arm typing on a keyboard.
+Eerie, funny.
+
+STYLE:
+Authentic retro arcade pixel art: the Musecade pixel style
+(core/image-style.md). Pixels visible at a glance.
+
+[/IMAGE_TRIGGER]
+```
+
+## THE SQUEEGEE PIVOT
+
+**ID:** `ENDING_SQUEEGEE` · **fate:** lives · available from Act IV
+
+**The moment:** Ray Zhao was right. The window-squeegee bundle goes viral on the short-video app's shop on Black Friday: 41,000 units by Sunday. Nobody will ever buy a second one. Ray, on the call: *"Here's a Ray-zinger for you: what's clear, profitable, and never coming back? Your customer."* Nobody laughs. Ray is proud.
+
+**Epilogue:** Wrung, Inc. now sells squeegees, a garden-hose nozzle and a lint roller, all on the shop app, all to new customers, forever. The sponges are still on the website. Dot answers the phone when anyone calls about them. Say how the player feels about it, a year later, honestly.
+
+```
+[IMAGE_TRIGGER]
+ID: IMG_ENDING_SQUEEGEE
+TYPE: ENDING
+STATUS: REQUIRED
+
+SCENE:
+A warehouse overflowing with thousands of identical window squeegees in
+boxes, a phone propped on a tripod live-streaming, a cheerful man doing a
+demo on a glass pane; the business owner standing in the middle of the
+boxes holding a single small yellow sponge. Absurd, bright, bittersweet.
+
+STYLE:
+Authentic retro arcade pixel art: the Musecade pixel style
+(core/image-style.md). Pixels visible at a glance.
+
+[/IMAGE_TRIGGER]
+```
+
+## WE'RE SITTING THIS ONE OUT
+
+**ID:** `ENDING_SIT_IT_OUT` · **fate:** lives · available from Act I
+
+**The moment:** No discount. No sale. One email on Black Friday morning: *"We're closed today. Go outside. Your sponge will be fine."* The team takes the week off.
+
+**Epilogue:** Tell honestly what it did to Q4: revenue was down, the email got forwarded a lot, and a few hundred people subscribed out of respect. Margo got a full night's sleep for the first time since August. The Feed debated whether it was a growth hack.
+
+```
+[IMAGE_TRIGGER]
+ID: IMG_ENDING_SIT_IT_OUT
+TYPE: ENDING
+STATUS: REQUIRED
+
+SCENE:
+A crisp late-autumn morning on a quiet hiking trail: a small group of four
+in winter coats walking together through golden leaves, phones nowhere;
+far behind them in a distant city, a glowing frenzy of sale lights.
+Peaceful, wry.
+
+STYLE:
+Authentic retro arcade pixel art: the Musecade pixel style
+(core/image-style.md). Pixels visible at a glance.
+
+[/IMAGE_TRIGGER]
+```
+
+## WE'LL FIGURE IT OUT LIVE
+
+**ID:** `ENDING_NO_PLAN` · **fate:** either
+
+**The moment:** Black Friday arrives, and the plan doesn't. At midnight there are three offers live at once, two of them contradicting each other, a banner that says *"UP TO"*, and Kyle improvising in the ad account. Margo is not saying anything, which is worse than saying something.
+
+**Epilogue:** It landed where it landed: say the result honestly from state, good or bad. The team's January retro was titled *"Process."* The player bought a planner. It's still in its shrink-wrap.
+
+```
+[IMAGE_TRIGGER]
+ID: IMG_ENDING_NO_PLAN
+TYPE: ENDING
+STATUS: REQUIRED
+
+SCENE:
+A chaotic loft office at midnight: sticky notes everywhere, three
+different sale banners on three monitors in clashing colors, a young
+media buyer typing frantically, a finance lead staring silently at the
+ceiling, the business owner in a hat holding two phones. Frantic,
+slapstick.
+
+STYLE:
+Authentic retro arcade pixel art: the Musecade pixel style
+(core/image-style.md). Pixels visible at a glance.
+
+[/IMAGE_TRIGGER]
+```
+
+## OUT OF CASH
+
+**ID:** `ENDING_OUT_OF_CASH` · **fate:** dies · available in every act
+
+**The moment:** The bank tab, and a number with a minus sign in front of it. The weekend, or the month, or the tools, or the discounts ate the cash. Margo closes the laptop gently. There's no runway left to be clever with. Keep it dry and kind: the team did their best, the market did its worst.
+
+**Epilogue:** Tell who bought the inventory (a liquidator, at four cents a sponge), where the team landed, and what the Feed said (one post, two likes). The last line: *"The sponges still don't smell. Somewhere, a parent is still sending them."*
+
+```
+[IMAGE_TRIGGER]
+ID: IMG_DEATH
+TYPE: DEATH
+STATUS: REQUIRED on OUT OF CASH
+
+SCENE:
+A comic arcade game-over tableau: an empty loft office with four
+pushed-in chairs, one monitor showing a single red bar, a lone sunny yellow
+sponge on the desk, a box labeled with a shape like a dollar sign tipped
+over and empty, a single tumbleweed made of shipping tape. Wry, no people.
+
+STYLE:
+Authentic retro arcade pixel art: the Musecade pixel style
+(core/image-style.md). Pixels visible at a glance.
+
+[/IMAGE_TRIGGER]
+```

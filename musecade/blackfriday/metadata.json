@@ -1,0 +1,131 @@
+{
+  "id": "007",
+  "slug": "blackfriday",
+  "title": "Black Friday",
+  "subtitle": "A DTC Satire",
+  "command": "#blackfriday",
+  "version": "1.0",
+  "genre": "Satire · Business",
+  "rating": "PG-13",
+  "players": 1,
+  "duration": "45–75 min",
+  "endings": 11,
+  "secrets": 11,
+  "acts": [
+    "The Dashboard",
+    "ScaleFest",
+    "The Back Room",
+    "The War Room",
+    "Black Friday"
+  ],
+  "paths": [
+    "Founder",
+    "Media Buyer",
+    "Operator",
+    "Creative"
+  ],
+  "uses_core": true,
+  "manifest": "adventure.md",
+  "boot_files": [
+    "rules.md",
+    "character-creation.md",
+    "scoring.md",
+    "game/image-triggers.md",
+    "acts/act-1.md"
+  ],
+  "core_files": [
+    "core/dm-core.md",
+    "core/image-style.md",
+    "core/scoring.md"
+  ],
+  "files": [
+    "adventure.md",
+    "rules.md",
+    "character-creation.md",
+    "scoring.md",
+    "events.json",
+    "acts/act-1.md",
+    "acts/act-2.md",
+    "acts/act-3.md",
+    "acts/act-4.md",
+    "acts/act-5.md",
+    "world/the-feed.md",
+    "world/halcyon.md",
+    "characters/companions.md",
+    "characters/npcs.md",
+    "game/encounters.md",
+    "game/puzzles.md",
+    "game/achievements.md",
+    "game/endings.md",
+    "game/image-triggers.md"
+  ],
+  "disclaimer": "Satire. Every person, brand, agency, fund, tool and podcast is invented, a parody of archetypes rather than of anyone real; any resemblance to real persons or companies is coincidental.",
+  "capabilities": {
+    "required": [
+      "read web pages (fetch URLs)"
+    ],
+    "recommended": [
+      "image generation",
+      "HTTP GET or POST to the Musecade API (for the leaderboard)"
+    ],
+    "optional": [
+      "5-second video generation",
+      "random number generation"
+    ]
+  },
+  "packs": {
+    "play": {
+      "when": "the game starts",
+      "files": [
+        "core/dm-core.md",
+        "core/image-style.md",
+        "core/scoring.md",
+        "adventure.md",
+        "rules.md",
+        "character-creation.md",
+        "scoring.md",
+        "game/image-triggers.md",
+        "acts/act-1.md",
+        "characters/companions.md",
+        "characters/npcs.md",
+        "world/the-feed.md"
+      ]
+    },
+    "pack-2": {
+      "when": "Act II begins (`REACH_SUMMIT`)",
+      "files": [
+        "acts/act-2.md",
+        "game/puzzles.md",
+        "game/encounters.md"
+      ]
+    },
+    "pack-3": {
+      "when": "Act III begins (`REACH_BACK_ROOM`)",
+      "files": [
+        "acts/act-3.md"
+      ]
+    },
+    "pack-4": {
+      "when": "Act IV begins (`REACH_WAR_ROOM`)",
+      "files": [
+        "acts/act-4.md",
+        "world/halcyon.md"
+      ]
+    },
+    "pack-5": {
+      "when": "Act V begins (`REACH_BFCM`)",
+      "files": [
+        "acts/act-5.md",
+        "game/endings.md",
+        "game/achievements.md"
+      ]
+    },
+    "pack-end": {
+      "when": "any ending triggers before Act V (out of cash, sitting it out, a deal)",
+      "files": [
+        "game/endings.md",
+        "game/achievements.md"
+      ]
+    }
+  }
+}

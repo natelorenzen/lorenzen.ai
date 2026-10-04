@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "game": "dontsplitup",
+  "title": "Don't Split Up",
+  "version": "1.0",
+  "note": "CANONICAL SCORE TABLE. The Musecade backend imports this file and is the only thing that turns event IDs into points. Edit here, run python3 musecade/_build/build.py, then redeploy the worker.",
+
+  "rules": {
+    "survival_bonus": 400,
+    "max_events_per_run": 80,
+    "min_seconds_for_ranking": 300,
+    "run_ttl_days": 30,
+    "acts": 5
+  },
+
+  "paths": ["JOCK", "NERD", "SKEPTIC", "WEIRDO"],
+
+  "doc_tokens": ["ENC_CABIN", "ENC_CAMP", "ENC_MAZE", "ENC_PATCH"],
+
+  "events": {
+    "REACH_CABIN": { "category": "progress", "points": 100, "title": "Cabin 13", "sets_act": 2, "min_act": 1 },
+    "REACH_CAMP":  { "category": "progress", "points": 200, "title": "Camp Crescent", "sets_act": 3, "min_act": 2, "requires": ["REACH_CABIN"] },
+    "REACH_TOWN":  { "category": "progress", "points": 300, "title": "Hollow Pines", "sets_act": 4, "min_act": 3, "requires": ["REACH_CAMP"] },
+    "REACH_PATCH": { "category": "progress", "points": 400, "title": "The Pumpkin Patch", "sets_act": 5, "min_act": 4, "requires": ["REACH_TOWN"] },
+
+    "DISCOVER_EARL_CARDS":     { "category": "discovery", "secret": true, "points": 200, "title": "Earl's Cue Cards", "min_act": 1 },
+    "DISCOVER_FLYER":          { "category": "discovery", "secret": true, "points": 150, "title": "The Fine Print", "min_act": 1 },
+    "DISCOVER_WENDELL_SECRET": { "category": "discovery", "secret": true, "points": 200, "title": "Wendell Reads the Boxes", "min_act": 1 },
+    "DISCOVER_FOG_MACHINES":   { "category": "discovery", "secret": true, "points": 250, "title": "The Cabin Is a Set", "min_act": 2 },
+    "DISCOVER_DALE_GRANDPA":   { "category": "discovery", "secret": true, "points": 250, "title": "Why Dale Wanted to Come", "min_act": 2 },
+    "DISCOVER_DARLENE_STORY":  { "category": "discovery", "secret": true, "points": 250, "title": "What Happened in 1979", "min_act": 3 },
+    "DISCOVER_THE_TAKEN":      { "category": "discovery", "secret": true, "points": 300, "title": "Where the Taken Go", "min_act": 3 },
+    "DISCOVER_THE_COMMITTEE":  { "category": "discovery", "secret": true, "points": 300, "title": "The Halloween Committee", "min_act": 4 },
+    "DISCOVER_THE_ORIGIN":     { "category": "discovery", "secret": true, "points": 400, "title": "Come for the Leaves", "min_act": 4 },
+    "DISCOVER_THE_STINGER":    { "category": "discovery", "secret": true, "points": 300, "title": "He'll Be Back Next Year", "min_act": 4 },
+    "DISCOVER_HOLLOW_WISH":    { "category": "discovery", "secret": true, "points": 500, "title": "What Jack Hollow Wants", "min_act": 4 },
+
+    "PUZZLE_CABIN_SOLVED":    { "category": "puzzle", "points": 400, "title": "Behind the Set", "min_act": 2 },
+    "PUZZLE_CABIN_NO_HINT":   { "category": "puzzle", "points": 200, "title": "Behind the Set, Unaided", "min_act": 2, "requires": ["PUZZLE_CABIN_SOLVED"] },
+    "PUZZLE_RULES_SOLVED":    { "category": "puzzle", "points": 450, "title": "The Rules", "min_act": 2 },
+    "PUZZLE_RULES_NO_HINT":   { "category": "puzzle", "points": 200, "title": "The Rules, Unaided", "min_act": 2, "requires": ["PUZZLE_RULES_SOLVED"] },
+    "PUZZLE_LANTERN_SOLVED":  { "category": "puzzle", "points": 500, "title": "The First Jack-o'-Lantern", "min_act": 5 },
+    "PUZZLE_LANTERN_NO_HINT": { "category": "puzzle", "points": 250, "title": "The First Jack-o'-Lantern, Unaided", "min_act": 5, "requires": ["PUZZLE_LANTERN_SOLVED"] },
+
+    "ENC_CABIN_SURVIVED": { "category": "encounter", "points": 200, "title": "Midnight at Cabin 13", "min_act": 2 },
+    "ENC_CABIN_CLEVER":   { "category": "encounter", "points": 250, "title": "Midnight at Cabin 13, Outwitted", "min_act": 2 },
+    "ENC_CAMP_SURVIVED":  { "category": "encounter", "points": 200, "title": "The Canoe Dock", "min_act": 3 },
+    "ENC_CAMP_CLEVER":    { "category": "encounter", "points": 250, "title": "The Canoe Dock, Outwitted", "min_act": 3 },
+    "ENC_MAZE_SURVIVED":  { "category": "encounter", "points": 200, "title": "The Corn Maze", "min_act": 4 },
+    "ENC_MAZE_CLEVER":    { "category": "encounter", "points": 250, "title": "The Corn Maze, Outwitted", "min_act": 4 },
+    "ENC_PATCH_SURVIVED": { "category": "encounter", "points": 250, "title": "The Patch", "min_act": 5 },
+    "ENC_PATCH_CLEVER":   { "category": "encounter", "points": 350, "title": "The Patch, Outwitted", "min_act": 5 },
+
+    "SOCIAL_EARL":        { "category": "social", "points": 250, "title": "Earl Goes Off Script", "min_act": 1 },
+    "SOCIAL_DARLENE":     { "category": "social", "points": 300, "title": "The Last Survivor", "min_act": 3 },
+    "SOCIAL_SHERIFF":     { "category": "social", "points": 250, "title": "The Sheriff Believes You", "min_act": 4 },
+    "SOCIAL_MAYOR":       { "category": "social", "points": 300, "title": "Mayor Pumphrey, Outplayed", "min_act": 4 },
+    "SOCIAL_HOLLOW_TALK": { "category": "social", "points": 400, "title": "A Real Conversation with the Monster", "min_act": 4 },
+
+    "RECRUIT_DALE":     { "category": "companion", "points": 100, "title": "Dale Drives", "min_act": 1 },
+    "RECRUIT_WENDELL":  { "category": "companion", "points": 100, "title": "Wendell Comes Along", "min_act": 1 },
+    "RECRUIT_COURTNEY": { "category": "companion", "points": 100, "title": "Courtney Gets In the Van", "min_act": 1 },
+    "ALLY_DALE_COMES_BACK":  { "category": "companion", "points": 250, "title": "Right Back", "min_act": 4, "requires": ["RECRUIT_DALE"] },
+    "ALLY_COURTNEY_TAPE":    { "category": "companion", "points": 250, "title": "Rolling", "min_act": 4, "requires": ["RECRUIT_COURTNEY"] },
+    "ALLY_WENDELL_WATCHES":  { "category": "companion", "points": 200, "title": "Eyes Open", "min_act": 5, "requires": ["RECRUIT_WENDELL"] },
+    "COMPANION_SURVIVES_DALE":     { "category": "companion", "points": 100, "title": "Dale Survives", "min_act": 3, "requires": ["RECRUIT_DALE"] },
+    "COMPANION_SURVIVES_WENDELL":  { "category": "companion", "points": 100, "title": "Wendell Survives", "min_act": 3, "requires": ["RECRUIT_WENDELL"] },
+    "COMPANION_SURVIVES_COURTNEY": { "category": "companion", "points": 100, "title": "Courtney Survives", "min_act": 3, "requires": ["RECRUIT_COURTNEY"] },
+
+    "ACH_DIDNT_SPLIT_UP":  { "category": "achievement", "points": 700, "title": "WE DIDN'T SPLIT UP", "description": "Never split the group, all night.", "min_act": 5 },
+    "ACH_LOW_TROPE":       { "category": "achievement", "points": 500, "title": "NOT LIKE THE MOVIES", "description": "Finish with your TROPE never above 1.", "min_act": 5 },
+    "ACH_EVERYBODY_LIVES": { "category": "achievement", "points": 500, "title": "EVERYBODY LIVES", "description": "Every friend makes it to sunrise.", "min_act": 5, "requires_any": ["RECRUIT_DALE", "RECRUIT_WENDELL", "RECRUIT_COURTNEY"] },
+    "ACH_NEVER_SAID_IT":   { "category": "achievement", "points": 400, "title": "NEVER SAID IT", "description": "Never say the forbidden lines.", "min_act": 4 },
+    "ACH_DIDNT_READ_IT":   { "category": "achievement", "points": 300, "title": "DIDN'T READ THE LATIN", "description": "Never read the book out loud.", "min_act": 3 },
+    "ACH_GENRE_SAVVY":     { "category": "achievement", "hidden": true, "points": 400, "title": "GENRE SAVVY", "description": "As the Nerd, reach Genre Savvy rank III.", "min_act": 3 },
+    "ACH_FULL_SIZE_BARS":  { "category": "achievement", "hidden": true, "points": 250, "title": "FULL-SIZE BARS", "description": "Go trick-or-treating during the massacre.", "min_act": 4 },
+    "ACH_BEFORE_CREDITS":  { "category": "achievement", "hidden": true, "points": 350, "title": "BEFORE THE CREDITS", "description": "Reach the Patch with two or more hours left before sunrise.", "min_act": 5, "requires": ["REACH_PATCH"] },
+    "ACH_READ_THE_SCRIPT": { "category": "achievement", "hidden": true, "points": 500, "title": "READ THE SCRIPT", "description": "Uncover the Committee, the origin, and what Jack Hollow wants.", "min_act": 5, "requires": ["DISCOVER_THE_COMMITTEE", "DISCOVER_THE_ORIGIN", "DISCOVER_HOLLOW_WISH"] },
+    "ACH_IM_RIGHT_BACK":   { "category": "achievement", "hidden": true, "points": 250, "title": "I'M RIGHT BACK", "description": "Be there when someone says the line, and comes back.", "min_act": 4, "requires": ["ALLY_DALE_COMES_BACK"] }
+  },
+
+  "endings": {
+    "ENDING_ROLL_CREDITS":        { "title": "ROLL CREDITS", "points": 1500, "fate": "lives", "min_act": 5, "requires": ["REACH_PATCH"] },
+    "ENDING_NO_SEQUEL":           { "title": "NO SEQUEL", "points": 1900, "fate": "lives", "min_act": 5, "requires": ["DISCOVER_THE_STINGER", "REACH_PATCH"] },
+    "ENDING_COME_FOR_THE_LEAVES": { "title": "COME FOR THE LEAVES", "points": 2400, "fate": "lives", "min_act": 5, "requires": ["DISCOVER_HOLLOW_WISH", "SOCIAL_HOLLOW_TALK"] },
+    "ENDING_SOMEBODY_GOES_BACK":  { "title": "SOMEBODY HAS TO GO BACK", "points": 1300, "fate": "sacrificed", "min_act": 4 },
+    "ENDING_LAST_ONE_STANDING":   { "title": "LAST ONE STANDING", "points": 900, "fate": "lives", "min_act": 3 },
+    "ENDING_FOUND_FOOTAGE":       { "title": "FOUND FOOTAGE", "points": 1000, "fate": "either", "min_act": 4, "requires": ["DISCOVER_THE_COMMITTEE"] },
+    "ENDING_MORNING":             { "title": "MADE IT TO MORNING", "points": 800, "fate": "lives", "min_act": 3 },
+    "ENDING_SEASON_PASS":         { "title": "SEASON PASS", "points": 700, "fate": "lives", "min_act": 4 },
+    "ENDING_NEW_HOLLOW":          { "title": "THE NEW HOLLOW", "points": 600, "fate": "lives", "min_act": 4 },
+    "ENDING_NOPE":                { "title": "NOPE", "points": 300, "fate": "lives", "min_act": 1 },
+    "ENDING_RIGHT_BACK":          { "title": "I'LL BE RIGHT BACK", "points": 0, "fate": "dies", "min_act": 1, "image": "IMG_DEATH" }
+  }
+}

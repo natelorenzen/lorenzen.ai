@@ -1,0 +1,131 @@
+{
+  "id": "006",
+  "slug": "dontsplitup",
+  "title": "Don't Split Up",
+  "subtitle": "A Halloween Horror",
+  "command": "#dontsplitup",
+  "version": "1.0",
+  "genre": "Horror · Comedy",
+  "rating": "PG-13",
+  "players": 1,
+  "duration": "45–75 min",
+  "endings": 11,
+  "secrets": 11,
+  "acts": [
+    "The Road In",
+    "Cabin 13",
+    "Camp Crescent",
+    "Hollow Pines",
+    "The Pumpkin Patch"
+  ],
+  "paths": [
+    "Jock",
+    "Nerd",
+    "Skeptic",
+    "Weirdo"
+  ],
+  "uses_core": true,
+  "manifest": "adventure.md",
+  "boot_files": [
+    "rules.md",
+    "character-creation.md",
+    "scoring.md",
+    "game/image-triggers.md",
+    "acts/act-1.md"
+  ],
+  "core_files": [
+    "core/dm-core.md",
+    "core/image-style.md",
+    "core/scoring.md"
+  ],
+  "files": [
+    "adventure.md",
+    "rules.md",
+    "character-creation.md",
+    "scoring.md",
+    "events.json",
+    "acts/act-1.md",
+    "acts/act-2.md",
+    "acts/act-3.md",
+    "acts/act-4.md",
+    "acts/act-5.md",
+    "world/hollow-pines.md",
+    "world/jack-hollow.md",
+    "characters/companions.md",
+    "characters/npcs.md",
+    "game/encounters.md",
+    "game/puzzles.md",
+    "game/achievements.md",
+    "game/endings.md",
+    "game/image-triggers.md"
+  ],
+  "disclaimer": "Fiction and parody. Hollow Pines, its people and its monster are invented; any resemblance to real persons, places, films or companies is coincidental.",
+  "capabilities": {
+    "required": [
+      "read web pages (fetch URLs)"
+    ],
+    "recommended": [
+      "image generation",
+      "HTTP GET or POST to the Musecade API (for the leaderboard)"
+    ],
+    "optional": [
+      "5-second video generation",
+      "random number generation"
+    ]
+  },
+  "packs": {
+    "play": {
+      "when": "the game starts",
+      "files": [
+        "core/dm-core.md",
+        "core/image-style.md",
+        "core/scoring.md",
+        "adventure.md",
+        "rules.md",
+        "character-creation.md",
+        "scoring.md",
+        "game/image-triggers.md",
+        "acts/act-1.md",
+        "characters/companions.md",
+        "characters/npcs.md"
+      ]
+    },
+    "pack-2": {
+      "when": "Act II begins (`REACH_CABIN`)",
+      "files": [
+        "acts/act-2.md",
+        "world/hollow-pines.md",
+        "game/puzzles.md",
+        "game/encounters.md"
+      ]
+    },
+    "pack-3": {
+      "when": "Act III begins (`REACH_CAMP`)",
+      "files": [
+        "acts/act-3.md"
+      ]
+    },
+    "pack-4": {
+      "when": "Act IV begins (`REACH_TOWN`)",
+      "files": [
+        "acts/act-4.md",
+        "world/jack-hollow.md"
+      ]
+    },
+    "pack-5": {
+      "when": "Act V begins (`REACH_PATCH`)",
+      "files": [
+        "acts/act-5.md",
+        "game/endings.md",
+        "game/achievements.md"
+      ]
+    },
+    "pack-end": {
+      "when": "any ending triggers before Act V (taken, driving away, a deal)",
+      "files": [
+        "game/endings.md",
+        "game/achievements.md"
+      ]
+    }
+  }
+}

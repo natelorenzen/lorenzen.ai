@@ -51,6 +51,18 @@ PALETTES.ghostline = HEX([
     "#ff3fa4","#ff8ac8","#ffd1ea","#2ef2ff","#9ff6ff","#e8f9ff","#9bff4f","#d6ff9e",
     "#e0302a","#ff6a3d","#ffe08a","#f7d38a","#fff3c4",
     "#1c1630","#0f0c18","#1a1216","#6a78b8","#3a3a5a","#6a6a8a","#b8b0d0","#c8d0f0","#e8e4f4"]);
+PALETTES.dontsplitup = HEX([
+    "#07050c","#0d0a18","#160c28","#1c1036","#2a2450","#3a2160","#5a3a7a","#8a6ab0",
+    "#a83a12","#e0601a","#ff8a2a","#ffb14a","#ffd27a","#ffe08a","#fff4c8",
+    "#2a1a22","#3a2418","#1a1010","#4a3018","#d8b050",
+    "#8aa4e0","#c4d2f0","#e8f0ff",
+    "#3a5a20","#7fae8a","#b8d8b0",
+    "#ff2a2a","#2e2430","#5a5a6a","#8a8a9a"]);
+PALETTES.blackfriday = HEX([
+    "#0a0a14","#0d0a18","#14121e","#22182a","#2a1640","#2a2440","#3a3a5a","#c04a7a",
+    "#101418","#0a2a1a","#2a8a4a","#7dff9a","#2a0e14","#ff4a4a","#e0302a",
+    "#0e1a3a","#1a3a8a","#5aa8ff","#4af2ff","#8a5aff","#ff4fa3","#ff8ad0",
+    "#ffd24a","#ffc83a","#ffe08a","#ff8a2a","#b07a3a","#d8b070","#3a2418","#d89a70","#e8e4f0"]);
 let PALETTE = PALETTES.theblackroad;
 
 const BAYER = [[0,8,2,10],[12,4,14,6],[3,11,1,9],[15,7,13,5]];
@@ -92,14 +104,14 @@ window.pixelize = async function (src = "keyart-src.svg", W = 256, H = 192, spre
   }
   // pixel rain: short diagonal streaks, brighter over dark sky
   const rand = rng(317);
-  for (let n = 0; n < (palette === "theseaglassinn" || palette === "seriesdoom" ? 0 : 150); n++) {
+  for (let n = 0; n < (palette === "theseaglassinn" || palette === "seriesdoom" || palette === "dontsplitup" || palette === "blackfriday" ? 0 : 150); n++) {
     const x0 = Math.floor(rand() * W), y0 = Math.floor(rand() * H * .95), len = 2 + Math.floor(rand() * 3);
     for (let k = 0; k < len; k++) {
       const x = x0 - Math.floor(k / 2), y = y0 + k;
       if (x < 0 || y >= H) continue;
       const i = (y * W + x) * 4;
       const lum = px[i] * .3 + px[i + 1] * .59 + px[i + 2] * .11;
-      const rainIdx = { theblackroad: [17, 16], theglasscity: [6, 8], theseaglassinn: [5, 6], seriesdoom: [3, 4], ghostline: [24, 26] }[palette];
+      const rainIdx = { theblackroad: [17, 16], theglasscity: [6, 8], theseaglassinn: [5, 6], seriesdoom: [3, 4], ghostline: [24, 26], dontsplitup: [4, 6], blackfriday: [5, 6] }[palette];
       const col = lum < 60 ? PALETTE[rainIdx[0]] : PALETTE[rainIdx[1]];
       px[i] = col[0]; px[i + 1] = col[1]; px[i + 2] = col[2];
     }

@@ -192,3 +192,43 @@ v2.0 recasts the game as a teen summer thriller. `node musecade/_playtest/replay
 
 **Verified:** SYNC rises on schedule (Acts III and V) and on every key; the fate rule (`FULL SYNC`, `RESTORED` and `FLATLINE` complete with `died: true`); the Loom's six memories agree with the registry and the memory palace; player pronouns stay neutral in the source files; and no real brands appear anywhere.
 
+
+---
+
+# Don't Split Up (Game 006): Simulated Playtests
+
+`node musecade/_playtest/replay-dontsplitup.mjs` replays each trace through the real scoring rules.
+
+| Run | Name · Path | Ending | Score | Secrets |
+|---|---|---|---|---|
+| STANDARD | SAM · Jock | ROLL CREDITS | 9,350 | 8/11 |
+| CHAOTIC | ZARA · Weirdo | SEASON PASS (Act IV) | 2,850 | 1/11 |
+| CLEVER | ADA · Nerd | COME FOR THE LEAVES (hidden) | 16,800 | 11/11 |
+| FAILURE | BO · Skeptic | I'LL BE RIGHT BACK (Act III) | 700 | 0/11 |
+
+- **STANDARD:** Sam spots Earl's cue cards, lets Courtney in, and compares flyers. The cabin's cord leads to Lyle's tunnel. Dale wanders off for firewood and is taken at 10:40. Darlene's story and the canoe dock prove the Group rule. At Town Hall Courtney tapes the Committee and the archive gives the 1969 brochure. In the Patch, Dale wakes ("...I'm back"), the white three-toothed lantern is snuffed, and Sam says "It's over" and turns around. The last pumpkin grins.
+- **CHAOTIC:** Zara reads the Latin, investigates every noise, and splits the group twice (TROPE 4 by Act III). Trick-or-treats on Elm Street, then takes the Mayor's Season Pass to get Wendell back.
+- **CLEVER:** Ada never says a forbidden line, calls six tropes (Genre Savvy III), solves the cabin and the Rules unaided, wins Earl, Darlene and the Sheriff, and outplays the Mayor. Dale draws Jack off in the corn and comes back. At the mascot statue the group talks to Jack ("Wave."). In the Patch, Wendell keeps his eyes open, and the new story goes out over WHOL 1350.
+- **FAILURE:** Bo goes alone to the boathouse for the radio battery at TROPE 4, on a telegraphed Very Hard roll, and rolls a natural 1. Cut away. Wendell and Dale hold together in the bell tower until sunrise.
+
+**Verified:** no real films, people or brands (invented films only: *Hollow Night* I–V); no gore anywhere (the taken are asleep, and every "death" cuts away); the hidden ending's prerequisites enforced server-side (`DISCOVER_HOLLOW_WISH` plus `SOCIAL_HOLLOW_TALK`); the apostrophe in the title is escaped in the homepage's attract-mode JSON.
+
+---
+
+# Black Friday (Game 007): Simulated Playtests
+
+`node musecade/_playtest/replay-blackfriday.mjs` replays each trace through the real scoring rules.
+
+| Run | Name · Path | Ending | Score | Secrets |
+|---|---|---|---|---|
+| STANDARD | SAM · Media Buyer | PROFITABLE | 9,850 | 6/11 |
+| CHAOTIC | ZARA · Creative | THE THREAD (Act IV) | 3,000 | 0/11 |
+| CLEVER | ADA · Founder | BORING AND PROFITABLE (hidden) | 17,400 | 11/11 |
+| FAILURE | BO · Operator | OUT OF CASH (Act IV) | 1,000 | 0/11 |
+
+- **STANDARD:** Sam forgives Kyle for Halcyon, invites Dot in, and reconciles the four numbers with Jun's Truthtable. Rex likes the honest number. Simone hands over her sheet. The Ohio holdout comes back at 25 percent; the spike is the flexible budget plus Kyle's copied rule. Halcyon is canceled. A bundle at full price; Margo stays.
+- **CHAOTIC:** Zara buys the attribution trial, skips the panel for tacos (and laughs at a Ray-zinger), makes 400 AI ads, and turns a pre-Black Friday thread into a course.
+- **CLEVER:** Ada never buys a tool, solves the numbers unaided, catches Noosphere's typist, exposes the candle-shop screenshot and the 5:51 origin live, and earns six receipts. Ten customer calls: parents sending sponges to grown kids. Dot presents. A $40 gift box to the list at full price. Nothing posted.
+- **FAILURE:** Bo keeps Halcyon running, adds the Professor's cost-cap structure (STACK 5), and a sitewide 40 percent pre-sale in Act IV eats the cash before Black Friday arrives.
+
+**Verified:** no real people, brands, agencies, tools or podcasts; the source cast was used only as archetypes, with names, companies, bios and catchphrases all newly invented (no real bio lines or taglines reused); ad platforms are unnamed; the offer math in `game/puzzles.md` checks out; the hidden ending's prerequisites are enforced server-side (`DISCOVER_WHY_THEY_BUY` plus `SOCIAL_CUSTOMER_CALLS`).

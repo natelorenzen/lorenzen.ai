@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Source for musecade/assets/blackfriday-keyart.png (pixelize.html, palette "blackfriday"). -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0a0a14"/>
+      <stop offset=".6" stop-color="#2a1640"/>
+      <stop offset="1" stop-color="#c04a7a"/>
+    </linearGradient>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#14121e"/>
+      <stop offset="1" stop-color="#22182a"/>
+    </linearGradient>
+    <radialGradient id="glowG" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#7dff9a" stop-opacity=".8"/>
+      <stop offset="1" stop-color="#2a8a4a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#5aa8ff" stop-opacity=".7"/>
+      <stop offset="1" stop-color="#1a3a8a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="lamp" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#ffe08a" stop-opacity=".9"/>
+      <stop offset=".5" stop-color="#ffb04a" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#ffb04a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="halcyon" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff4fa3"/>
+      <stop offset=".35" stop-color="#ffd24a"/>
+      <stop offset=".7" stop-color="#4af2ff"/>
+      <stop offset="1" stop-color="#8a5aff"/>
+    </linearGradient>
+    <filter id="b10" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="10"/></filter>
+    <filter id="b4" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4"/></filter>
+  </defs>
+
+  <!-- the room -->
+  <rect width="800" height="600" fill="url(#wall)"/>
+  <!-- big loft window with city -->
+  <rect x="440" y="40" width="330" height="290" fill="url(#sky)"/>
+  <g fill="#0d0a18">
+    <rect x="440" y="230" width="40" height="100"/><rect x="480" y="200" width="36" height="130"/><rect x="516" y="250" width="30" height="80"/>
+    <rect x="546" y="170" width="44" height="160"/><rect x="590" y="215" width="34" height="115"/><rect x="624" y="150" width="40" height="180"/>
+    <rect x="664" y="235" width="36" height="95"/><rect x="700" y="190" width="40" height="140"/><rect x="740" y="245" width="30" height="85"/>
+  </g>
+  <!-- lit windows in the city -->
+  <g fill="#ffd27a" opacity=".8"><rect x="552" y="185" width="5" height="5"/><rect x="566" y="200" width="5" height="5"/><rect x="632" y="170" width="5" height="5"/><rect x="646" y="195" width="5" height="5"/><rect x="708" y="210" width="5" height="5"/><rect x="488" y="220" width="5" height="5"/><rect x="600" y="240" width="5" height="5"/><rect x="722" y="260" width="5" height="5"/></g>
+  <!-- a giant sale billboard on a rooftop: black and gold, no words -->
+  <rect x="600" y="70" width="130" height="64" fill="#0a0a0a"/>
+  <rect x="604" y="74" width="122" height="56" fill="#16120a"/>
+  <path d="M622 118 L640 86 L652 106 L668 92 L688 120 Z" fill="#ffc83a"/>
+  <rect x="694" y="84" width="22" height="34" fill="#ff3a3a"/>
+  <rect x="660" y="134" width="6" height="40" fill="#0a0a0a"/>
+  <circle cx="665" cy="100" r="80" fill="#ffc83a" opacity=".12" filter="url(#b10)"/>
+  <!-- window frame -->
+  <g fill="#0c0a12"><rect x="432" y="32" width="346" height="8"/><rect x="432" y="330" width="346" height="10"/><rect x="432" y="32" width="8" height="308"/><rect x="770" y="32" width="8" height="308"/><rect x="600" y="32" width="6" height="308"/><rect x="432" y="180" width="346" height="5"/></g>
+
+  <!-- stacks of shipping boxes, left -->
+  <g>
+    <rect x="20" y="350" width="120" height="90" fill="#b07a3a"/><rect x="20" y="350" width="120" height="8" fill="#8a5a2a"/><rect x="74" y="350" width="12" height="90" fill="#d8b070"/>
+    <rect x="30" y="270" width="100" height="80" fill="#c08a46"/><rect x="30" y="270" width="100" height="7" fill="#8a5a2a"/><rect x="74" y="270" width="12" height="80" fill="#d8b070"/>
+    <rect x="44" y="200" width="78" height="70" fill="#b07a3a"/><rect x="44" y="200" width="78" height="6" fill="#8a5a2a"/><rect x="77" y="200" width="10" height="70" fill="#d8b070"/>
+    <rect x="150" y="380" width="90" height="60" fill="#c08a46"/><rect x="190" y="380" width="10" height="60" fill="#d8b070"/>
+    <!-- a gift box with a red ribbon on top -->
+    <rect x="160" y="340" width="60" height="40" fill="#1a1a1a"/><rect x="186" y="340" width="8" height="40" fill="#e0302a"/><rect x="160" y="356" width="60" height="7" fill="#e0302a"/>
+    <path d="M190 340 L176 326 L188 330 L190 322 L194 330 L206 326 Z" fill="#e0302a"/>
+  </g>
+
+  <!-- hanging lamp -->
+  <rect x="309" y="0" width="3" height="90" fill="#0c0a12"/>
+  <path d="M290 90 L330 90 L322 104 L298 104 Z" fill="#2a2430"/>
+  <ellipse cx="310" cy="200" rx="190" ry="140" fill="url(#lamp)" opacity=".55"/>
+
+  <!-- the desk -->
+  <rect x="150" y="440" width="560" height="22" fill="#3a2a22"/>
+  <rect x="170" y="462" width="16" height="138" fill="#2a1e18"/><rect x="674" y="462" width="16" height="138" fill="#2a1e18"/>
+  <rect x="0" y="560" width="800" height="40" fill="#0e0c14"/>
+
+  <!-- four monitors that disagree -->
+  <g>
+    <!-- monitor 1: green line up -->
+    <ellipse cx="250" cy="330" rx="90" ry="70" fill="url(#glowG)" filter="url(#b10)"/>
+    <rect x="186" y="270" width="128" height="88" fill="#101418"/><rect x="192" y="276" width="116" height="76" fill="#0a2a1a"/>
+    <path d="M198 340 L222 330 L244 334 L266 312 L286 300 L302 282" stroke="#7dff9a" stroke-width="5" fill="none"/>
+    <rect x="244" y="358" width="12" height="20" fill="#1a1a22"/><rect x="226" y="376" width="48" height="6" fill="#1a1a22"/>
+    <!-- monitor 2: red line down -->
+    <rect x="326" y="270" width="128" height="88" fill="#101418"/><rect x="332" y="276" width="116" height="76" fill="#2a0e14"/>
+    <path d="M338 288 L360 296 L382 292 L404 318 L424 326 L442 344" stroke="#ff4a4a" stroke-width="5" fill="none"/>
+    <rect x="384" y="358" width="12" height="20" fill="#1a1a22"/><rect x="366" y="376" width="48" height="6" fill="#1a1a22"/>
+    <!-- monitor 3, lower left: flat blue bars -->
+    <ellipse cx="290" cy="410" rx="90" ry="40" fill="url(#glowB)" filter="url(#b10)"/>
+    <rect x="230" y="384" width="110" height="56" fill="#101418"/><rect x="235" y="389" width="100" height="46" fill="#0e1a3a"/>
+    <g fill="#5aa8ff"><rect x="245" y="414" width="12" height="16"/><rect x="263" y="412" width="12" height="18"/><rect x="281" y="415" width="12" height="15"/><rect x="299" y="413" width="12" height="17"/><rect x="317" y="414" width="12" height="16"/></g>
+    <!-- monitor 4, the big one: Halcyon, a rainbow of nothing -->
+    <ellipse cx="560" cy="320" rx="130" ry="100" fill="#ff8ad0" opacity=".25" filter="url(#b10)"/>
+    <rect x="472" y="236" width="176" height="124" fill="#101418"/><rect x="478" y="242" width="164" height="112" fill="url(#halcyon)"/>
+    <circle cx="560" cy="298" r="34" fill="#ffffff" opacity=".55"/>
+    <circle cx="560" cy="298" r="18" fill="#ffffff" opacity=".8"/>
+    <path d="M488 340 L520 300 L548 330 L586 262 L632 248" stroke="#ffffff" stroke-width="4" fill="none" opacity=".85"/>
+    <rect x="552" y="360" width="16" height="22" fill="#1a1a22"/><rect x="528" y="380" width="64" height="6" fill="#1a1a22"/>
+  </g>
+
+  <!-- a sunny yellow sponge on the desk, and a coffee mug -->
+  <rect x="590" y="420" width="44" height="20" fill="#ffd24a"/><rect x="590" y="420" width="44" height="6" fill="#3a8a3a"/>
+  <g fill="#e0a82a"><rect x="598" y="430" width="3" height="3"/><rect x="610" y="432" width="3" height="3"/><rect x="622" y="429" width="3" height="3"/></g>
+  <rect x="650" y="414" width="24" height="26" fill="#e8e4f0"/><rect x="674" y="420" width="8" height="12" fill="none" stroke="#e8e4f0" stroke-width="4"/>
+
+  <!-- THE OPERATOR, from behind, in a chair, hand on head -->
+  <g>
+    <rect x="388" y="470" width="110" height="20" fill="#1a1620"/>
+    <rect x="430" y="490" width="14" height="70" fill="#1a1620"/>
+    <rect x="392" y="380" width="104" height="96" fill="#2a2440"/>
+    <!-- hoodie body -->
+    <path d="M396 470 L404 410 Q444 382 486 410 L494 470 Z" fill="#3a3a5a"/>
+    <path d="M430 402 L446 452 L460 402" stroke="#24243a" stroke-width="4" fill="none"/>
+    <!-- head, thinning hair -->
+    <circle cx="445" cy="378" r="27" fill="#d89a70"/>
+    <path d="M418 376 Q420 350 445 348 Q470 350 472 376 L466 372 L460 364 L452 370 L446 360 L440 370 L432 364 L426 372 Z" fill="#3a2418"/>
+    <circle cx="445" cy="358" r="9" fill="#e8b088"/>
+    <!-- one hand on the head -->
+    <path d="M470 430 L492 396 L474 372 L466 380 L480 398 L462 424 Z" fill="#3a3a5a"/>
+    <circle cx="470" cy="370" r="9" fill="#d89a70"/>
+    <!-- a few falling hairs -->
+    <g stroke="#3a2418" stroke-width="2"><line x1="486" y1="392" x2="490" y2="402"/><line x1="500" y1="412" x2="497" y2="422"/><line x1="476" y1="420" x2="480" y2="430"/></g>
+    <!-- lanyard -->
+    <path d="M436 404 L440 440 L452 440 L456 404" stroke="#ff8a2a" stroke-width="3" fill="none"/>
+  </g>
+</svg>
