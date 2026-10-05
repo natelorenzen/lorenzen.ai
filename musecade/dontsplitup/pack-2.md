@@ -1,4 +1,4 @@
-# DON'T SPLIT UP · PACK-2 · BUILD 1.0-b569ec4
+# DON'T SPLIT UP · PACK-2 · BUILD 1.0-727828b
 
 Bundle for: Act II begins (`REACH_CABIN`). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 

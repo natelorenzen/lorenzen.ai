@@ -1,4 +1,4 @@
-# SERIES DOOM · PACK-4 · BUILD 1.0-b21b408
+# SERIES DOOM · PACK-4 · BUILD 1.0-accb9ca
 
 Bundle for: Act IV begins (`REACH_EAST_BAY`). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 

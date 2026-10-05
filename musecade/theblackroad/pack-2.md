@@ -1,4 +1,4 @@
-# THE BLACK ROAD · PACK-2 · BUILD 1.5-3666e40
+# THE BLACK ROAD · PACK-2 · BUILD 1.5-7348b50
 
 Bundle for: Act II begins (`REACH_WILDERNESS`). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 

@@ -1,4 +1,4 @@
-# THE GLASS CITY · PACK-2 · BUILD 1.0-6a598b4
+# THE GLASS CITY · PACK-2 · BUILD 1.0-64ae771
 
 Bundle for: Act II begins (`REACH_CONTACT`). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 

@@ -1,4 +1,4 @@
-# BLACK FRIDAY · PACK-5 · BUILD 1.0-65c89d5
+# BLACK FRIDAY · PACK-5 · BUILD 1.0-b1f3b65
 
 Bundle for: Act V begins (`REACH_BFCM`). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 

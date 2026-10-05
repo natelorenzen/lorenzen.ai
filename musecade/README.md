@@ -157,7 +157,7 @@ Muse keeps a hidden state block (defined in `adventure.md` §5): run credentials
 
 ## 6c. Decision menus
 
-At decision points the model ends its reply with three lettered options and an "other":
+The model ends **every** reply that hands control back with three lettered options and an "other", including quiet exploration beats, so a turn never ends with nothing to press (the status line goes at the top of a turn, never last):
 
 ```
 - **A.** Hold the stair

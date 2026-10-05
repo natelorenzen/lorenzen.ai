@@ -2,7 +2,7 @@
 
 Musecade Game 006 · Version 1.0 · Horror · Comedy · 45 to 75 minutes · 1 player · PG-13
 <!-- BEGIN GENERATED:build -->
-Build: 1.0-b569ec4
+Build: 1.0-727828b
 <!-- END GENERATED:build -->
 Base URL: https://lorenzen.ai/musecade/dontsplitup/
 Platform: https://lorenzen.ai/musecade/musecade.md
@@ -32,12 +32,12 @@ The game is bundled for speed. **Fetch exactly one file per act**, when its mome
 <!-- BEGIN GENERATED:packs -->
 | When | Fetch this one file | It contains |
 |---|---|---|
-| **Start** (this file) | https://lorenzen.ai/musecade/dontsplitup/play.md?v=1.0-b569ec4 | `core/dm-core.md` · `core/image-style.md` · `core/scoring.md` · `adventure.md` · `rules.md` · `character-creation.md` · `scoring.md` · `game/image-triggers.md` · `acts/act-1.md` · `characters/companions.md` · `characters/npcs.md` |
-| Act II begins (`REACH_CABIN`) | https://lorenzen.ai/musecade/dontsplitup/pack-2.md?v=1.0-b569ec4 | `acts/act-2.md` · `world/hollow-pines.md` · `game/puzzles.md` · `game/encounters.md` |
-| Act III begins (`REACH_CAMP`) | https://lorenzen.ai/musecade/dontsplitup/pack-3.md?v=1.0-b569ec4 | `acts/act-3.md` |
-| Act IV begins (`REACH_TOWN`) | https://lorenzen.ai/musecade/dontsplitup/pack-4.md?v=1.0-b569ec4 | `acts/act-4.md` · `world/jack-hollow.md` |
-| Act V begins (`REACH_PATCH`) | https://lorenzen.ai/musecade/dontsplitup/pack-5.md?v=1.0-b569ec4 | `acts/act-5.md` · `game/endings.md` · `game/achievements.md` |
-| Any ending triggers before Act V (taken, driving away, a deal) | https://lorenzen.ai/musecade/dontsplitup/pack-end.md?v=1.0-b569ec4 | `game/endings.md` · `game/achievements.md` |
+| **Start** (this file) | https://lorenzen.ai/musecade/dontsplitup/play.md?v=1.0-727828b | `core/dm-core.md` · `core/image-style.md` · `core/scoring.md` · `adventure.md` · `rules.md` · `character-creation.md` · `scoring.md` · `game/image-triggers.md` · `acts/act-1.md` · `characters/companions.md` · `characters/npcs.md` |
+| Act II begins (`REACH_CABIN`) | https://lorenzen.ai/musecade/dontsplitup/pack-2.md?v=1.0-727828b | `acts/act-2.md` · `world/hollow-pines.md` · `game/puzzles.md` · `game/encounters.md` |
+| Act III begins (`REACH_CAMP`) | https://lorenzen.ai/musecade/dontsplitup/pack-3.md?v=1.0-727828b | `acts/act-3.md` |
+| Act IV begins (`REACH_TOWN`) | https://lorenzen.ai/musecade/dontsplitup/pack-4.md?v=1.0-727828b | `acts/act-4.md` · `world/jack-hollow.md` |
+| Act V begins (`REACH_PATCH`) | https://lorenzen.ai/musecade/dontsplitup/pack-5.md?v=1.0-727828b | `acts/act-5.md` · `game/endings.md` · `game/achievements.md` |
+| Any ending triggers before Act V (taken, driving away, a deal) | https://lorenzen.ai/musecade/dontsplitup/pack-end.md?v=1.0-727828b | `game/endings.md` · `game/achievements.md` |
 <!-- END GENERATED:packs -->
 
 Load nothing early. Content in a pack you haven't fetched doesn't exist yet, so don't improvise its secrets. If the player goes somewhere ahead of the story, fetch that act's pack early rather than inventing a contradicting world.

@@ -1,4 +1,4 @@
-# GHOSTLINE · PACK-4 · BUILD 1.0-58c30b7
+# GHOSTLINE · PACK-4 · BUILD 1.0-425a75a
 
 Bundle for: Act IV begins (`REACH_CANOPY`). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 
