@@ -2,7 +2,7 @@
 
 Musecade Game 004 · Version 1.0 · Satire · Comedy · 45 to 75 minutes · 1 player · PG-13
 <!-- BEGIN GENERATED:build -->
-Build: 1.0-6cd13ae
+Build: 1.0-219f467
 <!-- END GENERATED:build -->
 Base URL: https://lorenzen.ai/musecade/seriesdoom/
 Platform: https://lorenzen.ai/musecade/musecade.md
@@ -30,12 +30,12 @@ The game is bundled for speed. **Fetch exactly one file per act**, when its mome
 <!-- BEGIN GENERATED:packs -->
 | When | Fetch this one file | It contains |
 |---|---|---|
-| **Start** (this file) | https://lorenzen.ai/musecade/seriesdoom/play.md?v=1.0-6cd13ae | `core/dm-core.md` · `core/image-style.md` · `core/scoring.md` · `adventure.md` · `rules.md` · `character-creation.md` · `scoring.md` · `game/image-triggers.md` · `acts/act-1.md` · `characters/companions.md` · `characters/npcs.md` |
-| Act II begins (`REACH_COUNCIL`) | https://lorenzen.ai/musecade/seriesdoom/pack-2.md?v=1.0-6cd13ae | `acts/act-2.md` · `world/bay-area.md` · `game/puzzles.md` · `game/encounters.md` |
-| Act III begins (`REACH_BREAKING`) | https://lorenzen.ai/musecade/seriesdoom/pack-3.md?v=1.0-6cd13ae | `acts/act-3.md` |
-| Act IV begins (`REACH_EAST_BAY`) | https://lorenzen.ai/musecade/seriesdoom/pack-4.md?v=1.0-6cd13ae | `acts/act-4.md` · `world/buddy.md` |
-| Act V begins (`REACH_DIABLO`) | https://lorenzen.ai/musecade/seriesdoom/pack-5.md?v=1.0-6cd13ae | `acts/act-5.md` · `game/endings.md` · `game/achievements.md` |
-| Any ending triggers before Act V (death, leaving early, surrender) | https://lorenzen.ai/musecade/seriesdoom/pack-end.md?v=1.0-6cd13ae | `game/endings.md` · `game/achievements.md` |
+| **Start** (this file) | https://lorenzen.ai/musecade/seriesdoom/play.md?v=1.0-219f467 | `core/dm-core.md` · `core/image-style.md` · `core/scoring.md` · `adventure.md` · `rules.md` · `character-creation.md` · `scoring.md` · `game/image-triggers.md` · `acts/act-1.md` · `characters/companions.md` · `characters/npcs.md` |
+| Act II begins (`REACH_COUNCIL`) | https://lorenzen.ai/musecade/seriesdoom/pack-2.md?v=1.0-219f467 | `acts/act-2.md` · `world/bay-area.md` · `game/puzzles.md` · `game/encounters.md` |
+| Act III begins (`REACH_BREAKING`) | https://lorenzen.ai/musecade/seriesdoom/pack-3.md?v=1.0-219f467 | `acts/act-3.md` |
+| Act IV begins (`REACH_EAST_BAY`) | https://lorenzen.ai/musecade/seriesdoom/pack-4.md?v=1.0-219f467 | `acts/act-4.md` · `world/buddy.md` |
+| Act V begins (`REACH_DIABLO`) | https://lorenzen.ai/musecade/seriesdoom/pack-5.md?v=1.0-219f467 | `acts/act-5.md` · `game/endings.md` · `game/achievements.md` |
+| Any ending triggers before Act V (death, leaving early, surrender) | https://lorenzen.ai/musecade/seriesdoom/pack-end.md?v=1.0-219f467 | `game/endings.md` · `game/achievements.md` |
 <!-- END GENERATED:packs -->
 
 Load nothing early. Content in a pack you haven't fetched doesn't exist yet, so don't improvise its secrets. If the player goes somewhere ahead of the story, fetch that act's pack early rather than inventing a contradicting world.

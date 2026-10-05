@@ -1,4 +1,4 @@
-# SERIES DOOM · PACK-2 · BUILD 1.0-6cd13ae
+# SERIES DOOM · PACK-2 · BUILD 1.0-219f467
 
 Bundle for: Act II begins (`REACH_COUNCIL`). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 

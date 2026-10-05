@@ -1,4 +1,4 @@
-# THE BLACK ROAD · PACK-WORDS · BUILD 1.5-41b517c
+# THE BLACK ROAD · PACK-WORDS · BUILD 1.5-57e386c
 
 Bundle for: the player chooses SCHOLAR. It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 

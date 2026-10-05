@@ -1,4 +1,4 @@
-# THE SEA GLASS INN · PACK-5 · BUILD 2.0-20b8fdc
+# THE SEA GLASS INN · PACK-5 · BUILD 2.0-bffed21
 
 Bundle for: Act V begins (`REACH_BONFIRE`). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 

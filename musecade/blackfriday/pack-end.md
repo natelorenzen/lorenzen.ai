@@ -1,4 +1,4 @@
-# BLACK FRIDAY · PACK-END · BUILD 1.0-ce5bdfb
+# BLACK FRIDAY · PACK-END · BUILD 1.0-d9cca6a
 
 Bundle for: any ending triggers before Act V (out of cash, sitting it out, a deal). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 

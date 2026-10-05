@@ -1,4 +1,4 @@
-# THE GLASS CITY · PACK-3 · BUILD 1.0-3a0a328
+# THE GLASS CITY · PACK-3 · BUILD 1.0-37ab94c
 
 Bundle for: Act III begins (`REACH_BURNED`). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 

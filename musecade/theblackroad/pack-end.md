@@ -1,4 +1,4 @@
-# THE BLACK ROAD · PACK-END · BUILD 1.5-41b517c
+# THE BLACK ROAD · PACK-END · BUILD 1.5-57e386c
 
 Bundle for: any ending triggers before Act V (death, leaving early, surrender). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 

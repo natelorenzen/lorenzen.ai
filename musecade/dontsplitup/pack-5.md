@@ -1,4 +1,4 @@
-# DON'T SPLIT UP · PACK-5 · BUILD 1.0-6ff715e
+# DON'T SPLIT UP · PACK-5 · BUILD 1.0-3d0c3c8
 
 Bundle for: Act V begins (`REACH_PATCH`). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 

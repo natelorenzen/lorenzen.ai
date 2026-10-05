@@ -1,4 +1,4 @@
-# BLACK FRIDAY · PACK-4 · BUILD 1.0-ce5bdfb
+# BLACK FRIDAY · PACK-4 · BUILD 1.0-d9cca6a
 
 Bundle for: Act IV begins (`REACH_WAR_ROOM`). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 

@@ -1,4 +1,4 @@
-# THE COUNT OF MONTE CRISTO · PACK-2 · BUILD 1.0-e4506f7
+# THE COUNT OF MONTE CRISTO · PACK-2 · BUILD 1.0-2b4789e
 
 Bundle for: Act II begins (`REACH_CHATEAU`). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 

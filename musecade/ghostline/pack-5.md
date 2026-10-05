@@ -1,4 +1,4 @@
-# GHOSTLINE · PACK-5 · BUILD 1.0-1f0c5f8
+# GHOSTLINE · PACK-5 · BUILD 1.0-b48919f
 
 Bundle for: Act V begins (`REACH_CROWN`). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 
