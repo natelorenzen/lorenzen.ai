@@ -12,7 +12,7 @@ Musecade is an arcade where the AI agent is the console. A person points Muse at
 
   | # | Game | Command | Genre | Rating | Built on |
   |---|---|---|---|---|---|
-  | 001 | [The Black Road](https://lorenzen.ai/musecade/theblackroad/) | `#theblackroad` | Dark fantasy | PG-13 | its own complete rules (`theblackroad/rules.md`) |
+  | 001 | [The Black Road](https://lorenzen.ai/musecade/theblackroad/) | `#theblackroad` | Dark fantasy | PG-13 | shared core (`core/`) |
   | 002 | [The Glass City](https://lorenzen.ai/musecade/theglasscity/) | `#theglasscity` | Espionage | PG-13 | shared core (`core/`) |
   | 003 | [The Sea Glass Inn](https://lorenzen.ai/musecade/theseaglassinn/) | `#theseaglassinn` | Teen thriller · mystery | PG-13 | shared core |
   | 004 | [Series Doom](https://lorenzen.ai/musecade/seriesdoom/) | `#seriesdoom` | Satire · comedy | PG-13 | shared core |
@@ -21,7 +21,7 @@ Musecade is an arcade where the AI agent is the console. A person points Muse at
   | 007 | [Black Friday](https://lorenzen.ai/musecade/blackfriday/) | `#blackfriday` | Satire · business | PG-13 | shared core |
   | 008 | [The Count of Monte Cristo](https://lorenzen.ai/musecade/montecristo/) | `#montecristo` | Adventure · revenge (after Dumas, public domain) | PG-13 | shared core |
 
-  New games should use the shared core: `core/dm-core.md` (agency, lettered menus, path moves, the d20, saves, cold opens), `core/image-style.md` (pixel-art style, video), and `core/scoring.md` (the leaderboard protocol). A game then only writes its world, systems and content. Art is made with `_build/pixelize.html` (add a palette) and cards with `_build/og.html` (add a card).
+  Every game uses the shared core: `core/dm-core.md` (agency, lettered menus, path moves, the d20, saves, cold opens), `core/image-style.md` (pixel-art style, video), and `core/scoring.md` (the leaderboard protocol). A game then only writes its world, systems and content. Art is made with `_build/pixelize.html` (add a palette) and cards with `_build/og.html` (add a card).
 
 ---
 

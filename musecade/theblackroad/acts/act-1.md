@@ -63,7 +63,7 @@ Do not reveal undiscovered information.
   - WAYFARER: *bare footprints in the frost, pressed in moments ago. There were three of them. Only two came out.* (The third is gone. It's just unsettling.)
   - ENVOY: *they don't hear words. They move the way starving people move toward a fire. This isn't malice. It's hunger.*
 
-**Beat 1: the first menu.** The peddler's white hand closes on the mare's bridle, and the mare rears. End the turn with the first lettered menu (`rules.md`, *Decision menus*), adapted to the path. For example:
+**Beat 1: the first menu.** The peddler's white hand closes on the mare's bridle, and the mare rears. End the turn with the first lettered menu (`core/dm-core.md` §3), adapted to the path. For example:
 - **A.** Step between them and the mare, blade out. *(stand)*
 - **B.** Haul the mare back down the road, out of their reach. *(evade)*
 - **C.** Strike flint to the dry bracken at the frost's edge. *(turn the ground)*
@@ -93,6 +93,18 @@ Let the result **teach the Hushed**, whatever the approach: fire or a shout make
 
 ```
 [ TIP · There are no wrong answers on the Black Road, only consequences. Ask questions. Try the strange thing. Type SAVE GAME anytime. ]
+```
+
+If the player hasn't used their path move yet, one Hushed figure lingers at the frost's edge, and the mare won't pass it. Let the move end it, cleanly (HOLD THE LINE, THE LEARNED EYE on the frost's strange pattern, THE HIDDEN WAY around it, THE OPEN DOOR with something that is barely a person anymore). This one is free: the move is ready again for the rest of Act I.
+
+```
+[ TIP · Your MOVE works once per act, no roll: HOLD THE LINE, THE LEARNED EYE, THE HIDDEN WAY or THE OPEN DOOR. It's how you win without the box. ]
+```
+
+Then print the first status line:
+
+```
+[ TIP · The status line shows where you are, the MOON (nights left before the new moon), your wounds, your move, and where you're headed. Type STATUS, WHO or RECAP anytime. ]
 ```
 
 **Rules for the cold open:**
@@ -228,7 +240,7 @@ Show no crown, no queen, no mountain monastery.)
 [VIDEO_TRIGGER]
 ID: VID_FIRST_HUSHED
 PAIRED WITH: IMG_FIRST_HUSHED
-STATUS: OPTIONAL (see game/image-triggers.md §7)
+STATUS: OPTIONAL (see core/image-style.md §3)
 LENGTH: 5 seconds
 MOTION: frost crawls in feathered fans across the window glass from the
 pressed white palms; the lantern above the door gutters and dims; the

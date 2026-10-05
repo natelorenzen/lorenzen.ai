@@ -85,6 +85,9 @@
     "play": {
       "when": "the game starts",
       "files": [
+        "core/dm-core.md",
+        "core/image-style.md",
+        "core/scoring.md",
         "adventure.md",
         "rules.md",
         "character-creation.md",
@@ -150,5 +153,11 @@
         "game/words.md"
       ]
     }
-  }
+  },
+  "uses_core": true,
+  "core_files": [
+    "core/dm-core.md",
+    "core/image-style.md",
+    "core/scoring.md"
+  ]
 }

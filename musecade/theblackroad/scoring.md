@@ -1,20 +1,12 @@
 # THE BLACK ROAD: Scoring
 
-**Report what happened as canonical event IDs; the server decides what it's worth.** Never mention, estimate or submit points. Each event counts once, and only if it truly happened.
+Follow `core/scoring.md` for the protocol (RANKED, LINK and LOCAL modes; start the run right after the path is chosen; hold every event in `pending`, in order, and send them all with the completion). This file gives the slug, the events, and where the screens are.
 
-## Modes (pick one at the start)
-The API base is the `Leaderboard API:` line in `https://lorenzen.ai/musecade/musecade.md`.
-- **RANKED:** the API is set and you can make web requests (POST, or GET by fetching a URL with the same fields as query parameters, and `events` comma-separated).
-- **LINK:** the API is set, but you can't make requests. At the end, print a submit link (`game/gameover.md`).
-- **LOCAL:** the API is `OFFLINE`. Say once: `LEADERBOARD OFFLINE. THIS RUN WILL BE SCORED LOCALLY AND NOT RANKED.`
+- **Slug:** `theblackroad` · **events table:** `https://lorenzen.ai/musecade/theblackroad/events.json`
+- **Paths:** `WARDEN`, `SCHOLAR`, `WAYFARER`, `ENVOY`
+- **Game-over screens:** `game/gameover.md`
 
-Never block the story on the network.
-
-## Start the run (right after the path is chosen)
-`POST {API}/run/start {"game":"theblackroad","player":"<NAME>","path":"<PATH>","agent":"Muse"}` returns `run_id`, `run_token` and the normalized `player`. Keep the token hidden, except in `SAVE GAME`.
-
-## Events: hold them until the end
-Keep every event in `pending`, **in the order it happened** (the server checks the order), and send them all at once when the game ends (`game/gameover.md`). That's two network calls per run. Only if a run is paused for a long time: `POST {API}/run/event {"run_id","run_token","events":[…]}` before `SAVE GAME`.
+## When to report what
 
 | Kind | IDs |
 |---|---|

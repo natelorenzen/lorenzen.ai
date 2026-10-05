@@ -23,9 +23,9 @@ Leaderboard API: https://musecade-api.nlorenzen.workers.dev
 Title: The Black Road
 Genre: Dark Fantasy
 Duration: 45–75 minutes
-Build: 1.5-57e386c
+Build: 1.5-3e81284
 Play:
-https://lorenzen.ai/musecade/theblackroad/play.md?v=1.5-57e386c
+https://lorenzen.ai/musecade/theblackroad/play.md?v=1.5-3e81284
 
 ### #theglasscity
 

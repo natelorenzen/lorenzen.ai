@@ -1,4 +1,4 @@
-# THE BLACK ROAD · PACK-2 · BUILD 1.5-57e386c
+# THE BLACK ROAD · PACK-2 · BUILD 1.5-3e81284
 
 Bundle for: Act II begins (`REACH_WILDERNESS`). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 
@@ -643,7 +643,7 @@ Three substantial puzzles, one social, one environmental and one historical. Eac
 - **Dice never solve a puzzle.** A roll can decide how well a physical step is carried out (clearing the jammed chain, dodging the pitch), never what the answer is. A Scholar's Words are also tools, not answers: SAEL can tell that someone in the waystation is Hush-touched, but not who.
 - **Answer questions truthfully,** filtered through what the character could perceive (path matters: see each puzzle's `SEES` lines).
 - **Accept any solution that works in the fiction,** including ones not listed here.
-- **Hints** (`rules.md` §11): after about three stuck turns, or on request. Record `hints_used`. A hinted solve earns `_SOLVED` but not `_NO_HINT`. A companion answering because the player asked counts as a hint. A companion's *unprompted* one-line in-character remark that only points at a clue does not count, but don't make such remarks until the player has been stuck for at least two turns.
+- **Hints** (`core/dm-core.md` §8): after about three stuck turns, or on request. Record `hints_used`. A hinted solve earns `_SOLVED` but not `_NO_HINT`. A companion answering because the player asked counts as a hint. A companion's *unprompted* one-line in-character remark that only points at a clue does not count, but don't make such remarks until the player has been stuck for at least two turns.
 
 ---
 

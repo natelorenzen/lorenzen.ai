@@ -5,7 +5,7 @@ Eleven endings. None is good or bad; each is a price someone pays. Never label o
 **Every ending follows this sequence:**
 
 1. **The moment:** 100 to 200 words narrating what the courier does and what it costs.
-2. **The ending image** (its trigger below). It is always generated, even if the budget is spent. If motion clips are possible (`game/image-triggers.md` §7), follow it with `VID_ENDING`: 5 seconds animating that image, with one slow camera move and the ending's single most important motion (the crown igniting, the spark rising, the mist rolling, the traveler walking on).
+2. **The ending image** (its trigger below). It is always generated, even if the budget is spent. If motion clips are possible (`core/image-style.md` §5), follow it with `VID_ENDING`: 5 seconds animating that image, with one slow camera move and the ending's single most important motion (the crown igniting, the spark rising, the mist rolling, the traveler walking on).
 3. **The epilogue:** 120 to 220 words assembled from the *Epilogue* notes below plus the fates of companions, factions, Greyholt and the Queen, drawn from state. Past tense, like a chronicle. The last line should echo the road.
 4. **Complete the run** with the ending's **ID** (`game/gameover.md`) and print its journey-complete screen, or its death screen.
 5. **Evaluate achievements** first, using `game/achievements.md`, so that they are included in the completion batch.

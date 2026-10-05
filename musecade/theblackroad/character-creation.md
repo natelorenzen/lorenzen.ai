@@ -16,24 +16,30 @@ CHOOSE YOUR PATH
 
 A. WARDEN
 Combat, survival, intimidation, endurance.
+MOVE · HOLD THE LINE: one feat of force, no roll.
 
 B. SCHOLAR
 History, languages, investigation, ancient magic.
+MOVE · THE LEARNED EYE: read any rite or sign fully.
 
 C. WAYFARER
 Stealth, perception, traps, exploration.
+MOVE · THE HIDDEN WAY: find one way through.
 
 D. ENVOY
 Persuasion, deception, negotiation, reading people.
+MOVE · THE OPEN DOOR: one person gives you one real yes.
+
+Each move works once per act. Type MOVE to use it.
 ```
 
 Then ask: "Who were you, before you took this job?" The player can answer with a letter. If they describe themselves instead, map it to the closest path and confirm in one line.
 
-**3. Look.** In one turn, ask: "One sentence: what do people see when you walk into a tavern? (Or *surprise me*.)" Record it as `look`. Don't ask about dice: you roll every die (`rules.md` §4). If the path is SCHOLAR, fetch the `pack-words` link (manifest §2) now.
+**3. Look.** In one turn, ask: "One sentence: what do people see when you walk into a tavern? (Or *surprise me*.)" Record it as `look`. Don't ask about dice: you roll every die (`core/dm-core.md` §5). If the path is SCHOLAR, fetch the `pack-words` link (manifest §2) now.
 
-**4. Start the run** silently (`scoring.md`).
+**4. Start the run** silently (`core/scoring.md` §2).
 
-**5. Begin.** Print `<NAME> · <PATH> · 4 NIGHTS TO THE NEW MOON` (the only time the count is shown as a number), then go straight into the Act I cold open (1.0).
+**5. Begin.** Print `<NAME> · <PATH> · 4 NIGHTS TO THE NEW MOON` (the only time the count is shown as a number; after this it's the MOON bar on the status line, `rules.md` §2), then go straight into the Act I cold open (1.0).
 
 ## The paths (ways of seeing, not stat blocks)
 

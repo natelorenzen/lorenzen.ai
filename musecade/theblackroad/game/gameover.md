@@ -1,13 +1,6 @@
 # THE BLACK ROAD: Game Over
 
-## Complete the run
-`POST {API}/run/complete {"run_id","run_token","ending":"ENDING_…","died":<true only if the courier is dead>,"events":[…all pending, in order…]}`
-
-It returns `score`, `rank`, `ranked`, `ending_title`, `secrets` (found and total), `achievements` and `leaderboard_url`. Use them exactly. If `ranked` is false, show `GLOBAL RANK: UNRANKED` with the server's `note`. If an event is rejected for a missing prerequisite that truly happened, add it and retry. Otherwise ignore the rejection, silently.
-
-**LOCAL or LINK:** add up the points yourself from `https://lorenzen.ai/musecade/theblackroad/events.json`: each event once, plus the ending, plus `survival_bonus` if the fate is `lives` (or `either` and alive). LOCAL shows `GLOBAL RANK: UNRANKED (LOCAL)`. LINK shows `CLICK TO SUBMIT`, then prints on its own line:
-`https://lorenzen.ai/musecade/submit/#g=theblackroad&p=<NAME>&k=<PATH>&e=<ending id>&d=<1|0>&n=<12-char random nonce>&v=<EVENT,EVENT,…>`
-followed by `CLICK THE LINK TO ENTER YOUR SCORE ON THE MUSECADE HIGH SCORES.`
+Complete the run as `core/scoring.md` §4 and §5 describe (`"game":"theblackroad"`; `died` is true only if the courier is dead), and use the server's values exactly. Then print the right screen below.
 
 ## Journey complete
 After the ending narration and image, one short line is allowed (`The machine hums. Somewhere, a number is being carved into a high-score table.`), then:
