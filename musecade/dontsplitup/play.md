@@ -1,4 +1,4 @@
-# DON'T SPLIT UP · PLAY (start here) · BUILD 1.0-727828b
+# DON'T SPLIT UP · PLAY (start here) · BUILD 1.0-6ff715e
 
 This single file is the whole cartridge for starting the game: its manifest, rules, scoring, image rules and Act I, bundled so you only fetch once. Start with the manifest (`adventure.md`, below) and follow it. Do not fetch the individual files named inside; they are all included here.
 
@@ -47,6 +47,7 @@ You must narrate vividly and concisely; portray every NPC as a person with motiv
 ```
 
 - The player answers with just a letter (**A**, **B** or **C**) or types anything at all. A letter means exactly that option's text. **D**, or anything typed, is free play, honored fully.
+- **Combined choices** ("all three", "A and C", "do B, then A", or a typed plan with several steps): **do all of them, in the order given, inside the current scene.** Give each one its own short beat (a sentence or two, with its real result), then end with a new menu that follows from where that leaves the player. **Never skip to the next scene or the next act because the player picked more than one option.** Combining costs what doing several things costs: more time, a roll if one of the actions is risky (one roll per risky action), and the consequences of the earlier actions applying to the later ones. If two options really can't both happen (holding the door and running out of it), do the first, say plainly why the second is no longer possible, and offer what is.
 - The options are always the **last thing in the reply**, with nothing after them. Always exactly three real options plus **D. Other: type your own**.
 - **Lateral:** no obviously correct option and no joke trap. Each is a real play with a real cost. One short line each. Never offer what the character couldn't reasonably attempt.
 - **Never reveal the undiscovered.** Options come only from what the character knows and can see.
@@ -261,7 +262,7 @@ Make the score reveal land. One short line before the game's game-over block is 
 # DON'T SPLIT UP: Game Manifest
 
 Musecade Game 006 · Version 1.0 · Horror · Comedy · 45 to 75 minutes · 1 player · PG-13
-Build: 1.0-727828b
+Build: 1.0-6ff715e
 Base URL: https://lorenzen.ai/musecade/dontsplitup/
 Platform: https://lorenzen.ai/musecade/musecade.md
 
@@ -289,12 +290,12 @@ The game is bundled for speed. **Fetch exactly one file per act**, when its mome
 
 | When | Fetch this one file | It contains |
 |---|---|---|
-| **Start** (this file) | https://lorenzen.ai/musecade/dontsplitup/play.md?v=1.0-727828b | `core/dm-core.md` · `core/image-style.md` · `core/scoring.md` · `adventure.md` · `rules.md` · `character-creation.md` · `scoring.md` · `game/image-triggers.md` · `acts/act-1.md` · `characters/companions.md` · `characters/npcs.md` |
-| Act II begins (`REACH_CABIN`) | https://lorenzen.ai/musecade/dontsplitup/pack-2.md?v=1.0-727828b | `acts/act-2.md` · `world/hollow-pines.md` · `game/puzzles.md` · `game/encounters.md` |
-| Act III begins (`REACH_CAMP`) | https://lorenzen.ai/musecade/dontsplitup/pack-3.md?v=1.0-727828b | `acts/act-3.md` |
-| Act IV begins (`REACH_TOWN`) | https://lorenzen.ai/musecade/dontsplitup/pack-4.md?v=1.0-727828b | `acts/act-4.md` · `world/jack-hollow.md` |
-| Act V begins (`REACH_PATCH`) | https://lorenzen.ai/musecade/dontsplitup/pack-5.md?v=1.0-727828b | `acts/act-5.md` · `game/endings.md` · `game/achievements.md` |
-| Any ending triggers before Act V (taken, driving away, a deal) | https://lorenzen.ai/musecade/dontsplitup/pack-end.md?v=1.0-727828b | `game/endings.md` · `game/achievements.md` |
+| **Start** (this file) | https://lorenzen.ai/musecade/dontsplitup/play.md?v=1.0-6ff715e | `core/dm-core.md` · `core/image-style.md` · `core/scoring.md` · `adventure.md` · `rules.md` · `character-creation.md` · `scoring.md` · `game/image-triggers.md` · `acts/act-1.md` · `characters/companions.md` · `characters/npcs.md` |
+| Act II begins (`REACH_CABIN`) | https://lorenzen.ai/musecade/dontsplitup/pack-2.md?v=1.0-6ff715e | `acts/act-2.md` · `world/hollow-pines.md` · `game/puzzles.md` · `game/encounters.md` |
+| Act III begins (`REACH_CAMP`) | https://lorenzen.ai/musecade/dontsplitup/pack-3.md?v=1.0-6ff715e | `acts/act-3.md` |
+| Act IV begins (`REACH_TOWN`) | https://lorenzen.ai/musecade/dontsplitup/pack-4.md?v=1.0-6ff715e | `acts/act-4.md` · `world/jack-hollow.md` |
+| Act V begins (`REACH_PATCH`) | https://lorenzen.ai/musecade/dontsplitup/pack-5.md?v=1.0-6ff715e | `acts/act-5.md` · `game/endings.md` · `game/achievements.md` |
+| Any ending triggers before Act V (taken, driving away, a deal) | https://lorenzen.ai/musecade/dontsplitup/pack-end.md?v=1.0-6ff715e | `game/endings.md` · `game/achievements.md` |
 
 Load nothing early. Content in a pack you haven't fetched doesn't exist yet, so don't improvise its secrets. If the player goes somewhere ahead of the story, fetch that act's pack early rather than inventing a contradicting world.
 

@@ -1,4 +1,4 @@
-# THE BLACK ROAD · PACK-5 · BUILD 1.5-7348b50
+# THE BLACK ROAD · PACK-5 · BUILD 1.5-41b517c
 
 Bundle for: Act V begins (`REACH_THRONE`). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 

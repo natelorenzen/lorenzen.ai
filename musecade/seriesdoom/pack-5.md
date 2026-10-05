@@ -1,4 +1,4 @@
-# SERIES DOOM · PACK-5 · BUILD 1.0-accb9ca
+# SERIES DOOM · PACK-5 · BUILD 1.0-6cd13ae
 
 Bundle for: Act V begins (`REACH_DIABLO`). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 

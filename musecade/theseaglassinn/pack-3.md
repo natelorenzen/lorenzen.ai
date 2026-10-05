@@ -1,4 +1,4 @@
-# THE SEA GLASS INN · PACK-3 · BUILD 2.0-343a6ae
+# THE SEA GLASS INN · PACK-3 · BUILD 2.0-20b8fdc
 
 Bundle for: Act III begins (`REACH_DARKROOM`). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 

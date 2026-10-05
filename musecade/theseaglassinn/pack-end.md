@@ -1,4 +1,4 @@
-# THE SEA GLASS INN · PACK-END · BUILD 2.0-343a6ae
+# THE SEA GLASS INN · PACK-END · BUILD 2.0-20b8fdc
 
 Bundle for: any ending triggers before Act V (being sent home, a deal, walking away). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 

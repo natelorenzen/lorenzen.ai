@@ -166,7 +166,7 @@ The model ends **every** reply that hands control back with three lettered optio
 - **D.** Other: type your own
 ```
 
-The player answers with just a letter, or types anything. Game files never tell the model to call a tool, because agents flag that pattern as prompt injection. Path choice is the one four-option menu (A–D, with no "other").
+The player answers with just a letter, or types anything. Picking several ("all three", "A and C") plays each one, in order, inside the current scene, before a new menu; the game never skips ahead because of it. Game files never tell the model to call a tool, because agents flag that pattern as prompt injection. Path choice is the one four-option menu (A–D, with no "other").
 
 ## 6d. Speed: one file per act
 

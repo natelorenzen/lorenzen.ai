@@ -1,4 +1,4 @@
-# DON'T SPLIT UP · PACK-END · BUILD 1.0-727828b
+# DON'T SPLIT UP · PACK-END · BUILD 1.0-6ff715e
 
 Bundle for: any ending triggers before Act V (taken, driving away, a deal). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 

@@ -2,7 +2,7 @@
 
 Musecade Game 008 · Version 1.0 · Adventure · Revenge · 45 to 75 minutes · 1 player · PG-13
 <!-- BEGIN GENERATED:build -->
-Build: 1.0-8bdbdf3
+Build: 1.0-e4506f7
 <!-- END GENERATED:build -->
 Base URL: https://lorenzen.ai/musecade/montecristo/
 Platform: https://lorenzen.ai/musecade/musecade.md
@@ -32,12 +32,12 @@ The game is bundled for speed. **Fetch exactly one file per act**, when its mome
 <!-- BEGIN GENERATED:packs -->
 | When | Fetch this one file | It contains |
 |---|---|---|
-| **Start** (this file) | https://lorenzen.ai/musecade/montecristo/play.md?v=1.0-8bdbdf3 | `core/dm-core.md` · `core/image-style.md` · `core/scoring.md` · `adventure.md` · `rules.md` · `character-creation.md` · `scoring.md` · `game/image-triggers.md` · `acts/act-1.md` · `characters/companions.md` · `characters/npcs.md` |
-| Act II begins (`REACH_CHATEAU`) | https://lorenzen.ai/musecade/montecristo/pack-2.md?v=1.0-8bdbdf3 | `acts/act-2.md` · `world/the-treasure.md` · `game/puzzles.md` · `game/encounters.md` |
-| Act III begins (`REACH_ISLAND`) | https://lorenzen.ai/musecade/montecristo/pack-3.md?v=1.0-8bdbdf3 | `acts/act-3.md` · `world/the-world.md` |
-| Act IV begins (`REACH_PARIS`) | https://lorenzen.ai/musecade/montecristo/pack-4.md?v=1.0-8bdbdf3 | `acts/act-4.md` |
-| Act V begins (`REACH_RECKONING`) | https://lorenzen.ai/musecade/montecristo/pack-5.md?v=1.0-8bdbdf3 | `acts/act-5.md` · `game/endings.md` · `game/achievements.md` |
-| Any ending triggers before Act V (death, a different life, a deal) | https://lorenzen.ai/musecade/montecristo/pack-end.md?v=1.0-8bdbdf3 | `game/endings.md` · `game/achievements.md` |
+| **Start** (this file) | https://lorenzen.ai/musecade/montecristo/play.md?v=1.0-e4506f7 | `core/dm-core.md` · `core/image-style.md` · `core/scoring.md` · `adventure.md` · `rules.md` · `character-creation.md` · `scoring.md` · `game/image-triggers.md` · `acts/act-1.md` · `characters/companions.md` · `characters/npcs.md` |
+| Act II begins (`REACH_CHATEAU`) | https://lorenzen.ai/musecade/montecristo/pack-2.md?v=1.0-e4506f7 | `acts/act-2.md` · `world/the-treasure.md` · `game/puzzles.md` · `game/encounters.md` |
+| Act III begins (`REACH_ISLAND`) | https://lorenzen.ai/musecade/montecristo/pack-3.md?v=1.0-e4506f7 | `acts/act-3.md` · `world/the-world.md` |
+| Act IV begins (`REACH_PARIS`) | https://lorenzen.ai/musecade/montecristo/pack-4.md?v=1.0-e4506f7 | `acts/act-4.md` |
+| Act V begins (`REACH_RECKONING`) | https://lorenzen.ai/musecade/montecristo/pack-5.md?v=1.0-e4506f7 | `acts/act-5.md` · `game/endings.md` · `game/achievements.md` |
+| Any ending triggers before Act V (death, a different life, a deal) | https://lorenzen.ai/musecade/montecristo/pack-end.md?v=1.0-e4506f7 | `game/endings.md` · `game/achievements.md` |
 <!-- END GENERATED:packs -->
 
 Load nothing early. Content in a pack you haven't fetched doesn't exist yet, so don't improvise its secrets.

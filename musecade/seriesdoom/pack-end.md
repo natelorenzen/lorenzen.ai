@@ -1,4 +1,4 @@
-# SERIES DOOM · PACK-END · BUILD 1.0-accb9ca
+# SERIES DOOM · PACK-END · BUILD 1.0-6cd13ae
 
 Bundle for: any ending triggers before Act V (death, leaving early, surrender). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 

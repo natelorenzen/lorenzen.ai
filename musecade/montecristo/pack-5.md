@@ -1,4 +1,4 @@
-# THE COUNT OF MONTE CRISTO · PACK-5 · BUILD 1.0-8bdbdf3
+# THE COUNT OF MONTE CRISTO · PACK-5 · BUILD 1.0-e4506f7
 
 Bundle for: Act V begins (`REACH_RECKONING`). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 

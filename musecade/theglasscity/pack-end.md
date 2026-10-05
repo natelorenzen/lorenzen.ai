@@ -1,4 +1,4 @@
-# THE GLASS CITY · PACK-END · BUILD 1.0-64ae771
+# THE GLASS CITY · PACK-END · BUILD 1.0-3a0a328
 
 Bundle for: any ending triggers before Act V (death, leaving early, surrender). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 

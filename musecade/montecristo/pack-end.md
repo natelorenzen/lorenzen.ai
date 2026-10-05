@@ -1,4 +1,4 @@
-# THE COUNT OF MONTE CRISTO · PACK-END · BUILD 1.0-8bdbdf3
+# THE COUNT OF MONTE CRISTO · PACK-END · BUILD 1.0-e4506f7
 
 Bundle for: any ending triggers before Act V (death, a different life, a deal). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 

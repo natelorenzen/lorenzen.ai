@@ -1,4 +1,4 @@
-# GHOSTLINE · PACK-END · BUILD 1.0-425a75a
+# GHOSTLINE · PACK-END · BUILD 1.0-1f0c5f8
 
 Bundle for: any ending triggers before Act V (flatline, full sync, selling the ghost, a deal). It contains the files listed below. Do not fetch them individually. Keep playing from where you are. Everything loaded earlier still applies.
 

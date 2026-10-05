@@ -2,7 +2,7 @@
 
 Musecade Game 007 · Version 1.0 · Satire · Business · 45 to 75 minutes · 1 player · PG-13
 <!-- BEGIN GENERATED:build -->
-Build: 1.0-b1f3b65
+Build: 1.0-ce5bdfb
 <!-- END GENERATED:build -->
 Base URL: https://lorenzen.ai/musecade/blackfriday/
 Platform: https://lorenzen.ai/musecade/musecade.md
@@ -34,12 +34,12 @@ The game is bundled for speed. **Fetch exactly one file per act**, when its mome
 <!-- BEGIN GENERATED:packs -->
 | When | Fetch this one file | It contains |
 |---|---|---|
-| **Start** (this file) | https://lorenzen.ai/musecade/blackfriday/play.md?v=1.0-b1f3b65 | `core/dm-core.md` · `core/image-style.md` · `core/scoring.md` · `adventure.md` · `rules.md` · `character-creation.md` · `scoring.md` · `game/image-triggers.md` · `acts/act-1.md` · `characters/companions.md` · `characters/npcs.md` · `world/the-feed.md` |
-| Act II begins (`REACH_SUMMIT`) | https://lorenzen.ai/musecade/blackfriday/pack-2.md?v=1.0-b1f3b65 | `acts/act-2.md` · `game/puzzles.md` · `game/encounters.md` |
-| Act III begins (`REACH_BACK_ROOM`) | https://lorenzen.ai/musecade/blackfriday/pack-3.md?v=1.0-b1f3b65 | `acts/act-3.md` |
-| Act IV begins (`REACH_WAR_ROOM`) | https://lorenzen.ai/musecade/blackfriday/pack-4.md?v=1.0-b1f3b65 | `acts/act-4.md` · `world/the-lever.md` |
-| Act V begins (`REACH_BFCM`) | https://lorenzen.ai/musecade/blackfriday/pack-5.md?v=1.0-b1f3b65 | `acts/act-5.md` · `game/endings.md` · `game/achievements.md` |
-| Any ending triggers before Act V (out of cash, sitting it out, a deal) | https://lorenzen.ai/musecade/blackfriday/pack-end.md?v=1.0-b1f3b65 | `game/endings.md` · `game/achievements.md` |
+| **Start** (this file) | https://lorenzen.ai/musecade/blackfriday/play.md?v=1.0-ce5bdfb | `core/dm-core.md` · `core/image-style.md` · `core/scoring.md` · `adventure.md` · `rules.md` · `character-creation.md` · `scoring.md` · `game/image-triggers.md` · `acts/act-1.md` · `characters/companions.md` · `characters/npcs.md` · `world/the-feed.md` |
+| Act II begins (`REACH_SUMMIT`) | https://lorenzen.ai/musecade/blackfriday/pack-2.md?v=1.0-ce5bdfb | `acts/act-2.md` · `game/puzzles.md` · `game/encounters.md` |
+| Act III begins (`REACH_BACK_ROOM`) | https://lorenzen.ai/musecade/blackfriday/pack-3.md?v=1.0-ce5bdfb | `acts/act-3.md` |
+| Act IV begins (`REACH_WAR_ROOM`) | https://lorenzen.ai/musecade/blackfriday/pack-4.md?v=1.0-ce5bdfb | `acts/act-4.md` · `world/the-lever.md` |
+| Act V begins (`REACH_BFCM`) | https://lorenzen.ai/musecade/blackfriday/pack-5.md?v=1.0-ce5bdfb | `acts/act-5.md` · `game/endings.md` · `game/achievements.md` |
+| Any ending triggers before Act V (out of cash, sitting it out, a deal) | https://lorenzen.ai/musecade/blackfriday/pack-end.md?v=1.0-ce5bdfb | `game/endings.md` · `game/achievements.md` |
 <!-- END GENERATED:packs -->
 
 Load nothing early. Content in a pack you haven't fetched doesn't exist yet, so don't improvise its secrets.

@@ -1,4 +1,4 @@
-# THE SEA GLASS INN · PLAY (start here) · BUILD 2.0-343a6ae
+# THE SEA GLASS INN · PLAY (start here) · BUILD 2.0-20b8fdc
 
 This single file is the whole cartridge for starting the game: its manifest, rules, scoring, image rules and Act I, bundled so you only fetch once. Start with the manifest (`adventure.md`, below) and follow it. Do not fetch the individual files named inside; they are all included here.
 
@@ -47,6 +47,7 @@ You must narrate vividly and concisely; portray every NPC as a person with motiv
 ```
 
 - The player answers with just a letter (**A**, **B** or **C**) or types anything at all. A letter means exactly that option's text. **D**, or anything typed, is free play, honored fully.
+- **Combined choices** ("all three", "A and C", "do B, then A", or a typed plan with several steps): **do all of them, in the order given, inside the current scene.** Give each one its own short beat (a sentence or two, with its real result), then end with a new menu that follows from where that leaves the player. **Never skip to the next scene or the next act because the player picked more than one option.** Combining costs what doing several things costs: more time, a roll if one of the actions is risky (one roll per risky action), and the consequences of the earlier actions applying to the later ones. If two options really can't both happen (holding the door and running out of it), do the first, say plainly why the second is no longer possible, and offer what is.
 - The options are always the **last thing in the reply**, with nothing after them. Always exactly three real options plus **D. Other: type your own**.
 - **Lateral:** no obviously correct option and no joke trap. Each is a real play with a real cost. One short line each. Never offer what the character couldn't reasonably attempt.
 - **Never reveal the undiscovered.** Options come only from what the character knows and can see.
@@ -261,7 +262,7 @@ Make the score reveal land. One short line before the game's game-over block is 
 # THE SEA GLASS INN: Game Manifest
 
 Musecade Game 003 · Version 2.0 · Teen Thriller · Mystery · 45 to 75 minutes · 1 player · Rated PG-13
-Build: 2.0-343a6ae
+Build: 2.0-20b8fdc
 Base URL: https://lorenzen.ai/musecade/theseaglassinn/
 Platform: https://lorenzen.ai/musecade/musecade.md
 
@@ -287,12 +288,12 @@ The game is bundled for speed. **Fetch exactly one file per act**, when its mome
 
 | When | Fetch this one file | It contains |
 |---|---|---|
-| **Start** (this file) | https://lorenzen.ai/musecade/theseaglassinn/play.md?v=2.0-343a6ae | `core/dm-core.md` · `core/image-style.md` · `core/scoring.md` · `adventure.md` · `rules.md` · `character-creation.md` · `scoring.md` · `game/image-triggers.md` · `acts/act-1.md` · `characters/companions.md` · `characters/npcs.md` |
-| Act II begins (`REACH_LIARS`) | https://lorenzen.ai/musecade/theseaglassinn/pack-2.md?v=2.0-343a6ae | `acts/act-2.md` · `world/island.md` · `world/sadie.md` · `game/puzzles.md` |
-| Act III begins (`REACH_DARKROOM`) | https://lorenzen.ai/musecade/theseaglassinn/pack-3.md?v=2.0-343a6ae | `acts/act-3.md` · `game/encounters.md` |
-| Act IV begins (`REACH_STORM`) | https://lorenzen.ai/musecade/theseaglassinn/pack-4.md?v=2.0-343a6ae | `acts/act-4.md` |
-| Act V begins (`REACH_BONFIRE`) | https://lorenzen.ai/musecade/theseaglassinn/pack-5.md?v=2.0-343a6ae | `acts/act-5.md` · `game/endings.md` · `game/achievements.md` |
-| Any ending triggers before Act V (being sent home, a deal, walking away) | https://lorenzen.ai/musecade/theseaglassinn/pack-end.md?v=2.0-343a6ae | `game/endings.md` · `game/achievements.md` |
+| **Start** (this file) | https://lorenzen.ai/musecade/theseaglassinn/play.md?v=2.0-20b8fdc | `core/dm-core.md` · `core/image-style.md` · `core/scoring.md` · `adventure.md` · `rules.md` · `character-creation.md` · `scoring.md` · `game/image-triggers.md` · `acts/act-1.md` · `characters/companions.md` · `characters/npcs.md` |
+| Act II begins (`REACH_LIARS`) | https://lorenzen.ai/musecade/theseaglassinn/pack-2.md?v=2.0-20b8fdc | `acts/act-2.md` · `world/island.md` · `world/sadie.md` · `game/puzzles.md` |
+| Act III begins (`REACH_DARKROOM`) | https://lorenzen.ai/musecade/theseaglassinn/pack-3.md?v=2.0-20b8fdc | `acts/act-3.md` · `game/encounters.md` |
+| Act IV begins (`REACH_STORM`) | https://lorenzen.ai/musecade/theseaglassinn/pack-4.md?v=2.0-20b8fdc | `acts/act-4.md` |
+| Act V begins (`REACH_BONFIRE`) | https://lorenzen.ai/musecade/theseaglassinn/pack-5.md?v=2.0-20b8fdc | `acts/act-5.md` · `game/endings.md` · `game/achievements.md` |
+| Any ending triggers before Act V (being sent home, a deal, walking away) | https://lorenzen.ai/musecade/theseaglassinn/pack-end.md?v=2.0-20b8fdc | `game/endings.md` · `game/achievements.md` |
 
 Load nothing early. Content in a pack you haven't fetched doesn't exist yet, so don't improvise its secrets. If the player goes somewhere ahead of the story, fetch that act's pack early rather than inventing a contradicting world.
 
