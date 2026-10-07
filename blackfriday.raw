@@ -1,0 +1,10 @@
+---
+# GitHub Pages passthrough. Do not edit; the source is blackfriday/router.md.
+# Serves blackfriday/router.md byte-for-byte at /blackfriday.md. Keeping the
+# source out of the repo root stops Jekyll from generating /blackfriday.html,
+# which GitHub Pages would serve at /blackfriday instead of the /blackfriday/ page.
+layout: null
+sitemap: false
+permalink: /blackfriday.md
+---
+{% include_relative blackfriday/router.md %}

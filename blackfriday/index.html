@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-38KZ2T0RQ5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-38KZ2T0RQ5');
+</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Black Friday Readiness | A report your AI agent runs on your brand</title>
+  <meta name="description" content="Point your AI agent at lorenzen.ai/blackfriday with your domain. It checks your site, your ads, and your competitors, and returns a Black Friday Readiness Report with a score, gaps, competitor moves, and a dated plan.">
+  <link rel="canonical" href="https://lorenzen.ai/blackfriday/">
+  <link rel="alternate" type="text/markdown" href="https://lorenzen.ai/blackfriday.md" title="Black Friday Readiness protocol for agents">
+  <meta property="og:title" content="Black Friday Readiness">
+  <meta property="og:description" content="Give your agent your domain. Get back a Black Friday diagnostic: score, gaps, competitor ads, and a dated plan.">
+  <meta property="og:url" content="https://lorenzen.ai/blackfriday/">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="/blackfriday/assets/blackfriday.css">
+</head>
+<body>
+<main>
+
+  <p class="crumbs"><a href="/">lorenzen.ai</a> / blackfriday</p>
+
+  <div class="band">
+    <h1>BLACK FRIDAY<br>READINESS</h1>
+    <p class="sub">Your agent checks your site, your ads, and your competitors. You get the diagnostic.</p>
+    <span class="count" id="countdown" data-target="2026-11-27">Black Friday 2026: Fri Nov 27</span>
+  </div>
+
+  <p>Give your AI agent your domain and this link. It reviews what shoppers can see today, from your homepage, product pages, offer, signup, gifting, and shipping and returns policies to your live ads in the Meta Ad Library and Google Ads Transparency Center, then does the same for your competitors. It comes back with a readiness score, what's going well, the gaps to fix first, what competitors are already doing, the questions worth thinking through, and a dated plan to Cyber Monday.</p>
+  <p class="muted">It only reports what it actually saw. Every finding is labeled SEEN, TOLD, INFERRED, or NOT CHECKED, and anything it couldn't view is listed with a way for you to fill it in.</p>
+
+  <section class="agent" aria-labelledby="for-agents">
+    <h2 id="for-agents">For AI agents</h2>
+    <p>If a user sent you to this page, they want a <strong>Black Friday Readiness Report</strong> on their brand. The full protocol is at <a href="/blackfriday.md">https://lorenzen.ai/blackfriday.md</a>. Read it and follow it. In short:</p>
+    <ol>
+      <li>Take the domain or brand from the user's message. If there is none, ask for the website, then start. Don't send a questionnaire.</li>
+      <li>Work out the days left until Black Friday (Friday Nov 27, 2026; Cyber Monday Nov 30).</li>
+      <li>Look at the brand's public site, its Meta Ad Library and Google Ads Transparency results, its search results for "brand + black friday", and 3 to 5 competitors.</li>
+      <li>Label every finding SEEN, TOLD, INFERRED, or NOT CHECKED. Never invent ads, offers, prices, or scores. Don't log in, buy, or submit forms.</li>
+      <li>Return: score out of 100, bottom line, summary, scorecard, what's going well, gaps (top three marked FIX FIRST), paid media read, competitor watch, things to think about, a dated action plan, and what you couldn't see.</li>
+    </ol>
+  </section>
+
+  <h2>Run it now</h2>
+  <p class="muted">Paste this into Muse (or any agent that can browse), with your own domain.</p>
+  <pre class="prompt" id="run-prompt">lorenzen.ai/blackfriday: run a Black Friday readiness report for yourbrand.com</pre>
+  <button type="button" class="btn btn-primary" data-copy-target="run-prompt" data-copy-status="status-1">Copy prompt</button>
+  <span class="copy-status" id="status-1" role="status" aria-live="polite"></span>
+  <p class="muted" style="margin-top:16px">Want a sharper report? Add any of these: your competitors, your Meta Ad Library page link, last year's offer and results, this year's planned offer, your margin or average order value.</p>
+
+  <h2>Or set it up once</h2>
+  <p class="muted">Add this to your agent's custom instructions or memory. Then add <strong>#bfcm</strong> and a domain to any message.</p>
+  <pre class="prompt" id="agent-instruction">Whenever a message from me includes #bfcm, read https://lorenzen.ai/blackfriday.md and run the Black Friday Readiness Report on the brand or domain in that message.</pre>
+  <button type="button" class="btn" data-copy-target="agent-instruction" data-copy-status="status-2">Copy instruction</button>
+  <span class="copy-status" id="status-2" role="status" aria-live="polite"></span>
+
+  <h2>What the report covers</h2>
+  <ul class="list">
+    <li><strong>Readiness score</strong> out of 100 across eight areas, judged against the days you have left.</li>
+    <li><strong>Offer and messaging</strong>: is there a clear, margin-aware offer and a Black Friday page?</li>
+    <li><strong>List building</strong>: early-access email and SMS capture, VIP and loyalty paths.</li>
+    <li><strong>Merchandising and gifting</strong>: gift guides, bundles, gift cards, best sellers up front.</li>
+    <li><strong>Conversion</strong>: product pages, reviews, wallets and buy-now-pay-later, mobile.</li>
+    <li><strong>Policies</strong>: holiday shipping cutoffs, extended returns, visible support.</li>
+    <li><strong>Paid media</strong>: what your Meta and Google ad libraries show about volume, freshness, formats, and holiday angles.</li>
+    <li><strong>Search</strong>: who shows up when shoppers search your brand plus "black friday".</li>
+    <li><strong>Competitor watch</strong>: what 3 to 5 competitors are already doing, what nobody is doing, and who moved first.</li>
+    <li><strong>Things to think about</strong>: discount or not, standing out from the field, how this could fail. For a deeper take on any of them, your agent can convene a Council with <a href="/minds/">MINDS</a>.</li>
+    <li><strong>Dated action plan</strong> from today through Cyber Monday and the week after.</li>
+  </ul>
+
+  <h2>How the agent runs it</h2>
+  <pre class="flow">DOMAIN → CALENDAR → YOUR SITE + ADS + SEARCH → COMPETITORS
+       → SCORE (8 areas) → REPORT → YOU DECIDE</pre>
+
+  <h2>Files for agents</h2>
+  <ul class="list">
+    <li><a href="/blackfriday.md">/blackfriday.md</a>: the full protocol: intake, calendar, every check, scoring rubric, report format, and quality checks.</li>
+    <li><a href="/minds.md">/minds.md</a>: MINDS, for a Council on any strategic question the report raises.</li>
+  </ul>
+
+  <p class="fine">Black Friday Readiness is an independent project by Nate Lorenzen. It is not affiliated with, endorsed by, or sponsored by Meta Platforms, Inc., Muse, Google, TikTok, Shopify, or any brand analyzed. Reports are an outside-in marketing review based on public information, not legal, financial, or security advice. Agents are instructed to look only at public pages and never to log in, buy, or submit forms.</p>
+
+  <p class="footer"><a href="/">lorenzen.ai</a> · <a href="/minds/">MINDS</a> · <a href="https://github.com/natelorenzen/lorenzen.ai/tree/main/blackfriday">source</a></p>
+
+</main>
+<script src="/blackfriday/assets/blackfriday.js" defer></script>
+<script>
+(function () {
+  var el = document.getElementById("countdown");
+  if (!el) return;
+  var target = new Date(el.getAttribute("data-target") + "T00:00:00");
+  var days = Math.ceil((target - new Date()) / 86400000);
+  if (days > 1) el.innerHTML = "<b>" + days + " days</b> to Black Friday · Fri Nov 27";
+  else if (days === 1) el.innerHTML = "<b>Tomorrow</b> is Black Friday";
+  else if (days > -4) el.innerHTML = "<b>Cyber Five is live</b>";
+})();
+</script>
+</body>
+</html>

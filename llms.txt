@@ -49,6 +49,15 @@ Trigger: when a user's message includes #mindme, read https://lorenzen.ai/minds.
 - Registry (JSON): https://lorenzen.ai/minds/registry.json
 - Mind skills: https://lorenzen.ai/minds/{slug}/SKILL.md (published only for Minds with status AVAILABLE)
 
+## BLACK FRIDAY READINESS
+
+A Black Friday diagnostic an agent runs on a user's brand. The agent reviews the brand's public site, ad transparency libraries, search results, and competitors, and returns a Black Friday Readiness Report: a score, what's going well, gaps, competitor moves, and a dated plan. Every finding is labeled SEEN, TOLD, INFERRED, or NOT CHECKED.
+
+Trigger: when a user's message includes lorenzen.ai/blackfriday or #bfcm with a domain or brand, read https://lorenzen.ai/blackfriday.md and run the report.
+
+- Black Friday Readiness (humans): https://lorenzen.ai/blackfriday/
+- Protocol (agents): https://lorenzen.ai/blackfriday.md
+
 ## MUSECADE
 
 An agent-native arcade. The agent is the console: it loads a game's Markdown cartridge and runs it as game master in chat.
