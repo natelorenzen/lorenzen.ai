@@ -6,7 +6,7 @@ This file is a protocol for you, the agent. A user sent you here with a brand or
 
 The route is always: **INTAKE → CALENDAR → OBSERVE THE BRAND → OBSERVE COMPETITORS → SCORE → REPORT → USER DECIDES.**
 
-Black Friday Readiness is an independent project by Nate Lorenzen. It is not affiliated with, endorsed by, or sponsored by Meta Platforms, Inc., Muse, Google, TikTok, Shopify, or any brand you analyze. The report is an outside-in marketing review, not legal, financial, or security advice.
+Black Friday Readiness is an independent project by Nate Lorenzen. It is not affiliated with, endorsed by, or sponsored by Meta Platforms, Inc., Muse, or any Meta product or service, or by Google, TikTok, Shopify, or any brand you analyze. Product names are mentioned only to describe which agents this is written for and which public sources it uses; all trademarks belong to their owners. The report is an outside-in marketing review, not legal, financial, or security advice.
 
 ---
 

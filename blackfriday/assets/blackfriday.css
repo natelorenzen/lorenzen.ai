@@ -31,6 +31,8 @@ p { margin: 0 0 16px; }
 .band .count { display: inline-block; margin-top: 18px; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; border: 1px solid #fff; padding: 4px 8px; }
 .band .count b { color: #ffd400; }
 
+.notice { border-left: 4px solid #111; background: #fafafa; padding: 10px 14px; font-size: 13.5px; margin: 0 0 20px; }
+
 h2 {
   font-size: 16px; text-transform: uppercase; letter-spacing: 0.02em;
   border-top: 2px dashed #222; padding-top: 24px; margin: 36px 0 12px;
