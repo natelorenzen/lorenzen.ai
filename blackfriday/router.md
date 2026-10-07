@@ -174,17 +174,18 @@ Score eight areas from 0 to 5. Score only from SEEN or TOLD evidence; an area th
 Return the report in the chat, in this order. It is read on a phone: short sections, bold labels, no paragraph longer than three sentences, tables only where they compare things.
 
 ```
-# Black Friday Readiness: <Brand>
-<domain> · checked <today's date> · <n> days to Black Friday (Nov 27) · Phase: <phase>
+# <score>/100
+## <GRADE> · <Brand> · <n> days to Black Friday
+`<20-block bar> <score>/100`
+Black Friday Readiness · <domain> · checked <today's date> · Phase: <phase> · <k> of 8 areas scored
 
-**Readiness: <score>/100 · <GRADE>** (<k> of 8 areas scored)
-**Bottom line:** <one sentence: the single most important thing>
+> **Bottom line:** <one to three sentences, verdict first: the single most important thing>
 ```
 
-Then these sections:
+The presentation rules for this header and everything after it are in §7.1. Then these sections, with a `---` rule between each:
 
 1. **Summary**: one paragraph, at most five sentences. Where they stand, the biggest strength, the biggest risk, and what to do this week.
-2. **Scorecard**: a table of the eight areas: score (0 to 5 or –), one-line evidence, label.
+2. **Scorecard**: a table of the eight areas: score (0 to 5 or –), badge (§7.1), one-line evidence, label.
 3. **What's going well**: 3 to 6 bullets. Each names the thing, where you saw it, and why it will help on Black Friday. `[SEEN · homepage]`
 4. **Gaps and risks**: ranked by impact. Each bullet: the gap, the evidence, the consequence, the fix. Mark the top three **FIX FIRST**.
 5. **Paid media read**: what their Meta Ad Library (and Google, TikTok if seen) shows: volume, freshness, formats, angles, holiday readiness, landing-page match. Then 2 to 4 specific creative recommendations (angles and formats to test now, given the days left).
@@ -209,13 +210,34 @@ End with one line offering next steps, for example: "Want me to draft the early-
 - **Dates, not vague timing**: "by Nov 6", not "soon".
 - **No filler.** No generic Black Friday advice that isn't tied to something you saw.
 
+### 7.1 Presentation: the high-gloss report
+
+The report must read as a finished product, not a worksheet. Apply these rules:
+
+1. **Score hero.** Open with the score on its own lines, then a text bar. For example, a brand called Acme scoring 75:
+
+   ```
+   # 75/100
+   ## ON TRACK · Acme · 51 days to Black Friday
+   `███████████████░░░░░ 75/100`
+   ```
+
+   The bar is 20 blocks: filled `█` = score ÷ 5, rounded; the rest are `░`. Use the real brand, score, grade, and days; the example values are illustrative only.
+2. **Bottom line in a blockquote.** Verdict first, one to three sentences. It should survive being screenshotted alone.
+3. **Badges per area.** Append one to every scorecard row: 4 to 5 **STRONG**, 3 **OK**, 1 to 2 **AT RISK**, 0 **BEHIND**, – **NOT CHECKED**.
+4. **FIX FIRST as callouts.** Each of the top three gaps gets a bold `FIX FIRST:` prefix, its own paragraph, and a one-line fix. Separate them with blank lines so they punch on a phone screen.
+5. **Tables where things compare** (scorecard, competitors). Bullets everywhere else, bold label first on every bullet.
+6. **Rules between sections.** Put `---` between the 10 sections so the report scans in chunks.
+7. **No emoji.** Caps badges and bars do the visual work and render in every chat client.
+
 ---
 
 ## 8. Quality checks
 
 Before you send the report, verify:
 
-- [ ] The header has the date checked, days to Black Friday, phase, score, grade, and areas scored.
+- [ ] The report opens with the score hero (score, grade, brand, days left, 20-block bar), then the date checked, phase, and areas scored, then the bottom line in a blockquote (§7.1).
+- [ ] Every scorecard row has a badge, the top three gaps are FIX FIRST callouts, `---` separates the sections, and there is no emoji.
 - [ ] Every finding has a label, and every SEEN finding names where you saw it.
 - [ ] Nothing is invented: no ad counts, prices, offers, scores, or competitor plans you did not see or were not told.
 - [ ] NOT CHECKED areas are excluded from the score and listed with a way to fill them.
