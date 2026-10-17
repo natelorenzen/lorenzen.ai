@@ -679,11 +679,70 @@
     for (const [k, q] of Object.entries(SHARE_KEYS)) if (String(S[k]) !== String(baseline[k] ?? '')) p.set(q, S[k]);
     return p.toString();
   }
+  // Crawlers can't run this page, so the link goes through a Worker that serves
+  // this card as its preview image (tools/rookie-card/_worker). Any failure
+  // falls back to a plain link with the generic preview.
+  const SHARE_API = 'https://rookie-card.nlorenzen.workers.dev';
+  async function shareUrl() {
+    const plain = `${location.origin}${location.pathname}?${shareParams()}`;
+    try {
+      const blob = await new Promise(res => ogImage().toBlob(res, 'image/jpeg', .86));
+      if (!blob) return plain;
+      const r = await fetch(`${SHARE_API}/up`, {method: 'POST', headers: {'Content-Type': 'image/jpeg'}, body: blob});
+      const {id} = await r.json();
+      if (!r.ok || !id) return plain;
+      const p = new URLSearchParams(shareParams()); p.delete('x'); p.set('i', id);
+      return `${SHARE_API}/c/${S.handle}?${p}`;
+    } catch { return plain; }
+  }
   $('share').addEventListener('click', async () => {
     if (!S.fetched) { toast('Look up a handle first'); return; }
-    const url = `${location.origin}${location.pathname}?${shareParams()}`;
-    try { await navigator.clipboard.writeText(url); toast('Link copied'); } catch { prompt('Copy this link:', url); }
+    toast('Making your link…');
+    const url = shareUrl();
+    try { // ClipboardItem with a promise keeps Safari's user-gesture permission across the upload
+      await navigator.clipboard.write([new ClipboardItem({'text/plain': url.then(u => new Blob([u], {type: 'text/plain'}))})]);
+      toast('Link copied');
+    } catch {
+      const u = await url;
+      try { await navigator.clipboard.writeText(u); toast('Link copied'); } catch { prompt('Copy this link:', u); }
+    }
   });
+
+  // 1200x630 link preview: the card front beside the headline stats
+  function ogImage() {
+    const OW = 1200, OH = 630, cv = document.createElement('canvas'); cv.width = OW; cv.height = OH;
+    const c = cv.getContext('2d'), t = THEMES[S.theme], st = stats();
+    let g = c.createLinearGradient(0, 0, 0, OH); g.addColorStop(0, shade(t.dark, 14)); g.addColorStop(1, t.dark);
+    c.fillStyle = g; c.fillRect(0, 0, OW, OH);
+    for (const [x, y, r, rgb, a] of [[OW / 2, -OH * .1, OW * .6, '255,255,255', .14], [OW / 2, OH * 1.15, OW * .55, '46,125,74', .5]]) {
+      g = c.createRadialGradient(x, y, 0, x, y, r); g.addColorStop(0, `rgba(${rgb},${a})`); g.addColorStop(1, `rgba(${rgb},0)`);
+      c.fillStyle = g; c.fillRect(0, 0, OW, OH);
+    }
+    c.fillStyle = 'rgba(255,255,255,.025)'; for (let x = 0; x < OW; x += 80) c.fillRect(x, 0, 40, OH);
+
+    const s = .42, cw = W * s, ch = H * s;
+    c.save(); c.translate(84 + cw / 2, OH / 2); c.rotate(-3 * Math.PI / 180);
+    c.shadowColor = 'rgba(0,0,0,.55)'; c.shadowBlur = 32; c.shadowOffsetY = 14;
+    c.drawImage($('front'), -cw / 2, -ch / 2, cw, ch); c.restore();
+
+    const X = 600, CW = 530;
+    c.fillStyle = t.accent === '#2b2464' ? '#ffb38f' : t.accent; font(c, 600, 19, 'Oswald'); spaced(c, `ROOKIE CARD  ·  @PLAYATW SERIES '26`, X, 112, 3);
+    const nm = (S.name.trim() || S.handle).toUpperCase();
+    c.fillStyle = '#fff'; fit(c, nm, CW, 96, 400, 'Anton', 40); c.fillText(nm, X, 214);
+    const sub = `@${S.handle}  ·  ${S.pos} · ${posName().toUpperCase()}`;
+    c.fillStyle = 'rgba(255,255,255,.78)'; fit(c, sub, CW - 40, 28, 500, 'Oswald', 18); spaced(c, sub, X, 262, 1.5);
+    const cells = [['FOLLOWERS', short(S.followers)], ['POSTS', short(S.posts)], ['JOINED', `${MONTHS[S.joined.getMonth()]} ${joinYear()}`], ['POSTS / DAY', st.ppd.toFixed(1)]];
+    const gw = (CW - 18) / 2, gh = 104;
+    cells.forEach(([k, v], i) => {
+      const gx = X + (i % 2) * (gw + 18), gy = 300 + Math.floor(i / 2) * (gh + 16);
+      rr(c, gx, gy, gw, gh, 14); c.fillStyle = 'rgba(255,255,255,.07)'; c.fill(); c.strokeStyle = 'rgba(255,255,255,.18)'; c.lineWidth = 1.5; c.stroke();
+      c.fillStyle = 'rgba(255,255,255,.62)'; font(c, 600, 19, 'Oswald'); spaced(c, k, gx + 22, gy + 36, 3);
+      c.fillStyle = '#fff'; fit(c, v, gw - 44, 50, 400, 'Anton', 28); c.fillText(v, gx + 22, gy + 88);
+    });
+    c.fillStyle = '#fff'; font(c, 600, 20, 'Oswald'); spaced(c, 'FLIP IT FOR THE CAREER STATS  ·  PRINT YOURS', X, 570, 2.5);
+    c.fillStyle = 'rgba(255,255,255,.62)'; font(c, 400, 22, 'Courier Prime'); c.fillText('artificialturfwar.com', X, 602);
+    return cv;
+  }
 
   // ---------- export ----------
   function download(canvas, name) {

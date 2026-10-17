@@ -1,0 +1,9 @@
+# Rookie Card share-link unfurls. See src/index.js. Deploy: npx wrangler deploy
+name = "rookie-card"
+main = "src/index.js"
+compatibility_date = "2025-09-01"
+
+[[kv_namespaces]]
+binding = "CARDS"
+# Created with: npx wrangler kv namespace create rookie-card
+id = "1b42292a754f49f4b66aeb1ec58db189"
