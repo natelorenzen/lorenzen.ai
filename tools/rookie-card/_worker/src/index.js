@@ -5,7 +5,7 @@
 //   GET  /i/<id>.jpg                  the stored preview (static site preview if missing)
 //   GET  /c/<handle>?<tool params>&i= HTML with og:/twitter: tags, then sends browsers to the tool
 const TOOL = 'https://lorenzen.ai/tools/rookie-card/';
-const FALLBACK = 'https://lorenzen.ai/images/previews/rookie-card-preview.png';
+const FALLBACK = 'https://lorenzen.ai/images/previews/rookie-card-preview.png?v=2';
 const KEYS = ['n', 't', 'no', 'p', 'b', 'th', 'r', 'c']; // share-link params the tool understands
 const ORIGINS = /^(https:\/\/lorenzen\.ai|http:\/\/(localhost|127\.0\.0\.1)(:\d+)?)$/;
 const MAX_BYTES = 600 * 1024;
