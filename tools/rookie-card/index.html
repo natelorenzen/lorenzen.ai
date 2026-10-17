@@ -119,6 +119,7 @@
     .toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);opacity:0;background:var(--ink);color:#fff;padding:10px 16px;border-radius:10px;font:500 14px "Oswald";letter-spacing:.06em;transition:.25s;pointer-events:none;z-index:5}
     .toast.show{opacity:1;transform:translate(-50%,0)}
     footer{padding-top:30px;color:var(--muted);font:400 12px/1.6 "Courier Prime",monospace}
+    footer a{color:var(--navy)}
 
     @media (max-width:900px){
       .layout{grid-template-columns:1fr}
@@ -213,7 +214,7 @@
     </section>
   </div>
 
-  <footer>Profile data comes from X's public profile pages via the FxTwitter API. Uploaded photos stay on your device. Rookie Card is not affiliated with X Corp., MLB, or any trading card company.</footer>
+  <footer>The '26 card series is presented by <a href="https://www.artificialturfwar.com/" target="_blank" rel="noopener">Artificial Turf War</a> (<a href="https://x.com/PlayATW" target="_blank" rel="noopener">@PlayATW</a>), eight AI models running fantasy football teams. Profile data comes from X's public profile pages via the FxTwitter API. Uploaded photos stay on your device. Rookie Card is not affiliated with X Corp., MLB, or any trading card company.</footer>
 </main>
 <div class="toast" id="toast"></div>
 
@@ -439,8 +440,8 @@
 
     // bottom brand line
     c.fillStyle = t.borderInk; font(c, 600, 22, 'Oswald');
-    spaced(c, `LORENZEN SERIES '26   ·   NO. ${cardNo()}`, 942, 1340, 4, 'right');
-    font(c, 400, 22, 'Courier Prime'); c.globalAlpha = .7; c.fillText('lorenzen.ai', 58, 1372); c.globalAlpha = 1;
+    spaced(c, `@PLAYATW SERIES '26   ·   NO. ${cardNo()}`, 942, 1340, 4, 'right');
+    font(c, 400, 22, 'Courier Prime'); c.globalAlpha = .7; c.fillText('artificialturfwar.com', 58, 1372); c.globalAlpha = 1;
 
     // foil sheen
     const sh = c.createLinearGradient(0, 0, W, H);
@@ -534,8 +535,8 @@
     // footer
     c.fillStyle = '#5a564c'; c.textAlign = 'center'; font(c, 400, 16, 'Oswald');
     const asOf = new Date(); const d = `${MONTHS[asOf.getMonth()]} ${asOf.getDate()}, ${asOf.getFullYear()}`;
-    spaced(c, `${S.fetched ? 'STATS FROM PUBLIC X PROFILE' : 'SAMPLE STATS'} AS OF ${d}  ·  LORENZEN.AI/TOOLS/ROOKIE-CARD`, W / 2, 1322, 1.5, 'center');
-    spaced(c, `© 2026 LORENZEN TOOLS  ·  NOT AFFILIATED WITH X CORP. OR MLB`, W / 2, 1346, 1.5, 'center');
+    spaced(c, `${S.fetched ? 'STATS FROM PUBLIC X PROFILE' : 'SAMPLE STATS'} AS OF ${d}  ·  ARTIFICIALTURFWAR.COM`, W / 2, 1322, 1.5, 'center');
+    spaced(c, `© 2026 @PLAYATW  ·  NOT AFFILIATED WITH X CORP. OR MLB`, W / 2, 1346, 1.5, 'center');
     c.textAlign = 'left';
     c.restore();
   }
