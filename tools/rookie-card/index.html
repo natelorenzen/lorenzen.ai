@@ -1,0 +1,745 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-38KZ2T0RQ5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-38KZ2T0RQ5');
+</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Turn any X profile into a collectible baseball card, with real follower, post and join-date stats on the back.">
+  <meta name="theme-color" content="#0d1733">
+  <link rel="canonical" href="https://lorenzen.ai/tools/rookie-card/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Lorenzen Tools">
+  <meta property="og:title" content="Rookie Card">
+  <meta property="og:description" content="Turn your X profile into a collectible baseball card, real stats on the back.">
+  <meta property="og:url" content="https://lorenzen.ai/tools/rookie-card/">
+  <meta property="og:image" content="https://lorenzen.ai/images/previews/rookie-card-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Rookie Card: an X profile rendered as a baseball card, front and back">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Rookie Card">
+  <meta name="twitter:description" content="Turn your X profile into a collectible baseball card, real stats on the back.">
+  <meta name="twitter:image" content="https://lorenzen.ai/images/previews/rookie-card-preview.png">
+
+  <title>Rookie Card | Lorenzen Tools</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Courier+Prime:wght@400;700&family=Oswald:wght@400;500;600;700&family=Yellowtail&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --paper:#f3efe4;
+      --card:#fffdf8;
+      --ink:#14161c;
+      --muted:#6b6a66;
+      --line:#ddd6c6;
+      --navy:#1b2d5b;
+      --night:#0b1430;
+      --red:#d63a2f;
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:"Oswald",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    .shell{width:min(1180px,calc(100% - 32px));margin:auto;padding:22px 0 56px}
+    nav{display:flex;justify-content:space-between;border-bottom:1px solid;padding-bottom:11px;font-family:Arial,sans-serif;font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+    nav a{color:inherit;text-decoration:none}
+    .hero{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;padding:38px 0 26px;border-bottom:1px solid var(--line)}
+    .kicker{font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--red)}
+    h1{font:400 clamp(56px,10vw,104px)/.86 "Anton",Impact,sans-serif;letter-spacing:.005em;text-transform:uppercase;margin:12px 0 16px;color:var(--navy)}
+    h1 em{font:400 .62em/1 "Yellowtail",cursive;text-transform:none;color:var(--red);font-style:normal;letter-spacing:0;margin-left:.08em;vertical-align:.12em}
+    .intro{max-width:560px;color:#4f4d48;font:400 17px/1.5 Georgia,serif;margin:0}
+    .hero-meta{font-family:"Courier Prime",monospace;font-size:13px;line-height:1.6;text-align:right;color:var(--muted);white-space:nowrap}
+
+    .layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,520px);gap:28px;padding-top:28px;align-items:start}
+    .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:0 14px 40px rgba(27,45,91,.06)}
+    .step{font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+    .lookup{display:flex;gap:8px}
+    .handle-wrap{flex:1;display:flex;align-items:center;border:2px solid var(--ink);border-radius:10px;background:#fff;padding-left:14px}
+    .handle-wrap span{font:600 20px "Oswald";color:var(--muted)}
+    .handle-wrap input{flex:1;min-width:0;border:0;outline:0;background:transparent;font:500 20px "Oswald";padding:12px 10px 12px 4px;color:var(--ink)}
+    .handle-wrap:focus-within{box-shadow:0 0 0 4px rgba(214,58,47,.18)}
+    .btn{appearance:none;border:2px solid var(--ink);background:transparent;color:var(--ink);border-radius:10px;padding:0 16px;min-height:46px;font:600 14px "Oswald";letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:transform .12s,background .12s}
+    .btn:hover{background:rgba(20,22,28,.06)}
+    .btn:active{transform:translateY(1px)}
+    .btn.primary{background:var(--red);border-color:var(--red);color:#fff}
+    .btn.primary:hover{background:#bf2f25}
+    .btn[disabled]{opacity:.55;cursor:wait}
+    .status{min-height:22px;margin:10px 0 0;font:400 14px/1.4 "Courier Prime",monospace;color:var(--muted)}
+    .status.err{color:var(--red)}
+    .status.ok{color:#1e6b44}
+    hr{border:0;border-top:1px solid var(--line);margin:22px 0}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .grid .full{grid-column:1/-1}
+    label{display:block;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+    input[type=text],input[type=number],input[type=date],select,textarea{width:100%;border:1.5px solid var(--line);border-radius:9px;background:#fff;padding:10px 12px;font:400 16px/1.3 "Oswald";color:var(--ink);outline:0}
+    textarea{font:400 15px/1.45 "Courier Prime",monospace;resize:vertical;min-height:88px}
+    input:focus,select:focus,textarea:focus{border-color:var(--navy);box-shadow:0 0 0 3px rgba(27,45,91,.12)}
+    .hint{font:400 12px/1.4 "Courier Prime",monospace;color:var(--muted);margin:6px 0 0}
+    .themes{display:flex;flex-wrap:wrap;gap:10px}
+    .swatch{appearance:none;cursor:pointer;border:2px solid transparent;border-radius:12px;padding:5px;background:transparent;display:flex;flex-direction:column;align-items:center;gap:5px;font:500 11px "Oswald";letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+    .swatch i{display:block;width:54px;height:38px;border-radius:7px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.12)}
+    .swatch[aria-pressed=true]{border-color:var(--ink);color:var(--ink)}
+    details{border:1.5px dashed var(--line);border-radius:12px;padding:12px 14px}
+    summary{cursor:pointer;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+    details .grid{margin-top:14px}
+    .file{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+    .file input{font:400 13px "Courier Prime",monospace;max-width:100%}
+
+    .stage{position:sticky;top:16px;border-radius:22px;padding:30px 24px 22px;background:
+      radial-gradient(120% 70% at 50% -10%,rgba(255,255,255,.18),transparent 60%),
+      radial-gradient(80% 50% at 50% 110%,rgba(46,125,74,.45),transparent 70%),
+      linear-gradient(180deg,#14224a,var(--night));color:#fff;overflow:hidden}
+    .stage::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.025) 0 40px,transparent 40px 80px);pointer-events:none}
+    .tilt{position:relative;width:min(400px,100%);margin:0 auto;aspect-ratio:1000/1400;perspective:1400px}
+    .flip{position:absolute;inset:0;transform-style:preserve-3d;transition:transform .8s cubic-bezier(.2,.75,.25,1);cursor:pointer}
+    .flip.flipped{transform:rotateY(180deg)}
+    .face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:4%/2.9%;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.45),0 6px 14px rgba(0,0,0,.3)}
+    .face canvas{display:block;width:100%;height:100%}
+    .face.back{transform:rotateY(180deg)}
+    .holo{position:absolute;inset:0;pointer-events:none;mix-blend-mode:color-dodge;opacity:0;transition:opacity .3s;background:
+      radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.55),transparent 42%),
+      linear-gradient(115deg,transparent 30%,rgba(255,120,200,.25) 42%,rgba(120,220,255,.28) 52%,rgba(255,240,140,.25) 62%,transparent 72%);
+      background-size:100% 100%,220% 220%;background-position:0 0,var(--hx,50%) 50%}
+    .tilt:hover .holo{opacity:.5}
+    .stage-actions{position:relative;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:24px}
+    .stage .btn{color:#fff;border-color:rgba(255,255,255,.55)}
+    .stage .btn:hover{background:rgba(255,255,255,.1)}
+    .stage .btn.primary{background:var(--red);border-color:var(--red)}
+    .stage-note{position:relative;text-align:center;font:400 12px/1.5 "Courier Prime",monospace;color:rgba(255,255,255,.62);margin:14px 0 0}
+    .toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);opacity:0;background:var(--ink);color:#fff;padding:10px 16px;border-radius:10px;font:500 14px "Oswald";letter-spacing:.06em;transition:.25s;pointer-events:none;z-index:5}
+    .toast.show{opacity:1;transform:translate(-50%,0)}
+    footer{padding-top:30px;color:var(--muted);font:400 12px/1.6 "Courier Prime",monospace}
+
+    @media (max-width:900px){
+      .layout{grid-template-columns:1fr}
+      .stage{position:relative;top:0}
+      .hero-meta{display:none}
+    }
+    @media (max-width:520px){
+      .grid{grid-template-columns:1fr}
+      .panel{padding:18px}
+      .lookup{flex-wrap:wrap}
+      .lookup .btn{flex:1}
+      .stage{padding:22px 16px 18px}
+    }
+  </style>
+</head>
+<body>
+<main class="shell">
+  <nav><a href="/tools/">← Lorenzen / Tools</a><span>Card series '26</span></nav>
+
+  <section class="hero">
+    <div>
+      <div class="kicker">Trading card generator</div>
+      <h1>Rookie Card<em>.</em></h1>
+      <p class="intro">Type in an X handle. We pull the public profile (photo, followers, posts, join date) and print it as a collectible card, with the career line on the back. Then add the parts X can't tell us.</p>
+    </div>
+    <div class="hero-meta">Front: photo + nameplate<br>Back: career stats<br>Export: PNG, both sides</div>
+  </section>
+
+  <div class="layout">
+    <section class="panel" aria-label="Card builder">
+      <p class="step">01 · Step up to the plate</p>
+      <form class="lookup" id="lookup">
+        <div class="handle-wrap"><span>@</span><input id="handle" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="yourhandle or x.com/yourhandle" aria-label="X handle"></div>
+        <button class="btn primary" id="go" type="submit">Print my card</button>
+      </form>
+      <p class="status" id="status" role="status">Public profiles only. Nothing is stored.</p>
+
+      <hr>
+      <p class="step">02 · Fill out the scouting sheet</p>
+      <div class="grid">
+        <div class="full"><label for="name">Name on card</label><input id="name" type="text" maxlength="40"></div>
+        <div><label for="team">Team</label><input id="team" type="text" maxlength="24"></div>
+        <div><label for="no">Jersey number</label><input id="no" type="number" min="0" max="99"></div>
+        <div class="full"><label for="pos">Position</label>
+          <select id="pos"></select>
+        </div>
+        <div><label for="bats">Bats</label>
+          <select id="bats"><option>Right</option><option>Left</option><option>Switch</option><option>Leadoff</option><option>Cleanup</option><option>Late night</option><option>Off the bench</option><option>For the cycle</option><option>Last word</option><option>Lefty, politely</option></select>
+        </div>
+        <div><label for="throws">Throws</label>
+          <select id="throws"><option>Heat</option><option>Shade</option><option>Curveballs</option><option>Strikes</option><option>Threads</option><option>Hot takes</option><option>Ratios</option><option>Bangers</option><option>Memes</option><option>Subtweets</option><option>Knuckleballs</option><option>Changeups</option><option>Charts</option><option>Receipts</option><option>Shower thoughts</option></select>
+        </div>
+        <div class="full"><label for="report">Scouting report</label>
+          <textarea id="report" maxlength="220" placeholder="Strengths, tendencies, signature move…"></textarea>
+          <p class="hint">Starts as your X bio. Make it sound like a scout wrote it.</p>
+        </div>
+        <div class="full"><label>Card design</label><div class="themes" id="themes"></div></div>
+      </div>
+
+      <hr>
+      <details id="statsBox">
+        <summary>Edit the stats</summary>
+        <div class="grid">
+          <div><label for="followers">Followers</label><input id="followers" type="number" min="0"></div>
+          <div><label for="following">Following</label><input id="following" type="number" min="0"></div>
+          <div><label for="posts">Posts</label><input id="posts" type="number" min="0"></div>
+          <div><label for="likes">Likes given</label><input id="likes" type="number" min="0"></div>
+          <div><label for="media">Media posts</label><input id="media" type="number" min="0"></div>
+          <div><label for="joined">Joined X</label><input id="joined" type="date"></div>
+          <div class="full"><label for="home">Home</label><input id="home" type="text" maxlength="30"></div>
+          <div class="full file"><label for="photo" style="margin:0">Different photo</label><input id="photo" type="file" accept="image/*"></div>
+        </div>
+        <p class="hint">Pulled from your public profile. Change anything; the card redraws as you type.</p>
+      </details>
+    </section>
+
+    <section class="stage" aria-label="Card preview">
+      <div class="tilt" id="tilt">
+        <div class="flip" id="flip" title="Click to flip">
+          <div class="face front"><canvas id="front" width="1000" height="1400" aria-label="Card front"></canvas><div class="holo"></div></div>
+          <div class="face back"><canvas id="back" width="1000" height="1400" aria-label="Card back"></canvas></div>
+        </div>
+      </div>
+      <div class="stage-actions">
+        <button class="btn" id="flipBtn" type="button">Flip card</button>
+        <button class="btn primary" id="dlBoth" type="button">Download card</button>
+        <button class="btn" id="dlFront" type="button">Front</button>
+        <button class="btn" id="dlBack" type="button">Back</button>
+        <button class="btn" id="share" type="button">Copy link</button>
+      </div>
+      <p class="stage-note">Click the card to flip it. "Download card" saves both sides on one image.</p>
+    </section>
+  </div>
+
+  <footer>Profile data comes from X's public profile pages via the FxTwitter API. Uploaded photos stay on your device. Rookie Card is not affiliated with X Corp., MLB, or any trading card company.</footer>
+</main>
+<div class="toast" id="toast"></div>
+
+<script>
+(() => {
+  const W = 1000, H = 1400;
+  const $ = id => document.getElementById(id);
+
+  const THEMES = {
+    league:   {label:'Big League',  primary:'#1b2d5b', dark:'#0b1430', accent:'#d63a2f', onAccent:'#fff',    border:'#f6f0e1', borderInk:'#1b2d5b', paper:'#ecdfc3', accentInk:'#c2312a'},
+    ivy:      {label:'Ivy Wall',    primary:'#1d4a34', dark:'#0b2418', accent:'#e9b62f', onAccent:'#1d2a1f', border:'#f4f1e4', borderInk:'#1d4a34', paper:'#e6dcc0', accentInk:'#8a6512'},
+    sunset:   {label:'Sunset Strip',primary:'#d9502a', dark:'#5b1a0e', accent:'#2b2464', onAccent:'#fff',    border:'#fcf3e2', borderInk:'#8d2d14', paper:'#f0dcc0', accentInk:'#2b2464'},
+    chrome:   {label:'Midnight',    primary:'#17171c', dark:'#000000', accent:'#d4af55', onAccent:'#17171c', border:'#24242b', borderInk:'#d4af55', paper:'#dcd6c8', accentInk:'#86661c'},
+    expansion:{label:'Expansion',   primary:'#3d22b8', dark:'#150a49', accent:'#2fe0b0', onAccent:'#0f1a3a', border:'#f2f0fb', borderInk:'#3d22b8', paper:'#e3dff0', accentInk:'#3d22b8'},
+  };
+  const POSITIONS = [
+    ['SP','Starting Poster'], ['RP','Reply Pitcher'], ['CF','Content Fielder'], ['DH','Designated Hype-man'],
+    ['CL','Thread Closer'], ['UT','Utility Builder'], ['MGR','Founder / Manager'], ['LK','Lurker'],
+    ['C','Contrarian'], ['1B','First Take'], ['SS','Screenshot Specialist'], ['PH','Pinch Hitter'],
+    ['GM','Growth Manager'], ['BP','Bullpen Lurker'], ['AI','Agent in Training'], ['UMP','Fact Checker'],
+  ];
+  const MONTHS = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+
+  // ---------- state ----------
+  const S = {
+    handle:'yourhandle', name:'Rookie McPoster', team:'Hometown', no:7, pos:'SP', bats:'Right', throws:'Heat',
+    report:'Shows up early, posts late. Quick hands on the quote-tweet. Scouts love the work ethic; the timeline is still deciding about the takes.',
+    theme:'league', followers:1287, following:412, posts:3940, likes:9122, media:318,
+    joined:new Date(2023,4,14), home:'Your City', verified:false, img:null, fetched:false,
+  };
+
+  // ---------- helpers ----------
+  const hash = s => { let h = 2166136261; for (const c of s) { h ^= c.charCodeAt(0); h = Math.imul(h, 16777619); } return h >>> 0; };
+  const rng = seed => () => { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; };
+  const fmt = n => Math.round(n).toLocaleString('en-US');
+  const short = n => n >= 1e6 ? (n/1e6).toFixed(n >= 1e7 ? 0 : 1).replace(/\.0$/,'') + 'M' : n >= 1e4 ? (n/1e3).toFixed(n >= 1e5 ? 0 : 1).replace(/\.0$/,'') + 'K' : fmt(n);
+  const days = () => Math.max(1, Math.round((Date.now() - S.joined.getTime()) / 864e5));
+  const joinYear = () => S.joined.getFullYear();
+  const cardNo = () => String(hash(S.handle.toLowerCase()) % 900 + 100);
+  const posName = () => (POSITIONS.find(p => p[0] === S.pos) || POSITIONS[0])[1];
+  const firstName = () => { const f = S.name.trim().split(/\s+/)[0] || S.handle; return f === f.toUpperCase() ? f[0] + f.slice(1).toLowerCase() : f; };
+  const isRookie = () => new Date().getFullYear() - joinYear() <= 2;
+
+  function stats() {
+    const d = days();
+    const ratio = S.following ? S.followers / S.following : S.followers;
+    const avg = S.followers + S.following ? S.followers / (S.followers + S.following) : 0;
+    return {d, ppd:S.posts / d, ratio, avg, mediaPct: S.posts ? S.media / S.posts : 0};
+  }
+
+  function parseXDate(s) { // "Thu Jul 28 13:56:32 +0000 2022"
+    const m = /^\w{3} (\w{3}) (\d{1,2}) [\d:]+ [+-]\d{4} (\d{4})$/.exec(s || '');
+    if (!m) { const d = new Date(s); return isNaN(d) ? null : d; }
+    return new Date(+m[3], MONTHS.indexOf(m[1].toUpperCase()), +m[2]);
+  }
+  const LOOKALIKE = {'Λ':'A','Δ':'A','Α':'A','Β':'B','Ε':'E','Ξ':'E','Σ':'E','Η':'H','Ι':'I','Κ':'K','Μ':'M','Ν':'N','Ο':'O','Θ':'O','Ø':'O','Ρ':'P','Τ':'T','Υ':'Y','Χ':'X','Ζ':'Z','Π':'N','λ':'a','ξ':'e'};
+  const cleanName = n => (n || '').normalize('NFKC').replace(/./gu, ch => LOOKALIKE[ch] || ch)
+    .replace(/[\p{Extended_Pictographic}\u{FE0F}\u{200D}]/gu, '').replace(/\s+/g, ' ').trim().slice(0, 40);
+  function parseHandle(v) {
+    v = (v || '').trim().replace(/^@/, '');
+    const m = /(?:x|twitter)\.com\/(?:#!\/)?@?([A-Za-z0-9_]{1,15})/i.exec(v);
+    if (m) return m[1];
+    return /^[A-Za-z0-9_]{1,15}$/.test(v) ? v : null;
+  }
+  function loadImg(src) {
+    return new Promise((res, rej) => { const i = new Image(); i.crossOrigin = 'anonymous'; i.onload = () => res(i); i.onerror = rej; i.src = src; });
+  }
+  async function firstImg(srcs) { for (const s of srcs) { try { return await loadImg(s); } catch {} } return null; }
+
+  // ---------- canvas primitives ----------
+  function rr(c, x, y, w, h, r) { c.beginPath(); c.roundRect(x, y, w, h, r); }
+  function font(c, weight, size, family) { c.font = `${weight} ${size}px ${family}`; }
+  function fit(c, text, maxW, size, weight, family, min = 18) {
+    let s = size; font(c, weight, s, family);
+    while (c.measureText(text).width > maxW && s > min) { s -= 2; font(c, weight, s, family); }
+    return s;
+  }
+  function spaced(c, text, x, y, sp, align = 'left') {
+    const chars = [...text];
+    const w = chars.reduce((a, ch) => a + c.measureText(ch).width, 0) + sp * (chars.length - 1);
+    let cx = align === 'center' ? x - w / 2 : align === 'right' ? x - w : x;
+    const prev = c.textAlign; c.textAlign = 'left';
+    for (const ch of chars) { c.fillText(ch, cx, y); cx += c.measureText(ch).width + sp; }
+    c.textAlign = prev; return w;
+  }
+  function wrap(c, text, maxW, maxLines) {
+    const words = text.replace(/\s+/g, ' ').trim().split(' '); const lines = []; let line = '';
+    for (const w of words) {
+      const t = line ? line + ' ' + w : w;
+      if (c.measureText(t).width > maxW && line) { lines.push(line); line = w; } else line = t;
+    }
+    if (line) lines.push(line);
+    if (lines.length > maxLines) { lines.length = maxLines; let l = lines[maxLines - 1]; while (c.measureText(l + '…').width > maxW) l = l.slice(0, -1); lines[maxLines - 1] = l.replace(/\s+\S*$/, '') + '…'; }
+    return lines;
+  }
+  function cover(c, img, x, y, w, h, focusY = .3) {
+    const iw = img.naturalWidth, ih = img.naturalHeight, s = Math.max(w / iw, h / ih);
+    const sw = w / s, sh = h / s;
+    c.drawImage(img, (iw - sw) / 2, Math.max(0, (ih - sh) * focusY), sw, sh, x, y, w, h);
+  }
+  function placeholder(c, x, y, w, h, t) {
+    const g = c.createLinearGradient(x, y, x, y + h); g.addColorStop(0, t.primary); g.addColorStop(1, t.dark);
+    c.fillStyle = g; c.fillRect(x, y, w, h);
+    c.save(); c.globalAlpha = .1; c.strokeStyle = '#fff'; c.lineWidth = 3;
+    for (let i = -h; i < w; i += 46) { c.beginPath(); c.moveTo(x + i, y + h); c.lineTo(x + i + h, y); c.stroke(); }
+    c.restore();
+    // batter silhouette
+    c.save(); c.fillStyle = 'rgba(255,255,255,.16)'; const cx = x + w / 2, cy = y + h * .52;
+    c.beginPath(); c.arc(cx, cy - 190, 92, 0, 7); c.fill();
+    c.beginPath(); c.ellipse(cx, cy + 140, 230, 250, 0, Math.PI, 0); c.lineTo(cx + 230, y + h); c.lineTo(cx - 230, y + h); c.fill();
+    c.restore();
+  }
+  function baseball(c, x, y, r) {
+    c.save(); c.fillStyle = '#fbf8f0'; c.beginPath(); c.arc(x, y, r, 0, 7); c.fill();
+    c.strokeStyle = '#d63a2f'; c.lineWidth = r * .07;
+    for (const dir of [-1, 1]) {
+      c.beginPath(); c.arc(x + dir * r * 1.35, y, r * .95, Math.PI - .78, Math.PI + .78); if (dir < 0) { c.beginPath(); c.arc(x - r * 1.35, y, r * .95, -.78, .78); } c.stroke();
+    }
+    c.restore();
+  }
+  function seal(c, x, y, r, t, top, mid, bottom) {
+    c.save();
+    c.fillStyle = t.accent; c.strokeStyle = '#fff'; c.lineWidth = 6;
+    c.beginPath();
+    for (let i = 0; i < 32; i++) { const a = i / 32 * Math.PI * 2, rad = i % 2 ? r : r * .9; c.lineTo(x + Math.cos(a) * rad, y + Math.sin(a) * rad); }
+    c.closePath(); c.shadowColor = 'rgba(0,0,0,.35)'; c.shadowBlur = 14; c.shadowOffsetY = 4; c.fill(); c.shadowColor = 'transparent'; c.stroke();
+    c.fillStyle = t.onAccent; c.textAlign = 'center';
+    font(c, 600, 17, 'Oswald'); spaced(c, top, x, y - r * .36, 3, 'center');
+    font(c, 400, r * .62, 'Anton'); c.fillText(mid, x, y + r * .26);
+    font(c, 600, 17, 'Oswald'); spaced(c, bottom, x, y + r * .58, 3, 'center');
+    c.restore();
+  }
+
+  // ---------- front ----------
+  function drawFront(cv) {
+    const c = cv.getContext('2d'), t = THEMES[S.theme], st = stats();
+    c.clearRect(0, 0, W, H);
+    c.save(); rr(c, 0, 0, W, H, 40); c.clip();
+
+    // card stock
+    const bg = c.createLinearGradient(0, 0, W, H); bg.addColorStop(0, t.border); bg.addColorStop(1, shade(t.border, -8));
+    c.fillStyle = bg; c.fillRect(0, 0, W, H);
+
+    // photo window
+    const P = {x:58, y:58, w:884, h:1040};
+    c.save(); rr(c, P.x, P.y, P.w, P.h, 16); c.clip();
+    if (S.img) cover(c, S.img, P.x, P.y, P.w, P.h, .25); else placeholder(c, P.x, P.y, P.w, P.h, t);
+    let g = c.createLinearGradient(0, P.y, 0, P.y + 260); g.addColorStop(0, 'rgba(0,0,0,.42)'); g.addColorStop(1, 'rgba(0,0,0,0)');
+    c.fillStyle = g; c.fillRect(P.x, P.y, P.w, 260);
+    g = c.createLinearGradient(0, P.y + P.h - 420, 0, P.y + P.h); g.addColorStop(0, 'rgba(0,0,0,0)'); g.addColorStop(1, hexA(t.dark, .78));
+    c.fillStyle = g; c.fillRect(P.x, P.y + P.h - 420, P.w, 420);
+    const vg = c.createRadialGradient(W / 2, 520, 300, W / 2, 520, 820); vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, 'rgba(0,0,0,.28)');
+    c.fillStyle = vg; c.fillRect(P.x, P.y, P.w, P.h);
+    c.restore();
+    c.lineWidth = 8; c.strokeStyle = t.primary; rr(c, P.x, P.y, P.w, P.h, 16); c.stroke();
+    c.lineWidth = 2.5; c.strokeStyle = hexA(t.accent, .9); rr(c, P.x + 12, P.y + 12, P.w - 24, P.h - 24, 10); c.stroke();
+
+    // team script
+    c.save(); c.translate(100, 205); c.rotate(-0.1);
+    const team = S.team.trim() || 'Free Agents';
+    const ts = fit(c, team, 560, 104, 400, 'Yellowtail', 50);
+    const tw = c.measureText(team).width;
+    c.lineJoin = 'round';
+    c.strokeStyle = 'rgba(0,0,0,.35)'; c.lineWidth = 22; c.strokeText(team, 4, 6);
+    c.strokeStyle = t.primary; c.lineWidth = 16; c.strokeText(team, 0, 0);
+    c.fillStyle = '#fff'; c.fillText(team, 0, 0);
+    c.lineCap = 'round';
+    c.beginPath(); c.moveTo(ts * .25, ts * .3); c.quadraticCurveTo(tw * .55, ts * .5, tw + 20, ts * .18);
+    c.strokeStyle = t.primary; c.lineWidth = 16; c.stroke(); c.strokeStyle = '#fff'; c.lineWidth = 6; c.stroke();
+    c.restore();
+
+    // badge
+    if (isRookie()) seal(c, 860, 150, 78, t, 'ROOKIE', 'RC', 'CARD');
+    else seal(c, 860, 150, 78, t, 'SINCE', "'" + String(joinYear()).slice(2), 'X CAREER');
+
+    // stat pill
+    const pill = `${short(S.followers)} FOLLOWERS   ·   ${short(S.posts)} POSTS`;
+    font(c, 600, 28, 'Oswald');
+    const pw = c.measureText(pill).width + 3 * pill.length + 48;
+    c.save(); c.fillStyle = 'rgba(8,10,20,.62)'; rr(c, 922 - pw, 935, pw, 54, 27); c.fill();
+    c.strokeStyle = hexA(t.accent, .9); c.lineWidth = 2; c.stroke();
+    c.fillStyle = '#fff'; spaced(c, pill, 922 - pw / 2, 972, 3, 'center'); c.restore();
+
+    // nameplate band
+    const yL = 1108, yR = 1030, bh = 222, ang = Math.atan2(yR - yL, W);
+    c.save();
+    c.shadowColor = 'rgba(0,0,0,.35)'; c.shadowBlur = 24; c.shadowOffsetY = -4;
+    c.fillStyle = t.accent; poly(c, [[0, yL - 22], [W, yR - 22], [W, yR + 4], [0, yL + 4]]); c.fill();
+    c.shadowColor = 'transparent';
+    const bandG = c.createLinearGradient(0, yL, W, yR + bh); bandG.addColorStop(0, t.primary); bandG.addColorStop(1, t.dark);
+    c.fillStyle = bandG; poly(c, [[0, yL], [W, yR], [W, yR + bh], [0, yL + bh]]); c.fill();
+    c.strokeStyle = 'rgba(255,255,255,.9)'; c.lineWidth = 4; c.beginPath(); c.moveTo(0, yL); c.lineTo(W, yR); c.stroke();
+    // pinstripes
+    c.save(); poly(c, [[0, yL], [W, yR], [W, yR + bh], [0, yL + bh]]); c.clip(); c.globalAlpha = .07; c.strokeStyle = '#fff'; c.lineWidth = 2;
+    for (let i = 0; i < W + 300; i += 26) { c.beginPath(); c.moveTo(i, yR - 100); c.lineTo(i - 120, yL + bh + 60); c.stroke(); }
+    c.restore();
+    c.restore();
+
+    // name
+    c.save(); c.translate(282, 1212); c.rotate(ang); c.fillStyle = '#fff';
+    const nm = (S.name.trim() || S.handle).toUpperCase();
+    fit(c, nm, 650, 108, 400, 'Anton', 44);
+    c.shadowColor = 'rgba(0,0,0,.35)'; c.shadowOffsetY = 4; c.shadowBlur = 0;
+    c.fillText(nm, 0, 0); c.shadowColor = 'transparent';
+    font(c, 500, 30, 'Oswald'); c.fillStyle = hexA('#ffffff', .86);
+    const sub = `@${S.handle}${S.verified ? ' ✓' : ''}   ·   ${posName().toUpperCase()}`;
+    fit(c, sub, 650, 30, 500, 'Oswald', 18);
+    spaced(c, sub, 2, 52, 2);
+    c.restore();
+
+    // position medallion
+    const mx = 152, my = 1196, mr = 112;
+    c.save();
+    c.shadowColor = 'rgba(0,0,0,.4)'; c.shadowBlur = 20; c.shadowOffsetY = 6;
+    c.fillStyle = '#fff'; c.beginPath(); c.arc(mx, my, mr, 0, 7); c.fill(); c.shadowColor = 'transparent';
+    c.fillStyle = t.accent; c.beginPath(); c.arc(mx, my, mr - 10, 0, 7); c.fill();
+    c.strokeStyle = t.primary; c.lineWidth = 4; c.beginPath(); c.arc(mx, my, mr - 20, 0, 7); c.stroke();
+    c.fillStyle = t.onAccent; c.textAlign = 'center';
+    font(c, 600, 22, 'Oswald'); spaced(c, 'NO. ' + S.no, mx, my - 44, 3, 'center');
+    fit(c, S.pos, 140, 86, 400, 'Anton', 40); c.fillText(S.pos, mx, my + 38);
+    font(c, 600, 15, 'Oswald'); spaced(c, 'POSITION', mx, my + 66, 3, 'center');
+    c.restore();
+
+    // bottom brand line
+    c.fillStyle = t.borderInk; font(c, 600, 22, 'Oswald');
+    spaced(c, `LORENZEN SERIES '26   ·   NO. ${cardNo()}`, 942, 1340, 4, 'right');
+    font(c, 400, 22, 'Courier Prime'); c.globalAlpha = .7; c.fillText('lorenzen.ai', 58, 1372); c.globalAlpha = 1;
+
+    // foil sheen
+    const sh = c.createLinearGradient(0, 0, W, H);
+    sh.addColorStop(0, 'rgba(255,255,255,0)'); sh.addColorStop(.38, 'rgba(255,255,255,0)'); sh.addColorStop(.46, 'rgba(255,255,255,.10)'); sh.addColorStop(.54, 'rgba(255,255,255,0)'); sh.addColorStop(1, 'rgba(255,255,255,0)');
+    c.fillStyle = sh; c.fillRect(0, 0, W, H);
+    c.restore();
+  }
+
+  // ---------- back ----------
+  function drawBack(cv) {
+    const c = cv.getContext('2d'), t = THEMES[S.theme], st = stats();
+    c.clearRect(0, 0, W, H);
+    c.save(); rr(c, 0, 0, W, H, 40); c.clip();
+    c.fillStyle = t.paper; c.fillRect(0, 0, W, H);
+    const r = rng(hash(S.handle));
+    for (let i = 0; i < 2600; i++) { c.fillStyle = r() > .5 ? 'rgba(60,40,10,.07)' : 'rgba(255,255,255,.18)'; c.fillRect(r() * W, r() * H, 1 + r() * 2.5, 1 + r() * 2.5); }
+    c.strokeStyle = t.primary; c.lineWidth = 6; rr(c, 36, 36, W - 72, H - 72, 18); c.stroke();
+    c.lineWidth = 1.5; rr(c, 48, 48, W - 96, H - 96, 12); c.stroke();
+    const X = 70, CW = W - 140;
+
+    // header
+    c.fillStyle = t.accent; rr(c, X, 72, 132, 150, 14); c.fill();
+    c.fillStyle = t.onAccent; c.textAlign = 'center';
+    font(c, 600, 20, 'Oswald'); spaced(c, 'CARD NO.', X + 66, 112, 3, 'center');
+    font(c, 400, 64, 'Anton'); c.fillText(cardNo(), X + 66, 190);
+    c.textAlign = 'left';
+    c.fillStyle = t.primary; const nm = (S.name.trim() || S.handle).toUpperCase();
+    fit(c, nm, 540, 74, 400, 'Anton', 36); c.fillText(nm, X + 160, 140);
+    c.fillStyle = t.accentInk; font(c, 600, 26, 'Oswald');
+    const line2 = `${posName().toUpperCase()}  ·  ${(S.team.trim() || 'FREE AGENTS').toUpperCase()}`;
+    fit(c, line2, 540, 26, 600, 'Oswald', 16); spaced(c, line2, X + 162, 182, 2);
+    c.fillStyle = '#2b2b2b'; font(c, 700, 26, 'Courier Prime'); c.fillText('@' + S.handle + (S.verified ? '  ✓ VERIFIED' : ''), X + 162, 218);
+    // cameo
+    c.save(); c.beginPath(); c.arc(W - X - 76, 147, 76, 0, 7); c.fillStyle = t.primary; c.fill(); c.clip();
+    if (S.img) cover(c, S.img, W - X - 152, 71, 152, 152, .2); else placeholder(c, W - X - 152, 71, 152, 152, t);
+    c.restore();
+    c.strokeStyle = t.accent; c.lineWidth = 6; c.beginPath(); c.arc(W - X - 76, 147, 76, 0, 7); c.stroke();
+
+    // info strip
+    const info = [['JOINED', `${MONTHS[S.joined.getMonth()]} ${joinYear()}`], ['HOME', (S.home.trim() || '—').toUpperCase()], ['BATS', S.bats.toUpperCase()], ['THROWS', S.throws.toUpperCase()]];
+    c.fillStyle = t.primary; rr(c, X, 256, CW, 92, 12); c.fill();
+    const iw = CW / 4;
+    info.forEach(([k, v], i) => {
+      const cx = X + iw * i + iw / 2;
+      if (i) { c.fillStyle = 'rgba(255,255,255,.2)'; c.fillRect(X + iw * i, 270, 2, 64); }
+      c.fillStyle = t.accent; font(c, 600, 17, 'Oswald'); spaced(c, k, cx, 290, 3, 'center');
+      c.fillStyle = '#fff'; c.textAlign = 'center'; fit(c, v, iw - 24, 32, 600, 'Oswald', 16); c.fillText(v, cx, 330); c.textAlign = 'left';
+    });
+
+    // tables
+    const yrs = `'${String(joinYear()).slice(2)}–'${String(new Date().getFullYear()).slice(2)}`;
+    table(c, t, X, 392, CW, 'AT THE PLATE', 'POSTING', [
+      ['SEASONS', yrs], ['DAYS', fmt(st.d)], ['POSTS', fmt(S.posts)], ['MEDIA', fmt(S.media)], ['LIKES', fmt(S.likes)], ['P/DAY', st.ppd.toFixed(1)],
+    ]);
+    table(c, t, X, 590, CW, 'IN THE STANDS', 'AUDIENCE', [
+      ['FOLLOWERS', fmt(S.followers)], ['FOLLOWING', fmt(S.following)], ['RATIO', st.ratio >= 100 ? fmt(st.ratio) : st.ratio.toFixed(2)], ['AVG', st.avg.toFixed(3).replace(/^0/, '')], ['MEDIA%', Math.round(st.mediaPct * 100) + '%'],
+    ]);
+    c.fillStyle = '#5a564c'; font(c, 400, 17, 'Courier Prime');
+    c.fillText('RATIO = followers ÷ following.  AVG = followers ÷ (followers + following).', X, 790);
+
+    // scouting report
+    c.fillStyle = t.primary; font(c, 400, 38, 'Anton'); c.fillText('SCOUTING REPORT', X, 862);
+    c.fillStyle = t.accentInk; c.fillRect(X, 878, 120, 5);
+    c.fillStyle = '#23211c'; font(c, 400, 27, 'Courier Prime');
+    const rep = S.report.trim() || defaultReport();
+    wrap(c, rep, CW, 4).forEach((l, i) => c.fillText(l, X, 926 + i * 37));
+
+    // tool grades
+    c.fillStyle = '#5a564c'; font(c, 600, 16, 'Oswald'); spaced(c, 'TOOL GRADES  ·  20–80 SCOUTING SCALE', X, 1062, 3);
+    const gy = 1074, gs = grades(st), gw = (CW - 4 * 14) / 5;
+    gs.forEach(([k, v], i) => {
+      const gx = X + i * (gw + 14);
+      c.fillStyle = 'rgba(255,255,255,.62)'; rr(c, gx, gy, gw, 96, 10); c.fill();
+      c.strokeStyle = t.primary; c.lineWidth = 2; c.stroke();
+      c.fillStyle = hexA(t.primary, .14); rr(c, gx + 2, gy + 92 - 6, (gw - 4) * (v - 20) / 60, 8, 4); c.fill();
+      c.textAlign = 'center';
+      c.fillStyle = t.primary; font(c, 600, 16, 'Oswald'); spaced(c, k, gx + gw / 2, gy + 26, 2, 'center');
+      font(c, 400, 40, 'Anton'); c.fillText(String(v), gx + gw / 2 - 26, gy + 72);
+      c.fillStyle = t.accentInk; font(c, 600, 15, 'Oswald'); c.textAlign = 'left'; spaced(c, gradeWord(v), gx + gw / 2 + 2, gy + 66, 1.5);
+    });
+    c.textAlign = 'left';
+
+    // fast fact
+    const fy = 1190;
+    c.fillStyle = t.primary; rr(c, X, fy, CW, 104, 14); c.fill();
+    baseball(c, X + 62, fy + 52, 36);
+    c.fillStyle = t.accent; font(c, 600, 18, 'Oswald'); spaced(c, 'FAST FACT', X + 120, fy + 34, 4);
+    c.fillStyle = '#fff'; font(c, 500, 23, 'Oswald');
+    wrap(c, fastFact(st), CW - 146, 2).forEach((l, i) => c.fillText(l, X + 120, fy + 64 + i * 27));
+
+    // footer
+    c.fillStyle = '#5a564c'; c.textAlign = 'center'; font(c, 400, 16, 'Oswald');
+    const asOf = new Date(); const d = `${MONTHS[asOf.getMonth()]} ${asOf.getDate()}, ${asOf.getFullYear()}`;
+    spaced(c, `${S.fetched ? 'STATS FROM PUBLIC X PROFILE' : 'SAMPLE STATS'} AS OF ${d}  ·  LORENZEN.AI/TOOLS/ROOKIE-CARD`, W / 2, 1322, 1.5, 'center');
+    spaced(c, `© 2026 LORENZEN TOOLS  ·  NOT AFFILIATED WITH X CORP. OR MLB`, W / 2, 1346, 1.5, 'center');
+    c.textAlign = 'left';
+    c.restore();
+  }
+
+  function table(c, t, x, y, w, title, sub, cols) {
+    c.fillStyle = t.primary; font(c, 400, 30, 'Anton'); c.fillText(title, x, y + 28);
+    const tw = c.measureText(title).width;
+    c.fillStyle = '#5a564c'; font(c, 600, 18, 'Oswald'); spaced(c, '·  ' + sub, x + tw + 14, y + 26, 3);
+    const top = y + 44, cw = w / cols.length;
+    c.fillStyle = t.primary; rr(c, x, top, w, 44, [10, 10, 0, 0]); c.fill();
+    c.fillStyle = 'rgba(255,255,255,.62)'; rr(c, x, top + 44, w, 70, [0, 0, 10, 10]); c.fill();
+    c.strokeStyle = t.primary; c.lineWidth = 2; rr(c, x, top, w, 114, 10); c.stroke();
+    c.textAlign = 'center';
+    cols.forEach(([h, v], i) => {
+      const cx = x + cw * i + cw / 2;
+      if (i) { c.fillStyle = hexA(t.primary, .25); c.fillRect(x + cw * i, top + 50, 1.5, 58); }
+      c.fillStyle = '#fff'; font(c, 600, 19, 'Oswald'); spaced(c, h, cx, top + 30, 2, 'center');
+      c.fillStyle = '#1b1a17'; fit(c, v, cw - 16, 36, 700, 'Courier Prime', 18); c.fillText(v, cx, top + 92);
+    });
+    c.textAlign = 'left';
+  }
+
+  function grades(st) {
+    const L = Math.log10, g = v => Math.max(20, Math.min(80, Math.round(v / 5) * 5));
+    return [
+      ['POWER', g(10 * L(Math.max(1, S.followers)) + 20)],
+      ['CONTACT', g(45 + 21 * L(Math.max(.01, st.ppd)))],
+      ['EYE', g(45 + 20 * L(Math.max(.01, st.ratio)))],
+      ['GLOVE', g(45 + 15 * L(Math.max(.01, S.likes / st.d)))],
+      ['DURABILITY', g(35 + 5 * st.d / 365)],
+    ];
+  }
+  const gradeWord = v => v >= 70 ? 'ELITE' : v >= 60 ? 'PLUS' : v >= 50 ? 'AVERAGE' : 'RAW';
+
+  function defaultReport() {
+    const st = stats();
+    return `${firstName()} brings a ${st.ppd >= 5 ? 'high-volume' : 'patient, selective'} approach to the timeline. ${st.ratio >= 1 ? 'Draws a crowd wherever the takes land.' : 'Still building a following, but the swing is there.'} Projects as an everyday regular.`;
+  }
+  function fastFact(st) {
+    const f = firstName();
+    const facts = [];
+    if (st.ratio >= 2) facts.push(`${f} draws ${st.ratio >= 10 ? fmt(st.ratio) : st.ratio.toFixed(1)}× more followers than accounts followed. A genuine crowd-pleaser.`);
+    if (st.ppd >= 3) facts.push(`At ${st.ppd.toFixed(1)} posts a day, ${f} has stepped up to the plate ${fmt(S.posts)} times since ${joinYear()}.`);
+    if (S.likes > S.posts * 2) facts.push(`Generous in the field: ${f} has handed out ${fmt(S.likes)} likes, about ${(S.likes / st.d).toFixed(0)} a day.`);
+    facts.push(`${f} has logged ${fmt(st.d)} days on X since debuting in ${MONTHS[S.joined.getMonth()].toLowerCase().replace(/^./, m => m.toUpperCase())} ${joinYear()}.`);
+    return facts[hash(S.handle) % facts.length];
+  }
+
+  function poly(c, pts) { c.beginPath(); pts.forEach(([x, y], i) => i ? c.lineTo(x, y) : c.moveTo(x, y)); c.closePath(); }
+  function hexA(hex, a) { const n = parseInt(hex.slice(1), 16); return `rgba(${n >> 16},${n >> 8 & 255},${n & 255},${a})`; }
+  function shade(hex, p) { const n = parseInt(hex.slice(1), 16); const f = v => Math.max(0, Math.min(255, v + Math.round(2.55 * p))); return `rgb(${f(n >> 16)},${f(n >> 8 & 255)},${f(n & 255)})`; }
+
+  // ---------- render loop ----------
+  let queued = false, fontsReady = false;
+  function render() {
+    if (queued) return; queued = true;
+    queueMicrotask(() => { queued = false; if (!fontsReady) return; drawFront($('front')); drawBack($('back')); });
+  }
+  Promise.all(['400 80px Anton', '600 30px Oswald', '500 30px Oswald', '400 30px Oswald', '400 80px Yellowtail', '700 30px "Courier Prime"', '400 30px "Courier Prime"']
+    .map(f => document.fonts.load(f))).catch(() => {}).finally(() => { fontsReady = true; render(); });
+
+  // ---------- form binding ----------
+  const textFields = ['name', 'team', 'report', 'home'], numFields = ['no', 'followers', 'following', 'posts', 'likes', 'media'], selFields = ['pos', 'bats', 'throws'];
+  $('pos').innerHTML = POSITIONS.map(([a, n]) => `<option value="${a}">${a} · ${n}</option>`).join('');
+  $('themes').innerHTML = Object.entries(THEMES).map(([k, t]) =>
+    `<button type="button" class="swatch" data-theme="${k}" aria-pressed="false"><i style="background:linear-gradient(135deg,${t.primary} 0 55%,${t.accent} 55% 72%,${t.border} 72%)"></i>${t.label}</button>`).join('');
+
+  function syncForm() {
+    textFields.forEach(f => $(f).value = S[f]);
+    numFields.forEach(f => $(f).value = S[f]);
+    selFields.forEach(f => $(f).value = S[f]);
+    $('joined').value = `${S.joined.getFullYear()}-${String(S.joined.getMonth() + 1).padStart(2, '0')}-${String(S.joined.getDate()).padStart(2, '0')}`;
+    document.querySelectorAll('.swatch').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.theme === S.theme)));
+  }
+  textFields.forEach(f => $(f).addEventListener('input', e => { S[f] = e.target.value; render(); }));
+  numFields.forEach(f => $(f).addEventListener('input', e => { const v = Math.max(0, +e.target.value || 0); S[f] = f === 'no' ? Math.min(99, Math.round(v)) : v; render(); }));
+  selFields.forEach(f => $(f).addEventListener('change', e => { S[f] = e.target.value; render(); }));
+  $('joined').addEventListener('change', e => { const [y, m, d] = e.target.value.split('-').map(Number); if (y) { S.joined = new Date(y, m - 1, d); render(); } });
+  $('themes').addEventListener('click', e => { const b = e.target.closest('.swatch'); if (!b) return; S.theme = b.dataset.theme; syncForm(); render(); });
+  $('photo').addEventListener('change', async e => {
+    const f = e.target.files[0]; if (!f) return;
+    const url = URL.createObjectURL(f);
+    try { S.img = await loadImg(url); render(); toast('Photo swapped in'); } catch { toast("Couldn't read that image"); }
+  });
+
+  // ---------- lookup ----------
+  function setStatus(msg, cls = '') { const s = $('status'); s.textContent = msg; s.className = 'status ' + cls; }
+  function pickPos(st) {
+    if (S.posts < 150) return 'LK';
+    if (st.ppd >= 8) return 'SP';
+    if (S.likes > S.posts * 3) return 'RP';
+    if (st.ratio >= 3) return 'CF';
+    return 'DH';
+  }
+
+  async function lookup(handle, overrides = {}) {
+    $('go').disabled = true; setStatus(`Scouting @${handle}…`);
+    try {
+      const res = await fetch(`https://api.fxtwitter.com/${encodeURIComponent(handle)}`);
+      const data = await res.json().catch(() => ({}));
+      const u = data.user;
+      if (!res.ok || !u) throw new Error(res.status === 404 || data.code === 404 ? `Couldn't find @${handle} on X.` : `X didn't answer (${data.message || res.status}). Try again in a minute.`);
+      Object.assign(S, {
+        handle: u.screen_name || handle, name: cleanName(u.name) || handle,
+        followers: u.followers || 0, following: u.following || 0, posts: u.tweets || 0, likes: u.likes || 0, media: u.media_count || 0,
+        joined: parseXDate(u.joined) || new Date(), home: (u.location || '').slice(0, 30), verified: !!(u.verification && u.verification.verified),
+        report: (u.description || '').slice(0, 220), fetched: true,
+      });
+      S.team = (u.location || '').split(/[,·|/]/)[0].trim().slice(0, 24) || 'Free Agents';
+      S.no = hash(S.handle.toLowerCase()) % 99 + 1;
+      S.pos = pickPos(stats());
+      baseline = {...S}; // share links carry only edits on top of this
+      Object.assign(S, overrides);
+      syncForm(); render();
+      setStatus(`Signed: @${S.handle}. Loading the photo…`, 'ok');
+      const av = u.avatar_url || '';
+      S.img = await firstImg([av.replace(/_normal(\.\w+)$/, '$1'), av.replace('_normal', '_400x400'), `https://unavatar.io/x/${S.handle}?fallback=false`].filter(Boolean));
+      render();
+      setStatus(`Signed: @${S.handle}. ${u.protected ? 'Protected account: some stats may be hidden. ' : ''}Tweak anything below.`, 'ok');
+      const url = new URL(location.href); url.search = shareParams(); history.replaceState(null, '', url);
+      if (matchMedia('(max-width:900px)').matches) document.querySelector('.stage').scrollIntoView({behavior:'smooth', block:'start'});
+    } catch (err) {
+      setStatus(`${err.message || 'Lookup failed.'} You can still fill in the stats by hand below.`, 'err');
+      $('statsBox').open = true;
+    } finally { $('go').disabled = false; }
+  }
+
+  $('lookup').addEventListener('submit', e => {
+    e.preventDefault();
+    const h = parseHandle($('handle').value);
+    if (!h) { setStatus('That doesn’t look like an X handle (letters, numbers, underscores, up to 15).', 'err'); return; }
+    lookup(h);
+  });
+
+  // ---------- share link ----------
+  const SHARE_KEYS = {name:'n', team:'t', no:'no', pos:'p', bats:'b', throws:'th', report:'r', theme:'c'};
+  let baseline = {};
+  function shareParams() {
+    const p = new URLSearchParams(); p.set('x', S.handle);
+    for (const [k, q] of Object.entries(SHARE_KEYS)) if (String(S[k]) !== String(baseline[k] ?? '')) p.set(q, S[k]);
+    return p.toString();
+  }
+  $('share').addEventListener('click', async () => {
+    if (!S.fetched) { toast('Look up a handle first'); return; }
+    const url = `${location.origin}${location.pathname}?${shareParams()}`;
+    try { await navigator.clipboard.writeText(url); toast('Link copied'); } catch { prompt('Copy this link:', url); }
+  });
+
+  // ---------- export ----------
+  function download(canvas, name) {
+    canvas.toBlob(b => {
+      if (!b) { toast('This photo blocks export. Upload it under “Edit the stats”.'); return; }
+      const a = document.createElement('a'); a.href = URL.createObjectURL(b); a.download = name; a.click();
+      setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+    }, 'image/png');
+  }
+  function both() {
+    const cv = document.createElement('canvas'), pad = 80, gap = 60;
+    cv.width = W * 2 + gap + pad * 2; cv.height = H + pad * 2;
+    const c = cv.getContext('2d'), t = THEMES[S.theme];
+    const g = c.createLinearGradient(0, 0, 0, cv.height); g.addColorStop(0, shade(t.dark, 12)); g.addColorStop(1, t.dark);
+    c.fillStyle = g; c.fillRect(0, 0, cv.width, cv.height);
+    c.shadowColor = 'rgba(0,0,0,.5)'; c.shadowBlur = 50; c.shadowOffsetY = 20;
+    c.drawImage($('front'), pad, pad); c.drawImage($('back'), pad + W + gap, pad);
+    return cv;
+  }
+  const slug = () => S.handle.replace(/[^\w]/g, '');
+  $('dlFront').addEventListener('click', () => download($('front'), `rookie-card-${slug()}-front.png`));
+  $('dlBack').addEventListener('click', () => download($('back'), `rookie-card-${slug()}-back.png`));
+  $('dlBoth').addEventListener('click', () => { try { download(both(), `rookie-card-${slug()}.png`); } catch { toast('This photo blocks export. Upload it under “Edit the stats”.'); } });
+
+  // ---------- flip + tilt ----------
+  const flip = $('flip'), tilt = $('tilt');
+  const doFlip = () => flip.classList.toggle('flipped');
+  flip.addEventListener('click', doFlip); $('flipBtn').addEventListener('click', doFlip);
+  const fine = matchMedia('(hover:hover) and (pointer:fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (fine) {
+    tilt.addEventListener('pointermove', e => {
+      const r = tilt.getBoundingClientRect(), px = (e.clientX - r.left) / r.width, py = (e.clientY - r.top) / r.height;
+      tilt.style.transform = `rotateX(${(.5 - py) * 14}deg) rotateY(${(px - .5) * 16}deg)`;
+      tilt.style.setProperty('--mx', px * 100 + '%'); tilt.style.setProperty('--my', py * 100 + '%'); tilt.style.setProperty('--hx', px * 100 + '%');
+    });
+    tilt.addEventListener('pointerleave', () => tilt.style.transform = '');
+    tilt.style.transition = 'transform .15s ease-out'; tilt.style.transformStyle = 'preserve-3d';
+  }
+
+  let toastT; function toast(m) { const t = $('toast'); t.textContent = m; t.classList.add('show'); clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove('show'), 2200); }
+
+  // ---------- boot ----------
+  syncForm(); render();
+  const q = new URLSearchParams(location.search), qh = parseHandle(q.get('x') || '');
+  if (qh) {
+    $('handle').value = qh;
+    const ov = {};
+    for (const [k, p] of Object.entries(SHARE_KEYS)) if (q.has(p)) {
+      const v = q.get(p);
+      if (k === 'no') ov.no = Math.min(99, Math.max(0, parseInt(v) || 0));
+      else if (k === 'theme') { if (THEMES[v]) ov.theme = v; }
+      else if (k === 'pos') { if (POSITIONS.some(x => x[0] === v)) ov.pos = v; }
+      else ov[k] = v.slice(0, k === 'report' ? 220 : 40);
+    }
+    lookup(qh, ov);
+  }
+})();
+</script>
+</body>
+</html>
