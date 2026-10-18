@@ -686,13 +686,12 @@
   async function shareUrl() {
     const plain = `${location.origin}${location.pathname}?${shareParams()}`;
     try {
-      const blob = await new Promise(res => ogImage().toBlob(res, 'image/jpeg', .86));
+      const blob = await new Promise(res => ogImage().toBlob(res, 'image/png'));
       if (!blob) return plain;
-      const r = await fetch(`${SHARE_API}/up`, {method: 'POST', headers: {'Content-Type': 'image/jpeg'}, body: blob});
+      const r = await fetch(`${SHARE_API}/up?${shareParams()}`, {method: 'POST', headers: {'Content-Type': 'image/png'}, body: blob});
       const {id} = await r.json();
       if (!r.ok || !id) return plain;
-      const p = new URLSearchParams(shareParams()); p.delete('x'); p.set('i', id);
-      return `${SHARE_API}/c/${S.handle}?${p}`;
+      return `${SHARE_API}/c/${id}`;
     } catch { return plain; }
   }
   $('share').addEventListener('click', async () => {

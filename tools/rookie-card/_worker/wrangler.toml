@@ -7,3 +7,9 @@ compatibility_date = "2025-09-01"
 binding = "CARDS"
 # Created with: npx wrangler kv namespace create rookie-card
 id = "1b42292a754f49f4b66aeb1ec58db189"
+
+# Per-IP upload limit (Workers rate limiting binding)
+[[ratelimits]]
+name = "UPLOADS"
+namespace_id = "1701"
+simple = { limit = 10, period = 60 }
