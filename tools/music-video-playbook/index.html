@@ -1,0 +1,849 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-38KZ2T0RQ5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-38KZ2T0RQ5');
+</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A stage-by-stage process for taking a song idea to a finished, AI-disclosed music video with an agent as your editor and producer.">
+  <meta name="theme-color" content="#f5f6f2">
+  <link rel="canonical" href="https://lorenzen.ai/tools/music-video-playbook/">
+  <title>AI Music Video Playbook | Lorenzen Tools</title>
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Lorenzen Tools">
+  <meta property="og:title" content="The AI Music Video Playbook">
+  <meta property="og:description" content="Seventeen stages from song idea to finished, AI-disclosed music video. Point your agent at it. You direct.">
+  <meta property="og:url" content="https://lorenzen.ai/tools/music-video-playbook/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="The AI Music Video Playbook">
+  <meta name="twitter:description" content="Seventeen stages from song idea to finished, AI-disclosed music video. Point your agent at it. You direct.">
+
+  <style>
+    :root{
+      --bg:#f5f6f2;
+      --card:#fff;
+      --ink:#151a18;
+      --muted:#68736e;
+      --line:#dfe5e2;
+      --green:#173d32;
+      --green2:#e2eee9;
+      --green3:#2c675c;
+      --code:#f1f4f2;
+      --shadow:0 8px 24px rgba(23,61,50,.055);
+    }
+
+    *{box-sizing:border-box}
+
+    html{scroll-behavior:smooth;scroll-padding-top:18px}
+
+    body{
+      margin:0;
+      background:
+        radial-gradient(circle at 87% -5%,#e2eee9 0,transparent 30rem),
+        var(--bg);
+      color:var(--ink);
+      font:15px/1.6 ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    }
+
+    .wrap{width:min(1080px,calc(100% - 32px));margin:auto}
+
+    header{padding:34px 0 26px}
+
+    .top{display:flex;align-items:center;justify-content:space-between;gap:20px}
+
+    .eyebrow{
+      color:var(--green3);
+      font-size:10px;
+      font-weight:850;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+
+    .home{
+      color:var(--green);
+      text-decoration:none;
+      font-size:11px;
+      font-weight:800;
+      border:1px solid var(--line);
+      background:#fff;
+      border-radius:9px;
+      padding:7px 10px;
+      box-shadow:0 2px 8px rgba(23,61,50,.035);
+    }
+
+    .home:hover{border-color:#9eb5ac}
+
+    h1{
+      font:500 clamp(40px,6vw,66px)/.98 Georgia,serif;
+      letter-spacing:-.05em;
+      margin:16px 0 14px;
+      max-width:780px;
+    }
+
+    .intro{max-width:680px;color:var(--muted);font-size:16px;margin:0 0 18px}
+
+    .facts{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+
+    .facts li{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:999px;
+      padding:5px 11px;
+      font-size:12px;
+      color:var(--green);
+      font-weight:650;
+    }
+
+    .layout{display:grid;grid-template-columns:210px minmax(0,1fr);gap:40px;align-items:start;padding-bottom:30px}
+
+    nav.toc{position:sticky;top:18px;font-size:12px}
+
+    nav.toc .label{
+      color:var(--green);
+      font-size:10px;
+      font-weight:900;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      margin-bottom:8px;
+    }
+
+    nav.toc ol{list-style:none;margin:0;padding:0;border-left:1px solid var(--line)}
+
+    nav.toc a{
+      display:block;
+      padding:4px 0 4px 12px;
+      margin-left:-1px;
+      border-left:2px solid transparent;
+      color:var(--muted);
+      text-decoration:none;
+      line-height:1.3;
+    }
+
+    nav.toc a:hover{color:var(--ink)}
+    nav.toc a.active{color:var(--green);border-left-color:var(--green3);font-weight:700}
+
+    article{min-width:0;max-width:740px}
+
+    section{padding:6px 0 26px;border-top:1px solid var(--line)}
+    section:first-child{border-top:0;padding-top:0}
+
+    h2{
+      font:500 30px/1.1 Georgia,serif;
+      letter-spacing:-.035em;
+      margin:22px 0 12px;
+    }
+
+    h2 .num{color:var(--green3);font-size:.6em;letter-spacing:0;vertical-align:.35em;margin-right:8px;font-family:ui-sans-serif,-apple-system,sans-serif;font-weight:800}
+
+    h3{font-size:16px;letter-spacing:-.015em;margin:24px 0 8px}
+
+    p{margin:0 0 12px}
+
+    ol,ul{margin:0 0 14px;padding-left:22px}
+    li{margin:4px 0}
+    li ol{margin:4px 0 4px}
+
+    strong{color:var(--green)}
+
+    a{color:var(--green3)}
+
+    code{
+      font:12.5px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;
+      background:var(--code);
+      border:1px solid var(--line);
+      border-radius:5px;
+      padding:1px 5px;
+      overflow-wrap:anywhere;
+    }
+
+    pre{
+      position:relative;
+      background:#132a23;
+      color:#e6efe9;
+      border-radius:12px;
+      padding:16px 18px;
+      overflow-x:auto;
+      margin:0 0 16px;
+      font:12.5px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;
+    }
+
+    pre code{background:none;border:0;padding:0;color:inherit;font:inherit;overflow-wrap:normal;white-space:pre}
+
+    .callout{
+      background:var(--green2);
+      border-radius:12px;
+      padding:14px 16px;
+      margin:0 0 16px;
+      color:var(--green);
+      font-size:14px;
+    }
+
+    .callout p:last-child{margin:0}
+
+    .table-wrap{overflow-x:auto;margin:0 0 16px;border:1px solid var(--line);border-radius:12px;background:#fff;box-shadow:var(--shadow)}
+
+    table{border-collapse:collapse;width:100%;font-size:13px;line-height:1.45}
+    th,td{text-align:left;vertical-align:top;padding:9px 12px;border-bottom:1px solid var(--line)}
+    tr:last-child td{border-bottom:0}
+    th{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);background:#fafbf9}
+    td.n{color:var(--green3);font-weight:800;width:34px}
+
+    .stages{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:0 0 16px;padding:0;list-style:none;counter-reset:stage}
+
+    .stages li{
+      counter-increment:stage;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:11px 13px 11px 46px;
+      margin:0;
+      position:relative;
+      box-shadow:var(--shadow);
+      font-size:13px;
+    }
+
+    .stages li:before{
+      content:counter(stage);
+      position:absolute;
+      left:12px;top:11px;
+      width:24px;height:24px;
+      display:grid;place-items:center;
+      border-radius:7px;
+      background:var(--green2);
+      color:var(--green);
+      font-size:11px;
+      font-weight:900;
+    }
+
+    .stages b{display:block;font-size:14px;letter-spacing:-.01em}
+    .stages span{display:block;color:var(--muted)}
+    .stages em{display:block;font-style:normal;color:var(--green3);font-weight:700;font-size:12px;margin-top:3px}
+    .stages em:before{content:"Gate · "}
+
+    .check{list-style:none;padding:0}
+    .check li{padding-left:26px;position:relative}
+    .check li:before{content:"";position:absolute;left:2px;top:5px;width:13px;height:13px;border:1.5px solid var(--green3);border-radius:4px}
+
+    .copy{
+      position:absolute;
+      top:10px;right:10px;
+      appearance:none;
+      border:1px solid rgba(230,239,233,.25);
+      background:rgba(255,255,255,.08);
+      color:#e6efe9;
+      border-radius:7px;
+      font:700 11px/1 ui-sans-serif,-apple-system,sans-serif;
+      padding:7px 10px;
+      cursor:pointer;
+    }
+
+    .copy:hover{background:rgba(255,255,255,.16)}
+
+    footer{padding:18px 0 28px;border-top:1px solid var(--line);color:var(--muted);font-size:11px}
+
+    @media(max-width:860px){
+      .layout{grid-template-columns:1fr;gap:10px}
+      nav.toc{position:static;border:1px solid var(--line);background:#fff;border-radius:12px;padding:12px 14px}
+      nav.toc ol{columns:2;column-gap:16px;border-left:0}
+      nav.toc a{padding-left:0;border-left:0}
+    }
+
+    @media(max-width:540px){
+      .wrap{width:calc(100% - 32px)}
+      header{padding-top:24px}
+      .stages{grid-template-columns:1fr}
+      h2{font-size:26px}
+    }
+
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+
+<body>
+  <header class="wrap">
+    <div class="top">
+      <div class="eyebrow">Lorenzen Tools</div>
+      <a class="home" href="/tools/">← All tools</a>
+    </div>
+
+    <h1>The AI Music Video Playbook</h1>
+
+    <p class="intro">
+      A stage-by-stage process for taking a song idea to a finished, AI-disclosed music video:
+      research, lyrics, song, characters, stills, animation, lip sync, edit, captions, finishing,
+      extra formats and launch. Point your agent at this page and work through it in order.
+      You are the director. Every stage ends with a gate you approve.
+    </p>
+
+    <ul class="facts">
+      <li>17 stages</li>
+      <li>17 director gates</li>
+      <li>Agent-ready prompt</li>
+      <li>Learned from shipping a real video</li>
+    </ul>
+  </header>
+
+  <div class="wrap layout">
+    <nav class="toc" aria-label="Contents">
+      <div class="label">Contents</div>
+      <ol>
+        <li><a href="#use">Using it with an agent</a></li>
+        <li><a href="#stack">The stack</a></li>
+        <li><a href="#rules">Standing rules</a></li>
+        <li><a href="#pipeline">The pipeline</a></li>
+        <li><a href="#preproduction">Pre-production</a></li>
+        <li><a href="#cast">Cast and stills</a></li>
+        <li><a href="#animation">Animation and lip sync</a></li>
+        <li><a href="#edit">Edit</a></li>
+        <li><a href="#look">The look layer</a></li>
+        <li><a href="#captions">Captions and type</a></li>
+        <li><a href="#bookends">Opens and endings</a></li>
+        <li><a href="#extras">Extra deliverables</a></li>
+        <li><a href="#qa">QA and masters</a></li>
+        <li><a href="#prompt">Agent prompt</a></li>
+        <li><a href="#templates">Templates</a></li>
+        <li><a href="#notes">Notes and fixes</a></li>
+      </ol>
+    </nav>
+
+    <article>
+
+      <section id="use">
+        <h2><span class="num">01</span>Using it with an agent</h2>
+        <ol>
+          <li>Give your agent this page and say: “Follow this playbook. I am the director. Stop at every gate and wait for my answer.”</li>
+          <li>Work one stage at a time. Keep all state in project files, never only in chat.</li>
+          <li>Log every gate answer word for word in <code>decisions.md</code>.</li>
+          <li>The agent never spends money or generation credits without an explicit yes. Silence is not a yes.</li>
+          <li>The agent never invents lyrics, spellings, claims or numbers. Copy the director supplies is theirs; the agent only places it.</li>
+          <li>Every export is a draft. Expect notes and a second pass, then a third.</li>
+        </ol>
+        <p>A copy-paste agent prompt is in <a href="#prompt">section 14</a>.</p>
+      </section>
+
+      <section id="stack">
+        <h2><span class="num">02</span>The stack</h2>
+        <p>Each job needs one tool. The examples are what worked when this playbook was written (October 2026). Any tool that does the same job works; keep the file formats and naming rules.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Job</th><th>Example tools</th><th>Notes</th></tr></thead>
+            <tbody>
+              <tr><td>Culture research</td><td>Grok (searches X), any agent with web search</td><td>A month of posts in the target niche, boiled down to themes and a glossary</td></tr>
+              <tr><td>Lyrics and style prompt</td><td>An LLM drafts, the director edits</td><td>The director owns the final lyric sheet</td></tr>
+              <tr><td>Song</td><td>Suno</td><td>Pick the take by ear; export the full track and a vocal stem if offered</td></tr>
+              <tr><td>Word timing</td><td>Whisper or wav2vec2 forced alignment</td><td>Hold to about 0.2 s; flag suspect words</td></tr>
+              <tr><td>Character sheets and stills</td><td>ChatGPT image generation</td><td>One locked descriptor line per character</td></tr>
+              <tr><td>Animation</td><td>Grok Imagine, Muse</td><td>Image-to-video, still as first frame, audio discarded</td></tr>
+              <tr><td>Lip sync</td><td>OmniHuman 1.5 on fal</td><td>About $0.16 per second of output at 25 fps</td></tr>
+              <tr><td>Edit, captions, finishing</td><td>An agent with ffmpeg, Playwright and Chromium, Python (NumPy, OpenCV, librosa)</td><td>Frame-exact timeline driven by an EDL file</td></tr>
+              <tr><td>Typefaces</td><td>Google Fonts (SIL Open Font License)</td><td>Pick faces that match the era of the song</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="rules">
+        <h2><span class="num">03</span>Standing rules</h2>
+        <p>These apply at every stage.</p>
+        <ol>
+          <li><strong>Ultra-real, no AI shine.</strong> Matte skin with visible texture, fine grain, a natural slightly under-exposed grade, lived-in wardrobe, one motivated light. Off-level framing and candid moments read as real.</li>
+          <li><strong>Original characters only.</strong> No face that resembles a real artist, idol or public figure. Check final faces before release.</li>
+          <li><strong>Brand-safe frames.</strong> Every image and motion prompt says “no logos, no brand names, no readable text or UI”. No third-party footage or memes.</li>
+          <li><strong>Disclose AI.</strong> Tick the platform's synthetic-content box and say it in the description. An on-screen label is optional.</li>
+          <li><strong>Calm by default.</strong> No beat-synced zoom pulses, camera shake, flash frames or punch-ins unless the director asks. Motion comes from inside the clips.</li>
+          <li><strong>Subject motion over camera moves.</strong> Animate stills with the subject moving: hair, hands, fabric, haze, screens. A pan across a still is a last resort.</li>
+          <li><strong>The real song is the only audio.</strong> Strip all clip audio.</li>
+          <li><strong>Spend only after a yes.</strong> Pilot before batches. Any quality complaint pauses all spending.</li>
+          <li><strong>Version everything.</strong> v1, v2 and so on, each with a short change list. Never overwrite a delivered file.</li>
+        </ol>
+      </section>
+
+      <section id="pipeline">
+        <h2><span class="num">04</span>The pipeline</h2>
+        <ol class="stages">
+          <li><b>Culture research</b><span>Themes, glossary, audience notes</span><em>Director picks the angle</em></li>
+          <li><b>Concept</b><span>3 pitches of 120 words or less, plus a story rule</span><em>Pick one</em></li>
+          <li><b>Lyrics and style prompt</b><span>Lyric sheet with display and pronunciation columns</span><em>Lyrics approved</em></li>
+          <li><b>Song</b><span>Several generated takes</span><em>Take approved by ear</em></li>
+          <li><b>Song cut and formats</b><span>Bar-snapped cut, loop or button ending, every output format listed</span><em>Cut approved by ear</em></li>
+          <li><b>Analysis</b><span><code>timing.json</code>: beats, downbeats, sections, words, lines</span><em>Sections and flagged words confirmed</em></li>
+          <li><b>Shot list</b><span>One shot per lyric line, mouth flag, source, framing</span><em>Shot list approved</em></li>
+          <li><b>Cast</b><span>Descriptor lines, character sheets, test plates</span><em>“Is this them?” per character</em></li>
+          <li><b>Stills board</b><span>One 16:9 still per shot, contact sheet</span><em>Pick or reroll per shot</em></li>
+          <li><b>Animatic</b><span>Cut from stills with draft captions</span><em>Pacing approved</em></li>
+          <li><b>Prompt book and cost</b><span>One motion prompt per clip, sync plan, cost estimate at 2x</span><em>Explicit yes to spend</em></li>
+          <li><b>Pilot</b><span>3 clips at 720p</span><em>Look and motion approved</em></li>
+          <li><b>Clips and lip sync</b><span>All clips, sync close-ups, generation ledger</span><em>Batch review</em></li>
+          <li><b>Edit</b><span>20 to 40 s excerpt first, then v1</span><em>Excerpt, then v1 approved</em></li>
+          <li><b>Look, captions, open and close</b><span>Finished cut</span><em>Notes, repeated until final</em></li>
+          <li><b>QA and masters</b><span>16:9 and 9:16 masters at −14 LUFS</span><em>Final approval</em></li>
+          <li><b>Extras and launch</b><span>Lyric video, title card, description, post copy</span><em>Director posts</em></li>
+        </ol>
+      </section>
+
+      <section id="preproduction">
+        <h2><span class="num">05</span>Pre-production</h2>
+
+        <h3>Culture research</h3>
+        <ol>
+          <li>Pull about one month of posts from the niche the song speaks to or satirizes.</li>
+          <li>Boil them down to 5 to 8 recurring themes: the anxieties, running jokes and arguments people in that niche keep having.</li>
+          <li>Build a lingo glossary with exact spellings and casing. Lyrics and captions use these spellings.</li>
+          <li>Note who the audience is and what they would repost.</li>
+        </ol>
+
+        <h3>Concept</h3>
+        <ol>
+          <li>Write 3 pitches of 120 words or less: premise, through-line device, who leads which section, the arc, why it suits video models, and one risk.</li>
+          <li>Add a <strong>story rule</strong> that maps every lyric line to a world, for example “verses are the daytime grind, choruses are the club”.</li>
+          <li>Name the act and characters. Give each a signature mark that survives a thumbnail.</li>
+        </ol>
+
+        <h3>Lyrics and the style prompt</h3>
+        <ol>
+          <li>Write the lyric sheet with two columns: what appears on screen and how it is sung (“display: ROAS / sing: row-ass”). Pronunciation notes never reach the screen.</li>
+          <li>Size the lyrics to the runtime. At 128 BPM a 2-bar line is 3.75 s, so a 64 to 72 s cut holds about 17 to 19 lines.</li>
+          <li>Write the music-model style prompt in 180 characters or less: genre, era, vocal type, tempo, mood.</li>
+          <li>Generate alternates if useful, such as a second genre or a different vocal split.</li>
+        </ol>
+
+        <h3>Song and cut</h3>
+        <ol>
+          <li>Generate and pick the take by ear. Export the full track. Export a vocal stem if offered; it makes word timing far easier.</li>
+          <li>For a short cut of a long song, open on the strongest lyric and skip slow first verses.</li>
+          <li>Every splice lands on a bar downbeat with a 10 to 30 ms crossfade.</li>
+          <li>End on a hard button at a downbeat or on a loop seam.</li>
+          <li>Lock every output format now: 16:9 master, 9:16 vertical, lyric video, cut-downs.</li>
+        </ol>
+
+        <h3>Analysis and word timing</h3>
+        <ol>
+          <li>Map beats, downbeats, kicks and sections. Never trust an auto beat grid at a drop; confirm by ear or by band energy.</li>
+          <li>Get word timing by forced alignment against the lyric sheet. Hold it to about 0.2 s. Flag suspect words for the director to spot-check.</li>
+          <li>Cut one audio clip per lyric line with 0.25 s lead-in (<code>line_audio/</code>). These feed lip sync.</li>
+          <li>Save everything to <code>timing.json</code> (<a href="#templates">schema below</a>).</li>
+        </ol>
+        <div class="callout">
+          <p><b>Need timing for parts of the song you never analysed?</b> (for example, a full-song lyric video after editing a cut)</p>
+          <ol>
+            <li>Find the cut's position in the full track by cross-correlating the audio. A correct match correlates near 0.999.</li>
+            <li>A repeated chorus can reuse an analysed chorus's word timing. Find the offset by chroma similarity, then refine with onset correlation on the vocal band. Validate on a repeat whose timing you already know.</li>
+            <li>Lines with no aligner available reveal a whole line at once, starting at the phrase onset read from a spectrogram. Never guess word times.</li>
+            <li>Ask the director for the lyrics of any section you lack. Never transcribe by ear and present it as the lyric.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="cast">
+        <h2><span class="num">06</span>Cast and stills</h2>
+
+        <h3>Character sheets</h3>
+        <ol>
+          <li>Write one <strong>descriptor line</strong> per character and paste it verbatim into every prompt. Field order: numeric adult age, skin and ethnicity, face shape, hair cut and colour, facial hair, build and height, one signature mark, wardrobe for this look.</li>
+          <li>Lock rules the model tends to break and repeat them in every prompt, such as “always wears thin wire-frame glasses” or “wears no watch”.</li>
+          <li>Silhouettes must differ at thumbnail size: hair shape, build, one accent colour each. Keep a fixed left-to-right order for the whole film.</li>
+          <li>Make a turnaround, an expression sheet and a lighting sheet per world. For groups, 4 test plates per member and 2 group plates.</li>
+          <li>Gate: show the director each character and ask “Is this them?” Run a lookalike check.</li>
+        </ol>
+
+        <h3>Stills board</h3>
+        <ol>
+          <li>One 16:9 still per shot, named <code>NN_slug.png</code>, with the subject in the centre third so it survives a 9:16 crop.</li>
+          <li>Prompt order: camera, identity (descriptor line), wardrobe, action, set, light, medium, negatives.</li>
+          <li>Tie each still to its lyric window. Everyday, specific scenes beat generic glamour: someone reading a thread on the sofa, a wall clock sweeping through the morning, bills under a red-circled date, a laptop stuck on a loading screen at dusk.</li>
+          <li>Avoid stacking golden hour, rim light, flare and wet reflections. That combination reads as AI.</li>
+          <li>Expect two rounds. The second round usually trades glamour for everyday scenes.</li>
+          <li>Build an animatic from the stills with draft captions before any animation spend.</li>
+        </ol>
+      </section>
+
+      <section id="animation">
+        <h2><span class="num">07</span>Animation and lip sync</h2>
+
+        <h3>Motion prompts</h3>
+        <p>Write them in screenplay form:</p>
+<pre><code>One continuous shot, no cuts. Camera locked off.
+0.0s: [blocking exactly as in the first frame; exactly N people].
+0.0-1.5s: [primary subject action].
+1.5-3.0s: [secondary motion: hair, jacket, haze, screens]. Hold.
+Their mouths stay closed. No singing, no talking.
+Identity, wardrobe and face exactly as in the first frame. No new text, no logos.
+Ultra-real 35mm, real skin texture, no AI sheen.</code></pre>
+        <ol>
+          <li>The still is the first frame. Write the lyric timing into the text; the model hears no audio.</li>
+          <li>Front-load the action into the first 3 s. You will use 2 to 3 s of each clip.</li>
+          <li>End every prompt with the same tail.</li>
+          <li>Pilot 3 clips (one solo, one group move, one wide) before the batch.</li>
+          <li>Keep a ledger: shot, tool, seconds, resolution, cost, keep or reject.</li>
+        </ol>
+
+        <h3>Image-to-video tool notes</h3>
+        <ol>
+          <li>Pick the shortest duration offered and trim.</li>
+          <li>Many tools add their own invented audio. Map only the video stream.</li>
+          <li>Large PNG uploads can stall. Upload a high-quality JPEG instead.</li>
+          <li>Check every download's true resolution with <code>ffprobe</code>; settings can silently reset between generations.</li>
+          <li>Submit can fail silently. After two silent failures, stop and report.</li>
+          <li>A moderation decline is final. Do not edit around it.</li>
+          <li>Identity drifts after the first second or two. Check every clip frame by frame.</li>
+        </ol>
+
+        <h3>Lip sync</h3>
+        <ol>
+          <li>Budget the sung seconds plus 20 to 25% for rerolls. Lip-sync output usually bakes in the audio slice; mute it in the edit.</li>
+          <li><strong>The still recipe decides success:</strong> a solo chest-up still, face about 40% of frame height, front-on within 15 degrees, mouth and jaw evenly lit, nothing crossing the mouth or chin, lips softly together, hands below the chin. One person in frame and no mask.</li>
+          <li>Wide group shots mash the mouth. Keep wides as closed-mouth B-roll and sing in close-ups.</li>
+          <li>Audio slices: each sung line cut from the master with 0.3 s padding each side, 20 ms fades, 320k MP3, 3 to 8 s long. Verify placement by cross-correlating the clip's audio with the master and nudge by at most 1 frame.</li>
+          <li>Prompt shape: “Sings this line straight into the camera, [emotion]. Mouth shapes each sung word clearly. Camera locked off with a very slow push in. Shot on 35mm film, natural matte skin with visible pores, film grain. No AI sheen, no text. Keep face, hair and outfit exactly as in the image.” Add a per-shot note (glasses stay fixed; hold the long vowel).</li>
+          <li>Don't ask a general video model to sing. It looks AI-generated and sings its own version of the line.</li>
+          <li>Set the master frame rate to match the lip-sync model's output.</li>
+        </ol>
+      </section>
+
+      <section id="edit">
+        <h2><span class="num">08</span>Edit</h2>
+
+        <h3>Grid and pacing</h3>
+        <ol>
+          <li>Line length = bars × beats per bar × 60 / BPM. One shot per lyric line by default.</li>
+          <li>Every cut lands within 0.03 s of a beat, downbeat or accent.</li>
+          <li>Hold sung close-ups 2 to 4 s. Hold wides at least 2 s; viewers need time to read them. Merge slots that are too short.</li>
+          <li>Split a line into 2 to 4 beat cuts only in choruses and drops.</li>
+          <li>Never repeat a pose or framing on adjacent cuts.</li>
+          <li>The first 2 s carry the strongest frame.</li>
+        </ol>
+
+        <h3>Transitions</h3>
+        <ol>
+          <li>A cut between two faces is a hard cut on the beat. Dissolving one face into another reads as a mistake.</li>
+          <li>Use a short dissolve (about 0.44 s) only where one side is a wide shot or the world changes.</li>
+          <li>Compute each dissolve's overlap from the real handles of both clips. If less than 0.32 s of usable overlap exists, make it a hard cut. A dissolve with too little handle freezes a frame.</li>
+          <li>The climax runs on hard cuts. The final shot can take a long dissolve (about 0.9 s).</li>
+          <li>A double exposure is a one-time device, not a habit.</li>
+        </ol>
+
+        <h3>Use only the best stretch of each clip</h3>
+        <ol>
+          <li>Watch every clip and mark its best 2 to 3 s. Use only that.</li>
+          <li>Slow motion stretches a good stretch to fill a slot: 0.5x to 0.8x with motion interpolation (ffmpeg <code>setpts</code> plus <code>minterpolate</code>). Usable source span = slot length × speed.</li>
+          <li>Conform B-roll to the master frame rate by frame duplication; slowed clips by interpolation.</li>
+        </ol>
+
+        <h3>Fixing character drift</h3>
+        <p>AI clips drift: a face or ethnicity changes, glasses vanish, a haircut morphs mid-shot.</p>
+        <ol>
+          <li>Check every used clip at several frames against the character sheet.</li>
+          <li>Fixes, cheapest first:
+            <ol>
+              <li>Trim to end before the drift starts (find the exact frame).</li>
+              <li>Slow the clean part to fill the slot.</li>
+              <li>Crop to frame out the drifting character.</li>
+              <li>Recast the slot with a good stretch of another clip.</li>
+              <li>Reroll, only with the director's yes on spend.</li>
+            </ol>
+          </li>
+          <li>Log every recast in the EDL and the change list.</li>
+        </ol>
+
+        <h3>Version discipline</h3>
+        <ol>
+          <li>Show a 20 to 40 s excerpt before the full cut.</li>
+          <li>Each version gets a short change list.</li>
+          <li>An independent reviewer agent that has not seen the work being made scores each cut out of 10 before it goes to the director.</li>
+        </ol>
+      </section>
+
+      <section id="look">
+        <h2><span class="num">09</span>The look layer</h2>
+        <p>A finishing pass over picture and captions together, applied last. It is what makes AI footage read as belonging to an era. The example below is a soft, early-2000s diffusion look: a blurred highlight layer screened back in, slight softening, lifted blacks, warm balance, saturation at 0.92, a gentle vignette and fine grain.</p>
+<pre><code>[0:v]format=yuv444p,unsharp=9:9:-0.3:9:9:0,format=gbrp,split=3[a][b][c];
+[b]gblur=sigma=30,curves=all='0/0 0.35/0.05 0.7/0.5 1/1'[h];
+[c]gblur=sigma=3[s];
+[a][s]blend=all_mode=normal:all_opacity=0.2[m];
+[m][h]blend=all_mode=screen:all_opacity=0.46,
+curves=all='0/0.04 0.25/0.265 0.75/0.78 1/0.97',
+colorbalance=rh=0.03:gh=0.01:bh=-0.03:rm=0.01:bm=-0.01,
+eq=saturation=0.92,vignette=angle=PI/9:mode=forward,noise=alls=4:allf=t+u[v]</code></pre>
+        <ol>
+          <li>Run the blend in RGB (<code>format=gbrp</code>). Blending in YUV gives a magenta cast.</li>
+          <li>Tune strength with the director. The screen opacity (0.46 here) is the main dial.</li>
+          <li>Rename the filter's labels when you splice it into a bigger graph, or labels collide.</li>
+          <li>Leave the look off sections meant to feel different, such as a documentary-style open.</li>
+          <li>On a vertical cut, apply the look to picture only and composite captions on top, so captions stay sharp on a phone.</li>
+        </ol>
+      </section>
+
+      <section id="captions">
+        <h2><span class="num">10</span>Captions and type</h2>
+
+        <h3>A system that works</h3>
+        <ol>
+          <li><strong>Body:</strong> one era-appropriate face (an italic serif works well), about 70 to 88 px on 1080p. <strong>Payoff word:</strong> the same face, bold, at about 1.6 to 1.9x, on its own row.</li>
+          <li><strong>A display treatment</strong> (such as a chrome gradient) only on the climax word and the title. Used once, it lands; used everywhere, it is noise.</li>
+          <li>Warm off-white ink with a soft drop-shadow glow. No backing boxes or dark pools; they read as smudges.</li>
+          <li>Each word fades up (opacity over 0.12 s, a small rise settling over 0.34 s) on its sung time. <strong>Never early.</strong> Gate: every in-cut word present and never early.</li>
+          <li>A caption clears before the next cut: at the later of the next cut plus 0.04 s or the line end plus 0.2 s, and never after a set exit time.</li>
+          <li>Place each line in a home zone off the faces, chosen per shot.</li>
+        </ol>
+
+        <h3>What usually gets cut</h3>
+        <ol>
+          <li>Dialogue bubbles. Captions only.</li>
+          <li>Any graphic label that repeats a sung line.</li>
+          <li>Joke tags that add noise.</li>
+          <li>An on-screen “AI Generated” label, once disclosure lives in the platform setting and description.</li>
+          <li>Keep a graphic only when it is a story beat.</li>
+        </ol>
+
+        <h3>Process</h3>
+        <ol>
+          <li>Render type as an HTML layer with a <code>seek(t)</code> function, captured frame by frame by Playwright at 2x and downscaled with Lanczos. Every frame is a pure function of t.</li>
+          <li>Show the director 2 to 4 type mock-ups on real frames before building.</li>
+          <li>For a 9:16 cut, build a separate caption layout: lower-middle zone (top near 1,180 px on a 1,920 px frame), larger sizes (about 78 px body, 140 px payoff), heavier shadow, lines broken at commas when longer than about 20 characters.</li>
+        </ol>
+      </section>
+
+      <section id="bookends">
+        <h2><span class="num">11</span>Opens and endings</h2>
+
+        <h3>Title card</h3>
+        <ol>
+          <li>The song title in the video's type system over a hero still.</li>
+          <li>Words appear over about 0.3 s, then the card dissolves into the first shot. Total about 3 s.</li>
+          <li>No white flash. A plain fade with a soft bloom reads better.</li>
+          <li>Export a 1920×1080 PNG and a 3 s clip. The still doubles as the thumbnail.</li>
+          <li>If you also have a cold open, test with and without the title card. One is often enough.</li>
+        </ol>
+
+        <h3>A cold open device (example: the TV)</h3>
+        <p>A short framing device before the song gives the joke or story its setup. One that works: a documentary-style TV in a living room.</p>
+        <ol>
+          <li>A real-looking room still with a flat TV. Measure the screen area in pixels from the still.</li>
+          <li>The TV clicks on: a soft backlight bloom, a quarter second of static, then a dark backdrop.</li>
+          <li>The director's copy plays on the screen in a documentary serif, centred. Two lines maximum.</li>
+          <li>The room has small motion: a lamp breathing a few percent, dust in the light, TV light falling on the room.</li>
+          <li>The camera drifts toward the TV, pushes through the glass until the screen fills the frame, and dissolves into the song.</li>
+          <li>Keep it short: about 8 s, two lines. Re-edit the copy whenever you shorten it so each line still follows from the one before.</li>
+          <li>Go straight into the song, with its pickup bar starting under the push-through so the music is running when the picture cuts.</li>
+          <li>No look layer on the open. The look starts with the song.</li>
+        </ol>
+
+        <h3>A matching close</h3>
+        <ol>
+          <li>Dissolve the final shot back onto the device. <strong>Hold the frame still for the length of that dissolve</strong>, then ease the camera out. Moving during the dissolve makes a double image.</li>
+          <li>Narrow the music to a small-speaker sound as the camera pulls out (high-pass about 380 Hz, low-pass about 3,000 Hz).</li>
+          <li>Switch off softly: a quarter second of static, then dark. No bright flash.</li>
+          <li>Hold a beat, then fade to true black.</li>
+          <li>Check the final frames read pure black (Y = 16 in limited range). A lifted-black look can leave the end grey.</li>
+        </ol>
+      </section>
+
+      <section id="extras">
+        <h2><span class="num">12</span>Extra deliverables</h2>
+
+        <h3>Lyric video</h3>
+        <ol>
+          <li>One background clip on loop, lyrics timed to the full song.</li>
+          <li>Slow the clip (about 0.33x with motion interpolation) so each pass runs about 8 s.</li>
+          <li>Make a seamless loop by crossfading the clip's tail into its head. Keep that crossfade short (about 0.6 s); a long one shows ghosted figures.</li>
+          <li>Place type in open space above the subjects. Break long lines at commas.</li>
+          <li>Words fade up on sung time. The climax word gets the display treatment. The title holds over the outro, then everything fades with the music.</li>
+          <li>Generated masters often peak near 0 dBTP. Add gain and a true-peak limiter to land near −14 LUFS at −1 dBTP.</li>
+        </ol>
+
+        <h3>Vertical 9:16 cut</h3>
+        <ol>
+          <li>Do a full-screen reframe, not a framed 16:9 over a blurred copy.</li>
+          <li>Make a contact sheet of every shot (start, middle, end frames) with x-position ticks, and pick a crop centre per shot. Crop 608×1080 from 1920×1080 and scale to 1080×1920.</li>
+          <li>Two-shots get a slow eased pan from one person to the other inside the shot.</li>
+          <li>The crop slides smoothly across dissolves and jumps on hard cuts.</li>
+          <li>Recrop any on-screen text from high-resolution sources so it stays sharp, and re-break it into shorter rows.</li>
+          <li>Use the separate vertical caption layout. Drop graphics laid out for the wide frame.</li>
+          <li>Keep type above the bottom 430 px and below the top 190 px, clear of platform buttons. View it full-screen on a phone before delivery.</li>
+        </ol>
+
+        <h3>YouTube copy</h3>
+        <ol>
+          <li>Title options, a hook line, a one-paragraph premise, an AI disclosure line, chapters, the full lyrics and tags.</li>
+          <li>Chapters start at 0:00, need at least three, and each must run 10 s or more.</li>
+          <li>Upload checklist: tick altered or synthetic content, set the title card as thumbnail.</li>
+        </ol>
+
+        <h3>X launch</h3>
+        <p>Platform norms change. Recheck before relying on these.</p>
+        <ol>
+          <li>Main post: a native 20 to 45 s 16:9 cut, not the full song. First line is a concrete claim; second line discloses AI.</li>
+          <li>The first 2 s carry the strongest frame and burned-in premise text, because autoplay is muted.</li>
+          <li>A same-minute self-reply thread: how it was made, the cast grid, the full video link, a question.</li>
+          <li>Post in the audience's evening and stay around for 2 hours. No hashtag dumps. Next day, post the 9:16 cut on its own.</li>
+        </ol>
+      </section>
+
+      <section id="qa">
+        <h2><span class="num">13</span>QA and masters</h2>
+
+        <h3>QA checklist</h3>
+        <ul class="check">
+          <li>Lyric gate: every word present, spelled as displayed, never early.</li>
+          <li>Every used clip checked frame by frame for identity, hands, headcount, wardrobe, logos and text.</li>
+          <li>No face reads as a real person.</li>
+          <li>No third-party footage, memes, brand UI or logos.</li>
+          <li>Every cut on a beat; no frozen frames in dissolves.</li>
+          <li>Frame count equals duration × fps.</li>
+          <li>Audio and video streams end together (pad the audio if the video runs longer).</li>
+          <li>Loudness about −14 LUFS integrated, true peak at or under −1.0 dBTP.</li>
+          <li>Final frames are true black.</li>
+          <li>The 9:16 viewed full-screen on a phone.</li>
+        </ul>
+
+        <h3>Master specs</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Deliverable</th><th>Spec</th></tr></thead>
+            <tbody>
+              <tr><td>16:9 master</td><td>1920×1080, H.264 High, CRF 16, yuv420p, BT.709 tags, AAC 320k 48 kHz, faststart</td></tr>
+              <tr><td>9:16 master</td><td>1080×1920, same settings</td></tr>
+              <tr><td>Frame rate</td><td>Match the lip-sync model (often 25 fps); otherwise match the video model (often 24 fps)</td></tr>
+              <tr><td>Loudness</td><td>−14 LUFS integrated, true peak at or under −1.0 dBTP</td></tr>
+              <tr><td>Title card</td><td>1920×1080 PNG and a 3 s clip</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Transfers and folders</h3>
+        <ol>
+          <li>Byte-exact transfer of a large file: gzip it, split the gzip into 25 MB parts, move the parts, then <code>cat parts | gunzip</code> on the other side and compare checksums. Some transfer tools rewrite raw MP4 parts; the gzip wrapper prevents that.</li>
+          <li>MPEG-TS segment-and-concat can produce wrong durations when the audio stream is shorter than the video. Pad the audio first, or use the gzip method.</li>
+          <li>Finals in <code>01_DELIVERABLES</code>, old versions in <code>_archive</code>, transfer parts in <code>_to_delete</code>. One change list per version next to the file.</li>
+          <li>Never run two heavy renders at once. Stop processes by ID, never by a name pattern that can match your own shell.</li>
+        </ol>
+      </section>
+
+      <section id="prompt">
+        <h2><span class="num">14</span>Copy-paste agent prompt</h2>
+        <p>Paste this into your agent along with a link to this page.</p>
+<pre><button class="copy" type="button" data-copy="agent-prompt">Copy</button><code id="agent-prompt">You are the editor and producer for my AI music video. I am the director. Follow the AI Music
+Video Playbook at https://lorenzen.ai/tools/music-video-playbook/ stage by stage. Stop at every
+gate, give me a default answer, and wait.
+
+Rules: keep all state in project files; log my gate answers verbatim in decisions.md; never spend
+money or credits without my explicit yes; any quality complaint from me pauses spending; never
+invent lyrics, spellings, claims or numbers; my copy is mine and you only place it; never post.
+
+Look: ultra-real, no AI shine. Original characters only. No logos or readable UI in any prompt.
+Calm edit: no zoom pulses, shake, flash frames or punch-ins. Subject motion over camera moves.
+The real song is the only audio.
+
+Edit: one shot per lyric line by default, cuts within 0.03 s of a beat. Face-to-face changes are
+hard cuts; short dissolves only into or out of wides, and only with enough real handle. Use only
+the best 2-3 s of each clip; slow it to fill. Check every clip for identity drift and fix by trim,
+slow, crop or recast before asking to reroll. Hold wides at least 2 s.
+
+Finish: apply the look layer last over picture and captions (clean opens excepted). Captions: one
+era-appropriate face, payoff word large on its own row, display treatment only on the climax,
+every word on its sung time and never early, cleared before the next cut, no boxes, no bubbles.
+
+Deliver: excerpt before full cut; versioned files with change lists; 1920x1080 and 1080x1920 at
+the lip-sync model's frame rate; -14 LUFS, -1 dBTP; true black at the end; verify frame counts,
+stream lengths and checksums after transfer. Remind me to tick the platform's AI-content box.</code></pre>
+      </section>
+
+      <section id="templates">
+        <h2><span class="num">15</span>Templates</h2>
+
+        <h3>Project folder</h3>
+<pre><code>&lt;project&gt;/
+  README.md        what is here, open issues, what to do next
+  decisions.md     every gate answer, verbatim
+  ledger.md        every generation: shot, tool, seconds, resolution, cost, keep or reject
+  audio/           song_full.wav, cut.wav, vocal_stem.wav, line_audio/
+  lyrics/          lyrics.md (display and pronunciation columns)
+  timing/          timing.json, lines.json
+  cast/            descriptor lines, character sheets, test plates
+  stills/          NN_slug.png, one per shot, contact_sheet.png
+  footage/         broll/NN_slug.mp4, sync/NNS_member_line.mp4
+  edl.json         one slot per shot: start, end, clip, in-point, speed, crop, transition
+  overlay/         seek(t) HTML jobs for captions, title, open, close
+  01_DELIVERABLES/ finals and the current change list
+  _archive/        previous versions</code></pre>
+
+        <h3>timing.json</h3>
+<pre><code>{
+  "song": {"title": "...", "cut_in": 43.08, "cut_out": 165.52, "dur": 122.44, "bpm": 130.5, "fps": 25},
+  "beats": [0.21, 0.67],
+  "downbeats": [1.16, 2.99],
+  "sections": [[0.0, 15.79, "Pre-chorus", 0.7], [15.79, 45.24, "Chorus 1", 1.0]],
+  "lines": [{"id": "L03", "t0": 15.79, "t1": 19.1, "display": "First line of the chorus",
+             "words": [[15.79, 16.71, "First"], [16.71, 17.24, "line"]]}]
+}</code></pre>
+
+        <h3>EDL slot</h3>
+<pre><code>{"slot": "10", "start": 35.13, "end": 36.97, "lyric_line": "...",
+ "cast_LtoR": ["A", "B"], "expected_clip": "footage/broll/10_slug.mp4",
+ "clip_in": 0.0, "clip_speed": 0.45, "clip_crop": null,
+ "transition_in": {"type": "hard_cut", "dur": 0},
+ "clip_note": "source 0.0-0.83 s at 0.45x; B's hair changes at about 1.0 s"}</code></pre>
+      </section>
+
+      <section id="notes">
+        <h2><span class="num">16</span>Notes you will hear, and the fix</h2>
+        <p>The director notes that come up again and again, and what fixed each one.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Note</th><th>Fix that sticks</th></tr></thead>
+            <tbody>
+              <tr><td>“The beginning feels weird.”</td><td>Cut the slow intro; open on a title card or cold open, straight into a chorus</td></tr>
+              <tr><td>“The transitions are choppy.”</td><td>Hard cuts face to face; short dissolves only at wides with real handles</td></tr>
+              <tr><td>“The text doesn't match the video.”</td><td>One type system matched to the era; words on sung time; no bubbles or boxes</td></tr>
+              <tr><td>“It doesn't look like the era.”</td><td>The look layer as the last pass, tuned up until obvious, then down slightly</td></tr>
+              <tr><td>“The characters drift.”</td><td>Frame-check every clip; trim, slow, crop or recast; reroll only with a yes</td></tr>
+              <tr><td>“These clips don't need to be used in full.”</td><td>Best 2 to 3 s of each clip only</td></tr>
+              <tr><td>“This scene is barely on screen.”</td><td>Wides held at least 2 s; short slots merged</td></tr>
+              <tr><td>“You aren't using the research.”</td><td>Reread the research and playbook before each pass; reviewer agent scores each cut</td></tr>
+              <tr><td>“That label repeats the lyric.”</td><td>No graphic that repeats a sung line</td></tr>
+              <tr><td>“Remove the AI Generated box.”</td><td>Disclose in the platform setting and description instead</td></tr>
+              <tr><td>“Shorten the open a lot.”</td><td>Two lines, about 8 s; re-edit copy whenever its setup changes</td></tr>
+              <tr><td>“It just stops.”</td><td>A bookend close, then a fade to true black</td></tr>
+              <tr><td>“Slow the loop way down.”</td><td>About 0.33x with interpolation, short loop crossfade</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>When the director's own past learnings conflict with this playbook, the director's learnings win.</p>
+      </section>
+
+    </article>
+  </div>
+
+  <footer class="wrap">Lorenzen Tools · Playbook v2.0, October 2026 · © Nate Lorenzen</footer>
+
+  <script>
+    document.querySelectorAll('[data-copy]').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var text = document.getElementById(btn.dataset.copy).textContent;
+        navigator.clipboard.writeText(text).then(function(){
+          btn.textContent = 'Copied';
+          setTimeout(function(){ btn.textContent = 'Copy'; }, 1600);
+        }).catch(function(){ btn.textContent = 'Select and copy'; });
+      });
+    });
+
+    var links = Array.prototype.slice.call(document.querySelectorAll('nav.toc a'));
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if (!e.isIntersecting) return;
+          links.forEach(function(a){ a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id); });
+        });
+      }, { rootMargin: '0px 0px -75% 0px' });
+      document.querySelectorAll('article section').forEach(function(s){ io.observe(s); });
+    }
+  </script>
+</body>
+</html>
