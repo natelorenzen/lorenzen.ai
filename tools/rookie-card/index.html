@@ -123,59 +123,89 @@
 
 
     /* ---------- pack-opening reveal (shared links) ---------- */
-    .reveal{position:fixed;inset:0;z-index:20;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:56px 16px 24px;color:#fff;overflow:hidden;
-      background:radial-gradient(90% 60% at 50% 0%,rgba(255,255,255,.14),transparent 60%),radial-gradient(70% 45% at 50% 105%,rgba(46,125,74,.55),transparent 70%),linear-gradient(180deg,#14224a,#070d22);
-      --pw:min(300px,72vw,calc((100svh - 250px) * .62))}
+    .reveal{position:fixed;inset:0;z-index:20;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;padding:60px 16px 28px;color:#fff;overflow:hidden;
+      background:radial-gradient(60% 50% at 50% 38%,rgba(255,255,255,.075),transparent 70%),radial-gradient(80% 35% at 50% 100%,var(--rv-floor),transparent 70%),#05070d;
+      --pw:min(290px,70vw,calc((100svh - 270px) * .62));--px:.5;--py:.35}
     .reveal[hidden]{display:none}
-    .reveal::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.025) 0 40px,transparent 40px 80px);pointer-events:none}
-    .rv-bar{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:16px 18px;font:600 12px "Oswald";letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.7)}
-    .rv-bar button{appearance:none;background:transparent;border:1px solid rgba(255,255,255,.4);color:#fff;border-radius:999px;padding:6px 14px;font:600 12px "Oswald";letter-spacing:.16em;text-transform:uppercase;cursor:pointer}
-    .rv-rays{position:absolute;left:var(--cx,50%);top:var(--cy,44%);width:180vmax;height:180vmax;margin:-90vmax 0 0 -90vmax;opacity:0;pointer-events:none;
-      background:repeating-conic-gradient(from 0deg,var(--rv-acc) 0 4deg,transparent 4deg 16deg);
-      -webkit-mask:radial-gradient(circle,#000 0,rgba(0,0,0,.5) 18%,transparent 42%);mask:radial-gradient(circle,#000 0,rgba(0,0,0,.5) 18%,transparent 42%);
-      animation:rv-spin 40s linear infinite}
+    .reveal::after{content:"";position:absolute;inset:-50%;pointer-events:none;opacity:.07;mix-blend-mode:overlay;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+    .rv-bar{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:18px 20px;font:500 11px "Oswald";letter-spacing:.34em;text-transform:uppercase;color:rgba(255,255,255,.5);z-index:3}
+    .rv-bar button{appearance:none;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.16);color:rgba(255,255,255,.8);border-radius:999px;padding:7px 16px;font:500 11px "Oswald";letter-spacing:.24em;text-transform:uppercase;cursor:pointer;backdrop-filter:blur(8px)}
+    .rv-bar button:hover{background:rgba(255,255,255,.1)}
+    .rv-halo{position:absolute;left:var(--cx,50%);top:var(--cy,44%);width:140vmin;height:140vmin;margin:-70vmin 0 0 -70vmin;opacity:0;pointer-events:none;border-radius:50%;
+      background:radial-gradient(circle,rgba(255,255,255,.16) 0,var(--rv-glow) 22%,transparent 60%)}
+    .rv-rays{position:absolute;left:var(--cx,50%);top:var(--cy,44%);width:170vmax;height:170vmax;margin:-85vmax 0 0 -85vmax;opacity:0;pointer-events:none;filter:blur(14px);
+      background:repeating-conic-gradient(from 0deg,rgba(255,255,255,.5) 0 1.2deg,transparent 1.2deg 14deg);
+      -webkit-mask:radial-gradient(circle,#000 0,rgba(0,0,0,.35) 14%,transparent 34%);mask:radial-gradient(circle,#000 0,rgba(0,0,0,.35) 14%,transparent 34%);
+      animation:rv-spin 90s linear infinite}
     @keyframes rv-spin{to{transform:rotate(360deg)}}
-    .rv-scene{position:relative;width:var(--pw);height:calc(var(--pw) / .62);perspective:1400px;flex:none}
-    .rv-pack{position:absolute;inset:0;appearance:none;border:0;padding:0;background:none;color:#fff;cursor:pointer;animation:rv-float 3.2s ease-in-out infinite;filter:drop-shadow(0 26px 30px rgba(0,0,0,.55))}
+    .rv-floor{position:absolute;left:50%;top:calc(var(--cy,44%) + var(--pw) / .62 * .5 + 6px);width:calc(var(--pw) * 1.5);height:calc(var(--pw) * .18);margin-left:calc(var(--pw) * -.75);border-radius:50%;
+      background:radial-gradient(closest-side,rgba(0,0,0,.75),transparent);pointer-events:none}
+    .rv-scene{position:relative;width:var(--pw);height:calc(var(--pw) / .62);perspective:1600px;flex:none;z-index:1}
+    .rv-pack{position:absolute;inset:0;appearance:none;border:0;padding:0;background:none;color:#fff;cursor:pointer;animation:rv-float 5s ease-in-out infinite;
+      -webkit-box-reflect:below 10px linear-gradient(transparent 86%,rgba(255,255,255,.1))}
     .rv-pack:focus{outline:0}
-    .rv-pack.ready{animation:rv-float 3.2s ease-in-out infinite,rv-glow 1.6s ease-in-out infinite}
-    @keyframes rv-float{0%,100%{transform:translateY(0) rotate(-1.2deg)}50%{transform:translateY(-8px) rotate(1.2deg)}}
-    @keyframes rv-glow{0%,100%{filter:drop-shadow(0 26px 30px rgba(0,0,0,.55)) drop-shadow(0 0 0 rgba(255,255,255,0))}50%{filter:drop-shadow(0 26px 30px rgba(0,0,0,.55)) drop-shadow(0 0 22px var(--rv-acc))}}
-    .rv-half{position:absolute;inset:0;overflow:hidden;border-radius:6px;
-      background:radial-gradient(120% 60% at 20% 10%,rgba(255,255,255,.22),transparent 55%),radial-gradient(100% 50% at 90% 95%,rgba(255,255,255,.12),transparent 60%),repeating-linear-gradient(-35deg,rgba(255,255,255,.035) 0 10px,transparent 10px 22px),linear-gradient(160deg,var(--rv-pri) 0%,var(--rv-dark) 46%,var(--rv-pri) 70%,var(--rv-dark) 100%)}
-    .rv-half::before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 25%,rgba(255,255,255,.28) 38%,rgba(190,220,255,.18) 44%,transparent 56%);background-size:260% 100%;animation:rv-sheen 3.6s ease-in-out infinite;mix-blend-mode:screen}
-    @keyframes rv-sheen{0%{background-position:120% 0}60%,100%{background-position:-60% 0}}
-    .rv-crimp{position:absolute;left:0;right:0;height:7%;background:repeating-linear-gradient(90deg,rgba(255,255,255,.28) 0 2px,rgba(0,0,0,.18) 2px 5px),linear-gradient(180deg,rgba(255,255,255,.25),rgba(0,0,0,.25))}
-    .rv-crimp.t{top:0}.rv-crimp.b{bottom:0}
-    .rv-label{position:absolute;inset:7% 0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 9%}
-    .rv-tearline{position:absolute;left:4%;right:4%;top:15.5%;border-top:2px dashed rgba(255,255,255,.55);font:600 calc(var(--pw) * .032) "Oswald";letter-spacing:.2em;color:rgba(255,255,255,.75);text-align:right;padding-top:3px}
-    .rv-series{font:600 calc(var(--pw) * .042) "Oswald";letter-spacing:.24em;color:var(--rv-acc);margin-top:8%}
-    .rv-logo{font:400 calc(var(--pw) * .22)/.86 "Anton";letter-spacing:.01em;text-transform:uppercase;margin-top:6%;text-shadow:0 4px 0 rgba(0,0,0,.3)}
-    .rv-logo em{display:block;font:400 calc(var(--pw) * .17)/1 "Yellowtail";color:var(--rv-acc);font-style:normal;text-transform:none;margin-top:-2%;text-shadow:0 3px 0 rgba(0,0,0,.35)}
-    .rv-seal{margin:7% 0 6%;width:calc(var(--pw) * .26);aspect-ratio:1;border-radius:50%;background:var(--rv-acc);color:var(--rv-on);border:3px solid #fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font:600 calc(var(--pw) * .034)/1.1 "Oswald";letter-spacing:.14em;box-shadow:0 6px 14px rgba(0,0,0,.35)}
-    .rv-seal b{font:400 calc(var(--pw) * .1)/1 "Anton";letter-spacing:0}
-    .rv-for{background:#fff;color:#14161c;border-radius:6px;padding:6px 12px 7px;max-width:100%;box-shadow:0 4px 10px rgba(0,0,0,.3)}
-    .rv-for small{display:block;font:600 calc(var(--pw) * .028) "Oswald";letter-spacing:.2em;color:#6b6a66}
-    .rv-for span{display:block;font:500 calc(var(--pw) * .058)/1.15 "Oswald";white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-    .rv-site{position:absolute;bottom:8.5%;left:0;right:0;font:400 calc(var(--pw) * .032) "Courier Prime";color:rgba(255,255,255,.7)}
+    @keyframes rv-float{0%,100%{transform:translateY(0) rotateY(calc((var(--px) - .5) * 14deg)) rotateX(calc((.5 - var(--py)) * 8deg))}50%{transform:translateY(-7px) rotateY(calc((var(--px) - .5) * 14deg)) rotateX(calc((.5 - var(--py)) * 8deg))}}
+    .rv-half{position:absolute;inset:0;overflow:hidden;border-radius:5px;
+      background:
+        radial-gradient(90% 55% at calc(var(--px) * 100%) calc(var(--py) * 100%),rgba(255,255,255,.26),transparent 60%),
+        repeating-linear-gradient(90deg,rgba(255,255,255,.018) 0 1px,transparent 1px 3px),
+        linear-gradient(165deg,#2a2d36 0%,var(--rv-dark) 34%,#0d0f15 58%,var(--rv-pri) 100%);
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)}
+    .rv-half::before{content:"";position:absolute;inset:0;pointer-events:none;mix-blend-mode:color-dodge;opacity:.13;
+      background:linear-gradient(calc(110deg + var(--px) * 40deg),transparent 34%,#ff8fd8 42%,#8fd6ff 48%,#b6ffc9 54%,#ffe98f 60%,transparent 68%);
+      background-size:240% 240%;background-position:calc(var(--px) * 100%) calc(var(--py) * 100%);animation:rv-iri 7s ease-in-out infinite}
+    @keyframes rv-iri{0%,100%{filter:hue-rotate(0)}50%{filter:hue-rotate(40deg)}}
+    .rv-frame{position:absolute;inset:20% 7% 10%;border:1px solid var(--rv-foil);border-radius:3px;opacity:.75}
+    .rv-frame::after{content:"";position:absolute;inset:5px;border:1px solid var(--rv-foil);border-radius:2px;opacity:.45}
+    .rv-crimp{position:absolute;left:0;right:0;height:6.5%;
+      background:repeating-linear-gradient(90deg,rgba(255,255,255,.22) 0 1px,rgba(0,0,0,.25) 1px 4px),linear-gradient(180deg,#d9dbe2,#7d818c 55%,#3a3d46)}
+    .rv-crimp.t{top:0}.rv-crimp.b{bottom:0;transform:scaleY(-1)}
+    .rv-tearline{position:absolute;left:7%;right:7%;top:15.5%;height:0;border-top:1px dotted rgba(255,255,255,.35)}
+    .rv-tearline span{position:absolute;right:0;top:4px;font:500 calc(var(--pw) * .026) "Oswald";letter-spacing:.3em;color:rgba(255,255,255,.45)}
+    .rv-label{position:absolute;inset:25% 12% 13%;display:flex;flex-direction:column;align-items:center;text-align:center}
+    .rv-series{font:500 calc(var(--pw) * .033) "Oswald";letter-spacing:.42em;color:rgba(255,255,255,.7);padding-left:.42em}
+    .rv-logo{font:400 calc(var(--pw) * .2)/.9 "Anton";letter-spacing:.04em;text-transform:uppercase;margin-top:6%;
+      background:linear-gradient(180deg,#fff 0%,#e9ebf1 38%,#9ea3ae 52%,#f4f5f8 70%,#b9bdc7 100%);-webkit-background-clip:text;background-clip:text;color:transparent;
+      filter:drop-shadow(0 2px 0 rgba(0,0,0,.45)) drop-shadow(0 10px 18px rgba(0,0,0,.4))}
+    .rv-logo em{display:block;font:400 calc(var(--pw) * .15)/1 "Yellowtail";font-style:normal;text-transform:none;letter-spacing:0;margin-top:-1%;
+      background:linear-gradient(180deg,var(--rv-foil-hi),var(--rv-foil) 55%,var(--rv-foil-lo));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .rv-rule{width:38%;height:1px;margin:9% 0 6%;background:linear-gradient(90deg,transparent,var(--rv-foil),transparent)}
+    .rv-ed{font:500 calc(var(--pw) * .03) "Oswald";letter-spacing:.38em;color:var(--rv-foil);padding-left:.38em}
+    .rv-for{margin-top:auto;width:100%;padding:8px 6px 9px;border-top:1px solid rgba(255,255,255,.14);border-bottom:1px solid rgba(255,255,255,.14)}
+    .rv-for small{display:block;font:500 calc(var(--pw) * .026) "Oswald";letter-spacing:.34em;color:rgba(255,255,255,.5);padding-left:.34em}
+    .rv-for span{display:block;margin-top:3px;font:500 calc(var(--pw) * .06)/1.15 "Oswald";letter-spacing:.04em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .rv-site{position:absolute;bottom:6.6%;left:0;right:0;text-align:center;font:500 calc(var(--pw) * .024) "Oswald";letter-spacing:.34em;color:rgba(255,255,255,.4)}
     .rv-card{position:absolute;left:7%;right:7%;top:50%;aspect-ratio:1000/1400;transform:translateY(-46%);z-index:0}
+    .rv-tilt{position:absolute;inset:0;transform-style:preserve-3d;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
     .rv-flip{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateY(180deg)}
-    .rv-face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:4%/2.9%;overflow:hidden;box-shadow:0 26px 50px rgba(0,0,0,.5)}
+    .rv-face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:4%/2.9%;overflow:hidden;
+      box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 40px 70px -20px rgba(0,0,0,.85),0 10px 24px rgba(0,0,0,.45)}
     .rv-face canvas{display:block;width:100%;height:100%}
     .rv-face.rv-b{transform:rotateY(180deg)}
-    .rv-shine{position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.55) 45%,rgba(160,220,255,.35) 50%,transparent 62%);background-size:300% 100%;background-position:130% 0;mix-blend-mode:overlay}
-    .rv-flash{position:absolute;left:var(--cx,50%);top:var(--cy,44%);width:10px;height:10px;margin:-5px;border-radius:50%;background:#fff;opacity:0;pointer-events:none;box-shadow:0 0 120px 80px #fff}
-    .rv-spark{position:absolute;left:var(--cx,50%);top:var(--cy,44%);width:9px;height:9px;margin:-4.5px;pointer-events:none;background:#fff;clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%)}
-    .rv-hint{position:relative;margin:0;min-height:24px;font:500 15px "Oswald";letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.8)}
-    .rv-cap{position:relative;text-align:center;opacity:0}
-    .rv-cap small{display:block;font:600 12px "Oswald";letter-spacing:.26em;color:var(--rv-acc)}
-    .rv-cap strong{display:block;font:400 clamp(30px,6vw,44px)/1 "Anton";text-transform:uppercase;margin:6px 0 4px}
-    .rv-cap span{font:400 13px "Courier Prime";color:rgba(255,255,255,.7)}
-    .rv-actions{position:relative;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;opacity:0;pointer-events:none}
+    .rv-glare{position:absolute;inset:0;pointer-events:none;mix-blend-mode:soft-light;
+      background:radial-gradient(70% 55% at calc(var(--px) * 100%) calc(var(--py) * 100%),rgba(255,255,255,.75),rgba(255,255,255,.12) 40%,transparent 70%)}
+    .rv-holo{position:absolute;inset:0;pointer-events:none;mix-blend-mode:color-dodge;opacity:.16;
+      background:linear-gradient(calc(115deg + var(--px) * 30deg),transparent 18%,#ff7ad1 30%,#7ad3ff 42%,#9dffb4 54%,#ffe27a 66%,transparent 80%);
+      background-size:260% 260%;background-position:calc(var(--px) * 100%) calc(var(--py) * 100%)}
+    .rv-shine{position:absolute;inset:0;pointer-events:none;background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.7) 48%,rgba(255,255,255,.15) 54%,transparent 62%);background-size:320% 100%;background-position:140% 0;mix-blend-mode:overlay}
+    .rv-bloom{position:absolute;left:var(--cx,50%);top:var(--cy,44%);width:70vmin;height:70vmin;margin:-35vmin 0 0 -35vmin;border-radius:50%;opacity:0;pointer-events:none;
+      background:radial-gradient(circle,#fff 0,rgba(255,255,255,.55) 18%,var(--rv-glow) 40%,transparent 68%);mix-blend-mode:screen}
+    .rv-dust{position:absolute;left:0;top:0;border-radius:50%;pointer-events:none;background:#fff;box-shadow:0 0 6px 1px currentColor}
+    .rv-hint{position:relative;margin:30px 0 0;min-height:20px;font:500 11px "Oswald";letter-spacing:.42em;text-transform:uppercase;color:rgba(255,255,255,.6);padding-left:.42em;z-index:1}
+    .rv-hint.go{animation:rv-pulse 2.4s ease-in-out infinite}
+    @keyframes rv-pulse{0%,100%{opacity:.45}50%{opacity:1}}
+    .rv-cap{position:relative;text-align:center;opacity:0;z-index:1}
+    .rv-cap small{display:block;text-transform:uppercase;font:500 11px "Oswald";letter-spacing:.42em;color:var(--rv-foil);padding-left:.42em}
+    .rv-cap strong{display:block;font:400 clamp(30px,6vw,46px)/1 "Anton";letter-spacing:.03em;text-transform:uppercase;margin:10px 0 8px;
+      background:linear-gradient(180deg,#fff 30%,#b9bdc7);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .rv-cap span{font:400 12px "Oswald";letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+    .rv-actions{position:relative;display:flex;flex-wrap:wrap;justify-content:center;gap:10px;opacity:0;pointer-events:none;z-index:1}
     .rv-actions.on{pointer-events:auto}
-    .rv-actions .btn{color:#fff;border-color:rgba(255,255,255,.55)}
-    .rv-actions .btn:hover{background:rgba(255,255,255,.1)}
-    .rv-actions .btn.primary{background:var(--red);border-color:var(--red)}
+    .rv-actions .btn{min-height:44px;padding:0 20px;border-radius:999px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.05);color:#fff;font:500 12px "Oswald";letter-spacing:.24em;backdrop-filter:blur(10px)}
+    .rv-actions .btn:hover{background:rgba(255,255,255,.12)}
+    .rv-actions .btn.primary{background:linear-gradient(180deg,#fff,#d9dce3);border-color:#fff;color:#0b0d14;box-shadow:0 8px 24px rgba(255,255,255,.12)}
+    .rv-actions .btn.primary:hover{background:#fff}
     body.rv-open{overflow:hidden}
 
     @media (max-width:900px){
@@ -274,21 +304,23 @@
   <footer>The '26 card series is presented by <a href="https://www.artificialturfwar.com/" target="_blank" rel="noopener">Artificial Turf War</a> (<a href="https://x.com/PlayATW" target="_blank" rel="noopener">@PlayATW</a>), eight AI models running fantasy football teams. Profile data comes from X's public profile pages via the FxTwitter API. Uploaded photos stay on your device. Rookie Card is not affiliated with X Corp., MLB, or any trading card company.</footer>
 </main>
 <div class="reveal" id="reveal" role="dialog" aria-modal="true" aria-label="Open your rookie card pack" hidden>
+  <div class="rv-halo" id="rvHalo"></div>
   <div class="rv-rays" id="rvRays"></div>
-  <div class="rv-bar"><span>@PlayATW Series '26</span><button type="button" id="rvSkip">Skip</button></div>
+  <div class="rv-floor"></div>
+  <div class="rv-bar"><span>@PlayATW · Series '26</span><button type="button" id="rvSkip">Skip</button></div>
   <div class="rv-scene" id="rvScene">
-    <div class="rv-card" id="rvCard"><div class="rv-flip" id="rvFlip">
-      <div class="rv-face"><canvas id="rvFront" width="1000" height="1400"></canvas><div class="rv-shine" id="rvShine"></div></div>
-      <div class="rv-face rv-b"><canvas id="rvBack" width="1000" height="1400"></canvas></div>
-    </div></div>
+    <div class="rv-card" id="rvCard"><div class="rv-tilt" id="rvTilt"><div class="rv-flip" id="rvFlip">
+      <div class="rv-face"><canvas id="rvFront" width="1000" height="1400"></canvas><div class="rv-holo"></div><div class="rv-glare"></div><div class="rv-shine" id="rvShine"></div></div>
+      <div class="rv-face rv-b"><canvas id="rvBack" width="1000" height="1400"></canvas><div class="rv-glare"></div></div>
+    </div></div></div>
     <button type="button" class="rv-pack" id="rvPack" aria-label="Open the pack">
       <div class="rv-half" id="rvBody"></div>
       <div class="rv-half" id="rvTear"></div>
     </button>
   </div>
-  <div class="rv-flash" id="rvFlash"></div>
-  <p class="rv-hint" id="rvHint" role="status">Sorting the pack…</p>
-  <div class="rv-cap" id="rvCap"><small>You pulled a rookie card</small><strong id="rvName"></strong><span id="rvMeta"></span></div>
+  <div class="rv-bloom" id="rvBloom"></div>
+  <p class="rv-hint" id="rvHint" role="status">Preparing your pack</p>
+  <div class="rv-cap" id="rvCap"><small>You pulled</small><strong id="rvName"></strong><span id="rvMeta"></span></div>
   <div class="rv-actions" id="rvActions">
     <button class="btn" type="button" id="rvFlipBtn">Flip for stats</button>
     <button class="btn primary" type="button" id="rvMine">Print your own</button>
@@ -868,109 +900,161 @@
 
   // ---------- pack opening (people arriving from a shared link) ----------
   // The pack doubles as the loading screen: it opens once the lookup and photo are in.
-  function packFace(handle, cardHtml) {
-    return `<div class="rv-crimp t"></div><div class="rv-tearline">TEAR HERE</div>
-      <div class="rv-label"><div class="rv-series">@PLAYATW SERIES '26</div>
+  const FOILS = { // foil linework per card design: [mid, highlight, lowlight]
+    league: ['#c9a96a', '#f3e2b8', '#8a6d38'], ivy: ['#d4b45c', '#f6e7b0', '#8f7428'], sunset: ['#e3a77c', '#fbd9c0', '#9c5d38'],
+    chrome: ['#d4af55', '#f6e3a8', '#8c6f2a'], expansion: ['#a9e8d8', '#e6fff8', '#4aa891'],
+  };
+  function packFace(handle) {
+    return `<div class="rv-crimp t"></div><div class="rv-frame"></div><div class="rv-tearline"></div>
+      <div class="rv-label"><div class="rv-series">@PLAYATW · SERIES '26</div>
         <div class="rv-logo">Rookie<em>Card</em></div>
-        <div class="rv-seal"><b>1</b>CARD</div>
+        <div class="rv-rule"></div><div class="rv-ed">AN EDITION OF ONE</div>
         <div class="rv-for"><small>PACKED FOR</small><span>@${handle}</span></div></div>
-      <div class="rv-site">artificialturfwar.com</div><div class="rv-crimp b"></div>`;
+      <div class="rv-site">ARTIFICIALTURFWAR.COM</div><div class="rv-crimp b"></div>`;
   }
   // zigzag tear line across the pack at 15.5% height
   function tearClip(top) {
-    const pts = [], n = 14, y = 15.5;
-    for (let i = 0; i <= n; i++) pts.push(`${(i / n * 100).toFixed(2)}% ${i % 2 ? y + 1.6 : y - 1.6}%`);
+    const pts = [], n = 22, y = 15.5;
+    for (let i = 0; i <= n; i++) pts.push(`${(i / n * 100).toFixed(2)}% ${i % 2 ? y + 1 : y - 1}%`);
     return top ? `polygon(0 0,100% 0,${pts.reverse().join(',')})` : `polygon(${pts.join(',')},100% 100%,0 100%)`;
+  }
+
+  // pointer (or a slow idle drift on touch) drives the foil, glare and tilt
+  let rvPointer = false, rvIdle;
+  function rvLight(px, py) { const R = $('reveal'); R.style.setProperty('--px', px.toFixed(3)); R.style.setProperty('--py', py.toFixed(3)); }
+  function rvTiltTo(px, py) { $('rvTilt').style.transform = `rotateY(${(px - .5) * 22}deg) rotateX(${(.5 - py) * 16}deg)`; }
+  $('reveal').addEventListener('pointermove', e => {
+    if (e.pointerType !== 'mouse') return;
+    rvPointer = true;
+    const r = $('rvScene').getBoundingClientRect();
+    const px = Math.min(1, Math.max(0, (e.clientX - r.left) / r.width)), py = Math.min(1, Math.max(0, (e.clientY - r.top) / r.height));
+    rvLight(px, py); if ($('rvActions').classList.contains('on')) rvTiltTo(px, py);
+  });
+  function rvDrift(on) {
+    cancelAnimationFrame(rvIdle);
+    if (!on || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const t0 = performance.now();
+    const step = now => {
+      if (!rvPointer) {
+        const t = (now - t0) / 1000, px = .5 + Math.sin(t * .55) * .32, py = .38 + Math.cos(t * .4) * .2;
+        rvLight(px, py); if ($('rvActions').classList.contains('on')) rvTiltTo(.5 + (px - .5) * .5, .5 + (py - .38) * .5);
+      }
+      rvIdle = requestAnimationFrame(step);
+    };
+    rvIdle = requestAnimationFrame(step);
   }
 
   async function openPack(handle, overrides, themeKey) {
     revealing = true;
-    const R = $('reveal'), t = THEMES[themeKey] || THEMES.league;
+    const R = $('reveal'), t = THEMES[themeKey] || THEMES.league, foil = FOILS[themeKey] || FOILS.league;
     const still = matchMedia('(prefers-reduced-motion: reduce)').matches, T = ms => still ? 1 : ms;
     R.style.setProperty('--rv-pri', t.primary); R.style.setProperty('--rv-dark', t.dark);
-    R.style.setProperty('--rv-acc', t.accent); R.style.setProperty('--rv-on', t.onAccent);
+    R.style.setProperty('--rv-foil', foil[0]); R.style.setProperty('--rv-foil-hi', foil[1]); R.style.setProperty('--rv-foil-lo', foil[2]);
+    R.style.setProperty('--rv-glow', hexA(foil[0], .14)); R.style.setProperty('--rv-floor', hexA(t.primary, .55));
     const face = packFace(handle.replace(/[^\w]/g, ''));
     $('rvBody').innerHTML = face; $('rvTear').innerHTML = face;
     $('rvBody').style.clipPath = tearClip(false); $('rvTear').style.clipPath = tearClip(true);
     R.hidden = false; document.body.classList.add('rv-open'); $('rvPack').focus({preventScroll: true});
     const center = () => { const r = $('rvScene').getBoundingClientRect(); R.style.setProperty('--cx', r.left + r.width / 2 + 'px'); R.style.setProperty('--cy', r.top + r.height / 2 + 'px'); };
     center(); addEventListener('resize', center);
+    R.animate([{opacity: 0}, {opacity: 1}], {duration: T(700), easing: 'ease-out'});
+    rvDrift(true); dust(true);
 
     let tapped, skipped = false;
     const tap = new Promise(r => tapped = r);
     $('rvPack').addEventListener('click', () => tapped(), {once: true});
-    const skip = () => { skipped = true; tapped(); };
-    $('rvSkip').addEventListener('click', skip, {once: true});
+    $('rvSkip').addEventListener('click', () => { skipped = true; tapped(); }, {once: true});
 
     const ok = await lookup(handle, overrides);
     await fontsLoaded;
     if (!ok) { closeReveal(); return; }
     drawFront($('rvFront')); drawBack($('rvBack'));
     $('rvName').textContent = (S.name.trim() || S.handle);
-    $('rvMeta').textContent = `Card No. ${cardNo()} · ${S.pos} · ${posName()} · ${short(S.followers)} followers`;
-    $('rvPack').classList.add('ready');
-    $('rvHint').textContent = 'Tap the pack to open it';
+    $('rvMeta').textContent = `No. ${cardNo()}  ·  ${posName()}  ·  ${short(S.followers)} followers`;
+    $('rvHint').textContent = 'Tap to open'; $('rvHint').classList.add('go');
 
     await tap;
-    $('rvSkip').hidden = true;
-    const run = (el, frames, ms, easing = 'cubic-bezier(.2,.7,.2,1)') => skipped ? null : el.animate(frames, {duration: T(ms), easing, fill: 'forwards'}).finished;
+    $('rvSkip').hidden = true; $('rvHint').classList.remove('go'); $('rvHint').textContent = '';
+    const ease = 'cubic-bezier(.22,.8,.16,1)';
+    const run = (el, frames, ms, easing = ease, delay = 0) => skipped ? null : el.animate(frames, {duration: T(ms), easing, delay: T(delay), fill: 'forwards'}).finished;
     const pack = $('rvPack'), card = $('rvCard'), flip = $('rvFlip');
-    pack.classList.remove('ready'); pack.style.animation = 'none'; $('rvHint').textContent = '';
+    pack.style.animation = 'none';
 
     if (!skipped) {
-      await run(pack, [{transform: 'rotate(0)'}, {transform: 'rotate(-3deg) scale(1.02)'}, {transform: 'rotate(3deg) scale(1.03)'}, {transform: 'rotate(-2deg) scale(1.03)'}, {transform: 'rotate(0) scale(1.02)'}], 420, 'ease-in-out');
-      sparks(10, .155 - .5);
-      run(pack, [{transform: 'scale(1.02)'}, {transform: 'scale(1)'}], 300);
-      await run($('rvTear'), [{transform: 'none', opacity: 1}, {transform: 'translate(34%,-60%) rotate(24deg)', opacity: 0}], 650, 'cubic-bezier(.5,0,.75,0)');
+      await run(pack, [{transform: 'scale(1)'}, {transform: 'scale(.985)'}, {transform: 'scale(1.025)'}], 520, 'cubic-bezier(.5,0,.3,1)');
+      glints(14, .155 - .5, 120);
+      await run($('rvTear'), [{transform: 'none', opacity: 1}, {transform: 'translate(22%,-34%) rotate(14deg)', opacity: 0}], 900, 'cubic-bezier(.55,0,.3,1)');
       card.style.zIndex = 0;
-      await run(card, [{transform: 'translateY(-46%)'}, {transform: 'translateY(-100%)'}], 750);
+      await run(card, [{transform: 'translateY(-46%)'}, {transform: 'translateY(-98%)'}], 1100, 'cubic-bezier(.3,.1,.2,1)');
       card.style.zIndex = 2;
-      run($('rvBody'), [{transform: 'none', opacity: 1}, {transform: 'translateY(70%) rotate(-7deg)', opacity: 0}], 650, 'cubic-bezier(.5,0,.75,0)');
-      await run(card, [{transform: 'translateY(-100%)'}, {transform: 'translateY(-50%) scale(1.12)'}], 800);
-      $('rvRays').animate([{opacity: 0}, {opacity: .22}], {duration: T(900), fill: 'forwards'});
-      $('rvFlash').animate([{opacity: 0}, {opacity: .9, offset: .35}, {opacity: 0}], {duration: T(900), fill: 'forwards'});
-      sparks(26, 0);
-      await run(flip, [{transform: 'rotateY(180deg) scale(1)'}, {transform: 'rotateY(90deg) scale(1.08)', offset: .5}, {transform: 'rotateY(0deg) scale(1)'}], 950, 'cubic-bezier(.3,.6,.25,1)');
-      run($('rvShine'), [{backgroundPosition: '130% 0'}, {backgroundPosition: '-60% 0'}], 1100, 'ease-in-out');
+      run(pack, [{transform: 'scale(1.025)', opacity: 1}, {transform: 'translateY(26%) scale(.92)', opacity: 0}], 900, 'cubic-bezier(.5,0,.6,1)');
+      await run(card, [{transform: 'translateY(-98%)'}, {transform: 'translateY(-50%) scale(1.1)'}], 1000);
+      run($('rvHalo'), [{opacity: 0}, {opacity: 1}], 1400, 'ease-out');
+      run($('rvRays'), [{opacity: 0}, {opacity: .18}], 1800, 'ease-out');
+      run($('rvBloom'), [{opacity: 0, transform: 'scale(.4)'}, {opacity: .75, transform: 'scale(1)', offset: .4}, {opacity: 0, transform: 'scale(1.5)'}], 1500, 'ease-out');
+      glints(36, 0, 260);
+      await run(flip, [{transform: 'rotateY(180deg) rotateX(0deg)'}, {transform: 'rotateY(80deg) rotateX(6deg)', offset: .45}, {transform: 'rotateY(0deg) rotateX(0deg)'}], 1400, 'cubic-bezier(.45,.05,.2,1)');
+      run($('rvShine'), [{backgroundPosition: '140% 0'}, {backgroundPosition: '-60% 0'}], 1500, 'cubic-bezier(.4,0,.2,1)');
     }
     // final state (also what Skip lands on)
-    for (const el of [pack, card, flip, $('rvTear'), $('rvBody'), $('rvRays'), $('rvShine')]) el.getAnimations().forEach(a => a.cancel());
+    for (const el of [pack, card, flip, $('rvTear'), $('rvBody'), $('rvRays'), $('rvHalo'), $('rvShine')]) el.getAnimations().forEach(a => a.cancel());
     pack.style.visibility = 'hidden';
-    card.style.zIndex = 2; card.style.transform = 'translateY(-50%) scale(1.12)'; flip.style.transform = 'rotateY(0deg)';
-    $('rvRays').style.opacity = .22;
-    $('rvCap').animate([{opacity: 0, transform: 'translateY(10px)'}, {opacity: 1, transform: 'none'}], {duration: T(450), fill: 'forwards'});
-    $('rvActions').animate([{opacity: 0}, {opacity: 1}], {duration: T(450), delay: T(150), fill: 'forwards'});
+    card.style.zIndex = 2; card.style.transform = 'translateY(-50%) scale(1.1)'; flip.style.transform = 'rotateY(0deg)';
+    $('rvRays').style.opacity = .18; $('rvHalo').style.opacity = 1;
+    $('rvCap').animate([{opacity: 0, transform: 'translateY(12px)', filter: 'blur(6px)'}, {opacity: 1, transform: 'none', filter: 'blur(0)'}], {duration: T(800), easing: ease, fill: 'forwards'});
+    $('rvActions').animate([{opacity: 0, transform: 'translateY(8px)'}, {opacity: 1, transform: 'none'}], {duration: T(700), delay: T(250), easing: ease, fill: 'forwards'});
     $('rvActions').classList.add('on'); $('rvMine').focus({preventScroll: true});
   }
 
-  function sparks(n, yOff) {
-    const R = $('reveal'), acc = getComputedStyle(R).getPropertyValue('--rv-acc');
-    const sceneH = $('rvScene').offsetHeight;
+  // fine glints: a burst from a point relative to the pack's center
+  function glints(n, yOff, spread) {
+    const R = $('reveal'), foil = getComputedStyle(R).getPropertyValue('--rv-foil-hi').trim();
+    const sceneH = $('rvScene').offsetHeight, cx = parseFloat(R.style.getPropertyValue('--cx')), cy = parseFloat(R.style.getPropertyValue('--cy')) + yOff * sceneH;
     for (let i = 0; i < n; i++) {
-      const el = document.createElement('i'); el.className = 'rv-spark';
-      el.style.background = i % 3 ? '#fff' : acc; el.style.marginTop = `${yOff * sceneH - 4.5}px`;
+      const el = document.createElement('i'), s = 1.5 + Math.random() * 2.5; el.className = 'rv-dust';
+      Object.assign(el.style, {width: s + 'px', height: s + 'px', color: i % 2 ? '#fff' : foil, background: i % 2 ? '#fff' : foil});
       R.appendChild(el);
-      const a = Math.random() * Math.PI * 2, d = 90 + Math.random() * 190, sc = .8 + Math.random() * 1.8;
-      el.animate([{transform: 'translate(0,0) scale(0) rotate(0)', opacity: 1}, {transform: `translate(${Math.cos(a) * d}px,${Math.sin(a) * d}px) scale(${sc}) rotate(${Math.random() * 180}deg)`, opacity: 0}],
-        {duration: 700 + Math.random() * 600, easing: 'cubic-bezier(.2,.8,.3,1)'}).finished.then(() => el.remove());
+      const a = Math.random() * Math.PI * 2, d = spread * (.4 + Math.random() * .8);
+      el.animate([{transform: `translate(${cx}px,${cy}px) scale(.2)`, opacity: 0}, {opacity: 1, offset: .15}, {transform: `translate(${cx + Math.cos(a) * d}px,${cy + Math.sin(a) * d - 40}px) scale(1)`, opacity: 0}],
+        {duration: 1400 + Math.random() * 1200, easing: 'cubic-bezier(.15,.8,.3,1)'}).finished.then(() => el.remove());
     }
+  }
+  // ambient gold dust drifting up through the spotlight
+  let dustTimer;
+  function dust(on) {
+    clearInterval(dustTimer);
+    if (!on || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const R = $('reveal');
+    dustTimer = setInterval(() => {
+      if (R.hidden) return;
+      const foil = getComputedStyle(R).getPropertyValue('--rv-foil-hi').trim();
+      const el = document.createElement('i'), s = 1 + Math.random() * 2.2; el.className = 'rv-dust';
+      Object.assign(el.style, {width: s + 'px', height: s + 'px', color: foil, background: Math.random() > .5 ? '#fff' : foil});
+      R.appendChild(el);
+      const x = innerWidth * (.2 + Math.random() * .6), y = innerHeight * (.55 + Math.random() * .45), dx = (Math.random() - .5) * 80;
+      el.animate([{transform: `translate(${x}px,${y}px)`, opacity: 0}, {opacity: .8, offset: .3}, {transform: `translate(${x + dx}px,${y - innerHeight * .5}px)`, opacity: 0}],
+        {duration: 6000 + Math.random() * 4000, easing: 'linear'}).finished.then(() => el.remove());
+    }, 260);
   }
 
   function closeReveal() {
     const R = $('reveal');
     if (R.hidden) return;
-    R.animate([{opacity: 1}, {opacity: 0}], {duration: 250}).finished.then(() => { R.hidden = true; document.body.classList.remove('rv-open'); revealing = false; });
+    R.animate([{opacity: 1}, {opacity: 0}], {duration: 350, easing: 'ease-in'}).finished.then(() => {
+      R.hidden = true; document.body.classList.remove('rv-open'); revealing = false; rvDrift(false); dust(false);
+      R.querySelectorAll('.rv-dust').forEach(el => el.remove());
+    });
   }
   $('rvFlipBtn').addEventListener('click', () => {
     const f = $('rvFlip'), back = f.style.transform === 'rotateY(180deg)';
-    f.style.transition = 'transform .8s cubic-bezier(.2,.75,.25,1)'; f.style.transform = back ? 'rotateY(0deg)' : 'rotateY(180deg)';
+    f.style.transition = 'transform 1s cubic-bezier(.45,.05,.2,1)'; f.style.transform = back ? 'rotateY(0deg)' : 'rotateY(180deg)';
     $('rvFlipBtn').textContent = back ? 'Flip for stats' : 'Flip to front';
   });
   $('rvCard').addEventListener('click', () => { if ($('rvActions').classList.contains('on')) $('rvFlipBtn').click(); });
   $('rvClose').addEventListener('click', closeReveal);
   $('rvMine').addEventListener('click', () => {
     closeReveal(); $('handle').value = ''; window.scrollTo({top: 0});
-    setStatus('Your turn: type your handle and print your own card.'); setTimeout(() => $('handle').focus(), 300);
+    setStatus('Your turn: type your handle and print your own card.'); setTimeout(() => $('handle').focus(), 400);
   });
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && !$('reveal').hidden && $('rvActions').classList.contains('on')) closeReveal(); });
 
