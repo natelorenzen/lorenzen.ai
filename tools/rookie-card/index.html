@@ -121,6 +121,63 @@
     footer{padding-top:30px;color:var(--muted);font:400 12px/1.6 "Courier Prime",monospace}
     footer a{color:var(--navy)}
 
+
+    /* ---------- pack-opening reveal (shared links) ---------- */
+    .reveal{position:fixed;inset:0;z-index:20;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:56px 16px 24px;color:#fff;overflow:hidden;
+      background:radial-gradient(90% 60% at 50% 0%,rgba(255,255,255,.14),transparent 60%),radial-gradient(70% 45% at 50% 105%,rgba(46,125,74,.55),transparent 70%),linear-gradient(180deg,#14224a,#070d22);
+      --pw:min(300px,72vw,calc((100svh - 250px) * .62))}
+    .reveal[hidden]{display:none}
+    .reveal::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.025) 0 40px,transparent 40px 80px);pointer-events:none}
+    .rv-bar{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:16px 18px;font:600 12px "Oswald";letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+    .rv-bar button{appearance:none;background:transparent;border:1px solid rgba(255,255,255,.4);color:#fff;border-radius:999px;padding:6px 14px;font:600 12px "Oswald";letter-spacing:.16em;text-transform:uppercase;cursor:pointer}
+    .rv-rays{position:absolute;left:var(--cx,50%);top:var(--cy,44%);width:180vmax;height:180vmax;margin:-90vmax 0 0 -90vmax;opacity:0;pointer-events:none;
+      background:repeating-conic-gradient(from 0deg,var(--rv-acc) 0 4deg,transparent 4deg 16deg);
+      -webkit-mask:radial-gradient(circle,#000 0,rgba(0,0,0,.5) 18%,transparent 42%);mask:radial-gradient(circle,#000 0,rgba(0,0,0,.5) 18%,transparent 42%);
+      animation:rv-spin 40s linear infinite}
+    @keyframes rv-spin{to{transform:rotate(360deg)}}
+    .rv-scene{position:relative;width:var(--pw);height:calc(var(--pw) / .62);perspective:1400px;flex:none}
+    .rv-pack{position:absolute;inset:0;appearance:none;border:0;padding:0;background:none;color:#fff;cursor:pointer;animation:rv-float 3.2s ease-in-out infinite;filter:drop-shadow(0 26px 30px rgba(0,0,0,.55))}
+    .rv-pack:focus{outline:0}
+    .rv-pack.ready{animation:rv-float 3.2s ease-in-out infinite,rv-glow 1.6s ease-in-out infinite}
+    @keyframes rv-float{0%,100%{transform:translateY(0) rotate(-1.2deg)}50%{transform:translateY(-8px) rotate(1.2deg)}}
+    @keyframes rv-glow{0%,100%{filter:drop-shadow(0 26px 30px rgba(0,0,0,.55)) drop-shadow(0 0 0 rgba(255,255,255,0))}50%{filter:drop-shadow(0 26px 30px rgba(0,0,0,.55)) drop-shadow(0 0 22px var(--rv-acc))}}
+    .rv-half{position:absolute;inset:0;overflow:hidden;border-radius:6px;
+      background:radial-gradient(120% 60% at 20% 10%,rgba(255,255,255,.22),transparent 55%),radial-gradient(100% 50% at 90% 95%,rgba(255,255,255,.12),transparent 60%),repeating-linear-gradient(-35deg,rgba(255,255,255,.035) 0 10px,transparent 10px 22px),linear-gradient(160deg,var(--rv-pri) 0%,var(--rv-dark) 46%,var(--rv-pri) 70%,var(--rv-dark) 100%)}
+    .rv-half::before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 25%,rgba(255,255,255,.28) 38%,rgba(190,220,255,.18) 44%,transparent 56%);background-size:260% 100%;animation:rv-sheen 3.6s ease-in-out infinite;mix-blend-mode:screen}
+    @keyframes rv-sheen{0%{background-position:120% 0}60%,100%{background-position:-60% 0}}
+    .rv-crimp{position:absolute;left:0;right:0;height:7%;background:repeating-linear-gradient(90deg,rgba(255,255,255,.28) 0 2px,rgba(0,0,0,.18) 2px 5px),linear-gradient(180deg,rgba(255,255,255,.25),rgba(0,0,0,.25))}
+    .rv-crimp.t{top:0}.rv-crimp.b{bottom:0}
+    .rv-label{position:absolute;inset:7% 0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 9%}
+    .rv-tearline{position:absolute;left:4%;right:4%;top:15.5%;border-top:2px dashed rgba(255,255,255,.55);font:600 calc(var(--pw) * .032) "Oswald";letter-spacing:.2em;color:rgba(255,255,255,.75);text-align:right;padding-top:3px}
+    .rv-series{font:600 calc(var(--pw) * .042) "Oswald";letter-spacing:.24em;color:var(--rv-acc);margin-top:8%}
+    .rv-logo{font:400 calc(var(--pw) * .22)/.86 "Anton";letter-spacing:.01em;text-transform:uppercase;margin-top:6%;text-shadow:0 4px 0 rgba(0,0,0,.3)}
+    .rv-logo em{display:block;font:400 calc(var(--pw) * .17)/1 "Yellowtail";color:var(--rv-acc);font-style:normal;text-transform:none;margin-top:-2%;text-shadow:0 3px 0 rgba(0,0,0,.35)}
+    .rv-seal{margin:7% 0 6%;width:calc(var(--pw) * .26);aspect-ratio:1;border-radius:50%;background:var(--rv-acc);color:var(--rv-on);border:3px solid #fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font:600 calc(var(--pw) * .034)/1.1 "Oswald";letter-spacing:.14em;box-shadow:0 6px 14px rgba(0,0,0,.35)}
+    .rv-seal b{font:400 calc(var(--pw) * .1)/1 "Anton";letter-spacing:0}
+    .rv-for{background:#fff;color:#14161c;border-radius:6px;padding:6px 12px 7px;max-width:100%;box-shadow:0 4px 10px rgba(0,0,0,.3)}
+    .rv-for small{display:block;font:600 calc(var(--pw) * .028) "Oswald";letter-spacing:.2em;color:#6b6a66}
+    .rv-for span{display:block;font:500 calc(var(--pw) * .058)/1.15 "Oswald";white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .rv-site{position:absolute;bottom:8.5%;left:0;right:0;font:400 calc(var(--pw) * .032) "Courier Prime";color:rgba(255,255,255,.7)}
+    .rv-card{position:absolute;left:7%;right:7%;top:50%;aspect-ratio:1000/1400;transform:translateY(-46%);z-index:0}
+    .rv-flip{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateY(180deg)}
+    .rv-face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:4%/2.9%;overflow:hidden;box-shadow:0 26px 50px rgba(0,0,0,.5)}
+    .rv-face canvas{display:block;width:100%;height:100%}
+    .rv-face.rv-b{transform:rotateY(180deg)}
+    .rv-shine{position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.55) 45%,rgba(160,220,255,.35) 50%,transparent 62%);background-size:300% 100%;background-position:130% 0;mix-blend-mode:overlay}
+    .rv-flash{position:absolute;left:var(--cx,50%);top:var(--cy,44%);width:10px;height:10px;margin:-5px;border-radius:50%;background:#fff;opacity:0;pointer-events:none;box-shadow:0 0 120px 80px #fff}
+    .rv-spark{position:absolute;left:var(--cx,50%);top:var(--cy,44%);width:9px;height:9px;margin:-4.5px;pointer-events:none;background:#fff;clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%)}
+    .rv-hint{position:relative;margin:0;min-height:24px;font:500 15px "Oswald";letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.8)}
+    .rv-cap{position:relative;text-align:center;opacity:0}
+    .rv-cap small{display:block;font:600 12px "Oswald";letter-spacing:.26em;color:var(--rv-acc)}
+    .rv-cap strong{display:block;font:400 clamp(30px,6vw,44px)/1 "Anton";text-transform:uppercase;margin:6px 0 4px}
+    .rv-cap span{font:400 13px "Courier Prime";color:rgba(255,255,255,.7)}
+    .rv-actions{position:relative;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;opacity:0;pointer-events:none}
+    .rv-actions.on{pointer-events:auto}
+    .rv-actions .btn{color:#fff;border-color:rgba(255,255,255,.55)}
+    .rv-actions .btn:hover{background:rgba(255,255,255,.1)}
+    .rv-actions .btn.primary{background:var(--red);border-color:var(--red)}
+    body.rv-open{overflow:hidden}
+
     @media (max-width:900px){
       .layout{grid-template-columns:1fr}
       .stage{position:relative;top:0}
@@ -216,6 +273,28 @@
 
   <footer>The '26 card series is presented by <a href="https://www.artificialturfwar.com/" target="_blank" rel="noopener">Artificial Turf War</a> (<a href="https://x.com/PlayATW" target="_blank" rel="noopener">@PlayATW</a>), eight AI models running fantasy football teams. Profile data comes from X's public profile pages via the FxTwitter API. Uploaded photos stay on your device. Rookie Card is not affiliated with X Corp., MLB, or any trading card company.</footer>
 </main>
+<div class="reveal" id="reveal" role="dialog" aria-modal="true" aria-label="Open your rookie card pack" hidden>
+  <div class="rv-rays" id="rvRays"></div>
+  <div class="rv-bar"><span>@PlayATW Series '26</span><button type="button" id="rvSkip">Skip</button></div>
+  <div class="rv-scene" id="rvScene">
+    <div class="rv-card" id="rvCard"><div class="rv-flip" id="rvFlip">
+      <div class="rv-face"><canvas id="rvFront" width="1000" height="1400"></canvas><div class="rv-shine" id="rvShine"></div></div>
+      <div class="rv-face rv-b"><canvas id="rvBack" width="1000" height="1400"></canvas></div>
+    </div></div>
+    <button type="button" class="rv-pack" id="rvPack" aria-label="Open the pack">
+      <div class="rv-half" id="rvBody"></div>
+      <div class="rv-half" id="rvTear"></div>
+    </button>
+  </div>
+  <div class="rv-flash" id="rvFlash"></div>
+  <p class="rv-hint" id="rvHint" role="status">Sorting the pack…</p>
+  <div class="rv-cap" id="rvCap"><small>You pulled a rookie card</small><strong id="rvName"></strong><span id="rvMeta"></span></div>
+  <div class="rv-actions" id="rvActions">
+    <button class="btn" type="button" id="rvFlipBtn">Flip for stats</button>
+    <button class="btn primary" type="button" id="rvMine">Print your own</button>
+    <button class="btn" type="button" id="rvClose">Keep this card</button>
+  </div>
+</div>
 <div class="toast" id="toast"></div>
 
 <script>
@@ -590,12 +669,12 @@
   function shade(hex, p) { const n = parseInt(hex.slice(1), 16); const f = v => Math.max(0, Math.min(255, v + Math.round(2.55 * p))); return `rgb(${f(n >> 16)},${f(n >> 8 & 255)},${f(n & 255)})`; }
 
   // ---------- render loop ----------
-  let queued = false, fontsReady = false;
+  let queued = false, fontsReady = false, revealing = false;
   function render() {
     if (queued) return; queued = true;
     queueMicrotask(() => { queued = false; if (!fontsReady) return; drawFront($('front')); drawBack($('back')); });
   }
-  Promise.all(['400 80px Anton', '600 30px Oswald', '500 30px Oswald', '400 30px Oswald', '400 80px Yellowtail', '700 30px "Courier Prime"', '400 30px "Courier Prime"']
+  const fontsLoaded = Promise.all(['400 80px Anton', '600 30px Oswald', '500 30px Oswald', '400 30px Oswald', '400 80px Yellowtail', '700 30px "Courier Prime"', '400 30px "Courier Prime"']
     .map(f => document.fonts.load(f))).catch(() => {}).finally(() => { fontsReady = true; render(); });
 
   // ---------- form binding ----------
@@ -657,10 +736,13 @@
       render();
       setStatus(`Signed: @${S.handle}. ${u.protected ? 'Protected account: some stats may be hidden. ' : ''}Tweak anything below.`, 'ok');
       const url = new URL(location.href); url.search = shareParams(); history.replaceState(null, '', url);
-      if (matchMedia('(max-width:900px)').matches) document.querySelector('.stage').scrollIntoView({behavior:'smooth', block:'start'});
+      try { sessionStorage.setItem('rc-seen:' + url.search, '1'); } catch {}
+      if (!revealing && matchMedia('(max-width:900px)').matches) document.querySelector('.stage').scrollIntoView({behavior:'smooth', block:'start'});
+      return true;
     } catch (err) {
       setStatus(`${err.message || 'Lookup failed.'} You can still fill in the stats by hand below.`, 'err');
       $('statsBox').open = true;
+      return false;
     } finally { $('go').disabled = false; }
   }
 
@@ -783,6 +865,115 @@
 
   let toastT; function toast(m) { const t = $('toast'); t.textContent = m; t.classList.add('show'); clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove('show'), 2200); }
 
+
+  // ---------- pack opening (people arriving from a shared link) ----------
+  // The pack doubles as the loading screen: it opens once the lookup and photo are in.
+  function packFace(handle, cardHtml) {
+    return `<div class="rv-crimp t"></div><div class="rv-tearline">TEAR HERE</div>
+      <div class="rv-label"><div class="rv-series">@PLAYATW SERIES '26</div>
+        <div class="rv-logo">Rookie<em>Card</em></div>
+        <div class="rv-seal"><b>1</b>CARD</div>
+        <div class="rv-for"><small>PACKED FOR</small><span>@${handle}</span></div></div>
+      <div class="rv-site">artificialturfwar.com</div><div class="rv-crimp b"></div>`;
+  }
+  // zigzag tear line across the pack at 15.5% height
+  function tearClip(top) {
+    const pts = [], n = 14, y = 15.5;
+    for (let i = 0; i <= n; i++) pts.push(`${(i / n * 100).toFixed(2)}% ${i % 2 ? y + 1.6 : y - 1.6}%`);
+    return top ? `polygon(0 0,100% 0,${pts.reverse().join(',')})` : `polygon(${pts.join(',')},100% 100%,0 100%)`;
+  }
+
+  async function openPack(handle, overrides, themeKey) {
+    revealing = true;
+    const R = $('reveal'), t = THEMES[themeKey] || THEMES.league;
+    const still = matchMedia('(prefers-reduced-motion: reduce)').matches, T = ms => still ? 1 : ms;
+    R.style.setProperty('--rv-pri', t.primary); R.style.setProperty('--rv-dark', t.dark);
+    R.style.setProperty('--rv-acc', t.accent); R.style.setProperty('--rv-on', t.onAccent);
+    const face = packFace(handle.replace(/[^\w]/g, ''));
+    $('rvBody').innerHTML = face; $('rvTear').innerHTML = face;
+    $('rvBody').style.clipPath = tearClip(false); $('rvTear').style.clipPath = tearClip(true);
+    R.hidden = false; document.body.classList.add('rv-open'); $('rvPack').focus({preventScroll: true});
+    const center = () => { const r = $('rvScene').getBoundingClientRect(); R.style.setProperty('--cx', r.left + r.width / 2 + 'px'); R.style.setProperty('--cy', r.top + r.height / 2 + 'px'); };
+    center(); addEventListener('resize', center);
+
+    let tapped, skipped = false;
+    const tap = new Promise(r => tapped = r);
+    $('rvPack').addEventListener('click', () => tapped(), {once: true});
+    const skip = () => { skipped = true; tapped(); };
+    $('rvSkip').addEventListener('click', skip, {once: true});
+
+    const ok = await lookup(handle, overrides);
+    await fontsLoaded;
+    if (!ok) { closeReveal(); return; }
+    drawFront($('rvFront')); drawBack($('rvBack'));
+    $('rvName').textContent = (S.name.trim() || S.handle);
+    $('rvMeta').textContent = `Card No. ${cardNo()} · ${S.pos} · ${posName()} · ${short(S.followers)} followers`;
+    $('rvPack').classList.add('ready');
+    $('rvHint').textContent = 'Tap the pack to open it';
+
+    await tap;
+    $('rvSkip').hidden = true;
+    const run = (el, frames, ms, easing = 'cubic-bezier(.2,.7,.2,1)') => skipped ? null : el.animate(frames, {duration: T(ms), easing, fill: 'forwards'}).finished;
+    const pack = $('rvPack'), card = $('rvCard'), flip = $('rvFlip');
+    pack.classList.remove('ready'); pack.style.animation = 'none'; $('rvHint').textContent = '';
+
+    if (!skipped) {
+      await run(pack, [{transform: 'rotate(0)'}, {transform: 'rotate(-3deg) scale(1.02)'}, {transform: 'rotate(3deg) scale(1.03)'}, {transform: 'rotate(-2deg) scale(1.03)'}, {transform: 'rotate(0) scale(1.02)'}], 420, 'ease-in-out');
+      sparks(10, .155 - .5);
+      run(pack, [{transform: 'scale(1.02)'}, {transform: 'scale(1)'}], 300);
+      await run($('rvTear'), [{transform: 'none', opacity: 1}, {transform: 'translate(34%,-60%) rotate(24deg)', opacity: 0}], 650, 'cubic-bezier(.5,0,.75,0)');
+      card.style.zIndex = 0;
+      await run(card, [{transform: 'translateY(-46%)'}, {transform: 'translateY(-100%)'}], 750);
+      card.style.zIndex = 2;
+      run($('rvBody'), [{transform: 'none', opacity: 1}, {transform: 'translateY(70%) rotate(-7deg)', opacity: 0}], 650, 'cubic-bezier(.5,0,.75,0)');
+      await run(card, [{transform: 'translateY(-100%)'}, {transform: 'translateY(-50%) scale(1.12)'}], 800);
+      $('rvRays').animate([{opacity: 0}, {opacity: .22}], {duration: T(900), fill: 'forwards'});
+      $('rvFlash').animate([{opacity: 0}, {opacity: .9, offset: .35}, {opacity: 0}], {duration: T(900), fill: 'forwards'});
+      sparks(26, 0);
+      await run(flip, [{transform: 'rotateY(180deg) scale(1)'}, {transform: 'rotateY(90deg) scale(1.08)', offset: .5}, {transform: 'rotateY(0deg) scale(1)'}], 950, 'cubic-bezier(.3,.6,.25,1)');
+      run($('rvShine'), [{backgroundPosition: '130% 0'}, {backgroundPosition: '-60% 0'}], 1100, 'ease-in-out');
+    }
+    // final state (also what Skip lands on)
+    for (const el of [pack, card, flip, $('rvTear'), $('rvBody'), $('rvRays'), $('rvShine')]) el.getAnimations().forEach(a => a.cancel());
+    pack.style.visibility = 'hidden';
+    card.style.zIndex = 2; card.style.transform = 'translateY(-50%) scale(1.12)'; flip.style.transform = 'rotateY(0deg)';
+    $('rvRays').style.opacity = .22;
+    $('rvCap').animate([{opacity: 0, transform: 'translateY(10px)'}, {opacity: 1, transform: 'none'}], {duration: T(450), fill: 'forwards'});
+    $('rvActions').animate([{opacity: 0}, {opacity: 1}], {duration: T(450), delay: T(150), fill: 'forwards'});
+    $('rvActions').classList.add('on'); $('rvMine').focus({preventScroll: true});
+  }
+
+  function sparks(n, yOff) {
+    const R = $('reveal'), acc = getComputedStyle(R).getPropertyValue('--rv-acc');
+    const sceneH = $('rvScene').offsetHeight;
+    for (let i = 0; i < n; i++) {
+      const el = document.createElement('i'); el.className = 'rv-spark';
+      el.style.background = i % 3 ? '#fff' : acc; el.style.marginTop = `${yOff * sceneH - 4.5}px`;
+      R.appendChild(el);
+      const a = Math.random() * Math.PI * 2, d = 90 + Math.random() * 190, sc = .8 + Math.random() * 1.8;
+      el.animate([{transform: 'translate(0,0) scale(0) rotate(0)', opacity: 1}, {transform: `translate(${Math.cos(a) * d}px,${Math.sin(a) * d}px) scale(${sc}) rotate(${Math.random() * 180}deg)`, opacity: 0}],
+        {duration: 700 + Math.random() * 600, easing: 'cubic-bezier(.2,.8,.3,1)'}).finished.then(() => el.remove());
+    }
+  }
+
+  function closeReveal() {
+    const R = $('reveal');
+    if (R.hidden) return;
+    R.animate([{opacity: 1}, {opacity: 0}], {duration: 250}).finished.then(() => { R.hidden = true; document.body.classList.remove('rv-open'); revealing = false; });
+  }
+  $('rvFlipBtn').addEventListener('click', () => {
+    const f = $('rvFlip'), back = f.style.transform === 'rotateY(180deg)';
+    f.style.transition = 'transform .8s cubic-bezier(.2,.75,.25,1)'; f.style.transform = back ? 'rotateY(0deg)' : 'rotateY(180deg)';
+    $('rvFlipBtn').textContent = back ? 'Flip for stats' : 'Flip to front';
+  });
+  $('rvCard').addEventListener('click', () => { if ($('rvActions').classList.contains('on')) $('rvFlipBtn').click(); });
+  $('rvClose').addEventListener('click', closeReveal);
+  $('rvMine').addEventListener('click', () => {
+    closeReveal(); $('handle').value = ''; window.scrollTo({top: 0});
+    setStatus('Your turn: type your handle and print your own card.'); setTimeout(() => $('handle').focus(), 300);
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !$('reveal').hidden && $('rvActions').classList.contains('on')) closeReveal(); });
+
   // ---------- boot ----------
   syncForm(); render();
   const q = new URLSearchParams(location.search), qh = parseHandle(q.get('x') || '');
@@ -796,7 +987,9 @@
       else if (k === 'pos') { if (POSITIONS.some(x => x[0] === v)) ov.pos = v; }
       else ov[k] = v.slice(0, k === 'report' ? 220 : 40);
     }
-    lookup(qh, ov);
+    let seen = false; try { seen = !!sessionStorage.getItem('rc-seen:' + location.search); } catch {}
+    if (seen) lookup(qh, ov);
+    else openPack(qh, ov, ov.theme);
   }
 })();
 </script>
