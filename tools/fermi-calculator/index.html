@@ -1,0 +1,1252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-38KZ2T0RQ5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-38KZ2T0RQ5');
+</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A retro Fermi paradox calculator. Slide the Drake equation, add filters like mineable ore, and watch the odds of detecting aliens grow or shrink.">
+  <meta name="theme-color" content="#3a2c5a">
+  <link rel="canonical" href="https://lorenzen.ai/tools/fermi-calculator/">
+  <title>Anybody Home? Fermi Paradox Calculator | Lorenzen Tools</title>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Lorenzen Tools">
+  <meta property="og:title" content="Anybody Home? The Fermi Paradox Calculator">
+  <meta property="og:description" content="Slide the Drake equation, add the filters, and watch the alien wave back or disappear. Does mineable ore explain the silence?">
+  <meta property="og:url" content="https://lorenzen.ai/tools/fermi-calculator/">
+  <meta property="og:image" content="https://lorenzen.ai/images/previews/fermi-calculator-preview.png">
+  <meta property="og:image:secure_url" content="https://lorenzen.ai/images/previews/fermi-calculator-preview.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="A pixel-art person on Earth waving at an alien on a small rocky planet, beside a retro calculator showing a 1.8% chance of detection">
+  <meta property="og:video" content="https://lorenzen.ai/images/previews/fermi-calculator-preview.mp4">
+  <meta property="og:video:secure_url" content="https://lorenzen.ai/images/previews/fermi-calculator-preview.mp4">
+  <meta property="og:video:type" content="video/mp4">
+  <meta property="og:video:width" content="1200">
+  <meta property="og:video:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Anybody Home? The Fermi Paradox Calculator">
+  <meta name="twitter:description" content="Slide the Drake equation, add the filters, and watch the alien wave back or disappear. Does mineable ore explain the silence?">
+  <meta name="twitter:image" content="https://lorenzen.ai/images/previews/fermi-calculator-preview.png">
+  <meta name="twitter:image:alt" content="A pixel-art person on Earth waving at an alien on a small rocky planet, beside a retro calculator showing a 1.8% chance of detection">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --ink:#3a2c5a;
+      --ink2:#6a5b8c;
+      --sky:#8fa4ec;
+      --shell:#f8ecd2;
+      --shell2:#efdcb6;
+      --paper:#fff8e8;
+      --tomato:#ff6b5e;
+      --tomato2:#c8423c;
+      --mint:#7fe3c0;
+      --mint2:#3fa98a;
+      --butter:#ffd35c;
+      --butter2:#c99a22;
+      --pink:#ff9ec7;
+      --pink2:#cc6a98;
+      --lilac:#c9b6ff;
+      --lilac2:#8f79cf;
+      --lcd:#b9d38e;
+      --lcd2:#a3c076;
+      --lcdink:#24331b;
+      --pixel:"Press Start 2P",ui-monospace,Menlo,monospace;
+      --term:"VT323",ui-monospace,Menlo,monospace;
+    }
+
+    *{box-sizing:border-box}
+    html{-webkit-text-size-adjust:100%}
+
+    body{
+      margin:0;
+      background-color:var(--sky);
+      background-image:
+        linear-gradient(45deg,#8598e4 25%,transparent 25%,transparent 75%,#8598e4 75%),
+        linear-gradient(45deg,#8598e4 25%,transparent 25%,transparent 75%,#8598e4 75%);
+      background-size:32px 32px;
+      background-position:0 0,16px 16px;
+      color:var(--ink);
+      font:21px/1.25 var(--term);
+      font-variant-ligatures:none;
+    }
+
+    a{color:inherit}
+    button{font:inherit;color:inherit}
+
+    :focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+
+    .wrap{width:min(1180px,calc(100% - 32px));margin:auto}
+
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      gap:20px;
+      padding:26px 0 18px;
+    }
+
+    h1{
+      margin:0;
+      font:400 clamp(22px,3.6vw,38px)/1.25 var(--pixel);
+      color:#fff;
+      text-shadow:3px 3px 0 var(--ink);
+    }
+
+    .tagline{margin:10px 0 0;color:#fff;font-size:24px;text-shadow:2px 2px 0 var(--ink)}
+
+    .home{
+      flex:none;
+      padding:9px 10px 8px;
+      background:var(--paper);
+      border:3px solid var(--ink);
+      box-shadow:3px 3px 0 var(--ink);
+      font:400 9px/1 var(--pixel);
+      text-decoration:none;
+    }
+
+    .home:hover{background:var(--butter)}
+
+    /* The calculator body */
+    .shell{
+      display:grid;
+      grid-template-columns:minmax(0,1.08fr) minmax(0,1fr);
+      gap:18px;
+      padding:16px;
+      background:var(--shell);
+      border:4px solid var(--ink);
+      border-radius:22px;
+      box-shadow:inset -5px -5px 0 var(--shell2),inset 4px 4px 0 #fff9ea,9px 9px 0 var(--ink);
+    }
+
+    .badge{
+      grid-column:1 / -1;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:14px;
+    }
+
+    .brand{font:400 12px/1.2 var(--pixel);letter-spacing:.04em}
+    .brand b{font-weight:400;color:var(--tomato2)}
+
+    .solar{
+      display:grid;
+      grid-template-columns:repeat(5,22px);
+      gap:2px;
+      padding:3px;
+      background:var(--ink);
+      border-radius:3px;
+    }
+
+    .solar i{display:block;height:13px;background:#5a4630}
+    .solar i:nth-child(2n){background:#6b5539}
+
+    .left{
+      position:sticky;
+      top:10px;
+      align-self:start;
+      display:grid;
+      gap:12px;
+    }
+
+    .screen{
+      min-width:0;
+      border:4px solid var(--ink);
+      border-radius:12px;
+      overflow:hidden;
+      background:var(--ink);
+    }
+
+    #sky{display:block;width:100%;aspect-ratio:256/160;image-rendering:pixelated;background:#140f30}
+
+    .lcd{
+      display:grid;
+      grid-template-columns:minmax(0,1fr) auto;
+      gap:4px 14px;
+      padding:9px 12px 8px;
+      background:var(--lcd);
+      background-image:repeating-linear-gradient(0deg,transparent 0 2px,rgba(36,51,27,.05) 2px 3px);
+      color:var(--lcdink);
+    }
+
+    .lcd-label{font:400 8px/1.3 var(--pixel)}
+    .lcd-big{font:400 clamp(24px,3.1vw,36px)/1.1 var(--pixel);margin:6px 0 2px;white-space:nowrap}
+    .lcd-big.long{font-size:clamp(14px,1.9vw,22px);margin:10px 0 5px}
+    .lcd-side{display:grid;gap:3px;align-content:start;font-size:20px;line-height:1;text-align:right}
+    .lcd-side b{font-weight:400}
+    .verdict-row{grid-column:1 / -1;display:flex;justify-content:space-between;align-items:center;gap:10px;border-top:2px solid rgba(36,51,27,.3);padding-top:5px}
+    .verdict{font-size:21px;line-height:1.05}
+    .lcd-reset{
+      flex:none;
+      padding:4px 6px;
+      background:var(--lcdink);
+      border:0;
+      color:var(--lcd);
+      font:400 8px/1.2 var(--pixel);
+      cursor:pointer;
+    }
+    .lcd-reset:hover{background:#3b5230}
+    .baseline{grid-column:1 / -1;font-size:19px;line-height:1;opacity:.82}
+
+    /* Keys */
+    .keys{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+
+    .key{
+      position:relative;
+      min-height:42px;
+      padding:6px 4px;
+      background:var(--paper);
+      border:3px solid var(--ink);
+      border-radius:9px;
+      box-shadow:0 4px 0 var(--ink);
+      font:400 9px/1.25 var(--pixel);
+      cursor:pointer;
+    }
+
+    .key:active,.key[aria-pressed="true"]{transform:translateY(3px);box-shadow:0 1px 0 var(--ink)}
+    .key:hover{filter:brightness(1.05)}
+    .key.ore{grid-column:span 2;background:var(--tomato);color:#fff;font-size:11px;text-shadow:1px 1px 0 var(--tomato2)}
+    .key.mint{background:var(--mint)}
+    .key.butter{background:var(--butter)}
+    .key.pink{background:var(--pink)}
+    .key.lilac{background:var(--lilac)}
+
+    .key.hint:after{
+      content:"PRESS ME";
+      position:absolute;
+      top:-15px;
+      left:50%;
+      transform:translateX(-50%);
+      padding:2px 4px;
+      background:var(--ink);
+      color:var(--butter);
+      font-size:7px;
+      text-shadow:none;
+      white-space:nowrap;
+      animation:blink 1.1s steps(2) infinite;
+    }
+
+    @keyframes blink{50%{visibility:hidden}}
+
+    /* Funnel */
+    .panel{
+      min-width:0;
+      padding:12px;
+      background:var(--paper);
+      border:3px solid var(--ink);
+      border-radius:12px;
+    }
+
+    .panel h2{margin:0 0 10px;font:400 11px/1.3 var(--pixel)}
+    .panel h2 span{color:var(--tomato2)}
+
+    .funnel{display:grid;gap:3px;font-size:19px;line-height:1}
+    .row{display:grid;grid-template-columns:124px minmax(0,1fr) 74px;gap:8px;align-items:center}
+    .row .bar{height:11px;background:repeating-linear-gradient(90deg,var(--mint2) 0 6px,transparent 6px 8px)}
+    .row.f .bar{background:repeating-linear-gradient(90deg,var(--tomato) 0 6px,transparent 6px 8px)}
+    .row.killer{background:var(--butter)}
+    .row .n{text-align:right;white-space:nowrap}
+
+    /* Controls */
+    .right{display:grid;gap:12px;align-content:start;min-width:0}
+    .sub{margin:-5px 0 10px;color:var(--ink2);font-size:19px;line-height:1.1}
+
+    .slider{display:block;padding:7px 0 5px}
+    .slider + .slider{border-top:2px dotted var(--shell2)}
+    .slider-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;line-height:1}
+    .slider-name code{margin-right:5px;padding:0 4px;background:var(--lilac);font:inherit}
+    .slider output{font-size:21px;color:var(--tomato2);white-space:nowrap}
+    .slider small{display:block;margin-top:1px;color:var(--ink2);font-size:18px;line-height:1.05}
+
+    input[type=range]{
+      -webkit-appearance:none;
+      appearance:none;
+      display:block;
+      width:100%;
+      height:24px;
+      margin:2px 0;
+      background:transparent;
+      cursor:pointer;
+    }
+
+    input[type=range]::-webkit-slider-runnable-track{
+      height:10px;
+      border:2px solid var(--ink);
+      background:linear-gradient(90deg,var(--mint) var(--p,50%),var(--shell) var(--p,50%));
+    }
+
+    input[type=range]::-moz-range-track{
+      height:6px;
+      border:2px solid var(--ink);
+      background:linear-gradient(90deg,var(--mint) var(--p,50%),var(--shell) var(--p,50%));
+    }
+
+    input[type=range]::-webkit-slider-thumb{
+      -webkit-appearance:none;
+      width:16px;
+      height:22px;
+      margin-top:-8px;
+      background:var(--tomato);
+      border:3px solid var(--ink);
+      box-shadow:inset -3px -3px 0 var(--tomato2);
+    }
+
+    input[type=range]::-moz-range-thumb{
+      width:10px;
+      height:16px;
+      border-radius:0;
+      background:var(--tomato);
+      border:3px solid var(--ink);
+    }
+
+    /* Cartridges */
+    .carts{display:grid;gap:7px}
+    .cart{border:3px solid var(--ink);border-radius:9px;background:var(--shell);overflow:hidden}
+    .cart.lead{border-width:4px;background:#ffe5dc}
+
+    .cart-btn{
+      display:grid;
+      grid-template-columns:30px minmax(0,1fr) 44px;
+      gap:9px;
+      align-items:center;
+      width:100%;
+      padding:7px 9px;
+      background:none;
+      border:0;
+      text-align:left;
+      cursor:pointer;
+    }
+
+    .cart-btn:hover{background:rgba(255,255,255,.5)}
+    .cart-btn svg{display:block;width:30px;height:30px;padding:3px;background:var(--ink);fill:var(--butter)}
+    .cart.lead .cart-btn svg{fill:var(--tomato)}
+    .cart-name{display:block;font:400 9px/1.3 var(--pixel)}
+    .cart-blurb{display:block;margin-top:2px;color:var(--ink2);font-size:18px;line-height:1.02}
+
+    .switch{
+      display:block;
+      position:relative;
+      width:44px;
+      height:22px;
+      background:var(--shell2);
+      border:3px solid var(--ink);
+    }
+
+    .switch:after{content:"";position:absolute;top:0;left:0;width:18px;height:16px;background:var(--ink2)}
+    [aria-pressed="true"] .switch{background:var(--mint)}
+    [aria-pressed="true"] .switch:after{left:20px;background:var(--ink)}
+
+    .cart-body{padding:0 10px 7px;background:var(--paper);border-top:3px solid var(--ink)}
+    .cart-body[hidden]{display:none}
+    .gate-total{padding-top:5px;border-top:2px solid var(--ink);font-size:20px}
+
+    /* Below the device */
+    .notes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:26px}
+
+    .card{
+      padding:18px 20px;
+      background:var(--paper);
+      border:4px solid var(--ink);
+      box-shadow:6px 6px 0 var(--ink);
+      line-height:1.18;
+    }
+
+    .card.wide{grid-column:1 / -1}
+    .card h2{margin:0 0 12px;font:400 14px/1.35 var(--pixel)}
+    .card h3{margin:14px 0 5px;font:400 10px/1.3 var(--pixel)}
+    .card p{margin:0 0 10px}
+    .card p:last-child{margin-bottom:0}
+
+    .eq{
+      overflow-x:auto;
+      margin:0 0 10px;
+      padding:9px 11px;
+      background:var(--lcd);
+      color:var(--lcdink);
+      font-size:21px;
+      line-height:1.15;
+      white-space:pre-wrap;
+    }
+
+    .scroller{overflow-x:auto}
+    table{width:100%;border-collapse:collapse;min-width:640px}
+    th{padding:6px 8px;background:var(--ink);color:#fff;font:400 9px/1.3 var(--pixel);text-align:left}
+    td{padding:7px 8px;vertical-align:top;border-bottom:2px dotted var(--shell2);line-height:1.1}
+    td:first-child{white-space:nowrap}
+    td a{color:var(--tomato2)}
+    .card a{color:var(--tomato2)}
+
+    .sources{columns:2;column-gap:26px;margin:0;padding:0 0 0 20px;font-size:19px;line-height:1.1}
+    .sources li{margin-bottom:6px;break-inside:avoid}
+
+    footer{padding:28px 0 30px;color:#fff;font-size:20px;text-align:center;text-shadow:2px 2px 0 var(--ink)}
+
+    @media(max-width:900px){
+      .wrap{width:calc(100% - 20px)}
+      header{padding-top:16px}
+      .shell{grid-template-columns:minmax(0,1fr);padding:10px;gap:12px;box-shadow:inset -4px -4px 0 var(--shell2),5px 5px 0 var(--ink)}
+      .left{display:contents}
+      .screen{position:sticky;top:6px;z-index:5;order:1}
+      .badge{order:0}
+      .keys{order:2}
+      .right{order:3}
+      .panel.where{order:4}
+      .lcd{padding:6px 9px;gap:2px 10px}
+      .lcd-big{font-size:21px;margin:4px 0 1px}
+      .lcd-big.long{font-size:14px;margin:8px 0 4px}
+      .lcd-side{font-size:17px}
+      .verdict{font-size:18px}
+      .verdict-row{padding-top:3px}
+      .baseline{display:none}
+      .notes{grid-template-columns:minmax(0,1fr)}
+      .sources{columns:1}
+      .card{padding:15px}
+    }
+
+    @media(max-width:560px){
+      .tagline{font-size:21px}
+      .solar{display:none}
+      .row{grid-template-columns:104px minmax(0,1fr) 62px;gap:6px;font-size:17px}
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      .key.hint:after{animation:none}
+    }
+  </style>
+</head>
+
+<body>
+  <header class="wrap">
+    <div>
+      <h1>Anybody Home?</h1>
+      <p class="tagline">The Fermi paradox calculator. Slide the odds. See who waves back.</p>
+    </div>
+    <a class="home" href="/tools/">← All tools</a>
+  </header>
+
+  <main class="wrap">
+    <section class="shell" aria-label="Fermi paradox calculator">
+      <div class="badge">
+        <div class="brand"><b>LORENZEN</b> FERMI-85</div>
+        <div class="solar" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+
+      <div class="left">
+        <div class="screen">
+          <canvas id="sky" width="256" height="160" role="img" aria-label="A person on Earth waving at an alien on a distant planet"></canvas>
+          <div class="lcd">
+            <div>
+              <div class="lcd-label">CHANCE WE DETECT THEM</div>
+              <div class="lcd-big" id="odds" aria-live="polite">--</div>
+            </div>
+            <div class="lcd-side">
+              <span>ALIVE NOW <b id="now">-</b></span>
+              <span>EVER <b id="ever">-</b></span>
+              <span>NEAREST <b id="near">-</b></span>
+            </div>
+            <div class="baseline" id="baseline"></div>
+            <div class="verdict-row">
+              <div class="verdict" id="verdict"></div>
+              <button class="lcd-reset" id="lcd-reset" type="button" aria-label="Reset to the original odds">↺ RESET</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="keys" role="group" aria-label="Quick settings">
+          <button class="key ore hint" id="key-ore" type="button" aria-pressed="false">ORE FILTER</button>
+          <button class="key" id="key-ac" type="button">RESET</button>
+          <button class="key butter" id="key-dice" type="button">? DICE</button>
+          <button class="key mint" data-preset="drake" type="button">DRAKE '61</button>
+          <button class="key lilac" data-preset="rare" type="button">RARE EARTH</button>
+          <button class="key pink" data-preset="doom" type="button">DOOM</button>
+          <button class="key" data-preset="hush" type="button">HUSH</button>
+        </div>
+
+        <div class="panel where">
+          <h2>WHERE DID THEY ALL GO?</h2>
+          <div class="funnel" id="funnel"></div>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="panel">
+          <h2><span>01</span> THE DRAKE EQUATION</h2>
+          <p class="sub">The standard calculation. Defaults are mid-range guesses.</p>
+          <div id="drake"></div>
+        </div>
+
+        <div class="panel">
+          <h2><span>02</span> CAN WE HEAR THEM?</h2>
+          <p class="sub">Drake counts civilizations. This turns the count into a detection.</p>
+          <div id="detect"></div>
+        </div>
+
+        <div class="panel">
+          <h2><span>03</span> FILTER CARTRIDGES</h2>
+          <p class="sub">Each one is a proposed answer to the silence. Switch on any mix.</p>
+          <div class="carts" id="carts"></div>
+        </div>
+
+        <button class="key butter" id="key-share" type="button">COPY THIS SKY</button>
+      </div>
+    </section>
+
+    <noscript><p class="tagline">This calculator needs JavaScript to run.</p></noscript>
+
+    <div class="notes">
+      <article class="card">
+        <h2>The paradox</h2>
+        <p>The galaxy has billions of worlds that could host life, and billions of years of head start. In 1975 Michael Hart argued that one civilization expanding at a tenth of light speed could cross the galaxy in about two million years. So it should only take one.</p>
+        <p>That's why this calculator has two ways to notice someone. We can catch a <b>signal</b> from a neighbor alive right now, or we can see the traces of a <b>spreader</b> from any point in history. Run the standard numbers and the second one makes silence look very strange.</p>
+      </article>
+
+      <article class="card">
+        <h2>The Ore Filter</h2>
+        <p>My theory: the usual chain jumps from intelligence to technology. It skips a step. Every element exists somewhere on a planet, but a species needs them in a form it can reach with stone tools and fire.</p>
+        <p class="eq">Life → Intelligence → <b>Mineable ore</b> → Industry → Spaceflight</p>
+        <p>Asteroids could fix scarcity later, but you need industry to get there. Rhenium is the good test case: it's rare, most of it goes into turbine alloys, and rockets don't strictly need it. No single element is the gate. The gate is whether easy iron, copper and fuel exist early enough to bootstrap. The Drake term <code>fc</code> has been quietly hiding that assumption.</p>
+      </article>
+
+      <article class="card wide">
+        <h2>The math</h2>
+        <p class="eq" id="live-eq"></p>
+        <p>Every slider is a guess, not a measurement. The ore gates are illustrative: 0.5 × 0.15 × 0.03 × 0.10 is about 1 in 4,444. With the defaults, that takes 800,000 civilizations ever down to about 180.</p>
+        <p>The chance of detection is <code>1 − e<sup>−λ</sup></code>, the Poisson chance of at least one hit, where λ is the expected number of civilizations we'd notice. Signal λ is alive-now civilizations × share of the galaxy in range × search coverage × share not hiding. Spreader λ is civilizations ever × share that spread × share not hiding.</p>
+        <p>Two things to keep in mind. Filters can overlap: Ore's geology gate and Rare Earth both lean on plate tectonics, so running both may count it twice. And Sandberg, Drexler and Ord showed that single-number Drake estimates mislead, because the real uncertainty spans many orders of magnitude. Using full distributions, they put the chance we're alone in the galaxy at 53% to 99.6%. Treat this as a toy for seeing which assumptions matter. Press DICE to feel how wide that range is.</p>
+      </article>
+
+      <article class="card wide">
+        <h2>The cartridges</h2>
+        <div class="scroller">
+          <table>
+            <thead><tr><th>Cartridge</th><th>The idea</th><th>What it changes</th><th>Source</th></tr></thead>
+            <tbody>
+              <tr><td>Ore Filter</td><td>Intelligence with no easy ores or fuels stays in the stone age.</td><td>New gates between intelligence and tech</td><td>My theory. No established paper or estimate.</td></tr>
+              <tr><td>No Fire</td><td>Open-air combustion, and so metallurgy, needs about 18% oxygen in Earth-like air.</td><td>Share of intelligent worlds that can smelt</td><td><a href="https://arxiv.org/abs/2308.01160">Balbi &amp; Frank 2023</a></td></tr>
+              <tr><td>Rare Earth</td><td>Complex life may need continents, oceans and long-lived plate tectonics together. Estimated at under 0.2% of life-bearing worlds.</td><td>Share of life worlds that can reach intelligence</td><td><a href="https://doi.org/10.1038/s41598-024-54700-x">Stern &amp; Gerya 2024</a>, Ward &amp; Brownlee 2000</td></tr>
+              <tr><td>Lucky Steps</td><td>Earth's slow evolutionary transitions hint that each was a long shot.</td><td>Share of worlds that clear the hard steps</td><td><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7997718">Snyder-Beattie et al. 2021</a>, Carter 1983</td></tr>
+              <tr><td>Great Filter</td><td>The hard step could be ahead of us. Most civilizations don't survive their own technology.</td><td>Civilizations that fail last 200 years and never spread</td><td>Hanson 1998</td></tr>
+              <tr><td>Stay-at-Homes</td><td>Exponential expansion may be unsustainable, or they may sleep until the cold far future, when computing is cheaper.</td><td>Share that spread</td><td><a href="https://arxiv.org/abs/1705.03394">Sandberg et al. 2017</a>, Haqq-Misra &amp; Baum 2009</td></tr>
+              <tr><td>Zoo</td><td>We're a nature preserve and the neighbors have agreed not to interfere.</td><td>Share not hiding</td><td>Ball 1973</td></tr>
+              <tr><td>Dark Forest</td><td>Being loud gets you killed, so survivors stay quiet.</td><td>Share not hiding</td><td>Liu Cixin, <i>The Dark Forest</i></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>Left out on purpose</h3>
+        <p><b>Grabby aliens</b> (Hanson et al. 2021) work across many galaxies, so they don't fit a Milky Way dial. <b>Planetarium and simulation</b> ideas have no number to slide. <b>"They're already here"</b> is a different website.</p>
+      </article>
+
+      <article class="card wide">
+        <h2>Is the ore idea out there already?</h2>
+        <p>In pieces. Stern and Gerya put geology in the Drake equation. Balbi and Frank made smelting a requirement. Robert Hazen's mineral evolution work shows the loop that makes this interesting: most of Earth's roughly 4,300 mineral species depend directly or indirectly on oxygen, and the banded iron formations hold trillions of tons of iron ore. Life helped build the ore that intelligence later needed. I found fossil-fuel versions of the argument online, but I didn't find a paper treating accessible ore as its own filter with its own number.</p>
+        <p>It also isn't a full resolution. With the defaults, the ore filter drops the odds from near certain to about 2%, because one spreader anywhere in history would still be enough. Move the spreader slider up and the paradox comes back.</p>
+      </article>
+
+      <article class="card wide">
+        <h2>Sources</h2>
+        <ol class="sources">
+          <li><a href="https://www.wikipedia.org/wiki/Drake_equation">Drake equation</a>: term definitions, Drake's 1961 ranges and current R★ values.</li>
+          <li><a href="https://arxiv.org/abs/1806.02404">Sandberg, Drexler &amp; Ord 2018</a>, Dissolving the Fermi Paradox.</li>
+          <li><a href="https://arxiv.org/pdf/0907.3432">Ćirković 2009</a>, Fermi's Paradox: the Fermi-Hart timescale of 10⁶ to 10⁸ years.</li>
+          <li><a href="https://arxiv.org/abs/1809.07252">Wright, Kanodia &amp; Lubar 2018</a>: SETI has searched about a hot tub's worth of the ocean.</li>
+          <li><a href="https://arxiv.org/abs/2502.02614">Sheikh et al. 2025</a>, Earth Detecting Earth: radio beats other technosignatures by about 1,000× in range.</li>
+          <li><a href="https://arxiv.org/abs/2308.01160">Balbi &amp; Frank 2023</a>, The oxygen bottleneck for technospheres.</li>
+          <li><a href="https://doi.org/10.1038/s41598-024-54700-x">Stern &amp; Gerya 2024</a>, continents, oceans and plate tectonics.</li>
+          <li><a href="https://hazen.carnegiescience.edu/sites/hazen.gl.ciw.edu/files/242-Hazen-AmMin-2008.pdf">Hazen et al. 2008</a>, Mineral evolution.</li>
+          <li><a href="https://www.pbs.org/wgbh/nova/article/nearly-two-thirds-of-earths-minerals-were-created-by-life/">NOVA on Hazen</a>: two-thirds of minerals and banded iron ore.</li>
+          <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7997718">Snyder-Beattie et al. 2021</a>, timing of evolutionary transitions.</li>
+          <li><a href="https://arxiv.org/abs/1705.03394">Sandberg, Armstrong &amp; Ćirković 2017</a>, the aestivation hypothesis.</li>
+          <li><a href="https://arxiv.org/abs/2102.01522">Hanson et al. 2021</a>, grabby aliens.</li>
+        </ol>
+      </article>
+    </div>
+  </main>
+
+  <footer class="wrap">© Nate Lorenzen. No aliens were consulted.</footer>
+
+  <script>
+    /*MODEL*/
+    var GALAXY_YEARS = 1e10;
+    var GALAXY_RADIUS = 50000;
+    var DISC_THICKNESS = 1000;
+    var FAILED_LIFETIME = 200;
+
+    var DRAKE = [
+      {k:'R', sym:'R★', name:'New stars a year', hint:'Milky Way today: about 1.5 to 3.', min:.5, max:10, def:2, fmt:'num'},
+      {k:'fp', sym:'fp', name:'Stars with planets', hint:'Kepler says nearly all of them.', min:.1, max:1, def:1, fmt:'frac'},
+      {k:'ne', sym:'ne', name:'Habitable worlds per star', hint:'Earth-size, right distance. Estimates run 0.07 to 0.9.', min:.001, max:5, def:.4, fmt:'num'},
+      {k:'fl', sym:'fl', name:'Worlds that spark life', hint:'One data point: us. Could be nearly zero.', min:1e-12, max:1, def:.1, fmt:'frac'},
+      {k:'fi', sym:'fi', name:'Life that gets smart', hint:'Took Earth about 4 billion years.', min:1e-12, max:1, def:.01, fmt:'frac'},
+      {k:'fc', sym:'fc', name:'Smart life that gets detectable', hint:'Quietly assumes the materials are there.', min:1e-4, max:1, def:.1, fmt:'frac'},
+      {k:'L', sym:'L', name:'Years a civilization stays loud', hint:'We are about 100 years in.', min:100, max:1e9, def:1e6, fmt:'years'}
+    ];
+
+    var DETECT = [
+      {k:'fx', sym:'fx', name:'Civilizations that spread', hint:'Star to star, leaving visible traces. It only takes one.', min:1e-8, max:1, def:1e-4, fmt:'frac'},
+      {k:'D', sym:'D', name:'How far we can hear', hint:'Arecibo-class radar reaches about 12,000 light-years.', min:10, max:100000, def:5000, fmt:'ly'},
+      {k:'s', sym:'s', name:'Search coverage', hint:'Chance our search catches a signal in range.', min:1e-6, max:1, def:.01, fmt:'frac'}
+    ];
+
+    var CARTS = [
+      {k:'ore', name:'ORE FILTER', blurb:'Stuck in the stone age: no reachable ores or fuels.', lead:true, say:'ROCKS ONLY', gates:[
+        {k:'o1', name:'Metals in the crust', hint:'Formed late enough to inherit heavy elements.', min:.001, max:1, def:.5, fmt:'frac'},
+        {k:'o2', name:'Geology that concentrates', hint:'Tectonics, volcanism and water making veins.', min:.001, max:1, def:.15, fmt:'frac'},
+        {k:'o3', name:'Ore and fuel within reach', hint:'Shallow iron, copper and energy. The killer step.', min:1e-4, max:1, def:.03, fmt:'frac'},
+        {k:'o4', name:'Stable long enough to build', hint:'No snowball, runaway heat or big impact.', min:.001, max:1, def:.1, fmt:'frac'}
+      ]},
+      {k:'fire', name:'NO FIRE', blurb:'Ocean or low-oxygen worlds. Nothing will smelt.', say:'BLUB BLUB', gates:[
+        {k:'fire', name:'Worlds that can smelt', hint:'Earth-like air needs about 18% oxygen.', min:.001, max:1, def:.1, fmt:'frac'}
+      ]},
+      {k:'rare', name:'RARE EARTH', blurb:'Continents, oceans and plates are a rare combo.', say:'NO LAND', gates:[
+        {k:'rare', name:'Worlds with all three', hint:'Stern and Gerya: under 0.2%.', min:3e-5, max:1, def:.001, fmt:'frac'}
+      ]},
+      {k:'lucky', name:'LUCKY STEPS', blurb:'Getting to brains took some long shots.', say:'JUST SLIME', gates:[
+        {k:'lucky', name:'Worlds clearing the hard steps', hint:'Complex cells, sex, language.', min:1e-9, max:1, def:.001, fmt:'frac'}
+      ]},
+      {k:'doom', name:'GREAT FILTER', blurb:'They blow up, burn out or build the wrong AI.', say:'OOPS', gates:[
+        {k:'doom', name:'Survive technological youth', hint:'The rest last 200 years and never spread.', min:1e-4, max:1, def:.01, fmt:'frac'}
+      ]},
+      {k:'home', name:'STAY-AT-HOMES', blurb:'Growth stops, or they nap until the universe cools.', say:'ZZZ', gates:[
+        {k:'home', name:'Share that still expand', hint:'Applies to spreading only.', min:1e-4, max:1, def:.01, fmt:'frac'}
+      ]},
+      {k:'zoo', name:'ZOO', blurb:'We are a nature preserve. Do not feed the humans.', say:'SHH, ZOO', gates:[
+        {k:'zoo', name:'Share that break the rule', hint:'A quarantine needs nearly everyone to agree.', min:1e-4, max:1, def:.01, fmt:'frac'}
+      ]},
+      {k:'dark', name:'DARK FOREST', blurb:'Loud species get eaten. Everyone stays quiet.', say:'HIDE!!', gates:[
+        {k:'dark', name:'Share brave enough to be loud', hint:'Affects signals and spreading.', min:1e-4, max:1, def:.01, fmt:'frac'}
+      ]}
+    ];
+
+    function reachShare(d){
+      return Math.min(1, d * d * Math.min(4 * d / 3, DISC_THICKNESS) / (GALAXY_RADIUS * GALAXY_RADIUS * DISC_THICKNESS));
+    }
+
+    function model(v, on){
+      function f(k){ return on[k] ? v[k] : 1; }
+      var ore = on.ore ? v.o1 * v.o2 * v.o3 * v.o4 : 1;
+      var stages = [];
+      var n = v.R * v.fp * v.ne * GALAXY_YEARS;
+      function stage(label, mult, cart){
+        n *= mult;
+        stages.push({label:label, n:n, mult:mult, cart:!!cart});
+      }
+      stages.push({label:'HABITABLE', n:n, mult:1});
+      stage('LIFE', v.fl);
+      if (on.rare) stage('RARE EARTH', v.rare, true);
+      stage('INTELLIGENCE', v.fi);
+      if (on.lucky) stage('LUCKY STEPS', v.lucky, true);
+      if (on.ore) stage('MINEABLE ORE', ore, true);
+      if (on.fire) stage('FIRE', v.fire, true);
+      stage('TECHNOLOGY', v.fc);
+      var ever = n;
+      var survive = f('doom');
+      if (on.doom) stage('SURVIVED', survive, true);
+      var lifetime = survive * v.L + (1 - survive) * Math.min(v.L, FAILED_LIFETIME);
+      var now = ever * Math.min(lifetime, GALAXY_YEARS) / GALAXY_YEARS;
+      var hidden = f('zoo') * f('dark');
+      var reach = reachShare(v.D);
+      var signal = now * reach * v.s * hidden;
+      var spread = ever * survive * v.fx * f('home') * hidden;
+      var expected = signal + spread;
+      return {
+        ever:ever, now:now, oreOdds:ore, signal:signal, spread:spread, expected:expected,
+        chance:-Math.expm1(-expected), reach:reach, stages:stages,
+        nearest:now >= 1 ? GALAXY_RADIUS / Math.sqrt(now) : null
+      };
+    }
+    /*END MODEL*/
+
+    var allDefs = {}, v = {}, on = {}, controls = {};
+    DRAKE.concat(DETECT).forEach(function(d){ allDefs[d.k] = d; });
+    CARTS.forEach(function(c){ c.gates.forEach(function(g){ allDefs[g.k] = g; }); });
+    var CART_ICONS = {
+      ore:['.#####..','#...##..','....#.#.','...#..#.','..#...#.','.#......','#.......','........'],
+      fire:['...#....','...##...','..###.#.','.#####..','.######.','.##..##.','..#..#..','...##...'],
+      rare:['...#....','..###...','..####..','.######.','.#######','########','########','........'],
+      lucky:['########','#......#','#.##...#','#.##...#','#...##.#','#...##.#','#......#','########'],
+      doom:['.######.','########','#..##..#','#..##..#','########','.##..##.','.######.','.#.##.#.'],
+      home:['...##...','..####..','.######.','########','.#....#.','.#.##.#.','.#.##.#.','.######.'],
+      zoo:['#..#..#.','#..#..#.','########','#..#..#.','#..#..#.','########','#..#..#.','#..#..#.'],
+      dark:['...##...','..####..','.######.','..####..','.######.','########','...##...','...##...']
+    };
+
+    function $(id){ return document.getElementById(id); }
+
+    function sig(n, digits){ return Number(n.toPrecision(digits)); }
+
+    function count(n){
+      if (n === 0) return '0';
+      if (n >= 1e15 || n < 1e-3) return n.toExponential(0).replace('e', 'E');
+      if (n >= 1e9) return sig(n / 1e9, 2) + ' BN';
+      if (n >= 1e6) return sig(n / 1e6, 2) + ' MN';
+      if (n >= 10000) return sig(n, 2).toLocaleString('en-US');
+      if (n >= 10) return Math.round(n).toLocaleString('en-US');
+      return String(sig(n, 2));
+    }
+
+    function shortCount(n){ return count(n).replace(' BN', 'B').replace(' MN', 'M'); }
+
+    function oneIn(p){
+      var x = 1 / p;
+      if (x >= 1e12) return '1 IN ' + x.toExponential(0).replace('e+', 'E');
+      if (x >= 1e9) return '1 IN ' + sig(x / 1e9, 2) + 'B';
+      if (x >= 1e6) return '1 IN ' + sig(x / 1e6, 2) + 'M';
+      return '1 IN ' + sig(x, 2).toLocaleString('en-US');
+    }
+
+    function chance(p){
+      if (p >= .9999) return '>99.99%';
+      if (p >= .995) return (Math.floor(p * 1000) / 10) + '%';
+      if (p >= .01) return sig(p * 100, 2) + '%';
+      if (p <= 0) return '0%';
+      return oneIn(p);
+    }
+
+    function frac(p){
+      if (p >= .01) return sig(p * 100, 2) + '%';
+      return oneIn(p).replace('IN', 'in');
+    }
+
+    function format(d, x){
+      if (d.fmt === 'frac') return frac(x);
+      if (d.fmt === 'years') return shortCount(sig(x, 2)) + ' yrs';
+      if (d.fmt === 'ly') return shortCount(sig(x, 2)) + ' ly';
+      return String(sig(x, 2));
+    }
+
+    function toSlider(d, x){ return 1000 * Math.log(x / d.min) / Math.log(d.max / d.min); }
+    function fromSlider(d, x){ return d.min * Math.pow(d.max / d.min, x / 1000); }
+    function clamp(x, a, b){ return Math.min(b, Math.max(a, x)); }
+
+    function paint(k){
+      var c = controls[k], d = allDefs[k], pos = toSlider(d, v[k]);
+      c.input.value = pos;
+      c.input.style.setProperty('--p', (pos / 10) + '%');
+      c.input.setAttribute('aria-valuetext', format(d, v[k]));
+      c.out.textContent = format(d, v[k]);
+    }
+
+    function buildSlider(d, parent){
+      var label = document.createElement('label');
+      label.className = 'slider';
+      label.innerHTML = '<span class="slider-top"><span class="slider-name"></span><output></output></span>' +
+        '<input type="range" min="0" max="1000" step="1"><small></small>';
+      var name = label.querySelector('.slider-name');
+      if (d.sym) {
+        var code = document.createElement('code');
+        code.textContent = d.sym;
+        name.appendChild(code);
+      }
+      name.appendChild(document.createTextNode(d.name));
+      label.querySelector('small').textContent = d.hint;
+      var input = label.querySelector('input');
+      controls[d.k] = {input:input, out:label.querySelector('output')};
+      input.addEventListener('input', function(){
+        v[d.k] = fromSlider(d, Number(input.value));
+        paint(d.k);
+        update();
+      });
+      parent.appendChild(label);
+    }
+
+    function icon(k){
+      var rows = CART_ICONS[k], rects = '';
+      rows.forEach(function(row, y){
+        row.split('').forEach(function(ch, x){
+          if (ch === '#') rects += '<rect x="' + x + '" y="' + y + '" width="1" height="1"/>';
+        });
+      });
+      return '<svg viewBox="0 0 8 8" shape-rendering="crispEdges" aria-hidden="true">' + rects + '</svg>';
+    }
+
+    function buildCart(c, parent){
+      var el = document.createElement('div');
+      el.className = 'cart' + (c.lead ? ' lead' : '');
+      el.innerHTML = '<button class="cart-btn" type="button" aria-pressed="false">' + icon(c.k) +
+        '<span><span class="cart-name"></span><span class="cart-blurb"></span></span><span class="switch"></span></button>' +
+        '<div class="cart-body" hidden></div>';
+      el.querySelector('.cart-name').textContent = c.name;
+      el.querySelector('.cart-blurb').textContent = c.blurb;
+      var body = el.querySelector('.cart-body');
+      c.gates.forEach(function(g){ buildSlider(g, body); });
+      if (c.gates.length > 1) {
+        var total = document.createElement('div');
+        total.className = 'gate-total';
+        total.id = 'gate-total-' + c.k;
+        body.appendChild(total);
+      }
+      var btn = el.querySelector('.cart-btn');
+      btn.addEventListener('click', function(){ setCart(c.k, !on[c.k]); update(); });
+      c.btn = btn;
+      c.body = body;
+      parent.appendChild(el);
+    }
+
+    function setCart(k, state){
+      on[k] = state;
+      CARTS.forEach(function(c){
+        if (c.k !== k) return;
+        c.btn.setAttribute('aria-pressed', String(state));
+        c.body.hidden = !state;
+      });
+      if (k === 'ore') {
+        $('key-ore').setAttribute('aria-pressed', String(state));
+        if (state) $('key-ore').classList.remove('hint');
+      }
+    }
+
+    function reset(){
+      Object.keys(allDefs).forEach(function(k){
+        v[k] = allDefs[k].def;
+        paint(k);
+      });
+      CARTS.forEach(function(c){ setCart(c.k, false); });
+    }
+
+    var PRESETS = {
+      drake:function(){ v.R = 1; v.fp = .35; v.ne = 3; v.fl = 1; v.fi = 1; v.fc = .15; v.L = 1e6; },
+      rare:function(){ setCart('rare', true); setCart('lucky', true); },
+      doom:function(){ setCart('doom', true); },
+      hush:function(){ setCart('zoo', true); setCart('dark', true); setCart('home', true); }
+    };
+
+    function roll(){
+      reset();
+      DRAKE.concat(DETECT).forEach(function(d){
+        var lo = d.k === 'fl' || d.k === 'fi' ? Math.max(d.min, 1e-6) : d.min;
+        v[d.k] = lo * Math.pow(d.max / lo, Math.random());
+      });
+      CARTS.forEach(function(c){ if (Math.random() < .3) setCart(c.k, true); });
+      Object.keys(allDefs).forEach(paint);
+    }
+
+    function verdict(p){
+      if (p >= .9) return 'PARADOX! THE SKY SHOULD BE NOISY.';
+      if (p >= .5) return 'ODD. WE SHOULD HAVE HEARD SOMEONE.';
+      if (p >= .1) return 'HMM. SILENCE IS A LITTLE SUSPICIOUS.';
+      if (p >= .001) return 'NO PARADOX. SILENCE IS EXPECTED.';
+      return 'WE MAY BE ALONE-ISH.';
+    }
+
+    function renderFunnel(m){
+      var rows = m.stages.concat([
+        {label:'ALIVE TODAY', n:m.now, mult:1},
+        {label:'WE NOTICE', n:m.expected, mult:1}
+      ]);
+      var worst = null;
+      rows.forEach(function(r){ if (r.mult < 1 && (!worst || r.mult < worst.mult)) worst = r; });
+      var box = $('funnel');
+      box.textContent = '';
+      rows.forEach(function(r){
+        var row = document.createElement('div');
+        row.className = 'row' + (r.cart ? ' f' : '') + (r === worst ? ' killer' : '');
+        var label = document.createElement('span');
+        label.textContent = r.label;
+        var bar = document.createElement('div');
+        var pct = clamp((Math.log10(Math.max(r.n, 1e-12)) + 6) / 16, .01, 1);
+        bar.className = 'bar';
+        bar.style.width = (pct * 100) + '%';
+        var wrap = document.createElement('div');
+        wrap.appendChild(bar);
+        var n = document.createElement('span');
+        n.className = 'n';
+        n.textContent = shortCount(r.n);
+        row.appendChild(label);
+        row.appendChild(wrap);
+        row.appendChild(n);
+        box.appendChild(row);
+      });
+    }
+
+    function strongestCart(){
+      var best = null, bestMult = 1;
+      CARTS.forEach(function(c){
+        if (!on[c.k]) return;
+        var mult = c.gates.reduce(function(acc, g){ return acc * v[g.k]; }, 1);
+        if (mult < bestMult) { bestMult = mult; best = c; }
+      });
+      return best;
+    }
+
+    function hash(){
+      var parts = [];
+      var active = CARTS.filter(function(c){ return on[c.k]; }).map(function(c){ return c.k; });
+      if (active.length) parts.push('on=' + active.join('.'));
+      Object.keys(allDefs).forEach(function(k){
+        if (v[k] !== allDefs[k].def) parts.push(k + '=' + Number(v[k].toPrecision(3)));
+      });
+      return parts.join('&');
+    }
+
+    function readHash(){
+      var text = location.hash.slice(1);
+      if (!text) return;
+      text.split('&').forEach(function(part){
+        var kv = part.split('='), k = kv[0], val = kv[1];
+        if (k === 'on') {
+          (val || '').split('.').forEach(function(c){
+            if (CARTS.some(function(x){ return x.k === c; })) setCart(c, true);
+          });
+        } else if (allDefs[k] && isFinite(Number(val)) && val !== '') {
+          v[k] = clamp(Number(val), allDefs[k].min, allDefs[k].max);
+        }
+      });
+      Object.keys(allDefs).forEach(paint);
+    }
+
+    function update(){
+      var m = model(v, on);
+      var base = model(v, {});
+      $('odds').textContent = chance(m.chance);
+      $('odds').classList.toggle('long', chance(m.chance).length > 7);
+      $('now').textContent = shortCount(m.now);
+      $('ever').textContent = shortCount(m.ever);
+      $('near').textContent = m.nearest ? shortCount(sig(m.nearest, 2)) + ' LY' : 'NOBODY';
+      $('verdict').textContent = verdict(m.chance);
+      $('lcd-reset').style.visibility = hash() ? 'visible' : 'hidden';
+      $('baseline').textContent = 'WITH NO FILTERS: ' + chance(base.chance);
+      $('live-eq').textContent =
+        'N = R★ × fp × ne × fl × fi × fc × L\n' +
+        '  = ' + [v.R, v.fp, v.ne, v.fl, v.fi].map(function(x){ return sig(x, 2); }).join(' × ') + ' × ' + sig(v.fc, 2) + ' × ' + shortCount(sig(v.L, 2)) +
+        ' = ' + shortCount(base.now) + ' civilizations alive now\n' +
+        (m.now !== base.now ? 'With your filters: ' + shortCount(m.now) + '\n' : '') +
+        'Expected detections: ' + shortCount(m.signal) + ' by signal + ' + shortCount(m.spread) + ' by spreading\n' +
+        'Chance of detection: ' + chance(m.chance);
+      var total = $('gate-total-ore');
+      if (total) total.textContent = 'ALL FOUR GATES: ' + frac(v.o1 * v.o2 * v.o3 * v.o4);
+      renderFunnel(m);
+      $('sky').setAttribute('aria-label', 'A person on Earth waving at an alien planet. Chance of detection ' + chance(m.chance));
+      scene.set(m, strongestCart());
+      clearTimeout(update.timer);
+      update.timer = setTimeout(function(){
+        var h = hash();
+        history.replaceState(null, '', h ? '#' + h : location.pathname);
+      }, 250);
+    }
+
+    /* The sky. Everything is drawn at 256x160 and scaled up with no smoothing. */
+    var scene = (function(){
+      var cv = $('sky'), ctx = cv.getContext('2d');
+      var W = 256, H = 160;
+      var INK = '#140f30';
+      var still = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var BAYER = [0,8,2,10,12,4,14,6,3,11,1,9,15,7,13,5];
+      var FONT = {A:'25755',B:'65656',C:'34443',D:'65556',E:'74647',F:'74644',G:'34553',H:'55755',I:'72227',J:'11152',K:'55655',L:'44447',M:'57755',N:'65555',O:'25552',P:'65644',Q:'25573',R:'65655',S:'34216',T:'72222',U:'55557',V:'55552',W:'55775',X:'55255',Y:'55222',Z:'71247',
+        '0':'75557','1':'26227','2':'61247','3':'61216','4':'55711','5':'74616','6':'34757','7':'71222','8':'75757','9':'75716','!':'22202','?':'61202','.':'00002',',':'00024',':':'02020',"'":'22000','-':'00700',' ':'00000'};
+      var PLANETS = {
+        none:['#34206b','#7d4fd6','#cf9bff'], ore:['#34302e','#6e665e','#a89d8f'], fire:['#10306e','#2a72c9','#7fd0f2'],
+        rare:['#3b4a7a','#8ea3cf','#e3ecff'], lucky:['#4a3a2a','#a4845a','#e0c48f'], doom:['#3a1016','#94301f','#f08a3c'],
+        home:['#2b2a6e','#5a55c4','#a8a3ef'], zoo:['#7a2f5e','#d76aa4','#ffb7d6'], dark:['#0d0a22','#231b4d','#41357f']
+      };
+      var ALIEN = [
+        '...g...g...',
+        '....g.g....',
+        '...ggggg...',
+        '..ggggggg..',
+        '.ggwkgwkgg.',
+        '.ggwkgwkgg.',
+        '.ggggggggg.',
+        '.gggdddggg.',
+        '..ggggggg..',
+        '...gg.gg...',
+        '...dd.dd...'
+      ];
+      var SLIME = [
+        '...ggggg...',
+        '..ggggggg..',
+        '.ggwkgwkgg.',
+        '.ggggggggg.',
+        'ggggggggggg'
+      ];
+      var HUMAN = [
+        '..hhhhh..',
+        '.hhhhhhh.',
+        '.hsssssh.',
+        '.sksssks.',
+        '.sssssss.',
+        '..sscss..',
+        '...sss...',
+        '..rrrrr..',
+        '.srrrrr..',
+        '.s.rrr...',
+        '...rrr...',
+        '...bbb...',
+        '...b.b...',
+        '...b.b...',
+        '..kk.kk..'
+      ];
+      var COLORS = {g:'#7fe36b',d:'#2f9a4a',w:'#ffffff',k:'#140f30',h:'#6a3a1e',s:'#ffcf9e',c:'#d26a5a',r:'#ff5e5e',b:'#3f62c9',y:'#ffd35c',e:'#8f8a84'};
+
+      var stars = [], twinkle = [], i;
+      function rnd(seed){ var x = Math.sin(seed * 127.1) * 43758.5453; return x - Math.floor(x); }
+      for (i = 0; i < 90; i++) stars.push({x:Math.floor(rnd(i + 1) * W), y:Math.floor(rnd(i + 200) * 128), c:i % 7 === 0 ? '#ffd35c' : i % 5 === 0 ? '#ff9ec7' : '#c9d3ff', p:i % 9});
+      for (i = 0; i < 80; i++) twinkle.push({x:Math.floor(rnd(i + 400) * W), y:Math.floor(rnd(i + 600) * 118), p:i % 8});
+
+      var earth = document.createElement('canvas');
+      earth.width = W;
+      earth.height = H;
+      (function(){
+        var e = earth.getContext('2d'), cx = 92, cy = 330, r = 204;
+        for (var y = 118; y < H; y++) for (var x = 0; x < W; x++) {
+          var dx = x - cx, dy = y - cy, d = Math.sqrt(dx * dx + dy * dy);
+          if (d > r + 3) continue;
+          if (d > r) { e.fillStyle = '#4b7be0'; e.fillRect(x, y, 1, 1); continue; }
+          var land = Math.sin(x * .05) + Math.sin(x * .13 + y * .1) * .7 + Math.sin(y * .2) * .3 > -.35;
+          var dith = BAYER[(x % 4) + (y % 4) * 4] / 16;
+          var depth = (r - d) / 40;
+          e.fillStyle = land ? (depth + dith > .85 ? '#3b9a57' : '#74cf6e') : (depth + dith > .85 ? '#2b6fd0' : '#58a6f0');
+          e.fillRect(x, y, 1, 1);
+        }
+      })();
+
+      var ball = document.createElement('canvas');
+      ball.width = ball.height = 128;
+      var ballCtx = ball.getContext('2d');
+
+      function hex(c){ return [parseInt(c.slice(1, 3), 16), parseInt(c.slice(3, 5), 16), parseInt(c.slice(5, 7), 16)]; }
+
+      var state = {m:null, cart:null, target:40, r:40, t:.9, frame:0};
+
+      function drawBall(r, key, gold, spin){
+        var size = Math.ceil(r) * 2 + 2, mid = size / 2;
+        var img = ballCtx.createImageData(size, size);
+        var pal = PLANETS[key].map(hex), goldRGB = hex('#ffd35c');
+        for (var y = 0; y < size; y++) for (var x = 0; x < size; x++) {
+          var nx = (x + .5 - mid) / r, ny = (y + .5 - mid) / r, q = nx * nx + ny * ny;
+          if (q > 1) continue;
+          var nz = Math.sqrt(1 - q);
+          var light = -nx * .55 - ny * .6 + nz * .6;
+          var band = Math.sin(nx * 5 + spin) + Math.sin(ny * 7 + nx * 3 + spin * .6);
+          var tone = light + band * .1 + (BAYER[(x % 4) + (y % 4) * 4] / 16 - .5) * .5;
+          var c = tone > .55 ? pal[2] : tone > .05 ? pal[1] : pal[0];
+          if (gold > 0 && rnd(Math.floor(x + spin * 3) * 13 + y * 7.3) < gold) c = goldRGB;
+          var o = (y * size + x) * 4;
+          img.data[o] = c[0]; img.data[o + 1] = c[1]; img.data[o + 2] = c[2]; img.data[o + 3] = 255;
+        }
+        ballCtx.clearRect(0, 0, 128, 128);
+        ballCtx.putImageData(img, 0, 0);
+        return size;
+      }
+
+      function sprite(map, x, y, s){
+        map.forEach(function(row, j){
+          row.split('').forEach(function(ch, i){
+            if (ch === '.') return;
+            ctx.fillStyle = COLORS[ch];
+            ctx.fillRect(x + i * s, y + j * s, s, s);
+          });
+        });
+      }
+
+      function px(c, x, y, w, h){ ctx.fillStyle = c; ctx.fillRect(x, y, w || 1, h || 1); }
+
+      function text(str, x, y, c){
+        str.split('').forEach(function(ch, n){
+          var g = FONT[ch] || FONT[' '];
+          for (var j = 0; j < 5; j++) {
+            var bits = Number(g[j]);
+            for (var i = 0; i < 3; i++) if (bits & (4 >> i)) px(c, x + n * 4 + i, y + j);
+          }
+        });
+      }
+
+      function bubble(str, x, y, tail){
+        var w = str.length * 4 + 5, h = 11;
+        x = clamp(x, 1, W - w - 1);
+        y = clamp(y, 1, H - h - 1);
+        px('#ffffff', x + 1, y, w - 2, h);
+        px('#ffffff', x, y + 1, w, h - 2);
+        if (tail === 'left') { px('#ffffff', x + 3, y + h, 3, 2); px('#ffffff', x + 3, y + h + 2, 1, 1); }
+        else { px('#ffffff', x + w - 6, y + h, 3, 2); px('#ffffff', x + w - 4, y + h + 2, 1, 1); }
+        text(str, x + 3, y + 3, '#3a2c5a');
+      }
+
+      function drawAlien(ax, ay, s, key, wave){
+        if (key === 'lucky') {
+          sprite(SLIME, ax - 5 * s, ay - 5 * s, s);
+          return;
+        }
+        var top = ay - 11 * s;
+        var left = ax - 5.5 * s;
+        left = Math.round(left);
+        sprite(ALIEN, left, top, s);
+        if (key === 'home') {
+          px(COLORS.g, left + s, top + 4 * s, s * 9, s * 2);
+          px(COLORS.k, left + 2 * s, top + 5 * s, s * 2, s);
+          px(COLORS.k, left + 7 * s, top + 5 * s, s * 2, s);
+          return;
+        }
+        var g = COLORS.g;
+        px(g, left, top + 7 * s, s, s);
+        px(g, left - s, top + 8 * s, s, s);
+        if (key === 'ore') {
+          px(COLORS.e, left - 3 * s, top + 4 * s, s * 3, s * 3);
+          px('#6a3a1e', left - 2 * s, top + 7 * s, s, s * 2);
+        }
+        if (wave) {
+          px(g, left + 10 * s, top + 6 * s, s, s);
+          px(g, left + 11 * s, top + 5 * s, s, s);
+          px(g, left + 12 * s, top + 3 * s, s, s * 2);
+        } else {
+          px(g, left + 10 * s, top + 7 * s, s, s);
+          px(g, left + 11 * s, top + 6 * s, s, s);
+          px(g, left + 12 * s, top + 5 * s, s * 2, s);
+        }
+        if (key === 'fire') {
+          px('#ffd35c', left + 9 * s, top + 3 * s, s, s * 4);
+          px('#ff6b5e', left + 7 * s, top + 7 * s, s * 3, s);
+        }
+      }
+
+      function draw(){
+        var m = state.m;
+        if (!m) return;
+        var f = state.frame, wave = Math.floor(f / 5) % 2 === 0;
+        var cart = state.cart, key = cart ? cart.k : 'none';
+        ctx.fillStyle = INK;
+        ctx.fillRect(0, 0, W, H);
+        stars.forEach(function(st){ if (!still && (f + st.p * 7) % 40 < 3) return; px(st.c, st.x, st.y); });
+
+        var dots = Math.min(twinkle.length, Math.ceil(m.now >= 1 ? 3 * Math.log10(m.now + 1) * 5 : 0));
+        for (var n = 0; n < dots; n++) {
+          var d = twinkle[n], lit = (f + d.p * 3) % 16 < 8;
+          px(lit ? '#7fe3c0' : '#2f9a7a', d.x, d.y);
+          if (lit) { px('#3fa98a', d.x - 1, d.y); px('#3fa98a', d.x + 1, d.y); px('#3fa98a', d.x, d.y - 1); px('#3fa98a', d.x, d.y + 1); }
+        }
+
+        var t = state.t, r = state.r;
+        var cx = Math.round(226 + (182 - 226) * t), cy = Math.round(20 + (74 - 20) * t);
+        var angle = -2.3;
+        var ax = Math.round(cx + Math.cos(angle) * r), ay = Math.round(cy + Math.sin(angle) * r) + 2;
+        var s = r < 5 ? 0 : r < 18 ? 1 : r < 36 ? 2 : 3;
+
+        var loud = m.chance >= .02;
+        if (loud) {
+          var hops = Math.ceil(m.chance * 5);
+          for (var h = 0; h < hops; h++) {
+            var u = ((f / 30) + h / hops) % 1;
+            var sx = cx + (74 - cx) * u, sy = cy + (106 - cy) * u;
+            px('#7fe3c0', Math.round(sx), Math.round(sy), 2, 2);
+          }
+        }
+
+        if (key === 'dark' && s) drawAlien(ax, ay + 6 * s, s, 'none', false);
+
+        var gold = on.ore ? clamp(Math.pow(v.o2 * v.o3, .7), .01, .3) : 0;
+        if (!still && f % 3 === 0 || !state.size) state.size = drawBall(r, key, gold, still ? 1 : f * .03);
+        ctx.drawImage(ball, Math.round(cx - state.size / 2), Math.round(cy - state.size / 2));
+
+        if (key === 'doom' && r > 6) {
+          px('#140f30', cx - 3, cy - Math.round(r * .5), 1, Math.round(r * .7));
+          px('#140f30', cx - 2, cy, Math.round(r * .5), 1);
+          for (var p = 0; p < 3; p++) px('#8f8a84', ax + 8 + p * 3, ay - 5 - ((f + p * 6) % 18), 2, 2);
+        }
+        if (key === 'zoo' && s) {
+          var fx0 = ax - 11 * s;
+          px('#ffd35c', fx0, ay - 3 * s, 22 * s, 1);
+          for (var q = 0; q < 8; q++) px('#ffd35c', fx0 + q * 3 * s, ay - 5 * s, 1, 5 * s);
+        }
+
+        if (s && key !== 'dark') drawAlien(ax, ay, s, key, wave && !still);
+        if (key === 'home' && s) {
+          text('Z', ax + 8 * s + (f % 24 > 12 ? 1 : 0), ay - 13 * s, '#ffffff');
+        }
+
+        ctx.drawImage(earth, 0, 0);
+        var hx = 56, hy = 97;
+        sprite(HUMAN, hx, hy, 2);
+        if (wave && !still) { px(COLORS.s, hx + 14, hy + 14, 2, 2); px(COLORS.s, hx + 16, hy + 12, 2, 2); px(COLORS.s, hx + 18, hy + 8, 2, 4); }
+        else { px(COLORS.s, hx + 14, hy + 16, 2, 2); px(COLORS.s, hx + 16, hy + 14, 2, 2); px(COLORS.s, hx + 18, hy + 12, 2, 2); }
+
+        var say;
+        if (!s) say = '?';
+        else if (m.chance >= .9) say = 'HI!!!';
+        else if (cart) say = cart.say;
+        else if (m.chance >= .5) say = 'HELLO!';
+        else if (m.chance >= .1) say = 'HI?';
+        else say = 'ANYONE?';
+        var by = ay - (s ? (key === 'lucky' ? 7 : 12) * s : 6) - 13;
+        bubble(say, ax - say.length * 2 - (ax > 200 ? 16 : 0), by, 'left');
+        bubble(m.chance >= .5 ? 'HI BACK!' : 'HELLO?', 26, 80, 'right');
+      }
+
+      function tick(){
+        if (document.hidden) return;
+        state.frame++;
+        state.r += (state.target - state.r) * .22;
+        state.t += (state.tTarget - state.t) * .22;
+        if (Math.abs(state.target - state.r) < .2) state.r = state.target;
+        draw();
+      }
+
+      if (!still) setInterval(tick, 83);
+
+      return {
+        set:function(m, cart){
+          var strength = clamp((Math.log10(Math.max(m.expected, 1e-9)) + 6) / 7.5, 0, 1);
+          state.m = m;
+          state.cart = cart;
+          state.target = Math.max(1.5, 1.5 + 50.5 * Math.pow(strength, 1.9));
+          state.tTarget = strength;
+          if (still || !state.ready) {
+            state.r = state.target;
+            state.t = strength;
+            state.ready = true;
+            state.size = 0;
+            draw();
+          }
+        }
+      };
+    })();
+
+    DRAKE.forEach(function(d){ buildSlider(d, $('drake')); });
+    DETECT.forEach(function(d){ buildSlider(d, $('detect')); });
+    CARTS.forEach(function(c){ buildCart(c, $('carts')); });
+    reset();
+    readHash();
+
+    $('key-ore').addEventListener('click', function(){ setCart('ore', !on.ore); update(); });
+    function startOver(){
+      reset();
+      $('key-ore').classList.add('hint');
+      update();
+    }
+
+    $('key-ac').addEventListener('click', startOver);
+    $('lcd-reset').addEventListener('click', startOver);
+    $('key-dice').addEventListener('click', function(){ roll(); update(); });
+    Array.prototype.forEach.call(document.querySelectorAll('[data-preset]'), function(btn){
+      btn.addEventListener('click', function(){
+        reset();
+        PRESETS[btn.getAttribute('data-preset')]();
+        Object.keys(allDefs).forEach(paint);
+        update();
+      });
+    });
+    $('key-share').addEventListener('click', function(){
+      var btn = $('key-share');
+      var h = hash();
+      var url = location.origin + location.pathname + (h ? '#' + h : '');
+      if (!navigator.clipboard) { location.hash = h; return; }
+      navigator.clipboard.writeText(url).then(function(){
+        btn.textContent = 'COPIED!';
+        setTimeout(function(){ btn.textContent = 'COPY THIS SKY'; }, 1500);
+      });
+    });
+
+    update();
+  </script>
+</body>
+</html>
