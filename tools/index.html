@@ -189,6 +189,46 @@
       font-size:11px;
     }
 
+    .tool.featured{
+      grid-column:span 2;
+      grid-template-columns:minmax(0,46%) 1fr;
+      grid-template-rows:1fr auto;
+      column-gap:14px;
+      padding:9px 13px 9px 9px;
+    }
+    .featured .media{
+      grid-column:1;
+      grid-row:1 / span 2;
+      position:relative;
+      aspect-ratio:1200 / 630;
+      overflow:hidden;
+      border-radius:8px;
+      background:#0b1d26;
+    }
+    .featured .media img,
+    .featured .media video{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+    .featured .media video{opacity:0;transition:opacity .2s ease}
+    .featured.playing .media video{opacity:1}
+    .featured .tool-content{align-self:center;padding-top:4px}
+    .featured h2{font-size:16px}
+    .featured p{font-size:12px}
+    .featured .tag{
+      display:inline-block;
+      margin-bottom:6px;
+      color:#5b5d57;
+      font-size:9px;
+      font-weight:900;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+    .featured .open{padding-bottom:4px}
+
     footer{
       padding-bottom:24px;
       color:var(--muted);
@@ -198,12 +238,23 @@
     @media(max-width:820px){
       .tools{grid-template-columns:repeat(2,minmax(0,1fr))}
     }
+    @media(max-width:640px){
+      .tool.featured{
+        grid-template-columns:1fr;
+        grid-template-rows:auto auto auto;
+        padding:9px 9px 13px;
+      }
+      .featured .media{grid-row:1}
+      .featured .tool-content,.featured .open{grid-column:1;padding-left:4px}
+      .featured .tool-content{padding-top:8px}
+    }
 
     @media(max-width:540px){
       .wrap{width:calc(100% - 20px)}
       header{padding-top:24px}
       .tools{grid-template-columns:1fr}
       .tool{min-height:98px}
+      .tool.featured{grid-column:auto}
       .top{align-items:flex-start}
     }
   </style>
@@ -380,15 +431,19 @@
     <section class="tools" aria-label="Independent experiments">
 
       <a
-        class="tool external"
+        class="tool external featured"
         href="https://spyorlie.com/"
         target="_blank"
         rel="noopener noreferrer"
       >
-        <div class="icon" aria-hidden="true">S/L</div>
+        <div class="media" aria-hidden="true">
+          <img src="/images/previews/spyorlie-card.jpg" alt="" width="800" height="420" loading="lazy">
+          <video src="/images/previews/spyorlie-preview.mp4" muted loop playsinline preload="none"></video>
+        </div>
         <div class="tool-content">
+          <span class="tag">Strategy game · Free to play</span>
           <h2>Spy or Lie</h2>
-          <p>A bluffing and territory-capture strategy game built around spies, moles, and counterintelligence.</p>
+          <p>Bluff, capture, and turn the tables. Place hidden Spies and Moles, accuse traitors with the Mole Catcher, and unleash Cyber Attacks against three computer opponents.</p>
         </div>
         <span class="open">Play the game ↗</span>
       </a>
@@ -417,5 +472,20 @@
   </main>
 
   <footer class="wrap">© Nate Lorenzen</footer>
+  <script>
+    // Play the featured game preview on hover or keyboard focus, unless reduced motion is requested.
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      for (const card of document.querySelectorAll('.tool.featured')) {
+        const video = card.querySelector('video');
+        if (!video) continue;
+        const start = () => { card.classList.add('playing'); video.play().catch(() => card.classList.remove('playing')); };
+        const stop = () => { card.classList.remove('playing'); video.pause(); };
+        card.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') start(); });
+        card.addEventListener('pointerleave', stop);
+        card.addEventListener('focus', start);
+        card.addEventListener('blur', stop);
+      }
+    }
+  </script>
 </body>
 </html>
