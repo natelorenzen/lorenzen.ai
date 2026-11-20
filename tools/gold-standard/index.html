@@ -13,681 +13,748 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Gold Standard — What is an ounce actually worth?</title>
-  <meta name="description" content="Estimate gold's real-economy fair value using productive cows, farmland, and monetary-premium scenarios." />
+  <meta name="description" content="A 100-year purchasing-power model for gold: what an ounce is worth in cows and farmland, how big today's monetary premium is, and how well the model actually fits." />
   <link rel="canonical" href="https://lorenzen.ai/tools/gold-standard/" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Gold Standard — What is an ounce actually worth?" />
   <meta property="og:description" content="A 100-year purchasing-power model for gold based on productive cows, U.S. farmland, and the monetary premium." />
   <meta property="og:url" content="https://lorenzen.ai/tools/gold-standard/" />
   <meta name="twitter:card" content="summary" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#0b0c0f; --panel:#121419; --panel2:#171a20; --text:#f4f5f7;
-      --muted:#9ca3af; --line:#2a2f38; --gold:#d7b35b; --green:#7dd3a8;
-      --red:#ef8f8f; --blue:#8db7ff; --radius:18px;
+      --bg:#fbfaf7; --surface:#ffffff; --surface2:#f4f2ec; --text:#16171a; --muted:#5f6470; --faint:#8a8f99;
+      --line:#e4e1d8; --line2:#d3cfc3; --gold:#a8791c; --gold-soft:#f3e7cc; --blue:#2f5fa7; --green:#2f7d55; --red:#b4483c;
+      --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+      --sans:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+      --mono:ui-monospace,SFMono-Regular,Menlo,monospace;
+    }
+    @media (prefers-color-scheme:dark){
+      :root:not([data-theme="light"]){
+        --bg:#0e0f12; --surface:#15171b; --surface2:#1b1e23; --text:#eceef2; --muted:#a2a8b3; --faint:#7b818c;
+        --line:#272a31; --line2:#343842; --gold:#d9b25e; --gold-soft:#2c2618; --blue:#86aef0; --green:#74c79b; --red:#ec8b80;
+      }
+    }
+    :root[data-theme="dark"]{
+      --bg:#0e0f12; --surface:#15171b; --surface2:#1b1e23; --text:#eceef2; --muted:#a2a8b3; --faint:#7b818c;
+      --line:#272a31; --line2:#343842; --gold:#d9b25e; --gold-soft:#2c2618; --blue:#86aef0; --green:#74c79b; --red:#ec8b80;
     }
     *{box-sizing:border-box}
-    body{
-      margin:0; font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-      background:linear-gradient(180deg,#0b0c0f 0%,#0e1014 100%); color:var(--text);
-    }
-    a{color:inherit}
-    .wrap{max-width:1120px;margin:0 auto;padding:26px 18px 64px}
-    .topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:42px}
-    .brand{font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-    .back{font-size:14px;color:var(--muted);text-decoration:none;border:1px solid var(--line);padding:9px 12px;border-radius:999px}
-    .hero{display:grid;grid-template-columns:1.25fr .75fr;gap:20px;align-items:end;margin-bottom:22px}
-    h1{font-size:clamp(42px,7vw,78px);line-height:.96;margin:0;letter-spacing:-.055em}
-    .dek{font-size:18px;line-height:1.5;color:var(--muted);max-width:650px;margin:18px 0 0}
-    .stamp{text-align:right;color:var(--muted);font-size:13px;line-height:1.5}
-    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
-    .card{background:rgba(18,20,25,.95);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
-    .metric{grid-column:span 3;min-height:154px}
-    .metric .label,.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700}
-    .metric .value{font-size:34px;letter-spacing:-.035em;font-weight:750;margin-top:13px}
-    .metric .sub{font-size:13px;color:var(--muted);margin-top:7px;line-height:1.4}
-    .wide{grid-column:span 8}.side{grid-column:span 4}.full{grid-column:1/-1}
-    .section-title{display:flex;justify-content:space-between;gap:12px;align-items:end;margin:40px 0 14px}
-    .section-title h2{font-size:26px;margin:0;letter-spacing:-.03em}
-    .section-title p{margin:0;color:var(--muted);font-size:13px}
-    .gauge{height:12px;background:#242933;border-radius:999px;overflow:hidden;position:relative;margin:18px 0 10px}
-    .gauge span{display:block;height:100%;background:linear-gradient(90deg,var(--green),var(--gold),var(--red));width:100%}
-    .marker{position:absolute;top:-4px;width:3px;height:20px;background:white;border-radius:2px;transform:translateX(-50%)}
-    .regime{font-size:22px;font-weight:750;margin-top:8px}
-    .small{font-size:13px;color:var(--muted);line-height:1.55}
-    .barrow{display:grid;grid-template-columns:130px 1fr 82px;gap:12px;align-items:center;margin:15px 0}
-    .bar{height:9px;border-radius:999px;background:#242933;overflow:hidden}
-    .bar > i{display:block;height:100%;background:var(--gold);border-radius:999px}
-    .barrow strong{text-align:right}
-    .controls{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-    .control label{display:flex;justify-content:space-between;gap:12px;font-size:13px;margin-bottom:8px}
-    input[type="range"]{width:100%;accent-color:var(--gold)}
-    input[type="number"]{width:110px;background:#0d0f13;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:8px 9px}
-    .table{width:100%;border-collapse:collapse;font-size:14px}
-    .table th,.table td{text-align:left;padding:12px 8px;border-bottom:1px solid var(--line)}
-    .table th{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.07em}
-    .table td:last-child,.table th:last-child{text-align:right}
+    html{-webkit-text-size-adjust:100%}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.6;font-feature-settings:"tnum" 1,"cv11" 1}
+    a{color:inherit;text-underline-offset:3px;text-decoration-color:var(--line2)}
+    a:hover{text-decoration-color:currentColor}
+    .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+    .num{font-variant-numeric:tabular-nums}
+
+    /* Header */
+    .site{border-bottom:1px solid var(--line);background:var(--bg)}
+    .site .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:12px}
+    .crumb{font-size:13px;color:var(--muted);text-decoration:none;letter-spacing:.01em}
+    .crumb b{color:var(--text);font-weight:600}
+    .head-actions{display:flex;gap:8px}
+    .btn{font:500 13px var(--sans);color:var(--text);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:7px 11px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+    .btn:hover{border-color:var(--line2)}
+
+    /* Hero */
+    .hero{padding:52px 0 28px}
+    .kicker{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+    h1{font-family:var(--serif);font-weight:600;font-size:clamp(36px,6vw,60px);line-height:1.04;letter-spacing:-.02em;margin:10px 0 16px;max-width:820px}
+    .dek{font-size:19px;line-height:1.55;color:var(--muted);max-width:720px;margin:0}
+    .byline{margin-top:20px;font-size:13px;color:var(--faint);display:flex;flex-wrap:wrap;gap:6px 16px}
+    .status-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--gold);margin-right:6px;vertical-align:1px}
+    .status-dot.live{background:var(--green)}
+
+    /* Key stats */
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:12px;background:var(--surface);overflow:hidden}
+    .stat{padding:20px 22px;border-right:1px solid var(--line)}
+    .stat:last-child{border-right:0}
+    .stat .lab{font-size:12px;color:var(--muted);font-weight:500}
+    .stat .val{font-family:var(--serif);font-size:36px;font-weight:600;letter-spacing:-.02em;line-height:1.1;margin-top:8px}
+    .stat .sub{font-size:12px;color:var(--faint);margin-top:6px;line-height:1.4}
+    .pos{color:var(--red)} .neg{color:var(--green)}
+
+    /* Takeaway */
+    .takeaway{margin:22px 0 0;padding:18px 22px;border-left:3px solid var(--gold);background:var(--gold-soft);border-radius:0 10px 10px 0;font-size:16px;line-height:1.6}
+    .takeaway strong{font-weight:600}
+
+    /* Sections */
+    section{padding:48px 0 0}
+    .sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:16px;flex-wrap:wrap}
+    h2{font-family:var(--serif);font-weight:600;font-size:28px;letter-spacing:-.015em;line-height:1.2;margin:0}
+    .sec-sub{color:var(--muted);font-size:14px;margin:4px 0 0;max-width:640px}
+    .panel{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px}
+    .note{font-size:13px;color:var(--muted);line-height:1.6;margin:12px 0 0}
+
+    /* Segmented control */
+    .seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--surface)}
+    .seg button{font:500 12px var(--sans);color:var(--muted);background:none;border:0;padding:7px 11px;cursor:pointer;border-right:1px solid var(--line)}
+    .seg button:last-child{border-right:0}
+    .seg button[aria-pressed="true"]{background:var(--surface2);color:var(--text)}
+    .toolbar{display:flex;gap:8px;flex-wrap:wrap}
+
+    /* Charts */
+    .chart-legend{display:flex;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin-bottom:10px}
+    .chart-legend i{display:inline-block;width:16px;height:0;border-top:2.5px solid var(--gold);vertical-align:middle;margin-right:6px}
+    .chart-legend i.fair{border-top:2px dashed var(--blue)}
+    .chart-legend i.med{border-top:1.5px dashed var(--faint)}
+    .chart-legend i.base{border-top:2px dotted var(--faint)}
+    .l-base{fill:none;stroke:var(--faint);stroke-width:1.8;stroke-dasharray:1.5 4;stroke-linecap:round}
+    td.win{font-weight:700;color:var(--text)}
+    td.win::after{content:" ✓";color:var(--green);font-weight:600}
+    table.cmp{min-width:0}
+    .cmp td:not(:first-child){font-size:16px;color:var(--muted);font-family:var(--serif);white-space:nowrap;vertical-align:top}
+    .chart{position:relative}
+    .chart svg{display:block;width:100%;height:auto;overflow:visible;touch-action:pan-y}
+    .grid-l{stroke:var(--line);stroke-width:1}
+    .axis{fill:var(--faint);font:11px var(--sans)}
+    .l-market{fill:none;stroke:var(--gold);stroke-width:2.5;stroke-linejoin:round}
+    .l-fair{fill:none;stroke:var(--blue);stroke-width:2;stroke-dasharray:6 4;stroke-linejoin:round}
+    .l-prem{fill:none;stroke:var(--gold);stroke-width:2.5;stroke-linejoin:round}
+    .a-prem-pos{fill:var(--red);opacity:.12}
+    .a-prem-neg{fill:var(--green);opacity:.12}
+    .l-zero{stroke:var(--line2);stroke-width:1}
+    .l-med{stroke:var(--faint);stroke-width:1.2;stroke-dasharray:4 4}
+    .band{fill:var(--surface2)}
+    .band-lab{fill:var(--faint);font:10.5px var(--sans)}
+    .cursor{stroke:var(--line2);stroke-width:1}
+    .end-dot{stroke:var(--surface);stroke-width:2}
+    .tip{position:absolute;top:0;pointer-events:none;opacity:0;transition:opacity .1s;background:var(--surface);border:1px solid var(--line2);border-radius:8px;padding:8px 10px;font-size:12px;line-height:1.5;white-space:nowrap;box-shadow:0 6px 20px rgba(0,0,0,.08);z-index:2}
+    .tip strong{display:block;font-size:13px}
+    .tip .k{color:var(--muted)}
+
+    /* Percentile */
+    .pctl{position:relative;height:40px;margin:16px 0 4px}
+    .pctl .track{position:absolute;left:0;right:0;top:16px;height:8px;border-radius:4px;background:linear-gradient(90deg,var(--green),var(--surface2) 50%,var(--red))}
+    .pctl .tick{position:absolute;top:10px;width:1px;height:20px;background:var(--faint);opacity:.45}
+    .pctl .now{position:absolute;top:6px;width:4px;height:28px;border-radius:2px;background:var(--text);transform:translateX(-50%)}
+    .pctl-lab{display:flex;justify-content:space-between;font-size:12px;color:var(--faint)}
+    .two{display:grid;grid-template-columns:1.4fr 1fr;gap:16px}
+    .big{font-family:var(--serif);font-size:24px;font-weight:600;letter-spacing:-.01em;margin:4px 0 0}
+
+    /* Anchors */
+    .anchors{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .row{display:grid;grid-template-columns:150px 1fr 90px;gap:14px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line);font-size:14px}
+    .row:last-of-type{border-bottom:0}
+    .row strong{text-align:right;font-weight:600}
+    .bar{height:8px;border-radius:4px;background:var(--surface2);overflow:hidden}
+    .bar i{display:block;height:100%;background:var(--gold);border-radius:4px}
+    .bar i.alt{background:var(--blue)}
+    .ctl{margin-bottom:16px}
+    .ctl label{display:flex;justify-content:space-between;font-size:13px;font-weight:500;margin-bottom:6px}
+    .ctl label span:last-child{color:var(--muted)}
+    .ctl .hint{font-size:12px;color:var(--faint);margin-top:2px}
+    input[type=range]{width:100%;accent-color:var(--gold)}
+    input[type=number]{width:70px;font:500 14px var(--sans);color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:5px 7px;text-align:right}
+    .reset{font:500 12px var(--sans);color:var(--muted);background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+
+    /* Table */
+    .tbl-wrap{overflow-x:auto}
+    table{width:100%;border-collapse:collapse;font-size:14px;min-width:560px}
+    th,td{text-align:left;padding:12px 10px;border-bottom:1px solid var(--line)}
+    th{font-size:12px;color:var(--muted);font-weight:500}
+    td:not(:first-child),th:not(:first-child){text-align:right}
+    td small{display:block;color:var(--faint);font-size:12px}
+    tfoot td{font-weight:600;border-bottom:0;border-top:2px solid var(--line2)}
+
+    /* Diagnostics */
+    .diag{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .dcard{border:1px solid var(--line);border-radius:10px;padding:16px;background:var(--surface)}
+    .dcard .val{font-family:var(--serif);font-size:28px;font-weight:600;margin:4px 0 4px}
+    .dcard .lab{font-size:12px;color:var(--muted);font-weight:500}
+    .dcard p{margin:0;font-size:13px;color:var(--muted);line-height:1.5}
+    .grade{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:2px 7px;border-radius:999px;border:1px solid var(--line2);color:var(--muted)}
+
+    /* Mini charts */
+    .minis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .mini{border:1px solid var(--line);border-radius:10px;padding:14px;background:var(--surface)}
+    .mini h3{font-size:15px;font-weight:600;margin:0}
+    .mini .ms{font-size:12px;color:var(--faint);margin:2px 0 8px}
+    .mini svg{width:100%;height:auto;display:block}
+    .m-line{fill:none;stroke:var(--gold);stroke-width:2;stroke-linejoin:round}
+    .m-dot{fill:var(--gold)}
+
+    /* Method */
     .method{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-    .formula{background:#0d0f13;border:1px solid var(--line);border-radius:14px;padding:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;line-height:1.6;color:#d8dbe2}
+    .formula{background:var(--surface2);border-radius:8px;padding:14px 16px;font:13px/1.8 var(--mono);color:var(--text);overflow-x:auto}
+    .method h3,.sources h3{font-size:15px;font-weight:600;margin:0 0 8px}
+    .sources ol{margin:0;padding-left:20px;font-size:14px;color:var(--muted)}
+    .sources li{margin:6px 0}
+    details{border-top:1px solid var(--line);padding:14px 0}
+    details:last-child{border-bottom:1px solid var(--line)}
+    summary{cursor:pointer;font-weight:600;font-size:15px}
+    details p{color:var(--muted);font-size:14px;margin:10px 0 0}
 
-    .chart-card{position:relative;overflow:hidden}
-    .chart-head{display:flex;justify-content:space-between;gap:14px;align-items:flex-end;margin-bottom:14px}
-    .chart-head h3{margin:0;font-size:18px;letter-spacing:-.02em}
-    .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--muted)}
-    .legend span{display:inline-flex;align-items:center;gap:6px}
-    .swatch{width:18px;height:2px;border-radius:2px;background:var(--gold)}
-    .swatch.fair{background:var(--blue)}
-    .chart-wrap{height:320px;position:relative}
-    .chart-wrap.small-chart{height:230px}
-    svg.hist-chart{width:100%;height:100%;overflow:visible}
-    .chart-grid{stroke:#242933;stroke-width:1}
-    .chart-axis{fill:var(--muted);font-size:11px}
-    .chart-line-market{fill:none;stroke:var(--gold);stroke-width:3;stroke-linejoin:round;stroke-linecap:round}
-    .chart-line-fair{fill:none;stroke:var(--blue);stroke-width:2.5;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:7 5}
-    .chart-line-premium{fill:none;stroke:var(--gold);stroke-width:3;stroke-linejoin:round;stroke-linecap:round}
-    .chart-zero{stroke:#6b7280;stroke-width:1;stroke-dasharray:4 4}
-    .chart-dot-market{fill:var(--gold)}
-    .chart-dot-fair{fill:var(--blue)}
-    .tooltip{position:absolute;pointer-events:none;opacity:0;transform:translate(-50%,-110%);background:#0d0f13;border:1px solid var(--line);border-radius:10px;padding:9px 10px;font-size:12px;line-height:1.45;white-space:nowrap;box-shadow:0 10px 30px rgba(0,0,0,.25)}
-    .tooltip strong{display:block;color:var(--text);margin-bottom:2px}
+    .fresh{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-top:12px}
+    .fresh div{padding:12px 14px;border-right:1px solid var(--line);font-size:13px}
+    .fresh div:last-child{border-right:0}
+    .fresh b{display:block;font-weight:600}
+    .fresh span{color:var(--faint);font-size:12px}
 
+    footer{margin:56px 0 0;padding:24px 0 48px;border-top:1px solid var(--line);font-size:12px;color:var(--faint);line-height:1.6}
+    footer p{margin:0 0 8px;max-width:820px}
 
-    .research-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    .research-item{background:#0d0f13;border:1px solid var(--line);border-radius:14px;padding:16px}
-    .research-item h3{font-size:17px;margin:8px 0 8px;letter-spacing:-.02em}
-    .research-item p{margin:0;color:var(--muted);font-size:13px;line-height:1.55}
-    .research-stat{font-size:12px;color:var(--text);font-weight:700;letter-spacing:.02em}
-    .research-note{margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
-    @media(max-width:820px){.research-grid{grid-template-columns:1fr}}
-
-
-    .mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    .mini-chart-card{background:#0d0f13;border:1px solid var(--line);border-radius:14px;padding:14px}
-    .mini-chart-card h3{font-size:16px;margin:6px 0 2px;letter-spacing:-.02em}
-    .mini-chart-card .mini-sub{font-size:12px;color:var(--muted);margin-bottom:8px}
-    .mini-chart{height:210px;width:100%}
-    .mini-chart svg{width:100%;height:100%}
-    .mini-line{fill:none;stroke:var(--gold);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
-    .mini-dot{fill:var(--gold)}
-    .mini-gridline{stroke:#242933;stroke-width:1}
-    .mini-axis{fill:var(--muted);font-size:10px}
-    .mini-callout{font-size:12px;color:var(--text);font-weight:700;margin-top:8px}
-    @media(max-width:900px){.mini-grid{grid-template-columns:1fr}}
-
-
-    .freshness{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}
-    .fresh-item{background:#0d0f13;border:1px solid var(--line);border-radius:12px;padding:11px 12px}
-    .fresh-item .fresh-name{font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);font-weight:700}
-    .fresh-item .fresh-val{font-size:14px;font-weight:700;margin-top:5px}
-    .fresh-item .fresh-date{font-size:11px;color:var(--muted);margin-top:3px}
-    .source-ok{color:var(--green)} .source-fallback{color:var(--gold)}
-    @media(max-width:820px){.freshness{grid-template-columns:1fr 1fr}}
-    @media(max-width:520px){.freshness{grid-template-columns:1fr}}
-
-
-    .disclaimer-banner{
-      margin:0 0 18px;
-      padding:12px 14px;
-      border:1px solid var(--line);
-      border-radius:14px;
-      background:#0d0f13;
-      color:var(--muted);
-      font-size:12px;
-      line-height:1.55;
-    }
-    .disclaimer-banner strong{color:var(--text)}
-
-    .footer{margin-top:42px;color:var(--muted);font-size:12px;line-height:1.6}
-    .status{display:inline-flex;align-items:center;gap:7px}
-    .dot{width:7px;height:7px;border-radius:50%;background:var(--gold)}
-    @media(max-width:820px){
-      .hero{grid-template-columns:1fr}.stamp{text-align:left}
-      .metric{grid-column:span 6}.wide,.side{grid-column:1/-1}
-      .controls,.method{grid-template-columns:1fr}
+    @media(max-width:880px){
+      .stats{grid-template-columns:1fr 1fr}
+      .stat:nth-child(2){border-right:0}
+      .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+      .two,.anchors,.method{grid-template-columns:1fr}
+      .diag{grid-template-columns:1fr 1fr}
+      .minis{grid-template-columns:1fr}
+      .fresh{grid-template-columns:1fr 1fr}
+      .fresh div:nth-child(2){border-right:0}
+      .fresh div:nth-child(-n+2){border-bottom:1px solid var(--line)}
     }
     @media(max-width:520px){
-      .metric{grid-column:1/-1}.barrow{grid-template-columns:100px 1fr 70px}
+      .wrap{padding:0 16px}
+      .hero{padding:36px 0 22px}
+      .dek{font-size:17px}
+      .stat{padding:16px}
+      .stat .val{font-size:28px}
+      .diag{grid-template-columns:1fr}
+      .row{grid-template-columns:110px 1fr 76px;font-size:13px}
+      .panel{padding:16px}
+      .head-actions .btn span{display:none}
     }
   </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="topbar">
-    <div class="brand">lorenzen.ai / tools</div>
-    <a class="back" href="/tools/">Return to tools</a>
+<header class="site">
+  <div class="wrap">
+    <a class="crumb" href="/tools/">lorenzen.ai / tools / <b>Gold Standard</b></a>
+    <div class="head-actions">
+      <button class="btn" id="shareBtn" type="button" aria-label="Copy link">↗ <span>Share</span></button>
+      <a class="btn" href="gold-standard-100-year-reconstruction.csv" download aria-label="Download data">↓ <span>Data</span></a>
+    </div>
   </div>
+</header>
 
+<main class="wrap">
   <div class="hero">
-    <div>
-      <div class="eyebrow">Gold Standard</div>
-      <h1>What is an ounce actually worth?</h1>
-      <p class="dek">A purchasing-power model for gold based on productive cows, U.S. farmland, and the monetary premium investors pay above real-economy value.</p>
-    </div>
-    <div class="stamp">
-      <div class="status"><span class="dot"></span><span id="dataStatus">Using dated model references</span></div>
-      <div id="updatedAt">Model date: Nov 2026 · provisional</div>
-    </div>
-  </div>
-
-
-  <div class="card" style="margin-bottom:18px">
-    <div class="eyebrow">Data freshness</div>
-    <div class="freshness">
-      <div class="fresh-item"><div class="fresh-name">Gold</div><div class="fresh-val" id="goldFresh">Reference</div><div class="fresh-date" id="goldDate">Nov 2026 · reference</div></div>
-      <div class="fresh-item"><div class="fresh-name">Cow</div><div class="fresh-val" id="cowFresh">Reference</div><div class="fresh-date" id="cowDate">Oct 2026 · reference</div></div>
-      <div class="fresh-item"><div class="fresh-name">Farmland</div><div class="fresh-val" id="landFresh">Reference</div><div class="fresh-date" id="landDate">2026 · reference</div></div>
-      <div class="fresh-item"><div class="fresh-name">Manufacturing wage</div><div class="fresh-val" id="wageFresh">Reference</div><div class="fresh-date" id="wageDate">Aug 2026</div></div>
+    <div class="kicker">Gold Standard · purchasing-power model</div>
+    <h1>What is an ounce of gold actually worth?</h1>
+    <p class="dek">Over the long run, gold's price has loosely tracked what it costs to buy a productive cow or an acre of U.S. farmland. This model prices gold against those real assets and measures the <em>monetary premium</em> investors pay on top.</p>
+    <div class="byline">
+      <span><span class="status-dot" id="statusDot"></span><span id="dataStatus">Using dated reference values</span></span>
+      <span id="updatedAt">Gold reference: Nov 19, 2026</span>
+      <span>Not investment advice</span>
     </div>
   </div>
 
-
-  <div class="disclaimer-banner">
-    <strong>For entertainment and educational purposes only.</strong>
-    This tool is a historical thought experiment about gold purchasing power. The default inputs are dated references and are not live quotes until a Worker is connected. It is not financial or investment advice, and its estimates should not be used as the basis for investment decisions.
+  <div class="stats" aria-live="polite">
+    <div class="stat"><div class="lab">Gold price</div><div class="val num" id="spotValue">—</div><div class="sub">Per troy ounce · <span id="spotSrc">reference</span></div></div>
+    <div class="stat"><div class="lab">Real-economy fair value</div><div class="val num" id="fairValue">—</div><div class="sub">Cow × farmland geometric mean</div></div>
+    <div class="stat"><div class="lab">Monetary premium</div><div class="val num" id="premiumValue">—</div><div class="sub" id="regimeLabel">—</div></div>
+    <div class="stat"><div class="lab">Historical percentile</div><div class="val num" id="pctlValue">—</div><div class="sub">vs. every year since 1972</div></div>
   </div>
 
-  <div class="grid">
-    <div class="card metric">
-      <div class="label">Gold market price</div>
-      <div class="value" id="spotValue">$3,628</div>
-      <div class="sub">Per troy ounce</div>
-    </div>
-    <div class="card metric">
-      <div class="label">Real-economy fair value</div>
-      <div class="value" id="fairValue">$2,921</div>
-      <div class="sub">Cow + farmland geometric mean</div>
-    </div>
-    <div class="card metric">
-      <div class="label">Monetary premium</div>
-      <div class="value" id="premiumValue">+24.2%</div>
-      <div class="sub">Market price above modeled fair value</div>
-    </div>
-    <div class="card metric">
-      <div class="label">12-month model</div>
-      <div class="value" id="targetValue">$4,204</div>
-      <div class="sub">Probability-weighted scenario target</div>
-    </div>
-  </div>
+  <p class="takeaway" id="takeaway">Loading the 100-year series…</p>
 
-  <div class="section-title">
-    <h2>Valuation regime</h2>
-    <p>Premium to real-economy fair value</p>
-  </div>
-  <div class="grid">
-    <div class="card wide">
-      <div class="eyebrow">Current regime</div>
-      <div class="regime" id="regimeLabel">High monetary premium</div>
-      <div class="gauge">
-        <span></span>
-        <b class="marker" id="regimeMarker" style="left:72%"></b>
-      </div>
-      <div class="small">Deeply cheap &lt; −20% · Real-value zone −20% to +15% · Monetary premium +15% to +40% · High premium +40% to +80% · Overshoot &gt; +80%</div>
-    </div>
-    <div class="card side">
-      <div class="eyebrow">Interpretation</div>
-      <p class="small" id="interpretation">Gold is trading materially above its modeled purchasing-power value. The current price requires a sizable monetary-insurance premium to persist.</p>
-    </div>
-  </div>
-
-
-  <div class="section-title">
-    <h2>Gold price vs. modeled fair value · 1926–2026</h2>
-    <p>100-year provisional annual reconstruction · 2026 is a separate current reference</p>
-  </div>
-  <div class="grid">
-    <div class="card full chart-card">
-      <div class="chart-head">
-        <div><div class="eyebrow">Historical valuation</div><h3>Market price and real-economy fair value</h3></div>
-        <div class="legend"><span><i class="swatch"></i>Market gold</span><span><i class="swatch fair"></i>Modeled fair value</span></div>
-      </div>
-      <div class="chart-wrap">
-        <svg id="priceChart" class="hist-chart" role="img"></svg>
-        <div class="tooltip" id="priceTooltip"></div>
-      </div>
-      <p class="small">Annual 1926–2025 reconstruction (R² 0.77 full period, 0.67 for 1972–2025; in-sample, not predictive). 70 cow years and 22 farmland years are interpolated. The 2026 endpoint updates with your cow and farmland assumptions. <a href="gold-standard-100-year-reconstruction.csv" download>Download the CSV</a>.</p>
-    </div>
-    <div class="card full chart-card">
-      <div class="chart-head">
-        <div><div class="eyebrow">Monetary premium</div><h3>Premium or discount to modeled real-economy value</h3></div>
-        <div class="legend"><span><i class="swatch"></i>Premium to fair value</span></div>
-      </div>
-      <div class="chart-wrap small-chart">
-        <svg id="premiumChart" class="hist-chart" role="img"></svg>
-        <div class="tooltip" id="premiumTooltip"></div>
-      </div>
-      <p class="small">Above zero means gold carries a monetary premium. Below zero means gold trades below the model's real-economy purchasing-power estimate.</p>
-    </div>
-  </div>
-
-
-
-  <div class="section-title">
-    <h2>Historical contributors</h2>
-    <p>Ounces of gold required to buy one unit of each real-economy benchmark</p>
-  </div>
-  <div class="grid">
-    <div class="card full">
-      <div class="small" style="margin-bottom:14px"><strong style="color:var(--text)">Common y-axis unit: ounces of gold.</strong> The numerical ranges differ because a cow, an acre, and one labor-hour have very different absolute values.</div>
-      <div class="mini-grid">
-        <div class="mini-chart-card">
-          <div class="eyebrow">Productive livestock</div>
-          <h3>Gold ounces per cow</h3>
-          <div class="mini-sub">Colonial New England + U.S. benchmarks · c.1725–present</div>
-          <div class="mini-chart"><svg id="cowHistoryChart" role="img" aria-label="Ounces of gold required to buy one productive cow over time"></svg></div>
-          <div class="mini-callout">Lower = gold has greater purchasing power</div>
-        </div>
-        <div class="mini-chart-card">
-          <div class="eyebrow">Scarce land</div>
-          <h3>Gold ounces per acre</h3>
-          <div class="mini-sub">U.S. farm real estate, selected benchmark years</div>
-          <div class="mini-chart"><svg id="landHistoryChart" role="img" aria-label="Ounces of gold required to buy one acre of U.S. farmland over time"></svg></div>
-          <div class="mini-callout">Lower = gold has greater purchasing power</div>
-        </div>
-        <div class="mini-chart-card">
-          <div class="eyebrow">Labor diagnostic</div>
-          <h3>Gold ounces per labor-hour</h3>
-          <div class="mini-sub">U.S. manufacturing production-worker wages</div>
-          <div class="mini-chart"><svg id="laborHistoryChart" role="img" aria-label="Ounces of gold required to buy one manufacturing labor hour over time"></svg></div>
-          <div class="mini-callout">Lower = gold has greater purchasing power</div>
-        </div>
-      </div>
-      <div class="research-note small">
-        All three charts now use the same y-axis unit: ounces of gold. Each line shows how many ounces were required to buy one cow, one acre of U.S. farmland, or one hour of U.S. manufacturing labor. The cow/cattle chart now spans roughly 300 years. Before 1867 it uses sparse historical benchmark observations rather than a continuous national series: colonial New England cattle prices for the 1720s–1770s, a 1790s New York cow benchmark, and an 1825 Detroit-area probate benchmark. From 1867 onward the series shifts to U.S. milk/replacement-cow data. The farmland series reaches back to the 19th century, while the consistent manufacturing-wage comparison is primarily a 20th- and 21st-century series.
-      </div>
-      <div class="research-note small" style="margin-top:10px">
-        <strong>300-year cow-series methodology:</strong> Early colonial points use decadal New England cattle-price
-        observations converted from sterling into fine-gold ounces using the British post-1717 mint equivalent.
-        They are directional purchasing-power benchmarks, not a seamless continuation of the later USDA milk-cow series.
-      </div>
-    </div>
-  </div>
-
-  <div class="section-title">
-    <h2>Why these anchors?</h2>
-    <p>What each series captures and how long the relationship has been observable</p>
-  </div>
-  <div class="grid">
-    <div class="card full">
-      <div class="research-grid">
-        <div class="research-item">
-          <div class="research-stat">Productive cows · historical evidence spanning centuries</div>
-          <h3>Gold vs. productive livestock</h3>
-          <p>Cattle are a useful real-economy benchmark because they are productive assets with biological scarcity, labor inputs, and direct economic utility. Historical references from ancient and medieval economies sometimes valued a cow at roughly a fraction of an ounce to about one ounce of gold, while modern U.S. replacement-cow values have at times returned close to the one-ounce range. The relationship is loose rather than fixed, but it has persisted as an order-of-magnitude purchasing-power comparison for a very long time.</p>
-        </div>
-        <div class="research-item">
-          <div class="research-stat">U.S. farmland · national data from the 19th century onward</div>
-          <h3>Gold vs. scarce land</h3>
-          <p>Farmland is one of the cleanest long-duration scarce-asset comparisons. U.S. national farm-real-estate data extend back into the 1800s. Gold's purchasing power against farmland fell sharply while gold was constrained near $35 per ounce in the mid-20th century, then rebounded after the gold window closed. This makes farmland especially useful for testing whether monetary regimes created valuation gaps between gold and freely repricing real assets.</p>
-        </div>
-        <div class="research-item">
-          <div class="research-stat">Manufacturing wages · consistent U.S. series from the 20th century</div>
-          <h3>Gold vs. labor</h3>
-          <p>Labor provides a real-economy price benchmark rather than a pure scarce asset. Gold bought about 24 hours of manufacturing labor in 1950, roughly 11 hours in 1970, and far more after gold was allowed to float. The relationship is informative, but productivity, technology, unions, globalization, and labor-market structure can shift wages independently of money, so labor is treated as a diagnostic rather than a direct fair-value anchor.</p>
-        </div>
-      </div>
-      <div class="research-note small">
-        <strong style="color:var(--text)">Important:</strong> these series do not move one-for-one with gold. The model looks for long-run purchasing-power relationships, not short-run price correlation. Gold can diverge from cows, land, and wages for years or decades because interest rates, monetary policy, investor demand, productivity, and government intervention affect each series differently. The most useful signal is the size and persistence of the valuation gap.
-      </div>
-    </div>
-  </div>
-
-  <div class="section-title">
-    <h2>What anchors fair value?</h2>
-    <p>Editable assumptions</p>
-  </div>
-  <div class="grid">
-    <div class="card wide">
-      <div class="barrow"><span>Productive cow</span><div class="bar"><i id="cowBar" style="width:100%"></i></div><strong id="cowFV">$2,860</strong></div>
-      <div class="barrow"><span>Farmland</span><div class="bar"><i id="landBar" style="width:91%"></i></div><strong id="landFV">$2,610</strong></div>
-      <div class="barrow"><span>Labor diagnostic</span><div class="bar"><i id="laborBar" style="width:67%"></i></div><strong id="laborHours">145 hrs</strong></div>
-      <p class="small">Cow and farmland determine fair value. Labor is shown as a diagnostic because productivity and labor-market structure make a fixed historical hours-per-ounce anchor less defensible.</p>
-    </div>
-    <div class="card side">
-      <div class="controls">
-        <div class="control">
-          <label><span>Cow value</span><span id="cowValueLabel">$2,860</span></label>
-          <input id="cowValue" type="range" min="1500" max="5000" step="10" value="3160">
-        </div>
-        <div class="control">
-          <label><span>Cows per oz equilibrium</span><span id="cowEqLabel">1.00</span></label>
-          <input id="cowEq" type="range" min=".6" max="1.5" step=".01" value="1">
-        </div>
-        <div class="control">
-          <label><span>Farmland $/acre</span><span id="landValueLabel">$4,350</span></label>
-          <input id="landValue" type="range" min="2000" max="8000" step="10" value="4500">
-        </div>
-        <div class="control">
-          <label><span>Acres per oz equilibrium</span><span id="landEqLabel">0.60</span></label>
-          <input id="landEq" type="range" min=".3" max="1" step=".01" value=".60">
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="section-title">
-    <h2>12-month price model</h2>
-    <p>Scenario-based, not a black box</p>
-  </div>
-  <div class="grid">
-    <div class="card full">
-      <table class="table">
-        <thead><tr><th>Scenario</th><th>Probability</th><th>Premium to fair value</th><th>Implied gold</th></tr></thead>
-        <tbody>
-          <tr><td>Mean reversion</td><td><input id="p1" type="number" value="30" min="0" max="100">%</td><td><input id="m1" type="number" value="20" min="-50" max="200">%</td><td id="t1">$3,275</td></tr>
-          <tr><td>Current regime persists</td><td><input id="p2" type="number" value="40" min="0" max="100">%</td><td id="m2display">+61.6%</td><td id="t2">$4,411</td></tr>
-          <tr><td>Monetary stress</td><td><input id="p3" type="number" value="20" min="0" max="100">%</td><td><input id="m3" type="number" value="80" min="-50" max="300">%</td><td id="t3">$4,912</td></tr>
-          <tr><td>Severe stress</td><td><input id="p4" type="number" value="10" min="0" max="100">%</td><td><input id="m4" type="number" value="120" min="-50" max="400">%</td><td id="t4">$6,004</td></tr>
-        </tbody>
-      </table>
-      <p class="small" id="probWarning"></p>
-    </div>
-  </div>
-
-  <div class="section-title">
-    <h2>Model assumptions</h2>
-    <p>Transparent by design</p>
-  </div>
-  <div class="grid">
-    <div class="card full method">
+  <section id="history">
+    <div class="sec-head">
       <div>
-        <div class="eyebrow">Fair value</div>
-        <div class="formula">
-Cow fair value = Cow value ÷ Cow equilibrium<br>
-Land fair value = Land $/acre × Acres-per-oz equilibrium<br>
-Core fair value = √(Cow FV × Land FV)
-        </div>
+        <h2>A century of gold vs. its real-economy value</h2>
+        <p class="sec-sub">Annual reconstruction, 1926–2025, plus the 2026 reference point. Hover or tap for any year.</p>
       </div>
-      <div>
-        <div class="eyebrow">Monetary premium</div>
-        <div class="formula">
-Premium = (Gold spot ÷ Core fair value) − 1<br>
-Scenario price = Future fair value × (1 + Scenario premium)<br>
-12m model = Σ(Scenario price × Scenario probability)
+      <div class="toolbar">
+        <div class="seg" role="group" aria-label="View">
+          <button type="button" data-view="price" aria-pressed="true">Price</button>
+          <button type="button" data-view="premium" aria-pressed="false">Premium</button>
+        </div>
+        <div class="seg" role="group" aria-label="Scale" id="scaleSeg">
+          <button type="button" data-scale="log" aria-pressed="true">Log</button>
+          <button type="button" data-scale="linear" aria-pressed="false">Linear</button>
+        </div>
+        <div class="seg" role="group" aria-label="Range">
+          <button type="button" data-range="1926" aria-pressed="true">100 yrs</button>
+          <button type="button" data-range="1972" aria-pressed="false">Since 1972</button>
         </div>
       </div>
     </div>
-  </div>
+    <div class="panel">
+      <div class="chart-legend" id="legend"></div>
+      <div class="chart" id="mainChartWrap">
+        <svg id="mainChart" role="img" aria-label="Gold market price versus modeled fair value, 1926 to 2026"></svg>
+        <div class="tip" id="mainTip"></div>
+      </div>
+      <p class="note">Shaded areas mark the Bretton Woods era, when the U.S. fixed gold at $35, so the market price could not respond to the real economy. The float began in 1971. Log scale shows percentage moves at equal size across a century of inflation.</p>
+    </div>
+  </section>
 
-  <div class="footer">
-    V7 can auto-refresh from configured market and government-data sources and falls back to dated embedded values if a feed is unavailable. For entertainment and educational purposes only. This site does not provide financial, investment, tax, or legal advice. The model is a historical purchasing-power thought experiment and should not be used as the basis for investment decisions. This model is intentionally simple and should not be treated as investment advice or as a claim that gold has a fixed intrinsic value. Historical purchasing-power relationships can shift with productivity, regulation, interest rates, monetary regimes, and investor behavior.
-  </div>
-</div>
+  <section id="today">
+    <div class="sec-head"><div><h2>Where today sits in history</h2><p class="sec-sub">The premium only means something compared with how gold has usually traded against the same yardstick.</p></div></div>
+    <div class="two">
+      <div class="panel">
+        <div class="kicker" style="color:var(--muted)">Premium percentile, floating era (1972–2025)</div>
+        <div class="big num" id="pctlBig">—</div>
+        <div class="pctl" id="pctlBar"><div class="track"></div></div>
+        <div class="pctl-lab"><span id="pctlMin">—</span><span>median <b id="pctlMed">—</b></span><span id="pctlMax">—</span></div>
+        <p class="note" id="pctlNote"></p>
+      </div>
+      <div class="panel">
+        <div class="kicker" style="color:var(--muted)">Absolute regime</div>
+        <div class="big" id="regimeBig">—</div>
+        <p class="note" id="interpretation" style="margin-top:8px"></p>
+        <p class="note">Bands: deeply cheap &lt; −20% · real-value zone −20% to +15% · monetary premium +15% to +40% · high premium +40% to +80% · overshoot &gt; +80%.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="anchors">
+    <div class="sec-head"><div><h2>What anchors fair value</h2><p class="sec-sub">Change the inputs. Everything on the page recomputes.</p></div><button class="reset" type="button" id="resetBtn">Reset to defaults</button></div>
+    <div class="anchors">
+      <div class="panel">
+        <div class="row"><span>Cow anchor</span><div class="bar"><i id="cowBar"></i></div><strong class="num" id="cowFV">—</strong></div>
+        <div class="row"><span>Farmland anchor</span><div class="bar"><i id="landBar"></i></div><strong class="num" id="landFV">—</strong></div>
+        <div class="row"><span><b>Fair value</b></span><div class="bar"><i class="alt" id="fairBar"></i></div><strong class="num" id="fairFV2">—</strong></div>
+        <div class="row"><span>Labor (diagnostic)</span><div class="bar"><i id="laborBar"></i></div><strong class="num" id="laborHours">—</strong></div>
+        <p class="note">Fair value is the geometric mean of the cow and farmland anchors. Labor is shown as hours of U.S. manufacturing work one ounce buys; it isn't used in fair value because productivity growth moves wages independently of money.</p>
+      </div>
+      <div class="panel">
+        <div class="ctl"><label for="cowValue"><span>Replacement milk cow, $/head</span><span class="num" id="cowValueLabel"></span></label><input id="cowValue" type="range" min="1500" max="5000" step="10" value="3160"><div class="hint">USDA, Oct 2026 reference: $3,160</div></div>
+        <div class="ctl"><label for="cowEq"><span>Cows per ounce at equilibrium</span><span class="num" id="cowEqLabel"></span></label><input id="cowEq" type="range" min=".6" max="1.5" step=".01" value="1"></div>
+        <div class="ctl"><label for="landValue"><span>U.S. farmland, $/acre</span><span class="num" id="landValueLabel"></span></label><input id="landValue" type="range" min="2000" max="8000" step="10" value="4500"><div class="hint">USDA 2026 reference: $4,500</div></div>
+        <div class="ctl" style="margin-bottom:0"><label for="landEq"><span>Acres per ounce at equilibrium</span><span class="num" id="landEqLabel"></span></label><input id="landEq" type="range" min=".3" max="1" step=".01" value=".60"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="scenarios">
+    <div class="sec-head"><div><h2>12-month scenarios</h2><p class="sec-sub">Fair value grows at its trailing 10-year rate. Each scenario sets the premium a year from now. The mean-reversion case uses the speed at which the premium has historically closed.</p></div></div>
+    <div class="panel">
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>Scenario</th><th>Probability</th><th>Premium in 12 months</th><th>Implied gold</th><th>vs. today</th></tr></thead>
+          <tbody>
+            <tr><td>Historical mean reversion<small id="mrNote">—</small></td><td><input id="p1" type="number" value="40" min="0" max="100" aria-label="Mean reversion probability"> %</td><td class="num" id="m1display">—</td><td class="num" id="t1">—</td><td class="num" id="d1">—</td></tr>
+            <tr><td>Premium holds<small>Today's premium persists</small></td><td><input id="p2" type="number" value="30" min="0" max="100" aria-label="Premium holds probability"> %</td><td class="num" id="m2display">—</td><td class="num" id="t2">—</td><td class="num" id="d2">—</td></tr>
+            <tr><td>Monetary stress<small>Your assumption</small></td><td><input id="p3" type="number" value="20" min="0" max="100" aria-label="Monetary stress probability"> %</td><td><input id="m3" type="number" value="60" min="-80" max="300" aria-label="Monetary stress premium"> %</td><td class="num" id="t3">—</td><td class="num" id="d3">—</td></tr>
+            <tr><td>Severe stress<small>Your assumption · Jan 2026 peak was ≈ +<span id="peakPrem">90</span>%</small></td><td><input id="p4" type="number" value="10" min="0" max="100" aria-label="Severe stress probability"> %</td><td><input id="m4" type="number" value="100" min="-80" max="400" aria-label="Severe stress premium"> %</td><td class="num" id="t4">—</td><td class="num" id="d4">—</td></tr>
+          </tbody>
+          <tfoot><tr><td>Probability-weighted</td><td class="num" id="ptotal">100%</td><td></td><td class="num" id="targetValue">—</td><td class="num" id="dT">—</td></tr></tfoot>
+        </table>
+      </div>
+      <p class="note" id="probWarning"></p>
+      <p class="note" id="growthNote"></p>
+    </div>
+  </section>
+
+  <section id="diagnostics">
+    <div class="sec-head"><div><h2>How good is this model?</h2><p class="sec-sub">Computed live from the published data. Any two prices that both rise with inflation will look correlated, so the tests below strip out that shared trend.</p></div></div>
+    <div class="diag">
+      <div class="dcard"><div class="lab">R², price levels (1926–2025)</div><div class="val num" id="dR2">—</div><p>Looks strong, but mostly reflects a century of shared inflation.</p></div>
+      <div class="dcard"><div class="lab">R², log prices (1972–2025)</div><div class="val num" id="dR2log">—</div><p>The fit in the floating era, measured in percentage terms with a best-fit constant.</p></div>
+      <div class="dcard"><div class="lab">Correlation of yearly changes</div><div class="val num" id="dCorr">—</div><p>Do gold and fair value move together in the same year? Barely.</p></div>
+      <div class="dcard"><div class="lab">Premium half-life</div><div class="val num" id="dHalf">—</div><p>How long it has historically taken half of a valuation gap to close.</p></div>
+    </div>
+    <p class="note"><span class="grade">In-sample</span> All statistics are fit and measured on the same data, so they describe history rather than prove predictive power. <span id="interpNote"></span> The model is a slow-moving yardstick, not a timing tool.</p>
+  </section>
+
+  <section id="baseline">
+    <div class="sec-head"><div><h2>Do cows and farmland beat plain inflation?</h2><p class="sec-sub">The simplest rival yardstick is the consumer price index: gold's average inflation-adjusted price since 1972, carried forward with CPI. If cows and farmland can't beat that, they add nothing. Floating era, 1972–2025.</p></div></div>
+    <div class="panel">
+      <div class="tbl-wrap">
+        <table class="cmp">
+          <thead><tr><th>Test</th><th>Cow + farmland</th><th>Inflation only (CPI)</th></tr></thead>
+          <tbody id="cmpBody"></tbody>
+        </table>
+      </div>
+      <p class="note" id="beyondNote"></p>
+      <p class="takeaway" id="baselineTake" style="margin-top:16px"></p>
+    </div>
+  </section>
+
+  <section id="contributors">
+    <div class="sec-head"><div><h2>Ounces of gold per real asset</h2><p class="sec-sub">How many ounces it took to buy one cow, one acre, or one hour of factory work. Lower means gold bought more.</p></div></div>
+    <div class="minis">
+      <div class="mini"><h3>Per productive cow</h3><div class="ms">c. 1725–2025 · colonial and U.S. benchmarks</div><svg id="cowHistoryChart" role="img" aria-label="Ounces of gold per cow over time"></svg></div>
+      <div class="mini"><h3>Per acre of U.S. farmland</h3><div class="ms">1850–2025 · USDA farm real estate</div><svg id="landHistoryChart" role="img" aria-label="Ounces of gold per acre over time"></svg></div>
+      <div class="mini"><h3>Per manufacturing labor-hour</h3><div class="ms">1950–2023 · BLS production wages</div><svg id="laborHistoryChart" role="img" aria-label="Ounces of gold per labor hour over time"></svg></div>
+    </div>
+    <p class="note">Before 1867 the cow series is sparse: decadal New England cattle prices (1720s–1770s) converted at the British post-1717 mint equivalent, a 1790s New York benchmark and an 1825 Detroit probate benchmark. These show direction, not a seamless continuation of the USDA series.</p>
+  </section>
+
+  <section id="method">
+    <div class="sec-head"><div><h2>Method and sources</h2></div></div>
+    <div class="method">
+      <div class="panel">
+        <h3>Fair value</h3>
+        <div class="formula">cow_anchor  = cow $/head ÷ cows-per-oz<br>land_anchor = land $/acre × acres-per-oz<br>fair_value  = √(cow_anchor × land_anchor)</div>
+        <h3 style="margin-top:18px">Premium and scenarios</h3>
+        <div class="formula">premium   = gold ÷ fair_value − 1<br>fair_12m  = fair_value × (1 + g₁₀)<br>price_12m = fair_12m × (1 + premium_12m)<br>reversion: ln(1+p)₁₂ = ln(1+p) × (1 + β)</div>
+        <p class="note">g₁₀ is the trailing 10-year growth rate of fair value. β is the slope from regressing each year's change in log premium on the prior year's level (1972–2025).</p>
+      </div>
+      <div class="panel sources">
+        <h3>Data</h3>
+        <ol>
+          <li>Gold: annual U.S. dollar price per troy ounce; official/fixed price before 1968, London market thereafter.</li>
+          <li>Cows: USDA NASS price of milk/replacement cows, $/head, with USDA ERS annual dairy-cow prices filling 1981–2019; remaining gaps (mostly 1938–1979) linearly interpolated.</li>
+          <li>Inflation: BLS CPI-U, U.S. city average, annual average (FRED CPIAUCNS). 2026 is estimated by carrying forward 2025's inflation rate.</li>
+          <li>Farmland: USDA farm real-estate value, $/acre (Census of Agriculture and Land Values surveys).</li>
+          <li>Wages: BLS average hourly earnings, manufacturing production workers (CES3000000008).</li>
+          <li>2026 reference values: gold $3,628 (Nov 19, 2026), cow $3,160 (Oct 2026), farmland $4,500 (2026). Provisional.</li>
+        </ol>
+        <div class="fresh" id="fresh">
+          <div><b>Gold</b><span id="goldDate">Nov 2026 · reference</span></div>
+          <div><b>Cow</b><span id="cowDate">Oct 2026 · reference</span></div>
+          <div><b>Farmland</b><span id="landDate">2026 · reference</span></div>
+          <div><b>Wage</b><span id="wageDate">Aug 2026 · reference</span></div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:22px">
+      <details><summary>Why cows and farmland?</summary><p>Both are productive, scarce, real assets that reprice freely and have long U.S. price records. Ancient and medieval sources often value a cow somewhere between a fraction of an ounce and about an ounce of gold, and modern U.S. replacement cows have returned to roughly that range. Farmland offers the cleanest long-run scarce-asset comparison: gold's purchasing power over land collapsed while gold was pinned at $35, then recovered after the float.</p></details>
+      <details><summary>Why is the premium usually negative?</summary><p>The equilibrium ratios (one cow, 0.6 acres per ounce) are round historical anchors, not values fitted to make the average premium zero. In the floating era gold has traded below this fair value in most years, so a positive premium is unusual. That's why the page also shows a historical percentile: it measures today against gold's own history rather than against an assumed equilibrium.</p></details>
+      <details><summary>What changed in this version?</summary><p>Replaced 36 interpolated cow-price years (1981–2019) with USDA ERS annual dairy-cow prices. Added an inflation-only (CPI) baseline to the chart and a head-to-head test against it. Corrected the 1931 and 1949 gold prices to the official prices of $20.67 and $34.72. Added log scale, a floating-era view, historical percentile, live model diagnostics, fair-value growth in the 12-month scenarios and a mean-reversion case calibrated to history.</p></details>
+    </div>
+  </section>
+
+  <footer>
+    <p><strong>For entertainment and educational purposes only.</strong> This is a historical thought experiment about gold's purchasing power. It is not financial, investment, tax or legal advice, and its estimates should not be used to make investment decisions. Gold has no fixed intrinsic value; purchasing-power relationships shift with productivity, regulation, interest rates, monetary regimes and investor behavior.</p>
+    <p>Default inputs are dated references, not live quotes, unless the status line above says sources are connected. <a href="/tools/">More tools</a></p>
+  </footer>
+</main>
 
 <script>
-const WORKER_URL = ""; // REQUIRED for auto-update: set to your deployed V6 Worker endpoint
+const WORKER_URL = ""; // set to the deployed Worker endpoint to enable live data
 
-const $ = (id) => document.getElementById(id);
-const fmt = (n) => new Intl.NumberFormat("en-US",{style:"currency",currency:"USD",maximumFractionDigits:0}).format(n);
-const pct = (n) => `${n>=0?"+":""}${n.toFixed(1)}%`;
+const $ = id => document.getElementById(id);
+const fmt = n => new Intl.NumberFormat("en-US",{style:"currency",currency:"USD",maximumFractionDigits:0}).format(n);
+const fmtC = n => new Intl.NumberFormat("en-US",{style:"currency",currency:"USD",notation:"compact",maximumFractionDigits:1}).format(n);
+const pct = (n,d=1) => `${n>=0?"+":"−"}${Math.abs(n).toFixed(d)}%`;
+const ord = n => { const s=["th","st","nd","rd"], v=n%100; return n+(s[(v-20)%10]||s[v]||s[0]); };
+const NS = "http://www.w3.org/2000/svg";
+const el = (name,attrs={},parent) => { const e=document.createElementNS(NS,name); for(const k in attrs) e.setAttribute(k,attrs[k]); if(parent) parent.appendChild(e); return e; };
 
-let spot = 3628; // Dated Nov 19, 2026 reference; not a live quote
+const DEFAULTS = {cowValue:3160,cowEq:1,landValue:4500,landEq:.6,p1:40,p2:30,p3:20,p4:10,m3:60,m4:100};
+const PEAK_2026 = 5589.38; // all-time high, Jan 28, 2026
+let spot = 3628;           // Nov 19, 2026 reference; not a live quote
 let wage = 30.37;
+let series = [];           // [{year, market, fair}]
+let stats = null;
+const view = {mode:"price", scale:"log", from:1926};
 
 function regimeFor(p){
-  if (p < -20) return ["Deeply cheap","Gold trades well below modeled real-economy value."];
-  if (p < 15) return ["Real-value zone","Gold trades near the model's real-economy purchasing-power range."];
-  if (p < 40) return ["Monetary premium","Gold carries a moderate premium above modeled real-economy value."];
-  if (p < 80) return ["High monetary premium","Gold is trading materially above its modeled purchasing-power value. The current price requires a sizable monetary-insurance premium to persist."];
-  return ["Historical overshoot","Gold trades at an unusually large premium to modeled real-economy purchasing power."];
+  if (p < -20) return ["Deeply cheap","Gold trades well below its modeled real-economy value."];
+  if (p < 15)  return ["Real-value zone","Gold trades near its modeled purchasing-power range."];
+  if (p < 40)  return ["Monetary premium","Gold carries a moderate premium above modeled real-economy value."];
+  if (p < 80)  return ["High monetary premium","Gold trades well above modeled purchasing-power value. Holding this price requires a sizable monetary-insurance premium to persist."];
+  return ["Historical overshoot","Gold trades at an unusually large premium to modeled real-economy value."];
 }
 
+/* ---------- statistics (computed from the published CSV) ---------- */
+const mean = a => a.reduce((s,v)=>s+v,0)/a.length;
+const corr = (a,b) => { const ma=mean(a),mb=mean(b); let n=0,x=0,y=0; a.forEach((v,i)=>{n+=(v-ma)*(b[i]-mb);x+=(v-ma)**2;y+=(b[i]-mb)**2;}); return n/Math.sqrt(x*y); };
+const diff = a => a.slice(1).map((v,i)=>v-a[i]);
+function ols(y,x){ // simple regression y = a + b·x; returns slope, R², t-stat of slope
+  const mx=mean(x), my=mean(y), sxx=x.reduce((s,v)=>s+(v-mx)**2,0);
+  const b=x.reduce((s,v,i)=>s+(v-mx)*(y[i]-my),0)/sxx, a=my-b*mx;
+  const res=y.map((v,i)=>v-a-b*x[i]), sse=res.reduce((s,e)=>s+e*e,0);
+  return {a, b, r2:1-sse/y.reduce((s,v)=>s+(v-my)**2,0), t:b/Math.sqrt(sse/(y.length-2)/sxx)};
+}
+// Fit-quality tests for any yardstick (log values), 1972 onward. Each yardstick gets its own best-fit constant.
+function yardstickTests(lg, ly){
+  const k = mean(lg)-mean(ly), my=mean(lg);
+  const r2 = 1 - lg.reduce((s,v,i)=>s+(v-ly[i]-k)**2,0)/lg.reduce((s,v)=>s+(v-my)**2,0);
+  const gap = lg.map((v,i)=>v-ly[i]);
+  const rev = ols(diff(gap), gap.slice(0,-1));
+  return {k, r2, chg: corr(diff(lg), diff(ly)), beta: rev.b, betaT: rev.t,
+          halfLife: rev.b<0 && rev.b>-1 ? Math.log(.5)/Math.log(1+rev.b) : NaN};
+}
+function computeStats(){
+  const fl = series.filter(d=>d.year>=1972);
+  const lg = fl.map(d=>Math.log(d.market)), lf = fl.map(d=>Math.log(d.fair)), lc = fl.map(d=>Math.log(d.cpi));
+  const model = yardstickTests(lg, lf), cpi = yardstickTests(lg, lc);
+  // Does cow + farmland explain gold beyond inflation? Regress real gold on real fair value.
+  const realG = lg.map((v,i)=>v-lc[i]), realF = lf.map((v,i)=>v-lc[i]);
+  const beyondLevels = ols(realG, realF), beyondChg = ols(diff(realG), diff(realF));
+  const lp = fl.map(d=>Math.log(d.market/d.fair));
+  const all = series.map(d=>d.market), allF = series.map(d=>d.fair), ma=mean(all);
+  const last = series[series.length-1], tenAgo = series.find(d=>d.year===last.year-10);
+  const prevYr = series[series.length-2];
+  const sortedPrem = lp.map(v=>(Math.exp(v)-1)*100).sort((a,b)=>a-b);
+  stats = {
+    r2Levels: 1 - all.reduce((s,v,i)=>s+(v-allF[i])**2,0)/all.reduce((s,v)=>s+(v-ma)**2,0),
+    model, cpi, beyondLevels, beyondChg,
+    beta: model.beta, halfLife: model.halfLife,
+    cpiK: cpi.k,                                   // baseline = CPI × e^k (floating-era average real gold price)
+    cpiNext: last.cpi * (last.cpi/prevYr.cpi),     // 2026 CPI estimate: last year's inflation rate carried forward
+    g10: Math.pow(last.fair/tenAgo.fair, 1/10) - 1,
+    prem: sortedPrem,
+    median: sortedPrem[Math.floor(sortedPrem.length/2)],
+    lastYear: last.year,
+    cowInterp: series.filter(d=>!d.cowObs).length, landInterp: series.filter(d=>!d.landObs).length, n: series.length
+  };
+  const f2 = v => v.toFixed(2), hl = v => Number.isFinite(v) ? `${v.toFixed(1)} yrs` : "n/a";
+  $("dR2").textContent = f2(stats.r2Levels);
+  $("dR2log").textContent = f2(model.r2);
+  $("dCorr").textContent = f2(model.chg);
+  $("dHalf").textContent = hl(model.halfLife);
+  $("interpNote").textContent = `${stats.cowInterp} of ${stats.n} cow-price years and ${stats.landInterp} of ${stats.n} farmland years are interpolated between observations.`;
+  // baseline comparison table
+  const better = (a,b,hi=true) => (hi ? a>b : a<b) ? ' class="win"' : '';
+  $("cmpBody").innerHTML = `
+    <tr><td>Fit to gold's price level<small>R² of log price, each with its own best-fit constant</small></td><td${better(model.r2,cpi.r2)}>${f2(model.r2)}</td><td${better(cpi.r2,model.r2)}>${f2(cpi.r2)}</td></tr>
+    <tr><td>Moves with gold year to year<small>Correlation of annual % changes</small></td><td${better(model.chg,cpi.chg)}>${f2(model.chg)}</td><td${better(cpi.chg,model.chg)}>${f2(cpi.chg)}</td></tr>
+    <tr><td>How fast gaps close<small>Half-life of the gap between gold and the yardstick</small></td><td${better(model.halfLife,cpi.halfLife,false)}>${hl(model.halfLife)}</td><td${better(cpi.halfLife,model.halfLife,false)}>${hl(cpi.halfLife)}</td></tr>`;
+  const bl = stats.beyondLevels, bc = stats.beyondChg;
+  $("beyondNote").innerHTML = `<strong>Beyond inflation:</strong> after dividing everything by CPI, cow-and-farmland value still explains ${Math.round(bl.r2*100)}% of the swings in gold's real price level (t = ${bl.t.toFixed(1)}), but only ${Math.round(bc.r2*100)}% of its year-to-year real changes (t = ${bc.t.toFixed(1)}, not significant). Gaps closing (t = ${model.betaT.toFixed(1)} vs. ${cpi.betaT.toFixed(1)}) is suggestive, not statistically firm.`;
+}
+function cpiBaseline(year){
+  const d = series.find(s=>s.year===year);
+  const c = d ? d.cpi : stats.cpiNext;
+  return c * Math.exp(stats.cpiK);
+}
 
+function percentileOf(p){
+  const a = stats.prem; let below = 0;
+  for(const v of a) if(v < p) below++;
+  return Math.round(below / a.length * 100);
+}
 
+/* ---------- main chart ---------- */
+function chartRows(fair){
+  return [...series, {year:2026, market:spot, fair, current:true}]
+    .filter(d=>d.year>=view.from)
+    .map(d=>({...d, premium:(d.market/d.fair-1)*100, base:cpiBaseline(d.year)}));
+}
+
+function niceLogTicks(min,max){
+  const out=[]; for(let e=Math.floor(Math.log10(min)); e<=Math.ceil(Math.log10(max)); e++) for(const m of [1,2,5]){ const v=m*10**e; if(v>=min*0.999 && v<=max*1.001) out.push(v); }
+  return out.length>8 ? out.filter((v,i)=>String(v)[0]==="1" || i===out.length-1) : out;
+}
+
+function renderMain(fair){
+  const svg=$("mainChart"), tip=$("mainTip"), wrap=$("mainChartWrap");
+  svg.replaceChildren();
+  const data = chartRows(fair);
+  const W = Math.max(320, wrap.clientWidth), H = W<560 ? 300 : 380;
+  const m = {l: W<560?46:58, r:16, t:14, b:30}, iw=W-m.l-m.r, ih=H-m.t-m.b;
+  svg.setAttribute("viewBox",`0 0 ${W} ${H}`);
+  const xmin=data[0].year, xmax=2026, x=v=>m.l+(v-xmin)/(xmax-xmin)*iw;
+  const isPrem = view.mode==="premium";
+  let y, ticks;
+  if(isPrem){
+    const vals=data.map(d=>d.premium);
+    const lo=Math.min(-100,Math.floor(Math.min(...vals)/25)*25), hi=Math.max(50,Math.ceil(Math.max(...vals)/25)*25);
+    y=v=>m.t+(hi-v)/(hi-lo)*ih;
+    const step = (hi-lo)>200?50:25; ticks=[]; for(let v=Math.ceil(lo/step)*step; v<=hi; v+=step) ticks.push(v);
+  } else if(view.scale==="log"){
+    const vals=data.flatMap(d=>[d.market,d.fair,d.base]);
+    const lo=Math.min(...vals)*0.85, hi=Math.max(...vals)*1.15;
+    y=v=>m.t+(Math.log(hi)-Math.log(v))/(Math.log(hi)-Math.log(lo))*ih;
+    ticks=niceLogTicks(lo,hi);
+  } else {
+    const hi=Math.ceil(Math.max(...data.flatMap(d=>[d.market,d.fair,d.base]))/1000)*1000;
+    y=v=>m.t+(hi-v)/hi*ih; ticks=[0,hi/4,hi/2,hi*3/4,hi];
+  }
+
+  // Bretton Woods / fixed-price shading
+  const bw0=Math.max(xmin,1934), bw1=1971;
+  if(bw0<bw1){
+    el("rect",{x:x(bw0),y:m.t,width:x(bw1)-x(bw0),height:ih,class:"band"},svg);
+    const t=el("text",{x:x(bw0)+6,y:m.t+14,class:"band-lab"},svg); t.textContent=W<560?"Fixed $35":"Gold fixed at $35";
+  }
+  ticks.forEach(v=>{
+    el("line",{x1:m.l,x2:W-m.r,y1:y(v),y2:y(v),class:v===0&&isPrem?"l-zero":"grid-l"},svg);
+    const t=el("text",{x:m.l-8,y:y(v)+4,"text-anchor":"end",class:"axis"},svg);
+    t.textContent = isPrem ? `${v>0?"+":""}${v}%` : fmtC(v);
+  });
+  const xt = W<560 ? [xmin,2000,2026] : (xmin<1950?[1926,1950,1971,2000,2026]:[1972,1985,2000,2013,2026]);
+  [...new Set(xt)].forEach(yr=>{ const t=el("text",{x:x(yr),y:H-8,"text-anchor":"middle",class:"axis"},svg); t.textContent=yr; });
+
+  const line = key => data.map((d,i)=>`${i?"L":"M"}${x(d.year).toFixed(1)},${y(d[key]).toFixed(1)}`).join("");
+  const legend=$("legend");
+  if(isPrem){
+    const z=y(0);
+    const area = data.map((d,i)=>`${i?"L":"M"}${x(d.year).toFixed(1)},${y(d.premium).toFixed(1)}`).join("")+`L${x(data.at(-1).year)},${z}L${x(data[0].year)},${z}Z`;
+    const clipA=el("clipPath",{id:"cpPos"},svg); el("rect",{x:0,y:0,width:W,height:z},clipA);
+    const clipB=el("clipPath",{id:"cpNeg"},svg); el("rect",{x:0,y:z,width:W,height:H},clipB);
+    el("path",{d:area,class:"a-prem-pos","clip-path":"url(#cpPos)"},svg);
+    el("path",{d:area,class:"a-prem-neg","clip-path":"url(#cpNeg)"},svg);
+    if(stats){ el("line",{x1:x(Math.max(1972,xmin)),x2:W-m.r,y1:y(stats.median),y2:y(stats.median),class:"l-med"},svg); }
+    el("path",{d:line("premium"),class:"l-prem"},svg);
+    legend.innerHTML = `<span><i></i>Premium to fair value</span><span><i class="med"></i>Floating-era median (${pct(stats?stats.median:0,0)})</span>`;
+  } else {
+    el("path",{d:line("base"),class:"l-base"},svg);
+    el("path",{d:line("fair"),class:"l-fair"},svg);
+    el("path",{d:line("market"),class:"l-market"},svg);
+    legend.innerHTML = `<span><i></i>Gold market price</span><span><i class="fair"></i>Cow + farmland fair value</span><span><i class="base"></i>Inflation-only baseline</span>`;
+  }
+  const last=data.at(-1);
+  if(isPrem) el("circle",{cx:x(last.year),cy:y(last.premium),r:5,fill:"var(--gold)",class:"end-dot"},svg);
+  else { el("circle",{cx:x(last.year),cy:y(last.fair),r:4.5,fill:"var(--blue)",class:"end-dot"},svg); el("circle",{cx:x(last.year),cy:y(last.market),r:5,fill:"var(--gold)",class:"end-dot"},svg); }
+
+  // hover/tap layer
+  const cursor=el("line",{y1:m.t,y2:m.t+ih,class:"cursor",opacity:0},svg);
+  const hit=el("rect",{x:m.l,y:m.t,width:iw,height:ih,fill:"transparent"},svg);
+  const show = ev => {
+    const r=svg.getBoundingClientRect(), px=(ev.clientX-r.left)*(W/r.width);
+    const yr=Math.round(xmin+(px-m.l)/iw*(xmax-xmin));
+    const d=data.reduce((a,b)=>Math.abs(b.year-yr)<Math.abs(a.year-yr)?b:a);
+    const cx=x(d.year); cursor.setAttribute("x1",cx); cursor.setAttribute("x2",cx); cursor.setAttribute("opacity",1);
+    tip.innerHTML = `<strong>${d.year}${d.current?" · reference":""}</strong><span class="k">Gold</span> ${fmt(d.market)}<br><span class="k">Fair value</span> ${fmt(d.fair)}<br><span class="k">Premium</span> ${pct(d.premium)}<br><span class="k">Inflation baseline</span> ${fmt(d.base)}${d.current?"*":""}`;
+    tip.style.opacity=1;
+    const left = cx/W*r.width, tw=tip.offsetWidth;
+    tip.style.left = `${Math.min(r.width-tw-4, Math.max(4, left + (left > r.width/2 ? -tw-12 : 12)))}px`;
+    tip.style.top = `${m.t/H*r.height + 8}px`;
+  };
+  const hide = () => { tip.style.opacity=0; cursor.setAttribute("opacity",0); };
+  hit.addEventListener("pointermove",show); hit.addEventListener("pointerdown",show); hit.addEventListener("pointerleave",hide);
+}
+
+/* ---------- mini charts ---------- */
 const contributorHistory = {
-  // Every value below is denominated in ounces of gold required to buy ONE unit.
   cow: [
-    // Colonial New England cattle benchmarks. Decadal cattle prices are converted
-    // using the British post-1717 fine-gold mint equivalent (~£4.2477/troy oz).
-    // These are broader cattle observations, not a perfectly comparable milk-cow series.
-    {year:1725,value:3.33/4.2477272},
-    {year:1735,value:4.55/4.2477272},
-    {year:1745,value:8.92/4.2477272},
-    {year:1755,value:2.22/4.2477272},
-    {year:1765,value:2.06/4.2477272},
-    {year:1775,value:2.46/4.2477272},
-
-    // Sparse early U.S. cow benchmarks.
-    {year:1796,value:1.09},
-    {year:1825,value:0.57},
-
-    // U.S. milk/replacement-cow benchmarks.
-    {year:1867,value:1.39},{year:1880,value:1.13},{year:1900,value:1.53},
-    {year:1910,value:1.63},{year:1920,value:4.15},{year:1940,value:1.64},
-    {year:1951,value:6.23},{year:1960,value:5.94},{year:1970,value:9.24},
-    {year:1980,value:1.93},{year:1990,value:3.02},{year:2000,value:4.80},
-    {year:2010,value:1.09},{year:2020,value:0.73},{year:2025,value:0.85}
+    {year:1725,value:3.33/4.2477272},{year:1735,value:4.55/4.2477272},{year:1745,value:8.92/4.2477272},
+    {year:1755,value:2.22/4.2477272},{year:1765,value:2.06/4.2477272},{year:1775,value:2.46/4.2477272},
+    {year:1796,value:1.09},{year:1825,value:0.57},
+    {year:1867,value:1.39},{year:1880,value:1.13},{year:1900,value:1.53},{year:1910,value:1.63},{year:1920,value:4.15},
+    {year:1940,value:1.64},{year:1951,value:6.23},{year:1960,value:5.94},{year:1970,value:9.24},{year:1980,value:1.93},
+    {year:1990,value:3.02},{year:2000,value:4.80},{year:2010,value:1.09},{year:2020,value:0.73},{year:2025,value:0.85}
   ],
   land: [
-    {year:1850,value:11.14/18.96},{year:1900,value:19.80/18.96},
-    {year:1910,value:39.59/18.92},{year:1920,value:69.37/20.68},
-    {year:1930,value:48.52/20.65},{year:1940,value:31.71/33.85},
-    {year:1950,value:64.96/34.72},{year:1960,value:116.48/35.27},
-    {year:1970,value:195.5/36.02},{year:1980,value:737/615},
-    {year:1990,value:683/383.51},{year:2000,value:1090/279.11},
-    {year:2010,value:2150/1224.53},{year:2020,value:3160/1769.64},
-    {year:2025,value:4350/3431}
+    {year:1850,value:11.14/18.96},{year:1900,value:19.80/18.96},{year:1910,value:39.59/18.92},{year:1920,value:69.37/20.68},
+    {year:1930,value:48.52/20.65},{year:1940,value:31.71/33.85},{year:1950,value:64.96/34.72},{year:1960,value:116.48/35.27},
+    {year:1970,value:195.5/36.02},{year:1980,value:737/615},{year:1990,value:683/383.51},{year:2000,value:1090/279.11},
+    {year:2010,value:2150/1224.53},{year:2020,value:3160/1769.64},{year:2025,value:4350/3431}
   ],
   labor: [
-    {year:1950,value:1.44/34.72},{year:1960,value:2.20/35.27},
-    {year:1970,value:3.36/36.02},{year:1980,value:7.27/615},
-    {year:1990,value:10.83/383.51},{year:2000,value:14.32/279.11},
-    {year:2010,value:18.61/1224.53},{year:2020,value:22.79/1769.64},
-    {year:2023,value:26.37/1940}
+    {year:1950,value:1.44/34.72},{year:1960,value:2.20/35.27},{year:1970,value:3.36/36.02},{year:1980,value:7.27/615},
+    {year:1990,value:10.83/383.51},{year:2000,value:14.32/279.11},{year:2010,value:18.61/1224.53},
+    {year:2020,value:22.79/1769.64},{year:2023,value:26.37/1940}
   ]
 };
-
-function renderMiniHistory(svgId,data,formatter){
-  const svg=$(svgId); if(!svg) return;
-  while(svg.firstChild) svg.removeChild(svg.firstChild);
-  const W=360,H=210,m={l:42,r:10,t:12,b:28},iw=W-m.l-m.r,ih=H-m.t-m.b;
+function renderMini(svgId,data){
+  const svg=$(svgId); svg.replaceChildren();
+  const W=340,H=190,m={l:44,r:8,t:10,b:24},iw=W-m.l-m.r,ih=H-m.t-m.b;
   svg.setAttribute("viewBox",`0 0 ${W} ${H}`);
-  const xmin=Math.min(...data.map(d=>d.year)),xmax=Math.max(...data.map(d=>d.year));
-  const ymax=Math.max(...data.map(d=>d.value))*1.1;
-  const x=v=>m.l+(v-xmin)/(xmax-xmin)*iw;
-  const y=v=>m.t+(ymax-v)/ymax*ih;
-
-  for(let i=0;i<=3;i++){
-    const val=ymax*i/3, yy=y(val);
-    svg.appendChild(svgEl("line",{x1:m.l,x2:W-m.r,y1:yy,y2:yy,class:"mini-gridline"}));
-    const t=svgEl("text",{x:m.l-7,y:yy+3,"text-anchor":"end",class:"mini-axis"});
-    t.textContent=formatter(val); svg.appendChild(t);
-  }
-  [xmin, Math.round((xmin+xmax)/2), xmax].forEach(yr=>{
-    const t=svgEl("text",{x:x(yr),y:H-8,"text-anchor":"middle",class:"mini-axis"});
-    t.textContent=yr; svg.appendChild(t);
-  });
-
-  const d=data.map((p,i)=>`${i?"L":"M"} ${x(p.year)} ${y(p.value)}`).join(" ");
-  svg.appendChild(svgEl("path",{d,class:"mini-line"}));
-  data.forEach(p=>svg.appendChild(svgEl("circle",{cx:x(p.year),cy:y(p.value),r:3.2,class:"mini-dot"})));
+  const xmin=data[0].year,xmax=data.at(-1).year,ymax=Math.max(...data.map(d=>d.value))*1.1;
+  const x=v=>m.l+(v-xmin)/(xmax-xmin)*iw, y=v=>m.t+(ymax-v)/ymax*ih;
+  const f=v=>v>=1?`${v.toFixed(1)}`:v>=.1?v.toFixed(2):v.toFixed(3);
+  for(let i=0;i<=3;i++){ const v=ymax*i/3; el("line",{x1:m.l,x2:W-m.r,y1:y(v),y2:y(v),class:"grid-l"},svg); const t=el("text",{x:m.l-6,y:y(v)+4,"text-anchor":"end",class:"axis"},svg); t.textContent=`${f(v)} oz`; }
+  [xmin,xmax].forEach((yr,i)=>{ const t=el("text",{x:x(yr),y:H-6,"text-anchor":i?"end":"start",class:"axis"},svg); t.textContent=yr; });
+  el("path",{d:data.map((p,i)=>`${i?"L":"M"}${x(p.year)},${y(p.value)}`).join(""),class:"m-line"},svg);
+  data.forEach(p=>el("circle",{cx:x(p.year),cy:y(p.value),r:2.6,class:"m-dot"},svg));
 }
+function renderMinis(){ renderMini("cowHistoryChart",contributorHistory.cow); renderMini("landHistoryChart",contributorHistory.land); renderMini("laborHistoryChart",contributorHistory.labor); }
 
-
-function upsertContributorPoint(series, year, value){
-  if(!Number.isFinite(year) || !Number.isFinite(value) || value <= 0) return;
-  const idx = series.findIndex(d => d.year === year);
-  if(idx >= 0) series[idx] = {year, value};
-  else series.push({year, value});
-  series.sort((a,b)=>a.year-b.year);
-}
-
-function applyLiveContributorPoints(meta={}){
-  // Historical observations must use gold prices from the same observation year.
-  // Do not overwrite prior-year points using today's spot price.
-  if(meta.cowYear === 2026 && meta.farmlandYear === 2026 && spot > 0){
-    upsertContributorPoint(contributorHistory.cow, 2026, +$("cowValue").value / spot);
-    upsertContributorPoint(contributorHistory.land, 2026, +$("landValue").value / spot);
-  }
-}
-
-function renderContributorHistory(){
-  const ozFmt = v => v >= 1 ? `${v.toFixed(1)} oz` : v >= .1 ? `${v.toFixed(2)} oz` : `${v.toFixed(3)} oz`;
-  renderMiniHistory("cowHistoryChart",contributorHistory.cow,ozFmt);
-  renderMiniHistory("landHistoryChart",contributorHistory.land,ozFmt);
-  renderMiniHistory("laborHistoryChart",contributorHistory.labor,ozFmt);
-}
-
-const obsoleteHistoricalBenchmarks = [
-  {year:1950, market:34.72, fair:66},
-  {year:1960, market:35.27, fair:105},
-  {year:1970, market:36.02, fair:196},
-  {year:1980, market:614.75, fair:440},
-  {year:1990, market:383.51, fair:525},
-  {year:2000, market:279.11, fair:610},
-  {year:2010, market:1224.53, fair:1325},
-  {year:2020, market:1770.60, fair:2430}
-];
-
-const historicalBacktest = [{"year":1926,"market":20.63,"fair":40.99},{"year":1927,"market":20.64,"fair":39.94},{"year":1928,"market":20.66,"fair":41.69},{"year":1929,"market":20.63,"fair":42.54},{"year":1930,"market":20.65,"fair":46.45},{"year":1931,"market":17.06,"fair":47.06},{"year":1932,"market":20.69,"fair":47.57},{"year":1933,"market":26.33,"fair":38.76},{"year":1934,"market":34.69,"fair":31.63},{"year":1935,"market":34.84,"fair":25.61},{"year":1936,"market":34.87,"fair":33.87},{"year":1937,"market":34.79,"fair":33.49},{"year":1938,"market":34.85,"fair":33.45},{"year":1939,"market":34.42,"fair":33.35},{"year":1940,"market":33.85,"fair":33.17},{"year":1941,"market":33.85,"fair":37.31},{"year":1942,"market":33.85,"fair":41.44},{"year":1943,"market":33.85,"fair":45.56},{"year":1944,"market":33.85,"fair":49.67},{"year":1945,"market":34.71,"fair":53.78},{"year":1946,"market":34.71,"fair":61.78},{"year":1947,"market":34.71,"fair":69.52},{"year":1948,"market":34.71,"fair":77.09},{"year":1949,"market":31.69,"fair":84.53},{"year":1950,"market":34.72,"fair":83.2},{"year":1951,"market":34.72,"fair":98.38},{"year":1952,"market":34.6,"fair":101.77},{"year":1953,"market":34.84,"fair":100.55},{"year":1954,"market":35.04,"fair":85.04},{"year":1955,"market":35.03,"fair":82.67},{"year":1956,"market":34.99,"fair":89.76},{"year":1957,"market":34.95,"fair":97.82},{"year":1958,"market":35.1,"fair":105.35},{"year":1959,"market":35.1,"fair":113.9},{"year":1960,"market":35.27,"fair":121.42},{"year":1961,"market":35.0,"fair":125.98},{"year":1962,"market":35.23,"fair":132.65},{"year":1963,"market":35.09,"fair":138.77},{"year":1964,"market":35.1,"fair":146.5},{"year":1965,"market":35.12,"fair":154.75},{"year":1966,"market":35.0,"fair":164.03},{"year":1967,"market":34.95,"fair":172.76},{"year":1968,"market":38.92,"fair":181.99},{"year":1969,"market":41.08,"fair":190.7},{"year":1970,"market":36.0,"fair":197.89},{"year":1971,"market":41.0,"fair":225.37},{"year":1972,"market":58.0,"fair":256.58},{"year":1973,"market":97.0,"fair":293.85},{"year":1974,"market":159.25,"fair":348.17},{"year":1975,"market":161.0,"fair":391.93},{"year":1976,"market":124.82,"fair":446.51},{"year":1977,"market":148.0,"fair":511.79},{"year":1978,"market":193.0,"fair":565.86},{"year":1979,"market":306.67,"fair":640.57},{"year":1980,"market":608.0,"fair":720.21},{"year":1981,"market":460.0,"fair":758.73},{"year":1982,"market":376.0,"fair":760.1},{"year":1983,"market":423.0,"fair":743.28},{"year":1984,"market":360.48,"fair":748.91},{"year":1985,"market":318.0,"fair":706.12},{"year":1986,"market":367.69,"fair":668.56},{"year":1987,"market":446.0,"fair":646.38},{"year":1988,"market":437.0,"fair":663.51},{"year":1989,"market":381.43,"fair":681.71},{"year":1990,"market":383.47,"fair":688.87},{"year":1991,"market":362.0,"fair":704.36},{"year":1992,"market":343.73,"fair":714.82},{"year":1993,"market":360.0,"fair":731.77},{"year":1994,"market":384.0,"fair":767.66},{"year":1995,"market":384.0,"fair":795.29},{"year":1996,"market":388.0,"fair":821.22},{"year":1997,"market":331.1,"fair":845.08},{"year":1998,"market":294.0,"fair":872.83},{"year":1999,"market":278.77,"fair":903.81},{"year":2000,"market":279.0,"fair":936.14},{"year":2001,"market":270.99,"fair":961.38},{"year":2002,"market":310.0,"fair":985.96},{"year":2003,"market":363.51,"fair":1009.92},{"year":2004,"market":409.0,"fair":1037.18},{"year":2005,"market":445.0,"fair":1136.67},{"year":2006,"market":604.0,"fair":1211.62},{"year":2007,"market":696.72,"fair":1269.57},{"year":2008,"market":872.0,"fair":1318.89},{"year":2009,"market":972.97,"fair":1294.11},{"year":2010,"market":1224.66,"fair":1312.31},{"year":2011,"market":1569.21,"fair":1355.13},{"year":2012,"market":1670.0,"fair":1416.16},{"year":2013,"market":1411.46,"fair":1471.6},{"year":2014,"market":1266.0,"fair":1524.66},{"year":2015,"market":1160.66,"fair":1537.63},{"year":2016,"market":1248.99,"fair":1532.55},{"year":2017,"market":1257.56,"fair":1540.23},{"year":2018,"market":1269.0,"fair":1555.35},{"year":2019,"market":1392.5,"fair":1567.73},{"year":2020,"market":1770.0,"fair":1565.13},{"year":2021,"market":1799.63,"fair":1675.94},{"year":2022,"market":1801.0,"fair":1918.91},{"year":2023,"market":1943.0,"fair":2076.87},{"year":2024,"market":2387.7,"fair":2368.96},{"year":2025,"market":3442.0,"fair":2765.38}];
-const backtestStats = {
-  fullR2: 0.7737, floatingR2: 0.6670,
-  note: "Provisional reconstruction: 70 of 100 cow years and 22 of 100 farmland years use interpolation."
-};
-function chartData(currentFair){
-  return [...historicalBacktest,{year:2026,market:spot,fair:currentFair}]
-    .map(d=>({...d,premium:(d.market/d.fair-1)*100}));
-}
-function svgEl(name,attrs={}){
-  const el=document.createElementNS("http://www.w3.org/2000/svg",name);
-  Object.entries(attrs).forEach(([k,v])=>el.setAttribute(k,v));
-  return el;
-}
-function renderLineChart(svgId,tooltipId,data,mode){
-  const svg=$(svgId),tip=$(tooltipId); if(!svg)return;
-  while(svg.firstChild)svg.removeChild(svg.firstChild);
-  const W=1000,H=mode==="premium"?230:320,m={l:58,r:20,t:18,b:38},iw=W-m.l-m.r,ih=H-m.t-m.b;
-  svg.setAttribute("viewBox",`0 0 ${W} ${H}`);
-  const xmin=1926,xmax=2026,x=v=>m.l+(v-xmin)/(xmax-xmin)*iw;
-  let ymin,ymax;
-  if(mode==="premium"){
-    const vals=data.map(d=>d.premium); ymin=Math.min(-100,Math.floor(Math.min(...vals)/50)*50); ymax=Math.max(100,Math.ceil(Math.max(...vals)/50)*50);
-  }else{
-    ymin=0; ymax=Math.max(1000,Math.ceil(Math.max(...data.flatMap(d=>[d.market,d.fair]))/1000)*1000);
-  }
-  const y=v=>m.t+(ymax-v)/(ymax-ymin)*ih;
-  for(let i=0;i<=4;i++){
-    const val=ymin+(ymax-ymin)*i/4,yy=y(val);
-    svg.appendChild(svgEl("line",{x1:m.l,x2:W-m.r,y1:yy,y2:yy,class:"chart-grid"}));
-    const tx=svgEl("text",{x:m.l-10,y:yy+4,"text-anchor":"end",class:"chart-axis"});
-    tx.textContent=mode==="premium"?`${Math.round(val)}%`:new Intl.NumberFormat("en-US",{notation:"compact",maximumFractionDigits:1,style:"currency",currency:"USD"}).format(val);
-    svg.appendChild(tx);
-  }
-  if(mode==="premium")svg.appendChild(svgEl("line",{x1:m.l,x2:W-m.r,y1:y(0),y2:y(0),class:"chart-zero"}));
-  [1926,1950,1975,2000,2026].forEach(yr=>{const tx=svgEl("text",{x:x(yr),y:H-12,"text-anchor":"middle",class:"chart-axis"});tx.textContent=yr;svg.appendChild(tx);});
-  const path=key=>data.map((d,i)=>`${i?"L":"M"} ${x(d.year)} ${y(d[key])}`).join(" ");
-  if(mode==="premium") svg.appendChild(svgEl("path",{d:path("premium"),class:"chart-line-premium"}));
-  else{
-    svg.appendChild(svgEl("path",{d:path("market"),class:"chart-line-market"}));
-    svg.appendChild(svgEl("path",{d:path("fair"),class:"chart-line-fair"}));
-  }
-  data.forEach(d=>{
-    const show=()=>{tip.style.opacity="1";tip.style.left=`${x(d.year)/W*100}%`;tip.style.top=`${(mode==="premium"?y(d.premium):Math.min(y(d.market),y(d.fair)))/H*100}%`;tip.innerHTML=mode==="premium"?`<strong>${d.year}</strong>Premium: ${pct(d.premium)}`:`<strong>${d.year}</strong>Market: ${fmt(d.market)}<br>Fair value: ${fmt(d.fair)}<br>Premium: ${pct(d.premium)}`;};
-    const hide=()=>tip.style.opacity="0";
-    const pts=mode==="premium"?[["premium","chart-dot-market",5]]:[["market","chart-dot-market",5],["fair","chart-dot-fair",4.5]];
-    pts.forEach(([key,cls,r])=>{const c=svgEl("circle",{cx:x(d.year),cy:y(d[key]),r,class:cls});c.addEventListener("mouseenter",show);c.addEventListener("mouseleave",hide);svg.appendChild(c);});
-  });
-}
-function renderHistoricalCharts(currentFair){
-  const d=chartData(currentFair);
-  renderLineChart("priceChart","priceTooltip",d,"price");
-  renderLineChart("premiumChart","premiumTooltip",d,"premium");
-}
-
+/* ---------- main update ---------- */
 function update(){
-  const cowValue = +$("cowValue").value;
-  const cowEq = +$("cowEq").value;
-  const landValue = +$("landValue").value;
-  const landEq = +$("landEq").value;
+  const cowValue=+$("cowValue").value, cowEq=+$("cowEq").value, landValue=+$("landValue").value, landEq=+$("landEq").value;
+  $("cowValueLabel").textContent=fmt(cowValue); $("cowEqLabel").textContent=cowEq.toFixed(2);
+  $("landValueLabel").textContent=fmt(landValue); $("landEqLabel").textContent=landEq.toFixed(2);
 
-  $("cowValueLabel").textContent = fmt(cowValue);
-  $("cowEqLabel").textContent = cowEq.toFixed(2);
-  $("landValueLabel").textContent = fmt(landValue);
-  $("landEqLabel").textContent = landEq.toFixed(2);
+  const cowFV=cowValue/cowEq, landFV=landValue*landEq, fair=Math.sqrt(cowFV*landFV);
+  const premium=(spot/fair-1)*100, laborHours=spot/wage;
+  const [label,copy]=regimeFor(premium);
 
-  const cowFV = cowValue / cowEq;
-  const landFV = landValue * landEq;
-  const fair = Math.sqrt(cowFV * landFV);
-  const premium = (spot/fair - 1) * 100;
-  const laborHours = spot / wage;
-  renderHistoricalCharts(fair);
+  $("spotValue").textContent=fmt(spot);
+  $("fairValue").textContent=fmt(fair);
+  $("premiumValue").textContent=pct(premium);
+  $("premiumValue").className="val num "+(premium>15?"pos":premium<-20?"neg":"");
+  $("regimeLabel").textContent=label;
+  $("regimeBig").textContent=label;
+  $("interpretation").textContent=copy;
 
-  $("spotValue").textContent = fmt(spot);
-  $("fairValue").textContent = fmt(fair);
-  $("premiumValue").textContent = pct(premium);
-  $("cowFV").textContent = fmt(cowFV);
-  $("landFV").textContent = fmt(landFV);
-  $("laborHours").textContent = `${laborHours.toFixed(0)} hrs`;
+  $("cowFV").textContent=fmt(cowFV); $("landFV").textContent=fmt(landFV); $("fairFV2").textContent=fmt(fair);
+  $("laborHours").textContent=`${laborHours.toFixed(0)} hrs`;
+  const mx=Math.max(cowFV,landFV,fair,spot);
+  $("cowBar").style.width=`${cowFV/mx*100}%`; $("landBar").style.width=`${landFV/mx*100}%`; $("fairBar").style.width=`${fair/mx*100}%`;
+  $("laborBar").style.width=`${Math.min(100,laborHours/200*100)}%`;
 
-  const maxAnchor = Math.max(cowFV, landFV, fair);
-  $("cowBar").style.width = `${Math.max(8,cowFV/maxAnchor*100)}%`;
-  $("landBar").style.width = `${Math.max(8,landFV/maxAnchor*100)}%`;
-  $("laborBar").style.width = `${Math.min(100, laborHours/180*100)}%`;
+  if(stats){
+    const p=percentileOf(premium);
+    $("pctlValue").textContent=ord(p);
+    $("pctlBig").textContent=`${ord(p)} percentile`;
+    const a=stats.prem, lo=a[0], hi=a.at(-1), span=Math.max(hi,premium)-Math.min(lo,premium);
+    const pos=v=>(v-Math.min(lo,premium))/span*100;
+    const bar=$("pctlBar"); bar.querySelectorAll(".tick,.now").forEach(n=>n.remove());
+    a.forEach(v=>{ const t=document.createElement("i"); t.className="tick"; t.style.left=`${pos(v)}%`; bar.appendChild(t); });
+    const now=document.createElement("b"); now.className="now"; now.style.left=`${pos(premium)}%`; now.title="Today"; bar.appendChild(now);
+    $("pctlMin").textContent=pct(lo,0); $("pctlMax").textContent=pct(hi,0); $("pctlMed").textContent=pct(stats.median,0);
+    const yrsAbove=a.filter(v=>v>=premium).length;
+    $("pctlNote").textContent = yrsAbove===0
+      ? `Today's premium is higher than in any year from 1972 to ${stats.lastYear}. Each tick is one year.`
+      : `Gold traded at a premium this high or higher in ${yrsAbove} of ${a.length} years from 1972 to ${stats.lastYear}. Each tick is one year.`;
+    const peakPrem=(PEAK_2026/fair-1)*100;
+    $("peakPrem").textContent=Math.round(peakPrem);
+    const base26 = cpiBaseline(2026), basePrem = (spot/base26-1)*100;
+    $("baselineTake").innerHTML = `<strong>The yardstick changes the verdict.</strong> Against inflation alone, ${fmt(spot)} is ${pct(basePrem,0)} versus gold's floating-era average real price (about ${fmt(base26)} in today's dollars, using an estimated 2026 CPI). Against cows and farmland it's ${pct(premium,0)}, because farmland and cattle have outpaced consumer prices. Cows and farmland fit gold's long-run level somewhat better than CPI, and gaps against them have closed faster, but neither yardstick tracks gold from one year to the next.`;
+    $("takeaway").innerHTML = `<strong>At ${fmt(spot)}, an ounce buys about ${(spot/cowValue).toFixed(2)} cows or ${(spot/landValue).toFixed(2)} acres of farmland.</strong> That puts gold ${Math.abs(premium).toFixed(0)}% ${premium>=0?"above":"below"} its real-economy fair value of ${fmt(fair)}, a ${label.toLowerCase()} that ranks in the ${ord(p)} percentile of the floating era. At January's all-time high of ${fmt(PEAK_2026)}, the premium was about ${pct(peakPrem,0)}.`;
 
-  const [label, copy] = regimeFor(premium);
-  $("regimeLabel").textContent = label;
-  $("interpretation").textContent = copy;
-  $("regimeMarker").style.left = `${Math.max(2,Math.min(98,(premium+40)/160*100))}%`;
+    // 12-month scenarios
+    const g=stats.g10, fair12=fair*(1+g);
+    const lp=Math.log(1+premium/100), mrPrem=(Math.exp(lp*(1+stats.beta))-1)*100;
+    $("mrNote").textContent=`Closes ${(Math.abs(stats.beta)*100).toFixed(0)}% of the log gap per year, as it has since 1972`;
+    const prem=[mrPrem, premium, +$("m3").value, +$("m4").value];
+    const targets=prem.map(p=>fair12*(1+p/100));
+    $("m1display").textContent=pct(mrPrem); $("m2display").textContent=pct(premium);
+    targets.forEach((t,i)=>{ $("t"+(i+1)).textContent=fmt(t); $("d"+(i+1)).textContent=pct((t/spot-1)*100); });
+    const probs=[1,2,3,4].map(i=>Math.max(0,+$("p"+i).value||0)), total=probs.reduce((a,b)=>a+b,0);
+    const weighted= total>0 ? targets.reduce((s,t,i)=>s+t*probs[i]/total,0) : fair12;
+    $("targetValue").textContent=fmt(weighted); $("dT").textContent=pct((weighted/spot-1)*100);
+    $("ptotal").textContent=`${total}%`;
+    $("probWarning").textContent= total===100 ? "" : `Probabilities total ${total}%. They're normalized to 100% for the weighted result.`;
+    $("growthNote").textContent=`Fair value grows ${(g*100).toFixed(1)}% over 12 months (its 2015–2025 annual rate), to ${fmt(fair12)}. This is a scenario calculator, not a forecast.`;
 
-  const probs = [+$("p1").value,+$("p2").value,+$("p3").value,+$("p4").value];
-  const premiums = [+$("m1").value,premium,+$("m3").value,+$("m4").value];
-  const targets = premiums.map(x => fair*(1+x/100));
-
-  ["t1","t2","t3","t4"].forEach((id,i)=>$(id).textContent=fmt(targets[i]));
-  $("m2display").textContent = pct(premium);
-
-  const totalP = probs.reduce((a,b)=>a+b,0);
-  const weighted = totalP > 0 ? targets.reduce((s,t,i)=>s+t*(probs[i]/totalP),0) : fair;
-  $("targetValue").textContent = fmt(weighted);
-  $("probWarning").textContent = totalP === 100 ? "" : `Probabilities total ${totalP}%. The model normalizes them to 100% for the weighted target.`;
+    renderMain(fair);
+  }
 }
 
-["cowValue","cowEq","landValue","landEq","p1","p2","p3","p4","m1","m3","m4"].forEach(id=>{
-  $(id).addEventListener("input",update);
-});
+/* ---------- data loading ---------- */
+async function loadSeries(){
+  const r=await fetch("gold-standard-100-year-reconstruction.csv");
+  if(!r.ok) throw new Error("csv");
+  const rows=(await r.text()).trim().split(/\r?\n/).slice(1);
+  series=rows.map(l=>{ const c=l.split(","); return {year:+c[0], market:+c[1], fair:+c[2], cowObs:c[5]==="True", landObs:c[6]==="True", cpi:+c[11]}; }).filter(d=>d.year && d.market>0 && d.fair>0);
+  computeStats();
+}
 
 async function loadLive(){
-  if(!WORKER_URL) {
-    $("dataStatus").textContent = "Worker not connected · using dated fallbacks";
-    ["goldFresh","cowFresh","landFresh","wageFresh"].forEach(id=>$(id).className="fresh-val source-fallback");
-    update(); renderContributorHistory(); return;
-  }
+  if(!WORKER_URL){ $("dataStatus").textContent="Using dated reference values"; return; }
   try{
-    const r = await fetch(WORKER_URL, {cache:"no-store"});
-    if(!r.ok) throw new Error("fetch failed");
-    const d = await r.json();
-
-    if(Number.isFinite(+d.gold?.value)) spot = +d.gold.value;
-    if(Number.isFinite(+d.wage?.value)) wage = +d.wage.value;
-    if(Number.isFinite(+d.cow?.value)) $("cowValue").value = +d.cow.value;
-    if(Number.isFinite(+d.farmland?.value)) $("landValue").value = +d.farmland.value;
-
-    const feeds = [
-      ["gold",d.gold,"Gold"],["cow",d.cow,"Cow"],["land",d.farmland,"Farmland"],["wage",d.wage,"Manufacturing wage"]
-    ];
-    feeds.forEach(([prefix,obj,label])=>{
-      const fresh=$(prefix+"Fresh"), date=$(prefix+"Date");
-      if(!fresh || !date) return;
-      const live = obj && obj.status === "live";
-      fresh.textContent = live ? "Live / latest published" : "Fallback";
-      fresh.className = "fresh-val " + (live ? "source-ok" : "source-fallback");
-      date.textContent = obj?.date ? `${obj.date} · ${obj.source || label}` : (obj?.source || label);
+    const r=await fetch(WORKER_URL,{cache:"no-store"}); if(!r.ok) throw new Error();
+    const d=await r.json();
+    if(Number.isFinite(+d.gold?.value)) spot=+d.gold.value;
+    if(Number.isFinite(+d.wage?.value)) wage=+d.wage.value;
+    if(Number.isFinite(+d.cow?.value)) $("cowValue").value=+d.cow.value;
+    if(Number.isFinite(+d.farmland?.value)) $("landValue").value=+d.farmland.value;
+    [["gold",d.gold],["cow",d.cow],["land",d.farmland],["wage",d.wage]].forEach(([k,o])=>{
+      if(o) $(k+"Date").textContent=`${o.date||""} · ${o.status==="live"?"live":"fallback"}`;
     });
-
-    $("dataStatus").textContent = "Auto-updating sources connected";
-    $("updatedAt").textContent = d.generatedAt ? `Checked ${new Date(d.generatedAt).toLocaleString()}` : "Live model";
-
-    applyLiveContributorPoints({
-      cowYear: d.cow?.year,
-      farmlandYear: d.farmland?.year,
-      wageYear: d.wage?.year
-    });
-  }catch(e){
-    $("dataStatus").textContent = "Worker unavailable · using dated fallbacks";
-  }
-  update();
-  renderContributorHistory();
+    $("statusDot").classList.toggle("live", !!d.allLive);
+    $("dataStatus").textContent=d.allLive?"Live data connected":"Partly live data";
+    $("spotSrc").textContent=d.gold?.status==="live"?"live":"reference";
+    if(d.generatedAt) $("updatedAt").textContent=`Checked ${new Date(d.generatedAt).toLocaleString()}`;
+  }catch(e){ $("dataStatus").textContent="Live data unavailable · using dated references"; }
 }
-loadLive();
+
+/* ---------- controls ---------- */
+["cowValue","cowEq","landValue","landEq","p1","p2","p3","p4","m3","m4"].forEach(id=>$(id).addEventListener("input",update));
+document.querySelectorAll(".seg button").forEach(b=>b.addEventListener("click",()=>{
+  b.parentElement.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));
+  if(b.dataset.view) view.mode=b.dataset.view;
+  if(b.dataset.scale) view.scale=b.dataset.scale;
+  if(b.dataset.range) view.from=+b.dataset.range;
+  $("scaleSeg").style.display = view.mode==="premium" ? "none" : "";
+  update();
+}));
+$("resetBtn").addEventListener("click",()=>{ for(const k in DEFAULTS) $(k).value=DEFAULTS[k]; update(); });
+$("shareBtn").addEventListener("click",async()=>{
+  const url="https://lorenzen.ai/tools/gold-standard/";
+  try{ if(navigator.share) await navigator.share({title:document.title,url}); else { await navigator.clipboard.writeText(url); $("shareBtn").lastElementChild.textContent="Copied"; setTimeout(()=>$("shareBtn").lastElementChild.textContent="Share",1600); } }catch(e){}
+});
+let rz; addEventListener("resize",()=>{ clearTimeout(rz); rz=setTimeout(update,120); });
+
+(async()=>{
+  renderMinis();
+  try{ await loadSeries(); }catch(e){ $("takeaway").textContent="The historical series couldn't load. Refresh to try again."; }
+  await loadLive();
+  update();
+})();
 </script>
 </body>
 </html>
