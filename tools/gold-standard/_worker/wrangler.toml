@@ -1,0 +1,10 @@
+# Gold Standard live-data feed for /tools/gold-standard. See src/index.js.
+# Deploy: npx wrangler deploy
+# Optional secret for cow + farmland auto-updates: npx wrangler secret put USDA_API_KEY
+name = "gold-standard"
+main = "src/index.js"
+compatibility_date = "2025-09-01"
+
+[vars]
+# Free, keyless spot feed that returns {"price": ..., "updatedAt": ...}
+GOLD_API_URL = "https://api.gold-api.com/price/XAU"

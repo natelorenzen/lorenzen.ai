@@ -245,7 +245,7 @@
 
   <div class="stats" aria-live="polite">
     <div class="stat"><div class="lab">Gold price</div><div class="val num" id="spotValue">—</div><div class="sub">Per troy ounce · <span id="spotSrc">reference</span></div></div>
-    <div class="stat"><div class="lab">Real-economy fair value</div><div class="val num" id="fairValue">—</div><div class="sub">Cow × farmland geometric mean</div></div>
+    <div class="stat"><div class="lab">Real-economy fair value</div><div class="val num" id="fairValue">—</div><div class="sub">Cow × farmland, fitted to 1972–2025</div></div>
     <div class="stat"><div class="lab">Monetary premium</div><div class="val num" id="premiumValue">—</div><div class="sub" id="regimeLabel">—</div></div>
     <div class="stat"><div class="lab">Historical percentile</div><div class="val num" id="pctlValue">—</div><div class="sub">vs. every year since 1972</div></div>
   </div>
@@ -314,9 +314,9 @@
       </div>
       <div class="panel">
         <div class="ctl"><label for="cowValue"><span>Replacement milk cow, $/head</span><span class="num" id="cowValueLabel"></span></label><input id="cowValue" type="range" min="1500" max="5000" step="10" value="3160"><div class="hint">USDA, Oct 2026 reference: $3,160</div></div>
-        <div class="ctl"><label for="cowEq"><span>Cows per ounce at equilibrium</span><span class="num" id="cowEqLabel"></span></label><input id="cowEq" type="range" min=".6" max="1.5" step=".01" value="1"></div>
+        <div class="ctl"><label for="cowEq"><span>Cows per ounce at equilibrium</span><span class="num" id="cowEqLabel"></span></label><input id="cowEq" type="range" min=".8" max="3" step=".01" value="1.8"><div class="hint" id="cowEqHint">Fitted to 1972–2025</div></div>
         <div class="ctl"><label for="landValue"><span>U.S. farmland, $/acre</span><span class="num" id="landValueLabel"></span></label><input id="landValue" type="range" min="2000" max="8000" step="10" value="4500"><div class="hint">USDA 2026 reference: $4,500</div></div>
-        <div class="ctl" style="margin-bottom:0"><label for="landEq"><span>Acres per ounce at equilibrium</span><span class="num" id="landEqLabel"></span></label><input id="landEq" type="range" min=".3" max="1" step=".01" value=".60"></div>
+        <div class="ctl" style="margin-bottom:0"><label for="landEq"><span>Acres per ounce at equilibrium</span><span class="num" id="landEqLabel"></span></label><input id="landEq" type="range" min=".15" max=".8" step=".01" value=".33"><div class="hint" id="landEqHint">Fitted to 1972–2025</div></div>
       </div>
     </div>
   </section>
@@ -330,8 +330,8 @@
           <tbody>
             <tr><td>Historical mean reversion<small id="mrNote">—</small></td><td><input id="p1" type="number" value="40" min="0" max="100" aria-label="Mean reversion probability"> %</td><td class="num" id="m1display">—</td><td class="num" id="t1">—</td><td class="num" id="d1">—</td></tr>
             <tr><td>Premium holds<small>Today's premium persists</small></td><td><input id="p2" type="number" value="30" min="0" max="100" aria-label="Premium holds probability"> %</td><td class="num" id="m2display">—</td><td class="num" id="t2">—</td><td class="num" id="d2">—</td></tr>
-            <tr><td>Monetary stress<small>Your assumption</small></td><td><input id="p3" type="number" value="20" min="0" max="100" aria-label="Monetary stress probability"> %</td><td><input id="m3" type="number" value="60" min="-80" max="300" aria-label="Monetary stress premium"> %</td><td class="num" id="t3">—</td><td class="num" id="d3">—</td></tr>
-            <tr><td>Severe stress<small>Your assumption · Jan 2026 peak was ≈ +<span id="peakPrem">90</span>%</small></td><td><input id="p4" type="number" value="10" min="0" max="100" aria-label="Severe stress probability"> %</td><td><input id="m4" type="number" value="100" min="-80" max="400" aria-label="Severe stress premium"> %</td><td class="num" id="t4">—</td><td class="num" id="d4">—</td></tr>
+            <tr><td>Monetary stress<small>Your assumption</small></td><td><input id="p3" type="number" value="20" min="0" max="100" aria-label="Monetary stress probability"> %</td><td><input id="m3" type="number" value="150" min="-80" max="400" aria-label="Monetary stress premium"> %</td><td class="num" id="t3">—</td><td class="num" id="d3">—</td></tr>
+            <tr><td>Severe stress<small>Your assumption · Jan 2026 peak was ≈ +<span id="peakPrem">90</span>%</small></td><td><input id="p4" type="number" value="10" min="0" max="100" aria-label="Severe stress probability"> %</td><td><input id="m4" type="number" value="240" min="-80" max="500" aria-label="Severe stress premium"> %</td><td class="num" id="t4">—</td><td class="num" id="d4">—</td></tr>
           </tbody>
           <tfoot><tr><td>Probability-weighted</td><td class="num" id="ptotal">100%</td><td></td><td class="num" id="targetValue">—</td><td class="num" id="dT">—</td></tr></tfoot>
         </table>
@@ -406,8 +406,8 @@
     </div>
     <div style="margin-top:22px">
       <details><summary>Why cows and farmland?</summary><p>Both are productive, scarce, real assets that reprice freely and have long U.S. price records. Ancient and medieval sources often value a cow somewhere between a fraction of an ounce and about an ounce of gold, and modern U.S. replacement cows have returned to roughly that range. Farmland offers the cleanest long-run scarce-asset comparison: gold's purchasing power over land collapsed while gold was pinned at $35, then recovered after the float.</p></details>
-      <details><summary>Why is the premium usually negative?</summary><p>The equilibrium ratios (one cow, 0.6 acres per ounce) are round historical anchors, not values fitted to make the average premium zero. In the floating era gold has traded below this fair value in most years, so a positive premium is unusual. That's why the page also shows a historical percentile: it measures today against gold's own history rather than against an assumed equilibrium.</p></details>
-      <details><summary>What changed in this version?</summary><p>Replaced 36 interpolated cow-price years (1981–2019) with USDA ERS annual dairy-cow prices. Added an inflation-only (CPI) baseline to the chart and a head-to-head test against it. Corrected the 1931 and 1949 gold prices to the official prices of $20.67 and $34.72. Added log scale, a floating-era view, historical percentile, live model diagnostics, fair-value growth in the 12-month scenarios and a mean-reversion case calibrated to history.</p></details>
+      <details><summary>How is fair value calibrated?</summary><p>The model originally used round historical anchors: one cow or 0.6 acres per ounce. Against those, gold traded about 45% below "fair value" in a typical floating-era year, so the line sat well above the price. Fair value is now shifted down so that gold's average premium from 1972 to 2025 is zero, which is the best-fitting line on the log chart. That works out to about 1.8 cows or 0.33 acres per ounce. The shape of the line is unchanged; only its level moved. The CSV keeps the original anchors in <code>modeled_gold_usd_oz</code>, and the page applies the fitted multiplier. You can move the equilibrium sliders to try other calibrations.</p></details>
+      <details><summary>What changed in this version?</summary><p>Recalibrated fair value to the 1972–2025 best fit (about 45% lower than the original anchors). Connected live gold and wage data. Replaced 36 interpolated cow-price years (1981–2019) with USDA ERS annual dairy-cow prices. Added an inflation-only (CPI) baseline to the chart and a head-to-head test against it. Corrected the 1931 and 1949 gold prices to the official prices of $20.67 and $34.72. Added log scale, a floating-era view, historical percentile, live model diagnostics, fair-value growth in the 12-month scenarios and a mean-reversion case calibrated to history.</p></details>
     </div>
   </section>
 
@@ -418,7 +418,7 @@
 </main>
 
 <script>
-const WORKER_URL = ""; // set to the deployed Worker endpoint to enable live data
+const WORKER_URL = "https://gold-standard.nlorenzen.workers.dev/"; // tools/gold-standard/_worker
 
 const $ = id => document.getElementById(id);
 const fmt = n => new Intl.NumberFormat("en-US",{style:"currency",currency:"USD",maximumFractionDigits:0}).format(n);
@@ -428,7 +428,9 @@ const ord = n => { const s=["th","st","nd","rd"], v=n%100; return n+(s[(v-20)%10
 const NS = "http://www.w3.org/2000/svg";
 const el = (name,attrs={},parent) => { const e=document.createElementNS(NS,name); for(const k in attrs) e.setAttribute(k,attrs[k]); if(parent) parent.appendChild(e); return e; };
 
-const DEFAULTS = {cowValue:3160,cowEq:1,landValue:4500,landEq:.6,p1:40,p2:30,p3:20,p4:10,m3:60,m4:100};
+const DEFAULTS = {cowValue:3160,cowEq:1.8,landValue:4500,landEq:.33,p1:40,p2:30,p3:20,p4:10,m3:150,m4:240}; // cowEq/landEq replaced by the fitted calibration on load
+let calScale = 1;   // fitted multiplier applied to the CSV's original (1 cow, 0.6 acre) fair value
+let shift = 1;      // current equilibrium sliders relative to the fitted calibration
 const PEAK_2026 = 5589.38; // all-time high, Jan 28, 2026
 let spot = 3628;           // Nov 19, 2026 reference; not a live quote
 let wage = 30.37;
@@ -508,15 +510,16 @@ function cpiBaseline(year){
   return c * Math.exp(stats.cpiK);
 }
 
+const histPrem = () => stats.prem.map(v=>((1+v/100)/shift-1)*100);   // floating-era premiums under the current sliders
 function percentileOf(p){
-  const a = stats.prem; let below = 0;
+  const a = histPrem(); let below = 0;
   for(const v of a) if(v < p) below++;
   return Math.round(below / a.length * 100);
 }
 
 /* ---------- main chart ---------- */
 function chartRows(fair){
-  return [...series, {year:2026, market:spot, fair, current:true}]
+  return [...series.map(d=>({...d, fair:d.fair*shift})), {year:2026, market:spot, fair, current:true}]
     .filter(d=>d.year>=view.from)
     .map(d=>({...d, premium:(d.market/d.fair-1)*100, base:cpiBaseline(d.year)}));
 }
@@ -574,9 +577,10 @@ function renderMain(fair){
     const clipB=el("clipPath",{id:"cpNeg"},svg); el("rect",{x:0,y:z,width:W,height:H},clipB);
     el("path",{d:area,class:"a-prem-pos","clip-path":"url(#cpPos)"},svg);
     el("path",{d:area,class:"a-prem-neg","clip-path":"url(#cpNeg)"},svg);
-    if(stats){ el("line",{x1:x(Math.max(1972,xmin)),x2:W-m.r,y1:y(stats.median),y2:y(stats.median),class:"l-med"},svg); }
+    const med = stats ? ((1+stats.median/100)/shift-1)*100 : 0;
+    if(stats){ el("line",{x1:x(Math.max(1972,xmin)),x2:W-m.r,y1:y(med),y2:y(med),class:"l-med"},svg); }
     el("path",{d:line("premium"),class:"l-prem"},svg);
-    legend.innerHTML = `<span><i></i>Premium to fair value</span><span><i class="med"></i>Floating-era median (${pct(stats?stats.median:0,0)})</span>`;
+    legend.innerHTML = `<span><i></i>Premium to fair value</span><span><i class="med"></i>Floating-era median (${pct(med,0)})</span>`;
   } else {
     el("path",{d:line("base"),class:"l-base"},svg);
     el("path",{d:line("fair"),class:"l-fair"},svg);
@@ -648,6 +652,7 @@ function update(){
   $("landValueLabel").textContent=fmt(landValue); $("landEqLabel").textContent=landEq.toFixed(2);
 
   const cowFV=cowValue/cowEq, landFV=landValue*landEq, fair=Math.sqrt(cowFV*landFV);
+  shift = Math.sqrt((1/cowEq)*(landEq/0.6)) / calScale;
   const premium=(spot/fair-1)*100, laborHours=spot/wage;
   const [label,copy]=regimeFor(premium);
 
@@ -669,12 +674,12 @@ function update(){
     const p=percentileOf(premium);
     $("pctlValue").textContent=ord(p);
     $("pctlBig").textContent=`${ord(p)} percentile`;
-    const a=stats.prem, lo=a[0], hi=a.at(-1), span=Math.max(hi,premium)-Math.min(lo,premium);
+    const a=histPrem(), med=((1+stats.median/100)/shift-1)*100, lo=a[0], hi=a.at(-1), span=Math.max(hi,premium)-Math.min(lo,premium);
     const pos=v=>(v-Math.min(lo,premium))/span*100;
     const bar=$("pctlBar"); bar.querySelectorAll(".tick,.now").forEach(n=>n.remove());
     a.forEach(v=>{ const t=document.createElement("i"); t.className="tick"; t.style.left=`${pos(v)}%`; bar.appendChild(t); });
     const now=document.createElement("b"); now.className="now"; now.style.left=`${pos(premium)}%`; now.title="Today"; bar.appendChild(now);
-    $("pctlMin").textContent=pct(lo,0); $("pctlMax").textContent=pct(hi,0); $("pctlMed").textContent=pct(stats.median,0);
+    $("pctlMin").textContent=pct(lo,0); $("pctlMax").textContent=pct(hi,0); $("pctlMed").textContent=pct(med,0);
     const yrsAbove=a.filter(v=>v>=premium).length;
     $("pctlNote").textContent = yrsAbove===0
       ? `Today's premium is higher than in any year from 1972 to ${stats.lastYear}. Each tick is one year.`
@@ -710,25 +715,35 @@ async function loadSeries(){
   if(!r.ok) throw new Error("csv");
   const rows=(await r.text()).trim().split(/\r?\n/).slice(1);
   series=rows.map(l=>{ const c=l.split(","); return {year:+c[0], market:+c[1], fair:+c[2], cowObs:c[5]==="True", landObs:c[6]==="True", cpi:+c[11]}; }).filter(d=>d.year && d.market>0 && d.fair>0);
+  // Calibrate: shift fair value so the average floating-era log premium is zero (the least-squares fit on a log chart).
+  const fl=series.filter(d=>d.year>=1972), fit=Math.exp(mean(fl.map(d=>Math.log(d.market/d.fair))));
+  DEFAULTS.cowEq = +(1/fit).toFixed(2); DEFAULTS.landEq = +(0.6*fit).toFixed(2);
+  calScale = Math.sqrt((1/DEFAULTS.cowEq)*(DEFAULTS.landEq/0.6));
+  series.forEach(d=>d.fair*=calScale);
+  $("cowEq").value=DEFAULTS.cowEq; $("landEq").value=DEFAULTS.landEq;
+  $("cowEqHint").textContent=`Fitted to 1972–2025: ${DEFAULTS.cowEq.toFixed(2)} (original anchor: 1.00)`;
+  $("landEqHint").textContent=`Fitted to 1972–2025: ${DEFAULTS.landEq.toFixed(2)} (original anchor: 0.60)`;
   computeStats();
 }
 
 async function loadLive(){
   if(!WORKER_URL){ $("dataStatus").textContent="Using dated reference values"; return; }
   try{
-    const r=await fetch(WORKER_URL,{cache:"no-store"}); if(!r.ok) throw new Error();
+    const ctl=new AbortController(), timer=setTimeout(()=>ctl.abort(),5000);
+    const r=await fetch(WORKER_URL,{cache:"no-store",signal:ctl.signal}); clearTimeout(timer); if(!r.ok) throw new Error();
     const d=await r.json();
-    if(Number.isFinite(+d.gold?.value)) spot=+d.gold.value;
-    if(Number.isFinite(+d.wage?.value)) wage=+d.wage.value;
-    if(Number.isFinite(+d.cow?.value)) $("cowValue").value=+d.cow.value;
-    if(Number.isFinite(+d.farmland?.value)) $("landValue").value=+d.farmland.value;
-    [["gold",d.gold],["cow",d.cow],["land",d.farmland],["wage",d.wage]].forEach(([k,o])=>{
-      if(o) $(k+"Date").textContent=`${o.date||""} · ${o.status==="live"?"live":"fallback"}`;
-    });
-    $("statusDot").classList.toggle("live", !!d.allLive);
-    $("dataStatus").textContent=d.allLive?"Live data connected":"Partly live data";
-    $("spotSrc").textContent=d.gold?.status==="live"?"live":"reference";
-    if(d.generatedAt) $("updatedAt").textContent=`Checked ${new Date(d.generatedAt).toLocaleString()}`;
+    // Only live values replace the page's dated references; worker fallbacks are ignored.
+    const live = o => o && o.status==="live" && Number.isFinite(+o.value) && +o.value>0;
+    if(live(d.gold)) spot=+d.gold.value;
+    if(live(d.wage)) wage=+d.wage.value;
+    if(live(d.cow)){ $("cowValue").value=+d.cow.value; DEFAULTS.cowValue=+d.cow.value; }
+    if(live(d.farmland)){ $("landValue").value=+d.farmland.value; DEFAULTS.landValue=+d.farmland.value; }
+    const feeds=[["gold",d.gold],["cow",d.cow],["land",d.farmland],["wage",d.wage]];
+    feeds.forEach(([k,o])=>{ if(live(o)) $(k+"Date").textContent=`${o.date} · live`; });
+    const nLive=feeds.filter(([,o])=>live(o)).length;
+    $("statusDot").classList.toggle("live", nLive>0);
+    $("dataStatus").textContent = nLive===4 ? "Live data connected" : nLive>0 ? `Live data: ${feeds.filter(([,o])=>live(o)).map(([k])=>k==="land"?"farmland":k).join(", ")}` : "Using dated reference values";
+    if(live(d.gold)){ $("spotSrc").textContent="live"; $("updatedAt").textContent=`Gold as of ${new Date(d.generatedAt||Date.now()).toLocaleString([], {dateStyle:"medium", timeStyle:"short"})}`; }
   }catch(e){ $("dataStatus").textContent="Live data unavailable · using dated references"; }
 }
 
@@ -752,7 +767,8 @@ let rz; addEventListener("resize",()=>{ clearTimeout(rz); rz=setTimeout(update,1
 (async()=>{
   renderMinis();
   try{ await loadSeries(); }catch(e){ $("takeaway").textContent="The historical series couldn't load. Refresh to try again."; }
-  await loadLive();
+  update();          // render immediately with dated references
+  await loadLive();  // then swap in live values, if any
   update();
 })();
 </script>
