@@ -117,6 +117,20 @@
     .chart-legend i.fair{border-top:2px dashed var(--blue)}
     .chart-legend i.med{border-top:1.5px dashed var(--faint)}
     .chart-legend i.base{border-top:2px dotted var(--faint)}
+    .fv-band{fill:var(--blue);opacity:.16}
+    .chart-legend i.band{border-top:0;height:10px;width:16px;background:var(--blue);opacity:.25;vertical-align:-1px}
+    .l-fc{fill:none;stroke:var(--green);stroke-width:2;stroke-dasharray:12 4 2 4;stroke-linejoin:round}
+    .l-prem-fc{fill:none;stroke:var(--green);stroke-width:1.8;stroke-linejoin:round;opacity:.9}
+    .chart-legend i.fc{border-top:2px dashed var(--green)}
+    .models{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .model h3{font-family:var(--serif);font-size:20px;font-weight:600;margin:0 0 2px}
+    .model .mv{font-size:13px;color:var(--muted);margin-bottom:12px}
+    .model ul{margin:0;padding-left:18px;font-size:14px;color:var(--muted);line-height:1.55}
+    .model li{margin:6px 0}
+    .model li b{color:var(--text);font-weight:600}
+    .swatch-line{display:inline-block;width:22px;vertical-align:middle;margin-right:8px;border-top:2.5px dashed var(--blue)}
+    .swatch-line.fc{border-top-color:var(--green)}
+    @media(max-width:880px){.models{grid-template-columns:1fr}}
     .l-base{fill:none;stroke:var(--faint);stroke-width:1.8;stroke-dasharray:1.5 4;stroke-linecap:round}
     td.win{font-weight:700;color:var(--text)}
     td.win::after{content:" ✓";color:var(--green);font-weight:600}
@@ -261,9 +275,9 @@
 
   <div class="stats" aria-live="polite">
     <div class="stat"><div class="lab">Gold price</div><div class="val num" id="spotValue">—</div><div class="sub">Per troy ounce · <span id="spotSrc">reference</span></div></div>
-    <div class="stat"><div class="lab">Real-economy fair value</div><div class="val num" id="fairValue">—</div><div class="sub">Cow + farmland index, fitted 1972–2025</div></div>
-    <div class="stat"><div class="lab">Monetary premium</div><div class="val num" id="premiumValue">—</div><div class="sub" id="regimeLabel">—</div></div>
-    <div class="stat"><div class="lab">Historical percentile</div><div class="val num" id="pctlValue">—</div><div class="sub">vs. every year since 1972</div></div>
+    <div class="stat"><div class="lab">Fair value · cow + farmland</div><div class="val num" id="fairValue">—</div><div class="sub"><b class="num" id="premiumValue">—</b> premium · fitted slope</div></div>
+    <div class="stat"><div class="lab">Fair value · farmland + copper</div><div class="val num" id="fcValue">—</div><div class="sub"><b class="num" id="fcPremium">—</b> premium · 1:1 ratio</div></div>
+    <div class="stat"><div class="lab">Fair-value band</div><div class="val num" id="bandValue">—</div><div class="sub" id="bandSub">—</div></div>
   </div>
 
   <p class="takeaway" id="takeaway">Loading the 100-year series…</p>
@@ -295,7 +309,7 @@
         <svg id="mainChart" role="img" aria-label="Gold market price versus modeled fair value, 1926 to 2026"></svg>
         <div class="tip" id="mainTip"></div>
       </div>
-      <p class="note">Shaded areas mark the Bretton Woods era, when the U.S. fixed gold at $35, so the market price could not respond to the real economy. The float began in 1971. Log scale shows percentage moves at equal size across a century of inflation.</p>
+      <p class="note">The blue band spans the two hard-asset fair values (from 1960, when the copper data starts). The gray area marks the Bretton Woods era, when the U.S. fixed gold at $35, so the market price could not respond to the real economy. The float began in 1971. Log scale shows percentage moves at equal size across a century of inflation.</p>
     </div>
   </section>
 
@@ -323,21 +337,49 @@
     <div class="anchors">
       <div class="panel">
         <div class="row"><span>Cow + farmland index</span><div class="bar"><i id="idxBar"></i></div><strong class="num" id="idxFV">—</strong></div>
-        <div class="row"><span><b>Fitted fair value</b></span><div class="bar"><i class="alt" id="fairBar"></i></div><strong class="num" id="fairFV2">—</strong></div>
+        <div class="row"><span><b>Fair value · cow + farmland</b></span><div class="bar"><i class="alt" id="fairBar"></i></div><strong class="num" id="fairFV2">—</strong></div>
+        <div class="row"><span><b>Fair value · farmland + copper</b></span><div class="bar"><i id="fcBar" style="background:var(--green)"></i></div><strong class="num" id="fcFV2">—</strong></div>
         <div class="row"><span>Gold price</span><div class="bar"><i id="spotBar"></i></div><strong class="num" id="spotFV2">—</strong></div>
-        <div class="row"><span>Labor (diagnostic)</span><div class="bar"><i id="laborBar"></i></div><strong class="num" id="laborHours">—</strong></div>
-        <p class="note">The index is the geometric mean of one cow and 0.6 acres. Fair value scales it by a fitted constant and slope: since 1972, gold has risen about <span id="slopeTxt">1.5</span>% for every 1% rise in the index. Over 300 years, though, an ounce has bought roughly the same number of cows: about 1.3 in the 1700s and <span id="cowsNow">1.1</span> today, which implies a long-run slope near 1. The 1.49 slope is specific to the floating-dollar era since 1971. Labor is shown as hours of U.S. manufacturing work one ounce buys; it isn't used in fair value because productivity growth moves wages independently of money.</p>
+        <p class="note">The index is the geometric mean of one cow and 0.6 acres. Fair value scales it by a fitted constant and slope: since 1972, gold has risen about <span id="slopeTxt">1.5</span>% for every 1% rise in the index. Over 300 years, though, an ounce has bought roughly the same number of cows: about 1.3 in the 1700s and <span id="cowsNow">1.1</span> today, which implies a long-run slope near 1. The 1.49 slope is specific to the floating-dollar era since 1971. The farmland + copper model has no slope to fit: one ounce is worth a fixed bundle of the two (their geometric mean), with only the level calibrated to 1972–2025.</p>
       </div>
       <div class="panel">
         <div class="ctl"><label for="cowValue"><span>Replacement milk cow, $/head</span><span class="num" id="cowValueLabel"></span></label><input id="cowValue" type="range" min="1500" max="5000" step="10" value="3160"><div class="hint">USDA, Oct 2026 reference: $3,160</div></div>
         <div class="ctl"><label for="landValue"><span>U.S. farmland, $/acre</span><span class="num" id="landValueLabel"></span></label><input id="landValue" type="range" min="2000" max="8000" step="10" value="4500"><div class="hint">USDA 2026 reference: $4,500</div></div>
+        <div class="ctl"><label for="copperValue"><span>Copper, $/metric ton</span><span class="num" id="copperValueLabel"></span></label><input id="copperValue" type="range" min="4000" max="25000" step="50" value="14473"><div class="hint">IMF via FRED, Sep 2026 average: $14,473</div></div>
         <div class="ctl" style="margin-bottom:0"><label for="slope"><span>Slope: gold's % move per 1% in the index</span><span class="num" id="slopeLabel"></span></label><input id="slope" type="range" min=".8" max="2" step=".01" value="1.49"><div class="hint" id="slopeHint">Fitted to 1972–2025. At 1.00, gold moves one-for-one with cows and farmland.</div></div>
       </div>
     </div>
   </section>
 
+  <section id="models">
+    <div class="sec-head"><div><h2>Two models, one band</h2><p class="sec-sub">Neither is the "true" value of gold. The shaded band on the chart spans the two, so each model checks the other: gold above both is a stronger signal than gold above one. Their caveats differ.</p></div></div>
+    <div class="models">
+      <div class="panel model">
+        <h3><span class="swatch-line"></span>Cow + farmland</h3>
+        <div class="mv">Fitted slope <span id="mSlope">1.49</span> · out-of-sample error <span id="mOos1">—</span></div>
+        <ul>
+          <li><b>The slope is mostly about cheap cows.</b> Cow prices fell about 65% after inflation from 1980 to 2020 while milk per cow doubled. Farmland alone tracks gold with a slope near 1.0, so the 1.49 slope mainly reflects modern dairy farming making cows cheaper, not gold.</li>
+          <li><b>It doesn't hold over centuries.</b> An ounce bought about 1.3 cows in the 1700s and about 1.1 today, a long-run slope near 1. Extending 1.49 forward assumes the post-1971 pattern continues.</li>
+          <li><b>One more fitted number.</b> A fitted slope can describe history well and still drift. Set the slider to 1.00 to see the level-only version.</li>
+          <li><b>Thin early data.</b> <span id="interpNote2">Some</span> cow-price years are interpolated.</li>
+        </ul>
+      </div>
+      <div class="panel model">
+        <h3><span class="swatch-line fc"></span>Farmland + copper</h3>
+        <div class="mv">Slope fixed at 1 · out-of-sample error <span id="mOos2">—</span></div>
+        <ul>
+          <li><b>Chosen after testing about 30 benchmarks.</b> Scarce assets (land, copper, silver, oil, homes) tracked gold one-for-one; farmed goods didn't. Picking the best of many tests flatters the winner, so treat its error as optimistic.</li>
+          <li><b>Copper is cyclical.</b> Chinese construction, grid and EV buildouts, and mine disruptions can move it sharply. Copper's 2026 surge lifted this fair value by about a fifth in a year.</li>
+          <li><b>Shorter history.</b> Copper prices here start in 1960, so the line only covers the last two-thirds of the chart.</li>
+          <li><b>Gold has done the adjusting, so far.</b> When gold got expensive relative to copper or farmland, gold fell back over the next one to five years while they barely moved. Sustained central-bank buying could change that pattern.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note"><span class="grade">Both</span> Fit on about 54 annual observations since gold began to float in 1971, with the same data used to fit and score them except for the out-of-sample test. They describe where gold has tended to trade, not where it will go, and are useless for short-term timing.</p>
+  </section>
+
   <section id="scenarios">
-    <div class="sec-head"><div><h2>12-month scenarios</h2><p class="sec-sub">Fair value grows at its trailing 10-year rate. Each scenario sets the premium a year from now. The mean-reversion case uses the speed at which the premium has historically closed.</p></div></div>
+    <div class="sec-head"><div><h2>12-month scenarios</h2><p class="sec-sub">Uses the cow + farmland model. Fair value grows at its trailing 10-year rate. Each scenario sets the premium a year from now. The mean-reversion case uses the speed at which the premium has historically closed.</p></div></div>
     <div class="panel">
       <div class="tbl-wrap">
         <table>
@@ -357,7 +399,7 @@
   </section>
 
   <section id="diagnostics">
-    <div class="sec-head"><div><h2>How good is this model?</h2><p class="sec-sub">Computed live from the published data. Any two prices that both rise with inflation will look correlated, so the tests below strip out that shared trend.</p></div></div>
+    <div class="sec-head"><div><h2>How good is the cow + farmland model?</h2><p class="sec-sub">Computed live from the published data. Any two prices that both rise with inflation will look correlated, so the tests below strip out that shared trend.</p></div></div>
     <div class="diag">
       <div class="dcard"><div class="lab">R², price levels (1926–2025)</div><div class="val num" id="dR2">—</div><p>Looks strong, but mostly reflects a century of shared inflation.</p></div>
       <div class="dcard"><div class="lab">R², log prices (1972–2025)</div><div class="val num" id="dR2log">—</div><p>The floating-era fit on a log scale, with fitted constant and slope.</p></div>
@@ -368,11 +410,11 @@
   </section>
 
   <section id="baseline">
-    <div class="sec-head"><div><h2>Do cows and farmland beat plain inflation?</h2><p class="sec-sub">The simplest rival yardstick is the consumer price index: gold's average inflation-adjusted price since 1972, carried forward with CPI. If cows and farmland can't beat that, they add nothing. Floating era, 1972–2025.</p></div></div>
+    <div class="sec-head"><div><h2>Do the models beat plain inflation?</h2><p class="sec-sub">The simplest rival yardstick is the consumer price index, fitted to gold the same way. If a hard-asset model can't beat that, it adds nothing. Floating era, 1972–2025; the best score in each row is ticked.</p></div></div>
     <div class="panel">
       <div class="tbl-wrap">
         <table class="cmp">
-          <thead><tr><th>Test</th><th>Cow + farmland</th><th>Inflation only (CPI)</th></tr></thead>
+          <thead><tr><th>Test</th><th>Cow + farmland</th><th>Farmland + copper</th><th>Inflation only (CPI)</th></tr></thead>
           <tbody id="cmpBody"></tbody>
         </table>
       </div>
@@ -382,11 +424,11 @@
   </section>
 
   <section id="contributors">
-    <div class="sec-head"><div><h2>Ounces of gold per real asset</h2><p class="sec-sub">How many ounces it took to buy one cow, one acre, or one hour of factory work. Lower means gold bought more.</p></div></div>
+    <div class="sec-head"><div><h2>Ounces of gold per real asset</h2><p class="sec-sub">How many ounces it took to buy one cow, one acre, or one tonne of copper. Lower means gold bought more.</p></div></div>
     <div class="minis">
       <div class="mini"><h3>Per productive cow</h3><div class="ms">c. 1725–2025 · colonial and U.S. benchmarks</div><svg id="cowHistoryChart" role="img" aria-label="Ounces of gold per cow over time"></svg></div>
       <div class="mini"><h3>Per acre of U.S. farmland</h3><div class="ms">1850–2025 · USDA farm real estate</div><svg id="landHistoryChart" role="img" aria-label="Ounces of gold per acre over time"></svg></div>
-      <div class="mini"><h3>Per manufacturing labor-hour</h3><div class="ms">1950–2023 · BLS production wages</div><svg id="laborHistoryChart" role="img" aria-label="Ounces of gold per labor hour over time"></svg></div>
+      <div class="mini"><h3>Per tonne of copper</h3><div class="ms">1960–2025 · LME copper, World Bank and IMF</div><svg id="copperHistoryChart" role="img" aria-label="Ounces of gold per tonne of copper over time"></svg></div>
     </div>
     <p class="note">Before 1867 the cow series is sparse: decadal New England cattle prices (1720s–1770s) converted at the British post-1717 mint equivalent, a 1790s New York benchmark and an 1825 Detroit probate benchmark. These show direction, not a seamless continuation of the USDA series.</p>
   </section>
@@ -397,6 +439,8 @@
       <div class="panel">
         <h3>Fair value</h3>
         <div class="formula">index      = √(cow $/head × land $/acre × 0.6)<br>fair_value = e<sup>a</sup> × index<sup>b</sup><br>a, b       = least squares on ln(gold) vs ln(index), 1972–2025</div>
+        <h3 style="margin-top:18px">Farmland + copper</h3>
+        <div class="formula">fair_value = e<sup>k</sup> × √(land $/acre × copper $/tonne)<br>k          = average of ln(gold ÷ √(land × copper)), 1972–2025</div>
         <h3 style="margin-top:18px">Premium and scenarios</h3>
         <div class="formula">premium   = gold ÷ fair_value − 1<br>fair_12m  = fair_value × (1 + g₁₀)<br>price_12m = fair_12m × (1 + premium_12m)<br>reversion: ln(1+p)₁₂ = ln(1+p) × (1 + β)</div>
         <p class="note">g₁₀ is the trailing 10-year growth rate of fair value. β is the slope from regressing each year's change in log premium on the prior year's level (1972–2025).</p>
@@ -408,21 +452,22 @@
           <li>Cows: USDA NASS price of milk/replacement cows, $/head, with USDA ERS annual dairy-cow prices filling 1981–2019; remaining gaps (mostly 1938–1979) linearly interpolated.</li>
           <li>Inflation: BLS CPI-U, U.S. city average, annual average (FRED CPIAUCNS). 2026 is estimated by carrying forward 2025's inflation rate.</li>
           <li>Farmland: USDA farm real-estate value, $/acre (Census of Agriculture and Land Values surveys).</li>
-          <li>Wages: BLS average hourly earnings, manufacturing production workers (CES3000000008).</li>
-          <li>2026 reference values: gold $3,628 (Nov 19, 2026), cow $3,160 (Oct 2026), farmland $4,500 (2026). Provisional.</li>
+          <li>Copper: LME copper, $/metric ton, annual averages from the World Bank Pink Sheet (1960–2024) and IMF via FRED (PCOPPUSDM) for 2025 and the latest month.</li>
+          <li>2026 reference values: gold $3,628 (Nov 19, 2026), cow $3,160 (Oct 2026), farmland $4,500 (2026), copper $14,473 (Sep 2026). Provisional.</li>
         </ol>
         <div class="fresh" id="fresh">
           <div><b>Gold</b><span id="goldDate">Nov 2026 · reference</span></div>
           <div><b>Cow</b><span id="cowDate">Oct 2026 · reference</span></div>
           <div><b>Farmland</b><span id="landDate">2026 · reference</span></div>
-          <div><b>Wage</b><span id="wageDate">Aug 2026 · reference</span></div>
+          <div><b>Copper</b><span id="copperDate">Sep 2026 · reference</span></div>
         </div>
       </div>
     </div>
     <div style="margin-top:22px">
       <details><summary>Why cows and farmland?</summary><p>Both are productive, scarce, real assets that reprice freely and have long U.S. price records. Ancient and medieval sources often value a cow somewhere between a fraction of an ounce and about an ounce of gold, and modern U.S. replacement cows have returned to roughly that range. Farmland offers the cleanest long-run scarce-asset comparison: gold's purchasing power over land collapsed while gold was pinned at $35, then recovered after the float.</p></details>
+      <details><summary>Why add copper?</summary><p>We tested 22 benchmarks against gold from 1972 to 2024, fitting each on 1972–2000 and checking it on 2001–2024. Scarce, hard-to-produce assets (farmland, copper, silver, oil, homes) tracked gold roughly one-for-one. Farmed and manufactured goods (wheat, corn, beef, cows, cotton, aluminum) got cheaper over time as production improved, so gold outran them. A simple farmland + copper bundle with no fitted slope had among the lowest out-of-sample errors, and when gold strayed from it, gold was the one that moved back. Manufacturing wages were also tested and added nothing beyond cows and farmland, so labor was removed.</p></details>
       <details><summary>How is fair value calibrated?</summary><p>The model originally used fixed anchors: one cow or 0.6 acres per ounce. Against those, gold traded about 45% below "fair value" in a typical floating-era year. Shifting the line down fixed the average but left today's fair value near $1,600, because gold has outgrown cows and farmland over time. So fair value now has a fitted slope as well as a level: since 1972, gold has risen about 1.5% for every 1% rise in the cow-and-farmland index. That fits better (log R² 0.84 vs. 0.75) and, fitted on 1972–2000 alone, tracked 2001–2025 more closely than the level-only version. It also means "cows per ounce" drifts upward over time instead of staying fixed. A slope is one more fitted number, so treat it as a description of history. Before 1971 the gold price was fixed, so there's nothing to fit, but long-run purchasing power is a check: an ounce bought about 1.3 cows in the 1700s (colonial New England, 1725–1796) and about 1.1 today, which implies a slope near 1 over 300 years. The 1.49 slope is specific to the floating-dollar era since 1971. The CSV keeps the original anchors in <code>modeled_gold_usd_oz</code>; the page fits the slope on top. Set the slope slider to 1.00 to see the level-only version.</p></details>
-      <details><summary>What changed in this version?</summary><p>Fair value now uses a fitted level and slope against the cow-and-farmland index (1972–2025), with an out-of-sample check. Connected live gold and wage data. Replaced 36 interpolated cow-price years (1981–2019) with USDA ERS annual dairy-cow prices. Added an inflation-only (CPI) baseline to the chart and a head-to-head test against it. Corrected the 1931 and 1949 gold prices to the official prices of $20.67 and $34.72. Added log scale, a floating-era view, historical percentile, live model diagnostics, fair-value growth in the 12-month scenarios and a mean-reversion case calibrated to history.</p></details>
+      <details><summary>What changed in this version?</summary><p>Added a second fair value, farmland + copper, with a three-way comparison against inflation and caveats for both models. Removed the labor diagnostic. Fair value now uses a fitted level and slope against the cow-and-farmland index (1972–2025), with an out-of-sample check. Connected live gold and copper data. Replaced 36 interpolated cow-price years (1981–2019) with USDA ERS annual dairy-cow prices. Added an inflation-only (CPI) baseline to the chart and a head-to-head test against it. Corrected the 1931 and 1949 gold prices to the official prices of $20.67 and $34.72. Added log scale, a floating-era view, historical percentile, live model diagnostics, fair-value growth in the 12-month scenarios and a mean-reversion case calibrated to history.</p></details>
     </div>
   </section>
 
@@ -443,12 +488,12 @@ const ord = n => { const s=["th","st","nd","rd"], v=n%100; return n+(s[(v-20)%10
 const NS = "http://www.w3.org/2000/svg";
 const el = (name,attrs={},parent) => { const e=document.createElementNS(NS,name); for(const k in attrs) e.setAttribute(k,attrs[k]); if(parent) parent.appendChild(e); return e; };
 
-const DEFAULTS = {cowValue:3160,landValue:4500,slope:1.49,p1:40,p2:30,p3:20,p4:10,m3:60,m4:100}; // slope replaced by the fitted value on load
+const DEFAULTS = {cowValue:3160,landValue:4500,copperValue:14473,slope:1.49,p1:40,p2:30,p3:20,p4:10,m3:60,m4:100}; // slope replaced by the fitted value on load
 const index = (cow,land) => Math.sqrt(cow*land*0.6);   // the CSV's original fair value (1 cow, 0.6 acre per ounce)
 let fitA = 0, fitB = 1;                                // current model: fair = e^a × index^b
 const PEAK_2026 = 5589.38; // all-time high, Jan 28, 2026
 let spot = 3628;           // Nov 19, 2026 reference; not a live quote
-let wage = 30.37;
+let fcK = 0;                // farmland + copper model: fair = e^k × √(land × copper)
 let series = [];           // [{year, market, fair}]
 let stats = null;
 const view = {mode:"price", scale:"log", from:1926};
@@ -484,6 +529,18 @@ function yardstickTests(years, lg, lx){
   return {a:f.a, b:f.b, r2:f.r2, chg: corr(diff(lg), diff(lx)), beta: rev.b, betaT: rev.t, oos,
           halfLife: rev.b<0 && rev.b>-1 ? Math.log(.5)/Math.log(1+rev.b) : NaN};
 }
+// Same tests with the slope fixed at 1 (pure ratio): only the level is fitted.
+function ratioTests(years, lg, lx){
+  const k = mean(lg)-mean(lx), my=mean(lg);
+  const gap = lg.map((v,i)=>v-lx[i]-k);
+  const r2 = 1 - gap.reduce((s,e)=>s+e*e,0)/lg.reduce((s,v)=>s+(v-my)**2,0);
+  const rev = ols(diff(gap), gap.slice(0,-1));
+  const tr = years.map(y=>y<=2000);
+  const kt = mean(lg.filter((_,i)=>tr[i])) - mean(lx.filter((_,i)=>tr[i]));
+  const errs = lg.map((v,i)=>tr[i]?null:v-lx[i]-kt).filter(v=>v!==null);
+  return {a:k, b:1, r2, chg: corr(diff(lg), diff(lx)), beta: rev.b, betaT: rev.t, oos: Math.sqrt(mean(errs.map(e=>e*e))),
+          halfLife: rev.b<0 && rev.b>-1 ? Math.log(.5)/Math.log(1+rev.b) : NaN};
+}
 // Set the model's slope, refit the level so the average floating-era log premium is zero, and rebuild fair values.
 function applySlope(b){
   const fl = series.filter(d=>d.year>=1972);
@@ -495,6 +552,8 @@ function computeStats(){
   const fl = series.filter(d=>d.year>=1972);
   const yrs = fl.map(d=>d.year), lg = fl.map(d=>Math.log(d.market)), lb = fl.map(d=>Math.log(d.base)), lc = fl.map(d=>Math.log(d.cpi));
   const model = yardstickTests(yrs, lg, lb), cpi = yardstickTests(yrs, lg, lc);
+  const flc = fl.filter(d=>d.cu>0);
+  const fcT = ratioTests(flc.map(d=>d.year), flc.map(d=>Math.log(d.market)), flc.map(d=>0.5*Math.log(d.land*d.cu)));
   const lpCur = fl.map(d=>Math.log(d.market/d.fair)), revCur = ols(diff(lpCur), lpCur.slice(0,-1));
   // Does cow + farmland explain gold beyond inflation? Regress real gold on the real index.
   const realG = lg.map((v,i)=>v-lc[i]), realF = lb.map((v,i)=>v-lc[i]);
@@ -506,7 +565,7 @@ function computeStats(){
   const sortedPrem = lp.map(v=>(Math.exp(v)-1)*100).sort((a,b)=>a-b);
   stats = {
     r2Levels: 1 - all.reduce((s,v,i)=>s+(v-allF[i])**2,0)/all.reduce((s,v)=>s+(v-ma)**2,0),
-    model, cpi, beyondLevels, beyondChg,
+    model, cpi, fcT, beyondLevels, beyondChg,
     beta: revCur.b,                                // premium reversion speed under the current slope
     cpiA: cpi.a, cpiB: cpi.b,                      // baseline = e^a × CPI^b, fitted 1972–2025
     cpiNext: last.cpi * (last.cpi/prevYr.cpi),     // 2026 CPI estimate: last year's inflation rate carried forward
@@ -522,16 +581,24 @@ function computeStats(){
   $("dCorr").textContent = f2(model.chg);
   $("dHalf").textContent = hl(model.halfLife);
   $("interpNote").textContent = `${stats.cowInterp} of ${stats.n} cow-price years and ${stats.landInterp} of ${stats.n} farmland years are interpolated between observations.`;
-  // baseline comparison table
-  const better = (a,b,hi=true) => (hi ? a>b : a<b) ? ' class="win"' : '';
-  $("cmpBody").innerHTML = `
-    <tr><td>Fit to gold's price level<small>R² of log price, each with fitted level and slope (slope ${model.b.toFixed(2)} vs. ${cpi.b.toFixed(2)})</small></td><td${better(model.r2,cpi.r2)}>${f2(model.r2)}</td><td${better(cpi.r2,model.r2)}>${f2(cpi.r2)}</td></tr>
-    <tr><td>Moves with gold year to year<small>Correlation of annual % changes</small></td><td${better(model.chg,cpi.chg)}>${f2(model.chg)}</td><td${better(cpi.chg,model.chg)}>${f2(cpi.chg)}</td></tr>
-    <tr><td>How fast gaps close<small>Half-life of the gap between gold and the yardstick</small></td><td${better(model.halfLife,cpi.halfLife,false)}>${hl(model.halfLife)}</td><td${better(cpi.halfLife,model.halfLife,false)}>${hl(cpi.halfLife)}</td></tr>
-    <tr><td>Out of sample<small>Fit on 1972–2000, typical % error on 2001–2025</small></td><td${better(model.oos,cpi.oos,false)}>${Math.round((Math.exp(model.oos)-1)*100)}%</td><td${better(cpi.oos,model.oos,false)}>${Math.round((Math.exp(cpi.oos)-1)*100)}%</td></tr>`;
+  // baseline comparison table: tick the best of the three models in each row
+  const pctErr = v => `${Math.round((Math.exp(v)-1)*100)}%`;
+  const row = (label, sub, vals, fmtv, hiBetter=true) => {
+    const ok = vals.filter(Number.isFinite), best = hiBetter ? Math.max(...ok) : Math.min(...ok);
+    return `<tr><td>${label}<small>${sub}</small></td>${vals.map(v=>`<td${v===best?' class="win"':''}>${fmtv(v)}</td>`).join("")}</tr>`;
+  };
+  const M=[model, fcT, cpi];
+  $("cmpBody").innerHTML =
+    row("Fit to gold's price level", `R² of log price (slopes ${model.b.toFixed(2)}, 1.00, ${cpi.b.toFixed(2)})`, M.map(t=>t.r2), f2) +
+    row("Moves with gold year to year", "Correlation of annual % changes", M.map(t=>t.chg), f2) +
+    row("How fast gaps close", "Half-life of the gap between gold and the yardstick", M.map(t=>t.halfLife), hl, false) +
+    row("Out of sample", "Fit on 1972–2000, typical % error on 2001–2025", M.map(t=>t.oos), pctErr, false);
+  $("mOos1").textContent = pctErr(model.oos); $("mOos2").textContent = pctErr(fcT.oos);
+  $("interpNote2").textContent = `${stats.cowInterp} of ${stats.n}`;
   const bl = stats.beyondLevels, bc = stats.beyondChg;
   $("beyondNote").innerHTML = `<strong>Beyond inflation:</strong> after dividing everything by CPI, cow-and-farmland value still explains ${Math.round(bl.r2*100)}% of the swings in gold's real price level (t = ${bl.t.toFixed(1)}), but only ${Math.round(bc.r2*100)}% of its year-to-year real changes (t = ${bc.t.toFixed(1)}, not significant). Gaps closing (t = ${model.betaT.toFixed(1)} vs. ${cpi.betaT.toFixed(1)}) is suggestive, not statistically firm.`;
 }
+function fcFair(land, cu){ return Math.exp(fcK)*Math.sqrt(land*cu); }
 function cpiBaseline(year){
   const d = series.find(s=>s.year===year);
   const c = d ? d.cpi : stats.cpiNext;
@@ -545,10 +612,11 @@ function percentileOf(p){
 }
 
 /* ---------- main chart ---------- */
+let currentFc = null;
 function chartRows(fair){
-  return [...series, {year:2026, market:spot, fair, current:true}]
+  return [...series, {year:2026, market:spot, fair, fc:currentFc, current:true}]
     .filter(d=>d.year>=view.from)
-    .map(d=>({...d, premium:(d.market/d.fair-1)*100, base:cpiBaseline(d.year)}));
+    .map(d=>({...d, premium:(d.market/d.fair-1)*100, base:cpiBaseline(d.year), fcPrem: d.fc ? (d.market/d.fc-1)*100 : null}));
 }
 
 function niceLogTicks(min,max){
@@ -567,17 +635,17 @@ function renderMain(fair){
   const isPrem = view.mode==="premium";
   let y, ticks;
   if(isPrem){
-    const vals=data.map(d=>d.premium);
+    const vals=data.flatMap(d=>d.fcPrem===null?[d.premium]:[d.premium,d.fcPrem]);
     const lo=Math.min(-100,Math.floor(Math.min(...vals)/25)*25), hi=Math.max(50,Math.ceil(Math.max(...vals)/25)*25);
     y=v=>m.t+(hi-v)/(hi-lo)*ih;
     const step = (hi-lo)>200?50:25; ticks=[]; for(let v=Math.ceil(lo/step)*step; v<=hi; v+=step) ticks.push(v);
   } else if(view.scale==="log"){
-    const vals=data.flatMap(d=>[d.market,d.fair,d.base]);
+    const vals=data.flatMap(d=>[d.market,d.fair,d.base,d.fc].filter(v=>v>0));
     const lo=Math.min(...vals)*0.85, hi=Math.max(...vals)*1.15;
     y=v=>m.t+(Math.log(hi)-Math.log(v))/(Math.log(hi)-Math.log(lo))*ih;
     ticks=niceLogTicks(lo,hi);
   } else {
-    const hi=Math.ceil(Math.max(...data.flatMap(d=>[d.market,d.fair,d.base]))/1000)*1000;
+    const hi=Math.ceil(Math.max(...data.flatMap(d=>[d.market,d.fair,d.base,d.fc].filter(v=>v>0)))/1000)*1000;
     y=v=>m.t+(hi-v)/hi*ih; ticks=[0,hi/4,hi/2,hi*3/4,hi];
   }
 
@@ -595,7 +663,7 @@ function renderMain(fair){
   const xt = W<560 ? [xmin,2000,2026] : (xmin<1950?[1926,1950,1971,2000,2026]:[1972,1985,2000,2013,2026]);
   [...new Set(xt)].forEach(yr=>{ const t=el("text",{x:x(yr),y:H-8,"text-anchor":"middle",class:"axis"},svg); t.textContent=yr; });
 
-  const line = key => data.map((d,i)=>`${i?"L":"M"}${x(d.year).toFixed(1)},${y(d[key]).toFixed(1)}`).join("");
+  const line = key => data.filter(d=>d[key]!==null && d[key]!==undefined && Number.isFinite(d[key])).map((d,i)=>`${i?"L":"M"}${x(d.year).toFixed(1)},${y(d[key]).toFixed(1)}`).join("");
   const legend=$("legend");
   if(isPrem){
     const z=y(0);
@@ -606,17 +674,23 @@ function renderMain(fair){
     el("path",{d:area,class:"a-prem-neg","clip-path":"url(#cpNeg)"},svg);
     const med = stats ? stats.median : 0;
     if(stats){ el("line",{x1:x(Math.max(1972,xmin)),x2:W-m.r,y1:y(med),y2:y(med),class:"l-med"},svg); }
+    const bp=data.filter(d=>d.fcPrem!==null);
+    if(bp.length>1) el("path",{d:bp.map((d,i)=>`${i?"L":"M"}${x(d.year).toFixed(1)},${y(Math.max(d.premium,d.fcPrem)).toFixed(1)}`).join("")+bp.slice().reverse().map(d=>`L${x(d.year).toFixed(1)},${y(Math.min(d.premium,d.fcPrem)).toFixed(1)}`).join("")+"Z",class:"fv-band"},svg);
+    el("path",{d:line("fcPrem"),class:"l-prem-fc"},svg);
     el("path",{d:line("premium"),class:"l-prem"},svg);
-    legend.innerHTML = `<span><i></i>Premium to fair value</span><span><i class="med"></i>Floating-era median (${pct(med,0)})</span>`;
+    legend.innerHTML = `<span><i></i>Premium · cow + farmland</span><span><i class="fc"></i>Premium · farmland + copper</span><span><i class="med"></i>Cow + farmland median (${pct(med,0)})</span>`;
   } else {
     el("path",{d:line("base"),class:"l-base"},svg);
+    const bd=data.filter(d=>d.fc>0);
+    if(bd.length>1) el("path",{d:bd.map((d,i)=>`${i?"L":"M"}${x(d.year).toFixed(1)},${y(Math.max(d.fair,d.fc)).toFixed(1)}`).join("")+bd.slice().reverse().map(d=>`L${x(d.year).toFixed(1)},${y(Math.min(d.fair,d.fc)).toFixed(1)}`).join("")+"Z",class:"fv-band"},svg);
+    el("path",{d:line("fc"),class:"l-fc"},svg);
     el("path",{d:line("fair"),class:"l-fair"},svg);
     el("path",{d:line("market"),class:"l-market"},svg);
-    legend.innerHTML = `<span><i></i>Gold market price</span><span><i class="fair"></i>Cow + farmland fair value</span><span><i class="base"></i>Inflation-only baseline</span>`;
+    legend.innerHTML = `<span><i></i>Gold market price</span><span><i class="fair"></i>Cow + farmland fair value</span><span><i class="fc"></i>Farmland + copper fair value</span><span><i class="band"></i>Fair-value band</span><span><i class="base"></i>Inflation-only baseline</span>`;
   }
   const last=data.at(-1);
-  if(isPrem) el("circle",{cx:x(last.year),cy:y(last.premium),r:5,fill:"var(--gold)",class:"end-dot"},svg);
-  else { el("circle",{cx:x(last.year),cy:y(last.fair),r:4.5,fill:"var(--blue)",class:"end-dot"},svg); el("circle",{cx:x(last.year),cy:y(last.market),r:5,fill:"var(--gold)",class:"end-dot"},svg); }
+  if(isPrem){ if(last.fcPrem!==null) el("circle",{cx:x(last.year),cy:y(last.fcPrem),r:4.5,fill:"var(--green)",class:"end-dot"},svg); el("circle",{cx:x(last.year),cy:y(last.premium),r:5,fill:"var(--gold)",class:"end-dot"},svg); }
+  else { if(last.fc) el("circle",{cx:x(last.year),cy:y(last.fc),r:4.5,fill:"var(--green)",class:"end-dot"},svg); el("circle",{cx:x(last.year),cy:y(last.fair),r:4.5,fill:"var(--blue)",class:"end-dot"},svg); el("circle",{cx:x(last.year),cy:y(last.market),r:5,fill:"var(--gold)",class:"end-dot"},svg); }
 
   // hover/tap layer
   const cursor=el("line",{y1:m.t,y2:m.t+ih,class:"cursor",opacity:0},svg);
@@ -626,7 +700,7 @@ function renderMain(fair){
     const yr=Math.round(xmin+(px-m.l)/iw*(xmax-xmin));
     const d=data.reduce((a,b)=>Math.abs(b.year-yr)<Math.abs(a.year-yr)?b:a);
     const cx=x(d.year); cursor.setAttribute("x1",cx); cursor.setAttribute("x2",cx); cursor.setAttribute("opacity",1);
-    tip.innerHTML = `<strong>${d.year}${d.current?" · reference":""}</strong><span class="k">Gold</span> ${fmt(d.market)}<br><span class="k">Fair value</span> ${fmt(d.fair)}<br><span class="k">Premium</span> ${pct(d.premium)}<br><span class="k">Inflation baseline</span> ${fmt(d.base)}${d.current?"*":""}`;
+    tip.innerHTML = `<strong>${d.year}${d.current?" · reference":""}</strong><span class="k">Gold</span> ${fmt(d.market)}<br><span class="k">Cow + farmland</span> ${fmt(d.fair)} (${pct(d.premium,0)})<br>${d.fc?`<span class="k">Farmland + copper</span> ${fmt(d.fc)} (${pct(d.fcPrem,0)})<br>`:""}<span class="k">Inflation baseline</span> ${fmt(d.base)}${d.current?"*":""}`;
     tip.style.opacity=1;
     const left = cx/W*r.width, tw=tip.offsetWidth;
     tip.style.left = `${Math.min(r.width-tw-4, Math.max(4, left + (left > r.width/2 ? -tw-12 : 12)))}px`;
@@ -651,11 +725,6 @@ const contributorHistory = {
     {year:1930,value:48.52/20.65},{year:1940,value:31.71/33.85},{year:1950,value:64.96/34.72},{year:1960,value:116.48/35.27},
     {year:1970,value:195.5/36.02},{year:1980,value:737/615},{year:1990,value:683/383.51},{year:2000,value:1090/279.11},
     {year:2010,value:2150/1224.53},{year:2020,value:3160/1769.64},{year:2025,value:4350/3431}
-  ],
-  labor: [
-    {year:1950,value:1.44/34.72},{year:1960,value:2.20/35.27},{year:1970,value:3.36/36.02},{year:1980,value:7.27/615},
-    {year:1990,value:10.83/383.51},{year:2000,value:14.32/279.11},{year:2010,value:18.61/1224.53},
-    {year:2020,value:22.79/1769.64},{year:2023,value:26.37/1940}
   ]
 };
 function renderMini(svgId,data){
@@ -664,43 +733,51 @@ function renderMini(svgId,data){
   svg.setAttribute("viewBox",`0 0 ${W} ${H}`);
   const xmin=data[0].year,xmax=data.at(-1).year,ymax=Math.max(...data.map(d=>d.value))*1.1;
   const x=v=>m.l+(v-xmin)/(xmax-xmin)*iw, y=v=>m.t+(ymax-v)/ymax*ih;
-  const f=v=>v>=1?`${v.toFixed(1)}`:v>=.1?v.toFixed(2):v.toFixed(3);
+  const f=v=>v>=100?`${v.toFixed(0)}`:v>=1?`${v.toFixed(1)}`:v>=.1?v.toFixed(2):v.toFixed(3);
   for(let i=0;i<=3;i++){ const v=ymax*i/3; el("line",{x1:m.l,x2:W-m.r,y1:y(v),y2:y(v),class:"grid-l"},svg); const t=el("text",{x:m.l-6,y:y(v)+4,"text-anchor":"end",class:"axis"},svg); t.textContent=`${f(v)} oz`; }
   [xmin,xmax].forEach((yr,i)=>{ const t=el("text",{x:x(yr),y:H-6,"text-anchor":i?"end":"start",class:"axis"},svg); t.textContent=yr; });
   el("path",{d:data.map((p,i)=>`${i?"L":"M"}${x(p.year)},${y(p.value)}`).join(""),class:"m-line"},svg);
   data.forEach(p=>el("circle",{cx:x(p.year),cy:y(p.value),r:2.6,class:"m-dot"},svg));
 }
-function renderMinis(){ renderMini("cowHistoryChart",contributorHistory.cow); renderMini("landHistoryChart",contributorHistory.land); renderMini("laborHistoryChart",contributorHistory.labor); }
+function renderMinis(){ renderMini("cowHistoryChart",contributorHistory.cow); renderMini("landHistoryChart",contributorHistory.land); 
+  const cuHist = series.filter(d=>d.cu>0).map(d=>({year:d.year, value:d.cu/d.market}));
+  if(cuHist.length) renderMini("copperHistoryChart", cuHist); }
 
 /* ---------- main update ---------- */
 function update(){
-  const cowValue=+$("cowValue").value, landValue=+$("landValue").value, slope=+$("slope").value;
-  $("cowValueLabel").textContent=fmt(cowValue); $("landValueLabel").textContent=fmt(landValue);
+  const cowValue=+$("cowValue").value, landValue=+$("landValue").value, copperValue=+$("copperValue").value, slope=+$("slope").value;
+  $("cowValueLabel").textContent=fmt(cowValue); $("landValueLabel").textContent=fmt(landValue); $("copperValueLabel").textContent=fmt(copperValue);
   $("slopeLabel").textContent=slope.toFixed(2); $("slopeTxt").textContent=slope.toFixed(2);
   $("cowsNow").textContent=(spot/cowValue).toFixed(1);
   if(series.length && slope!==fitB) applySlope(slope);
 
   const idx=index(cowValue,landValue), fair=Math.exp(fitA + fitB*Math.log(idx));
-  const premium=(spot/fair-1)*100, laborHours=spot/wage;
+  const premium=(spot/fair-1)*100;
+  const fc=fcFair(landValue, copperValue), fcPremium=(spot/fc-1)*100; currentFc=fc;
   const [label,copy]=regimeFor(premium);
 
   $("spotValue").textContent=fmt(spot);
   $("fairValue").textContent=fmt(fair);
-  $("premiumValue").textContent=pct(premium);
-  $("premiumValue").className="val num "+(premium>15?"pos":premium<-20?"neg":"");
-  $("regimeLabel").textContent=label;
+  $("premiumValue").textContent=pct(premium,0);
+  $("premiumValue").className="num "+(premium>15?"pos":premium<-20?"neg":"");
+  $("fcValue").textContent=fmt(fc);
+  const bLo=Math.min(fair,fc), bHi=Math.max(fair,fc);
+  $("bandValue").textContent=`${fmtC(bLo)}–${fmtC(bHi)}`;
+  $("bandSub").textContent = spot>bHi ? `Gold ${pct((spot/bHi-1)*100,0)} above the top` : spot<bLo ? `Gold ${pct((spot/bLo-1)*100,0)} below the bottom` : "Gold is inside the band";
+  $("fcPremium").textContent=pct(fcPremium,0);
+  $("fcPremium").className="num "+(fcPremium>15?"pos":fcPremium<-20?"neg":"");
   $("regimeBig").textContent=label;
   $("interpretation").textContent=copy;
 
   $("idxFV").textContent=fmt(idx); $("fairFV2").textContent=fmt(fair); $("spotFV2").textContent=fmt(spot);
-  $("laborHours").textContent=`${laborHours.toFixed(0)} hrs`;
-  const mx=Math.max(idx,fair,spot);
+  $("fcFV2").textContent=fmt(fc);
+  const mx=Math.max(idx,fair,fc,spot);
   $("idxBar").style.width=`${idx/mx*100}%`; $("fairBar").style.width=`${fair/mx*100}%`; $("spotBar").style.width=`${spot/mx*100}%`;
-  $("laborBar").style.width=`${Math.min(100,laborHours/200*100)}%`;
+  $("fcBar").style.width=`${fc/mx*100}%`;
 
   if(stats){
     const p=percentileOf(premium);
-    $("pctlValue").textContent=ord(p);
+    if($("pctlValue")) $("pctlValue").textContent=ord(p);
     $("pctlBig").textContent=`${ord(p)} percentile`;
     const a=stats.prem, med=stats.median, lo=a[0], hi=a.at(-1), span=Math.max(hi,premium)-Math.min(lo,premium);
     const pos=v=>(v-Math.min(lo,premium))/span*100;
@@ -715,8 +792,8 @@ function update(){
     const peakPrem=(PEAK_2026/fair-1)*100;
     $("peakPrem").textContent=Math.round(peakPrem);
     const base26 = cpiBaseline(2026), basePrem = (spot/base26-1)*100;
-    $("baselineTake").innerHTML = `<strong>The yardstick changes the verdict.</strong> Against inflation alone, ${fmt(spot)} is ${pct(basePrem,0)} versus a fitted inflation-only fair value of about ${fmt(base26)} (using an estimated 2026 CPI). Against cows and farmland it's ${pct(premium,0)}. Cows and farmland fit gold's long-run level better than CPI, predicted 2001–2025 better when fitted only on earlier years, and gaps against them have closed faster. Neither yardstick tracks gold from one year to the next.`;
-    $("takeaway").innerHTML = `<strong>At ${fmt(spot)}, an ounce buys about ${(spot/cowValue).toFixed(2)} cows or ${(spot/landValue).toFixed(2)} acres of farmland.</strong> That puts gold ${Math.abs(premium).toFixed(0)}% ${premium>=0?"above":"below"} its real-economy fair value of ${fmt(fair)}, a ${label.toLowerCase()} that ranks in the ${ord(p)} percentile of the floating era. At January's all-time high of ${fmt(PEAK_2026)}, the premium was about ${pct(peakPrem,0)}.`;
+    $("baselineTake").innerHTML = `<strong>The yardstick changes the verdict.</strong> Against inflation alone, ${fmt(spot)} is ${pct(basePrem,0)} versus a fitted inflation-only fair value of about ${fmt(base26)} (using an estimated 2026 CPI). Against cows and farmland it's ${pct(premium,0)}, and against farmland and copper ${pct(fcPremium,0)}. Both hard-asset models fit gold's long-run level better than CPI and predicted 2001–2025 better when fitted only on earlier years. None of the three tracks gold from one year to the next.`;
+    $("takeaway").innerHTML = `<strong>At ${fmt(spot)}, an ounce buys about ${(spot/cowValue).toFixed(2)} cows or ${(spot/landValue).toFixed(2)} acres of farmland.</strong> The two hard-asset models put fair value between ${fmt(bLo)} and ${fmt(bHi)}: ${fair>=fc?`cow + farmland at the top, farmland + copper at the bottom`:`farmland + copper at the top, cow + farmland at the bottom`}. Gold is ${spot>bHi?`above the whole band, ${Math.abs((spot/bHi-1)*100).toFixed(0)}% over the top and ${Math.abs((spot/bLo-1)*100).toFixed(0)}% over the bottom`:spot<bLo?`below the whole band, ${Math.abs((spot/bLo-1)*100).toFixed(0)}% under the bottom`:`inside the band`}. On the cow-and-farmland model that's a ${label.toLowerCase()} in the ${ord(p)} percentile of the floating era. At January's all-time high of ${fmt(PEAK_2026)}, the premium was about ${pct(peakPrem,0)}.`;
 
     // 12-month scenarios
     const g=stats.g10, fair12=fair*(1+g);
@@ -742,13 +819,18 @@ async function loadSeries(){
   const r=await fetch("gold-standard-100-year-reconstruction.csv");
   if(!r.ok) throw new Error("csv");
   const rows=(await r.text()).trim().split(/\r?\n/).slice(1);
-  series=rows.map(l=>{ const c=l.split(","); return {year:+c[0], market:+c[1], base:+c[2], fair:+c[2], cowObs:c[5]==="True", landObs:c[6]==="True", cpi:+c[11]}; }).filter(d=>d.year && d.market>0 && d.fair>0);
+  series=rows.map(l=>{ const c=l.split(","); return {year:+c[0], market:+c[1], base:+c[2], fair:+c[2], cowObs:c[5]==="True", landObs:c[6]==="True", cpi:+c[11], land:+c[4], cu:c[12]?+c[12]:0}; }).filter(d=>d.year && d.market>0 && d.fair>0);
   // Fit the slope of ln(gold) on ln(index) over 1972–2025; applySlope then refits the level.
   const fl=series.filter(d=>d.year>=1972);
   DEFAULTS.slope = +ols(fl.map(d=>Math.log(d.market)), fl.map(d=>Math.log(d.base))).b.toFixed(2);
   $("slope").value = DEFAULTS.slope;
   $("slopeHint").textContent = `Fitted to 1972–2025: ${DEFAULTS.slope.toFixed(2)}. At 1.00, gold moves one-for-one with cows and farmland.`;
+  // Farmland + copper: slope fixed at 1, level so the average floating-era log premium is zero.
+  const flc=fl.filter(d=>d.cu>0);
+  fcK = mean(flc.map(d=>Math.log(d.market) - 0.5*Math.log(d.land*d.cu)));
+  series.forEach(d=>d.fc = d.cu>0 ? fcFair(d.land, d.cu) : null);
   applySlope(DEFAULTS.slope);
+  renderMinis();
 }
 
 async function loadLive(){
@@ -760,10 +842,10 @@ async function loadLive(){
     // Only live values replace the page's dated references; worker fallbacks are ignored.
     const live = o => o && o.status==="live" && Number.isFinite(+o.value) && +o.value>0;
     if(live(d.gold)) spot=+d.gold.value;
-    if(live(d.wage)) wage=+d.wage.value;
+    if(live(d.copper)){ $("copperValue").value=+d.copper.value; DEFAULTS.copperValue=+d.copper.value; }
     if(live(d.cow)){ $("cowValue").value=+d.cow.value; DEFAULTS.cowValue=+d.cow.value; }
     if(live(d.farmland)){ $("landValue").value=+d.farmland.value; DEFAULTS.landValue=+d.farmland.value; }
-    const feeds=[["gold",d.gold],["cow",d.cow],["land",d.farmland],["wage",d.wage]];
+    const feeds=[["gold",d.gold],["cow",d.cow],["land",d.farmland],["copper",d.copper]];
     feeds.forEach(([k,o])=>{ if(live(o)) $(k+"Date").textContent=`${o.date} · live`; });
     const nLive=feeds.filter(([,o])=>live(o)).length;
     $("statusDot").classList.toggle("live", nLive>0);
@@ -773,7 +855,7 @@ async function loadLive(){
 }
 
 /* ---------- controls ---------- */
-["cowValue","landValue","slope","p1","p2","p3","p4","m3","m4"].forEach(id=>$(id).addEventListener("input",update));
+["cowValue","landValue","copperValue","slope","p1","p2","p3","p4","m3","m4"].forEach(id=>$(id).addEventListener("input",update));
 document.querySelectorAll(".seg button").forEach(b=>b.addEventListener("click",()=>{
   b.parentElement.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));
   if(b.dataset.view) view.mode=b.dataset.view;

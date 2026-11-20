@@ -1,11 +1,11 @@
 /**
  * Gold Standard — live-data Worker for lorenzen.ai/tools/gold-standard
  *
- * GET / returns JSON: { generatedAt, gold, wage, cow, farmland, allLive }
+ * GET / returns JSON: { generatedAt, gold, copper, cow, farmland, allLive }
  * Each feed is { value, date, year, source, status: "live" | "fallback" }.
  *
  *   gold      GOLD_API_URL (var)  — keyless spot feed, refreshed every 5 min
- *   wage      FRED/BLS CES3000000008 public CSV — no key
+ *   copper    IMF copper $/metric ton via FRED PCOPPUSDM public CSV (monthly) — no key
  *   cow       USDA NASS Quick Stats, milk-cow price received $/head — needs USDA_API_KEY
  *   farmland  USDA NASS Quick Stats, ag land incl. buildings $/acre — needs USDA_API_KEY
  *
@@ -18,11 +18,11 @@ const FALLBACK = {
   gold:     { value: 3628,  date: "2026-11-19", year: 2026, source: "Dated reference" },
   cow:      { value: 3160,  date: "2026-10",    year: 2026, source: "USDA NASS reference" },
   farmland: { value: 4500,  date: "2026",       year: 2026, source: "USDA NASS reference" },
-  wage:     { value: 30.43, date: "2026-10",    year: 2026, source: "BLS via FRED reference" }
+  copper:   { value: 14473.06, date: "2026-09", year: 2026, source: "IMF via FRED reference" }
 };
 
 // Per-feed cache inside the isolate, so a traffic spike doesn't hammer upstream APIs.
-const TTL = { gold: 5 * 60e3, wage: 6 * 3600e3, cow: 12 * 3600e3, farmland: 12 * 3600e3 };
+const TTL = { gold: 5 * 60e3, copper: 6 * 3600e3, cow: 12 * 3600e3, farmland: 12 * 3600e3 };
 const memo = {};
 async function cached(key, fn) {
   const hit = memo[key];
@@ -54,17 +54,17 @@ async function fetchGold(env) {
   } catch (e) { return fallback("gold"); }
 }
 
-async function fetchWage() {
+async function fetchCopper() {
   try {
-    const r = await fetch("https://fred.stlouisfed.org/graph/fredgraph.csv?id=CES3000000008");
-    if (!r.ok) throw new Error("wage HTTP");
+    const r = await fetch("https://fred.stlouisfed.org/graph/fredgraph.csv?id=PCOPPUSDM");
+    if (!r.ok) throw new Error("copper HTTP");
     const rows = (await r.text()).trim().split(/\r?\n/);
     for (let i = rows.length - 1; i >= 1; i--) {
       const [date, v] = rows[i].split(",");
-      if (Number.isFinite(num(v)) && v !== "") return result(num(v), date.slice(0, 7), date.slice(0, 4), "BLS via FRED · CES3000000008");
+      if (v !== "" && Number.isFinite(num(v)) && num(v) > 1000) return result(num(v), date.slice(0, 7), date.slice(0, 4), "IMF via FRED · PCOPPUSDM");
     }
-    throw new Error("wage parse");
-  } catch (e) { return fallback("wage"); }
+    throw new Error("copper parse");
+  } catch (e) { return fallback("copper"); }
 }
 
 // Quick Stats period ordering: monthly values, then the full-year value, which is the most complete.
@@ -102,14 +102,14 @@ export default {
     if (request.method === "OPTIONS") return new Response(null, { headers: CORS });
     if (request.method !== "GET") return new Response("Method not allowed", { status: 405, headers: CORS });
 
-    const [gold, wage, cow, farmland] = await Promise.all([
+    const [gold, copper, cow, farmland] = await Promise.all([
       cached("gold", () => fetchGold(env)),
-      cached("wage", () => fetchWage()),
+      cached("copper", () => fetchCopper()),
       cached("cow", () => fetchUSDA(env, "cow")),
       cached("farmland", () => fetchUSDA(env, "farmland"))
     ]);
-    const body = { generatedAt: new Date().toISOString(), gold, wage, cow, farmland,
-      allLive: [gold, wage, cow, farmland].every(x => x.status === "live") };
+    const body = { generatedAt: new Date().toISOString(), gold, copper, cow, farmland,
+      allLive: [gold, copper, cow, farmland].every(x => x.status === "live") };
     return new Response(JSON.stringify(body, null, 2), {
       headers: { ...CORS, "content-type": "application/json; charset=utf-8", "cache-control": "public, max-age=300" }
     });
