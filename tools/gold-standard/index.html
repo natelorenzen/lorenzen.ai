@@ -409,6 +409,17 @@
     <p class="note"><span class="grade">In-sample</span> All statistics are fit and measured on the same data, so they describe history rather than prove predictive power. <span id="interpNote"></span> The model is a slow-moving yardstick, not a timing tool.</p>
   </section>
 
+  <section id="diagnostics-fc">
+    <div class="sec-head"><div><h2>How good is the farmland + copper model?</h2><p class="sec-sub">The same tests, computed live. This model has no fitted slope, only a level, so there's less room to flatter the fit.</p></div></div>
+    <div class="diag">
+      <div class="dcard"><div class="lab">R², price levels (1960–2025)</div><div class="val num" id="fR2">—</div><p>Strong, but like any price pair it partly reflects shared inflation.</p></div>
+      <div class="dcard"><div class="lab">R², log prices (1972–2025)</div><div class="val num" id="fR2log">—</div><p>The floating-era fit on a log scale, with the slope fixed at 1.</p></div>
+      <div class="dcard"><div class="lab">Correlation of yearly changes</div><div class="val num" id="fCorr">—</div><p>Moves with gold within a year more than cows and farmland do, but still loosely.</p></div>
+      <div class="dcard"><div class="lab">Premium half-life</div><div class="val num" id="fHalf">—</div><p>How long it has historically taken half of a valuation gap to close.</p></div>
+    </div>
+    <p class="note"><span class="grade">In-sample</span> Measured on the same data used to set the level, except the out-of-sample test (fit on 1972–2000, typical error on 2001–2025: <span id="fOos">—</span>). Copper was picked after testing about 30 benchmarks, so these scores are somewhat optimistic. Copper prices here start in 1960.</p>
+  </section>
+
   <section id="baseline">
     <div class="sec-head"><div><h2>Do the models beat plain inflation?</h2><p class="sec-sub">The simplest rival yardstick is the consumer price index, fitted to gold the same way. If a hard-asset model can't beat that, it adds nothing. Floating era, 1972–2025; the best score in each row is ticked.</p></div></div>
     <div class="panel">
@@ -594,6 +605,9 @@ function computeStats(){
     row("How fast gaps close", "Half-life of the gap between gold and the yardstick", M.map(t=>t.halfLife), hl, false) +
     row("Out of sample", "Fit on 1972–2000, typical % error on 2001–2025", M.map(t=>t.oos), pctErr, false);
   $("mOos1").textContent = pctErr(model.oos); $("mOos2").textContent = pctErr(fcT.oos);
+  const fcAll = series.filter(d=>d.fc>0), fm = mean(fcAll.map(d=>d.market));
+  $("fR2").textContent = f2(1 - fcAll.reduce((s,d)=>s+(d.market-d.fc)**2,0)/fcAll.reduce((s,d)=>s+(d.market-fm)**2,0));
+  $("fR2log").textContent = f2(fcT.r2); $("fCorr").textContent = f2(fcT.chg); $("fHalf").textContent = hl(fcT.halfLife); $("fOos").textContent = pctErr(fcT.oos);
   $("interpNote2").textContent = `${stats.cowInterp} of ${stats.n}`;
   const bl = stats.beyondLevels, bc = stats.beyondChg;
   $("beyondNote").innerHTML = `<strong>Beyond inflation:</strong> after dividing everything by CPI, cow-and-farmland value still explains ${Math.round(bl.r2*100)}% of the swings in gold's real price level (t = ${bl.t.toFixed(1)}), but only ${Math.round(bc.r2*100)}% of its year-to-year real changes (t = ${bc.t.toFixed(1)}, not significant). Gaps closing (t = ${model.betaT.toFixed(1)} vs. ${cpi.betaT.toFixed(1)}) is suggestive, not statistically firm.`;
